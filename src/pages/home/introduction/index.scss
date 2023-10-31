@@ -1,22 +1,26 @@
 @import '../../../css/variables.scss';
+
 .introduction-section {
   background: #fff;
+
   .introduction-body {
-    max-width: $contentWidth;
+    // max-width: $contentWidth;
     box-sizing: border-box;
     margin: 0 auto;
-    min-height: 640px;
+    // min-height: 640px;
     padding: 40px 40px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
     .introduction {
       display: inline-block;
       width: calc(100% - 530px);
       min-width: 300px;
       max-width: 650px;
+
       h3 {
         font-family: Avenir-Medium;
         font-weight: 700;
@@ -25,6 +29,7 @@
         word-break: break-word;
         color: #5381fd;
       }
+
       p {
         line-height: 28px;
         opacity: 0.56;
@@ -33,16 +38,20 @@
         color: #333;
         margin-bottom: 20px;
       }
+
       ul {
         list-style: none;
         margin-top: 25px;
+
         li {
           position: relative;
           margin-bottom: 25px;
+
           &:last-child {
             margin-bottom: 0;
           }
         }
+
         li::before {
           content: '';
           position: absolute;
@@ -53,14 +62,17 @@
           background: #999;
           border-radius: 50%;
         }
+
         p {
           display: inline-block;
           margin-left: 12px;
         }
       }
     }
+
     .img-wrapper {
       width: 100vw;
+
       img {
         width: 100%;
         height: auto;
@@ -76,6 +88,7 @@
         width: 100%;
         max-width: 100%;
       }
+
       img {
         margin: 0;
       }

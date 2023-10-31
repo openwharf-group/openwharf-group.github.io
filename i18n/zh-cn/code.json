@@ -271,66 +271,69 @@
     "description": "The title of the tag list page"
   },
   "homepage.briefIntroduction": {
-    "message": "一个遵循开源Ingress/Gateway API标准，提供流量调度、服务治理、安全防护三合一的高集成、易使用、易扩展、热更新的下一代云原生网关。"
+    "message": "简单易用、低成本、高性能、高扩展的Serverless应用平台。"
   },
   "homepage.introTitle": {
-    "message": "参与 Higress 社区"
+    "message": "OpenWharf是什么？"
   },
   "homepage.featureListTitle1": {
-    "message": "易于使用"
+    "message": "上手简单易运营"
   },
   "homepage.featureListContent1": {
-    "message": "提供流量调度、服务治理、安全防护一站式网关解决方案，支持Console与K8s Ingress、Gateway API配置方式，也支持HTTP到Dubbo协议转换，一键轻松完成协议映射配置。"
+    "message": "为应用开发者提供开箱即用体验，为管理员提供k8s化管控能力"
   },
   "homepage.featureListTitle2": {
-    "message": "生产等级"
+    "message": "优秀的冷启性能"
   },
   "homepage.featureListContent2": {
-    "message": "脱胎于阿里巴巴生产验证的内部产品，经历双十一洪峰锤炼，企业级的开源产品"
+    "message": "通过自动预热，池化等能力，实现优秀的冷启动性能"
   },
   "homepage.featureListTitle3": {
-    "message": "便于扩展"
+    "message": "请求级实时弹性"
   },
   "homepage.featureListContent3": {
-    "message": "提供Wasm、Lua、进程外三种插件扩展机制，让多语言编写插件不再成为障碍，插件生效粒度既支持全局级、域名级，也支持细粒度的路由级"
+    "message": "为每个请求实时分配可运行实例，不仅能达到成本最优，也能显著减少请求堆积概率"
   },
   "homepage.featureListTitle4": {
-    "message": "动态热更新"
+    "message": "稳定的链路延时"
   },
   "homepage.featureListContent4": {
-    "message": "彻底摆脱reload引起的流量抖动，配置变更毫秒级生效且业务无感，Wasm插件热更新且流量无损"
+    "message": "使用无GC的Rust实现数据链路模块，并借助其出色的编译检查提升可靠性"
   },
   "homepage.featureListTitle5": {
-    "message": "平滑升级"
+    "message": "应用零闲置成本"
   },
   "homepage.featureListContent5": {
-    "message": "兼容Nginx Ingress Annotation 80%+ 的使用场景，且提供功能更丰富的注解，简单一步轻松搞定Nginx Ingress迁移"
+    "message": "从网关，调度到计算资源，均实现共享多租模式，闲置时应用无网关及计算资源消耗"
   },
   "homepage.featureTitle": {
-    "message": "特色功能"
+    "message": "我们有什么不同？"
   },
   "homepage.featureListTitle6": {
-    "message": "安全防护"
+    "message": "便于公有云集成"
   },
   "homepage.featureListContent6": {
-    "message": "提供JWT、OIDC、自定义认证鉴权，深度集成开源Web应用防火墙，让安全防护成为标配"
+    "message": "基于kubernetes标准接口实现，易多云部署，兼容SAE开放API，便于利用公有云大资源池"
   },
   "homepage.footerVersionTitle": {
     "message": "愿景"
   },
   "homepage.footerVersionContent": {
-    "message": "为用户提供一站式云原生网关解决方案."
+    "message": "沉淀阿里云SAE、函数计算实践经验，基于kubernetes为web中长尾场景打造的简单易用、低成本、高性能、高扩展的Serverless应用平台。"
   },
   "homepage.footerDocTitle": {
     "message": "文档"
   },
   "homepage.footerDocListText1": {
-    "message": "Higress 是什么？"
+    "message": "OpenWharf 是什么？"
   },
   "homepage.footerDocListText2": {
     "message": "快速开始"
   },
   "homepage.footerDocListText3": {
+    "message": "报告文档问题"
+  },
+  "homepage.footerDocListText4": {
     "message": "在Github上编辑此文档"
   },
   "homepage.footerResourcesTitle": {
@@ -343,7 +346,7 @@
     "message": "社区"
   },
   "homepage.introDesc": {
-    "message": "Higress是基于阿里内部两年多的Envoy Gateway实践沉淀，以开源Istio + Envoy为核心构建的下一代云原生网关，实现了流量调度 + 服务治理 + 安全防护三合一的高集成能力，深度集成Dubbo、Nacos、Sentinel等微服务技术栈，能够为您带来低成本的网关部署运维及高性能、易使用、易扩展、功能丰富的一站式网关解决方案。"
+    "message": "OpenWharf是沉淀阿里云SAE、函数计算实践经验，基于kubernetes为web中长尾场景打造的简单易用、低成本、高性能、高扩展的Serverless应用平台。"
   },
   "homepage.msemapTitle": {
     "message": "微服务全景图"
@@ -352,10 +355,10 @@
     "message": "请在"
   },
   "homepage.userDesc2": {
-    "message": "上提供信息来获取 Higress 开源落地支持"
+    "message": "上提供信息来获取 OpenWharf 开源落地支持"
   },
   "homepage.userTitle": {
-    "message": "谁在使用 Higress"
+    "message": "谁在使用 OpenWharf"
   },
   "homepage.quickstartButton": {
     "message": "快速入门"
@@ -382,7 +385,7 @@
     "message": "贡献指南"
   },
   "community.contributeDesc": {
-    "message": "欢迎为 Higress 做贡献！"
+    "message": "欢迎为 OpenWharf 做贡献！"
   },
   "community.contributeListTitle1": {
     "message": "邮件列表"

@@ -28,3 +28,15 @@
   --ifm-color-primary-lightest: #02bcfb;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+.navbar {
+  .navbar__item {
+    font-size: 14px;
+    font-family: Avenir-Medium;
+  }
+
+  .navbar__logo img {
+    height: 24px;
+  }
+}
