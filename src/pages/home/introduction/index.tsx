@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import { translate } from '@docusaurus/Translate';
-import { getLink } from '../../../utils';
+import { translate } from "@docusaurus/Translate";
+import { getLink } from "../../../utils";
 
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import './index.scss';
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import "./index.scss";
 
 const data = {
-  title: translate({ id: 'homepage.introTitle', message: 'Higress 是什么？' }),
+  title: translate({ id: "homepage.introTitle", message: "OpenWharf 是什么？" }),
   desc: translate({
-    id: 'homepage.introDesc',
+    id: "homepage.introDesc",
     message:
-      'Higress是基于阿里内部两年多的Envoy Gateway实践沉淀，以开源Istio + Envoy为核心构建的下一代云原生网关，实现了流量调度 + 服务治理 + 安全防护三合一的高集成能力，深度集成Dubbo、Nacos、Sentinel等微服务技术栈，能够为您带来低成本的网关部署运维及高性能、易使用、易扩展、功能丰富的一站式网关解决方案。',
+      "OpenWharf是沉淀阿里云SAE、函数计算实践经验，基于kubernetes为web中长尾场景打造的简单易用、低成本、高性能、高扩展的Serverless应用平台。",
   }),
   img: {
-    'zh-cn': 'https://img.alicdn.com/imgextra/i4/O1CN01goCCMC1HBLZend9Gl_!!6000000000719-2-tps-3201-1561.png',
-    'en-us': 'https://img.alicdn.com/imgextra/i3/O1CN01vndGtZ26dmaJ1SJg7_!!6000000007685-2-tps-3201-1561.png',
+    "zh-cn": "https://img.alicdn.com/imgextra/i4/O1CN01goCCMC1HBLZend9Gl_!!6000000000719-2-tps-3201-1561.png",
+    "en-us": "https://img.alicdn.com/imgextra/i3/O1CN01vndGtZ26dmaJ1SJg7_!!6000000007685-2-tps-3201-1561.png",
   },
 };
 
@@ -29,9 +29,9 @@ const Introduction = ({ language }: { language: string }) => {
               <h3>{data.title}</h3>
               <p>{data.desc}</p>
             </div>
-            <div className="img-wrapper">
-              <img src={getLink(data.img[language] || data.img['zh-cn'])} />
-            </div>
+            {/* <div className="img-wrapper">
+              <img src={getLink(data.img[language] || data.img["zh-cn"])} />
+            </div> */}
           </div>
         </section>
       )}

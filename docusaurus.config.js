@@ -5,8 +5,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Higress',
-  favicon: 'img/higress_logo_small.png',
+  title: 'OpenWharf',
+  favicon: 'img/favico.png',
 
   // Set the production url of your site here
   url: 'https://higress.io',
@@ -17,7 +17,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'alibaba', // Usually your GitHub org/user name.
-  projectName: 'higress', // Usually your repo name.
+  projectName: 'openwharf', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -60,7 +60,7 @@ const config = {
       href: '//g.alicdn.com/mamba/assets/0.0.19/mse-arc-ui.min.css',
     },
   ],
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: ['docusaurus-plugin-sass', './postcss-tailwind-loader.js',],
   presets: [
     [
       'classic',
@@ -117,8 +117,8 @@ const config = {
       navbar: {
         title: '',
         logo: {
-          alt: 'Higress logo',
-          src: '//img.alicdn.com/imgextra/i1/O1CN01I7WjVs1K33EQjInid_!!6000000001107-2-tps-960-290.png',
+          alt: 'OpenWharf logo',
+          src: 'img/logo_standard.svg',
         },
         items: [
           {
@@ -129,26 +129,26 @@ const config = {
           }
         ],
       },
-      footer: {
-        style: 'light',
-        links: [
-          {
-            title: 'Vision',
-            items: [
-              {
-                label: 'Higress is ...',
-                to: '/',
-              },
-            ],
-          },
-        ],
-        logo: {
-          src: '//img.alicdn.com/imgextra/i2/O1CN01oNTGgE1lfW7oEPIzP_!!6000000004846-2-tps-960-290.png',
-          width: 120,
-          height: 36,
-        },
-        copyright: `Copyright © ${new Date().getFullYear()} Higress<br/>浙公网安备 33011002016922号 浙ICP备12022327号-1119`,
-      },
+      // footer: {
+      //   style: 'light',
+      //   links: [
+      //     {
+      //       title: 'Vision',
+      //       items: [
+      //         {
+      //           label: 'OpenWharf is ...',
+      //           to: '/',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   logo: {
+      //     src: 'img/logo_white.svg',
+      //     width: 120,
+      //     height: 36,
+      //   },
+      //   copyright: `Copyright © ${new Date().getFullYear()} OpenWharf<br/>浙公网安备 33011002016922号 浙ICP备12022327号-1119`,
+      // },
       docs: {
         sidebar: {
           autoCollapseCategories: true,

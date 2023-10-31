@@ -1,10 +1,10 @@
 edition: 1.0.0
 name: deploy-oss
-access: higress
+access: openwharf
 vars:
   region: cn-hongkong
   oss:
-    bucketName: 'higress-website-cn-hongkong'
+    bucketName: "openwharf-website-cn-hongkong"
 services:
   portal-www: # 静态资源
     component: oss
