@@ -22,7 +22,7 @@ const topData = {
     },
     {
       text: "GitHub",
-      // link: "https://github.com/alibaba/higress",
+      link: "https://github.com/openwharf-group",
       type: "normal",
       // target: "_blank",
     },
@@ -42,16 +42,16 @@ const Top = ({ language }: { language?: string }) => {
 
   const { starCount, forkCount } = state;
 
-  React.useEffect(() => {
-    fetch("//api.github.com/repos/alibaba/higress")
-      .then((res) => res.json())
-      .then((data) => {
-        setState({
-          starCount: `${data.stargazers_count}`,
-          forkCount: `${data.forks_count}`,
-        });
-      });
-  }, []);
+  // React.useEffect(() => {
+  //   fetch("//api.github.com/repos/alibaba/higress")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setState({
+  //         starCount: `${data.stargazers_count}`,
+  //         forkCount: `${data.forks_count}`,
+  //       });
+  //     });
+  // }, []);
 
   return (
     <BrowserOnly>
@@ -76,7 +76,7 @@ const Top = ({ language }: { language?: string }) => {
                   </Button>
                 ))}
               </div>
-              <div className="github-buttons">
+              {/* <div className="github-buttons">
                 <a
                   // href="https://github.com/alibaba/higress" target="_blank"
                   rel="noopener noreferrer"
@@ -103,7 +103,7 @@ const Top = ({ language }: { language?: string }) => {
                     <span className="count">{topData.versionNote.text}</span>
                   </div>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

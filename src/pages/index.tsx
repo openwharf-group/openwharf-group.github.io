@@ -4,8 +4,7 @@ import Layout from "@theme/Layout";
 import Top from "./home/top";
 import Introduction from "./home/introduction";
 import Feature from "./home/feature";
-import User from "./home/users";
-import Community from "./home/community";
+// import User from "./home/users";
 import { Footer } from "../components";
 import "./index.scss";
 import "tailwindcss/tailwind.css";
@@ -46,7 +45,7 @@ export default function Home(): React.Element {
         <Top language={curLang} />
         <Introduction language={curLang} />
         <Feature />
-        <User />
+        {/* <User /> */}
         <Footer logo={"img/logo_standard.svg"} />
       </div>
     </Layout>
