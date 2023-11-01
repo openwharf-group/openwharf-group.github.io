@@ -9,7 +9,7 @@ const config = {
   favicon: 'img/favico.png',
 
   // Set the production url of your site here
-  url: 'https://higress.io',
+  url: 'https://openwharf.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -69,7 +69,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: ({ docPath, locale }) => {
-            return `https://github.com/higress-group/higress-group.github.io/blob/main/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
+            return `https://github.com/openwharf-group/openwharf-group.github.io/blob/main/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;
           },
         },
         blog: {
@@ -77,7 +77,7 @@ const config = {
           blogSidebarTitle: '全部博文',
           blogSidebarCount: 'ALL',
           editUrl: ({ blogPath, locale }) => {
-            return `https://github.com/higress-group/higress-group.github.io/blob/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
+            return `https://github.com/openwharf-group/openwharf-group.github.io/blob/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
           },
         },
         theme: {
@@ -106,7 +106,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      metadata: [{ name: 'keywords', content: 'higress,higress官网,云原生网关' }],
+      metadata: [{ name: 'keywords', content: 'Openwharf,Openwharf官网' }],
       // Replace with your project's social card
       image: 'img/higress_logo_small.png',
       colorMode: {

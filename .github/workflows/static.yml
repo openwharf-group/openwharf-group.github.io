@@ -33,6 +33,8 @@ jobs:
         run: npm install
       - name: Build Pages
         run: npm run build
+      - run: mv -f .htaccess *.txt build/
+      # 部署到 github Page
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
@@ -41,3 +43,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+
+     # 部署到OSS
+      - run: npm i @serverless-devs/s3 -g  --registry=https://registry.npmmirror.com
+      - run: s config add --AccountID ${{secrets.ACCOUNT_ID}}  --AccessKeyID ${{secrets.ACCESS_KEYID}}  --AccessKeySecret ${{secrets.ACCESS_KEYSECRET}} -a openwharf -f
+      - name: Deploy
+        run: s deploy --use-local -y
+      - name: Update Cache-Control
+        uses: doggycool/ossutil-github-action@master
+        with:
+          ossArgs: 'set-meta oss://openwharf-website-cn-hongkong/ Cache-Control:no-cache -rf'
+          accessKey: ${{ secrets.ACCESS_KEYID }}
+          accessSecret: ${{ secrets.ACCESS_KEYSECRET }}
+          endpoint: oss-cn-hongkong.aliyuncs.com

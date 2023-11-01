@@ -22,7 +22,7 @@ const data = {
     list: [
       {
         text: translate({ id: "homepage.footerDocListText1", message: "OpenWharf 是什么？" }),
-        // link: "/docs/overview/what-is-higress",
+        // link: "/docs/overview/what-is-openwharf",
         // target: "",
       },
       {
@@ -32,12 +32,12 @@ const data = {
       },
       {
         text: translate({ id: "homepage.footerDocListText3", message: "报告文档问题" }),
-        // link: "https://github.com/higress-group/higress-group.github.io/issues/new",
+        // link: "https://github.com/openwharf-group/openwharf-group.github.io/issues/new",
         // target: "",
       },
       {
         text: translate({ id: "homepage.footerDocListText4", message: "在Github上编辑此文档" }),
-        // link: "https://github.com/higress-group/higress-group.github.io",
+        // link: "https://github.com/openwharf-group/openwharf-group.github.io",
         // target: "",
       },
     ],

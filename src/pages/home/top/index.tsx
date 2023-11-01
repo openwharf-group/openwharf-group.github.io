@@ -29,7 +29,6 @@ const topData = {
   ],
   versionNote: {
     text: "Release Note of 1.2.0",
-    // link: "https://github.com/alibaba/higress/releases/tag/v1.2.0",
   },
   releaseDate: "Released on Jul 10, 2023",
 };
@@ -43,7 +42,7 @@ const Top = ({ language }: { language?: string }) => {
   const { starCount, forkCount } = state;
 
   // React.useEffect(() => {
-  //   fetch("//api.github.com/repos/alibaba/higress")
+  //   fetch("//api.github.com/repos/alibaba/openwharf")
   //     .then((res) => res.json())
   //     .then((data) => {
   //       setState({
@@ -78,7 +77,7 @@ const Top = ({ language }: { language?: string }) => {
               </div>
               {/* <div className="github-buttons">
                 <a
-                  // href="https://github.com/alibaba/higress" target="_blank"
+                  // href="https://github.com/alibaba/openwharf" target="_blank"
                   rel="noopener noreferrer"
                 >
                   <div className="star">
@@ -87,7 +86,7 @@ const Top = ({ language }: { language?: string }) => {
                   </div>
                 </a>
                 <a
-                // href="https://github.com/alibaba/higress/fork" target="_blank" rel="noopener noreferrer"
+                // href="https://github.com/alibaba/openwharf/fork" target="_blank" rel="noopener noreferrer"
                 >
                   <div className="fork">
                     <img src="https://img.alicdn.com/imgextra/i2/O1CN01GQIcbr1o7ZfwkxGs1_!!6000000005178-2-tps-300-300.png" />
