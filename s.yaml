@@ -4,7 +4,7 @@ access: openwharf
 vars:
   region: cn-hongkong
   oss:
-    bucketName: "openwharf-website-cn-hongkong"
+    bucketName: "openwharf-website"
 services:
   portal-www: # 静态资源
     component: oss
