@@ -126,7 +126,12 @@ const config = {
             to: '/',
             activeBaseRegex: '^/$',
             position: 'right',
-          }
+          },
+          {
+            type: 'html',
+            position: 'right',
+            value: '<a href="http://open.admin.serverless-cd.cn/api/connect/github"><image style="width: 1.25rem;height: 1.25rem; cursor: pointer;" src="https://img.alicdn.com/imgextra/i4/O1CN01z40sfN1mCUkJnkWxt_!!6000000004918-2-tps-200-200.png"/></a>',
+          },
         ],
       },
       // footer: {
