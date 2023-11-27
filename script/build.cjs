@@ -34,7 +34,7 @@ const replaceNavigation = () => {
 }
 
 const replaceIndexAstro = () => {
-	const originFile = starlightPath + "/index.astro";
+	const originFile = starlightPath + "/index.txt";
 	const replacedContent  = fs.readFileSync('./script/template/index.astro', 'utf-8')
 	fs.writeFileSync(originFile, replacedContent.toString(), 'utf-8');
 }
