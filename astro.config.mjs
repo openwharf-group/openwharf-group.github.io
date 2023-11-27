@@ -1,32 +1,29 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import sidebars from './config/sidebars';
+import sidebarsv2 from './config/sidebarsv2';
+import tailwind from '@astrojs/tailwind';
 
-import tailwind from "@astrojs/tailwind";
-
+export const locales = {
+	'root': { label: '简体中文', lang: 'zh-CN' },
+	'en': { label: 'English', lang: 'en' }
+};
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'Docs V1',
+			title: 'My Docs',
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
-			sidebar: [
-				{
-					label: 'test',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', link: '/docs_v1/guides/example/' },
-						{ label: 'What is Nacos', link: '/docs_v1/guides/what-is-nacos/' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'docs_v2/reference' },
-				},
-			],
+			locales,
+			sidebar: {
+				latest: sidebars,
+				v2: sidebarsv2,
+			},
+			customCss: ['./src/tailwind.css'],
 		}),
-		tailwind()
-	] 
+		tailwind({ applyBaseStyles: false }),
+	],
 });

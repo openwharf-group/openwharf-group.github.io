@@ -1,0 +1,31 @@
+---
+import type { InferGetStaticPropsType } from 'astro';
+import { generateRouteData } from './utils/route-data';
+import { paths } from './utils/routing';
+import Page from './components/Page.astro';
+
+export async function getStaticPaths() {
+
+	const myPath = paths.map((item) => {
+		// @ts-ignore
+		const [baseSegment] = item.params.slug.split('/');
+		if(baseSegment && ['en'].includes(baseSegment) ) {
+			if(!item.params.slug?.startsWith("en/docs/")) {
+				// @ts-ignore
+				item.params.slug = item.params.slug.replace("en/", 'en/docs/');
+			}
+		} else {
+			if(!item.params.slug?.startsWith("docs/")) {
+				item.params.slug = "docs/" + item.params.slug;
+			}
+		}
+		return item;
+	});
+	return myPath;
+}
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+const { Content, headings } = await Astro.props.entry.render();
+const route = generateRouteData({ props: { ...Astro.props, headings }, url: Astro.url });
+---
+<Page {...route}><Content /></Page>
