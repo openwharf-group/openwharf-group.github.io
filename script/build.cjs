@@ -17,7 +17,9 @@ const replaceUserConfig = () => {
 const replaceNavigation = () => {
 	const originFile = starlightPath + "/utils/navigation.ts";
 	const originContent = fs.readFileSync(originFile, 'utf-8');
-	const regex = /if \(config\.sidebar\) \{[\s\S]*?\} else \{/g;
+	const regex = `if (config.sidebar) {
+		return config.sidebar.map((group) => configItemToEntry(group, pathname, locale, routes));
+	} else {`;
 	const replacedContent = originContent.replace(
 		regex,
 		`if (config.sidebar) {
@@ -34,8 +36,8 @@ const replaceNavigation = () => {
 }
 
 const replaceIndexAstro = () => {
-	const originFile = starlightPath + "/index.txt";
-	const replacedContent  = fs.readFileSync('./script/template/index.astro', 'utf-8')
+	const originFile = starlightPath + "/index.astro";
+	const replacedContent  = fs.readFileSync('./script/template/index.txt', 'utf-8')
 	fs.writeFileSync(originFile, replacedContent.toString(), 'utf-8');
 }
 
