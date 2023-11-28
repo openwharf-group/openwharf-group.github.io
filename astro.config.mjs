@@ -3,6 +3,9 @@ import starlight from '@astrojs/starlight';
 import sidebars from './config/sidebars';
 import sidebarsv2 from './config/sidebarsv2';
 import tailwind from '@astrojs/tailwind';
+import rehypeExternalLinks from 'rehype-external-links'
+import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
+
 
 export const locales = {
 	'root': { label: '简体中文', lang: 'zh-CN' },
@@ -26,4 +29,13 @@ export default defineConfig({
 		}),
 		tailwind({ applyBaseStyles: false }),
 	],
+	markdown: {
+		rehypePlugins: [
+			// 在这里添加 rehype-external-links 插件配置
+			[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+		],
+		remarkPlugins: [
+			remarkRemoveMdLinks,
+		],
+	},
 });
