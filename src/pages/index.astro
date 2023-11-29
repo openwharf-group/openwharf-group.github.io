@@ -1,9 +1,17 @@
 ---
+// import { getEntry } from 'astro:content';
+// const blogPost = await getEntry('blog', 'post-1');
+// const {Content, headings} = await blogPost.render();
+// console.log(post);
+import * as greatPost from '../content/blog/post-1.md';
 
+console.log(greatPost.compiledContent())
 ---
+<p>{greatPost.frontmatter.title}</p>
+<p>作者：{greatPost.frontmatter.author}</p>
 
-    <h1>aaa</h1>
-    <a href="./docs/what-is-nacos">v1</a>
-    <br />
-    <a href="./docs/v2/what-is-nacos">v2</a> 
+<h1>aaa</h1>
+<a href="./docs/what-is-nacos">v1</a>
+<br />
+<a href="./docs/v2/what-is-nacos">v2</a>
 

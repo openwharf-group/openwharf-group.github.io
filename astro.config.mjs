@@ -14,9 +14,13 @@ export const locales = {
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://nacos.io',
 	integrations: [
 		starlight({
 			title: 'My Docs',
+			editLink: {
+				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
+			},
 			social: {
 				github: 'https://github.com/withastro/starlight',
 			},
