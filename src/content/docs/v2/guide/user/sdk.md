@@ -582,22 +582,22 @@ naming.unsubscribe("nacos.test.3", event -> {});
 以上2种方式都指定的情况下,客户端优先使用命令行参数的方式获取优先级参数,若是通过命令行参数的方式没有获取到优先级参数则使用环境变量的方式获取优先级参数.如果以上2种方式都未指定优先级参数默认优先级为`properties`
 
 默认优先级:
-![default_order.png](/img/nacos_client_properties_default_order.png)
+![default_order.png](https://img.alicdn.com/imgextra/i4/O1CN01sGuOHO1YT4T9Y3d5p_!!6000000003059-2-tps-686-210.png)
 
 优先级: PROPERTIES
-![default_order.png](/img/nacos_client_properties_default_order.png)
+![default_order.png](https://img.alicdn.com/imgextra/i4/O1CN01sGuOHO1YT4T9Y3d5p_!!6000000003059-2-tps-686-210.png)
 
 优先级: JVM
-![jvm_order.png](/img/nacos_client_properties_jvm_order.png)
+![jvm_order.png](https://img.alicdn.com/imgextra/i4/O1CN01N860jY26Fy4bMUS9e_!!6000000007633-2-tps-686-210.png)
 
 优先级: ENV
-![jvm_order.png](/img/nacos_client_properties_env_order.png)
+![jvm_order.png](https://img.alicdn.com/imgextra/i4/O1CN01JnG3KW1xc6fxsFnQU_!!6000000006463-2-tps-686-210.png)
 
 ##### 搜索
 `NacosClientProperties` 会按照指定优先级进行搜索配置, 以默认优先级(`PROPERTIES`)为例, 如果要获取一个 key 为
 `key1`的值, 查找顺序如下:
 
-![search_order.png](/img/nacos_client_properties_search_order.png)
+![search_order.png](https://img.alicdn.com/imgextra/i4/O1CN01C4SoLw1SKvjSKsbls_!!6000000002229-2-tps-472-404.png)
 
 `NacosClientProperties` 会按照上图顺序搜索,直到查询到为止.
 
@@ -622,7 +622,7 @@ NacosClientProperties properties2 = properties1.derive();
 properties2.setProperty("properties2-key1", "properties2-value1");
 ```
 以上代码如下图所示:
-![derive.png](/img/nacos_client_properties_derive.png)
+![derive.png](https://img.alicdn.com/imgextra/i1/O1CN01FxAEvQ1YPrhCvFXAq_!!6000000003052-2-tps-868-423.png)
 
 那么搜索会怎么搜索呢? 以默认优先级(PROPERTIES)为例:
 ```java
@@ -630,7 +630,7 @@ properties2.setProperty("properties2-key1", "properties2-value1");
 String value = properties2.getProperty("global-key1");
 
 ```
-![derive_search.png](/img/nacos_client_properties_derive_search.png)
+![derive_search.png](https://img.alicdn.com/imgextra/i1/O1CN01FxAEvQ1YPrhCvFXAq_!!6000000003052-2-tps-868-423.png)
 
 
 

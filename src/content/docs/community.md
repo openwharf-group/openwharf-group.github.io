@@ -24,4 +24,4 @@ description: 社区
 
 欢迎加入Nacos钉钉群
 
-![nacos_dingding.jpg](/img/nacos_dingding.jpg)
+![nacos_dingding.jpg](https://img.alicdn.com/imgextra/i3/O1CN01g8cojM1tp9UcgdCVt_!!6000000005950-0-tps-765-923.jpg)

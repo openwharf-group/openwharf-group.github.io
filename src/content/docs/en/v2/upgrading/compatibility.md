@@ -31,7 +31,7 @@ Compared with 1.X, Nacos2.0 adds gRPC communication mode, so there are 2 ports n
 
 **When using VIP/nginx requests, you need to configure it as TCP forwarding, instead of http2 forwarding, otherwise the connection will be disconnected by nginx.**
 
-![nacos2_port_exposure.png](/img/nacos2_port_exposure.png)
+![nacos2_port_exposure.png](https://img.alicdn.com/imgextra/i3/O1CN01xVOk8R1FEtVWsvnGE_!!6000000000456-2-tps-2000-1125.png)
 
 
 The client has the same offset logic. The users configures the main port (default 8848) as in the use of 1.X, and calculates the corresponding gRPC port (default 9848) through the same offset.

@@ -35,7 +35,7 @@ Nacos2.0版本相比1.X新增了gRPC的通信方式，因此需要增加2个端�
 **使用VIP/nginx请求时，需要配置成TCP转发，不能配置http2转发，否则连接会被nginx断开。**
 **9849和7848端口为服务端之间的通信端口，请勿暴露到外部网络环境和客户端测。**
 
-![nacos2_port_exposure.png](/img/nacos2_port_exposure.png)
+![nacos2_port_exposure.png](https://img.alicdn.com/imgextra/i3/O1CN01xVOk8R1FEtVWsvnGE_!!6000000000456-2-tps-2000-1125.png)
 
 客户端拥有相同的计算逻辑，用户如同1.X的使用方式，配置主端口(默认8848)，通过相同的偏移量，计算对应gRPC端口(默认9848)。
 

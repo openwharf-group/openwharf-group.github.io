@@ -297,6 +297,6 @@ curl '127.0.0.1:8848/nacos/v1/ns/raft/state'
 service-a服务在192.168.31.114,192.168.31.115,192.168.31.116启动了三个实例。
 我们想把其中192.168.31.114实例的配置项"user.password"的值改为xxx（即：Beta发布），192.168.31.115,192.168.31.116的配置不做更改。
 
-![beta](/img/beta.png)
+![beta](https://img.alicdn.com/imgextra/i4/O1CN01YcIhHR1T5e8GcW7Hz_!!6000000002331-2-tps-1652-745.png)
 
 ## Nacos原理问题

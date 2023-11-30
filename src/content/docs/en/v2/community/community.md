@@ -23,4 +23,4 @@ Mailing list is recommended for discussing almost anything related to Nacos. Ple
 
 Welcome to join Nacos community nail group
 
-![nacos_dingding.jpg](/img/nacos_dingding.jpg)
+![nacos_dingding.jpg](https://img.alicdn.com/imgextra/i3/O1CN01g8cojM1tp9UcgdCVt_!!6000000005950-0-tps-765-923.jpg)
