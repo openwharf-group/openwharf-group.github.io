@@ -1,17 +1,22 @@
 ---
-// import { getEntry } from 'astro:content';
-// const blogPost = await getEntry('blog', 'post-1');
-// const {Content, headings} = await blogPost.render();
-// console.log(post);
-import * as greatPost from '../content/blog/post-1.md';
+import { languages } from "../i18n/languages";
+import Layout from "../layouts/Layout.astro"
+import { useTranslations } from '../i18n/util';
 
-console.log(greatPost.compiledContent())
+const t = useTranslations(Astro);
+
 ---
-<p>{greatPost.frontmatter.title}</p>
-<p>作者：{greatPost.frontmatter.author}</p>
-
-<h1>aaa</h1>
-<a href="./docs/what-is-nacos">v1</a>
-<br />
-<a href="./docs/v2/what-is-nacos">v2</a>
+<Layout title="Nacos">
+    <h1>aaa</h1>
+    <div class="text-blue-07">testtest</div>
+    <div class="font-bold text-primary">11111111</div>
+    <div class="font-bold text-blue-01">11111111</div>
+    <p class="text-blue-100">roboto</p>
+    <p class="bold text-green-100">121什么是Nacosroboto</p>
+    <a href="./docs/what-is-nacos">v1</a>
+    <br />
+    <p>{t('feedback.button')}</p>
+    <a href="./docs/v2/what-is-nacos">v2</a> 
+</Layout>
+   
 

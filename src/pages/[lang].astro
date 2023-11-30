@@ -1,0 +1,14 @@
+---
+import { languages } from "../i18n/languages";
+import { useTranslations } from '../i18n/util';
+
+export const getStaticPaths = () =>
+	Object.keys(languages).map((lang) => ({ params: { lang } }));
+
+const { lang } = Astro.params;
+const t = useTranslations(Astro);
+---
+
+<h1>{lang}</h1>
+
+{t('feedback.button')}
