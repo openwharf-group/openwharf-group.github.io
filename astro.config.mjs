@@ -8,11 +8,6 @@ import rehypeExternalLinks from 'rehype-external-links'
 import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 
 
-export const locales = {
-	'root': { label: '简体中文', lang: 'zh-CN' },
-	'en': { label: 'English', lang: 'en' }
-};
-
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://nacos.io',
@@ -30,7 +25,7 @@ export default defineConfig({
 				latest: sidebars,
 				v2: sidebarsv2,
 			},
-			customCss: ['./src/tailwind.css'],
+			customCss: ['./src/style/global.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
 	],
