@@ -2,15 +2,11 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sidebars from './config/sidebars';
 import sidebarsv2 from './config/sidebarsv2';
+import locales from './src/i18n/languages';
 import tailwind from '@astrojs/tailwind';
 import rehypeExternalLinks from 'rehype-external-links'
 import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 
-
-export const locales = {
-	'root': { label: '简体中文', lang: 'zh-CN' },
-	'en': { label: 'English', lang: 'en' }
-};
 
 // https://astro.build/config
 export default defineConfig({

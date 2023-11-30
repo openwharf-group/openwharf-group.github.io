@@ -2,7 +2,7 @@ export default [
 	{
 		label: 'Nacos是什么?',
 		translations: {
-			'zh-CN': 'Nacos简介',
+			'zh-cn': 'Nacos简介',
 			'en': 'Nacos introduction'
 		},
 		opened: true,
@@ -11,7 +11,7 @@ export default [
 				label: 'Nacos简介',
 				link: 'docs/v2/what-is-nacos',
 				translations: {
-					'zh-CN': 'Nacos简介',
+					'zh-cn': 'Nacos简介',
 					'en': 'Nacos introduction'
 				},
 			},
@@ -19,7 +19,7 @@ export default [
 				label: '概念',
 				link: 'docs/v2/concepts',
 				translations: {
-					'zh-CN': '概念',
+					'zh-cn': '概念',
 					'en': 'Concepts'
 				}
 			},
@@ -27,7 +27,7 @@ export default [
 				label: '架构',
 				link: 'docs/v2/architecture',
 				translations: {
-					'zh-CN': '架构',
+					'zh-cn': '架构',
 					'en': 'Architecure'
 				}
 			},
@@ -37,7 +37,7 @@ export default [
 		label: '快速开始',
 		opened: true,
 		translations: {
-			'zh-CN': 'Nacos简介',
+			'zh-cn': 'Nacos简介',
 			'en': 'Quick Start'
 		},
 		items: [
@@ -58,7 +58,7 @@ export default [
 	{
 		label: '升级',
 		translations: {
-			'zh-CN': '升级',
+			'zh-cn': '升级',
 			'en': 'Upgrading'
 		},
 		items: [
@@ -66,7 +66,7 @@ export default [
 				label: '兼容性及使用',
 				link: 'docs/v2/upgrading/compatibility',
 				translations: {
-					'zh-CN': '兼容性及使用',
+					'zh-cn': '兼容性及使用',
 					'en': 'Compatibility&Usage'
 				},
 			},
@@ -74,7 +74,7 @@ export default [
 				label: '升级文档',
 				link: 'docs/v2/upgrading/upgrading',
 				translations: {
-					'zh-CN': '升级文档',
+					'zh-cn': '升级文档',
 					'en': 'Upgrading'
 				},
 			},
@@ -83,7 +83,7 @@ export default [
 	{
 		label: '插件',
 		translations: {
-			'zh-CN': '插件',
+			'zh-cn': '插件',
 			'en': 'Plugin'
 		},
 		items: [
@@ -91,7 +91,7 @@ export default [
 				label: '鉴权',
 				link: 'docs/v2/plugin/auth-plugin',
 				translations: {
-					'zh-CN': '鉴权',
+					'zh-cn': '鉴权',
 					'en': 'Authentication'
 				},
 			},
@@ -99,7 +99,7 @@ export default [
 				label: '配置加密',
 				link: 'docs/v2/plugin/config-encryption-plugin',
 				translations: {
-					'zh-CN': '配置加密',
+					'zh-cn': '配置加密',
 					'en': 'Configuration Encryption'
 				},
 			},
@@ -107,7 +107,7 @@ export default [
 				label: '数据源',
 				link: 'docs/v2/plugin/datasource-plugin',
 				translations: {
-					'zh-CN': '数据源',
+					'zh-cn': '数据源',
 					'en': 'Datasource'
 				},
 			},
@@ -115,7 +115,7 @@ export default [
 				label: '轨迹追踪',
 				link: 'docs/v2/plugin/trace-plugin',
 				translations: {
-					'zh-CN': '轨迹追踪',
+					'zh-cn': '轨迹追踪',
 					'en': 'Track Tracing',
 				},
 			},
@@ -123,7 +123,7 @@ export default [
 				label: '环境变量',
 				link: 'docs/v2/plugin/custom-environment-plugin',
 				translations: {
-					'zh-CN': '环境变量',
+					'zh-cn': '环境变量',
 					'en': 'Custom Environment',
 				},
 			},
@@ -131,7 +131,7 @@ export default [
 				label: '反脆弱',
 				link: 'docs/v2/plugin/control-plugin',
 				translations: {
-					'zh-CN': '反脆弱',
+					'zh-cn': '反脆弱',
 					'en': 'Control',
 				},
 			},
@@ -139,7 +139,7 @@ export default [
 				label: '配置变更',
 				link: 'docs/v2/plugin/config-change-plugin',
 				translations: {
-					'zh-CN': '配置变更',
+					'zh-cn': '配置变更',
 					'en': 'Configuration Change',
 				},
 			},
@@ -148,7 +148,7 @@ export default [
 	{
 		label: '用户指南',
 		translations: {
-			'zh-CN': '用户指南',
+			'zh-cn': '用户指南',
 			'en': 'User Guide',
 		},
 		items: [
@@ -160,7 +160,7 @@ export default [
 				label: '其他语言SDK',
 				link: 'docs/v2/guide/user/other-language',
 				translations: {
-					'zh-CN': '其他语言SDK',
+					'zh-cn': '其他语言SDK',
 					'en': 'Other Language'
 				},
 			},
@@ -168,7 +168,7 @@ export default [
 				label: 'Open-API指南',
 				link: 'docs/v2/guide/user/open-api',
 				translations: {
-					'zh-CN': 'OpenAPI指南',
+					'zh-cn': 'OpenAPI指南',
 					'en': 'OpenAPI'
 				},
 			},
@@ -176,7 +176,7 @@ export default [
 				label: '参数校验',
 				link: 'docs/v2/guide/user/parameters-check',
 				translations: {
-					'zh-CN': '参数校验',
+					'zh-cn': '参数校验',
 					'en': 'Parameter Check'
 				},
 			},
@@ -184,7 +184,7 @@ export default [
 				label: '权限认证',
 				link: 'docs/v2/guide/user/auth',
 				translations: {
-					'zh-CN': '权限认证',
+					'zh-cn': '权限认证',
 					'en': 'Authentication'
 				},
 			},
@@ -201,7 +201,7 @@ export default [
 	{
 		label: '运维指南',
 		translations: {
-			'zh-CN': '运维指南',
+			'zh-cn': '运维指南',
 			'en': 'Admin Guide'
 		},
 		items: [
@@ -209,7 +209,7 @@ export default [
 				label: '部署手册',
 				link: 'docs/v2/guide/admin/deployment',
 				translations: {
-					'zh-CN': '部署手册',
+					'zh-cn': '部署手册',
 					'en': 'Deployment Guide',
 				},
 			},
@@ -217,7 +217,7 @@ export default [
 				label: '集群部署说明',
 				link: 'docs/v2/guide/admin/cluster-mode-quick-start',
 				translations: {
-					'zh-CN': '集群部署说明',
+					'zh-cn': '集群部署说明',
 					'en': 'Cluster Mode Deployment',
 				},
 			},
@@ -225,7 +225,7 @@ export default [
 				label: '系统参数说明',
 				link: 'docs/v2/guide/admin/system-configurations',
 				translations: {
-					'zh-CN': '系统参数说明',
+					'zh-cn': '系统参数说明',
 					'en': 'System Configurations',
 				},
 			},
@@ -233,7 +233,7 @@ export default [
 				label: '运维API',
 				link: 'docs/v2/guide/admin/management-api',
 				translations: {
-					'zh-CN': '运维API',
+					'zh-cn': '运维API',
 					'en': 'Management OpenAPI',
 				},
 			},
@@ -241,7 +241,7 @@ export default [
 				label: '控制台手册',
 				link: 'docs/v2/guide/admin/console-guide',
 				translations: {
-					'zh-CN': '控制台手册',
+					'zh-cn': '控制台手册',
 					'en': 'Admin Console Guide',
 				},
 			},
@@ -249,7 +249,7 @@ export default [
 				label: '监控手册',
 				link: 'docs/v2/guide/admin/monitor-guide',
 				translations: {
-					'zh-CN': '监控手册',
+					'zh-cn': '监控手册',
 					'en': 'Nacos Monitor Guide',
 				},
 			},
@@ -257,7 +257,7 @@ export default [
 				label: 'Nacos2.0配置模块压测报告',
 				link: 'docs/v2/guide/admin/nacos2-config-benchmark',
 				translations: {
-					'zh-CN': 'Nacos配置模块压测报告',
+					'zh-cn': 'Nacos配置模块压测报告',
 					'en': 'Config Benchmark',
 				},
 			},
@@ -265,7 +265,7 @@ export default [
 				label: 'Nacos2.0服务发现模块压测报告',
 				link: 'docs/v2/guide/admin/nacos2-naming-benchmark',
 				translations: {
-					'zh-CN': 'Nacos服务发现模块压测报告',
+					'zh-cn': 'Nacos服务发现模块压测报告',
 					'en': 'Naming Benchmark',
 				},
 			},
@@ -273,7 +273,7 @@ export default [
 				label: '其他环境迁移到Nacos',
 				link: 'docs/v2/ecology/use-nacos-sync',
 				translations: {
-					'zh-CN': '其他环境迁移到Nacos',
+					'zh-cn': '其他环境迁移到Nacos',
 					'en': 'Data Migration to Nacos',
 				},
 			},
@@ -282,7 +282,7 @@ export default [
 	{
 		label: '生态融合',
 		translations: {
-			'zh-CN': '生态融合',
+			'zh-cn': '生态融合',
 			'en': 'Ecology',
 		},
 		items: [
@@ -315,7 +315,7 @@ export default [
 	{
 		label: '开源共建',
 		translations: {
-			'zh-CN': '开源共建',
+			'zh-cn': '开源共建',
 			'en': 'Contributor Guide',
 		},
 		items: [
@@ -323,7 +323,7 @@ export default [
 				label: '贡献源码',
 				link: 'docs/v2/contribution/contributing',
 				translations: {
-					'zh-CN': '贡献源码',
+					'zh-cn': '贡献源码',
 					'en': 'Contribute to Nacos',
 				},
 			},
@@ -331,7 +331,7 @@ export default [
 				label: '贡献流程',
 				link: 'docs/v2/contribution/contributing-flow',
 				translations: {
-					'zh-CN': '贡献流程',
+					'zh-cn': '贡献流程',
 					'en': 'Contributing Flow',
 				},
 			},
@@ -339,7 +339,7 @@ export default [
 				label: 'pull request模板',
 				link: 'docs/v2/contribution/pull-request',
 				translations: {
-					'zh-CN': 'pull request模板',
+					'zh-cn': 'pull request模板',
 					'en': 'Pull Request Template',
 				},
 			},
@@ -347,7 +347,7 @@ export default [
 				label: '如何提交问题报告',
 				link: 'docs/v2/contribution/how-to-reporting-bugs',
 				translations: {
-					'zh-CN': '如何提交问题报告',
+					'zh-cn': '如何提交问题报告',
 					'en': 'How to report bugs',
 				},
 			},
@@ -356,7 +356,7 @@ export default [
 	{
 		label: '社区',
 		translations: {
-			'zh-CN': '社区',
+			'zh-cn': '社区',
 			'en': 'Community',
 		},
 		items: [
@@ -364,7 +364,7 @@ export default [
 				label: '社区',
 				link: 'docs/v2/community/community',
 				translations: {
-					'zh-CN': '社区',
+					'zh-cn': '社区',
 					'en': 'Community',
 				},
 			},
@@ -372,7 +372,7 @@ export default [
 				label: '开发团队',
 				link: 'docs/v2/community/nacos-dev',
 				translations: {
-					'zh-CN': '开发团队',
+					'zh-cn': '开发团队',
 					'en': 'Develop Team'
 				},
 			},
