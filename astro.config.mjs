@@ -11,6 +11,9 @@ import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://nacos.io',
+	image: {
+		domain:["img.alicdn"]	
+	},
 	integrations: [
 		starlight({
 			title: 'My Docs',
