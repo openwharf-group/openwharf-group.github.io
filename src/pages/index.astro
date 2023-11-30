@@ -1,7 +1,22 @@
 ---
 import { languages } from "../i18n/languages";
+import Layout from "../layout/layout.astro"
 import { useTranslations } from '../i18n/util';
 
 const t = useTranslations(Astro);
+
 ---
-{t('feedback.button')}
+<Layout title="Nacos">
+    <h1>aaa</h1>
+    <div class="text-blue-07">testtest</div>
+    <div class="font-bold text-primary">11111111</div>
+    <div class="font-bold text-blue-01">11111111</div>
+    <p class="text-blue-100">roboto</p>
+    <p class="bold text-green-100">1111`112121什么是Nacosroboto</p>
+    <a href="./docs/what-is-nacos">v1</a>
+    <br />
+    <p>{t('feedback.button')}</p>
+    <a href="./docs/v2/what-is-nacos">v2</a> 
+</Layout>
+   
+

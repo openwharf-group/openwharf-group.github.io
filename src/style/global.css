@@ -1,0 +1,29 @@
+/* 集成的默认注入的 base.css 文件 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 200;
+    src: url('../public/fonts/Roboto-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Roboto-Bold';
+    font-style: normal;
+    src: url('../public/fonts/Roboto-Bold.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Roboto-BoldItalic';
+    font-style: italic;
+    font-weight: 200;
+    src: url('../public/fonts/Roboto-BoldItalic.ttf') format('truetype');
+  }
+
+* {
+    font-family:'Roboto',sans-serif;
+    --sl-font: 'Roboto', sans-serif;
+}

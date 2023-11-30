@@ -8,6 +8,11 @@ import rehypeExternalLinks from 'rehype-external-links'
 import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 
 
+export const locales = {
+	'root': { label: '简体中文', lang: 'zh-CN' },
+	'en': { label: 'English', lang: 'en' }
+};
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://nacos.io',
@@ -32,10 +37,10 @@ export default defineConfig({
 	markdown: {
 		rehypePlugins: [
 			// 在这里添加 rehype-external-links 插件配置
-			[rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
-		],
-		remarkPlugins: [
-			remarkRemoveMdLinks,
-		],
-	},
+			[rehypeExternalLinks, {
+				target: '_blank',
+				rel: ['noopener', 'noreferrer']
+			}]],
+		remarkPlugins: [remarkRemoveMdLinks]
+	}
 });
