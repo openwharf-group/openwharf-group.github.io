@@ -5,6 +5,7 @@ import starlightPlugin from '@astrojs/starlight-tailwind';
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		//替换调色板，只能用这下面的颜色
 		colors: {
 			blue: {
 				'01': '#EDF2FC',
@@ -42,6 +43,7 @@ export default {
 			}
 		},
 		extend: {
+			// 设置starlight文档颜色
 			colors: {
 				gray: {
 					100: "#F4F4F6",
