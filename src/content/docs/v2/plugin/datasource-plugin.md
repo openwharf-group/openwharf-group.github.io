@@ -4,6 +4,7 @@ keywords: MySQL,Derby,多数据源
 description: 多数据源
 ---
 
+# 多数据源插件
 Nacos从2.2.0版本开始,可通过SPI机制注入多数据源实现插件,并在引入对应数据源实现后,便可在Nacos启动时通过读取`application.properties`配置文件中`spring.datasource.platform`配置项选择加载对应多数据源插件.本文档详细介绍一个多数据源插件如何实现以及如何使其生效。
 
 > 注意:

@@ -4,12 +4,13 @@ keywords: Dubbo,Nacos,注册中心
 description: Dubbo 融合 Nacos 成为注册中心
 ---
 
+# Dubbo 融合 Nacos 成为注册中心
 
 Nacos 作为 Dubbo 生态系统中重要的注册中心实现，本文将会介绍如何进行 Dubbo 对接 Nacos 注册中心的工作。
 
 ## 预备工作
 
-请确保后台已经启动 Nacos 服务，可先行参考 [Nacos 快速入门](../quickstart/quick-start.md)。
+请确保后台已经启动 Nacos 服务，可先行参考 [Nacos 快速入门](../quickstart/quick-start.md)。 
 
 ## 快速上手
 
@@ -44,13 +45,13 @@ Dubbo 融合 Nacos 成为注册中心的操作步骤非常简单，大致步骤�
         <version>1.0.11</version>
     </dependency>
     ...
-
+    
 </dependencies>
 ```
 
 ### 配置注册中心
 
-假设您 Dubbo 应用使用 Spring Framework 装配，将有两种配置方法可选，分别为：[Dubbo Spring 外部化配置](//mercyblitz.github.io/2018/01/18/Dubbo-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE/)以及 Spring XML 配置文件以及，笔者强烈推荐前者。
+假设您 Dubbo 应用使用 Spring Framework 装配，将有两种配置方法可选，分别为：[Dubbo Spring 外部化配置](https://mercyblitz.github.io/2018/01/18/Dubbo-%E5%A4%96%E9%83%A8%E5%8C%96%E9%85%8D%E7%BD%AE/)以及 Spring XML 配置文件以及，笔者强烈推荐前者。
 
 ### Dubbo Spring 外部化配置
 
@@ -71,11 +72,11 @@ dubbo.registry.address = nacos://10.20.153.10:8848
 ```
 随后，重启您的 Dubbo 应用，Dubbo 的服务提供和消费信息在 Nacos 控制台中可以显示：
 
-![image-20181213103845976-4668726.png | left | 747x284](//img.alicdn.com/tfs/TB1n6m7zMTqK1RjSZPhXXXfOFXa-2784-1058.png "")
+![image-20181213103845976-4668726.png | left | 747x284](https://img.alicdn.com/tfs/TB1n6m7zMTqK1RjSZPhXXXfOFXa-2784-1058.png "")
 
 如图所示，服务名前缀为 `providers:` 的信息为服务提供者的元信息，`consumers:` 则代表服务消费者的元信息。点击“**详情**”可查看服务状态详情：
 
-![image-20181213104145998-4668906.png | left | 747x437](//img.alicdn.com/tfs/TB1vZzfzQzoK1RjSZFlXXai4VXa-2714-1588.png "")
+![image-20181213104145998-4668906.png | left | 747x437](https://img.alicdn.com/tfs/TB1vZzfzQzoK1RjSZFlXXai4VXa-2714-1588.png "")
 
 如果您正在使用 Spring XML 配置文件装配 Dubbo 注册中心的话，请参考下一节。
 
@@ -89,10 +90,10 @@ dubbo.registry.address = nacos://10.20.153.10:8848
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
     xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd        http://dubbo.apache.org/schema/dubbo        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
-
+ 
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="dubbo-provider-xml-demo"  />
-
+ 
     <!-- 使用 Nacos 注册中心 -->
     <dubbo:registry address="nacos://10.20.153.10:8848" />
     <!-- 如果要使用自己创建的命名空间可以使用下面配置 -->
@@ -103,7 +104,7 @@ dubbo.registry.address = nacos://10.20.153.10:8848
 
 重启 Dubbo 应用后，您同样也能发现服务提供方和消费方的注册元信息呈现在 Nacos 控制台中：
 
-![image-20181213113049185-4671849.png | left | 747x274](//img.alicdn.com/tfs/TB1zl2dzQPoK1RjSZKbXXX1IXXa-2784-1022.png "")
+![image-20181213113049185-4671849.png | left | 747x274](https://img.alicdn.com/tfs/TB1zl2dzQPoK1RjSZKbXXX1IXXa-2784-1022.png "")
 
 您是否觉得配置或切换 Nacos 注册中心超级 Easy 呢？如果您仍旧意犹未尽或者不甚明白的话，可参考以下完整的示例。
 
@@ -113,7 +114,7 @@ dubbo.registry.address = nacos://10.20.153.10:8848
 
 ### 示例接口与实现
 完整代码归档位置：
-//github.com/nacos-group/nacos-examples/tree/master/nacos-dubbo-example
+https://github.com/nacos-group/nacos-examples/tree/master/nacos-dubbo-example
 
 首先定义示例接口，如下所示：
 
@@ -137,7 +138,7 @@ import org.springframework.beans.factory.annotation.Value;
 
 /**
  * Default {@link DemoService}
- *  //nacos.io/docs/use-nacos-with-dubbo.html
+ *  https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html
  * @since 2.6.5
  */
 @Service(version = "${demo.service.version}")
@@ -204,7 +205,7 @@ import java.io.IOException;
 
 /**
  * {@link DemoService} provider demo
- * //nacos.io/docs/use-nacos-with-dubbo.html
+ * https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html
  */
 @EnableDubbo(scanBasePackages = "com.alibaba.nacos.example.dubbo.service")
 @PropertySource(value = "classpath:/provider-config.properties")
@@ -266,7 +267,7 @@ import java.io.IOException;
 
 /**
  * {@link DemoService} consumer demo
- * //nacos.io/docs/use-nacos-with-dubbo.html
+ * https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html
  */
 @EnableDubbo
 @PropertySource(value = "classpath:/consumer-config.properties")
@@ -304,7 +305,7 @@ public class DemoServiceConsumerBootstrap {
 
 在本地启动两次 `DemoServiceProviderBootstrap`，注册中心将出现两个健康服务：
 
-![image-20181213123909636-4675949.png | left | 747x38](//img.alicdn.com/tfs/TB1s9fbzMHqK1RjSZFgXXa7JXXa-2390-122.png "")
+![image-20181213123909636-4675949.png | left | 747x38](https://img.alicdn.com/tfs/TB1s9fbzMHqK1RjSZFgXXa7JXXa-2390-122.png "")
 
 再运行 `DemoServiceConsumerBootstrap`，运行结果如下：
 
@@ -450,7 +451,7 @@ public class DemoServiceConsumerXmlBootstrap {
 
 同样地，先启动两个 `DemoServiceProviderXmlBootstrap` 引导类，观察 Nacos 注册中心服务提供者变化：
 
-![image-20181213125527201-4676927.png | left | 747x33](//img.alicdn.com/tfs/TB1HCfbzMHqK1RjSZFgXXa7JXXa-2388-106.png "")
+![image-20181213125527201-4676927.png | left | 747x33](https://img.alicdn.com/tfs/TB1HCfbzMHqK1RjSZFgXXa7JXXa-2388-106.png "")
 
 XML 配置驱动的服务版本为 `2.0.0`，因此注册服务无误。
 
@@ -473,6 +474,6 @@ Service [name :demoService , port : 20880] sayName("Nacos") : Hello,Nacos
 
 如果您关注或喜爱 Dubbo 以及 Nacos 等开源工程，不妨为它们点 “star”，加油打气链接：
 
-- Apache Dubbo：//github.com/apache/dubbo
-- Dubbo Nacos Registry：//github.com/apache/dubbo/tree/master/dubbo-registry/dubbo-registry-nacos
-- Alibaba Nacos：//github.com/alibaba/nacos
+- Apache Dubbo：https://github.com/apache/dubbo
+- Dubbo Nacos Registry：https://github.com/apache/dubbo/tree/master/dubbo-registry/dubbo-registry-nacos
+- Alibaba Nacos：https://github.com/alibaba/nacos

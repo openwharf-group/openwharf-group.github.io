@@ -4,6 +4,7 @@ keywords: 贡献,源码
 description: 我们非常欢迎您的贡献和加入，无论是微不足道的清理或大的新功能。
 ---
 
+# 如何贡献
 
 我们非常欢迎您的贡献和加入，无论是微不足道的清理或大的新功能。我们希望为每个编程语言提供高质量、有良好文档的代码。
 
@@ -11,18 +12,18 @@ description: 我们非常欢迎您的贡献和加入，无论是微不足道的�
 
 ## 联系我们
 
-#### Nacos Gitter-[//gitter.im/alibaba/nacos](//gitter.im/alibaba/nacos)
-#### Nacos 微博-[//weibo.com/u/6574374908](//weibo.com/u/6574374908)
-#### Nacos segmentfault-[//segmentfault.com/t/nacos](//segmentfault.com/t/nacos)
+#### Nacos Gitter-[https://gitter.im/alibaba/nacos](https://gitter.im/alibaba/nacos)
+#### Nacos 微博-[https://weibo.com/u/6574374908](https://weibo.com/u/6574374908)
+#### Nacos segmentfault-[https://segmentfault.com/t/nacos](https://segmentfault.com/t/nacos)
 
 #### 邮件列表
 
-邮件列表建议讨论任何与Nacos有关的事情。具体请看[参考手册](//github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)描述如何订阅我们的邮件列表。
+邮件列表建议讨论任何与Nacos有关的事情。具体请看[参考手册](https://github.com/apache/incubator-dubbo/wiki/Mailing-list-subscription-guide)描述如何订阅我们的邮件列表。
 
-* [dev-nacos@googlegroups.com](//lark.alipay.com/nacos/nacosdocs/vl19q1): 开发邮件列表。如果你在使用或开发Nacos中遇到任何问题,可以在这里提问题。
-* [commits-nacos@googlegroups.com](//lark.alipay.com/nacos/nacosdocs/vl19q1): 所有提交将被发送到这个邮件列表。如果你有兴趣Nacos的发展，你可以订阅它。
-* [users-nacos@googlegroups.com](//lark.alipay.com/nacos/nacosdocs/vl19q1): 在Github中[提问题](//github.com/alibaba/nacos/issues)、更新和[提交需求](//github.com/alibaba/nacos/pulls)将被发送到这个邮件列表。
-* [nacos\_dev@linux.alibaba.com](//lark.alipay.com/nacos/nacosdocs/vl19q1).
+* [dev-nacos@googlegroups.com](https://lark.alipay.com/nacos/nacosdocs/vl19q1): 开发邮件列表。如果你在使用或开发Nacos中遇到任何问题,可以在这里提问题。
+* [commits-nacos@googlegroups.com](https://lark.alipay.com/nacos/nacosdocs/vl19q1): 所有提交将被发送到这个邮件列表。如果你有兴趣Nacos的发展，你可以订阅它。
+* [users-nacos@googlegroups.com](https://lark.alipay.com/nacos/nacosdocs/vl19q1): 在Github中[提问题](https://github.com/alibaba/nacos/issues)、更新和[提交需求](https://github.com/alibaba/nacos/pulls)将被发送到这个邮件列表。
+* [nacos\_dev@linux.alibaba.com](https://lark.alipay.com/nacos/nacosdocs/vl19q1).
 
 ## 贡献代码
 
@@ -30,7 +31,7 @@ description: 我们非常欢迎您的贡献和加入，无论是微不足道的�
 
 请贡献代码时候，请先确认和检查以下内容：
 
-#### 阅读Nacos[代码规约](//github.com/alibaba/nacos/blob/develop/style/codeStyle.md) ，并根据指引设置IDE的codeStyle及校验插件。
+#### 阅读Nacos[代码规约](https://github.com/alibaba/nacos/blob/develop/style/codeStyle.md) ，并根据指引设置IDE的codeStyle及校验插件。
 
 #### 如果变化不大，请编写一些覆盖新功能的单元测试。
 
@@ -47,7 +48,7 @@ description: 我们非常欢迎您的贡献和加入，无论是微不足道的�
 * 推送变更到你的fork仓库中。
 * 按照[拉取请求模板](./pull-request.md)中的清单进行操作。
 * 在发送拉取请求之前，请将您的fork仓库与远程存储库同步，这将使您的拉取请求变得简单明了。详情见下面的指南：
-```bash
+```
 git remote add upstream git@github.com:alibaba/nacos.git
 git fetch upstream
 git rebase upstream/master
@@ -67,9 +68,9 @@ git push origin your_awesome_patch
 
 #### 已确认过文档确实有误或存在缺失。
 
-#### 熟悉[Markdown](//www.markdownguide.org/getting-started) 。
+#### 熟悉[Markdown](https://www.markdownguide.org/getting-started) 。
 
-#### 熟悉[docsite](//github.com/txd-team/docsite) ，至少能够根据[官方文档README.md](//github.com/nacos-group/nacos-group.github.io) 的引导完成本地调试
+#### 熟悉[docsite](https://github.com/txd-team/docsite) ，至少能够根据[官方文档README.md](https://github.com/nacos-group/nacos-group.github.io) 的引导完成本地调试
 
 ### 贡献流程
 
@@ -93,6 +94,6 @@ git push origin your_awesome_patch
 
 ##### 可测性，关于测试过程的单元测试覆盖率（80%）
 
-##### 可维护性，可满足我们的[代码规约](//github.com/alibaba/nacos/blob/develop/style/codeStyle.md) ，以及至少3个月的更新频率
+##### 可维护性，可满足我们的[代码规约](https://github.com/alibaba/nacos/blob/develop/style/codeStyle.md) ，以及至少3个月的更新频率
 
 ##### 可部署性，我们可以鼓励您部署到[maven repository](http://search.maven.org/)

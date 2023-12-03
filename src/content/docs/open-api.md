@@ -4,6 +4,7 @@ keywords: Open API,指南
 description: Open API 指南
 ---
 
+# Open API 指南
 
 - 配置管理
   - [获取配置](#1.1)
@@ -85,7 +86,7 @@ GET
 ### 示例
 * 请求示例
 
-    ```bash
+    ```plain
     curl -X GET 'http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.example&group=com.alibaba.nacos'
 
     ```
@@ -264,7 +265,7 @@ POST
 ### 示例
 * 请求示例
 
-```bash
+```
 curl -X POST 'http://127.0.0.1:8848/nacos/v1/cs/configs' -d 'dataId=nacos.example&group=com.alibaba.nacos&content=contentTest'
 
 ```
@@ -316,7 +317,7 @@ DELETE
 ### 示例
 * 请求示例
 
-```bash
+```
 curl -X DELETE 'http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=nacos.example&group=com.alibaba.nacos'
 
 ```
@@ -363,13 +364,13 @@ GET
 ### 示例
 * 请求示例
 
-```bash
+```
 curl -X GET 'http://127.0.0.1:8848/nacos/v1/cs/history?search=accurate&dataId=nacos.example&group=com.alibaba.nacos'
 ```
 
 * 返回示例
 
-```json
+```
 {
   "totalCount": 1,
   "pageNumber": 1,
@@ -430,13 +431,13 @@ GET
 ### 示例
 * 请求示例
 
-```bash
+```
 curl -X GET 'http://127.0.0.1:8848/nacos/v1/cs/history?nid=203&tenant=&dataId=nacos.example&group=com.alibaba.nacos'
 ```
 
 * 返回示例
 
-```json
+```
 {
   "id": "203",
   "lastId": -1,
@@ -490,13 +491,13 @@ GET
 ### 示例
 * 请求示例
 
-```bash
+```
 curl -X GET 'http://127.0.0.1:8848/nacos/v1/cs/history/previous?id=309135486247505920&tenant=&dataId=nacos.example&group=com.alibaba.nacos'
 ```
 
 * 返回示例
 
-```json
+```
 {
   "id": "203",
   "lastId": -1,
@@ -525,7 +526,7 @@ curl -X GET 'http://127.0.0.1:8848/nacos/v1/cs/history/previous?id=3091354862475
 POST
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance
 ```
 
@@ -556,7 +557,7 @@ POST
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance?port=8848&healthy=true&ip=11.11.11.11&weight=1.0&serviceName=nacos.test.3&encoding=GBK&namespaceId=n1'
 ```
 ### 示例返回
@@ -571,7 +572,7 @@ ok
 DELETE
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance
 ```
 
@@ -598,7 +599,7 @@ DELETE
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X DELETE '127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.test.1&ip=1.1.1.1&port=8888&clusterName=TEST1'
 ```
 ### 示例返回
@@ -615,7 +616,7 @@ ok
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance
 ```
 
@@ -645,7 +646,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X PUT '127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.test.1&ip=1.1.1.1&port=8888&clusterName=TEST1&weight=8&metadata={}'
 ```
 ### 示例返回
@@ -660,7 +661,7 @@ ok
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance/list
 ```
 
@@ -685,38 +686,38 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/instance/list?serviceName=nacos.test.1'
 ```
 ### 示例返回
 ```json
 {
-  "name": "DEFAULT_GROUP@@nacos.test.1",
-  "groupName": "DEFAULT_GROUP",
-  "clusters": "",
-  "cacheMillis": 10000,
+  "name": "DEFAULT_GROUP@@nacos.test.1", 
+  "groupName": "DEFAULT_GROUP", 
+  "clusters": "", 
+  "cacheMillis": 10000, 
   "hosts": [
     {
-      "instanceId": "10.10.10.10#8888#DEFAULT#DEFAULT_GROUP@@nacos.test.1",
-      "ip": "10.10.10.10",
-      "port": 8888,
-      "weight": 1,
-      "healthy": false,
-      "enabled": true,
-      "ephemeral": false,
-      "clusterName": "DEFAULT",
-      "serviceName": "DEFAULT_GROUP@@nacos.test.1",
-      "metadata": { },
-      "instanceHeartBeatInterval": 5000,
-      "instanceIdGenerator": "simple",
-      "instanceHeartBeatTimeOut": 15000,
+      "instanceId": "10.10.10.10#8888#DEFAULT#DEFAULT_GROUP@@nacos.test.1", 
+      "ip": "10.10.10.10", 
+      "port": 8888, 
+      "weight": 1, 
+      "healthy": false, 
+      "enabled": true, 
+      "ephemeral": false, 
+      "clusterName": "DEFAULT", 
+      "serviceName": "DEFAULT_GROUP@@nacos.test.1", 
+      "metadata": { }, 
+      "instanceHeartBeatInterval": 5000, 
+      "instanceIdGenerator": "simple", 
+      "instanceHeartBeatTimeOut": 15000, 
       "ipDeleteTimeout": 30000
     }
-  ],
-  "lastRefTime": 1528787794594,
-  "checksum": "",
-  "allIPs": false,
-  "reachProtectionThreshold": false,
+  ], 
+  "lastRefTime": 1528787794594, 
+  "checksum": "", 
+  "allIPs": false, 
+  "reachProtectionThreshold": false, 
   "valid": true
 }
 ```
@@ -729,7 +730,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/instance/list?serviceName=nacos.test.1'
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance
 ```
 
@@ -757,7 +758,7 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.test.2&ip=10.10.10.10&port=8888&cluster=DEFAULT'
 ```
 ### 示例返回
@@ -783,7 +784,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.test.2&ip=10.
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance/beat
 ```
 
@@ -810,7 +811,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X PUT '127.0.0.1:8848/nacos/v1/ns/instance/beat?serviceName=nacos.test.2&beat=%7b%22cluster%22%3a%22c1%22%2c%22ip%22%3a%22127.0.0.1%22%2c%22metadata%22%3a%7b%7d%2c%22port%22%3a8080%2c%22scheduled%22%3atrue%2c%22serviceName%22%3a%22jinhan0Fx4s.173TL.net%22%2c%22weight%22%3a1%7d'
 ```
 ### 示例返回
@@ -827,7 +828,7 @@ ok
 POST
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/service
 ```
 
@@ -853,7 +854,7 @@ POST
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X POST '127.0.0.1:8848/nacos/v1/ns/service?serviceName=nacos.test.2&metadata=k1%3dv1'
 ```
 ### 示例返回
@@ -870,7 +871,7 @@ ok
 DELETE
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/service
 ```
 
@@ -893,7 +894,7 @@ DELETE
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X DELETE '127.0.0.1:8848/nacos/v1/ns/service?serviceName=nacos.test.2'
 ```
 ### 示例返回
@@ -910,7 +911,7 @@ ok
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/service
 ```
 
@@ -936,7 +937,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```
+```plain
 curl -X PUT '127.0.0.1:8848/nacos/v1/ns/service?serviceName=nacos.test.2&metadata=k1%3dv1'
 ```
 ### 示例返回
@@ -954,7 +955,7 @@ ok
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/service
 ```
 
@@ -977,11 +978,11 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/service?serviceName=nacos.test.2'
 ```
 ### 示例返回
-```json
+```
 {
     metadata: { },
     groupName: "DEFAULT_GROUP",
@@ -1013,7 +1014,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/service?serviceName=nacos.test.2'
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/service/list
 ```
 
@@ -1037,11 +1038,11 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/service/list?pageNo=1&pageSize=2'
 ```
 ### 示例返回
-```json
+```
 {
     "count":148,
     "doms": [
@@ -1060,7 +1061,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/service/list?pageNo=1&pageSize=2'
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/operator/switches
 ```
 
@@ -1077,11 +1078,11 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/switches'
 ```
 ### 示例返回
-```json
+```
 {
     name: "00-00---000-NACOS_SWITCH_DOMAIN-000---00-00",
     masters: null,
@@ -1138,7 +1139,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/switches'
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/operator/switches
 ```
 
@@ -1161,7 +1162,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X PUT '127.0.0.1:8848/nacos/v1/ns/operator/switches?entry=pushEnabled&value=false&debug=true'
 ```
 ### 示例返回
@@ -1178,7 +1179,7 @@ ok
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/operator/metrics
 ```
 
@@ -1195,11 +1196,11 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/metrics'
 ```
 ### 示例返回
-```json
+```
 {
     serviceCount: 336,
     load: 0.09,
@@ -1221,7 +1222,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/metrics'
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/operator/servers
 ```
 
@@ -1242,12 +1243,12 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/servers'
 ```
 
 ### 示例返回
-```json
+```
 {
     servers: [
         {
@@ -1297,7 +1298,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/operator/servers'
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/raft/leader
 ```
 
@@ -1314,11 +1315,11 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/ns/raft/leader'
 ```
 ### 示例返回
-```json
+```
 {
     leader: "{"heartbeatDueMs":2500,"ip":"1.1.1.1:8848","leaderDueMs":12853,"state":"LEADER","term":54202,"voteFor":"1.1.1.1:8848"}"
 }
@@ -1333,7 +1334,7 @@ curl -X GET '127.0.0.1:8848/nacos/v1/ns/raft/leader'
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/health/instance
 ```
 
@@ -1360,7 +1361,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X PUT 'http://127.0.0.1:8848/nacos/v1/ns/health/instance?port=8848&healthy=true&ip=11.11.11.11&serviceName=nacos.test.3&namespaceId=n1'
 ```
 ### 示例返回
@@ -1377,7 +1378,7 @@ ok
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance/metadata/batch
 ```
 
@@ -1406,8 +1407,8 @@ PUT
 * instances: json数组。通过ip+port+ephemeral+cluster定位到某一实例。
 
 ### 示例请求
-```bash
-curl -X PUT 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&instances=[{"ip":"3.3.3.3","port": "8080","ephemeral":"true","clusterName":"xxxx-cluster"},{"ip":"2.2.2.2","port":"8080","ephemeral":"true","clusterName":"xxxx-cluster"}]&metadata={"age":"20","name":"cocolan"}'
+```plain
+curl -X PUT 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&instances=[{"ip":"3.3.3.3","port": "8080","ephemeral":"true","clusterName":"xxxx-cluster"},{"ip":"2.2.2.2","port":"8080","ephemeral":"true","clusterName":"xxxx-cluster"}]&metadata={"age":"20","name":"cocolan"}' 
 or
 curl -X PUT 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&consistencyType=ephemeral&metadata={"age":"20","name":"cocolan"}'
 ```
@@ -1427,7 +1428,7 @@ curl -X PUT 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'name
 DELETE
 
 ### 请求路径
-```
+```plain
 /nacos/v1/ns/instance/metadata/batch
 ```
 
@@ -1456,8 +1457,8 @@ DELETE
 * instances: json数组。通过ip+port+ephemeral+cluster定位到某一实例。
 
 ### 示例请求
-```bash
-curl -X DELETE 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&instances=[{"ip":"3.3.3.3","port": "8080","ephemeral":"true","clusterName":"xxxx-cluster"},{"ip":"2.2.2.2","port":"8080","ephemeral":"true","clusterName":"xxxx-cluster"}]&metadata={"age":"20","name":"cocolan"}'
+```plain
+curl -X DELETE 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&instances=[{"ip":"3.3.3.3","port": "8080","ephemeral":"true","clusterName":"xxxx-cluster"},{"ip":"2.2.2.2","port":"8080","ephemeral":"true","clusterName":"xxxx-cluster"}]&metadata={"age":"20","name":"cocolan"}' 
 or
 curl -X DELETE 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'namespaceId=public&serviceName=xxxx@@xxxx&consistencyType=ephemeral&metadata={"age":"20","name":"cocolan"}'
 ```
@@ -1474,7 +1475,7 @@ curl -X DELETE 'http://localhost:8848/nacos/v1/ns/instance/metadata/batch' -d 'n
 GET
 
 ### 请求路径
-```
+```plain
 /nacos/v1/console/namespaces
 ```
 
@@ -1492,7 +1493,7 @@ GET
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X GET 'http://localhost:8848/nacos/v1/console/namespaces'
 ```
 ### 示例返回
@@ -1506,7 +1507,7 @@ curl -X GET 'http://localhost:8848/nacos/v1/console/namespaces'
 POST
 
 ### 请求路径
-```
+```plain
 /nacos/v1/console/namespaces
 ```
 
@@ -1529,7 +1530,7 @@ POST
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X POST 'http://localhost:8848/nacos/v1/console/namespaces' -d 'customNamespaceId=&namespaceName=dev&namespaceDesc='
 ```
 ### 示例返回
@@ -1543,7 +1544,7 @@ true
 PUT
 
 ### 请求路径
-```
+```plain
 /nacos/v1/console/namespaces
 ```
 
@@ -1566,7 +1567,7 @@ PUT
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X PUT 'http://localhost:8848/nacos/v1/console/namespaces' -d 'namespace=dev&namespaceShowName=开发环境2&namespaceDesc=只用于开发2'
 ```
 ### 示例返回
@@ -1580,7 +1581,7 @@ true
 DELETE
 
 ### 请求路径
-```
+```plain
 /nacos/v1/console/namespaces
 ```
 
@@ -1601,7 +1602,7 @@ DELETE
 | 200 | OK | 正常 |
 
 ### 示例请求
-```bash
+```plain
 curl -X DELETE 'http://localhost:8848/nacos/v1/console/namespaces' -d 'namespaceId=dev'
 ```
 ### 示例返回

@@ -4,6 +4,8 @@ keywords: Open API,指南
 description: Open API 指南
 ---
 
+# Open API 指南
+
 Nacos 2.X 版本兼容 Nacos1.X 版本的OpenAPI, 请参考文档[Nacos1.X OpenAPI](../../../open-api.md)使用。
 
 > 注意：未特殊注明支持版本的OpenAPI均从2.2.0版本开始支持。
@@ -2635,7 +2637,7 @@ API接口返回体中的错误码及对应提示信息汇总见下表
     ```shell
     curl -X GET 'http://localhost:8848/nacos/v2/core/loader/reloadCurrent?count=1&redirectAddress=127.0.0.1:8848'
     ```
-
+    
 * 返回示例
 
     ```text

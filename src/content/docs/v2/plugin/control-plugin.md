@@ -4,8 +4,9 @@ keywords: 反脆弱,限流,连接数限制,TPS
 description: Nacos 支持反脆弱插件，避免高压下的集群容量问题。
 ---
 
+# 反脆弱插件
 
-Nacos 从2.3.0版本开始，支持通过[SPI](//docs.oracle.com/javase/tutorial/sound/SPI-intro.html)的方式注入反脆弱相关插件，并在`application.properties`配置文件中选择某一种插件实现作为实际反脆弱能力。本文档会详细介绍如何实现一个反脆弱插件和如何使其生效。
+Nacos 从2.3.0版本开始，支持通过[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)的方式注入反脆弱相关插件，并在`application.properties`配置文件中选择某一种插件实现作为实际反脆弱能力。本文档会详细介绍如何实现一个反脆弱插件和如何使其生效。
 
 ## 反脆弱插件中的概念
 
@@ -126,13 +127,13 @@ mkdir -p ${nacos.home}/data/connection/
 echo '{"countLimit": 100}' > ${nacos.home}/data/connection/limitRule
 ```
  随后重启Nacos节点即可。
-
+ 
  又例如想要设置配置查询接口的TPS为100，可执行如下操作：
-
+ 
  ```shell
  mkdir -p ${nacos.home}/data/tps/
  # ConfigQuery 为配置查询接口的监控点名称（pointName)
- echo '{"pointName":"ConfigQuery","pointRule":{"maxCount":100,"monitorType":"intercept"}}' > ${nacos.home}/data/tps/ConfigQuery
+ echo '{"pointName":"ConfigQuery","pointRule":{"maxCount":100,"monitorType":"intercept"}}' > ${nacos.home}/data/tps/ConfigQuery 
  ```
   随后重启Nacos节点即可。
 

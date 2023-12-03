@@ -4,11 +4,12 @@ keywords: Java,SDK
 description: Java SDK
 ---
 
+# Java SDK
 
 ## 概述部分
 
 Maven 坐标
-```xml
+```
 <dependency>
     <groupId>com.alibaba.nacos</groupId>
     <artifactId>nacos-client</artifactId>
@@ -71,7 +72,7 @@ try {
 如果希望 Nacos 推送配置变更，可以使用 Nacos 动态监听配置接口来实现。
 
 ```java
-public void addListener(String dataId, String group, Listener listener)
+public void addListener(String dataId, String group, Listener listener) 
 ```
 
 #### 请求参数

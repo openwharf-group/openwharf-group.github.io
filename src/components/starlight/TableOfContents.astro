@@ -1,0 +1,24 @@
+---
+import TableOfContentsList from './TableOfContents/TableOfContentsList.astro';
+import ContributeMenu from './ContributeMenu.astro';
+import CommunityMenu from './CommunityMenu.astro';
+import type { Props } from '@astrojs/starlight/props';
+
+const { locale, toc } = Astro.props;
+import './style.css';
+---
+
+{
+	toc && (
+		<starlight-toc data-min-h={toc.minHeadingLevel} data-max-h={toc.maxHeadingLevel}>
+			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
+				<h2 id="starlight__on-this-page">本页内容</h2>
+				<TableOfContentsList toc={toc.items} />
+				<ContributeMenu />
+				<CommunityMenu />
+			</nav>
+		</starlight-toc>
+	)
+}
+
+<script src="./TableOfContents/starlight-toc"></script>

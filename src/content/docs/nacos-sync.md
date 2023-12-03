@@ -4,6 +4,7 @@ keywords: NacosSync,介绍
 description: NacosSync 介绍
 ---
 
+# NacosSync 介绍
 
 ## 介绍
 * NacosSync是一个支持多种注册中心的同步组件,基于Spring boot开发框架,数据层采用Spring Data JPA,遵循了标准的JPA访问规范,支持多种数据源存储,默认使用Hibernate实现,更加方便的支持表的自动创建更新
@@ -17,20 +18,20 @@ description: NacosSync 介绍
   * Consul数据同步到Nacos
 <a name="d384971e"></a>
 ## 系统模块架构:
-![image.png](//img.alicdn.com/tfs/TB12VPaJVzqK1RjSZSgXXcpAVXa-886-752.png)<br />控制台<br />提供了精简Web操作控制台,支持国际化:<br />
+![image.png](https://img.alicdn.com/tfs/TB12VPaJVzqK1RjSZSgXXcpAVXa-886-752.png)<br />控制台<br />提供了精简Web操作控制台,支持国际化:<br />
 <a name="b3408d06"></a>
 ### 同步任务管理页面
-![](//img.alicdn.com/tfs/TB1eSYyJ5LaK1RjSZFxXXamPFXa-2866-1064.png)
+![](https://img.alicdn.com/tfs/TB1eSYyJ5LaK1RjSZFxXXamPFXa-2866-1064.png)
 <a name="091bc34b"></a>
 ### 注册中心管理页面
 <a name="53fdb015"></a>
-## ![image.png](//img.alicdn.com/tfs/TB1e_rdJ7voK1RjSZFNXXcxMVXa-2876-1124.png)
+## ![image.png](https://img.alicdn.com/tfs/TB1e_rdJ7voK1RjSZFNXXcxMVXa-2876-1124.png)
 <a name="f6a633db"></a>
 ## 使用场景:
 * 多个网络互通的Region之间服务共享,打破Region之间的服务调用限制
 
-![image.png](//img.alicdn.com/tfs/TB1Mo6yJ4jaK1RjSZKzXXXVwXXa-1136-798.png)
+![image.png](https://img.alicdn.com/tfs/TB1Mo6yJ4jaK1RjSZKzXXXVwXXa-1136-798.png)
 
 * 双向同步功能,支持Dubbo+Zookeeper服务平滑迁移到Dubbo+Nacos,享受Nacos更加优质的服务
 
-![image.png](//img.alicdn.com/tfs/TB1Dza8J9zqK1RjSZPxXXc4tVXa-1728-838.png)
+![image.png](https://img.alicdn.com/tfs/TB1Dza8J9zqK1RjSZPxXXc4tVXa-1728-838.png)

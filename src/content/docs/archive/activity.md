@@ -4,6 +4,7 @@ keywords: Nacos,活动
 description: Nacos 有奖活动介绍
 ---
 
+# Nacos 有奖活动介绍
 
 ## I. 活动任务列表
 
@@ -19,19 +20,19 @@ description: Nacos 有奖活动介绍
 ## II. 活动参与方式
 
 * 扫描 “超哥” 微信2微码，让超哥帮助加入 “Nacos社区交流群”
-
-![微信二维码 | left](//cdn.yuque.com/lark/0/2018/png/11189/1532004866850-5e03b901-6d76-4380-b7bf-66e227808bdc.png "")
+    
+![微信二维码 | left](https://cdn.yuque.com/lark/0/2018/png/11189/1532004866850-5e03b901-6d76-4380-b7bf-66e227808bdc.png "")
 
 * 选择 (I) 中的一个或者多个体验任务
-* 发现问题或者BUG之后，按照(III)中的《问题Report方式》，发一个相应的 github issue, 并指派给 @ github账号[xuechaos](//github.com/xuechaos)
+* 发现问题或者BUG之后，按照(III)中的《问题Report方式》，发一个相应的 github issue, 并指派给 @ github账号[xuechaos](https://github.com/xuechaos)
 
 ## III. 问题Report方式
 
 * 根据issues模板，在github的nacos仓库，中提交问题。
 * 代码仓库问题，提交pull request修复，通过review后，合并进入主干，就成为了Contributor。
-*
-* [//github.com/alibaba/nacos](//github.com/alibaba/nacos)
-* [//github.com/nacos-group/nacos-group.github.io](//github.com/nacos-group/nacos-group.github.io)
+* 
+* [https://github.com/alibaba/nacos](https://github.com/alibaba/nacos)
+* [https://github.com/nacos-group/nacos-group.github.io](https://github.com/nacos-group/nacos-group.github.io)
 
 ## IV. 任务奖励
 

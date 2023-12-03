@@ -4,10 +4,11 @@ keywords: Nacos,Spring,快速开始
 description: 本文主要面向 Spring 的使用者，通过两个示例来介绍如何使用 Nacos 来实现分布式环境下的配置管理和服务发现。
 ---
 
+# Nacos 融合 Spring，成为注册配置中心
 
 本文主要面向 Spring 的使用者，通过两个示例来介绍如何使用 Nacos 来实现分布式环境下的配置管理和服务发现。
 
-关于 Nacos Spring 的详细文档请参看：[nacos-spring-project](//github.com/nacos-group/nacos-spring-project/wiki/Nacos-Spring-Project-0.3.1-%E6%96%B0%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C)。
+关于 Nacos Spring 的详细文档请参看：[nacos-spring-project](https://github.com/nacos-group/nacos-spring-project/wiki/Nacos-Spring-Project-0.3.1-%E6%96%B0%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C)。
 
 * 通过 Nacos server 和 Nacos Spring 配置管理模块，实现配置的动态变更；
 * 通过 Nacos server 和 Nacos Spring 服务发现模块，实现服务的注册与发现。
@@ -18,11 +19,11 @@ description: 本文主要面向 Spring 的使用者，通过两个示例来介�
 
 ## 启动配置管理
 
-启动了 Nacos server 后，您就可以参考以下示例代码，为您的 Spring 应用启动 Nacos 配置管理服务了。完整示例代码请参考：[nacos-spring-config-example](//github.com/nacos-group/nacos-examples/tree/master/nacos-spring-example/nacos-spring-config-example)
+启动了 Nacos server 后，您就可以参考以下示例代码，为您的 Spring 应用启动 Nacos 配置管理服务了。完整示例代码请参考：[nacos-spring-config-example](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-example/nacos-spring-config-example)
 
 1. 添加依赖。
 
-```xml
+```
 <dependency>
     <groupId>com.alibaba.nacos</groupId>
     <artifactId>nacos-spring-context</artifactId>
@@ -30,11 +31,11 @@ description: 本文主要面向 Spring 的使用者，通过两个示例来介�
 </dependency>
 ```
 
-最新版本可以在 maven 仓库，如 "[mvnrepository.com](//mvnrepository.com/artifact/com.alibaba.nacos/nacos-spring-context)" 中获取。
+最新版本可以在 maven 仓库，如 "[mvnrepository.com](https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-spring-context)" 中获取。
 
 2. 添加 `@EnableNacosConfig` 注解启用 Nacos Spring 的配置管理服务。以下示例中，我们使用 `@NacosPropertySource` 加载了 `dataId` 为 `example` 的配置源，并开启自动更新：
 
-```java
+```
 @Configuration
 @EnableNacosConfig(globalProperties = @NacosProperties(serverAddr = "127.0.0.1:8848"))
 @NacosPropertySource(dataId = "example", autoRefreshed = true)
@@ -45,7 +46,7 @@ public class NacosConfiguration {
 
 3. 通过 Nacos 的 `@NacosValue` 注解设置属性值。
 
-```java
+```
 @Controller
 @RequestMapping("config")
 public class ConfigController {
@@ -65,7 +66,7 @@ public class ConfigController {
 
 5. 通过调用 [Nacos Open API](../guide/user/open-api.md) 向 Nacos Server 发布配置：dataId 为`example`，内容为`useLocalCache=true`
 
-```bash
+```
 curl -X POST "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=example&group=DEFAULT_GROUP&content=useLocalCache=true"
 ```
 
@@ -73,11 +74,11 @@ curl -X POST "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=example&group=DEF
 
 ## 启动服务发现
 
-本节演示如何在您的 Spring 项目中启动 Nacos 的服务发现功能。完整示例代码请参考：[nacos-spring-discovery-example](//github.com/nacos-group/nacos-examples/tree/master/nacos-spring-example/nacos-spring-discovery-example)
+本节演示如何在您的 Spring 项目中启动 Nacos 的服务发现功能。完整示例代码请参考：[nacos-spring-discovery-example](https://github.com/nacos-group/nacos-examples/tree/master/nacos-spring-example/nacos-spring-discovery-example)
 
 1. 添加依赖。
 
-```xml
+```
 <dependency>
     <groupId>com.alibaba.nacos</groupId>
     <artifactId>nacos-spring-context</artifactId>
@@ -85,11 +86,11 @@ curl -X POST "http://127.0.0.1:8848/nacos/v1/cs/configs?dataId=example&group=DEF
 </dependency>
 ```
 
-最新版本可以在 maven 仓库，如 "[mvnrepository.com](//mvnrepository.com/artifact/com.alibaba.nacos/nacos-spring-context)" 中获取。
+最新版本可以在 maven 仓库，如 "[mvnrepository.com](https://mvnrepository.com/artifact/com.alibaba.nacos/nacos-spring-context)" 中获取。
 
 2. 通过添加 `@EnableNacosDiscovery` 注解开启 Nacos Spring 的服务发现功能：
 
-```java
+```
 @Configuration
 @EnableNacosDiscovery(globalProperties = @NacosProperties(serverAddr = "127.0.0.1:8848"))
 public class NacosConfiguration {
@@ -99,7 +100,7 @@ public class NacosConfiguration {
 
 3. 使用 `@NacosInjected` 注入  Nacos 的 `NamingService` 实例：
 
-```java
+```
 @Controller
 @RequestMapping("discovery")
 public class DiscoveryController {
@@ -119,13 +120,13 @@ public class DiscoveryController {
 
 5. 通过调用 [Nacos Open API](../guide/user/open-api.md) 向  Nacos server 注册一个名称为 `example` 服务。
 
-```bash
+```
 curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=example&ip=127.0.0.1&port=8080'
 ```
 
 6. 再次访问 `curl http://localhost:8080/discovery/get?serviceName=example`，此时返回内容为：
 
-```json
+```
 [
   {
     "instanceId": "127.0.0.1#8080#DEFAULT#example",
@@ -152,7 +153,7 @@ curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=example&ip=
 
 # Nacos Spring关键特性
 
-下文将介绍 [`nacos-spring-context`](//github.com/nacos-group/nacos-spring-project) 中的一些关键的特性：
+下文将介绍 [`nacos-spring-context`](https://github.com/nacos-group/nacos-spring-project) 中的一些关键的特性：
 
 - 注解驱动
 - 依赖注入
@@ -201,12 +202,12 @@ configService.addListener(DATA_ID, DEFAULT_GROUP, new AbstractListener() {
 
 另外，`@NacosConfigListener` 支持更丰富的类型转换。
 
-- 请参看： [Simple Sample of `@NacosConfigListener`](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/SimpleNacosConfigListener.java)
+- 请参看： [Simple Sample of `@NacosConfigListener`](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/SimpleNacosConfigListener.java)
 
 
 #### 1.2.1. 类型
 
-`@NacosConfigListener` 的类型转换包括内置和自定义实现。 默认情况下，内置类型转换基于 Spring `DefaultFormattingConversionService`，这意味着它包好了大多数情况以及 Spring 框架更高级版本的丰富功能。
+`@NacosConfigListener` 的类型转换包括内置和自定义实现。 默认情况下，内置类型转换基于 Spring `DefaultFormattingConversionService`，这意味着它包好了大多数情况以及 Spring 框架更高级版本的丰富功能。 
 
 例如，前面示例中的内容 "9527" 也可以通过带 "int" 或 "Integer" 参数的方法进行监听：:
 
@@ -222,7 +223,7 @@ public void onInt(int value) {
 }
 ```
 
-当然, [`nacos-spring-context`](//github.com/nacos-group/nacos-spring-project) 为开发人员提供弹性扩展。 如果定义名为`nacosConfigConversionService`的Spring Bean，其类型为`ConversionService`，则将忽略`DefaultFormattingConversionService`。 此外，您可以自定义`NacosConfigConverter`接口的实现，以指定类型转换的侦听器方法：
+当然, [`nacos-spring-context`](https://github.com/nacos-group/nacos-spring-project) 为开发人员提供弹性扩展。 如果定义名为`nacosConfigConversionService`的Spring Bean，其类型为`ConversionService`，则将忽略`DefaultFormattingConversionService`。 此外，您可以自定义`NacosConfigConverter`接口的实现，以指定类型转换的侦听器方法：
 
 ```java
 public class UserNacosConfigConverter implements NacosConfigConverter<User> {
@@ -252,12 +253,12 @@ public void testPublishUser() throws NacosException {
 
 @NacosConfigListener(dataId = "user", converter = UserNacosConfigConverter.class)
 public void onUser(User user) {
-    assertEquals(Long.valueOf(1L), user.getId());
+    assertEquals(Long.valueOf(1L), user.getId()); 
     assertEquals("mercyblitz", user.getName());
 }
 ```
 
-- 请参看：[Type Conversion Sample of `@NacosConfigListener`](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/PojoNacosConfigListener.java)
+- 请参看：[Type Conversion Sample of `@NacosConfigListener`](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/PojoNacosConfigListener.java)
 
 
 #### 1.2.2. 超时时间
@@ -308,13 +309,13 @@ public void testPublishConfig() throws NacosException {
 }
 ```
 
-- 请参看：[Timeout Sample of `@NacosConfigListener`](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/TimeoutNacosConfigListener.java)
+- 请参看：[Timeout Sample of `@NacosConfigListener`](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/listener/TimeoutNacosConfigListener.java)
 
 ### 1.3. 全局和自定义 Nacos 属性
 
-`globalProperties` 是任何 `@EnableNacos`，`@EnableNacosDiscovery` 或 `@EnableNacosConfig` 中的必选属性，其类型为 `@NacosProperties`。
+`globalProperties` 是任何 `@EnableNacos`，`@EnableNacosDiscovery` 或 `@EnableNacosConfig` 中的必选属性，其类型为 `@NacosProperties`。 
 
-`globalProperties` 将初始化为其他注解或组件的 "**全局 Nacos 属性**"，例如：`@NacosInjected`。
+`globalProperties` 将初始化为其他注解或组件的 "**全局 Nacos 属性**"，例如：`@NacosInjected`。 
 
 换句话说，**全局 Nacos 属性** 定义全局和默认属性。它设置为具有最低优先级，并且也可以被覆盖。覆盖优先级如下表所示：
 
@@ -325,11 +326,11 @@ public void testPublishConfig() throws NacosException {
 | 3                | `@EnableNacos.globalProperties()`                            | Y        |
 
 
-`*.properties()` 定义来自以下之一的自定义 Nacos 属性：
+`*.properties()` 定义来自以下之一的自定义 Nacos 属性：  
 
-- `@NacosInjected.properties()`
+- `@NacosInjected.properties()` 
 - `@NacosConfigListener.properties()`
-- `@NacosPropertySource.properties()`
+- `@NacosPropertySource.properties()` 
 - `@NacosConfigurationProperties.properties()`
 
 自定义的 Nacos 属性也由 `@NacosProperties` 配置。 不过，它们是可选的，用于在特殊情况下覆盖全局 Nacos 属性。 如果没有定义，Nacos 属性将尝试从 `@EnableNacosConfig.globalProperties()` 或 `@EnableNacosDiscovery.globalProperties()` 或
@@ -338,9 +339,9 @@ public void testPublishConfig() throws NacosException {
 
 ### 1.4. `@NacosProperties`
 
-`@NacosProperties` 是全局和自定义 Nacos 属性的统一注解。 它充当Java `Properties` 和 `NacosFactory` 类之间的中介。`NacosFactory` 负责创建 `ConfigService` 或 `NamingService` 实例。
+`@NacosProperties` 是全局和自定义 Nacos 属性的统一注解。 它充当Java `Properties` 和 `NacosFactory` 类之间的中介。`NacosFactory` 负责创建 `ConfigService` 或 `NamingService` 实例。 
 
-`@NacosProperties` 的属性完全支持占位符，它的源是Spring `Environment` 抽象中的各种 `PropertySource`，通常是Java System `Properties` 和操作系统环境变量。 所有占位符的前缀都是 `nacos.`。`@NacosProperties` 和 Nacos 属性的属性之间的映射如下所示：
+`@NacosProperties` 的属性完全支持占位符，它的源是Spring `Environment` 抽象中的各种 `PropertySource`，通常是Java System `Properties` 和操作系统环境变量。 所有占位符的前缀都是 `nacos.`。`@NacosProperties` 和 Nacos 属性的属性之间的映射如下所示： 
 
 | Attribute       | Property       | Placeholder              | Description | Required  |
 | --------------- | -------------- | ------------------------ | ----------- | --------- |
@@ -409,14 +410,14 @@ public void testInjection() {
 
 值得注意的是，与 `NacosFactory.createConfigService()` 方法创建的 `ConfigService` 实例不同，`@NacosInjected` 注解创建的 `ConfigService` 实例支持 Nacos Spring 事件。 例如，在增强的 `ConfigService` 调用 `publishConfig()` 方法之后会有一个 `NacosConfigPublishedEvent`。 有关更多详细信息，请参阅"事件驱动"部分。
 
-- 请参看：[Dependency Injection Sample](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/NacosConfiguration.java)
+- 请参看：[Dependency Injection Sample](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/NacosConfiguration.java)
 
 
 ## 3. 外部化配置
 
-外部化配置是 Spring Boot 引入的概念，它允许应用程序接收外部属性源以控制运行时行为。 Nacos Server 在应用程序外部运行单独的进程以维护应用程序配置。 [`nacos-spring-context`](//github.com/nacos-group/nacos-spring-project) 提供了对象绑定，动态配置（自动刷新）等功能。
+外部化配置是 Spring Boot 引入的概念，它允许应用程序接收外部属性源以控制运行时行为。 Nacos Server 在应用程序外部运行单独的进程以维护应用程序配置。 [`nacos-spring-context`](https://github.com/nacos-group/nacos-spring-project) 提供了对象绑定，动态配置（自动刷新）等功能。
 
-这里有 [`nacos-spring-context`](//github.com/nacos-group/nacos-spring-project) 和 Spring Stack 之间的简单比较：
+这里有 [`nacos-spring-context`](https://github.com/nacos-group/nacos-spring-project) 和 Spring Stack 之间的简单比较：
 
 | Spring Stack               | Nacos Spring                    | Highlight                                      |
 | -------------------------- | ------------------------------- | ---------------------------------------------- |
@@ -426,8 +427,8 @@ public void testInjection() {
 | `@PropertySources`         | `@NacosPropertySources`         |                                                |
 
 
-- 请参看：[Auto-Refreshed Sample of `@NacosConfigurationProperties`](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/properties/NacosConfigurationPropertiesConfiguration.java)
-- 请参看：[Sample of `@NacosPropertySources` and `@NacosPropertySource`](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/env/NacosPropertySourceConfiguration.java)
+- 请参看：[Auto-Refreshed Sample of `@NacosConfigurationProperties`](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/properties/NacosConfigurationPropertiesConfiguration.java)
+- 请参看：[Sample of `@NacosPropertySources` and `@NacosPropertySource`](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/env/NacosPropertySourceConfiguration.java)
 
 ## 4. 事件驱动
 
@@ -443,11 +444,11 @@ Nacos 事件驱动 基于标准的 Spring Event / Listener 机制。 Spring 的 
 | `NacosConfigurationPropertiesBeanBoundEvent` | After `@NacosConfigurationProperties` binding                |
 | `NacosConfigMetadataEvent`                   | After Nacos Config operations                                |
 
-- 请参看：[Event/Listener Sample](//github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/event/NacosEventListenerConfiguration.java)
+- 请参看：[Event/Listener Sample](https://github.com/nacos-group/nacos-spring-project/blob/master/nacos-spring-samples/nacos-spring-webmvc-sample/src/main/java/com/alibaba/nacos/samples/spring/event/NacosEventListenerConfiguration.java)
 
 # 相关项目
 
-* [Nacos](//github.com/alibaba/nacos)
-* [Nacos Spring](//github.com/nacos-group/nacos-spring-project)
-* [Nacos Spring Boot](//github.com/nacos-group/nacos-spring-boot-project)
-* [Spring Cloud Alibaba](//github.com/spring-cloud-incubator/spring-cloud-alibaba)
+* [Nacos](https://github.com/alibaba/nacos)
+* [Nacos Spring](https://github.com/nacos-group/nacos-spring-project)
+* [Nacos Spring Boot](https://github.com/nacos-group/nacos-spring-boot-project)
+* [Spring Cloud Alibaba](https://github.com/spring-cloud-incubator/spring-cloud-alibaba)

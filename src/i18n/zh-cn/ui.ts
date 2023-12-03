@@ -1,4 +1,17 @@
 export default {
+	// Right Sidebar
+	'rightSidebar.a11yTitle': '目录',
+	'rightSidebar.onThisPage': '本页内容',
+	'rightSidebar.overview': '概述',
+	'rightSidebar.editPage': '编辑本页内容',
+	'rightSidebar.translatePage': '翻译本页内容',
+	'rightSidebar.contribute': '贡献',
+	'rightSidebar.contributorGuides': '贡献者指南',
+	'rightSidebar.community': '社区',
+	'rightSidebar.readBlog': '阅读我们的博客',
+	'rightSidebar.openCollective': '我们的 Open Collective',
+	'rightSidebar.github': 'GitHub 上的 Astro 文档',
+	// Feedback Fish widget
 	'feedback.button': '给予我们反馈',
 	'feedback.a11yLabel': '反馈表单',
 	'feedback.formTitle': '你有什么想法？',
@@ -12,4 +25,6 @@ export default {
 	'feedback.submit': '发送反馈',
 	'feedback.close': '关闭反馈表单',
 	'feedback.success': '感谢！我们收到了你的反馈。',
+
+	'checklist.or': '或',
 };

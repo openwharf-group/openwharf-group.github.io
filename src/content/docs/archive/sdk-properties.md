@@ -1,6 +1,6 @@
 ---
 title: Nacos 客户端初始化说明
-keywords: Nacos,初始化,客户端
+keywords: Nacos,客户端,初始化
 description: Nacos 客户端初始化说明
 ---
 

@@ -1,8 +1,10 @@
 ---
 title: Nacos功能和需求列表
-keywords: Nacos,需求,功能
+keywords: Nacos,功能
 description: Nacos功能和需求列表
 ---
+
+# Nacos功能和需求列表
 
 本文列举了目前Nacos支持的主要功能和一些还未支持的需求排期，方便读者了解目前Nacos已经支持和计划支持的能力，同时所有计划支持的能力都开放给开发者进行认领，本文末有详细的认领教程。
 
@@ -19,7 +21,7 @@ description: Nacos功能和需求列表
 
 <a name="rchXu"></a>
 # 服务发现
-代码地址：[//github.com/alibaba/nacos/tree/develop/naming](//github.com/alibaba/nacos/tree/develop/naming)
+代码地址：[https://github.com/alibaba/nacos/tree/develop/naming](https://github.com/alibaba/nacos/tree/develop/naming)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -31,7 +33,7 @@ description: Nacos功能和需求列表
 
 <a name="VqAeY"></a>
 # 配置管理
-代码地址：[//github.com/alibaba/nacos/tree/develop/config](//github.com/alibaba/nacos/tree/develop/config)
+代码地址：[https://github.com/alibaba/nacos/tree/develop/config](https://github.com/alibaba/nacos/tree/develop/config)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -42,7 +44,7 @@ description: Nacos功能和需求列表
 
 <a name="H9PtL"></a>
 # 元数据管理
-代码地址：[//github.com/alibaba/nacos/tree/develop/cmdb](//github.com/alibaba/nacos/tree/develop/cmdb)
+代码地址：[https://github.com/alibaba/nacos/tree/develop/cmdb](https://github.com/alibaba/nacos/tree/develop/cmdb)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -51,7 +53,7 @@ description: Nacos功能和需求列表
 
 <a name="iIIII"></a>
 # 地址服务器
-代码地址：[//github.com/alibaba/nacos/tree/develop/address](//github.com/alibaba/nacos/tree/develop/address)
+代码地址：[https://github.com/alibaba/nacos/tree/develop/address](https://github.com/alibaba/nacos/tree/develop/address)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -60,7 +62,7 @@ description: Nacos功能和需求列表
 
 <a name="zaOdN"></a>
 # Nacos内核
-代码地址：[//github.com/alibaba/nacos/tree/develop/core](//github.com/alibaba/nacos/tree/develop/core)
+代码地址：[https://github.com/alibaba/nacos/tree/develop/core](https://github.com/alibaba/nacos/tree/develop/core)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -75,7 +77,7 @@ description: Nacos功能和需求列表
 
 <a name="JiVAL"></a>
 # 安全与稳定性
-代码地址：[//github.com/alibaba/nacos](//github.com/alibaba/nacos)
+代码地址：[https://github.com/alibaba/nacos](https://github.com/alibaba/nacos)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -94,7 +96,7 @@ description: Nacos功能和需求列表
 
 <a name="YmLFu"></a>
 # 代码质量
-代码地址：[//github.com/alibaba/nacos](//github.com/alibaba/nacos)
+代码地址：[https://github.com/alibaba/nacos](https://github.com/alibaba/nacos)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -113,7 +115,7 @@ description: Nacos功能和需求列表
 | :---: | --- | --- | --- |
 | 对接Istio | nkorange | beta | 1.1.4 |
 | 对接ConfigMap |  | 排期中 |  |
-| [对接CoreDNS](//github.com/nacos-group/nacos-coredns-plugin) | JianweiWang | beta | 0.1.0 |
+| [对接CoreDNS](https://github.com/nacos-group/nacos-coredns-plugin) | JianweiWang | beta | 0.1.0 |
 | 对接SPIFFE |  | 排期中 |  |
 
 
@@ -123,20 +125,20 @@ description: Nacos功能和需求列表
 
 | 描述 | 主要开发者 | 状态 |
 | :---: | --- | --- |
-| [Java客户端](//github.com/alibaba/nacos/tree/develop/client) | Nacos | 稳定 |
-| [Go客户端](//github.com/nacos-group/nacos-sdk-go) | atlanssia, lzp0412 | 稳定 |
-| [Node.js客户端](//github.com/nacos-group/nacos-sdk-nodejs) | czy88840616, gxcsoccer | 稳定 |
-| [Python客户端](//github.com/nacos-group/nacos-sdk-python) | sanwei | beta |
-| [C#客户端](//github.com/catcherwong/nacos-sdk-csharp) | catcherwong | 推荐 |
+| [Java客户端](https://github.com/alibaba/nacos/tree/develop/client) | Nacos | 稳定 |
+| [Go客户端](https://github.com/nacos-group/nacos-sdk-go) | atlanssia, lzp0412 | 稳定 |
+| [Node.js客户端](https://github.com/nacos-group/nacos-sdk-nodejs) | czy88840616, gxcsoccer | 稳定 |
+| [Python客户端](https://github.com/nacos-group/nacos-sdk-python) | sanwei | beta |
+| [C#客户端](https://github.com/catcherwong/nacos-sdk-csharp) | catcherwong | 推荐 |
 | C++客户端 |  |  |
 | PHP客户端 |  |  |
-| [Spring客户端](//github.com/nacos-group/nacos-spring-project) | chuntaojun | 稳定 |
-| [SpringBoot客户端](//github.com/nacos-group/nacos-spring-boot-project) | chuntaojun | 稳定 |
+| [Spring客户端](https://github.com/nacos-group/nacos-spring-project) | chuntaojun | 稳定 |
+| [SpringBoot客户端](https://github.com/nacos-group/nacos-spring-boot-project) | chuntaojun | 稳定 |
 
 
 <a name="o6JMC"></a>
 # Nacos-Docker
-代码地址：[//github.com/nacos-group/nacos-docker](//github.com/nacos-group/nacos-docker)
+代码地址：[https://github.com/nacos-group/nacos-docker](https://github.com/nacos-group/nacos-docker)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -145,7 +147,7 @@ description: Nacos功能和需求列表
 
 <a name="UofM8"></a>
 # Nacos-K8s
-代码地址：[//github.com/nacos-group/nacos-k8s](//github.com/nacos-group/nacos-k8s)
+代码地址：[https://github.com/nacos-group/nacos-k8s](https://github.com/nacos-group/nacos-k8s)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -154,7 +156,7 @@ description: Nacos功能和需求列表
 
 <a name="FPPSf"></a>
 # Nacos-Sync
-代码地址：[//github.com/nacos-group/nacos-sync](//github.com/nacos-group/nacos-sync)
+代码地址：[https://github.com/nacos-group/nacos-sync](https://github.com/nacos-group/nacos-sync)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -166,7 +168,7 @@ description: Nacos功能和需求列表
 
 <a name="sM3KF"></a>
 # Nacos官网
-代码地址：[//github.com/nacos-group/nacos-group.github.io](//github.com/nacos-group/nacos-group.github.io)
+代码地址：[https://github.com/nacos-group/nacos-group.github.io](https://github.com/nacos-group/nacos-group.github.io)
 
 | 描述 | 主要开发者 | 状态 | 排期 |
 | :---: | --- | --- | --- |
@@ -178,21 +180,21 @@ description: Nacos功能和需求列表
 # 参与共建
 <a name="zjUdC"></a>
 ### 参与共建能得到什么？
-参与Nacos共建，你将有机会让你的代码被全中国甚至全世界的用户阅读并使用，同时在成为Nacos Committer后（如何成为Nacos Committer可以参考[手册](//github.com/alibaba/nacos/blob/develop/CONTRIBUTING.md)），还可以有以下福利：
+参与Nacos共建，你将有机会让你的代码被全中国甚至全世界的用户阅读并使用，同时在成为Nacos Committer后（如何成为Nacos Committer可以参考[手册](https://github.com/alibaba/nacos/blob/develop/CONTRIBUTING.md)），还可以有以下福利：
 
-- 在Nacos官网[团队页](//nacos.io/docs/nacos-dev.html)留名；
+- 在Nacos官网[团队页](https://nacos.io/zh-cn/docs/nacos-dev.html)留名；
 - 收到我们带Nacos logo的小礼物，有T恤、水杯、帽衫等等；
 - 代表Nacos参加各种线上线下活动，与更多小伙伴交流；
 - 更多我们还在筹划中的福利；
 
 <a name="9eqix"></a>
 ### 如何共建
-除了在上面列举的功能和需求，其他的在github仓库上打上了[contribution welcome](//github.com/alibaba/nacos/issues?q=is%3Aopen+is%3Aissue+label%3A%22contribution+welcome%22)或者[help wanted](//github.com/alibaba/nacos/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)标签的issue，也非常欢迎大家提交代码贡献。加入Nacos 社区核心贡献小组钉钉群23335652，联系群管理员认领需求。
+除了在上面列举的功能和需求，其他的在github仓库上打上了[contribution welcome](https://github.com/alibaba/nacos/issues?q=is%3Aopen+is%3Aissue+label%3A%22contribution+welcome%22)或者[help wanted](https://github.com/alibaba/nacos/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)标签的issue，也非常欢迎大家提交代码贡献。加入Nacos 社区核心贡献小组钉钉群23335652，联系群管理员认领需求。
 
 大家提PR的时候有几点需要注意下：
 
-1. 比较重大的特性需要有方案文档：[//github.com/alibaba/nacos/issues/858](//github.com/alibaba/nacos/issues/858)
-1. 已经阅读并遵守共建规范： [//github.com/alibaba/nacos/blob/master/CONTRIBUTING.md](//github.com/alibaba/nacos/blob/master/CONTRIBUTING.md)
+1. 比较重大的特性需要有方案文档：[https://github.com/alibaba/nacos/issues/858](https://github.com/alibaba/nacos/issues/858)
+1. 已经阅读并遵守共建规范： [https://github.com/alibaba/nacos/blob/master/CONTRIBUTING.md](https://github.com/alibaba/nacos/blob/master/CONTRIBUTING.md)
 1. 使用github账户提交代码，这样大家才会在contributor列表看到自己的名字；
 1. commit信息要带上issue id，这样才能在issue里看到PR的进度；
 1. 代码中不要出现中文注释，提交前要格式化，并添加必要的集成测试用例和单元测试用例；

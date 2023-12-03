@@ -4,8 +4,9 @@ keywords: 自定义环境变量,自定义配置,数据库密码加密
 description: Nacos 自定义环境变量插件，可自定义扩展服务端配置等功能，例如数据库密码加密。
 ---
 
+# 自定义环境变量插件
 
-Nacos从2.2.0版本开始，可通过[SPI](//docs.oracle.com/javase/tutorial/sound/SPI-intro.html)机制注入自定义环境变量实现插件，在插件中自定义nacos的配置，并按照您期望的方式进行处理（如数据库密码加密）。本文档详细介绍一个自定义环境变量插件如何实现以及如何使其生效。
+Nacos从2.2.0版本开始，可通过[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)机制注入自定义环境变量实现插件，在插件中自定义nacos的配置，并按照您期望的方式进行处理（如数据库密码加密）。本文档详细介绍一个自定义环境变量插件如何实现以及如何使其生效。
 
 > 注意:
 > 目前自定义环境变量插件处于Beta测试阶段,其API及接口方法定义可能会在后续版本升级而有较大修改，请注意您的插件适用版本。
@@ -35,7 +36,7 @@ Nacos从2.2.0版本开始，可通过[SPI](//docs.oracle.com/javase/tutorial/sou
 | order       | `void`                | `Integer`             | 插件的优先级,数字越大优先级越高,多个插件同时自定义同一个配置项,优先级高的插件将会覆盖优先级低的。 |
 | customValue | `Map<String, Object>` | `Map<String, Object>` | 入参为propertyKey对应的配置项的值，出参为自定义之后的配置项值。              |
 
-在[nacos-group/nacos-plugin](//github.com/nacos-group/nacos-plugin)中，有一个demo的自定义环境变量插件实现，该demo插件实现了将数据库密码Base64解密，
+在[nacos-group/nacos-plugin](https://github.com/nacos-group/nacos-plugin)中，有一个demo的自定义环境变量插件实现，该demo插件实现了将数据库密码Base64解密，
 于是您可以在`application.properties`配置文件中设置密文数据库密码而不是明文密码。
 
 # 如何使用

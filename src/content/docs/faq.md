@@ -4,6 +4,7 @@ keywords: Nacos,FAQ
 description: Nacos FAQ
 ---
 
+# FAQ
 
 - Nacos常规问题
   - [Nacos是什么](#1.1)
@@ -43,15 +44,15 @@ description: Nacos FAQ
   - [集群管理页面，raft term显示不一致问题](#3.18)
   - [找不到符号`com.alibaba.nacos.consistency.entity`](#3.19)
   - [Beta发布如何使用](#3.20)
-
-
+  
+  
 
 - Nacos原理问题
 
 ## Nacos常规问题
 <h4 id="1.1">Nacos是什么</h4>
 
-Nacos 致力于帮助您发现、配置和管理微服务。Nacos 提供了一组简单易用的特性集，帮助您快速实现动态服务发现、服务配置、服务元数据及流量管理。详情可以参考[Nacos官网介绍](//nacos.io/docs/what-is-nacos.html)。
+Nacos 致力于帮助您发现、配置和管理微服务。Nacos 提供了一组简单易用的特性集，帮助您快速实现动态服务发现、服务配置、服务元数据及流量管理。详情可以参考[Nacos官网介绍](https://nacos.io/zh-cn/docs/what-is-nacos.html)。
 
 <h4 id="1.2">Nacos如何支持多环境</h4>
 
@@ -59,44 +60,44 @@ Nacos 致力于帮助您发现、配置和管理微服务。Nacos 提供了一�
 
 <h4 id="1.3">Nacos是否生产可用</h4>
 
-Nacos在2019.1发布了Pre-GA版本，支持了安全隔离、监控和服务迁移等上生产的最后一公里，以更稳定的支撑用户的生产环境。详情可以参考[Nacos 发布 v0.8.0 Pre-GA 版本，安全稳定上生产](//www.oschina.net/news/104019/nacos-0-8-0-pre-ga)。
+Nacos在2019.1发布了Pre-GA版本，支持了安全隔离、监控和服务迁移等上生产的最后一公里，以更稳定的支撑用户的生产环境。详情可以参考[Nacos 发布 v0.8.0 Pre-GA 版本，安全稳定上生产](https://www.oschina.net/news/104019/nacos-0-8-0-pre-ga)。
 
 <h4 id="1.4">Nacos版本计划</h4>
 
-Nacos 0.8.0 开始支持生产可用，1.0版本达到大规模生产可用，2.0版本计划与K8s、Spring Cloud、Service Mesh、Serverless进一步融合，具体的详情参考[Nacos规划](//nacos.io/docs/roadmap.html)。
+Nacos 0.8.0 开始支持生产可用，1.0版本达到大规模生产可用，2.0版本计划与K8s、Spring Cloud、Service Mesh、Serverless进一步融合，具体的详情参考[Nacos规划](https://nacos.io/zh-cn/docs/roadmap.html)。
 
 <h4 id="1.5">Nacos有什么依赖</h4>
 
-在单机模式下，Nacos没有任何依赖，在集群模式下，Nacos依赖Mysql做存储，详情可以参考[Nacos部署](//nacos.io/docs/deployment.html)。
+在单机模式下，Nacos没有任何依赖，在集群模式下，Nacos依赖Mysql做存储，详情可以参考[Nacos部署](https://nacos.io/zh-cn/docs/deployment.html)。
 
 <h4 id="1.6">Nacos使用什么开源协议</h4>
 
-Nacos使用[Apache 2.0](//github.com/alibaba/nacos/blob/master/LICENSE)。
+Nacos使用[Apache 2.0](https://github.com/alibaba/nacos/blob/master/LICENSE)。
 
 ## Nacos运维问题
 <h4 id="2.1">Nacos如何单机部署</h4>
 
-可以参考Nacos官网部署手册[quick start](//nacos.io/docs/quick-start.html)。
+可以参考Nacos官网部署手册[quick start](https://nacos.io/zh-cn/docs/quick-start.html)。
 
 <h4 id="2.2">Nacos单机部署如何使用mysql</h4>
 
-Nacos单机模式默认使用内嵌的数据库作为存储引擎，如果想换成自己安装的mysql，可以按照[官网文档](//nacos.io/docs/deployment.html)。
+Nacos单机模式默认使用内嵌的数据库作为存储引擎，如果想换成自己安装的mysql，可以按照[官网文档](https://nacos.io/zh-cn/docs/deployment.html)。
 
 <h4 id="2.3">生产环境如何部署Nacos</h4>
 
-生产环境使用Nacos为了达到高可用不能使用单机模式，需要搭建nacos集群，具体详情可以参考[集群部署手册](//nacos.io/docs/cluster-mode-quick-start.html)。
+生产环境使用Nacos为了达到高可用不能使用单机模式，需要搭建nacos集群，具体详情可以参考[集群部署手册](https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html)。
 
 <h4 id="2.4">Nacos如何Docker部署</h4>
 
-除了使用压缩包部署Nacos，Nacos也提供了相应的Docker镜像，当Nacos发布新的版本的时候，Nacos会发布对应的镜像版本支持Docker部署。具体详情可以参考[Nacos Docker](//nacos.io/docs/quick-start-docker.html)。
+除了使用压缩包部署Nacos，Nacos也提供了相应的Docker镜像，当Nacos发布新的版本的时候，Nacos会发布对应的镜像版本支持Docker部署。具体详情可以参考[Nacos Docker](https://nacos.io/zh-cn/docs/quick-start-docker.html)。
 
 <h4 id="2.5">如何在k8s中部署Nacos</h4>
 
-在生产环境部署Nacos集群，如果要对Nacos进行扩容操作，需要手动更改集群ip文件，启动新的Nacos服务。为了能进行自动化运维，Nacos和k8s结合利用StatefulSets提供了自动运维方案，能对Nacos进行动态扩缩容，具体详情参考[Kubernetes Nacos](//github.com/nacos-group/nacos-k8s/blob/master/README-CN.md)。
+在生产环境部署Nacos集群，如果要对Nacos进行扩容操作，需要手动更改集群ip文件，启动新的Nacos服务。为了能进行自动化运维，Nacos和k8s结合利用StatefulSets提供了自动运维方案，能对Nacos进行动态扩缩容，具体详情参考[Kubernetes Nacos](https://github.com/nacos-group/nacos-k8s/blob/master/README-CN.md)。
 
 <h4 id="2.6">如何监控Nacos</h4>
 
-Nacos0.8版本提供了Metrics数据暴露能力，能通过Metrics数据的内容对Nacos的运行状态进行监控，详情参考[Nacos监控](//nacos.io/docs/monitor-guide.html)。
+Nacos0.8版本提供了Metrics数据暴露能力，能通过Metrics数据的内容对Nacos的运行状态进行监控，详情参考[Nacos监控](https://nacos.io/zh-cn/docs/monitor-guide.html)。
 
 <h4 id="2.7">Nacos在Docker环境下集群部署，无法正常启动，日志一直打印 Nacos is starting...</h4>
 
@@ -105,23 +106,23 @@ Nacos0.8版本提供了Metrics数据暴露能力，能通过Metrics数据的内�
 ## Nacos使用问题
 <h4 id="3.1">Zookeeper上的服务可以迁移到Nacos上吗</h4>
 
-可以通过Nacos-Sync把Zookeeper服务迁移到Nacos，也可以从Nacos迁移到Zookeeper，具体可以参考[Nacos Sync 使用](//github.com/paderlol/nacos-sync-example)。
+可以通过Nacos-Sync把Zookeeper服务迁移到Nacos，也可以从Nacos迁移到Zookeeper，具体可以参考[Nacos Sync 使用](https://github.com/paderlol/nacos-sync-example)。
 
 <h4 id="3.2">Nacos支持多配置文件</h4>
 
-Nacos通过Spring Cloud Alibaba Nacos Config支持了多配置文件，可以将配置存储在多个独立的配置文件中。关联的[issue](//github.com/alibaba/nacos/issues/320)，详情参考文档[Spring Cloud Alibaba Nacos Config](//github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/Nacos-config)。
+Nacos通过Spring Cloud Alibaba Nacos Config支持了多配置文件，可以将配置存储在多个独立的配置文件中。关联的[issue](https://github.com/alibaba/nacos/issues/320)，详情参考文档[Spring Cloud Alibaba Nacos Config](https://github.com/spring-cloud-incubator/spring-cloud-alibaba/wiki/Nacos-config)。
 
 <h4 id="3.3">Nacos支持Dubbo</h4>
 
-Nacos 0.6版本和Dubbo集成，支持使用Nacos作为注册中心，关联[issue](//github.com/alibaba/nacos/issues/390),具体文档参考[Dubbo 融合 Nacos 成为注册中心](//nacos.io/docs/use-nacos-with-dubbo.html)。
+Nacos 0.6版本和Dubbo集成，支持使用Nacos作为注册中心，关联[issue](https://github.com/alibaba/nacos/issues/390),具体文档参考[Dubbo 融合 Nacos 成为注册中心](https://nacos.io/zh-cn/docs/use-nacos-with-dubbo.html)。
 
 <h4 id="3.4">Nacos支持Spring体系</h4>
 
-Nacos完善支持了Sping技术栈，具体可以参考[Nacos Spring](//nacos.io/docs/quick-start-spring.html)、[Nacos Spring Boot](//nacos.io/docs/quick-start-spring-boot.html)、[Spring Cloud](//nacos.io/docs/quick-start-spring-cloud.html)。
+Nacos完善支持了Sping技术栈，具体可以参考[Nacos Spring](https://nacos.io/zh-cn/docs/quick-start-spring.html)、[Nacos Spring Boot](https://nacos.io/zh-cn/docs/quick-start-spring-boot.html)、[Spring Cloud](https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html)。
 
 <h4 id="3.5">不使用Nacos SDK如何访问Nacos</h4>
 
-Nacos的网络交互都是基于Http协议实现的，提供了[Open-API](//nacos.io/docs/open-api.html)可以很容易实现Nacos的访问。
+Nacos的网络交互都是基于Http协议实现的，提供了[Open-API](https://nacos.io/zh-cn/docs/open-api.html)可以很容易实现Nacos的访问。
 
 <h4 id="3.6">Nacos对多语言的支持</h4>
 
@@ -129,7 +130,7 @@ Nacos目前只支持Java，对于其他语言的支持还正在开发中，需�
 
 <h4 id="3.7">Nacos0.8版本登陆失败</h4>
 
-Nacos 0.8版本当使用openjdk并且没有`JAVA_HOME`的环境变量时，nacos可以启动成功，是因为`yum install`安装的openjdk 会把java命令注册一份到`/bin`目录下面,所以会引发`SignatureException`异常。这个问题已经修复，0.9版本会发版，具体详情可以参考[issue](//github.com/alibaba/nacos/issues/711)。
+Nacos 0.8版本当使用openjdk并且没有`JAVA_HOME`的环境变量时，nacos可以启动成功，是因为`yum install`安装的openjdk 会把java命令注册一份到`/bin`目录下面,所以会引发`SignatureException`异常。这个问题已经修复，0.9版本会发版，具体详情可以参考[issue](https://github.com/alibaba/nacos/issues/711)。
 
 <h4 id="3.8">服务端报错 java.lang.IllegalStateException: unable to find local peer: 127.0.0.1:8848</h4>
 
@@ -141,7 +142,7 @@ Nacos计划在1.X版本提供加密的能力，目前还不支持加密，只能
 
 <h4 id="3.10">Nacos报401错误</h4>
 
-Nacos服务端报错了，可以检查服务端日志，参考[issue](//github.com/alibaba/nacos/issues/816)。
+Nacos服务端报错了，可以检查服务端日志，参考[issue](https://github.com/alibaba/nacos/issues/816)。
 
 <h4 id="3.11">Nacos权重不生效</h4>
 
@@ -230,8 +231,8 @@ Dubbo也是类似的道理，用户通常引入的是以下的依赖：
         <groupId>com.alibaba</groupId>
         <artifactId>dubbo-registry-nacos</artifactId>
         <version>[latest version]</version>
-    </dependency>
-
+    </dependency>   
+    
     <!-- Dubbo dependency -->
     <dependency>
         <groupId>com.alibaba</groupId>
@@ -251,13 +252,13 @@ Dubbo也是类似的道理，用户通常引入的是以下的依赖：
 
 
 <h4 id="3.16">客户端CPU高，或者内存耗尽的问题</h4>
-问题的现象是依赖Nacos客户端的应用，在运行一段时间后出现CPU占用率高，内存占用高甚至内存溢出的现象，可以参考issue：[//github.com/alibaba/nacos/issues/1605](//github.com/alibaba/nacos/issues/1605)。这种情况首先要做的是分析CPU高或者内存占用高的原因，常用的命令有top、jstack、jmap、jhat等。其中一种情况是Nacos客户端实例在Spring Cloud Alibaba服务框架中被反复构造了多次，可以参考issue：[//github.com/alibaba/spring-cloud-alibaba/issues/859](//github.com/alibaba/spring-cloud-alibaba/issues/859)。这个问题已经得到了修复，预期会在下个Spring Cloud Alibaba版本中发布。
+问题的现象是依赖Nacos客户端的应用，在运行一段时间后出现CPU占用率高，内存占用高甚至内存溢出的现象，可以参考issue：[https://github.com/alibaba/nacos/issues/1605](https://github.com/alibaba/nacos/issues/1605)。这种情况首先要做的是分析CPU高或者内存占用高的原因，常用的命令有top、jstack、jmap、jhat等。其中一种情况是Nacos客户端实例在Spring Cloud Alibaba服务框架中被反复构造了多次，可以参考issue：[https://github.com/alibaba/spring-cloud-alibaba/issues/859](https://github.com/alibaba/spring-cloud-alibaba/issues/859)。这个问题已经得到了修复，预期会在下个Spring Cloud Alibaba版本中发布。
 
 
 <h4 id="3.17">日志打印频繁的问题</h4>
 在老的Nacos版本中，往往会有大量的无效日志打印，这些日志的打印会迅速占用完用户的磁盘空间，同时也让有效日志难以查找。目前社区反馈的日志频繁打印主要有以下几种情况：
 
-1. access日志大量打印，相关issue有：[//github.com/alibaba/nacos/issues/1510](//github.com/alibaba/nacos/issues/1510)。主要表现是{nacos.home}/logs/access_log.2019-xx-xx.log类似格式文件名的日志大量打印，而且还不能自动清理和滚动。这个日志是Spring Boot提供的tomcat访问日志打印，Spring Boot在关于该日志的选项中，没有最大保留天数或者日志大小控制的选项。因此这个日志的清理必须由应用新建crontab任务来完成，或者通过以下命令关闭日志的输出（在生产环境我们还是建议开启该日志，以便能够有第一现场的访问记录）：
+1. access日志大量打印，相关issue有：[https://github.com/alibaba/nacos/issues/1510](https://github.com/alibaba/nacos/issues/1510)。主要表现是{nacos.home}/logs/access_log.2019-xx-xx.log类似格式文件名的日志大量打印，而且还不能自动清理和滚动。这个日志是Spring Boot提供的tomcat访问日志打印，Spring Boot在关于该日志的选项中，没有最大保留天数或者日志大小控制的选项。因此这个日志的清理必须由应用新建crontab任务来完成，或者通过以下命令关闭日志的输出（在生产环境我们还是建议开启该日志，以便能够有第一现场的访问记录）：
 
 ```
 server.tomcat.accesslog.enabled=false
@@ -276,9 +277,9 @@ curl -X PUT '$nacos_server:8848/nacos/v1/cs/ops/log?logName=config-dump&logLevel
 
 
 <h4 id="3.18">集群管理页面，raft term显示不一致问题</h4>
-在Nacos 1.0.1版本中，Nacos控制台支持了显示当前的集群各个机器的状态信息。这个功能受到比较多用户的关注，其中一个被反馈的问题是列表中每个节点的集群任期不一样。如下图所示（图片信息来自issue：//github.com/alibaba/nacos/issues/1786）：
+在Nacos 1.0.1版本中，Nacos控制台支持了显示当前的集群各个机器的状态信息。这个功能受到比较多用户的关注，其中一个被反馈的问题是列表中每个节点的集群任期不一样。如下图所示（图片信息来自issue：https://github.com/alibaba/nacos/issues/1786）：
 
-![image.png](//cdn.nlark.com/yuque/0/2019/png/333810/1567737322959-eed80457-e74c-4adb-bc29-6655860f8ca9.png#align=left&display=inline&height=279&name=image.png&originHeight=558&originWidth=1685&size=45557&status=done&width=842.5)
+![image.png](https://cdn.nlark.com/yuque/0/2019/png/333810/1567737322959-eed80457-e74c-4adb-bc29-6655860f8ca9.png#align=left&display=inline&height=279&name=image.png&originHeight=558&originWidth=1685&size=45557&status=done&width=842.5)
 
 对于这个任期不一致的问题，原因主要是因为获取这个信息的逻辑有一些问题，没有从对应的节点上获取集群任期。这个问题会在下一个Nacos版本中修复。目前一个手动检查集群任期的办法是在每个节点上执行以下命令：
 

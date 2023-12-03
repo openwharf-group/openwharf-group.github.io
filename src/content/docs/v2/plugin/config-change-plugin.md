@@ -4,11 +4,13 @@ keywords: 配置变更,配置审计,配置格式校验,webhook
 description: Nacos 支持配置变更插件，可支持配置审计、配置格式校验、及变更后webhook回调
 ---
 
+# 配置变更插件
+
 社区中一直以来都希望Nacos配置中心能在配置发生变更时，通知一些特定系统，用于发送记录、警告等审计功能。在2.3.0版本前，只能通过模拟Nacos客户端订阅配置的方式，对核心配置的变更操作进行订阅，在收到变更通知后，进行发送记录、警告等功能的执行。
 
 这种实现方式有几个比较大的问题，第一是监听的配置需要逐个添加，难以对所有配置变更进行获取；第二是只能在配置变更后执行功能逻辑，无法做到前置的操作，如格式校验，白名单校验等。
 
-因此Nacos在2.3.0版本后，支持通过[SPI](//docs.oracle.com/javase/tutorial/sound/SPI-intro.html)注入配置变更插件，允许用户通过自定义插件的方式，对配置变更前，和变更完成后分别执行一些自定义逻辑，如格式校验，白名单校验，webhook等。
+因此Nacos在2.3.0版本后，支持通过[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)注入配置变更插件，允许用户通过自定义插件的方式，对配置变更前，和变更完成后分别执行一些自定义逻辑，如格式校验，白名单校验，webhook等。
 
 ## 配置变更插件中的概念
 
@@ -107,19 +109,19 @@ nacos.core.config.plugin.${configChangePluginName}.${propertyKey}=${propertyValu
 
 之后能在`ConfigChangeRequest`中，通过下述方法获取该参数：
 
-```java
+```Java
 final Properties properties = (Properties) configChangeRequest.getArg(ConfigChangeConstants.PLUGIN_PROPERTIES);
 final String ${propertyKey} = properties.getProperty("${propertyKey}");
 ```
 
 ## 插件DEMO实现
 
-在[nacos-group/nacos-plugin](//github.com/nacos-group/nacos-plugin)中，有一个demo的配置变更插件的实现，该demo插件实现了对配置内容格式的校验、配置导入名称白名单的校验、以及变更后回调webhook。打包成jar/zip，放置到nacos服务端的classpath中，在`${nacos-server.path}/conf/application.properties`中的加入以下配置：
+在[nacos-group/nacos-plugin](https://github.com/nacos-group/nacos-plugin)中，有一个demo的配置变更插件的实现，该demo插件实现了对配置内容格式的校验、配置导入名称白名单的校验、以及变更后回调webhook。打包成jar/zip，放置到nacos服务端的classpath中，在`${nacos-server.path}/conf/application.properties`中的加入以下配置：
 
 ```properties
 # webhook
 #nacos.core.config.plugin.webhook.enabled=true
-# It is recommended to use EB //help.aliyun.com/document_detail/413974.html
+# It is recommended to use EB https://help.aliyun.com/document_detail/413974.html
 #nacos.core.config.plugin.webhook.url=http://${webhookIp}:${webhookPort}/${webhookUri}?token=***
 # The content push max capacity ,byte
 #nacos.core.config.plugin.webhook.contentMaxCapacity=102400

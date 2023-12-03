@@ -1,12 +1,12 @@
 ---
 import { languages } from "../i18n/languages";
-import Layout from "../layouts/Layout.astro"
+import BaseLayout from "../layouts/BaseLayout.astro"
 import { useTranslations } from '../i18n/util';
 
 const t = useTranslations(Astro);
 
 ---
-<Layout title="Nacos">
+<BaseLayout title="Nacos">
     <h1>aaa</h1>
     <div class="text-blue-07">testtest</div>
     <div class="font-bold text-primary">11111111</div>
@@ -16,7 +16,7 @@ const t = useTranslations(Astro);
     <a href="./docs/what-is-nacos">v1</a>
     <br />
     <p>{t('feedback.button')}</p>
-    <a href="./docs/v2/what-is-nacos">v2</a> 
-</Layout>
-   
+    <a href="./docs/v2/what-is-nacos">v2</a>
+</BaseLayout>
+
 

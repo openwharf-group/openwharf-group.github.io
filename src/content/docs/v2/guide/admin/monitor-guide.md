@@ -4,6 +4,8 @@ keywords: Nacos,监控手册
 description: Nacos 监控手册
 ---
 
+# Nacos 监控手册
+
 > 文档优化中......
 
 Nacos 0.8.0版本完善了监控系统，支持通过暴露metrics数据接入第三方监控系统监控Nacos运行状态，目前支持prometheus、elastic search和influxdb，下面结合prometheus和grafana如何监控Nacos。与elastic search和influxdb结合可自己查找相关资料
@@ -19,7 +21,7 @@ management.endpoints.web.exposure.include=*
 访问{ip}:8848/nacos/actuator/prometheus，看是否能访问到metrics数据
 
 ## 搭建prometheus采集Nacos metrics数据
-下载你想安装的prometheus版本，地址为[download prometheus](//prometheus.io/download/)
+下载你想安装的prometheus版本，地址为[download prometheus](https://prometheus.io/download/)
 
 
 ### linux & mac
@@ -59,7 +61,7 @@ prometheus.exe --config.file=prometheus.yml
 ```
 
 通过访问http://{ip}:9090/graph可以看到prometheus的采集数据，在搜索栏搜索nacos_monitor可以搜索到Nacos数据说明采集数据成功
-![IMAGE](//img.alicdn.com/tfs/TB1LThVCQvoK1RjSZFwXXciCFXa-2832-1576.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1LThVCQvoK1RjSZFwXXciCFXa-2832-1576.png)
 
 ## 搭建grafana图形化展示metrics数据
 和prometheus在同一台机器上安装grafana，使用 yum 安装grafana
@@ -73,7 +75,7 @@ brew services start grafana
 
 ### linux
 ```
-sudo yum install //s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.2.4-1.x86_64.rpm
+sudo yum install https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-5.2.4-1.x86_64.rpm
 sudo service grafana-server start
 ```
 
@@ -85,18 +87,18 @@ sudo service grafana-server start
 
 
 配置prometheus数据源
-![IMAGE](//img.alicdn.com/tfs/TB1bTafCOLaK1RjSZFxXXamPFXa-2832-1568.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1bTafCOLaK1RjSZFxXXamPFXa-2832-1568.png)
 
-导入Nacos grafana监控[模版](//github.com/nacos-group/nacos-template/blob/master/nacos-grafana.json)
-![IMAGE](//img.alicdn.com/tfs/TB1JadVCPDpK1RjSZFrXXa78VXa-2742-1338.png)
+导入Nacos grafana监控[模版](https://github.com/nacos-group/nacos-template/blob/master/nacos-grafana.json)
+![IMAGE](https://img.alicdn.com/tfs/TB1JadVCPDpK1RjSZFrXXa78VXa-2742-1338.png)
 
 Nacos监控分为三个模块:
 - nacos monitor展示核心监控项
-![IMAGE](//img.alicdn.com/tfs/TB1PMpUCQvoK1RjSZFDXXXY3pXa-2832-1584.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1PMpUCQvoK1RjSZFDXXXY3pXa-2832-1584.png)
 - nacos detail展示指标的变化曲线
-![IMAGE](//img.alicdn.com/tfs/TB1ZBF4CNjaK1RjSZFAXXbdLFXa-2742-1480.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1ZBF4CNjaK1RjSZFAXXbdLFXa-2742-1480.png)
 - nacos alert为告警项
-![IMAGE](//img.alicdn.com/tfs/TB1ALlUCFzqK1RjSZFCXXbbxVXa-2742-1476.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1ALlUCFzqK1RjSZFCXXbbxVXa-2742-1476.png)
 
 ## 配置grafana告警
 
@@ -104,13 +106,13 @@ Nacos监控分为三个模块:
 
 ### 钉钉告警
 钉钉可以通过配置钉钉机器人
-![IMAGE](//img.alicdn.com/tfs/TB1eJ0RCSzqK1RjSZFjXXblCFXa-2742-1482.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1eJ0RCSzqK1RjSZFjXXblCFXa-2742-1482.png)
 
 配置钉钉通知url
-![IMAGE](//img.alicdn.com/tfs/TB1ERtQCSzqK1RjSZFjXXblCFXa-2832-1578.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1ERtQCSzqK1RjSZFjXXblCFXa-2832-1578.png)
 
 测试告警项
-![IMAGE](//img.alicdn.com/tfs/TB1KvXPCHPpK1RjSZFFXXa5PpXa-996-504.png)
+![IMAGE](https://img.alicdn.com/tfs/TB1KvXPCHPpK1RjSZFFXXa5PpXa-996-504.png)
 
 ### 邮件告警
 
@@ -133,7 +135,7 @@ from_address = xxxxxx@126.com
 ```
 
 配置通知邮箱
-![IMAGE](//img.alicdn.com/tfs/TB12qyhCNnaK1RjSZFtXXbC2VXa-2832-1576.png)
+![IMAGE](https://img.alicdn.com/tfs/TB12qyhCNnaK1RjSZFtXXbC2VXa-2832-1576.png)
 
 
 ## Nacos metrics含义
@@ -166,7 +168,7 @@ nacos_monitor{name='getConfig'}|Nacos config读配置统计数
 nacos_monitor{name='publish'}|Nacos config写配置统计数
 nacos_monitor{name='ipCount'}|Nacos naming ip个数
 nacos_monitor{name='domCount'}|Nacos naming域名个数(1.x 版本)
-nacos_monitor{name='serviceCount'}|Nacos naming域名个数(2.x 版本)
+nacos_monitor{name='serviceCount'}|Nacos naming域名个数(2.x 版本) 
 nacos_monitor{name='failedPush'}|Nacos naming推送失败数
 nacos_monitor{name='avgPushCost'}|Nacos naming平均推送耗时
 nacos_monitor{name='leaderStatus'}|Nacos naming角色状态
@@ -201,13 +203,13 @@ nacos_client_request_seconds_sum|请求的总耗时，包括多种(url,方法,co
 整体的监控体系的搭建参考[Nacos监控手册](./monitor-guide.md)
 
 ## grafana监控Nacos-Sync
-和Nacos监控一样，Nacos-Sync也提供了监控模版，导入监控[模版](//github.com/nacos-group/nacos-template/blob/master/nacos-sync-grafana)
+和Nacos监控一样，Nacos-Sync也提供了监控模版，导入监控[模版](https://github.com/nacos-group/nacos-template/blob/master/nacos-sync-grafana)
 
 Nacos-Sync监控同样也分为三个模块:
-- nacos-sync monitor展示核心监控项
-![monitor](//img.alicdn.com/tfs/TB1GeNWKmzqK1RjSZFHXXb3CpXa-2834-1588.png)
+- nacos-sync monitor展示核心监控项 
+![monitor](https://img.alicdn.com/tfs/TB1GeNWKmzqK1RjSZFHXXb3CpXa-2834-1588.png)
 - nacos-sync detail和alert展示监控曲线和告警
-![detail](//img.alicdn.com/tfs/TB1kP8UKbvpK1RjSZPiXXbmwXXa-2834-1570.png)
+![detail](https://img.alicdn.com/tfs/TB1kP8UKbvpK1RjSZPiXXbmwXXa-2834-1570.png)
 
 ## Nacos-Sync metrics含义
 Nacos-Sync的metrics分为jvm层和应用层

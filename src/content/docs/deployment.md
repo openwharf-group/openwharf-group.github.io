@@ -4,11 +4,13 @@ keywords: Nacos,部署模式
 description: Nacos支持三种部署模式
 ---
 
+# Nacos部署环境
 
 Nacos定义为一个IDC内部应用组件，并非面向公网环境的产品，建议在内部隔离网络环境中部署，强烈不建议部署在公共网络环境。
 
 以下文档中提及的VIP，网卡等所有网络相关概念均处于内部网络环境。
 
+# Nacos支持三种部署模式
 
 * 单机模式 - 用于测试和单机试用。
 * 集群模式 - 用于生产环境，确保高可用。
@@ -44,7 +46,7 @@ $ cmd startup.cmd -m standalone
 - 2.初始化mysql数据库，数据库初始化文件：mysql-schema.sql
 - 3.修改conf/application.properties文件，增加支持mysql数据源配置（目前只支持mysql），添加mysql数据源的url、用户名和密码。
 
-```properties
+```
 spring.datasource.platform=mysql
 
 db.num=1
@@ -57,7 +59,7 @@ db.password=youdontknow
 
 ## 集群模式下运行Nacos
 
-[集群模式下运行Nacos](//nacos.io/docs/cluster-mode-quick-start.html)
+[集群模式下运行Nacos](https://nacos.io/zh-cn/docs/cluster-mode-quick-start.html)
 
 ## 多集群模式
 
@@ -70,26 +72,26 @@ Cloud设计，通过nacos.inetutils参数，可以指定Nacos使用的网卡和I
 
 - ip-address参数可以直接设置nacos的ip
 
-```properties
+```
 nacos.inetutils.ip-address=10.11.105.155
 ```
 
 - use-only-site-local-interfaces参数可以让nacos使用局域网ip，这个在nacos部署的机器有多网卡时很有用，可以让nacos选择局域网网卡
 
-```properties
+```
 nacos.inetutils.use-only-site-local-interfaces=true
 ```
 
 - ignored-interfaces支持网卡数组，可以让nacos忽略多个网卡
 
-```properties
+```
 nacos.inetutils.ignored-interfaces[0]=eth0
 nacos.inetutils.ignored-interfaces[1]=eth1
 ```
 
 - preferred-networks参数可以让nacos优先选择匹配的ip，支持正则匹配和前缀匹配
 
-```properties
+```
 nacos.inetutils.preferred-networks[0]=30.5.124.
 nacos.inetutils.preferred-networks[0]=30.5.124.(25[0-5]|2[0-4]\\d|((1d{2})|([1-9]?\\d))),30.5.124.(25[0-5]|2[0-4]\\d|((1d{2})|([1-9]?\\d)))
 ```

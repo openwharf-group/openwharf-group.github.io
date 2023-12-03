@@ -4,6 +4,7 @@ keywords: 容灾
 description: Java客户端容灾用户指南
 ---
 
+# Java客户端容灾
 
 我们可以在客户端开启本地容灾，用来应对Nacos服务端出现问题时，保证客户端的数据和接口稳定性。
 
@@ -12,11 +13,11 @@ description: Java客户端容灾用户指南
 1. 在Nacos服务端发布的时候，我们主动把容灾打开，这样客户端只使用本地容灾数据，Nacos服务的数据抖动或者数据错误都不会影响客户端，我们在Nacos服务端升级完成并且数据验证没问题后再关闭容灾；
 2. 在Nacos运行期间，突然出现接口不可用或者数据异常，我们可以快速的开启容灾，让客户端使用容灾数据，减小服务受影响的窗口，等Nacos服务端恢复后再关闭容灾；
 
-具体方案可以参考：//github.com/alibaba/nacos/issues/11053
+具体方案可以参考：https://github.com/alibaba/nacos/issues/11053
 
 ## 流程简介
 
-<img width="1000" alt="image" src="//github.com/alibaba/nacos/assets/4593375/f9011075-11b8-401b-9dbb-1366347a9a44">
+<img width="1000" alt="image" src="https://github.com/alibaba/nacos/assets/4593375/f9011075-11b8-401b-9dbb-1366347a9a44">
 
 如上图所示，客户端的查询请求都会先经过FailoverReactor，如果FailoverReactor有数据，则直接使用，从而忽略掉Nacos Server返回的数据；如果FailoverReactor里面没有数据，则走正常流程，从ServiceInfoHolder里读取缓存；
 
@@ -64,7 +65,7 @@ FailoverReactor里的数据可以使用不同的数据源，默认的数据源�
 
 里面的内容为客户端的ServiceInfo类的JSON序列化字符串，例如：
 
-```json
+```
 {
     "name":"DEFAULT_GROUP@@test.2",
     "groupName":"DEFAULT_GROUP",
@@ -105,15 +106,15 @@ FailoverReactor里的数据可以使用不同的数据源，默认的数据源�
 
 编写一个类，实现接口com.alibaba.nacos.client.naming.backups.FailoverDataSource：
 
-```java
+```
 public class MyFailoverDataSource implements FailoverDataSource {
-
+    
     @Override
     public FailoverSwitch getSwitch() {
         // TODO write your own implementation.
         return null;
     }
-
+    
     @Override
     public Map<String, FailoverData> getFailoverData() {
         // TODO write your own implementation. For naming module, the map

@@ -4,6 +4,7 @@ keywords: Nacos,服务,发现,性能
 description: Nacos2.0服务发现性能测试报告
 ---
 
+# Nacos2.0.0-ALPHA2 服务发现性能测试报告
 
 ## 测试目的
 
@@ -15,7 +16,7 @@ Nacos1.0性能测试参考 [服务发现性能测试报告](../../../nacos-namin
 
 我们使用自研的PAS性能评估服务平台进行压测，其原理是基于利用JMeter引擎，使用PAS自动生成的JMeter脚本，进行智能压测。
 
-![Pas图](//img.alicdn.com/tfs/TB1xCfDDpzqK1RjSZFvXXcB7VXa-692-297.png)
+![Pas图](https://img.alicdn.com/tfs/TB1xCfDDpzqK1RjSZFvXXcB7VXa-692-297.png)
 
 ## 测试环境
 
@@ -49,7 +50,7 @@ ${JAVA_HOME}/bin/java -DembeddedStorage=true -server -Xms10g -Xmx10g -Xmn4g -XX:
 
 注册完成之后每个客户端继续不停进行注册请求，模拟重复注册请求（会进行更新替换），同时记录下整个过程中的相关数据。
 
-#### 相关API
+#### 相关API 
 
 `NamingService.registerInstance(String serviceName, Instance instance)` 
 
@@ -71,7 +72,7 @@ ${JAVA_HOME}/bin/java -DembeddedStorage=true -server -Xms10g -Xmx10g -Xmn4g -XX:
 
 注册完成后，模拟100个客户端同时不停进行随机服务查询请求，并且有实例长度校验。同时记录下整个过程中的相关数据。
 
-#### 相关API
+#### 相关API 
 
 `NacosNamingService.getAllInstances(String serviceName, boolean subscribe)` 
 
@@ -96,7 +97,7 @@ ${JAVA_HOME}/bin/java -DembeddedStorage=true -server -Xms10g -Xmx10g -Xmn4g -XX:
 
 注册完成后，模拟使用相同100个客户端同时不停进行随机服务注销请求，同时记录下整个过程中的相关数据。
 
-#### 相关API
+#### 相关API 
 
 `NacosNamingService.deregisterInstance(String serviceName, String ip, int port)` 
 
@@ -121,7 +122,7 @@ Nacos2服务发现性能测试都是针对重点功能，通过对3节点规模�
 2. 注册/注销实例TPS达到 26000 以上，总体较Nacos1.X提升至少2倍，接口达到预期；
 3. 查询实例TPS能够达到 30000 以上，总体较Nacos1.X提升3倍左右，接口达到预期；
 
-**注意**
+**注意** 
 
 - 本次只测试临时实例注册/查询/注销，未涉及持久实例；
 - 本测试为对比Nacos1.X版本的测试场景，仅测试单核心接口的能力值，**真实模拟场景压测** 将在后续版本给出；

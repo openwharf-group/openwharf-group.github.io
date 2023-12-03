@@ -4,6 +4,8 @@ keywords: Nacos,贡献
 description: 欢迎来到Nacos！本文档是关于如何为Nacos做出贡献的指南。
 ---
 
+# 为 Nacos 做贡献
+
 欢迎来到Nacos！本文档是关于如何为Nacos做出贡献的指南。
 
 如果您发现不正确或遗失的内容，请留下意见/建议。
@@ -12,7 +14,7 @@ description: 欢迎来到Nacos！本文档是关于如何为Nacos做出贡献的
 
 ### 行为守则
 
-请务必阅读并遵守我们的[行为准则](//github.com/alibaba/nacos/blob/master/CODE_OF_CONDUCT.md)。
+请务必阅读并遵守我们的[行为准则](https://github.com/alibaba/nacos/blob/master/CODE_OF_CONDUCT.md)。
 
 ## 贡献和Nacos社区构成
 
@@ -25,14 +27,14 @@ Nacos欢迎任何角色的新参与者，包括用户，贡献者，提交者和
 
 #### 打开/提取准备问题
 
-如果您在文档中发现拼写错误，在代码中发现错误，或想要新功能或想要提供建议，您可以[在GitHub上打开一个问题](//github.com/alibaba/Nacos/issues/new)报告。
+如果您在文档中发现拼写错误，在代码中发现错误，或想要新功能或想要提供建议，您可以[在GitHub上打开一个问题](https://github.com/alibaba/Nacos/issues/new)报告。
 
 如果您想开始着手，可以选择github仓库中有以下标签的issues。
     
 
- -  [good first issue](//github.com/alibaba/nacos/labels/good%20first%20issue)：对于新手来说是非常好的入门issues。
-
- -  [contribution welcome](//github.com/alibaba/nacos/labels/contribution%20欢迎)：非常需要解决的问题和非常重要的模块，但目前缺少贡献者，欢迎贡献者来贡献。
+ -  [good first issue](https://github.com/alibaba/nacos/labels/good%20first%20issue)：对于新手来说是非常好的入门issues。
+ 
+ -  [contribution welcome](https://github.com/alibaba/nacos/labels/contribution%20欢迎)：非常需要解决的问题和非常重要的模块，但目前缺少贡献者，欢迎贡献者来贡献。
 
     
 
@@ -46,7 +48,7 @@ Nacos欢迎任何角色的新参与者，包括用户，贡献者，提交者和
 
 我们使用`develop`分支作为开发分支，这表明这是一个不稳定的分支。
 
-此外，我们的分支模型符合[//nvie.com/posts/a-successful-git-branching-model/](//nvie.com/posts/a-successful-git-branching-model)。我们强烈建议新成员在创建PR之前完成上述文章。
+此外，我们的分支模型符合[https://nvie.com/posts/a-successful-git-branching-model/](https://nvie.com/posts/a-successful-git-branching-model)。我们强烈建议新成员在创建PR之前完成上述文章。
 
 现在，如果您准备创建PR，这里是贡献者的工作流程：
 
@@ -67,7 +69,7 @@ Nacos欢迎任何角色的新参与者，包括用户，贡献者，提交者和
 
 创建Pull Request时：
 
-1. 请遵循[拉取请求模板](//github.com/alibaba/nacos/blob/master/.github/PULL_REQUEST_TEMPLATE.md)。
+1. 请遵循[拉取请求模板](https://github.com/alibaba/nacos/blob/master/.github/PULL_REQUEST_TEMPLATE.md)。
     
 2. 请创建**开发**分支的请求。
     
@@ -96,7 +98,7 @@ Nacos欢迎任何角色的新参与者，包括用户，贡献者，提交者和
     
  - 可测试性 - 单元测试用例应涵盖80％的新代码。
     
- - 可维护性 - 遵守我们的[代码规约](//github.com/alibaba/nacos/blob/master/style/codeStyle.md) ，至少应保持3个月的频率更新。
+ - 可维护性 - 遵守我们的[代码规约](https://github.com/alibaba/nacos/blob/master/style/codeStyle.md) ，至少应保持3个月的频率更新。
     
 
 ### 现在尝试成为一个Committer怎么样？

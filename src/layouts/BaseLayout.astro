@@ -1,16 +1,21 @@
 ---
-// 1. `frontmatter` prop 提供了访问 frontmatter 和其他数据的能力
-const { frontmatter } = Astro.props;
+
+import '../style/global.css'
+
+export type Props = {
+    title: string;
+};
+const { title } = Astro.props;
 ---
-<html>
-  <head>
-    <!-- 添加其他 Head 元素，例如样式和 meta 标签。 -->
-    <title>{frontmatter.title}</title>
-  </head>
-  <body>
-    <!-- 添加其他 UI 组件，例如通用的头部和页脚。 -->
-    <h1>自定义头部： {frontmatter.title} by {frontmatter.keywords}</h1>
-    <!-- 2. 渲染的 HTML 将被传入默认插槽。 -->
-    <slot />
-  </body>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>

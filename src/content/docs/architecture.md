@@ -4,9 +4,11 @@ keywords: Nacos,架构
 description: Nacos 架构
 ---
 
+# Nacos 架构
+
 ## 基本架构及概念
 
-![nacos_arch.jpg](//img.alicdn.com/imgextra/i3/O1CN01Vsweop1awxXw1ytMi_!!6000000003395-0-tps-1100-500.jpg)
+![nacos_arch.jpg](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1561217892717-1418fb9b-7faa-4324-87b9-f1740329f564.jpeg) 
 
 ### 服务 (Service)
 
@@ -49,7 +51,7 @@ description: Nacos 架构
 
 ## 逻辑架构及其组件介绍
 
-![nacos-logic.jpg](//img.alicdn.com/imgextra/i1/O1CN01ozymY51riccETJZQM_!!6000000005665-2-tps-891-621.png)
+![nacos-logic.jpg](https://cdn.nlark.com/yuque/0/2022/png/25601973/1646715315872-7ee3679a-e66e-49e9-ba9f-d24168a86c14.png)
 
 - 服务管理：实现服务CRUD，域名CRUD，服务健康状态检查，服务权重管理等功能
 - 配置管理：实现配置管CRUD，版本管理，灰度管理，监听管理，推送轨迹，聚合数据等功能
@@ -85,19 +87,19 @@ description: Nacos 架构
 
 ### 数据模型
 
-Nacos 数据模型 Key 由三元组唯一确定, Namespace默认是空串，公共命名空间（public），分组默认是 DEFAULT_GROUP。
+Nacos 数据模型 Key 由三元组唯一确定, Namespace默认是空串，公共命名空间（public），分组默认是 DEFAULT_GROUP。 
 
-![nacos_data_model](//img.alicdn.com/imgextra/i2/O1CN01yteiwv1aP4EjSsum8_!!6000000003321-0-tps-688-582.jpg)
+![nacos_data_model](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1561217857314-95ab332c-acfb-40b2-957a-aae26c2b5d71.jpeg) 
 
 ### 服务领域模型
 
-![nacos_naming_data_model](//img.alicdn.com/imgextra/i4/O1CN01bDHE4j23JgR9HF9BA_!!6000000007235-0-tps-812-483.jpg)
+![nacos_naming_data_model](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1561217924697-ba504a35-129f-4fc6-b0df-1130b995375a.jpeg) 
 
 ### 配置领域模型
 
 围绕配置，主要有两个关联的实体，一个是配置变更历史，一个是服务标签（用于打标分类，方便索引），由 ID 关联。
 
-![nacos_config_er](//img.alicdn.com/imgextra/i4/O1CN01utMU651IzYi2YgDDA_!!6000000000964-0-tps-567-534.jpg)
+![nacos_config_er](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1561217958896-4465757f-f588-4797-9c90-a76e604fabb4.jpeg) 
 
 
 ## 类视图
@@ -106,21 +108,21 @@ Nacos 数据模型 Key 由三元组唯一确定, Namespace默认是空串，公�
 
 服务部分待续
 
-![nacos_sdk_class_relation](//img.alicdn.com/imgextra/i3/O1CN01MfKw5O1yMMg2xcsaG_!!6000000006564-0-tps-714-830.jpg)
+![nacos_sdk_class_relation](https://cdn.nlark.com/yuque/0/2022/png/25574784/1650771676187-d95a9e45-8656-4d1a-8b5b-ed63a23a816b.png) 
 
 
 ## 构建物、部署及启动模式
 
-![deployment](////img.alicdn.com/imgextra/i3/O1CN01px6UiE1nGRmuwpTDv_!!6000000005062-2-tps-1470-732.png)
+![undefined](https://cdn.yuque.com/lark/0/2018/png/15914/1531730742844-e8325932-258b-49b2-9473-8d1199efe20d.png) 
 
 ### 两种交付工件
-
+	
 Nacos 支持标准 Docker 镜像(TODO: 0.2版本开始支持）及 zip(tar.gz)压缩包的构建物。
-
+		
 ### 两种启动模式
-
+	
 Nacos 支持将注册中心(Service Registry）与配置中心(Config Center) 在一个进程合并部署或者将2者分离部署的两种模式。
-
+	
 ### 免费的公有云服务模式
 
-除了您自己部署和启动 Nacos 服务之外，在云计算时代，Nacos 也支持公有云模式，在阿里云公有云的商业产品（如[ACM](//www.aliyun.com/product/acm), [EDAS](//www.aliyun.com/product/edas)) 中会提供 Nacos 的免费的公有云服务。我们也欢迎和支持其他的公有云提供商提供 Nacos 的公有云服务。
+除了您自己部署和启动 Nacos 服务之外，在云计算时代，Nacos 也支持公有云模式，在阿里云公有云的商业产品（如[ACM](https://www.aliyun.com/product/acm), [EDAS](https://www.aliyun.com/product/edas)) 中会提供 Nacos 的免费的公有云服务。我们也欢迎和支持其他的公有云提供商提供 Nacos 的公有云服务。

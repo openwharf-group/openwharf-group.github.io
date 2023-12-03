@@ -28,9 +28,9 @@ description: 配置加密
 
 # 插件化实现
 
-![](//tva1.sinaimg.cn/large/008i3skNly1gvsu112vnnj314b0u0764.jpg)
+![](https://tva1.sinaimg.cn/large/008i3skNly1gvsu112vnnj314b0u0764.jpg)
 
-通过 SPI 的机制抽象出加密和解密的操作，Nacos 默认提供 `AES` 的实现。用户也可以自定义加解密的实现方式。具体的实现在 [nacos-plugin](//github.com/nacos-group/nacos-plugin) 仓库。
+通过 SPI 的机制抽象出加密和解密的操作，Nacos 默认提供 `AES` 的实现。用户也可以自定义加解密的实现方式。具体的实现在 [nacos-plugin](https://github.com/nacos-group/nacos-plugin) 仓库。
 
 在 Nacos 服务端启动的时候就会加载所有依赖的加解密算法，然后通过发布配置的 `dataId` 的前缀来进行匹配是否需要加解密和使用的加解密算法。
 
@@ -67,10 +67,10 @@ ${nacos-aes-encryption-plugin.version} 可以获取插件的最新版本。
 # 创建加密配置
 - 打开 Nacos 控制台，点击新建配置。
 
-  ![](//tva1.sinaimg.cn/large/e6c9d24ely1h0cxaklw10j21g20u0ac8.jpg)
+  ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0cxaklw10j21g20u0ac8.jpg)
 - 配置前缀使用cipher-[加密算法名称]-dataId来标识这个配置需要加密，系统会自动识别并加密。例如使用 AES 算法来解密配置：cipher-aes-application-dev.yml。
 
-  ![](//tva1.sinaimg.cn/large/e6c9d24ely1h0cxs40s2tj21b40u0whw.jpg)
+  ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0cxs40s2tj21b40u0whw.jpg)
 - 点击保存,查看数据库
 
-  ![](//tva1.sinaimg.cn/large/e6c9d24ely1h0cxwhdc77j21xm0bumz2.jpg)
+  ![](https://tva1.sinaimg.cn/large/e6c9d24ely1h0cxwhdc77j21xm0bumz2.jpg)

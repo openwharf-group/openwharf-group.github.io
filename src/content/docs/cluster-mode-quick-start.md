@@ -4,6 +4,7 @@ keywords: 集群,部署
 description: 集群部署说明
 ---
 
+# 集群部署说明
 
 ## 集群模式部署
 
@@ -19,15 +20,15 @@ http://SLB:port/openAPI  挂载SLB模式(内网SLB，不可暴露到公网，以
 
 http://nacos.com:port/openAPI  域名 + SLB模式(内网SLB，不可暴露到公网，以免带来安全风险)，可读性好，而且换ip方便，推荐模式
 
-![deployDnsVipMode.jpg](/img/deployDnsVipMode.jpg)
+![deployDnsVipMode.jpg](/img/deployDnsVipMode.jpg) 
 
 ## 1. 预备环境准备
 
 请确保是在环境中安装使用:
 
 1. 64 bit OS  Linux/Unix/Mac，推荐使用Linux系统。
-2. 64 bit JDK 1.8+；[下载](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).[配置](//docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)。
-3. Maven 3.2.x+；[下载](//maven.apache.org/download.cgi).[配置](//maven.apache.org/settings.html)。
+2. 64 bit JDK 1.8+；[下载](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).[配置](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/)。
+3. Maven 3.2.x+；[下载](https://maven.apache.org/download.cgi).[配置](https://maven.apache.org/settings.html)。
 4. 3个或3个以上Nacos节点才能构成集群。
 
 ## 2. 下载源码或者安装包
@@ -39,7 +40,7 @@ http://nacos.com:port/openAPI  域名 + SLB模式(内网SLB，不可暴露到公
 ```bash
 unzip nacos-source.zip
 cd nacos/
-mvn -Prelease-nacos clean install -U
+mvn -Prelease-nacos clean install -U  
 cd nacos/distribution/target/nacos-server-1.3.0/nacos/bin
 ```
 
@@ -47,9 +48,9 @@ cd nacos/distribution/target/nacos-server-1.3.0/nacos/bin
 
 下载地址
 
-[zip包](//github.com/alibaba/nacos/releases/download/1.3.0/nacos-server-1.3.0.zip)
+[zip包](https://github.com/alibaba/nacos/releases/download/1.3.0/nacos-server-1.3.0.zip)
 
-[tar.gz包](//github.com/alibaba/nacos/releases/download/1.3.0/nacos-server-1.3.0.tar.gz)
+[tar.gz包](https://github.com/alibaba/nacos/releases/download/1.3.0/nacos-server-1.3.0.tar.gz)
 
 ```bash
   unzip nacos-server-1.3.0.zip 或者 tar -xvf nacos-server-1.3.0.tar.gz
@@ -59,7 +60,7 @@ cd nacos/distribution/target/nacos-server-1.3.0/nacos/bin
 ## 3. 配置集群配置文件
 
 在nacos的解压目录nacos/的conf目录下，有配置文件cluster.conf，请每行配置成ip:port。（请配置3个或3个以上节点）
-```
+```plain
 # ip:port
 200.8.9.16:8848
 200.8.9.17:8848
@@ -78,11 +79,11 @@ cd nacos/distribution/target/nacos-server-1.3.0/nacos/bin
 
 #### 初始化 MySQL 数据库
 
-[sql语句源文件](//github.com/alibaba/nacos/blob/master/distribution/conf/mysql-schema.sql)
+[sql语句源文件](https://github.com/alibaba/nacos/blob/master/distribution/conf/mysql-schema.sql)
 
 #### application.properties 配置
 
-[application.properties配置文件](//github.com/alibaba/nacos/blob/master/distribution/conf/application.properties)
+[application.properties配置文件](https://github.com/alibaba/nacos/blob/master/distribution/conf/application.properties)
 
 ## 5. 启动服务器
 
@@ -109,7 +110,7 @@ sh startup.sh
 ```
 
 ## 6. 服务注册&发现和配置管理
-
+ 
 ### 服务注册
 
 `curl -X PUT 'http://127.0.0.1:8848/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&ip=20.18.7.10&port=8080'`
