@@ -23,6 +23,7 @@ declare module 'virtual:starlight/components' {
 
 	export const PageSidebar: typeof import('@astrojs/starlight/components/PageSidebar.astro').default;
 	export const TableOfContents: typeof import('@astrojs/starlight/components/TableOfContents.astro').default;
+
 	export const MobileTableOfContents: typeof import('@astrojs/starlight/components/MobileTableOfContents.astro').default;
 
 	export const Sidebar: typeof import('@astrojs/starlight/components/Sidebar.astro').default;

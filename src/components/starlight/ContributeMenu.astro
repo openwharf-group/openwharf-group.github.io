@@ -10,7 +10,6 @@ export interface Props {
 const { editHref } = Astro.props as Props;
 
 const lang = getLanguageFromURL(Astro.url.pathname);
-const isFallback = !!Astro.params.fallback;
 
 import "./style.css";
 ---
