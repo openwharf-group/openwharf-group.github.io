@@ -1,6 +1,14 @@
 ---
 
 import '../style/global.css'
+import '../../node_modules/@astrojs/starlight/style/props.css';
+import '../../node_modules/@astrojs/starlight/style/shiki.css';
+import '../../node_modules/@astrojs/starlight/style/util.css';
+import {
+	Header,
+	PageFrame
+} from 'virtual:starlight/components';
+
 
 export type Props = {
     title: string;
@@ -16,6 +24,9 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <slot />
+		<PageFrame {...Astro.props}>
+			<Header slot="header" {...Astro.props} />
+			<slot />
+		</PageFrame>
     </body>
 </html>
