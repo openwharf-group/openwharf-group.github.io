@@ -1,6 +1,6 @@
 ---
 title: Nacos 架构
-keywords: Nacos,架构
+keywords: [Nacos,架构]
 description: Nacos 架构
 ---
 
