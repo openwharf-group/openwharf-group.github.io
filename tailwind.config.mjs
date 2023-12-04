@@ -3,6 +3,23 @@ import starlightPlugin from '@astrojs/starlight-tailwind';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+	daisyui: {
+		themes: [
+			{
+				mytheme: {
+					"primary": "#1E1F24",
+					"secondary": "#EBECEF",
+					"accent": "#3D57DA",
+					"neutral": "#EDF2FC",
+					"base-100": "#EDF2FC",
+					"info": "#1E1F24",
+					"success": "#7097E6",
+					"warning": "#A3A6B3",
+					"error": "#1E1F24",
+				},
+			  },
+		],
+	  },
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		//替换调色板，只能用这下面的颜色
@@ -43,26 +60,11 @@ export default {
 			}
 		},
 		extend: {
-			// 设置starlight文档颜色
-			colors: {
-				gray: {
-					100: "#F4F4F6",
-					200: "#EBECEF",
-					300: "#DDDEE4",
-					400: "#B3B6C1",
-					500: "#9295A5",
-					600: "#6E7587",
-					700: "#4C505D",
-					800: "#1E1F24",
-					900: "#0A0A0A",
-				},
-				accent: {
-					200: '#567BE1',
-					600: '#3D57DA',
-					900: '#162B92',
-					950: '#0B1337'
-				}
-			}
+			//页面与文档的字体设置
+			fontFamily: {
+				sans: ["Roboto", "sans-serif"],
+				mono: ["Roboto","sans-serif"],
+			},
 		}
 	},
 	plugins: [starlightPlugin(), require("daisyui")],
