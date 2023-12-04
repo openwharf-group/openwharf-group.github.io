@@ -1,15 +1,15 @@
 ---
-title: 鉴权
-keywords: 鉴权
-description: 鉴权
+title: Authorization
+keywords: Authorization
+description: Authorization
 ---
 
-:::caution[注意！]
-- Nacos是一个内部微服务组件，需要在可信的内部网络中运行，不可暴露在公网环境，防止带来安全风险。
-- Nacos提供简单的鉴权实现，为防止业务错用的弱鉴权体系，不是防止恶意攻击的强鉴权体系。
-- 如果运行在不可信的网络环境或者有强鉴权诉求，请参考官方简单实现做进行[自定义插件开发](../../plugin/auth-plugin.md)。
-:::
+> 注意
+> - Nacos是一个内部微服务组件，需要在可信的内部网络中运行，不可暴露在公网环境，防止带来安全风险。
+> - Nacos提供简单的鉴权实现，为防止业务错用的弱鉴权体系，不是防止恶意攻击的强鉴权体系。
+> - 如果运行在不可信的网络环境或者有强鉴权诉求，请参考官方简单实现做进行[自定义插件开发](../../plugin/auth-plugin.md)。
 
+# 鉴权
 
 ## 相关参数
 
@@ -29,7 +29,7 @@ description: 鉴权
 
 2.2.2版本之前的Nacos默认控制台，无论服务端是否开启鉴权，都会存在一个登录页；这导致很多用户被**误导**认为Nacos默认是存在鉴权的。在社区安全工程师的建议下，Nacos自**2.2.2**版本开始，在未开启鉴权时，默认控制台将不需要登录即可访问，同时在控制台中给予提示，提醒用户当前集群未开启鉴权。
 
-在用户开启鉴权后，控制台才需要进行登录访问。 同时针对不同的鉴权插件，提供新的接口方法，用于提示控制台是否开启登录页；同时在`2.2.3`版本后，Nacos可支持关闭开源控制台，并引导到用户自定义的Nacos控制台，详情可查看[Nacos鉴权插件-服务端插件](../../plugin/auth-plugin.md)及[控制台手册-关闭登录功能](/docs/v2/guide/admin/console-guide.html#1.1)
+在用户开启鉴权后，控制台才需要进行登录访问。 同时针对不同的鉴权插件，提供新的接口方法，用于提示控制台是否开启登录页；同时在`2.2.3`版本后，Nacos可支持关闭开源控制台，并引导到用户自定义的Nacos控制台，详情可查看[Nacos鉴权插件-服务端插件](../../plugin/auth-plugin.md)及[控制台手册-关闭登录功能](/zh-cn/docs/v2/guide/admin/console-guide.html#1.1)
 
 ## 服务端如何开启鉴权
 
@@ -38,12 +38,12 @@ description: 鉴权
 按照官方文档配置启动,默认是不需要登录的，这样会导致配置中心对外直接暴露。而启用鉴权之后，需要在使用用户名和密码登录之后，才能正常使用nacos。
 
 开启鉴权之前，application.properties中的配置信息为：
-```properties
+```java
 ### If turn on auth system:
 nacos.core.auth.enabled=false
 ```
 开启鉴权之后，application.properties中的配置信息为：
-```properties
+```java
 ### If turn on auth system:
 nacos.core.auth.system.type=nacos
 nacos.core.auth.enabled=true
@@ -114,11 +114,11 @@ docker-compose -f example/standalone-derby.yaml up
 如果选择自定义镜像，请在构建镜像之前，修改nacos工程中的application.properties文件，
 
 将下面这一行配置信息
-```properties
+```
 nacos.core.auth.enabled=false
 ```
 修改为
-```properties
+```
 nacos.core.auth.system.type=nacos
 nacos.core.auth.enabled=true
 ```
@@ -129,7 +129,7 @@ nacos.core.auth.enabled=true
 ### Java SDK鉴权
 
 在构建“Properties”类时,需传入用户名和密码。
-```
+```java
 properties.put("username","${username}");
 properties.put("password","${password}");
 ```
@@ -158,41 +158,43 @@ try {
 ### Open-API鉴权
 首先需要使用用户名和密码登陆nacos。
 
-```bash
+```plain
 curl -X POST '127.0.0.1:8848/nacos/v1/auth/login' -d 'username=nacos&password=nacos'
 ```
 
 若用户名和密码正确,返回信息如下:
 
-```json
+```
 {"accessToken":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTYwNTYyOTE2Nn0.2TogGhhr11_vLEjqKko1HJHUJEmsPuCxkur-CfNojDo","tokenTtl":18000,"globalAdmin":true}
 ```
 
 接下来进行配置信息或服务信息时,应当使用该accessToken鉴权,在url后添加参数accessToken=${accessToken},其中${accessToken}为登录时返回的token信息，例如
 
-```bash
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/cs/configs?accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTYwNTYyMzkyM30.O-s2yWfDSUZ7Svd3Vs7jy9tsfDNHs1SuebJB4KlNY8Q&dataId=nacos.example.1&group=nacos_group'
 ```
 
-```bash
+```plain
 curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance?accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTYwNTYyMzkyM30.O-s2yWfDSUZ7Svd3Vs7jy9tsfDNHs1SuebJB4KlNY8Q&port=8848&healthy=true&ip=11.11.11.11&weight=1.0&serviceName=nacos.test.3&encoding=GBK&namespaceId=n1'
 ```
 
 ## 开启Token缓存功能
 
-服务端自2.2.1版本后，默认鉴权插件模块支持token缓存功能，可参见ISSUE [#9906](//github.com/alibaba/nacos/issues/9906)
-
+服务端自2.2.1版本后，默认鉴权插件模块支持token缓存功能，可参见ISSUE #9906 
+```
+https://github.com/alibaba/nacos/issues/9906
+```
 #### 背景
 无论是客户端SDK还是OpenAPI，在调用login接口获取accessToken之后，携带accessToken访问服务端，服务端解析Token进行鉴权。解析的动作比较耗时，如果想要提升接口的性能，可以考虑开启缓存Token的功能，用字符串比较代替Token解析。
 
 #### 开启方式
-```properties
+```
 nacos.core.auth.plugin.nacos.token.cache.enable=true
 ```
 
 #### 注意事项
 在开启Token缓存功能之前，服务端对每一个携带用户名密码访问login接口的请求都会生成新的token，接口的返回值中的tokenTtl字段跟服务端配置文件中设置的值相等，配置如下：
-```properties
+```
 nacos.core.auth.plugin.nacos.token.expire.seconds=18000
 ```
 在开启Token缓存功能之后，服务端对每一个携带用户名密码访问login接口的请求，会先检查缓存中是否存在该用户名对应的token。若不存在，生成新的Token，插入缓存再返回；若存在，返回该token，此时tokenTtl字段的值为配置文件中设置的值减去该Token在缓存中存留的时长。
@@ -206,7 +208,7 @@ nacos.core.auth.plugin.nacos.token.expire.seconds=18000
 
 开启方式:
 
-```properties
+```
 ### 开启鉴权
 nacos.core.auth.enabled=true
 

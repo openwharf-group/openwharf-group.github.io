@@ -4,8 +4,9 @@ keywords: 提交,问题报告
 description: 如何提交问题报告
 ---
 
+# 如何提交问题报告
 
-如果Nacos项目的任何部分存在问题或文档问题，请通过[opening an issue](//github.com/alibaba/nacos/issues/new)告诉我们。我们非常认真地对待错误和错误，在产品面前没有不重要的问题。不过在创建错误报告之前，请检查是否存在报告相同问题的issues。
+如果Nacos项目的任何部分存在问题或文档问题，请通过[opening an issue](https://github.com/alibaba/nacos/issues/new)告诉我们。我们非常认真地对待错误和错误，在产品面前没有不重要的问题。不过在创建错误报告之前，请检查是否存在报告相同问题的issues。
 
 为了使错误报告准确且易于理解，请尝试创建以下错误报告：
 
@@ -19,9 +20,9 @@ description: 如何提交问题报告
 
 我们可能会要求您提供更多信息以查找错误。将关闭重复的错误报告。
 
-[nacos-issue](//github.com/alibaba/nacos/issues/new)
+[nacos-issue](https://github.com/alibaba/nacos/issues/new)
 [filing-good-bugs](http://fantasai.inkedblade.net/style/talks/filing-good-bugs/)
 
-## 如何提交安全问题
+# 如何提交安全问题
 
-如果您发现Nacos项目中存在安全问题，请通过[ASRC（Alibaba Security Response Center阿里安全响应中心）]( //security.alibaba.com) 告知我们。
+如果您发现Nacos项目中存在安全问题，请通过[ASRC（Alibaba Security Response Center阿里安全响应中心）]( https://security.alibaba.com) 告知我们。

@@ -4,6 +4,7 @@ keywords: Nacos,系统参数
 description: Nacos系统参数介绍
 ---
 
+# Nacos 系统参数介绍
 
 ## Nacos Server
 
@@ -33,7 +34,7 @@ JAVA_OPT="${JAVA_OPT} -Dnacos.home=${BASE_DIR}"
 |nacos.naming.distro.batchSyncKeyCount| 同步任务每批的key的数目 | 正整数 | 1000 | >= 1.0.2 |
 |nacos.naming.distro.syncRetryDelay| 同步任务失败的重试间隔，单位为毫秒 | 正整数 | 5000 | >= 1.0.2 |
 
-除了上面列到的在`application.properties`里配置的属性，还有一些可以在运行时调用接口来进行调节，这些参数都在[Open API](//nacos.io/docs/open-api.html)里的```查看系统当前数据指标```这个API里有声明。
+除了上面列到的在`application.properties`里配置的属性，还有一些可以在运行时调用接口来进行调节，这些参数都在[Open API](https://nacos.io/zh-cn/docs/open-api.html)里的```查看系统当前数据指标```这个API里有声明。
 
 ### Config模块
 
@@ -50,7 +51,7 @@ JAVA_OPT="${JAVA_OPT} -Dnacos.home=${BASE_DIR}"
 当前数据库配置支持多数据源。通过`db.num`来指定数据源个数，`db.url.index`为对应的数据库的链接。`db.user`以及`db.password`没有设置`index`时,所有的链接都以`db.user`和`db.password`用作认证。如果不同数据源的用户名称或者用户密码不一样时，可以通过符号`,`来进行切割，或者指定`db.user.index`,`db.user.password`来设置对应数据库链接的用户或者密码。需要注意的是，当`db.user`和`db.password`没有指定下标时，因为当前机制会根据`,`进行切割。所以当用户名或者密码存在`,`时，会把`,`切割后前面的值当成最后的值进行认证，会导致认证失败。
 
 Nacos从1.3版本开始使用HikariCP连接池，但在1.4.1版本前，连接池配置由系统默认值定义，无法自定义配置。在1.4.1后，提供了一个方法能够配置HikariCP连接池。
-`db.pool.config`为配置前缀，`xxx`为实际的hikariCP配置，如`db.pool.config.connectionTimeout`或`db.pool.config.maximumPoolSize`等。更多hikariCP的配置请查看[HikariCP](//github.com/brettwooldridge/HikariCP)
+`db.pool.config`为配置前缀，`xxx`为实际的hikariCP配置，如`db.pool.config.connectionTimeout`或`db.pool.config.maximumPoolSize`等。更多hikariCP的配置请查看[HikariCP](https://github.com/brettwooldridge/HikariCP) 
 需要注意的是，url,user,password会由`db.url.n`,`db.user`,`db.password`覆盖，driverClassName则是默认的MySQL8 driver（该版本mysql driver支持mysql5.x)
 
 ### CMDB模块
@@ -70,8 +71,8 @@ Nacos从1.3版本开始使用HikariCP连接池，但在1.4.1版本前，连接�
 
 |参数名	|含义	 |     可选值	 |     默认值| 支持版本 |
 |------|------|-----------|-----------------|-------|
-|endpoint| 连接Nacos Server指定的连接点，可以参考[文档](//nacos.io/blog/address-server.html) | 域名 | 空 | >= 0.1.0 |
-|endpointPort| 连接Nacos Server指定的连接点端口，可以参考[文档](//nacos.io/blog/address-server.html) | 合法端口号 | 空 | >= 0.1.0 |
+|endpoint| 连接Nacos Server指定的连接点，可以参考[文档](https://nacos.io/zh-cn/blog/address-server.html) | 域名 | 空 | >= 0.1.0 |
+|endpointPort| 连接Nacos Server指定的连接点端口，可以参考[文档](https://nacos.io/zh-cn/blog/address-server.html) | 合法端口号 | 空 | >= 0.1.0 |
 |namespace| 命名空间的ID | 命名空间的ID | config模块为空，naming模块为public | >= 0.8.0 |
 |serverAddr| Nacos Server的地址列表，这个值的优先级比endpoint高 | ip:port,ip:port,... | 空 | >= 0.1.0 |
 |JM.LOG.PATH(-D)| 客户端日志的目录 | 目录路径 | 用户根目录 | >= 0.1.0 |
@@ -86,7 +87,7 @@ Nacos从1.3版本开始使用HikariCP连接池，但在1.4.1版本前，连接�
 |namingPollingThreadCount| 客户端定时轮询数据更新的线程池大小 | 正整数 | 机器的CPU数的一半 | >= 1.0.0 |
 |com.alibaba.nacos.naming.cache.dir(-D)| 客户端缓存目录 | 目录路径 | `{user.home}/nacos/naming` | >= 1.0.0 |
 |com.alibaba.nacos.naming.log.level(-D)| Naming客户端的日志级别 | info,error,warn等 | info | >= 1.0.0 |
-|com.alibaba.nacos.client.naming.tls.enable(-D)| 是否打开HTTPS | true/false | false | >= 1.0.0 |
+|com.alibaba.nacos.client.naming.tls.enable(-D)| 是否打开HTTPS | true/false | false | >= 1.0.0 | 
 
 ### Config客户端
 

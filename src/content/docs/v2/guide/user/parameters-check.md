@@ -5,6 +5,8 @@ description: 参数校验
 date: 2023-10-24
 ---
 
+# 参数校验
+
 2.3.0版本之前的Nacos的参数校验逻辑分散，由各类请求的处理方法单独进行校验，难以更改维护，经常出现参数校验的遗漏，参数校验的规则也没有明确统一；这使得用户使用时经常会因为一些特殊字符导致功能不符合预期或出现漏洞，甚至导致大量推送，导致带宽打满，内存占用过多，导致应用出现故障。
 
 在2.3.0版本中，Nacos明确了参数校验规则，在服务端实现了统一的参数校验逻辑并添加了参数校验层，根据校验规则对客户端向服务端发送的请求进行校验。
@@ -51,7 +53,7 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-- [命名空间](/docs/v2/guide/user/open-api.html#3.1)
+- [命名空间](/zh-cn/docs/v2/guide/user/open-api.html#3.1)
 
 #### 校验失败报错信息
 
@@ -70,8 +72,8 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-- [获取配置](/docs/v2/guide/user/open-api.html#1.1)
-- [注册实例](/docs/v2/guide/user/open-api.html#2.1)
+- [获取配置](/zh-cn/docs/v2/guide/user/open-api.html#1.1)
+- [注册实例](/zh-cn/docs/v2/guide/user/open-api.html#2.1)
 
 #### 校验失败报错信息
 
@@ -90,7 +92,7 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-[发布配置](//nacos.io/docs/v2/guide/user/open-api.html#1.2)
+[发布配置](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#1.2)
 
 #### Java SDK示例
 
@@ -113,7 +115,7 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-[注册实例](//nacos.io/docs/v2/guide/user/open-api.html#2.1)
+[注册实例](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.1)
 
 #### Java SDK示例
 
@@ -136,7 +138,7 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-[查询实例列表](//nacos.io/docs/v2/guide/user/open-api.html#2.4)
+[查询实例列表](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.4)
 
 #### Java SDK示例
 
@@ -159,7 +161,7 @@ date: 2023-10-24
 
 #### OpenAPI示例
 
-[更新实例](//nacos.io/docs/v2/guide/user/open-api.html#2.3)
+[更新实例](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.3)
 
 #### Java SDK示例
 
@@ -182,7 +184,7 @@ IP地址
 
 #### OpenAPI示例
 
-[查询指定服务的实例列表](//nacos.io/docs/v2/guide/user/open-api.html#2.5)
+[查询指定服务的实例列表](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.5)
 
 #### Java SDK示例
 
@@ -205,7 +207,7 @@ IP地址
 
 #### OpenAPI示例
 
-[更新实例](//nacos.io/docs/v2/guide/user/open-api.html#2.3)
+[更新实例](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.3)
 
 #### Java SDK示例
 
@@ -227,7 +229,7 @@ IP地址
 
 #### OpenAPI示例
 
-[更新实例](//nacos.io/docs/v2/guide/user/open-api.html#2.3)
+[更新实例](https://nacos.io/zh-cn/docs/v2/guide/user/open-api.html#2.3)
 
 #### Java SDK示例
 

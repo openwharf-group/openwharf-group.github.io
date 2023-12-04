@@ -4,17 +4,18 @@ keywords: nacos,kubernetes
 description: 本项目包含一个可构建的Nacos Docker Image，旨在利用 StatefulSets 在 Kubernetes上部署 Nacos。
 ---
 
+# Kubernetes Nacos
 
-本项目包含一个可构建的Nacos Docker Image，旨在利用StatefulSets在[Kubernetes](//kubernetes.io/)上部署[Nacos](//nacos.io)
+本项目包含一个可构建的Nacos Docker Image，旨在利用StatefulSets在[Kubernetes](https://kubernetes.io/)上部署[Nacos](https://nacos.io)
 # Tips
-* 推荐使用[Nacos Operator](//github.com/nacos-group/nacos-k8s/blob/master/operator/README-CN.md)在Kubernetes部署Nacos Server.
+* 推荐使用[Nacos Operator](https://github.com/nacos-group/nacos-k8s/blob/master/operator/README-CN.md)在Kubernetes部署Nacos Server.
 
 # 快速开始
 
 * **Clone 项目**
 
 ```shell
-git clone //github.com/nacos-group/nacos-k8s.git
+git clone https://github.com/nacos-group/nacos-k8s.git
 ```
 
 * **简单例子**
@@ -33,19 +34,19 @@ chmod +x quick-startup.sh
   ```bash
   curl -X POST 'http://cluster-ip:8848/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&ip=20.18.7.10&port=8080'
   ```
-
+  
   * **服务发现**
 
   ```bash
   curl -X GET 'http://cluster-ip:8848/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName'
   ```
-
+  
   * **发布配置**
 
   ```bash
   curl -X POST "http://cluster-ip:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&group=test&content=helloWorld"
   ```
-
+  
   * **获取配置**
 
   ```bash
@@ -59,7 +60,7 @@ chmod +x quick-startup.sh
 
 ## 部署 NFS
 
-* 创建角色
+* 创建角色 
 
 ```shell
 kubectl create -f deploy/nfs/rbac.yaml
@@ -112,14 +113,14 @@ kubectl create -f deploy/mysql/mysql-nfs.yaml
 
 ```shell
 
-kubectl get pod
+kubectl get pod 
 NAME                         READY   STATUS    RESTARTS   AGE
 mysql-gf2vd                        1/1     Running   0          111m
 
 ```
 ## 执行数据库初始化语句
 
-数据库初始化语句位置  <//github.com/alibaba/nacos/blob/develop/distribution/conf/nacos-mysql.sql>
+数据库初始化语句位置  <https://github.com/alibaba/nacos/blob/develop/distribution/conf/nacos-mysql.sql>
 
 
 ## 部署Nacos
@@ -155,7 +156,7 @@ nacos-2   1/1     Running   0          19h
 
 ## 扩容测试
 
-* 在扩容前，使用 [`kubectl exec`](//kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)获取在pod中的Nacos集群配置文件信息
+* 在扩容前，使用 [`kubectl exec`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)获取在pod中的Nacos集群配置文件信息
 
 ```powershell
 for i in 0 1; do echo nacos-$i; kubectl exec nacos-$i cat conf/cluster.conf; done
@@ -163,7 +164,7 @@ for i in 0 1; do echo nacos-$i; kubectl exec nacos-$i cat conf/cluster.conf; don
 
 StatefulSet控制器根据其序数索引为每个Pod提供唯一的主机名。 主机名采用<statefulset name>  -  <ordinal index>的形式。 因为nacos StatefulSet的副本字段设置为2，所以当前集群文件中只有两个Nacos节点地址
 
-![k8s](//cdn.nlark.com/yuque/0/2019/gif/338441/1562846123635-e361d2b5-4bbe-4347-acad-8f11f75e6d38.gif)
+![k8s](https://cdn.nlark.com/yuque/0/2019/gif/338441/1562846123635-e361d2b5-4bbe-4347-acad-8f11f75e6d38.gif)
 
 * 使用kubectl scale 对Nacos动态扩容
 
@@ -171,17 +172,17 @@ StatefulSet控制器根据其序数索引为每个Pod提供唯一的主机名。
 kubectl scale sts nacos --replicas=3
 ```
 
-![scale](//cdn.nlark.com/yuque/0/2019/gif/338441/1562846139093-7a79b709-9afa-448a-b7d6-f57571d3a902.gif)
+![scale](https://cdn.nlark.com/yuque/0/2019/gif/338441/1562846139093-7a79b709-9afa-448a-b7d6-f57571d3a902.gif)
 
-* 在扩容后，使用 [`kubectl exec`](//kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)获取在pod中的Nacos集群配置文件信息
+* 在扩容后，使用 [`kubectl exec`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)获取在pod中的Nacos集群配置文件信息
 
 ```bash
 for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i cat conf/cluster.conf; done
 ```
 
-![get_cluster_after](//cdn.nlark.com/yuque/0/2019/gif/338441/1562846177553-c1c7f379-1b41-4026-9f0b-23e15dde02a8.gif)
+![get_cluster_after](https://cdn.nlark.com/yuque/0/2019/gif/338441/1562846177553-c1c7f379-1b41-4026-9f0b-23e15dde02a8.gif)
 
-* 使用 [`kubectl exec`](//kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)执行Nacos API 在每台节点上获取当前**Leader**是否一致
+* 使用 [`kubectl exec`](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands/#exec)执行Nacos API 在每台节点上获取当前**Leader**是否一致
 
 ```bash
 for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://localhost:8848/nacos/v1/ns/raft/state"; done
@@ -216,7 +217,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 
 # 配置属性
 
-* nacos-pvc-nfs.yaml or nacos-quick-start.yaml
+* nacos-pvc-nfs.yaml or nacos-quick-start.yaml 
 
 | 名称                     | 必要 | 描述                                    |
 | ----------------------- | -------- | --------------------------------------- |
@@ -231,7 +232,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 | `NACOS_APPLICATION_PORT`     | N       | Nacos 端口|
 | `PREFER_HOST_MODE`      | Y       | 启动Nacos集群按域名解析 |
 
-* **nfs** deployment.yaml
+* **nfs** deployment.yaml 
 
 | 名称          | 必要 | 描述                     |
 | ------------ | --------| ------------------------ |
@@ -240,7 +241,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 | `server`     | Y       | NFS 服务端地址  |
 | `path`       | Y       | NFS 共享目录 |
 
-* mysql
+* mysql 
 
 | 名称                     | 必要 | 描述                                                      |
 | -------------------------- | -------- | ----------------------------------------------------------- |

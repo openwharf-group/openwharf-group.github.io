@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "node ./script/build.cjs && astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
@@ -17,9 +17,13 @@
     "astro": "^3.2.3",
     "rehype-external-links": "^3.0.0",
     "sharp": "^0.32.5",
-    "tailwindcss": "^3.3.5",
     "typescript": "^5.3.2",
     "unist-util-visit": "^5.0.0"
   },
-  "repository": "git@gitlab.alibaba-inc.com:goat/astro-nacos.git"
+  "repository": "git@gitlab.alibaba-inc.com:goat/astro-nacos.git",
+  "devDependencies": {
+	"tailwindcss": "^3.3.5",
+	"autoprefixer": "^10.4.2",
+    "daisyui": "^4.4.18"
+  }
 }

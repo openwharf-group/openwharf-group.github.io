@@ -4,7 +4,9 @@ keywords: 轨迹追踪,推送轨迹,变更轨迹
 description: Nacos 支持轨迹追踪插件，可自定义扩展制作推送轨迹等功能，帮助运维人员快速定位问题。
 ---
 
-Nacos从2.2.0版本开始，可通过[SPI](//docs.oracle.com/javase/tutorial/sound/SPI-intro.html)机制注入轨迹追踪实现插件，在插件中订阅并处理追踪事件，并按照您期望的方式进行处理（如打日志，写入存储等）。本文档详细介绍一个轨迹追踪插件如何实现以及如何使其生效。
+# 轨迹追踪插件
+
+Nacos从2.2.0版本开始，可通过[SPI](https://docs.oracle.com/javase/tutorial/sound/SPI-intro.html)机制注入轨迹追踪实现插件，在插件中订阅并处理追踪事件，并按照您期望的方式进行处理（如打日志，写入存储等）。本文档详细介绍一个轨迹追踪插件如何实现以及如何使其生效。
 
 > 注意:
 > 目前轨迹追踪插件处于Beta测试阶段,其API及接口方法定义可能会在后续版本升级而有较大修改，请注意您的插件适用版本。
@@ -68,7 +70,7 @@ Nacos 在关键操作的链路中进行了埋点，定义了一系列的追踪�
 > 注意:
 > 建议插件实现时使用独立Executor，如插件实现中有存在阻塞的IO操作，当存在IO异常时将阻塞其他事件的onEvent调用，导致积压问题。
 
-在[nacos-group/nacos-plugin](//github.com/nacos-group/nacos-plugin)中，有一个demo的轨迹追踪插件实现，该demo插件订阅了注册及注销实例的事件，并打印到日志中。
+在[nacos-group/nacos-plugin](https://github.com/nacos-group/nacos-plugin)中，有一个demo的轨迹追踪插件实现，该demo插件订阅了注册及注销实例的事件，并打印到日志中。
 
 ## 轨迹追踪插件的降级
 

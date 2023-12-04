@@ -4,6 +4,8 @@ keywords: Nacos,服务,配置,性能
 description: Nacos2.0服务配置性能测试报告
 ---
 
+# Nacos 2.0.0-ALPHA2 配置性能测试报告
+
 ## 测试目的
 
 1. 长链接各项业务指标的最高值
@@ -13,12 +15,12 @@ description: Nacos2.0服务配置性能测试报告
 
 我们使用自研的PAS性能评估服务平台进行压测，其原理是基于利用JMeter引擎，使用PAS自动生成的JMeter脚本，进行智能压测。
 
- ![Pas图](//img.alicdn.com/tfs/TB1xCfDDpzqK1RjSZFvXXcB7VXa-692-297.png)
-
+ ![Pas图](https://img.alicdn.com/tfs/TB1xCfDDpzqK1RjSZFvXXcB7VXa-692-297.png)
+ 
  ## 测试环境
-
+ 
  ### 1.环境
-
+ 
 | **指标** | **参数** |
 |-------|-------|
 |机器|CPU 8核，内存16G|
@@ -171,7 +173,7 @@ gc|cmsgc频繁，4秒一次|-|-|-|-|-|-|
 - Nacos2.0支撑长链接40000以上，对比Nacos1.X提升7倍以上。
 - Nacos2.0变更推送1500/s, 对比Nacos1.X无明显提升。
 
-**注意**
+**注意** 
 
 - 本测试为对比Nacos1.X版本的测试场景，仅测试单核心接口的能力值，**真实模拟场景压测** 将在后续版本给出；
 - 本测试供给大家作为参考，如有不足或偏差，请指正! 如果对性能有其他需求，可以给我们提issue。

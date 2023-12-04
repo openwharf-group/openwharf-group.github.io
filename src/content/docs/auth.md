@@ -1,15 +1,16 @@
 ---
-title: 鉴权
+title: Authorization
 keywords: Authorization
 description: Authorization
 ---
 
-:::caution[注意！]
-- Nacos是一个内部微服务组件，需要在可信的内部网络中运行，不可暴露在公网环境，防止带来安全风险。
-- Nacos提供简单的鉴权实现，为防止业务错用的弱鉴权体系，不是防止恶意攻击的强鉴权体系。
-- 如果运行在不可信的网络环境或者有强鉴权诉求，请参考官方简单实现做替换增强。
-:::
+> 注意
+> - Nacos是一个内部微服务组件，需要在可信的内部网络中运行，不可暴露在公网环境，防止带来安全风险。
+> - Nacos提供简单的鉴权实现，为防止业务错用的弱鉴权体系，不是防止恶意攻击的强鉴权体系。
+> - 如果运行在不可信的网络环境或者有强鉴权诉求，请参考官方简单实现做替换增强。
 
+
+# 鉴权
 
 ## 服务端如何开启鉴权
 
@@ -132,7 +133,7 @@ try {
 ### Open-API鉴权
 首先需要使用用户名和密码登陆nacos。
 
-```bash
+```plain
 curl -X POST '127.0.0.1:8848/nacos/v1/auth/login' -d 'username=nacos&password=nacos'
 ```
 
@@ -144,11 +145,11 @@ curl -X POST '127.0.0.1:8848/nacos/v1/auth/login' -d 'username=nacos&password=na
 
 接下来进行配置信息或服务信息时,应当使用该accessToken鉴权,在url后添加参数accessToken=${accessToken},其中${accessToken}为登录时返回的token信息，例如
 
-```
+```plain
 curl -X GET '127.0.0.1:8848/nacos/v1/cs/configs?accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTYwNTYyMzkyM30.O-s2yWfDSUZ7Svd3Vs7jy9tsfDNHs1SuebJB4KlNY8Q&dataId=nacos.example.1&group=nacos_group'
 ```
 
-```bash
+```plain
 curl -X POST 'http://127.0.0.1:8848/nacos/v1/ns/instance?accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYWNvcyIsImV4cCI6MTYwNTYyMzkyM30.O-s2yWfDSUZ7Svd3Vs7jy9tsfDNHs1SuebJB4KlNY8Q&port=8848&healthy=true&ip=11.11.11.11&weight=1.0&serviceName=nacos.test.3&encoding=GBK&namespaceId=n1'
 ```
 

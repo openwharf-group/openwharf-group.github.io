@@ -4,10 +4,12 @@ keywords: Java,SDK
 description: Java SDK
 ---
 
+# Java SDK
+
 ## 概述部分
 
 Maven 坐标
-```xml
+```
 <dependency>
     <groupId>com.alibaba.nacos</groupId>
     <artifactId>nacos-client</artifactId>
@@ -99,7 +101,7 @@ try {
 如果希望 Nacos 推送配置变更，可以使用 Nacos 动态监听配置接口来实现。
 
 ```java
-public void addListener(String dataId, String group, Listener listener)
+public void addListener(String dataId, String group, Listener listener) 
 ```
 
 #### 请求参数
@@ -602,7 +604,7 @@ naming.unsubscribe("nacos.test.3", event -> {});
 `NacosClientProperties` 会按照上图顺序搜索,直到查询到为止.
 
 #### 配置隔离
-为了应对多注册中心,多配置中心的场景, `NacosClientProperties` 引入配置隔离的概念. 在 `NacosClientProperties` 中总共有4个取值源, 分别是: 用户自定义的properties、命令行参数、 环境变量和默认值, 其中 `命令行参数、 环境变量和默认值`
+为了应对多注册中心,多配置中心的场景, `NacosClientProperties` 引入配置隔离的概念. 在 `NacosClientProperties` 中总共有4个取值源, 分别是: 用户自定义的properties、命令行参数、 环境变量和默认值, 其中 `命令行参数、 环境变量和默认值` 
 这3个是全局共享的无法做到隔离, 那么只剩下用户自定义的properties对象是可以进行隔离的, 每个 `NacosClientProperties` 对象中包含不同的 `Properties` 对象, 通过这种方法做到配置互不影响.
 
 > 注意: 全局共享的配置: 命令行参数、 环境参数和默认值 一旦初始化完毕,后续使用无法更改,使用 `setProperty` 方法,也无法修改. `setProperty` 只能修改`NacosClientProperties` 对象中包含的 `Properties` 对象中的值
@@ -613,7 +615,7 @@ naming.unsubscribe("nacos.test.3", event -> {});
 // global properties
 NacosClientProperties.PROTOTYPE.setProperty("global-key1", "global-value1");
 
-// properties1
+// properties1 
 NacosClientProperties properties1 = NacosClientProperties.PROTOTYPE.derive();
 properties1.setProperty("properties1-key1", "properties1-value1");
 

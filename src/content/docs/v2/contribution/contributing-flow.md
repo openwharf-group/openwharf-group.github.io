@@ -4,6 +4,7 @@ keywords: 贡献,源码
 description: 此贡献流程适用于所有的Nacos社区内容，包括但不限于`Nacos`、`Nacos wiki/doc`、`Nacos SDK`。
 ---
 
+# Nacos 贡献流程
 
 此贡献流程适用于所有的Nacos社区内容，包括但不限于`Nacos`、`Nacos wiki/doc`、`Nacos SDK`。
 
@@ -13,7 +14,7 @@ description: 此贡献流程适用于所有的Nacos社区内容，包括但不�
 
 ## 2. 克隆或下载您fork的Nacos代码仓库到您本地
 
-```bash
+```
 git clone ${your fork nacos repo address}
 
 cd nacos
@@ -21,16 +22,16 @@ cd nacos
 
 ## 3. 添加Alibaba/Nacos仓库为upstream仓库
 
-```bash
-git remote add upstream //github.com/alibaba/nacos.git
+```
+git remote add upstream https://github.com/alibaba/nacos.git
 
-git remote -v
+git remote -v 
 
     origin	   ${your fork nacos repo address} (fetch)
     origin	   ${your fork nacos repo address} (push)
-    upstream	//github.com/alibaba/nacos.git (fetch)
-    upstream	//github.com/alibaba/nacos.git (push)
-
+    upstream	https://github.com/alibaba/nacos.git (fetch)
+    upstream	https://github.com/alibaba/nacos.git (push)
+    
 git fetch origin
 git fetch upstream
 ```
@@ -48,7 +49,7 @@ git checkout -b develop-issue#${issue-number}
 
 ## 5. 在本地新建的开发分支上进行各种修改
 
-首先请保证您阅读并正确设置`Nacos code style`, 相关内容请阅读[Nacos 代码规约](//github.com/alibaba/nacos/blob/develop/style/codeStyle.md) 。
+首先请保证您阅读并正确设置`Nacos code style`, 相关内容请阅读[Nacos 代码规约](https://github.com/alibaba/nacos/blob/develop/style/codeStyle.md) 。
 
 修改时请保证该分支上的修改**仅和issue相关**，并尽量细化，做到**一个分支只修改一件事，一个PR只修改一件事**。
 
@@ -61,7 +62,7 @@ git checkout -b develop-issue#${issue-number}
 1. 您的提交记录将会非常优雅，不会出现`Merge xxxx branch` 等字样
 2. rebase后您分支的提交日志也是一条单链，基本不会出现各种分支交错的情况，回查时更轻松
 
-```bash
+```
 git fetch upstream
 
 git rebase -i upstream/develop
@@ -70,9 +71,9 @@ git rebase -i upstream/develop
 
 OR
 
-```bash
+```
 git checkout upstream-develop
-git pull
+git pull 
 git checkout develop-issue#${issue-number}
 git rebase -i upstream-develop
 ```
@@ -81,7 +82,7 @@ git rebase -i upstream-develop
 
 ## 7. 将您开发完成rebase后的分支，上传到您fork的仓库
 
-```bash
+```
 git push origin develop-issue#${issue-number}
 ```
 

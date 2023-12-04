@@ -5,6 +5,7 @@ import starlightPlugin from '@astrojs/starlight-tailwind';
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+		//替换调色板，只能用这下面的颜色
 		colors: {
 			blue: {
 				'01': '#EDF2FC',
@@ -37,11 +38,12 @@ export default {
 				"11": "#4C505D",
 				"12": "#2E3038",
 				"13": "#1E1F24",
-				"14": "#131314",
+				"14": "#121316",
 				"15": "#0A0A0A",
 			}
 		},
 		extend: {
+			// 设置starlight文档颜色
 			colors: {
 				gray: {
 					100: "#F4F4F6",
@@ -63,5 +65,5 @@ export default {
 			}
 		}
 	},
-	plugins: [starlightPlugin()],
+	plugins: [starlightPlugin(), require("daisyui")],
 };
