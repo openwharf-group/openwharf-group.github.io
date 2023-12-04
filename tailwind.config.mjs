@@ -65,5 +65,5 @@ export default {
 			}
 		}
 	},
-	plugins: [starlightPlugin()],
+	plugins: [starlightPlugin(), require("daisyui")],
 };
