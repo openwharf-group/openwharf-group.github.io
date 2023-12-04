@@ -16,7 +16,13 @@ const blog = defineCollection({
 
 
 export const collections = {
-	docs: defineCollection({ schema: docsSchema() }),
+	docs: defineCollection({
+		schema: docsSchema({
+			extend: z.object({
+				keywords: z.string().optional(),
+			}),
+		})
+	}),
 	i18n: defineCollection({ type: 'data', schema: i18nSchema() }),
 	blog,
 };

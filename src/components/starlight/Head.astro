@@ -22,6 +22,10 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
 	{ tag: 'title', content: `${data.title} ${config.titleDelimiter} ${config.title}` },
 	{ tag: 'link', attrs: { rel: 'canonical', href: canonical?.href } },
 	{ tag: 'meta', attrs: { name: 'generator', content: Astro.generator } },
+	// {
+	// 	tag: 'meta',
+	// 	attrs: { name: 'generator', content: `Starlight v${version}` },
+	// },
 	// Favicon
 	{
 		tag: 'link',
