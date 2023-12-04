@@ -1,32 +1,72 @@
 /* 集成的默认注入的 base.css 文件 */
 @tailwind base;
+
+:root li a{
+	color: theme('colors.gray.08')
+}
+
+:root,
+::backdrop , 
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+	--depth: 0;
+	--sl-color-black: white;
+	--sl-color-gray-6: theme('colors.gray.01');
+	--sl-color-gray-5: theme('colors.gray.02');
+	--sl-color-gray-4: theme('colors.gray.03');
+	--sl-color-gray-3: theme('colors.gray.05');
+	--sl-color-gray-2: theme('colors.gray.07');
+	--sl-color-gray-1: theme('colors.gray.09');
+	--sl-color-white: theme('colors.gray.15');
+
+	--sl-color-accent-low: theme('colors.blue.13');
+	--sl-color-accent:theme('colors.blue.08');
+	--sl-color-accent-high: theme('colors.blue.07');
+	/* 重写components中的--sl-color-text-accent */
+	--sl-color-text-accent: var(--sl-color-accent);
+	--sl-color-text:theme('colors.gray.13');
+  }
+
+h2.heading {
+	font-size: 1em;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+	margin-top: 1.5rem;
+}
+
+/* Apply different TOC styling for wide viewports showing the right sidebar */
+@media (min-width: 72em) {
+	h2.heading {
+		padding-inline-start: calc(1rem + 4px);
+	}
+
+	.header-link {
+		border-inline-start: 4px solid var(--theme-divider);
+	}
+}
+
+
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
-  }
+/* 提取类的模板样式 */
+/* @layer components {
+	.button {
+		@apply inline-flex h-14 items-center justify-center gap-4 rounded-full border border-astro-gray-100 px-10 text-center font-sans text-base font-medium leading-none tracking-wide text-white no-underline transition hover:bg-white/10;
+	}
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: bold;
-  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
-}
+	.button.button-primary {
+		@apply border-none bg-blue-purple-gradient text-white hover:bg-blue-purple-gradient hover:brightness-75;
+	}
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: bold;
-  src: url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
-}
+	.button.button-white {
+		@apply border-none bg-astro-gray-100 text-astro-blue hover:brightness-75;
+	}
 
-
-* {
-    font-family:'Roboto',sans-serif;
-    --sl-font: 'Roboto', sans-serif;
-    --sl-font-mono:'Roboto', sans-serif;
-}
+	.button.button-sm {
+		@apply h-10 gap-2 px-6 text-sm tracking-wide;
+	}
+	.button.button-xs {
+		@apply h-6 gap-2 px-3 text-xs tracking-wide;
+	}
+} */
