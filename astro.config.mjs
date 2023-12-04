@@ -22,6 +22,7 @@ export default defineConfig({
 			components: {
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
 				Header: './src/components/starlight/Header.astro',
+				Head: './src/components/starlight/Head.astro',
 			},
 			editLink: {
 				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',

@@ -1,4 +1,18 @@
 
+declare module 'virtual:starlight/user-config' {
+	const Config: import('@astrojs/starlight/types').StarlightConfig;
+	export default Config;
+}
+
+declare module 'virtual:starlight/user-images' {
+	type ImageMetadata = import('astro').ImageMetadata;
+	export const logos: {
+		dark?: ImageMetadata;
+		light?: ImageMetadata;
+	};
+}
+
+
 declare module 'virtual:starlight/components' {
 	export const Banner: typeof import('@astrojs/starlight/components/Banner.astro').default;
 	export const ContentPanel: typeof import('@astrojs/starlight/components/ContentPanel.astro').default;
