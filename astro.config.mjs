@@ -21,7 +21,7 @@ export default defineConfig({
 			title: 'Nacos',
 			components: {
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
-				Header: './src/components/starlight/Header.astro',
+				Header: './src/components/starlight/Header_back.astro',
 				Head: './src/components/starlight/Head.astro',
 			},
 			editLink: {

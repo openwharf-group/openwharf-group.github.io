@@ -24,3 +24,7 @@
 		@apply h-6 gap-2 px-3 text-xs tracking-wide;
 	}
 } */
+
+.header {
+  padding: 0 !important;
+}
