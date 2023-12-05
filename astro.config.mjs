@@ -47,5 +47,8 @@ export default defineConfig({
 				rel: ['noopener', 'noreferrer']
 			}]],
 		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, remarkRemoveRepeatHeader]
+	},
+	build: {
+		format: 'file'
 	}
 });
