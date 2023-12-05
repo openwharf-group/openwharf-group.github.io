@@ -18,7 +18,7 @@ export default defineConfig({
 	},
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Nacos',
 			components: {
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
 				Header: './src/components/starlight/Header.astro',
@@ -47,5 +47,8 @@ export default defineConfig({
 				rel: ['noopener', 'noreferrer']
 			}]],
 		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, remarkRemoveRepeatHeader]
+	},
+	build: {
+		format: 'file'
 	}
 });

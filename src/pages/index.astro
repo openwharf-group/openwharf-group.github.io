@@ -7,13 +7,14 @@ const t = useTranslations(Astro);
 
 ---
 <BaseLayout title="Nacos">
-	<details class="dropdown">
-		<summary class="m-1 btn">open or close</summary>
-		<ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-			<li><a>Item 1</a></li>
-			<li><a>Item 2</a></li>
-		</ul>
-	</details>
+    <h1 class="temp"></h1> 
+    <details class="dropdown">
+        <summary class="m-1 btn">open or close</summary>
+        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li><a>Item 1</a></li>
+            <li><a>Item 2</a></li>
+        </ul>
+    </details>
 
     <h1>aaa</h1>
     <button class="btn">Button</button>
@@ -34,5 +35,11 @@ const t = useTranslations(Astro);
     <p>{t('feedback.button')}</p>
     <a href="./docs/v2/what-is-nacos">v2</a>
 </BaseLayout>
+
+<style>
+    .temp {
+        margin-top: 4rem;
+    }
+</style>
 
 

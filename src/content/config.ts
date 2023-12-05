@@ -19,7 +19,7 @@ export const collections = {
 	docs: defineCollection({
 		schema: docsSchema({
 			extend: z.object({
-				keywords: z.string().optional(),
+				keywords: z.string().or(z.array(z.string()).optional())
 			}),
 		})
 	}),
