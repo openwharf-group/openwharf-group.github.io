@@ -2,11 +2,13 @@
 import { languages } from "../i18n/languages";
 import BaseLayout from "../layouts/BaseLayout.astro"
 import { useTranslations } from '../i18n/util';
+import Introduce from "@components/Introduce.astro";
 
 const t = useTranslations(Astro);
 
 ---
 <BaseLayout title="Nacos">
+    <Introduce />
     <h1 class="temp"></h1> 
     <details class="dropdown">
         <summary class="m-1 btn">open or close</summary>
