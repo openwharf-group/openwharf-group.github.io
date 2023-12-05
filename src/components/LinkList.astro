@@ -1,10 +1,10 @@
 ---
-import UIString from "../UIString.astro";
-import { getLanguageFromURL } from "../../util";
-import EditButton from "./EditButton.astro";
-import HeadLink from "../HeadLink.astro";
+import UIString from "./UIString.astro";
+import { getLanguageFromURL } from "../util";
+import HeadLink from "./HeadLink.astro";
 import { Icon } from "@astrojs/starlight/components";
-import type { UIDictionaryKeys } from "../../i18n/translation-checkers";
+import type { UIDictionaryKeys } from "../i18n/translation-checkers";
+import type { Code } from "astro:components";
 
 export interface Props {
     headingTitle: UIDictionaryKeys;
@@ -12,10 +12,6 @@ export interface Props {
 }
 
 const { headingTitle, linkItems } = Astro.props as Props;
-
-const lang = getLanguageFromURL(Astro.url.pathname);
-
-import "./style.css";
 ---
 
 <h2 class="heading"><UIString key={headingTitle} /></h2>

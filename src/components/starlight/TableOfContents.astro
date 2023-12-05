@@ -3,10 +3,9 @@ import TableOfContentsList from './TableOfContentsList.astro';
 import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
 import type { Props } from '@astrojs/starlight/props';
-
-const { locale, toc } = Astro.props;
 import './style.css';
 import FeedbackButton from './FeedbackButton.astro';
+const { locale, toc, editUrl } = Astro.props;
 ---
 
 {
@@ -15,7 +14,7 @@ import FeedbackButton from './FeedbackButton.astro';
 			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
 				<h2 id="starlight__on-this-page" class="heading">本页内容</h2>
 				<TableOfContentsList toc={toc.items} />
-				<ContributeMenu editHref=''/>
+				<ContributeMenu editHref={editUrl.href}/>
 				<CommunityMenu />
 				<FeedbackButton />
 			</nav>

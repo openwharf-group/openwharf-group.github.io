@@ -9,9 +9,20 @@ interface Props {
 }
 
 const { href, class: className, depth, ...props } = Astro.props;
----
 
-<a class={`header-link depth-${depth} ${className}`} href={href} {...props}>
+const currentPageUrl = Astro.request.url;
+
+let diffDomain = false;
+
+// 防止无效href导致抛错
+try {
+    diffDomain = new URL(href).hostname !== new URL(currentPageUrl).hostname;
+} catch (e) {
+}
+
+const target = diffDomain? "_blank" : "_self";
+---
+<a class={`header-link depth-${depth} ${className}`} href={href} target={target} {...props}>
     <slot />
 </a>
 <style>

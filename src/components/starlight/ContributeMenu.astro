@@ -1,7 +1,7 @@
 ---
 import UIString from "../UIString.astro";
 import { getLanguageFromURL } from "../../util";
-import MenuTemplate from "./MenuTemplate.astro";
+import LinkList from "../LinkList.astro";
 
 export interface Props {
 	editHref: string;
@@ -27,4 +27,4 @@ const linkItems = [
 ]
 
 ---
-<MenuTemplate headingTitle="rightSidebar.contribute" linkItems={linkItems} />
+<LinkList headingTitle="rightSidebar.contribute" linkItems={linkItems} />
