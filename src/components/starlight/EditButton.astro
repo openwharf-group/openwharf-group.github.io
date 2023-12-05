@@ -3,10 +3,11 @@ export interface Props {
 	editHref: string;
 }
 import UIString from '../UIString.astro';
+import HeadLink from '../HeadLink.astro'
 const { editHref } = Astro.props;
 ---
 
-<a class="edit-on-github header-link depth-2" href={editHref} target="_blank">
+<HeadLink class="edit-on-github" depth="2" href={editHref} target="_blank">
 	<svg
 		aria-hidden="true"
 		focusable="false"
@@ -25,7 +26,8 @@ const { editHref } = Astro.props;
 		></path>
 	</svg>
 	<span><UIString key="rightSidebar.editPage" /></span>
-</a>
+</HeadLink>
+
 
 <style>
 	.edit-on-github {

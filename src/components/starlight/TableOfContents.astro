@@ -6,6 +6,7 @@ import type { Props } from '@astrojs/starlight/props';
 
 const { locale, toc } = Astro.props;
 import './style.css';
+import FeedbackButton from './FeedbackButton.astro';
 ---
 
 {
@@ -14,8 +15,9 @@ import './style.css';
 			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
 				<h2 id="starlight__on-this-page" class="heading">本页内容</h2>
 				<TableOfContentsList toc={toc.items} />
-				<ContributeMenu />
+				<ContributeMenu editHref=''/>
 				<CommunityMenu />
+				<FeedbackButton />
 			</nav>
 		</starlight-toc>
 	)

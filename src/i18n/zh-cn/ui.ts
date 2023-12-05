@@ -9,8 +9,7 @@ export default {
 	'rightSidebar.contributorGuides': '贡献者指南',
 	'rightSidebar.community': '社区',
 	'rightSidebar.readBlog': '阅读我们的博客',
-	'rightSidebar.openCollective': '我们的 Open Collective',
-	'rightSidebar.github': 'GitHub 上的 Astro 文档',
+	'rightSidebar.github': 'GitHub 上的 Nacos 文档',
 	// Feedback Fish widget
 	'feedback.button': '给予我们反馈',
 	'feedback.a11yLabel': '反馈表单',
@@ -25,6 +24,16 @@ export default {
 	'feedback.submit': '发送反馈',
 	'feedback.close': '关闭反馈表单',
 	'feedback.success': '感谢！我们收到了你的反馈。',
+	'feedback.type': '反馈问题类型',
+	'feedback.type.correct': '内容正确性问题',
+	'feedback.type.search': '搜索问题',
+	'feedback.type.bug': '存在bug',
+	'feedback.type.link': '链接问题',
+	'feedback.type.other': '其他问题',
+	'feedback.description': '问题描述',
+	'feedback.description.placeholder': '请尽可能详细描述您的问题的场景、问题细节和期望解决的方法，方便我们更好地优化和解决问题。',
+	'feedback.phone': '联系方式',
+	'feedback.phone.placeholder': '请提供您的联系方式',
 
 	'checklist.or': '或',
 };
