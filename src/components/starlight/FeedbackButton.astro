@@ -10,7 +10,7 @@ export interface Props {
 ---
 
 <feedback-form>
-	<button data-open-modal class="btn btn-outline mt-4">
+	<button data-open-modal class="btn btn-outline btn-accent btn-sm mt-4">
 		<UIString key="feedback.button" />
 	</button>
 
@@ -196,7 +196,7 @@ export interface Props {
 		border-radius: 0.5rem;
 		width: 32rem;
 		background-color: theme("colors.blue.01");
-		box-shadow: 0 0.75rem 1rem var(--theme-backdrop-overlay);
+		/* box-shadow: 0 0.75rem 1rem var(--theme-backdrop-overlay); */
 	}
 
 	@media (max-width: 50rem) {
@@ -212,7 +212,7 @@ export interface Props {
 	}
 
 	dialog::backdrop {
-		background-color: var(--theme-backdrop-overlay);
+		background-color: rgba(0, 0, 0, 0.5);
 	}
 
 	dialog * {
@@ -245,52 +245,6 @@ export interface Props {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 0.75rem;
-	}
-
-	.category-option label {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 0.75rem;
-		gap: 0.25rem;
-		font-size: var(--theme-text-xs);
-		font-weight: 600;
-		outline: 2px solid transparent;
-		border: 2px solid transparent;
-		border-radius: 1rem;
-		cursor: pointer;
-	}
-
-	.category-option label:hover {
-		background-color: var(--theme-bg-hover);
-	}
-
-	.category-option input:checked + label {
-		background-color: var(--theme-bg-accent);
-		border-color: var(--theme-shade-subtle);
-	}
-
-	dialog *:focus,
-	.category-option input:focus + label {
-		outline: 2px solid var(--theme-accent-secondary);
-	}
-
-	.category-option svg {
-		color: var(--theme-text);
-		width: 2.25rem;
-	}
-
-	.submit-buttons {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.submit-buttons p {
-		font-size: var(--theme-text-xs);
-		color: var(--theme-text);
-		font-weight: 600;
-		padding: 0 0.5rem;
 	}
 
 	@media (max-width: 50em) {
