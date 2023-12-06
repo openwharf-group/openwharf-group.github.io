@@ -2,59 +2,72 @@ const fs = require('fs');
 const starlightFullPath = require.resolve("@astrojs/starlight");
 const starlightPath = starlightFullPath.replace("/index.ts", "")
 
-// 替换 user-config.ts
-const replaceUserConfig = () => {
-	const originFile = starlightPath + "/utils/user-config.ts";
+
+const replaceRouteData = () => {
+	const originFile = starlightPath + "/utils/route-data.ts";
 	const originContent = fs.readFileSync(originFile, 'utf-8');
 	const replacedContent = originContent.replace(
-		/sidebar:.*?,\n/,
-		'sidebar: z.record(z.string(), SidebarItemSchema.array().optional()),\n'
+		/const sidebar = getSidebar.*?;\n/,
+		'const sidebar = getSidebar(url.pathname, locale, props.categories);\n'
 	);
 	fs.writeFileSync(originFile, replacedContent, 'utf-8');
 }
+
+replaceRouteData();
 
 // 替换 navigation.ts
 const replaceNavigation = () => {
 	const originFile = starlightPath + "/utils/navigation.ts";
 	const originContent = fs.readFileSync(originFile, 'utf-8');
-	const regex = `if (config.sidebar) {
-		return config.sidebar.map((group) => configItemToEntry(group, pathname, locale, routes));
-	} else {`;
+	const regex = /export function getSidebar\(pathname\: string\, locale\: string \| undefined\).+\n(.+)/;
 	const replacedContent = originContent.replace(
 		regex,
-		`if (config.sidebar) {
-			const regex = /\\/docs\\/(v[0-9])/;
-			const match = regex.exec(pathname);
-			if(match && match[1]) {
-				return config.sidebar[match[1]].map((group) => configItemToEntry(group, pathname, locale, routes));
-			} else {
-				return config.sidebar.latest.map((group) => configItemToEntry(group, pathname, locale, routes));
-			}
-		} else {`
+		`export function getSidebar(pathname: string, locale: string | undefined, categories: string): SidebarEntry[] {
+		const routes = getLocaleRoutes(locale);
+		const regex = /\\/docs\\/(latest|next|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])/;
+		const match = regex.exec(pathname);
+		if (match && match[1]) {
+			const categoriesObject = JSON.parse(categories)
+			return categoriesObject[match[1]].map((group) => configItemToEntry(group, pathname, locale, routes));
+		}\n`
 	);
 	fs.writeFileSync(originFile, replacedContent, 'utf-8');
 }
-
-// 替换 routing.ts
-const replaceRouting = () => {
-	const originFile = starlightPath + "/utils/routing.ts";
-	const originContent = fs.readFileSync(originFile, 'utf-8');
-	const replacedContent = originContent.replace(
-		/slug: normalizeIndexSlug\(slug\),?\n/,
-		`slug: (slug === 'index' ? '' : (entry.id.replace(/.md$/, "") === slug ? slug : entry.id.replace(/.md$/, ""))),\n`
-	);
-	fs.writeFileSync(originFile, replacedContent, 'utf-8');
-}
+replaceNavigation();
 
 
 const replaceIndexAstro = () => {
 	const originFile = starlightPath + "/index.astro";
-	const replacedContent  = fs.readFileSync('./script/template/index.txt', 'utf-8')
+	const replacedContent = fs.readFileSync('./script/template/index.txt', 'utf-8')
 	fs.writeFileSync(originFile, replacedContent.toString(), 'utf-8');
 }
+replaceIndexAstro();
 
+// export function getSidebar(pathname: string, locale: string | undefined): SidebarEntry[] {
+// 	const routes = getLocaleRoutes(locale);
+// 	if (config.sidebar) {
+// 		const regex = /\/docs\/(latest|next|(v[0-9]\.[0-9]\.[0-9])|(v[0-9]\.[0-9])|(v[0-9])|([0-9]\.[0-9]\.[0-9])|([0-9]\.[0-9])|([0-9]))/;
+// 		const match = regex.exec(pathname);
+// 		if (match && match[1]) {
+// 			return config.sidebar[match[1]].map((group) => configItemToEntry(group, pathname, locale, routes));
+// 		} else {
+// 			return config.sidebar.latest.map((group) => configItemToEntry(group, pathname, locale, routes));
+// 		}
+// 	} else {
+// 		const regex = /latest|next|(v[0-9]\.[0-9]\.[0-9])|(v[0-9]\.[0-9])|(v[0-9])|([0-9]\.[0-9]\.[0-9])|([0-9]\.[0-9])|([0-9])/;
+// 		const match = regex.exec(pathname);
+// 		let dirRoutes = routes;
+// 		if (match && match[0]) {
+// 			// console.log("---", match)
+// 			dirRoutes = routes.filter(item => {
+// 				return item.slug.split('/')[0] === match[0]
+// 			})
+// 			// console.log('dirRoutes', dirRoutes)
+// 		} else {
+// 			// console.log("===", match)
+// 		}
 
-replaceUserConfig()
-replaceNavigation()
-replaceRouting()
-replaceIndexAstro()
+// 		const tree = treeify(dirRoutes, locale || '');
+// 		return sidebarFromDir(tree, pathname, locale, false);
+// 	}
+// }
