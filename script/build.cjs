@@ -2,7 +2,7 @@ const fs = require('fs');
 const starlightFullPath = require.resolve("@astrojs/starlight");
 const starlightPath = starlightFullPath.replace("/index.ts", "")
 
-// 替换 user-config
+// 替换 user-config.ts
 const replaceUserConfig = () => {
 	const originFile = starlightPath + "/utils/user-config.ts";
 	const originContent = fs.readFileSync(originFile, 'utf-8');
@@ -13,7 +13,7 @@ const replaceUserConfig = () => {
 	fs.writeFileSync(originFile, replacedContent, 'utf-8');
 }
 
-// 替换 navigation
+// 替换 navigation.ts
 const replaceNavigation = () => {
 	const originFile = starlightPath + "/utils/navigation.ts";
 	const originContent = fs.readFileSync(originFile, 'utf-8');
@@ -35,6 +35,18 @@ const replaceNavigation = () => {
 	fs.writeFileSync(originFile, replacedContent, 'utf-8');
 }
 
+// 替换 routing.ts
+const replaceRouting = () => {
+	const originFile = starlightPath + "/utils/routing.ts";
+	const originContent = fs.readFileSync(originFile, 'utf-8');
+	const replacedContent = originContent.replace(
+		/slug: normalizeIndexSlug\(slug\),?\n/,
+		`slug: (slug === 'index' ? '' : (entry.id.replace(/.md$/, "") === slug ? slug : entry.id.replace(/.md$/, ""))),\n`
+	);
+	fs.writeFileSync(originFile, replacedContent, 'utf-8');
+}
+
+
 const replaceIndexAstro = () => {
 	const originFile = starlightPath + "/index.astro";
 	const replacedContent  = fs.readFileSync('./script/template/index.txt', 'utf-8')
@@ -44,4 +56,5 @@ const replaceIndexAstro = () => {
 
 replaceUserConfig()
 replaceNavigation()
+replaceRouting()
 replaceIndexAstro()

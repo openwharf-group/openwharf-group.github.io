@@ -1,23 +1,25 @@
 ---
-import '../../node_modules/@astrojs/starlight/style/props.css';
-import '../../node_modules/@astrojs/starlight/style/reset.css';
-import '../../node_modules/@astrojs/starlight/style/shiki.css';
-import '../../node_modules/@astrojs/starlight/style/util.css';
+import '@starlight/style/props.css';
+import '@starlight/style/reset.css';
+import '@starlight/style/shiki.css';
+import '@starlight/style/util.css';
 import '../style/global.css'
+import { useTranslations } from '@i18n/util';
+const t = useTranslations(Astro);
 
 import {
 	Header,
 	PageFrame
 } from 'virtual:starlight/components';
 
-
+const labels = {};
 export type Props = {
     title: string;
 };
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="light">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
@@ -25,8 +27,12 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
+        <!-- @ts-ignore -->
 		<PageFrame {...Astro.props}>
-			<Header slot="header" {...Astro.props} />
+            <!-- @ts-ignore -->
+			<Header slot="header" {...Astro.props}  labels={labels}>
+                <div slot="community">community 文档子菜单</div>
+            </Header>
 			<slot />
 		</PageFrame>
     </body>

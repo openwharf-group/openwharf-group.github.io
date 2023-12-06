@@ -3,22 +3,23 @@ import TableOfContentsList from './TableOfContentsList.astro';
 import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
 import type { Props } from '@astrojs/starlight/props';
-
-const { locale, toc } = Astro.props;
 import './style.css';
+import FeedbackButton from './FeedbackButton.astro';
+const { locale, toc, editUrl } = Astro.props;
 ---
 
 {
 	toc && (
 		<starlight-toc data-min-h={toc.minHeadingLevel} data-max-h={toc.maxHeadingLevel}>
 			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
-				<h2 id="starlight__on-this-page">本页内容</h2>
+				<h2 id="starlight__on-this-page" class="heading">本页内容</h2>
 				<TableOfContentsList toc={toc.items} />
-				<ContributeMenu />
+				<ContributeMenu editHref={editUrl.href}/>
 				<CommunityMenu />
+				<FeedbackButton />
 			</nav>
 		</starlight-toc>
 	)
 }
 
-<script src="../../../node_modules/@astrojs/starlight/components/TableOfContents/starlight-toc"></script>
+<script src="@starlight/components/TableOfContents/starlight-toc"></script>
