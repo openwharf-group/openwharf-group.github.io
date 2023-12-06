@@ -1,86 +1,11 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
+import DocsHeader from '../Header.astro';
 import { LanguageSelect } from 'virtual:starlight/components';
 
 ---
 
-<div class="header-inner">
-  <img class="logo" src="../../../public/nacos_white.png">
-  <div class="nav">
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">DOCS</span>
-        <span class="line"></span>
-      </div>
-      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a href="./docs/architecture">1.x</a></li>
-        <li><a href="./docs/v2/what-is-nacos">2.x</a></li>
-      </ul>
-    </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">NACOS CLOUD</span>
-        <span class="line"></span>
-      </div>
-    </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">COMMUNITY</span>
-        <span class="line"></span>
-      </div>
-      <div tabindex="0" class="dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <slot name="community" />
-      </div>
-    </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">DEMO</span>
-      </div>
-    </div>
-  </div>
 
-  <div>
-    <LanguageSelect {...Astro.props} />
-  </div>
-</div>
-
-<style>
-  .header-inner {
-    height: 100%;
-    background-color: theme('colors.gray.14');
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .logo {
-    width: 96px;
-    vertical-align: sub;
-  }
-  .nav {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  .menu-item {
-    height: 100%;
-  }
-  .label {
-    height: 100%;
-    padding-left: 1rem;
-    font-size: 1rem;
-    line-height: 1rem;
-    color: theme('colors.gray.06');
-    cursor: pointer;
-  }
-  .text {
-    margin-right: 1rem;
-  }
-  .line {
-    width: 1px;
-    height: 1rem;
-    display: inline-block;
-    background-color: theme('colors.gray.12');
-  }
-</style>
+<DocsHeader theme="light">
+	<LanguageSelect {...Astro.props} />
+</DocsHeader>
