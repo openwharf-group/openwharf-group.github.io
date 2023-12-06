@@ -78,13 +78,13 @@ export default {
 					800: themeColor['gray']['13'],
 					900: themeColor['gray']['15'],
 				},
-				white: themeColor['gray']['01'],
 				accent: {
 					200: themeColor['blue']['07'],
 					600: themeColor['blue']['08'],
 					900: themeColor['blue']['11'],
 					950: themeColor['blue']['03']
-				}
+				},
+				white: themeColor['gray']['01'],
 			},
 		}
 	},
