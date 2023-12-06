@@ -22,13 +22,14 @@ const replaceNavigation = () => {
 	const regex = /export function getSidebar\(pathname\: string\, locale\: string \| undefined\).+\n(.+)/;
 	const replacedContent = originContent.replace(
 		regex,
-		`export function getSidebar(pathname: string, locale: string | undefined, categories: string): SidebarEntry[] {
+		`export function getSidebar(pathname: string, locale: string | undefined, categories: any): SidebarEntry[] {
 		const routes = getLocaleRoutes(locale);
-		const regex = /\\/docs\\/(latest|next|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])/;
-		const match = regex.exec(pathname);
-		if (match && match[1]) {
-			const categoriesObject = JSON.parse(categories)
-			return categoriesObject[match[1]].map((group) => configItemToEntry(group, pathname, locale, routes));
+		const versionRegex = /\\/docs\\/(next|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])/;
+		const match = versionRegex.exec(pathname);
+
+		const version = match ? match[1] : 'latest';
+		if(categories && categories[version]){
+			return categories[version].map((group) => configItemToEntry(group, pathname, locale, routes));
 		}\n`
 	);
 	fs.writeFileSync(originFile, replacedContent, 'utf-8');
