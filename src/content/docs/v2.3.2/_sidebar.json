@@ -1,0 +1,39 @@
+[
+	{
+		"label": "Guide1",
+		"translations": {
+			"en": "Nacos introduction"
+		},
+		"items": [
+		  {
+			"label": "architecture",
+			"link": "docs/v2.3.2/guide/architecture.html",
+			"translations": {
+				"en": "Nacos introduction"
+			}
+		  },
+		  {
+			"label": "faq",
+			"link": "https://astro.build/",
+			"translations": {
+				"en": "Nacos introduction"
+			}
+		  }
+		]
+	},
+	{
+		"label": "Guide Demo",
+		"translations": {
+			"en": "Nacos introduction"
+		},
+		"items": [
+		  {
+			"label": "architecture",
+			"link": "https://astro.build/",
+			"translations": {
+				"en": "Nacos introduction"
+			}
+		  }
+		]
+	}
+]

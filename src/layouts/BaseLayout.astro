@@ -5,12 +5,8 @@ import '@starlight/style/shiki.css';
 import '@starlight/style/util.css';
 import '../style/global.css'
 import { useTranslations } from '@i18n/util';
+import Header from '@components/Header.astro';
 const t = useTranslations(Astro);
-
-import {
-	Header,
-	PageFrame
-} from 'virtual:starlight/components';
 
 const labels = {};
 export type Props = {
@@ -27,13 +23,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <!-- @ts-ignore -->
-		<PageFrame {...Astro.props}>
-            <!-- @ts-ignore -->
-			<Header slot="header" {...Astro.props}  labels={labels}>
-                <div slot="community">community 文档子菜单</div>
-            </Header>
-			<slot />
-		</PageFrame>
+        <Header theme='dark' />
+        <slot />
     </body>
 </html>

@@ -1,0 +1,26 @@
+[
+	{
+		"label": "Guide1",
+		"order": 2,
+		"items": [
+		  {
+			"label": "architecture",
+			"order": 3
+		  },
+		  {
+			"label": "faq",
+			"order": 1
+		  }
+		]
+	},
+	{
+		"label": "Guide Demo",
+		"order": 1,
+		"items": [
+		  {
+			"label": "architecture",
+			"order": 1
+		  }
+		]
+	}
+]

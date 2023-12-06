@@ -1,10 +1,16 @@
 ---
-title: Nacos 架构
+title: FAQ en
 keywords: [Nacos,架构]
-description: Nacos 架构
+description: FAQ
+sidebar:
+  label: FAQ
+  order: 1
+  badge:
+    text: New
+    variant: tip
 ---
 
-# Nacos 架构
+# Nacos 架构 en
 
 ### 服务 (Service)
 

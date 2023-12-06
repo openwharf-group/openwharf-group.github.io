@@ -18,9 +18,9 @@ export default {
 					"warning": themeColor['gray']['06'],
 					"error": themeColor['gray']['13'],
 				},
-			  },
+			},
 		],
-	  },
+	},
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		//替换调色板，只能用这下面的颜色
