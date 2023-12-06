@@ -68,16 +68,17 @@ export default {
 			// 设置starlight文档颜色
 			colors: {
 				gray: {
-					100: themeColor['gray']['01'],
-					200: themeColor['gray']['02'],
-					300: themeColor['gray']['03'],
-					400: themeColor['gray']['05'],
-					500: themeColor['gray']['10'],
+					100: themeColor['gray']['02'],
+					200: themeColor['gray']['03'],
+					300: themeColor['gray']['06'],
+					400: themeColor['gray']['08'],
+					500: themeColor['gray']['09'],
 					600: themeColor['gray']['10'],
 					700: themeColor['gray']['11'],
 					800: themeColor['gray']['13'],
 					900: themeColor['gray']['15'],
 				},
+				white: themeColor['gray']['01'],
 				accent: {
 					200: themeColor['blue']['07'],
 					600: themeColor['blue']['08'],
