@@ -16,9 +16,9 @@ const logo = `../../../public/${isDark ? 'nacos_white' : 'nacos_colorful'}.png`;
     <img class="logo" src={logo} />
   </a>
   
-  <div class="nav">
+  <div class:list={['nav', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
     <div class="menu-item dropdown dropdown-hover">
-      <div class:list={['label', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
+      <div class="label">
         <span class="text">DOCS</span>
         <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
       </div>
@@ -28,19 +28,19 @@ const logo = `../../../public/${isDark ? 'nacos_white' : 'nacos_colorful'}.png`;
       </ul>
     </div>
     <div class="menu-item dropdown dropdown-hover">
-      <div class:list={['label', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
+      <div class="label">
         <span class="text">NACOS CLOUD</span>
         <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
       </div>
     </div>
     <div class="menu-item dropdown dropdown-hover">
-      <div class:list={['label', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
+      <div class="label">
         <span class="text">COMMUNITY</span>
         <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
       </div>
     </div>
     <div class="menu-item dropdown dropdown-hover">
-      <div class:list={['label', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
+      <div class="label">
         <span class="text">DEMO</span>
       </div>
     </div>
