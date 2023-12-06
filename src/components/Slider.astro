@@ -2,51 +2,13 @@
   const { imgList } = Astro.props;
 ---
 
-<style>
-  .slider-container {
-    position: relative;
-    display: flex;
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-
-  .slider {
-    width: 100%;
-    will-change: transform;
-    display: flex;
-    flex: 0 0 auto;
-    animation: slider-container 30s linear infinite;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: auto;
-  }
-
-  .slider-item {
-    padding: 0.7rem 0.5rem;
-    height: 5rem;
-    margin-right: 0.5rem;
-    width: auto;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-  @keyframes slider-container {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-</style>
 <div class="slider-container">
-
+  <ul class="slider">
+    {imgList.map((imgItem,index) =>
+    <li class="slider-item">
+      <img src={imgItem} alt={`Image${index}`}>
+    </li>)}
+  </ul>
   <ul class="slider">
     {imgList.map((imgItem,index) =>
     <li class="slider-item">
@@ -54,20 +16,71 @@
     </li>)}
   </ul>
 </div>
-<script>
-  let container = document.querySelector(".slider-container");
-  let oImgList = document.querySelector(".slider");
-  let cloneImg = oImgList.cloneNode(true);
-  container.appendChild(cloneImg);
-  window.onload = function () {
-    let containerWidth = container.offsetWidth;
-    let imgListWidth = oImgList.offsetWidth;
-    if (containerWidth > imgListWidth) {
-      let numClones = Math.ceil(containerWidth / imgListWidth) - 1;
-      for (let i = 0; i < numClones; i++) {
-        let clone = oImgList.cloneNode(true);
-        container.appendChild(clone);
-      }
+<style>
+.slider-container{
+  --time:40s
+}
+  .slider-container {
+    position: relative;
+    display: flex;
+    width: 94%;
+    overflow: hidden;
+    margin: 0 2.5rem;
+    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
+  }
+
+  .slider  {
+    padding: 0px;
+    list-style-type: none;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+
+  .slider-item {
+    display: inline-block;
+    padding: 20px 10px;
+  }
+
+  img {
+    max-height: 50px;
+    cursor: pointer;
+    transition: filter 0.5s;
+  }
+
+  .slider-container>.slider {
+    white-space: nowrap;
+    animation: animate var(--time) linear infinite;
+    animation-delay: calc(var(--time) * -1);
+  }
+
+  @keyframes animate {
+    0% {
+      transform: translateX(100%);
     }
-  };
-</script>
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .slider-container>.slider:nth-child(2) {
+    animation: animate2 var(--time) linear infinite;
+    animation-delay: calc(var(--time) / -2);
+  }
+
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .slider-container:hover>.slider {
+    animation-play-state: paused;
+  }
+</style>
