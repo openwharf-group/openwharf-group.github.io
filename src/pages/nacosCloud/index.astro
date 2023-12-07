@@ -1,10 +1,17 @@
 ---
-import Layout from "../../layouts/BaseLayout.astro";
-import Top from "./top.astro";
-import Card from "./card.astro";
+import BaseLayout from "@layouts/BaseLayout.astro"
+import HomeFooter from "@components/HomeFooter.astro";
+import CloudSlider from "@components/CloudSlider.astro";
+import CloudPackage from "@components/CloudPackage.astro";
+
 ---
 
-<Layout title="Nacos Cloud">
-  <Top />
-  <!-- <Card /> -->
-</Layout>
+<BaseLayout title="Nacos Cloud">
+  <CloudPackage />
+
+  <div class="bg-gary-02 px-8 py-28">
+    <CloudSlider />
+  </div>
+  
+  <HomeFooter />
+</BaseLayout>
