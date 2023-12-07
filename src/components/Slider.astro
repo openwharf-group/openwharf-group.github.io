@@ -17,9 +17,10 @@
   </ul>
 </div>
 <style>
-.slider-container{
-  --time:40s
-}
+  .slider-container {
+    --time: 40s
+  }
+
   .slider-container {
     position: relative;
     display: flex;
@@ -29,7 +30,7 @@
     mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
   }
 
-  .slider  {
+  .slider {
     padding: 0px;
     list-style-type: none;
     display: inline-block;
@@ -49,38 +50,37 @@
     transition: filter 0.5s;
   }
 
-  .slider-container>.slider {
+  .slider {
     white-space: nowrap;
-    animation: animate var(--time) linear infinite;
-    animation-delay: calc(var(--time) * -1);
+    animation: slide var(--time) linear infinite;
   }
 
-  @keyframes animate {
+  @keyframes slide {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
 
     100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .slider-container>.slider:nth-child(2) {
-    animation: animate2 var(--time) linear infinite;
-    animation-delay: calc(var(--time) / -2);
-  }
-
-  @keyframes animate2 {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(-200%);
+      transform: translateX(-50%);
     }
   }
 
   .slider-container:hover>.slider {
     animation-play-state: paused;
+  }
+
+  .slider-item:first-child {
+    animation: reset var(--time) step-end infinite;
+    animation-delay: calc(var(--time) / -2);
+  }
+
+  @keyframes reset {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
   }
 </style>
