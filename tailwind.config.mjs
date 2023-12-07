@@ -18,9 +18,9 @@ export default {
 					"warning": themeColor['gray']['06'],
 					"error": themeColor['gray']['13'],
 				},
-			  },
+			},
 		],
-	  },
+	},
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		//替换调色板，只能用这下面的颜色
@@ -68,11 +68,11 @@ export default {
 			// 设置starlight文档颜色
 			colors: {
 				gray: {
-					100: themeColor['gray']['01'],
-					200: themeColor['gray']['02'],
-					300: themeColor['gray']['03'],
-					400: themeColor['gray']['05'],
-					500: themeColor['gray']['10'],
+					100: themeColor['gray']['02'],
+					200: themeColor['gray']['03'],
+					300: themeColor['gray']['06'],
+					400: themeColor['gray']['08'],
+					500: themeColor['gray']['09'],
 					600: themeColor['gray']['10'],
 					700: themeColor['gray']['11'],
 					800: themeColor['gray']['13'],
@@ -83,7 +83,8 @@ export default {
 					600: themeColor['blue']['08'],
 					900: themeColor['blue']['11'],
 					950: themeColor['blue']['03']
-				}
+				},
+				white: themeColor['gray']['01'],
 			},
 			backgroundImage: {
 				'nacos-cloud': "url('/cloud-banner.png')"

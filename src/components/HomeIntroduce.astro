@@ -1,0 +1,76 @@
+---
+
+const github = `../../../public/github.png`;
+
+---
+
+
+<home-introduce class="introduce hero min-h-screen bg-gray-14">
+  <div class="hero-content flex-col lg:flex-row-reverse">
+    <img src="../../public/introduce.png" class="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <p class="py-6 text-gray-08 text-xs">About Nacos</p>
+      <h1 class="text-5xl font-bold text-gray-03 mb-4 ">An easy-to-use platform for building cloud native applications</h1>
+      <div class="flex py-6">
+        <button data-repositories class="btn btn-secondary rounded-3xl mr-4">
+          <img class="w-5 h-5" src={github} /> 
+          VIEW ON GITHUB
+        </button>
+        <button data-manual class="btn btn-primary rounded-3xl">
+          MANUAL
+        </button>
+      </div>
+      <div class="py-6">
+        <span class="text-gray-10 text-xs">Released on Oct 19, 2023</span>
+        <div class="divider divider-vertical bg-gray-12"></div> 
+        <button class="btn btn-primary btn-sm mr-4 rounded-none border-none">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="17" height="16" viewBox="0 0 17 16"><g><path d="M5.37213,12.9639L8.49958,11.1049L11.627,12.9883L10.8079,9.46608L13.5631,7.11791L9.9392,6.79992L8.49958,3.47334L7.05996,6.77546L3.4361,7.09345L6.19123,9.46608L5.37213,12.9639ZM8.49958,13.4042L4.37929,15.8502Q4.10626,16.0214,3.80841,15.9969Q3.51056,15.9725,3.28717,15.8013Q3.06378,15.63,2.93968,15.3737Q2.81557,15.1174,2.89003,14.7984L3.98216,10.1754L0.333471,7.06898Q0.0852605,6.84884,0.0237046,6.56706Q-0.0378512,6.28528,0.0604399,6.0172Q0.159724,5.74814,0.358292,5.57692Q0.55686,5.40569,0.904353,5.35677L5.71963,4.94095L7.5812,0.587044Q7.7053,0.293522,7.96642,0.146761Q8.22754,0,8.49958,0Q8.77261,0,9.03273,0.146761Q9.29286,0.293522,9.41795,0.587044L11.2795,4.94095L16.0948,5.35677Q16.4423,5.40569,16.6409,5.57692Q16.8394,5.74814,16.9387,6.0172Q17.038,6.28626,16.9764,6.56804Q16.9149,6.84982,16.6657,7.06898L13.017,10.1754L14.1091,14.7984Q14.1836,15.1164,14.0595,15.3737Q13.9354,15.631,13.712,15.8013Q13.4886,15.9725,13.1907,15.9969Q12.8929,16.0214,12.6199,15.8502L8.49958,13.4042Z" fill="#6E7587" fill-opacity="1"/></g></svg>
+          <div class="divider divider-horizontal bg-gray-12"></div>
+          27964
+        </button>
+        <button class="btn btn-primary btn-sm rounded-none border-none">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="16" height="18" viewBox="0 0 16 18"><g><path d="M13.3333,18Q12.2222,18,11.4444,17.2125Q10.6667,16.425,10.6667,15.3Q10.6667,15.1425,10.6889,14.9733Q10.7111,14.8041,10.7556,14.67L4.48889,10.98Q4.11111,11.3175,3.64444,11.5092Q3.17778,11.7009,2.66667,11.7Q1.55556,11.7,0.777778,10.9125Q3.17891e-7,10.125,0,9Q0,7.875,0.777778,7.0875Q1.55556,6.3,2.66667,6.3Q3.17778,6.3,3.64444,6.4917Q4.11111,6.6834,4.48889,7.02L10.7556,3.33Q10.7111,3.195,10.6889,3.0267Q10.6667,2.8584,10.6667,2.7Q10.6667,1.575,11.4444,0.7875Q12.2222,-1.60933e-7,13.3333,0Q14.4444,0,15.2222,0.7875Q16,1.575,16,2.7Q16,3.825,15.2222,4.6125Q14.4444,5.4,13.3333,5.4Q12.8222,5.4,12.3556,5.2092Q11.8889,5.0184,11.5111,4.68L5.24444,8.37Q5.28889,8.505,5.31111,8.6742Q5.33333,8.8434,5.33333,9Q5.33333,9.1575,5.31111,9.3267Q5.28889,9.4959,5.24444,9.63L11.5111,13.32Q11.8889,12.9825,12.3556,12.7917Q12.8222,12.6009,13.3333,12.6Q14.4444,12.6,15.2222,13.3875Q16,14.175,16,15.3Q16,16.425,15.2222,17.2125Q14.4444,18,13.3333,18ZM13.3333,3.6Q13.7111,3.6,13.9671,3.3417Q14.2231,3.0834,14.2222,2.7Q14.2222,2.3175,13.9662,2.0592Q13.7102,1.8009,13.3333,1.8Q12.9556,1.8,12.7004,2.0592Q12.4453,2.3184,12.4444,2.7Q12.4444,3.0825,12.7004,3.3417Q12.9564,3.6009,13.3333,3.6ZM2.66667,9.9Q3.04444,9.9,3.30044,9.6408Q3.55644,9.3816,3.55556,9Q3.55556,8.6175,3.29956,8.3592Q3.04356,8.1009,2.66667,8.1Q2.28889,8.1,2.03378,8.3592Q1.77867,8.6184,1.77778,9Q1.77778,9.3825,2.03378,9.6417Q2.28978,9.9009,2.66667,9.9ZM13.3333,16.2Q13.7111,16.2,13.9671,15.9408Q14.2231,15.6816,14.2222,15.3Q14.2222,14.9175,13.9662,14.6592Q13.7102,14.4009,13.3333,14.4Q12.9556,14.4,12.7004,14.6592Q12.4453,14.9184,12.4444,15.3Q12.4444,15.6825,12.7004,15.9417Q12.9564,16.2009,13.3333,16.2Z" fill="#6E7587" fill-opacity="1"/></g></svg>
+          <div class="divider divider-horizontal bg-gray-12"></div>
+          12338
+        </button>
+      </div>
+    </div>
+  </div>
+</home-introduce>
+
+<script>
+  class Introduce extends HTMLElement {
+    constructor() {
+			super();
+
+			// github按钮
+			const repositoriesBtn = this.querySelector<HTMLButtonElement>(
+				"button[data-repositories]",
+			)!;
+      // 手册按钮
+			const manualBtn = this.querySelector<HTMLButtonElement>(
+				"button[data-manual]",
+			)!;
+
+			repositoriesBtn.addEventListener("click", () => {
+        window.open('https://github.com/alibaba/nacos', '_blank');
+      });
+      manualBtn.addEventListener("click", () => {
+        window.open('/docs/architecture');
+      });
+
+		}
+  }
+  customElements.define("home-introduce", Introduce);
+</script>
+
+<style>
+  .divider-vertical {
+    height: 1px;
+  }
+  .divider-horizontal {
+    width: 1px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+</style>

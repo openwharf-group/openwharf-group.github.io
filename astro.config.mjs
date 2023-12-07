@@ -1,7 +1,5 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import sidebars from './config/sidebars';
-import sidebarsv2 from './config/sidebarsv2';
 import locales from './src/i18n/languages';
 import tailwind from '@astrojs/tailwind';
 import rehypeExternalLinks from 'rehype-external-links'
@@ -14,7 +12,7 @@ import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 export default defineConfig({
 	site: 'https://nacos.io',
 	image: {
-		domain:["img.alicdn"]
+		domain: ["img.alicdn"]
 	},
 	integrations: [
 		starlight({
@@ -31,10 +29,10 @@ export default defineConfig({
 				github: 'https://github.com/withastro/starlight',
 			},
 			locales,
-			sidebar: {
-				latest: sidebars,
-				v2: sidebarsv2,
-			},
+			// sidebar: {
+			// 	latest: sidebars,
+			// 	v2: sidebarsv2,
+			// },
 			customCss: ['./src/style/global.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
