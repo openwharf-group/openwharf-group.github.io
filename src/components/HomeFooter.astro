@@ -1,5 +1,5 @@
-<footer>
-  <div class="footer_top_functional">
+<footer class="bg-gray-14 p-10">
+  <div class="flex bg-gray-13 rounded-2xl p-9">
     <div class="footer_left">
       <p class="footer_left_title">Subscribe for more</p>
       <p class="footer_left_des">By providing an easy-to-use service infrastructure such as dynamic service discovery,service configuration, service sharing and management and etc.
@@ -39,27 +39,16 @@
       </div>
     </div>
   </div>
-  <div class="bottom_watermark border-t border-gray-13">
-    Copyright © 2023 Nacos
-  </div>
+  <div class="divider divider-vertical bg-gray-13 mt-10"></div> 
+  <div class="text-gray-09 text-sm text-center">Copyright © 2023 Nacos</div>
 </footer>
 
 
 <style>
-  footer {
-    background-color: theme('colors.gray.14');
-    padding-top: 1rem;
-    width: 100%;
-  }
 
-  .footer_top_functional {
-    background-color: theme('colors.gray.13');
-    text-align: center;
-    border-radius: 1rem;
-    margin: 1rem 2.5rem 2.5rem 2.5rem;
-    display: flex;
+  .divider-vertical {
+    height: 1px;
   }
-
   .footer_left {
     margin-left: 2.5rem;
     text-align: left;
@@ -135,19 +124,6 @@
     font-feature-settings: "kern" on;
     color: theme('colors.gray.04');
     text-decoration: none;
-  }
-
-  .bottom_watermark {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0em;
-    font-feature-settings: "kern" on;
-    color: theme('colors.gray.09');
-    padding-bottom: 2.75rem;
-    padding-top: 2rem;
-    margin: 0rem 2.5rem;
   }
 
   @media (max-width: 50rem) {
