@@ -68,7 +68,6 @@ function makeTranslate(list: any[], version: string) {
 			makeTranslate(item['items'], version);
 		}
 	}
-
 }
 
 
