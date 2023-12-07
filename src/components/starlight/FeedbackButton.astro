@@ -156,7 +156,6 @@ export interface Props {
 				event.preventDefault();
 				// Disable submit button while submitting to guard against re-submits.
 				submitBtn.disabled = true;
- 				console.log("form",form.phone.value,form.type.value,form.description.value)
 				try {
 					const type = form.type.value;
 					const description = form.description.value;

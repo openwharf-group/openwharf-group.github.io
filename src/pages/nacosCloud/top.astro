@@ -1,0 +1,282 @@
+---
+const topData = {
+  foreword: "About NACOS",
+  title: "Nacos Cloud",
+  desc: "One click to start your Nacos Cloud journey！",
+  freeCard: {
+    title: "Freetier",
+    desc: "",
+    price: "Free",
+    unit: "",
+    priceDesc: "for Free Tests and Experiences",
+    linkName: "START TRAIL",
+    link: "https://free.aliyun.com/?searchKey=nacos&spm=nacos.cloud.topbar.0.0.0",
+    feature: [
+      "* Free trial for those who have not purchased the commercial version",
+      "* Development version 1C2G, 1 month",
+    ],
+  },
+  cardList: [
+    {
+      title: "For developer",
+      price: "¥47.2",
+      priceDesc: "For development environments",
+      unit: "/MONTH",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: [
+        "60% off monthly packages, 40% off yearly packages, no price increase on renewals",
+        "1C2G, 1 month",
+      ],
+    },
+    {
+      title: "Production",
+      desc: "Serverless Instance",
+      priceDesc:
+        "For Scenarios such as fluctuating traffic, small and medium-sized traffic, etc.",
+      price: "¥0.16",
+      unit: "/HOUR",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: ["per-connection charging", "<= 10 connections"],
+    },
+    {
+      title: "Production ",
+      desc: "Regular Instance",
+      priceDesc: "3-node configuration with high availability",
+      price: "¥348.6",
+      unit: "/MONTH",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: [
+        "Charge according to actual example specifications",
+        "<= 10 connections",
+      ],
+    },
+  ],
+};
+---
+
+<div class="bg-gray-14">
+  <div
+    class="bg-gray-14 bg-nacos-cloud bg-contain bg-no-repeat sm:pb-16 lg:pb-28 md:pb-20"
+  >
+    <div class="pt-32 pb-32 pl-16">
+      <div class="text-gray-08 text-xs">{topData?.foreword}</div>
+      <div class="text-gray-03 text-7xl pt-16 pb-16">{topData?.title}</div>
+      <div class="text-gray-09 text-2xl">
+        {topData?.desc}
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center flex-wrap text-center0 pb-8 bg-gray-14">
+    <div class="bg-blue-01 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
+      <div class="h-16">
+        <div class="text-gray-14 text-base font-sans font-medium pb-2">
+          {topData?.freeCard?.title}
+        </div>
+      </div>
+      <div class="p-4 border-b border-t border-gray-03 h-28">
+        <div class="text-5xl font-bold text-gray-14 sm:text-4xl">
+          {topData?.freeCard?.price}
+        </div>
+        <div class="font-sans pb-2 pt-4 text-xs">
+          {topData?.freeCard?.priceDesc}
+        </div>
+      </div>
+      <div class="pl-2 h16">
+        {
+          topData?.freeCard?.feature?.map((el, i) => {
+            return <div class="text-left text-xs text-gray-08 mt-4">{el}</div>;
+          })
+        }
+      </div>
+      <div class="text-center mt-6 mb-6">
+        <a href={topData?.freeCard?.link} target="_blank">
+          <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+            {topData?.freeCard?.linkName}
+          </button>
+        </a>
+      </div>
+    </div>
+    {
+      topData?.cardList?.map((item, index) => {
+        return (
+          <div class="bg-gray-14 border border-text-gray-03 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
+            <div class="h-16">
+              <div class="text-gray-03 text-base font-sans font-medium">
+                {item?.title}
+              </div>
+              <div>{item?.desc}</div>
+            </div>
+            <div class="pt-4 border-b border-t border-gray-03 h-28">
+              <div class="text-5xl font-bold text-gray-03 sm:text-4xl">
+                {item?.price}
+              </div>
+              <div class="font-sans  pt-4 text-xs text-gray-08">
+                {item?.priceDesc}
+              </div>
+            </div>
+            <div class="pl-2 h-16">
+              {item?.feature?.map((el, i) => {
+                return (
+                  <div class="text-left text-xs text-gray-08 mt-4">{el}</div>
+                );
+              })}
+            </div>
+            <div class="text-center mt-6 mb-6">
+              <a href={item?.link} target="_blank">
+                <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+                  {item?.linkName}
+                </button>
+              </a>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <div class="pb-16 pb-16 bg-gray-14"></div>
+
+  <div
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8 lg:gap-16 lg:grid-cols-4 bg-gray-14"
+  >
+    <div
+      class="rounded-2xl border border-indigo-600 p-6 shadow-sm ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-4 bg-blue-01"
+    >
+      <div class="text-center">
+        <h2 class="text-lg font-medium text-gray-14">Freetier</h2>
+
+        <div class="p-4 border-b border-t border-gray-03">
+          <p class="mt-2 sm:mt-4">
+            <strong class="text-5xl font-bold text-gray-14 sm:text-4xl">
+              Free
+            </strong>
+            <!-- <span class="text-sm font-medium text-gray-14">/month</span>  pb-4  -->
+          </p>
+
+          <div class="font-sans pb-4">for Free Tests and Experiences</div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2 pl-6 pr-6">
+        <div class="font-sans text-gray-08 text-xs">
+          60% off monthly packages, 40% off yearly packages, no price increase
+          on renewals
+        </div>
+        <div class="font-sans text-gray-08 text-xs">
+          *Development version 1C2G, 1 month
+        </div>
+      </div>
+      <div class="text-center mt-6 mb-6">
+        <button class="btn rounded-full w-full bg-gray-14 text-gray-03"
+          >START TRAIL</button
+        >
+      </div>
+    </div>
+
+    <div
+      class="rounded-2xl border border-indigo-600 p-6 shadow-sm ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-4 bg-blue-01"
+    >
+      <div class="text-center">
+        <h2 class="text-lg font-medium text-gray-14">Freetier</h2>
+
+        <div class="p-4 border-b border-t border-gray-03">
+          <p class="mt-2 sm:mt-4">
+            <strong class="text-5xl font-bold text-gray-14 sm:text-4xl">
+              Free
+            </strong>
+            <!-- <span class="text-sm font-medium text-gray-14">/month</span>  pb-4  -->
+          </p>
+
+          <div class="font-sans pb-4">for Free Tests and Experiences</div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2 pl-6 pr-6">
+        <div class="font-sans text-gray-08 text-xs">
+          60% off monthly packages, 40% off yearly packages, no price increase
+          on renewals
+        </div>
+        <div class="font-sans text-gray-08 text-xs">
+          *Development version 1C2G, 1 month
+        </div>
+      </div>
+      <div class="text-center mt-6 mb-6">
+        <button class="btn rounded-full w-full bg-gray-14 text-gray-03"
+          >START TRAIL</button
+        >
+      </div>
+    </div>
+
+    <div
+      class="rounded-2xl border border-indigo-600 p-6 shadow-sm ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-4 bg-blue-01"
+    >
+      <div class="text-center">
+        <h2 class="text-lg font-medium text-gray-14">Freetier</h2>
+
+        <div class="p-4 border-b border-t border-gray-03">
+          <p class="mt-2 sm:mt-4">
+            <strong class="text-5xl font-bold text-gray-14 sm:text-4xl">
+              Free
+            </strong>
+            <!-- <span class="text-sm font-medium text-gray-14">/month</span>  pb-4  -->
+          </p>
+
+          <div class="font-sans pb-4">for Free Tests and Experiences</div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2 pl-6 pr-6">
+        <div class="font-sans text-gray-08 text-xs">
+          60% off monthly packages, 40% off yearly packages, no price increase
+          on renewals
+        </div>
+        <div class="font-sans text-gray-08 text-xs">
+          *Development version 1C2G, 1 month
+        </div>
+      </div>
+      <div class="text-center mt-6 mb-6">
+        <button class="btn rounded-full w-full bg-gray-14 text-gray-03"
+          >START TRAIL</button
+        >
+      </div>
+    </div>
+
+    <div
+      class="rounded-2xl border border-indigo-600 p-6 shadow-sm ring-1 ring-indigo-600 sm:order-last sm:px-8 lg:p-4 bg-blue-01"
+    >
+      <div class="text-center">
+        <h2 class="text-lg font-medium text-gray-14">Freetier</h2>
+
+        <div class="p-4 border-b border-t border-gray-03">
+          <p class="mt-2 sm:mt-4">
+            <strong class="text-5xl font-bold text-gray-14 sm:text-4xl">
+              Free
+            </strong>
+            <!-- <span class="text-sm font-medium text-gray-14">/month</span>  pb-4  -->
+          </p>
+
+          <div class="font-sans pb-4">for Free Tests and Experiences</div>
+        </div>
+      </div>
+
+      <div class="mt-6 space-y-2 pl-6 pr-6">
+        <div class="font-sans text-gray-08 text-xs">
+          60% off monthly packages, 40% off yearly packages, no price increase
+          on renewals
+        </div>
+        <div class="font-sans text-gray-08 text-xs">
+          *Development version 1C2G, 1 month
+        </div>
+      </div>
+      <div class="text-center mt-6 mb-6">
+        <button class="btn rounded-full w-full bg-gray-14 text-gray-03"
+          >START TRAIL</button
+        >
+      </div>
+    </div>
+  </div>
+</div>
