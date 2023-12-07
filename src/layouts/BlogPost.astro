@@ -14,7 +14,7 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 				<div class="hero-image ">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="prose">
+				<div class="nacos-prose">
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={date} />
@@ -49,7 +49,7 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 		border-radius: 12px;
 		box-shadow: var(--box-shadow);
 	}
-	.prose {
+	.nacos-prose {
 		width: 720px;
 		max-width: calc(100% - 2em);
 		margin: auto;
