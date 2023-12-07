@@ -11,8 +11,11 @@ export default function remarkRemoveMdLinks() {
       if (node.lang === 'plain') {
         node.lang = '';
       }
-	  if (node.lang === 'basic') {
-        node.lang = '';
+      if (node.lang === 'basic') {
+          node.lang = '';
+      }
+      if (node.lang === 'SH') {
+        node.lang = 'sh';
       }
     });
   };
