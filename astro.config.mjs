@@ -29,10 +29,6 @@ export default defineConfig({
 				github: 'https://github.com/withastro/starlight',
 			},
 			locales,
-			// sidebar: {
-			// 	latest: sidebars,
-			// 	v2: sidebarsv2,
-			// },
 			customCss: ['./src/style/global.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
@@ -48,5 +44,8 @@ export default defineConfig({
 	},
 	build: {
 		format: 'file'
+	},
+	redirects: {
+		'/zh-cn/[...slug]': '/[...slug]'
 	}
 });

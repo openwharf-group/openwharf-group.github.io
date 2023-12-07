@@ -44,6 +44,7 @@ _.each(categorySidebar,(item, key) => {
 	if(match && match[1]) {
 		const version = match[1];
 		const siderBarList = item.default;
+		// 自动加上版本相关信息
 		makeTranslate(siderBarList, version);
 		categories[version] = siderBarList;
 	}

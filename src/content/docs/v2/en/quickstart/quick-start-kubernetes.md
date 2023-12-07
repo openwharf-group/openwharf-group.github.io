@@ -39,7 +39,7 @@ chmod +x quick-startup.sh
   ```powershell
   curl -X GET 'http://cluster-ip:8848/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName'
   ```
-  
+
   * **Publish config**
 
   ```powershell
@@ -59,7 +59,7 @@ chmod +x quick-startup.sh
 
 ## Deploy NFS
 
-* Create Role 
+* Create Role
 
 ```shell
 kubectl create -f deploy/nfs/rbac.yaml
@@ -109,7 +109,7 @@ kubectl create -f deploy/mysql/mysql-master-nfs.yaml
 
 ```shell
 
-cd nacos-k8s 
+cd nacos-k8s
 
 kubectl create -f deploy/mysql/mysql-slave-nfs.yaml
 ```
@@ -118,16 +118,16 @@ kubectl create -f deploy/mysql/mysql-slave-nfs.yaml
 
 ```shell
 # master
-kubectl get pod 
+kubectl get pod
 NAME                         READY   STATUS    RESTARTS   AGE
 mysql-master-gf2vd                        1/1     Running   0          111m
 
 # slave
-kubectl get pod 
+kubectl get pod
 mysql-slave-kf9cb                         1/1     Running   0          110m
 ```
 
-## Deploy Nacos 
+## Deploy Nacos
 
 * Modify  **deploy/nacos/nacos-pvc-nfs.yaml**
 
@@ -200,13 +200,13 @@ You can find that the new node has joined the cluster
 - Kubernetes Node configuration(for reference only)
 
 | Network IP | Hostname   | Configuration                                                                    |
-| ---------- | ---------- | -------------------------------------------------------------------------------- |                    
+| ---------- | ---------- | -------------------------------------------------------------------------------- |
 | 172.17.79.3| k8s-master | CentOS Linux release 7.4.1708 (Core) Single-core processor Mem 4G Cloud disk 40G |
 | 172.17.79.4| node01     | CentOS Linux release 7.4.1708 (Core) Single-core processor Mem 4G Cloud disk 40G |
 | 172.17.79.5| node02     | CentOS Linux release 7.4.1708 (Core) Single-core processor Mem 4G Cloud disk 40G |
 
-- Kubernetes version：**1.12.2+** 
-- NFS version：**4.1+** 
+- Kubernetes version：**1.12.2+**
+- NFS version：**4.1+**
 
 # Limitations
 
@@ -221,7 +221,7 @@ You can find that the new node has joined the cluster
 
 # Configuration properties
 
-* nacos-pvc-nfs.yaml or nacos-quick-start.yaml 
+* nacos-pvc-nfs.yaml or nacos-quick-start.yaml
 
 | Name                    | Required | Description                                    |
 | ----------------------- | -------- | --------------------------------------- |
@@ -235,7 +235,7 @@ You can find that the new node has joined the cluster
 | `PREFER_HOST_MODE`      | Y       | Enable Nacos cluster node domain name support               |
 
 
-* **nfs** deployment.yaml 
+* **nfs** deployment.yaml
 
 | Name         | Required | Description                     |
 | ------------ | -------- | ------------------------ |
@@ -245,7 +245,7 @@ You can find that the new node has joined the cluster
 | `path`       | Y       | NFS server shared directory |
 
 
-* mysql yaml 
+* mysql yaml
 
 | Name                         | Required | Description                                                        |
 | ---------------------------- | -------- | ----------------------------------------------------------- |
