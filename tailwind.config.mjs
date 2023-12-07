@@ -88,7 +88,7 @@ export default {
 			},
 			backgroundImage: {
 				'nacos-cloud': "url('/cloud-banner.png')"
-			}
+			},
 		}
 	},
 	plugins: [starlightPlugin(), require("daisyui")],

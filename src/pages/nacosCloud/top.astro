@@ -1,8 +1,8 @@
 ---
 const topData = {
-  brandName: "Nacos",
+  foreword: "About NACOS",
   title: "Nacos Cloud",
-  desc: "这里是占位文字这里是占位文字这里是占位文字这里是占位文字这里是占位文字这里是占位文字",
+  desc: "One click to start your Nacos Cloud journey！",
   freeCard: {
     title: "Freetier",
     desc: "",
@@ -58,26 +58,26 @@ const topData = {
 ---
 
 <div class="bg-gray-14">
-  <section class="bg-gray-14 bg-nacos-cloud bg-cover bg-no-repeat">
+  <div
+    class="bg-gray-14 bg-nacos-cloud bg-contain bg-no-repeat sm:pb-16 lg:pb-28 md:pb-20"
+  >
     <div class="pt-32 pb-32 pl-16">
-      <div class="text-gray-08 text-xs">About NACOS</div>
-      <div class="text-gray-03 text-7xl pt-16 pb-16">Nacos Cloud</div>
+      <div class="text-gray-08 text-xs">{topData?.foreword}</div>
+      <div class="text-gray-03 text-7xl pt-16 pb-16">{topData?.title}</div>
       <div class="text-gray-09 text-2xl">
-        One click to start your Nacos Cloud journey！
+        {topData?.desc}
       </div>
     </div>
-  </section>
+  </div>
 
-  <div
-    class="flex justify-center flex-wrap text-center0 pb-8 bg-gray-14 sm:mt-16 lg:mt-16 md:mt-16"
-  >
+  <div class="flex justify-center flex-wrap text-center0 pb-8 bg-gray-14">
     <div class="bg-blue-01 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
       <div class="h-16">
         <div class="text-gray-14 text-base font-sans font-medium pb-2">
           {topData?.freeCard?.title}
         </div>
       </div>
-      <div class="p-4 border-b border-t border-gray-03">
+      <div class="p-4 border-b border-t border-gray-03 h-28">
         <div class="text-5xl font-bold text-gray-14 sm:text-4xl">
           {topData?.freeCard?.price}
         </div>
@@ -85,7 +85,7 @@ const topData = {
           {topData?.freeCard?.priceDesc}
         </div>
       </div>
-      <div class="pl-2">
+      <div class="pl-2 h16">
         {
           topData?.freeCard?.feature?.map((el, i) => {
             return <div class="text-left text-xs text-gray-08 mt-4">{el}</div>;
@@ -93,9 +93,11 @@ const topData = {
         }
       </div>
       <div class="text-center mt-6 mb-6">
-        <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
-          {topData?.freeCard?.linkName}
-        </button>
+        <a href={topData?.freeCard?.link} target="_blank">
+          <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+            {topData?.freeCard?.linkName}
+          </button>
+        </a>
       </div>
     </div>
     {
@@ -124,9 +126,11 @@ const topData = {
               })}
             </div>
             <div class="text-center mt-6 mb-6">
-              <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
-                {item?.linkName}
-              </button>
+              <a href={item?.link} target="_blank">
+                <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+                  {item?.linkName}
+                </button>
+              </a>
             </div>
           </div>
         );
