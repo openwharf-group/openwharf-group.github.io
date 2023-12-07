@@ -6,6 +6,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCode"
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
+import addPrefixImageLink from "./plugins/addPrefixImageLink"
 
 
 // https://astro.build/config
@@ -44,7 +45,7 @@ export default defineConfig({
 				target: '_blank',
 				rel: ['noopener', 'noreferrer']
 			}]],
-		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, remarkRemoveRepeatHeader]
+		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, addPrefixImageLink]
 	},
 	build: {
 		format: 'file'
