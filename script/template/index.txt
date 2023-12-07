@@ -17,12 +17,14 @@ export async function getStaticPaths() {
 		 */
 		if(lang === 'en' || lang === 'zh-cn') {
 			const versionSlug = version === 'latest' ? '' : `${version}/`;
-			item.params.slug = `${lang}/docs/${versionSlug}${rest.join('/')}`;
 			if(lang === 'en') {
 				item.props.lang='en';
 				item.props.locale='en';
 				item.props.entryMeta.lang='en';
 				item.props.entryMeta.locale='en';
+				item.params.slug = `${lang}/docs/${versionSlug}${rest.join('/')}`;
+			} else {
+				item.params.slug = `docs/${versionSlug}${rest.join('/')}`;
 			}
 			return true;
 		} else {
@@ -33,20 +35,46 @@ export async function getStaticPaths() {
 	return currentPath;
 }
 
-const categorySidebar = import.meta.glob("../../../src/content/**/_sidebar.json", { eager: true });
+const categorySidebar = (await import.meta.glob("../../../src/content/**/_sidebar.json", { eager: true }));
 
 const regex = /\/content\/docs\/(latest|next|v[0-9]\.[0-9]\.[0-9]|v[0-9]\.[0-9]|v[0-9]|[0-9]\.[0-9]\.[0-9]|[0-9]\.[0-9]|[0-9]).*/;
-const categorys = {}
+const categories = {}
 _.each(categorySidebar,(item, key) => {
 	const match = regex.exec(key);
 	if(match && match[1]) {
-		categorys[match[1]] = item.default;
+		const version = match[1];
+		const siderBarList = item.default;
+		makeTranslate(siderBarList, version);
+		categories[version] = siderBarList;
 	}
-})
+});
+
+function makeTranslate(list: any[], version: string) {
+	for (const item of list) {
+		if(!item['translations']) {
+			item['translations'] = {
+				en: item['label']
+			};
+		}
+		if(item['link'] && version !== 'latest') {
+			const regex = /next|v[0-9]\.[0-9]\.[0-9]|v[0-9]\.[0-9]|v[0-9]|[0-9]\.[0-9]\.[0-9]|[0-9]\.[0-9]|[0-9]/;
+			const [_docs, ...rest] = _.split(item['link'], '/');
+			const match = regex.exec(rest[0]);
+			if(!match) {
+				item['link'] = `${_docs}/${version}/${_.join(rest, '/')}`
+			}
+		}
+		if(item['items']) {
+			makeTranslate(item['items'], version);
+		}
+	}
+}
+
+
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { Content, headings } = await Astro.props.entry.render();
 
-const route = generateRouteData({ props: { ...Astro.props, headings, categories: JSON.stringify(categorys) }, url: Astro.url });
+const route = generateRouteData({ props: { ...Astro.props, headings, categories: categories }, url: Astro.url });
 
 ---
 <Page {...route}><Content /></Page>

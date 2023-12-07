@@ -8,7 +8,6 @@ import { useTranslations } from '@i18n/util';
 import Header from '@components/Header.astro';
 const t = useTranslations(Astro);
 
-const labels = {};
 export type Props = {
     title: string;
 };
@@ -26,4 +25,43 @@ const { title } = Astro.props;
         <Header theme='dark' />
         <slot />
     </body>
+    <script>
+        addEventListener('scroll', () => {
+            const scrollTop = (
+                document.documentElement.scrollTop || 
+                window.pageYOffset || 
+                document.body.scrollTop
+            );
+            
+            if (scrollTop > 120) {
+                if (document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
+
+                    // 优化 避免一直添加移除
+                    document.querySelector('.header-inner').classList.remove('bg-gray-14');
+                    document.querySelector('.header-inner').classList.add('bg-gray-02', 'shadow');
+
+                    document.querySelector('.nav').classList.remove('text-gray-06');
+                    document.querySelector('.nav').classList.add('text-gray-12');
+
+                    document.querySelector('img').src = '../../../public/nacos_colorful.png';
+                }
+                
+
+            } else {
+
+                if (!document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
+                    // 优化 避免一直添加移除
+                    document.querySelector('.header-inner').classList.add('bg-gray-14');
+                    document.querySelector('.header-inner').classList.remove('bg-gray-02', 'shadow');
+
+                    document.querySelector('.nav').classList.add('text-gray-06');
+                    document.querySelector('.nav').classList.remove('text-gray-12');
+
+                    document.querySelector('img').src = '../../../public/nacos_white.png';
+                }
+                
+            }
+            
+        });
+    </script>
 </html>
