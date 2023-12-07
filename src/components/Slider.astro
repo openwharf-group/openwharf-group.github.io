@@ -1,0 +1,86 @@
+---
+  const { imgList } = Astro.props;
+---
+
+<div class="slider-container">
+  <ul class="slider">
+    {imgList.map((imgItem,index) =>
+    <li class="slider-item">
+      <img src={imgItem} alt={`Image${index}`}>
+    </li>)}
+  </ul>
+  <ul class="slider">
+    {imgList.map((imgItem,index) =>
+    <li class="slider-item">
+      <img src={imgItem} alt={`Image${index}`}>
+    </li>)}
+  </ul>
+</div>
+<style>
+  .slider-container {
+    --time: 40s
+  }
+
+  .slider-container {
+    position: relative;
+    display: flex;
+    width: auto;
+    overflow: hidden;
+    margin: 0 2.5rem;
+    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
+  }
+
+  .slider {
+    padding: 0rem;
+    list-style-type: none;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+
+  .slider-item {
+    display: inline-block;
+    padding: 1.25rem .625rem;
+  }
+
+  img {
+    max-height: 3.125rem;
+    cursor: pointer;
+    transition: filter 0.5s;
+  }
+
+  .slider {
+    white-space: nowrap;
+    animation: slide var(--time) linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .slider-container:hover>.slider {
+    animation-play-state: paused;
+  }
+
+  .slider-item:first-child {
+    animation: reset var(--time) step-end infinite;
+    animation-delay: calc(var(--time) / -2);
+  }
+
+  @keyframes reset {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>
