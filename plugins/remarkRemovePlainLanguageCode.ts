@@ -8,39 +8,27 @@ import { visit } from 'unist-util-visit';
 export default function remarkRemoveMdLinks() {
   return (tree) => {
     visit(tree, "code", (node) => {
-      if (node.lang === "plain") {
-        node.lang = "";
+      if(node?.lang){
+        const lang = node.lang.toLowerCase() || '';
+        switch (lang) {
+          case "plain":
+          case "basic":
+            node.lang = "";
+            break;
+          case "Shell":
+            node.lang = "sh";
+            break;
+          case "$xslt":
+            node.lang = "xsl";
+            break;
+          case "protobuf":
+            node.lang = "java";
+            break;
+          default:
+            node.lang = lang;
+        }
       }
-      if (node.lang === "basic") {
-        node.lang = "";
-      }
-      if (node.lang === "SH" || node.lang === "Shell") {
-        node.lang = "sh";
-      }
-      if (node.lang === "$xslt") {
-        node.lang = "xsl";
-      }
-      if (node.lang === "JavaScript") {
-        node.lang = "javascript";
-      }
-      if (node.lang === "Bash") {
-        node.lang = "bash";
-      }
-      if (node.lang === "JSON") {
-        node.lang = "json";
-      }
-      if (node.lang === "Apache") {
-        node.lang = "apache";
-      }
-      if (node.lang === "PYTHON") {
-        node.lang = "python";
-      }
-      if (node.lang === "JAVA" || node.lang === "protobuf") {
-        node.lang = "java";
-      }
-      if (node.lang === "PHP") {
-        node.lang = "php";
-      }
+
     });
   };
 }
