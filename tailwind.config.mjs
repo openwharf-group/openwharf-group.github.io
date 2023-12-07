@@ -85,6 +85,9 @@ export default {
 					950: themeColor['blue']['03']
 				}
 			},
+			backgroundImage: {
+				'nacos-cloud': "url('/cloud-banner.png')"
+			}
 		}
 	},
 	plugins: [starlightPlugin(), require("daisyui")],
