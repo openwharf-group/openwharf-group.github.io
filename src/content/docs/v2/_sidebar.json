@@ -1,0 +1,56 @@
+[
+    {
+        "label": "Nacos是什么?",
+        "translations": {
+            "zh-cn": "Nacos简介",
+            "en": "Nacos introduction"
+        },
+        "items": [
+            {
+                "label": "Nacos简介",
+                "link": "docs/what-is-nacos",
+                "translations": {
+                    "zh-cn": "Nacos简介",
+                    "en": "What is Nacos"
+                }
+            },
+            {
+                "label": "概念",
+                "link": "docs/concepts",
+                "translations": {
+                    "zh-cn": "概念",
+                    "en": "Concepts"
+                }
+            },
+            {
+                "label": "架构",
+                "link": "docs/architecture",
+                "translations": {
+                    "zh-cn": "架构",
+                    "en": "Architecure"
+                }
+            }
+        ]
+    },
+    {
+        "label": "快速开始",
+        "translations": {
+            "zh-cn": "Nacos简介",
+            "en": "Quick Start"
+        },
+        "items": [
+            {
+                "label": "Nacos",
+                "link": "docs/quickstart/quick-start"
+            },
+            {
+                "label": "Nacos Docker",
+                "link": "docs/quickstart/quick-start-docker"
+            },
+            {
+                "label": "Nacos k8s",
+                "link": "docs/quickstart/quick-start-kubernetes"
+            }
+        ]
+    }
+]

@@ -2,7 +2,6 @@ import { defineCollection, z } from 'astro:content';
 import { docsSchema, i18nSchema } from '@astrojs/starlight/schema';
 
 const blog = defineCollection({
-	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
@@ -19,7 +18,8 @@ export const collections = {
 	docs: defineCollection({
 		schema: docsSchema({
 			extend: z.object({
-				keywords: z.string().or(z.array(z.string()).optional())
+				keywords: z.string().or(z.array(z.string().or(z.number())).optional()),
+				position: z.number().optional(),
 			}),
 		})
 	}),
