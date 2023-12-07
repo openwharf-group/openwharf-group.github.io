@@ -113,3 +113,6 @@
 	border: 0;
 	border-bottom: 1px solid var(--sl-color-hairline);
 }
+.sl-markdown-content h2{
+	line-height: 3.5rem;
+}
