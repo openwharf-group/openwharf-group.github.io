@@ -2,6 +2,11 @@
 title: Kubernetes Nacos
 keywords: [nacos,kubernetes]
 description: 本项目包含一个可构建的Nacos Docker Image，旨在利用 StatefulSets 在 Kubernetes上部署 Nacos。
+sidebar:
+  order: 1
+  badge:
+    text: 注意
+    variant: tip
 ---
 
 # Kubernetes Nacos
@@ -34,19 +39,19 @@ chmod +x quick-startup.sh
   ```bash
   curl -X POST 'http://cluster-ip:8848/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&ip=20.18.7.10&port=8080'
   ```
-  
+
   * **服务发现**
 
   ```bash
   curl -X GET 'http://cluster-ip:8848/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName'
   ```
-  
+
   * **发布配置**
 
   ```bash
   curl -X POST "http://cluster-ip:8848/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&group=test&content=helloWorld"
   ```
-  
+
   * **获取配置**
 
   ```bash
@@ -60,7 +65,7 @@ chmod +x quick-startup.sh
 
 ## 部署 NFS
 
-* 创建角色 
+* 创建角色
 
 ```shell
 kubectl create -f deploy/nfs/rbac.yaml
@@ -113,7 +118,7 @@ kubectl create -f deploy/mysql/mysql-nfs.yaml
 
 ```shell
 
-kubectl get pod 
+kubectl get pod
 NAME                         READY   STATUS    RESTARTS   AGE
 mysql-gf2vd                        1/1     Running   0          111m
 
@@ -217,7 +222,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 
 # 配置属性
 
-* nacos-pvc-nfs.yaml or nacos-quick-start.yaml 
+* nacos-pvc-nfs.yaml or nacos-quick-start.yaml
 
 | 名称                     | 必要 | 描述                                    |
 | ----------------------- | -------- | --------------------------------------- |
@@ -232,7 +237,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 | `NACOS_APPLICATION_PORT`     | N       | Nacos 端口|
 | `PREFER_HOST_MODE`      | Y       | 启动Nacos集群按域名解析 |
 
-* **nfs** deployment.yaml 
+* **nfs** deployment.yaml
 
 | 名称          | 必要 | 描述                     |
 | ------------ | --------| ------------------------ |
@@ -241,7 +246,7 @@ for i in 0 1 2; do echo nacos-$i; kubectl exec nacos-$i curl -X GET "http://loca
 | `server`     | Y       | NFS 服务端地址  |
 | `path`       | Y       | NFS 共享目录 |
 
-* mysql 
+* mysql
 
 | 名称                     | 必要 | 描述                                                      |
 | -------------------------- | -------- | ----------------------------------------------------------- |
