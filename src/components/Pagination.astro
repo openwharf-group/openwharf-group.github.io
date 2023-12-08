@@ -89,8 +89,11 @@ const collapsedPages = collapseRange(page, pages);
         }
     </ul>
 </nav>
-<!-- 
 <style>
+    a {
+        z-index: 1;
+        text-decoration: inherit;
+    }
     .next:hover,
     .prev:hover {
         background: linear-gradient(
@@ -102,7 +105,8 @@ const collapsedPages = collapseRange(page, pages);
 
     @media screen(sm) {
         [aria-current="page"]::before {
-            @apply absolute inset-0;
+            position:absolute;
+            inset: 0;
             content: "";
             margin: -1px;
             border-radius: inherit;
@@ -111,11 +115,10 @@ const collapsedPages = collapseRange(page, pages);
                 rgba(74, 242, 200, 1) 0%,
                 rgba(47, 76, 179, 1) 100%
             );
-            z-index: -2;
+            z-index: -1;
         }
 
         [aria-current="page"]::after {
-            @apply absolute inset-0 z-blur;
             content: "";
             border-radius: inherit;
             background: rgb(35 38 45)
@@ -126,4 +129,4 @@ const collapsedPages = collapseRange(page, pages);
                 );
         }
     }
-</style> -->
+</style>

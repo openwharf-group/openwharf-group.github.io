@@ -37,7 +37,7 @@ const logo = `../../../public/${isDark ? 'nacos_white' : 'nacos_colorful'}.png`;
     </div>
     <div class="menu-item dropdown dropdown-hover">
       <div class="label">
-        <span class="text">COMMUNITY</span>
+        <a href="./blog"><span class="text">COMMUNITY</span></a>
         <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
       </div>
     </div>
@@ -56,6 +56,10 @@ const logo = `../../../public/${isDark ? 'nacos_white' : 'nacos_colorful'}.png`;
 </div>
 
 <style>
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
   .header-inner {
     --logo-width: 96px;
     --header-height: 4rem;

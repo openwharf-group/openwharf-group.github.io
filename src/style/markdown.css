@@ -1,8 +1,8 @@
-.sl-markdown-content
+/* .sl-markdown-content
 	:not(a, strong, em, del, span, input, code)
 	+ :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
 	margin-top: 1.5rem;
-}
+} */
 
 /* Headings after non-headings have more spacing. */
 .sl-markdown-content
@@ -32,7 +32,8 @@
 }
 
 .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
-	color: var(--sl-color-white);
+	/* color: var(--sl-color-white); */
+	color: theme("colors.gray.01");
 	line-height: var(--sl-line-height-headings);
 	font-weight: 600;
 }
@@ -112,4 +113,7 @@
 .sl-markdown-content hr:not(:where(.not-content *)) {
 	border: 0;
 	border-bottom: 1px solid var(--sl-color-hairline);
+}
+.sl-markdown-content h2{
+	line-height: 3.5rem;
 }
