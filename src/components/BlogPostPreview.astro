@@ -1,7 +1,6 @@
 ---
-// import { format } from "date-fns";
+import { format } from "date-fns";
 // import { resolveCoverImage } from "~/content/blog/_resolveImage.js";
-import moment from 'moment';
 
 export type Props = {
     post: {
@@ -50,10 +49,10 @@ const { post } = Astro.props;
   >
 </article> -->
 <article class="blog-item">
-  <a href={`/blog/${post.slug}/`} rel="prefetch" class="text-[color-gray-15]">
+  <a href={`/blog/${post.slug}/`} rel="prefetch" class="text-gray-15">
     <div class="card card-normal shadow-xl">
-      <div class="card-body">
-        <h2 class="mt-[20px] mb-[20px] leading-[2rem]">{post.data.title}</h2>
+      <div class="card-body bg-gray-13">
+        <h2 class="mt-[20px] mb-[20px] leading-[2rem] text-gray-01">{post.data.title}</h2>
         <div class="flex justify-between items-center">
           <div class="flex justify-between items-center">
             <div>
@@ -63,12 +62,12 @@ const { post } = Astro.props;
               />
             </div>
             <div class="m-[10px]">
-              <div class="text-[0.25rem]">{post.data.description}</div>
-              <div class="text-[0.25rem]">{moment(post.data.date).format('YYYY-MM-DD HH:mm:ss')}</div>
+              <div class="text-gray-05">{post.data.description}</div>
+              <div class="text-gray-03">{format(post.data.date, "MMMM d, yyyy")}</div>
             </div>
           </div>
           <div>
-            <img class="w-10" src="../../public/nacos_colorful.png" />
+            <img class="w-10" src="../../public/nacos_white.png" />
           </div>
         </div>
       </div>

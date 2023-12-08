@@ -41,7 +41,7 @@ export default defineConfig({
 				target: '_blank',
 				rel: ['noopener', 'noreferrer']
 			}]],
-		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, addPrefixImageLink]
+		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, addPrefixImageLink,remarkRemoveRepeatHeader]
 	},
 	build: {
 		format: 'file'
