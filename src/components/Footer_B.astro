@@ -1,210 +1,48 @@
 <footer>
-  <div class="footer_top_functional">
-    <div class="footer_left">
-      <p class="footer_left_title">Subscribe for more</p>
-      <p class="footer_left_des">By providing an easy-to-use service infrastructure such as dynamic service discovery,service configuration, service sharing and management and etc.
+  <div class=" flex bg-gray-13 my-0 mx-10 rounded-2xl text-center lg:flex-row  lg:p-0 lg:mx-10 md:mx-4 md:flex-col md:p-4 md:min-h-[31.25rem]">
+    <div class="grid grid-cols-1 gap-0 text-left lg:ml-10 md:w-full md:ml-0 md:ml-4">
+      <p class="text-gray-02 text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10 lg:mt-9  md:w-auto md:h-auto md:mb-4">Subscribe for more</p>
+      <p class="text-gray-09 text-[1.125rem] leading-5 lg:w-[42rem] lg:h-[3.5625rem] lg:mt-4 lg:mb-[1.875rem] md:w-auto md:h-auto md:mb-4">By providing an easy-to-use service infrastructure such as dynamic service
+        discovery,service configuration, service sharing and management and etc.
       </p>
       <input type="text" placeholder="Enter email address…"
-        class="input input-ghost bg-color-gray-12 footer_left_email" />
-      <button class="btn color-gray-14 rounded-full footer_left_button">SUBSCRIBE</button>
+        class="input input-ghost bg-gray-12 block rounded-2xl lg:w-[31.25rem] lg:h-[4.375rem] md:w-auto md:h-12" />
+      <button class="btn bg-gray-02 text-gray-14 rounded-full text-[0.75rem] font-medium block lg:w-[9.6875rem] lg:h-[3.375rem] lg:mt-6 lg:mb-[11.1875rem] lg:py-[1.1875rem] lg:px-[2.875rem] md:w-24 md:h-8 md:my-4 md:p-0">SUBSCRIBE</button>
     </div>
-    <div class="footer_right">
-      <div>
-        <p>DOCUMENTATION</p>
-        <ul class="footer_right_title">
+    <div class="grid grid-cols-2 gap-4 flex text-left lg:mt-9 lg:ml-[9.625rem] lg:col-span-2 lg:grid-cols-2 md:w-full md:pt-0 md:m-0 md:grid-cols-2 ">
+      <div class="md:mb-4 md:mr-4 md:w-[8.25rem] md:h-auto">
+        <p class="text-gray-10 text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem] md:mb-4 md:mr-4 md:w-[8.25rem]">DOCUMENTATION</p>
+        <ul class="list-none w-[13.3125rem] h-4 ps-0">
           <li>
-            <a href="#" class="footer_right_link"> Overview </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> Overview </a>
           </li>
           <li>
-            <a href="#" class="footer_right_link"> Quick Start </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> Quick Start </a>
           </li>
           <li>
-            <a href="#" class="footer_right_link"> Developer guide </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> Developer guide </a>
           </li>
         </ul>
       </div>
-      <div>
-        <p>RESOURCES</p>
-        <ul class="footer_right_title">
+      <div class="md:mb-4 md:mr-4 md:w-[8.25rem] md:h-auto">
+        <p class="text-gray-10 text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem] md:mb-4 md:mr-4 md:w-[8.25rem]">RESOURCES</p>
+        <ul class="list-none w-[13.3125rem] h-4 ps-0">
           <li>
-            <a href="#" class="footer_right_link"> Community </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> Community </a>
           </li>
           <li>
-            <a href="#" class="footer_right_link"> CLoud Service MSE </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> CLoud Service MSE </a>
           </li>
           <li>
-            <a href="#" class="footer_right_link"> CLoud Service EDAS </a>
+            <a href="#" class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"> CLoud Service EDAS </a>
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div class="bottom_watermark border-t border-gray-13">
+  <div class="text-[.875rem] text-gray-09 leading-6 text-center tracking-normal border-t border-gray-13 lg:pb-11 lg:pt-8 lg:mx-10 md:mx-2 md:px-2 ">
     Copyright © 2023 Nacos
   </div>
 </footer>
 
 
-<style>
-  footer {
-    background-color: theme('colors.gray.14');
-    padding-top: 1rem;
-    width: 100%;
-  }
-
-  .footer_top_functional {
-    background-color: theme('colors.gray.13');
-    text-align: center;
-    border-radius: 1rem;
-    margin: 1rem 2.5rem 2.5rem 2.5rem;
-    display: flex;
-  }
-
-  .footer_left {
-    margin-left: 2.5rem;
-    text-align: left;
-  }
-
-  .footer_left_title {
-    color: theme('colors.gray.02');
-    width: 25.9375rem;
-    height: 2.5rem;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    margin: 2.25rem 0 0 0;
-  }
-
-  .footer_left_des {
-    color: theme('colors.gray.09');
-    width: 42rem;
-    height: 3.5625rem;
-    font-size: 1.125rem;
-    line-height: 1.5rem;
-    margin-top: 1rem;
-    margin-bottom: 1.875rem;
-  }
-
-  .footer_left_email {
-    display: block;
-    width: 500px;
-    height: 70px;
-    border-radius: 1rem;
-  }
-
-  .footer_left_button {
-    width: 9.6875rem;
-    height: 3.375rem;
-    margin: 1.5rem 0rem 11.1875rem 0rem;
-    font-size: .75rem;
-    font-weight: 500;
-    padding: 1.1875rem 2.875rem;
-    display: block;
-    background-color: theme('colors.gray.02');
-  }
-
-  .footer_right {
-    display: flex;
-    padding-top: 2.25rem;
-    margin: 0rem 2.1875rem 0rem 9.625rem;
-    text-align: left;
-  }
-
-  .footer_right_title {
-    list-style-type: none;
-    width: 13.3125rem;
-    height: 1rem;
-    padding-inline-start: 0rem;
-  }
-
-  .footer_right p {
-    margin-bottom: 3.0625rem;
-    font-size: .75rem;
-    font-weight: normal;
-    line-height: 1rem;
-    letter-spacing: 0.15em;
-    font-feature-settings: "kern" on;
-    color: theme('colors.gray.10');
-  }
-
-  .footer_right_link {
-    font-size: .875rem;
-    font-weight: 500;
-    line-height: 1.25rem;
-    letter-spacing: 0rem;
-    margin-bottom: 1rem;
-    font-feature-settings: "kern" on;
-    color: theme('colors.gray.04');
-    text-decoration: none;
-  }
-
-  .bottom_watermark {
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0em;
-    font-feature-settings: "kern" on;
-    color: theme('colors.gray.09');
-    padding-bottom: 2.75rem;
-    padding-top: 2rem;
-    margin: 0rem 2.5rem;
-  }
-
-  @media (max-width: 50rem) {
-    .footer_top_functional {
-      flex-direction: column;
-      align-items: center;
-      margin: 1rem 1.5rem 1rem 1.5rem;
-      min-height: 500px;
-      padding: 1rem;
-    }
-
-    .footer_left {
-      width: 100%;
-      margin-left: 0;
-      margin-bottom: 1rem;
-    }
-
-    .footer_left p {
-      margin: 0rem 0rem 1rem 0rem;
-      width: auto;
-      height: auto;
-    }
-
-    .footer_left_email {
-      width: auto;
-      height: 3rem;
-    }
-
-    .footer_left_button {
-       margin: 1rem 0rem;
-       width: 6rem;
-       height: 2rem;
-       padding: 0rem;
-    }
-
-    .footer_right {
-      width: 100%;
-      margin: 0;
-      padding-top: 0rem;
-    }
-
-    .footer_right>div {
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-      width: 8.25rem;
-      height: auto;
-    }
-
-    .footer_right p {
-      width: 8.25rem;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .bottom_watermark {
-      margin: 0rem .5rem;
-      padding: .5rem 0rem;
-    }
-  }
-</style>
