@@ -44,13 +44,13 @@
     },
     {
       name: "致景科技",
-      theme: 'black',
+      theme: 'gray',
       logo: "../../public/zhijin-logo.png",
       description: "我们未修改任何代码就接入了 MSE 的微服务治理所有能力。基于开发环境隔离能力，测试环境的构建时间由天计算降低到分钟级别，微服务的实施周期缩短了 30%，加速构建纺织服装纵向一体化的数智化综合服务平台。"
     },
     {
       name: "禾连健康",
-      theme: 'gray',
+      theme: 'black',
       logo: "../../public/helian-logo.png",
       description: "相比于自建， MSE 注册配置中心帮助我们实现了性能提升达 50%，解决了业务高速发展中的扩展性问题，保障全国 200 多个城市、2000 多家医院体验业务的稳定性超 99.99%。"
     }
@@ -103,7 +103,7 @@
             <li class="slider-item w-80">
               <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                 <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
-                <div class="flex justify-between mt-12 items-end">
+                <div class="flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
                   <img src={logo} class="w-20" />
                 </div>
