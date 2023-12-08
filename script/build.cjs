@@ -61,8 +61,6 @@ const replaceNavigation = () => {
 }
 replaceNavigation();
 
-
-
 /**
  * @description: 替换 index.astro
  * 1. 动态替换核心路由能力

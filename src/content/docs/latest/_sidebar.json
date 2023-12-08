@@ -39,6 +39,6 @@
         "translations": {
             "en": "Quick Start"
         },
-        "autogenerate": { "directory": "v2/zh-cn/quickstart" }
+        "autogenerate": { "directory": "quickstart" }
     }
 ]
