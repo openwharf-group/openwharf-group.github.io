@@ -1,6 +1,7 @@
 ---
 // import { format } from "date-fns";
 // import { resolveCoverImage } from "~/content/blog/_resolveImage.js";
+import moment from 'moment';
 
 export type Props = {
     post: {
@@ -63,7 +64,7 @@ const { post } = Astro.props;
             </div>
             <div class="m-[10px]">
               <div class="text-[0.25rem]">{post.data.description}</div>
-              <div class="text-[0.25rem]">{post.data.date}</div>
+              <div class="text-[0.25rem]">{moment(post.data.date).format('YYYY-MM-DD HH:mm:ss')}</div>
             </div>
           </div>
           <div>

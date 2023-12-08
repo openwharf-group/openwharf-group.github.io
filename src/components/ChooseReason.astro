@@ -4,22 +4,22 @@ const dataSource = [
   {
     title: 'Easy',
     svgKey: 'easy',
-    describe: 'One-stop solution for dynamic service discovery. Configuration management and dynamic DNS service 20+ out-of-the-box features for service-centric architectures Light-weight production-ready console',
+    description: 'One-stop solution for dynamic service discovery. Configuration management and dynamic DNS service 20+ out-of-the-box features for service-centric architectures Light-weight production-ready console',
   },
   {
     title: 'ADAPTIVE',
     svgKey: 'adaptive',
-    describe: 'Seamlessly support kubernetes and spring cloud Easier to deploy and run on popular public cloud (for example AliCloud and AWS) Support multi-tenants and multi-environments',
+    description: 'Seamlessly support kubernetes and spring cloud Easier to deploy and run on popular public cloud (for example AliCloud and AWS) Support multi-tenants and multi-environments',
   },
   {
     title: 'TIME_TESTED',
     svgKey: 'timeTested',
-    describe: 'Originated from time-tested internal products from Alibaba Group. Supports large-scale scenarios with millions of services Open-source product with enterprise-level SLA',
+    description: 'Originated from time-tested internal products from Alibaba Group. Supports large-scale scenarios with millions of services Open-source product with enterprise-level SLA',
   },
   {
     title: 'VARIETY',
     svgKey: 'variety',
-    describe: 'Supports rate throttling, big promotion plans, and multi-region active-active architectures Supports a variety of relevant internet-based use cases directly or with slight extension Traffic scheduling & service governance',
+    description: 'Supports rate throttling, big promotion plans, and multi-region active-active architectures Supports a variety of relevant internet-based use cases directly or with slight extension Traffic scheduling & service governance',
   }
 ];
 ---
@@ -32,7 +32,7 @@ const dataSource = [
   <div class="flex">
     {
       dataSource.map(reason => {
-        const { title, svgKey, describe } = reason;
+        const { title, svgKey, description } = reason;
         return (
           <div class="item pl-5 pr-10">
             <div class="w-12 h-12 bg-blue-02 rounded-md flex justify-center items-center mb-6">
@@ -53,7 +53,7 @@ const dataSource = [
               }
             </div>
             <div class="py-4 text-gray-10 text-xs">{title}</div>
-            <div class="text-gray-14 text-sm">{describe}</div>
+            <div class="text-gray-14 text-sm">{description}</div>
           </div>
         );
       })
