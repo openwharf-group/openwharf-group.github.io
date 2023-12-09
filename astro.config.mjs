@@ -7,6 +7,7 @@ import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCode"
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 import addPrefixImageLink from "./plugins/addPrefixImageLink"
+import goatConfig from './goat.config';
 
 
 // https://astro.build/config
@@ -33,6 +34,14 @@ export default defineConfig({
 			customCss: ['./src/style/global.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
+		{
+			name: '@goat:config',
+			hooks: {
+				"astro:server:setup": async (options) => {
+					await goatConfig();
+				}
+			}
+		},
 	],
 	markdown: {
 		rehypePlugins: [

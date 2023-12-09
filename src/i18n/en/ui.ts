@@ -26,6 +26,10 @@ export default {
 	'feedback.submit': 'Send feedback',
 	'feedback.close': 'Close feedback form',
 	'feedback.success': 'Thanks! We received your feedback.',
+	'feedback.sendFeedback': 'Send us feedback',
+	'feedback.sendFeedback.description': 'Send us a message directly.',
+	'feedback.createIssue.description': 'Quickest way to alert our team of a problem.',
 
 	'checklist.or': 'or',
+	'footer.privacyPolicy': 'Privacy Policy',
 };

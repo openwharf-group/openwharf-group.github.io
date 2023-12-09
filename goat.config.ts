@@ -1,35 +1,39 @@
-const fs = require('fs');
-const starlightFullPath = require.resolve("@astrojs/starlight");
-const starlightPath = starlightFullPath.replace("/index.ts", "")
+import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from 'url';
+const curFilename = fileURLToPath(import.meta.url);
+const curDirname = path.dirname(curFilename);
+
+const starlightPath = path.join(curDirname, 'node_modules/@astrojs/starlight');
 
 /**
  * @description: 替换 utils/route-data.ts
  * 传递 categories 参数
  */
-const replaceRouteData = () => {
-	const originFile = starlightPath + "/utils/route-data.ts";
-	const originContent = fs.readFileSync(originFile, 'utf-8');
-	const replacedContent = originContent.replace(
+const replaceRouteData = async () => {
+	const originFile = path.join(starlightPath, "/utils/route-data.ts");
+	const originContent = await fs.readFile(originFile);
+	const replacedContent = originContent.toString().replace(
 		/const sidebar = getSidebar.*?;\n/,
 		'const sidebar = getSidebar(url.pathname, locale, props.categories);\n'
 	);
-	fs.writeFileSync(originFile, replacedContent, 'utf-8');
+	await fs.writeFile(originFile, replacedContent);
 }
-replaceRouteData();
+
 
 /**
  * @description: 替换 utils/navigation.ts
  *
  */
-const replaceNavigation = () => {
+const replaceNavigation = async () => {
 	/**
 	 * 获取当前页面的 sidebar， 左侧菜单动态加载
 	 * 根据页面路由获取sidebar
 	 */
-	const originFile = starlightPath + "/utils/navigation.ts";
-	const originContent = fs.readFileSync(originFile, 'utf-8');
+	const originFile = path.join(starlightPath, "/utils/navigation.ts");
+	const originContent = await fs.readFile(originFile);
 	const sideBarRegex = /export function getSidebar\(pathname\: string\, locale\: string \| undefined\).+\n(.+)/;
-	const sideBarContent = originContent.replace(
+	const sideBarContent = originContent.toString().replace(
 		sideBarRegex,
 		`export function getSidebar(pathname: string, locale: string | undefined, categories: any): SidebarEntry[] {
 		const routes = getLocaleRoutes(locale);
@@ -57,18 +61,23 @@ const replaceNavigation = () => {
 		}`
 	);
 
-	fs.writeFileSync(originFile, sideBarLinkContent, 'utf-8');
+	await fs.writeFile(originFile, sideBarLinkContent);
 }
-replaceNavigation();
+
 
 /**
  * @description: 替换 index.astro
  * 1. 动态替换核心路由能力
  * 2. 动态集成siderBar能力
  */
-const replaceIndexAstro = () => {
-	const originFile = starlightPath + "/index.astro";
-	const replacedContent = fs.readFileSync('./script/template/index.txt', 'utf-8')
-	fs.writeFileSync(originFile, replacedContent.toString(), 'utf-8');
+const replaceIndexAstro = async () => {
+	const originFile = path.join(starlightPath, "index.astro");
+	const replacedContent = await fs.readFile('./index.startlight.template');
+	await fs.writeFile(originFile, replacedContent.toString());
 }
-replaceIndexAstro();
+
+export default async () => {
+	await replaceRouteData();
+	await replaceNavigation();
+	await replaceIndexAstro();
+}

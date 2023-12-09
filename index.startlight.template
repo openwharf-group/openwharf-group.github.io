@@ -64,7 +64,6 @@ function makeTranslate(list: any[], version: string) {
 			if(!match) {
 				item['autogenerate']['directory'] = `${version}/zh-cn/${item['autogenerate']['directory']}`
 			}
-			console.log(item['autogenerate'])
 		}
 		if(item['link'] && version !== 'latest') {
 			const [_docs, ...rest] = _.split(item['link'], '/');
