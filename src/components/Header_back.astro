@@ -2,7 +2,14 @@
 
 const { theme = 'light' } = Astro.props;
 const isDark = theme === 'dark';
-
+const docsSubMenu = {
+  shortcutMenus: {
+    Documentation: [
+      { label: '1.x', url: '/docs/what-is-nacos' },
+      { label: '2.x', url: '/docs/v2/what-is-nacos' },
+    ]
+  }
+};
 const communitySubMenu = {
   shortcutMenus: {
     COMMUNITY: [
@@ -49,6 +56,24 @@ const communitySubMenu = {
       <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
         <div data-docs class="h-full flex items-center p-0.5">
           <span class="title">DOCS</span>
+          <svg data-docs-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square"></path></svg>
+        </div>
+        <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
+          <div class="flex pb-10 pt-14 px-24">
+            <div class="shortcut-menu flex flex-col px-7 mr-14">
+              <span class="text-xs text-gray-10 mb-2">Documentation</span>
+              {
+                docsSubMenu.shortcutMenus.Documentation.map(menu => {
+                  const { label, url } = menu;
+                  return (
+                    <a href={url} class="flex items-center mt-3 cursor-pointer">
+                      <span class="text-sm text-gray-02">{label}</span>
+                    </a>
+                  );
+                })
+              }
+            </div>
+          </div>
         </div>
       </div>
       <span class="text-gray-06">|</span>
@@ -72,7 +97,7 @@ const communitySubMenu = {
                   communitySubMenu.shortcutMenus.COMMUNITY.map(menu => {
                     const { label } = menu;
                     return (
-                      <span class="text-lg text-gray-02 mt-3 cursor-pointer">{label}</span>
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
                     );
                   })
                 }
@@ -83,7 +108,7 @@ const communitySubMenu = {
                   communitySubMenu.shortcutMenus.EVENTS.map(menu => {
                     const { label } = menu;
                     return (
-                      <span class="text-lg text-gray-02 mt-3 cursor-pointer">{label}</span>
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
                     );
                   })
                 }
@@ -92,7 +117,7 @@ const communitySubMenu = {
                   communitySubMenu.shortcutMenus.Resources.map(menu => {
                     const { label } = menu;
                     return (
-                      <span class="text-lg text-gray-02 mt-3 cursor-pointer">{label}</span>
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
                     );
                   })
                 }
@@ -105,7 +130,7 @@ const communitySubMenu = {
                   return (
                     <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4">
                       <img class="" src={imgUrl} />
-                      <div class="text-blue-01 text-lg">{description}</div>
+                      <div class="text-blue-01 text-sm mt-3">{description}</div>
                       <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl">{eventName}</button>
                     </div>
                   );
@@ -130,22 +155,35 @@ const communitySubMenu = {
 </header-layout>
 
 <script>
+
   class HeaderLayout extends HTMLElement {
     private currentRoute: string;
     private modalPanel: HTMLDivElement;
+    private docsMenu: HTMLDivElement;
     private nacosCloudMenu: HTMLDivElement;
     private communityMenu: HTMLDivElement;
+    private docsMenuStatus: boolean;
     private communityMenuStatus: boolean;
 
     constructor() {
 			super();
       // false 代表关闭 
+      this.docsMenuStatus = false;
       this.communityMenuStatus = false;
       this.currentRoute = window.location.pathname;
 
       this.modalPanel = this.querySelector<HTMLDivElement>(
 				"div[data-modal-panel]",
 			)!;
+      this.docsMenu = this.querySelector<HTMLDivElement>(
+				"div[data-docs]",
+			)!;
+      const docsDropdown = this.querySelector<HTMLDivElement>(
+        "div[data-docs-dropdown]",
+      )!;
+      const docsArrow = this.querySelector<SVGElement>(
+        "svg[data-docs-arrow]",
+      )!;
       this.nacosCloudMenu = this.querySelector<HTMLDivElement>(
 				"div[data-nacos-cloud]",
 			)!;
@@ -163,15 +201,32 @@ const communitySubMenu = {
 
       // 点击蒙板关闭下拉菜单
       this.modalPanel.addEventListener("click", () => {
+        this.hideDropdownPanel(docsDropdown, docsArrow);
         this.hideDropdownPanel(communityDropdown, communityArrow);
       });
+
+      // 绑定路由
       this.nacosCloudMenu.addEventListener("click", () => {
         window.location.pathname = '/nacosCloud';
+      });
+
+      // 绑定下拉 dropdown 事件
+      this.docsMenu.addEventListener("click", () => {
+        this.docsMenuStatus = !this.docsMenuStatus;
+        
+        if (this.docsMenuStatus) {
+          this.hideDropdownPanel(communityDropdown, communityArrow);
+          this.showDropdownPanel(docsDropdown, docsArrow);
+
+        } else {
+          this.hideDropdownPanel(docsDropdown, docsArrow);
+        }
       });
 			this.communityMenu.addEventListener("click", () => {
         this.communityMenuStatus = !this.communityMenuStatus;
         
         if (this.communityMenuStatus) {
+          this.hideDropdownPanel(docsDropdown, docsArrow);
           this.showDropdownPanel(communityDropdown, communityArrow);
 
         } else {
@@ -182,6 +237,13 @@ const communitySubMenu = {
 
     // 选中效果
     menuSelectorEffect = () => {
+
+      if (this.currentRoute.indexOf('/docs') !== -1) {
+        this.docsMenu?.classList.add('menu-selected');
+      } else {
+        this.docsMenu?.classList.remove('menu-selected');
+      }
+
       if (this.currentRoute.indexOf('/nacosCloud') !== -1) {
         this.nacosCloudMenu?.classList.add('menu-selected');
 
@@ -292,5 +354,8 @@ const communitySubMenu = {
   .dropdown-panel {
     z-index: 2;
     top: var(--header-height);
+  }
+  a {
+    text-decoration: none;
   }
 </style>

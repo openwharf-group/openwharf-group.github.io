@@ -1,11 +1,9 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
-import DocsHeader from '../Header.astro';
+import DocsHeader from '@components/Header_back.astro';
 import { LanguageSelect } from 'virtual:starlight/components';
 
 ---
 
 
-<DocsHeader theme="light">
-	<LanguageSelect {...Astro.props} />
-</DocsHeader>
+<DocsHeader theme='dark' />
