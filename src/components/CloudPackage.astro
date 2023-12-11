@@ -58,15 +58,31 @@ const topData = {
 ---
 
 <div class="bg-gray-14">
-  <div
-    class="bg-gray-14 bg-nacos-cloud bg-contain bg-no-repeat sm:pb-16 lg:pb-28 md:pb-20"
-  >
-    <div class="pt-32 pb-32 pl-16">
-      <div class="text-gray-08 text-xs">{topData?.foreword}</div>
-      <div class="text-gray-03 text-7xl pt-16 pb-16">{topData?.title}</div>
-      <div class="text-gray-09 text-2xl">
+  <div class="bg-gray-14 flex">
+    <div
+      class="pt-8 pb-8 2xl:pt-36 xl:pt-16 lg:pt-16 md:pt-40 sm:pt-32 2xl:pb-36 xl:pb-16 lg:pb-16 md:pb-40 sm:pb-32 xl:pl-20 2xl:pl-56 lg:pl-20 md:pl-20 sm:pl-20 flex-1"
+    >
+      <div
+        class="text-gray-08 text-xs text-center 2xl:text-left xl:text-left lg:text-left md:text-left sm:text-left"
+      >
+        {topData?.foreword}
+      </div>
+      <div
+        class="text-gray-03 text-7xl 2xl:pt-10 2xl:pb-10 xl:pt-8 xl:pb-8 text-center 2xl:text-left xl:text-left lg:text-left md:text-left sm:text-left"
+      >
+        {topData?.title}
+      </div>
+      <div
+        class="text-gray-09 text-2xl text-center 2xl:text-left xl:text-left lg:text-left md:text-left sm:text-left"
+      >
         {topData?.desc}
       </div>
+    </div>
+    <div class="flex-1 hidden 2xl:block xl:block lg:block">
+      <img
+        class="2xl:h-96 xl:h-64 lg:h-48 md:h-40 sm:h-32 xl:mt-10 2xl:mt-16 lg:mt-14 md:mt-16 sm:mt-16 float-right"
+        src="/public/cloud-bg.png"
+      />
     </div>
   </div>
 
@@ -94,7 +110,9 @@ const topData = {
       </div>
       <div class="text-center mt-6 mb-6">
         <a href={topData?.freeCard?.link} target="_blank">
-          <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+          <button
+            class="btn button-transform rounded-full w-full bg-gray-14 text-gray-03 hover:bg-gray-12"
+          >
             {topData?.freeCard?.linkName}
           </button>
         </a>
@@ -127,7 +145,7 @@ const topData = {
             </div>
             <div class="text-center mt-6 mb-6">
               <a href={item?.link} target="_blank">
-                <button class="btn rounded-full w-full bg-gray-14 text-gray-03">
+                <button class="btn button-transform rounded-full w-full bg-gray-14 text-gray-03 hover:bg-gray-12">
                   {item?.linkName}
                 </button>
               </a>
@@ -276,3 +294,23 @@ const topData = {
     </div>
   </div> -->
 </div>
+
+<style>
+  .button-transform {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+
+  .button-transform:hover {
+    box-shadow: 1 10px 10px -10px tgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+</style>
