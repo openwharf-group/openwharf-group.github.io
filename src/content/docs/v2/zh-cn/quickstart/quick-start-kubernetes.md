@@ -6,7 +6,7 @@ sidebar:
   order: 1
   badge:
     text: 注意
-    variant: tip
+    variant: success
 ---
 
 # Kubernetes Nacos

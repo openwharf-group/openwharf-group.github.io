@@ -14,7 +14,7 @@
                 },
 				"badge": {
 					"text": "实验性",
-					"variant": "tip"
+					"variant": "note"
 				}
             },
             {

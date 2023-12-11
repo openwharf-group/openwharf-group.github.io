@@ -14,6 +14,7 @@ declare module 'virtual:starlight/user-images' {
 
 
 declare module 'virtual:starlight/components' {
+	export const Badge: typeof import('@astrojs/starlight/components/Badge.astro').default;
 	export const Banner: typeof import('@astrojs/starlight/components/Banner.astro').default;
 	export const ContentPanel: typeof import('@astrojs/starlight/components/ContentPanel.astro').default;
 	export const PageTitle: typeof import('@astrojs/starlight/components/PageTitle.astro').default;
@@ -50,3 +51,4 @@ declare module 'virtual:starlight/components' {
 
 	export const TwoColumnContent: typeof import('@astrojs/starlight/components/TwoColumnContent.astro').default;
 }
+
