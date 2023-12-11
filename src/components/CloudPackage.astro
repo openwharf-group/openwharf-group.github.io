@@ -87,7 +87,7 @@ const topData = {
   </div>
 
   <div class="flex justify-center flex-wrap text-center0 pb-8 bg-gray-14">
-    <div class="bg-blue-01 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
+    <div class="card-package cursor-pointer bg-blue-01 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
       <div class="h-16">
         <div class="text-gray-14 text-base font-sans font-medium pb-2">
           {topData?.freeCard?.title}
@@ -121,7 +121,7 @@ const topData = {
     {
       topData?.cardList?.map((item, index) => {
         return (
-          <div class="bg-gray-14 border border-text-gray-03 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
+          <div class="card-package cursor-pointer bg-gray-14 border border-text-gray-03 rounded-2xl w-80 h-96 mr-4 mb-4 text-center p-8">
             <div class="h-16">
               <div class="text-gray-03 text-base font-sans font-medium">
                 {item?.title}
@@ -296,6 +296,14 @@ const topData = {
 </div>
 
 <style>
+  .card-package {
+    transition: transform .2s, box-shadow .2s;
+  }
+  .card-package:hover {
+    transition: transform .2s, box-shadow .2s;
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(0, 0, 0, 0.1);
+  }
   .button-transform {
     display: inline-block;
     vertical-align: middle;
@@ -312,5 +320,6 @@ const topData = {
     box-shadow: 1 10px 10px -10px tgba(0, 0, 0, 0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    background-color: theme("colors.gray.14");
   }
 </style>
