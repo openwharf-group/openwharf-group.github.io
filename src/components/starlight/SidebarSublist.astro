@@ -1,6 +1,6 @@
 ---
-import Icon from './Icon.astro';
 import Badge from './Badge.astro';
+import { Icon } from "@astrojs/starlight/components";
 
 interface Props {
 	sublist: any[];
@@ -131,6 +131,7 @@ const flattenSidebar = (sidebar) => {
 	[aria-current='page'],
 	[aria-current='page']:hover,
 	[aria-current='page']:focus {
+		color: theme("colors.gray.14");
     background-color: theme("colors.gray.02");
     border-left-style: solid;
     border-left-width: 4px;
