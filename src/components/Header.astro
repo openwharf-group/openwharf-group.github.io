@@ -130,7 +130,7 @@ const communitySubMenu = {
                   return (
                     <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4">
                       <img class="" src={imgUrl} />
-                      <div class="text-blue-01 text-sm mt-3">{description}</div>
+                      <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16">{description}</div>
                       <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl">{eventName}</button>
                     </div>
                   );
@@ -280,7 +280,7 @@ const communitySubMenu = {
 </script>
 
 <style>
-  .header {
+  header-layout {
     --logo-width: 96px;
     --header-height: 4rem;
     --header-ml-padding: 1rem;
@@ -321,7 +321,7 @@ const communitySubMenu = {
     color: theme("colors.gray.03");
   }
   .btn:hover {
-    background-color: theme("colors.gray.12");
+    background-color: theme("colors.gray.12") !important;
   }
   .shortcut-menu {
     border-left: solid 1px theme('colors.gray.12');
