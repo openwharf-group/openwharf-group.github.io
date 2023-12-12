@@ -1,12 +1,16 @@
 ---
+import type { MarkdownHeading } from 'astro';
+
+interface TocItem extends MarkdownHeading {
+	children: TocItem[];
+}
 interface Props {
-	toc: any[];
+	toc: TocItem[];
 	depth?: number;
 	isMobile?: boolean;
 }
 
 const { toc, isMobile = false, depth = 0 } = Astro.props;
-
 ---
 
 <ul class:list={{ isMobile }}>
@@ -40,10 +44,16 @@ const { toc, isMobile = false, depth = 0 } = Astro.props;
 	a[aria-current='true'],
 	a[aria-current='true']:hover,
 	a[aria-current='true']:focus {
-		font-weight: 600;
-		color: var(--sl-color-text-invert);
-		background-color: var(--sl-color-text-accent);
+    color: theme("colors.gray.14") !important;
+    background-color: theme("colors.gray.02") !important;
+    border-left-style: solid;
+    border-left-width: 3px;
+    border-left-color: theme("colors.gray.14");
+    padding-left:  0.625rem !important;
+    font-weight: normal !important;
+    border-radius: 0 !important;
 	}
+
 	.isMobile a {
 		--pad-inline: 1rem;
 		display: flex;

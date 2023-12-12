@@ -1,0 +1,82 @@
+[
+    {
+        "label": "概览",
+		"translations": {
+            "en": "overview"
+        },
+        "items": [
+            {
+                "label": "序言",
+				"id": "pb40qx",
+				"translations": {
+                    "en": "preface"
+                }
+            },
+			{
+                "label": "Nacos 简介",
+				"id": "iez8a4",
+                "translations": {
+                    "en": "introduction"
+                }
+            }
+        ]
+    },
+	{
+        "label": "总体设计",
+		"translations": {
+            "en": "overall design"
+        },
+        "items": [
+            {
+                "label": "Nacos 架构",
+				"id": "un9fgs",
+				"translations": {
+                    "en": "architecture"
+                }
+            },
+			{
+                "label": "配置模型",
+				"id": "szf3gh",
+                "translations": {
+                    "en": "configuration"
+                }
+            }
+        ]
+    },
+	{
+        "label": "内核设计",
+		"translations": {
+            "en": "core design"
+        },
+        "items": [
+            {
+                "label": "一致性协议",
+				"id": "agxdnq",
+				"translations": {
+                    "en": "consistency protocol"
+                }
+            },
+			{
+                "label": "Distro协议",
+				"id": "ktwggk",
+                "translations": {
+                    "en": "distro protocol"
+                }
+            },
+			{
+                "label": "通信通道",
+				"id": "sufa23",
+                "translations": {
+                    "en": "communication channel"
+                }
+            },
+			{
+                "label": "寻址机制",
+				"id": "ki4dgp",
+                "translations": {
+                    "en": "addressing mechanism"
+                }
+            }
+        ]
+    }
+]

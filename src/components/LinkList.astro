@@ -1,10 +1,8 @@
 ---
 import UIString from "./UIString.astro";
-import { getLanguageFromURL } from "../util";
 import HeadLink from "./HeadLink.astro";
 import { Icon } from "@astrojs/starlight/components";
 import type { UIDictionaryKeys } from "../i18n/translation-checkers";
-import type { Code } from "astro:components";
 
 export interface Props {
     headingTitle: UIDictionaryKeys;
@@ -21,8 +19,10 @@ const { headingTitle, linkItems } = Astro.props as Props;
             linkItems.map((item) => {
                 return (
                     <HeadLink href={item.href} depth={item.depth}>
-                        <Icon name={item.icon} />
-                        <UIString key={item.text} />
+                        <div class="flex items-center">
+                            <Icon name={item.icon} class="mr-1" />
+                            <UIString key={item.text} />
+                        </div>
                     </HeadLink>
                 );
             })

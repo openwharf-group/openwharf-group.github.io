@@ -6,6 +6,8 @@ import rehypeExternalLinks from 'rehype-external-links'
 import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCode"
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
+import addPrefixImageLink from "./plugins/addPrefixImageLink"
+import goatConfig from './goat.config';
 
 
 // https://astro.build/config
@@ -21,6 +23,7 @@ export default defineConfig({
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
 				Header: './src/components/starlight/Header.astro',
 				Head: './src/components/starlight/Head.astro',
+				Sidebar: './src/components/starlight/Sidebar.astro',
 			},
 			editLink: {
 				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
@@ -29,13 +32,17 @@ export default defineConfig({
 				github: 'https://github.com/withastro/starlight',
 			},
 			locales,
-			// sidebar: {
-			// 	latest: sidebars,
-			// 	v2: sidebarsv2,
-			// },
 			customCss: ['./src/style/global.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
+		{
+			name: '@goat:config',
+			hooks: {
+				"astro:server:setup": async (options) => {
+					await goatConfig();
+				}
+			}
+		},
 	],
 	markdown: {
 		rehypePlugins: [
@@ -44,9 +51,12 @@ export default defineConfig({
 				target: '_blank',
 				rel: ['noopener', 'noreferrer']
 			}]],
-		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, remarkRemoveRepeatHeader]
+		remarkPlugins: [remarkRemoveMdLinks, remarkRemovePlainLanguageCode, remarkRemoveRepeatHeader, addPrefixImageLink]
 	},
 	build: {
 		format: 'file'
+	},
+	redirects: {
+		'/zh-cn/[...slug]': '/[...slug]'
 	}
 });

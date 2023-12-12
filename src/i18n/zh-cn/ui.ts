@@ -34,6 +34,10 @@ export default {
 	'feedback.description.placeholder': '请尽可能详细描述您的问题的场景、问题细节和期望解决的方法，方便我们更好地优化和解决问题。',
 	'feedback.phone': '联系方式',
 	'feedback.phone.placeholder': '请提供您的联系方式',
+	'feedback.sendFeedback': '发送反馈',
+	'feedback.sendFeedback.description': '直接给我们发送消息。',
+	'feedback.createIssue.description': '向我们的团队发出问题警报的最快方法。',
 
 	'checklist.or': '或',
+	'footer.privacyPolicy': '隐私协议',
 };

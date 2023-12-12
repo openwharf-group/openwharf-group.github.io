@@ -7,13 +7,28 @@ import { visit } from 'unist-util-visit';
 
 export default function remarkRemoveMdLinks() {
   return (tree) => {
-    visit(tree, 'code', (node) => {
-      if (node.lang === 'plain') {
-        node.lang = '';
+    visit(tree, "code", (node) => {
+      if(node?.lang){
+        const lang = node.lang.toLowerCase() || '';
+        switch (lang) {
+          case "plain":
+          case "basic":
+            node.lang = "";
+            break;
+          case "Shell":
+            node.lang = "sh";
+            break;
+          case "$xslt":
+            node.lang = "xsl";
+            break;
+          case "protobuf":
+            node.lang = "java";
+            break;
+          default:
+            node.lang = lang;
+        }
       }
-	  if (node.lang === 'basic') {
-        node.lang = '';
-      }
+
     });
   };
 }

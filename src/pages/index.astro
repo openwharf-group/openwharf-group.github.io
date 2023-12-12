@@ -1,47 +1,30 @@
 ---
 import { languages } from "../i18n/languages";
-import BaseLayout from "../layouts/BaseLayout.astro"
+import BaseLayout from "@layouts/BaseLayout.astro"
 import { useTranslations } from '../i18n/util';
-import Introduce from "@components/Introduce.astro";
+import HomeIntroduce from "@components/HomeIntroduce.astro";
+import ChooseReason from "@components/ChooseReason.astro";
+import EBookNacos from "@components/EBookNacos.astro";
+import HomeFooter from "@components/HomeFooter.astro";
+import ExploreFeatures from "@components/ExploreFeatures.astro";
+import CompaniesSlider from "@components/CompaniesSlider.astro";
 
 const t = useTranslations(Astro);
 
 ---
 <BaseLayout title="Nacos">
-    <Introduce />
-    <h1 class="temp"></h1> 
-    <details class="dropdown">
-        <summary class="m-1 btn">open or close</summary>
-        <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-            <li><a>Item 1</a></li>
-            <li><a>Item 2</a></li>
-        </ul>
-    </details>
+    <HomeIntroduce />
 
-    <h1>aaa</h1>
-    <button class="btn">Button</button>
-    <button class="btn btn-neutral">Neutral</button>
-    <button class="btn btn-primary">Primary</button>
-    <button class="btn btn-secondary">Secondary</button>
-    <button class="btn btn-accent">Accent</button>
-    <button class="btn btn-ghost">Ghost</button>
-    <button class="btn btn-link">Link</button>
-    <span class="text-gray-03 ">2gray-23</span>
-    <div class="text-blue-07">testtest</div>
-    <div class="font-bold text-primary">2222121122</div>
-    <div class="font-bold text-blue-01">11111111</div>
-    <p class="text-blue-100">roboto</p>
-    <p class="bold text-green-100">什么是Nacosroboto</p>
-    <a href="./docs/architecture">v1</a>
-    <br />
-    <p>{t('feedback.button')}</p>
-    <a href="./docs/v2/what-is-nacos">v2</a>
+    <div class="bg-gary-02 px-8 py-28">
+        <ChooseReason />
+        <EBookNacos />
+        <ExploreFeatures />
+        <CompaniesSlider />
+    </div>
+
+    <HomeFooter />
+
 </BaseLayout>
 
-<style>
-    .temp {
-        margin-top: 4rem;
-    }
-</style>
 
 

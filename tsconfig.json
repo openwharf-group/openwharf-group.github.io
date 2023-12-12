@@ -6,6 +6,7 @@
 		"@components/*": ["src/components/*"],
 		"@layouts/*": ["src/layouts/*"],
 		"@i18n/*": ["src/i18n/*"],
+		"@helpers/*": ["src/helpers/*"],
 		"@starlight/*": ["node_modules/@astrojs/starlight/*"]
 	}
   }

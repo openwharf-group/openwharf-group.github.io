@@ -1,0 +1,36 @@
+---
+---
+
+<home-ebook class="bg-gray-13 flex h-auto p-9 rounded-2xl mt-28">
+  <div class="flex-1 flex flex-col justify-around pl-24">
+    <div>
+      <div class="text-blue-02 text-xs">RESOURCES</div>
+      <div class="text-blue-01 text-4xl mt-6">E-Book Nacos</div>
+    </div>
+    <div>
+      <button data-download class="btn btn-secondary rounded-3xl">DOWNLOAD</button>
+    </div>
+  </div>
+  <div class="e-book flex-1 h-96 rounded-2xl overflow-hidden">
+    <img src="../../public/ebook.png" class="absolute bottom-0 top-8 right-16 w-2/5"/>
+  </div>
+</home-ebook>
+
+<script>
+  class EBookNacos extends HTMLElement {
+    constructor() {
+			super();
+		}
+  }
+  customElements.define("home-ebook", EBookNacos);
+</script>
+
+<style>
+  .e-book {
+    background: url('../../public/ebook-placeholder.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center 0;
+    background-attachment: fixed;
+    position: relative;
+  }
+</style>

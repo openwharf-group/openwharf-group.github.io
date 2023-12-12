@@ -1,0 +1,185 @@
+---
+  const companyCustomers = [
+    {
+      name: "Soul",
+      theme: 'blue',
+      logo: "../../public/soul-logo.png",
+      description: "我们通过 MSE 云原生网关，将流量、安全、微服务网关三合一，大幅降低请求链路条数、降低架构复杂度、运维和故障排查成本，例如降低整个链路 RT 峰值从500ms下降至峰值50ms，服务发布期间502降为0，499平均降低10%等。"
+    },
+    {
+      name: "来电科技",
+      theme: 'black',
+      logo: "../../public/laidian-logo.png",
+      description: "MSE 微服务治理以无侵入的方式提供了全链路灰度、离群实例摘除、微服务治理流量可观测等核心能力，以更经济的方式、更高效的路径帮助来电科技在云上快速构建起完整微服务治理体系，有效提升线上稳定性，保证服务 99.95% 的可用性。"
+    },
+    {
+      name: "极氪汽车",
+      theme: 'gray',
+      logo: "../../public/zeekr-logo.png",
+      description: "MSE 云原生网关帮我们降低 50%资源成本，同时缩短了请求时间，降低运维复杂度；微服务治理中的全链路灰度方案实现“流量泳道”，做到快速拉起隔离的开发环境，在提升研发效率的同时节省了一笔不菲的成本开销。"
+    }, 
+    {
+      name: "云快充",
+      theme: 'blue',
+      logo: "../../public/ykc-logo.png",
+      description: "于 MSE 全链路灰度，我们得到的收益是很明显的，因应用变更导致的生产事故降低了70%以上，云快充接入的电桩数量完成了20万到30万的增长过程中，平均需求迭代周期从7人日降低到4人日，极大地促进了业务的快速迭代。"
+    },
+    {
+      name: "波司登",
+      theme: 'gray',
+      logo: "../../public/bosiden-logo.png",
+      description: "我们基于 ACK + MSE + ARMS + Prometheus 支撑了在线业务百万级并发大流量，并帮助业务迭代效率提升2倍，因应用变更导致的生产事故也降低了70%。"
+    },
+    {
+      name: "斯凯奇",
+      theme: 'gray',
+      logo: "../../public/skechers-logo.png",
+      description: "相比自建 API 网关，MSE 云原生网关为我们提供了统一的微服务路由、流控、安全管理等能力，方便内外部多系统间的集成，在开发运维效率、性能、安全性上表现更加优异。"
+    },
+    {
+      name: "费芮互动",
+      theme: 'blue',
+      logo: "../../public/very-logo.png",
+      description: "我们通过 MSE 云原生网关构建了零信任架构，无需重配 Nginx Ingress 规则即可平滑迁移，性能提升 90%，响应时间下降 50% ，并大幅提升业务入口的稳定及安全性，高效支撑每日 1 亿+粉丝交互， 4 万+线下门店、每月 3000 万+笔的移动支付需求。"
+    },
+    {
+      name: "致景科技",
+      theme: 'gray',
+      logo: "../../public/zhijin-logo.png",
+      description: "我们未修改任何代码就接入了 MSE 的微服务治理所有能力。基于开发环境隔离能力，测试环境的构建时间由天计算降低到分钟级别，微服务的实施周期缩短了 30%，加速构建纺织服装纵向一体化的数智化综合服务平台。"
+    },
+    {
+      name: "禾连健康",
+      theme: 'black',
+      logo: "../../public/helian-logo.png",
+      description: "相比于自建， MSE 注册配置中心帮助我们实现了性能提升达 50%，解决了业务高速发展中的扩展性问题，保障全国 200 多个城市、2000 多家医院体验业务的稳定性超 99.99%。"
+    }
+  ];
+
+  // blue 
+  // bg: bg-blue-08; text: text-blue-01 logo: text-gray-03
+  // black
+  // bg: bg-gray-14; text: text-gray-03 logo: text-gray-03
+  // gray
+  // bg: bg-gray-03; text: text-gray-14 logo: text-gray-14
+---
+
+<div>
+  <div class="flex flex-col items-center mb-20">
+    <span class="text-gray-10 text-xs mb-6">OUR CUSTOMERS</span>
+    <span class="text-gray-14 text-4xl font-medium">Join the customers who've already used</span>
+    <span class="text-gray-14 text-4xl font-medium mt-1">Nacos Cloud to improve efficiency</span>
+  </div>
+  <div class="slider-container">
+    <ul class="slider">
+      {
+        companyCustomers.map((company) => {
+          const { name, logo, description, theme } = company;
+          const isBule = theme === 'blue';
+          const isBlack = theme === 'black';
+          const isGray = theme === 'gray';
+          return (
+            <li class="slider-item w-80">
+              <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+                <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                <div class="flex justify-between mt-12 items-center">
+                  <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
+                  <img src={logo} class="w-20" />
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+    <ul class="slider">
+      {
+        companyCustomers.map((company) => {
+          const { name, logo, description, theme } = company;
+          const isBule = theme === 'blue';
+          const isBlack = theme === 'black';
+          const isGray = theme === 'gray';
+          return (
+            <li class="slider-item w-80">
+              <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+                <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                <div class="flex justify-between mt-12 items-center">
+                  <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
+                  <img src={logo} class="w-20" />
+                </div>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</div>
+<style>
+  .slider-container {
+    --time: 100s
+  }
+
+  .slider-container {
+    position: relative;
+    display: flex;
+    width: auto;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
+  }
+
+  .slider {
+    padding: 0rem;
+    list-style-type: none;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+
+  .slider-item {
+    display: inline-block;
+    padding: 1.25rem .65rem;
+  }
+
+  img {
+    cursor: pointer;
+    transition: filter 0.5s;
+  }
+
+  .slider {
+    /* white-space: nowrap; */
+    display: flex;
+    flex-wrap: nowrap;
+    animation: slide var(--time) linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .slider-container:hover>.slider {
+    animation-play-state: paused;
+  }
+
+  .slider-item:first-child {
+    animation: reset var(--time) step-end infinite;
+    animation-delay: calc(var(--time) / -2);
+  }
+
+  @keyframes reset {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>

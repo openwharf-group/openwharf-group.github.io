@@ -1,106 +1,361 @@
 ---
-import { LanguageSelect } from 'virtual:starlight/components';
-interface Props {
-  // light 白色主题 dark 黑色主题
-	theme: 'light' | 'dark';
-}
 
 const { theme = 'light' } = Astro.props;
 const isDark = theme === 'dark';
-const logo = `../../../public/${isDark ? 'nacos_white' : 'nacos_colorful'}.png`;
+const docsSubMenu = {
+  shortcutMenus: {
+    Documentation: [
+      { label: '1.x', url: '/docs/what-is-nacos' },
+      { label: '2.x', url: '/docs/v2/what-is-nacos' },
+    ]
+  }
+};
+const communitySubMenu = {
+  shortcutMenus: {
+    COMMUNITY: [
+      { label: 'Contact', url: '/' },
+      { label: 'Report', url: '/' },
+      { label: 'Contribute', url: '/' },
+      { label: 'Stars', url: '/' },
+    ],
+    EVENTS: [
+      { label: 'Events', url: '/' },
+      { label: 'News', url: '/' },
+      { label: 'Meetup', url: '/' },
+    ],
+    Resources: [
+      { label: 'Blog', url: '/' },
+      { label: 'E-book', url: '/' },
+    ],
+  },
+  shortcutCards: [
+    {
+      eventName: 'READ ARTICLE',
+      imgUrl: '../../../public/left-shortcut.png',
+      description: 'Key to service-centric (for example microservice or cloud-native) architectures.',
+    },
+    {
+      eventName: 'READ ARTICLE',
+      imgUrl: '../../../public/right-shortcut.png',
+      description: 'An easy-to-use platform for building cloud native applications',
+    }
+  ],
+};
 
 ---
 
-<div class:list={['header-inner', { 'shadow': !isDark, 'bg-gray-14': isDark, 'bg-gray-02': !isDark }]}>
-  <a href="/">
-    <img class="logo" src={logo} />
-  </a>
-  
-  <div class:list={['nav', { 'text-gray-06': isDark, 'text-gray-12': !isDark }]}>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">DOCS</span>
-        <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
+<header-layout class="header bg-gray-14">
+  <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
+  <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between">
+    <!-- logo -->
+    <a href="/">
+      <img class="logo" src="../../../public/nacos_white.png" />
+    </a>
+    <!-- 菜单 -->
+    <div class="flex h-full items-center">
+      <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
+        <div data-docs class="h-full flex items-center p-0.5">
+          <span class="title">DOCS</span>
+          <svg data-docs-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square"></path></svg>
+        </div>
+        <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
+          <div class="flex pb-10 pt-14 px-24">
+            <div class="shortcut-menu flex flex-col px-7 mr-14">
+              <span class="text-xs text-gray-10 mb-2">Documentation</span>
+              {
+                docsSubMenu.shortcutMenus.Documentation.map(menu => {
+                  const { label, url } = menu;
+                  return (
+                    <a href={url} class="flex items-center mt-3 cursor-pointer">
+                      <span class="text-sm text-gray-02">{label}</span>
+                    </a>
+                  );
+                })
+              }
+            </div>
+          </div>
+        </div>
       </div>
-      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a href="./docs/architecture">1.x</a></li>
-        <li><a href="./docs/v2/what-is-nacos">2.x</a></li>
-      </ul>
+      <span class="text-gray-06">|</span>
+      <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
+        <div data-nacos-cloud class="h-full flex items-center p-0.5">
+          <span class="title">NACOS CLOUD</span>
+        </div>
+      </div>
+      <span class="text-gray-06">|</span>
+      <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
+        <div data-community class="h-full flex items-center p-0.5">
+          <span class="title">COMMUNITY</span>
+          <svg data-community-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square"></path></svg>
+        </div>
+        <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
+          <div class="flex pb-10 pt-14 px-24 justify-center">
+            <div class="flex mr-32">
+              <div class="shortcut-menu flex flex-col px-7 mr-14">
+                <span class="text-xs text-gray-10 mb-2">COMMUNITY</span>
+                {
+                  communitySubMenu.shortcutMenus.COMMUNITY.map(menu => {
+                    const { label } = menu;
+                    return (
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                    );
+                  })
+                }
+              </div>
+              <div class="shortcut-menu flex flex-col px-7 mr-14">
+                <span class="text-xs text-gray-10 mb-2">EVENTS</span>
+                {
+                  communitySubMenu.shortcutMenus.EVENTS.map(menu => {
+                    const { label } = menu;
+                    return (
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                    );
+                  })
+                }
+                <span class="text-xs text-gray-10 mb-2 mt-10">Resources</span>
+                {
+                  communitySubMenu.shortcutMenus.Resources.map(menu => {
+                    const { label } = menu;
+                    return (
+                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                    );
+                  })
+                }
+              </div>
+            </div>
+            <div class="flex">
+              {
+                communitySubMenu.shortcutCards.map((item, index) => {
+                  const { eventName, description, imgUrl } = item;
+                  return (
+                    <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4">
+                      <img class="" src={imgUrl} />
+                      <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16">{description}</div>
+                      <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl">{eventName}</button>
+                    </div>
+                  );
+                })
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="text-gray-06">|</span>
+      <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
+        <div data-demo class="h-full flex items-center p-0.5">
+          <span class="title">DEMO</span>
+        </div>
+      </div>
     </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">NACOS CLOUD</span>
-        <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
-      </div>
-    </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">COMMUNITY</span>
-        <span class:list={['line', { 'bg-gray-06': isDark, 'bg-gray-12': !isDark }]}></span>
-      </div>
-    </div>
-    <div class="menu-item dropdown dropdown-hover">
-      <div class="label">
-        <span class="text">DEMO</span>
-      </div>
+    <!-- 右侧菜单 -->
+    <div>
+      <slot></slot>
     </div>
   </div>
+</header-layout>
 
-  <div>
-    <slot>
-      <!-- <LanguageSelect /> -->
-    </slot>
-  </div>
-</div>
+<script>
+
+  class HeaderLayout extends HTMLElement {
+    private currentRoute: string;
+    private modalPanel: HTMLDivElement;
+    private docsMenu: HTMLDivElement;
+    private nacosCloudMenu: HTMLDivElement;
+    private communityMenu: HTMLDivElement;
+    private docsMenuStatus: boolean;
+    private communityMenuStatus: boolean;
+
+    constructor() {
+			super();
+      // false 代表关闭 
+      this.docsMenuStatus = false;
+      this.communityMenuStatus = false;
+      this.currentRoute = window.location.pathname;
+
+      this.modalPanel = this.querySelector<HTMLDivElement>(
+				"div[data-modal-panel]",
+			)!;
+      this.docsMenu = this.querySelector<HTMLDivElement>(
+				"div[data-docs]",
+			)!;
+      const docsDropdown = this.querySelector<HTMLDivElement>(
+        "div[data-docs-dropdown]",
+      )!;
+      const docsArrow = this.querySelector<SVGElement>(
+        "svg[data-docs-arrow]",
+      )!;
+      this.nacosCloudMenu = this.querySelector<HTMLDivElement>(
+				"div[data-nacos-cloud]",
+			)!;
+			this.communityMenu = this.querySelector<HTMLDivElement>(
+				"div[data-community]",
+			)!;
+      const communityDropdown = this.querySelector<HTMLDivElement>(
+        "div[data-community-dropdown]",
+      )!;
+      const communityArrow = this.querySelector<SVGElement>(
+        "svg[data-community-arrow]",
+      )!;
+
+      this.menuSelectorEffect();
+
+      // 点击蒙板关闭下拉菜单
+      this.modalPanel.addEventListener("click", () => {
+        this.hideDropdownPanel(docsDropdown, docsArrow);
+        this.hideDropdownPanel(communityDropdown, communityArrow);
+      });
+
+      // 绑定路由
+      this.nacosCloudMenu.addEventListener("click", () => {
+        window.location.pathname = '/nacosCloud';
+      });
+
+      // 绑定下拉 dropdown 事件
+      this.docsMenu.addEventListener("click", () => {
+        this.docsMenuStatus = !this.docsMenuStatus;
+        
+        if (this.docsMenuStatus) {
+          this.hideDropdownPanel(communityDropdown, communityArrow);
+          this.showDropdownPanel(docsDropdown, docsArrow);
+
+        } else {
+          this.hideDropdownPanel(docsDropdown, docsArrow);
+        }
+      });
+			this.communityMenu.addEventListener("click", () => {
+        this.communityMenuStatus = !this.communityMenuStatus;
+        
+        if (this.communityMenuStatus) {
+          this.hideDropdownPanel(docsDropdown, docsArrow);
+          this.showDropdownPanel(communityDropdown, communityArrow);
+
+        } else {
+          this.hideDropdownPanel(communityDropdown, communityArrow);
+        }
+      });
+		}
+
+    // 选中效果
+    menuSelectorEffect = () => {
+
+      if (this.currentRoute.indexOf('/docs') !== -1) {
+        this.docsMenu?.classList.add('menu-selected');
+      } else {
+        this.docsMenu?.classList.remove('menu-selected');
+      }
+
+      if (this.currentRoute.indexOf('/nacosCloud') !== -1) {
+        this.nacosCloudMenu?.classList.add('menu-selected');
+
+      }else {
+        this.nacosCloudMenu?.classList.remove('menu-selected');
+      }
+    };
+
+    // 显示下拉菜单内容
+    showDropdownPanel = (htmlElement, svgElement) => {
+      this.modalPanel?.classList.remove('hidden');
+      this.modalPanel?.classList.add('block');
+      svgElement?.classList.remove('arrow-down');
+      svgElement?.classList.add('arrow-up');
+      htmlElement?.classList.remove('hidden', 'invisible', 'opacity-0');
+      htmlElement?.classList.add('block', 'visible', 'opacity-100');
+      document.body.classList.remove('overflow-auto');
+      document.body.classList.add('overflow-hidden');
+    };
+
+    // 隐藏下拉菜单内容
+    hideDropdownPanel = (htmlElement, svgElement) => {
+      this.modalPanel?.classList.remove('block');
+      this.modalPanel?.classList.add('hidden');
+      svgElement?.classList.remove('arrow-up');
+      svgElement?.classList.add('arrow-down');
+      htmlElement?.classList.remove('block', 'visible', 'opacity-100');
+      htmlElement?.classList.add('hidden', 'invisible', 'opacity-0');
+      document.body.classList.remove('overflow-hidden');
+      document.body.classList.add('overflow-auto');
+    };
+  }
+  customElements.define("header-layout", HeaderLayout);
+</script>
 
 <style>
-  .header-inner {
+  header-layout {
     --logo-width: 96px;
     --header-height: 4rem;
     --header-ml-padding: 1rem;
     --header-xl-padding: 2rem;
   }
-  .header-inner {
-    /* height: 100%; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .header {
+    display: block;
+    position: sticky;
+    top: 0;
+    /* position: relative; */
+    z-index: 666666667;
+    height: var(--header-height);
+  }
+  .nav {
+    z-index: 3;
     height: var(--header-height);
     padding-left: var(--header-xl-padding);
     padding-right: var(--header-xl-padding);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  .shadow {
-    border: 1px solid theme('colors.gray.02');
-    box-shadow: 1px 1px 12px theme('colors.gray.14');
   }
   .logo {
     vertical-align: sub;
     width: var(--logo-width);
   }
-  .nav {
-    display: flex;
-    align-items: center;
-    height: 100%;
+  .arrow-up {
+    transform: rotate(180deg);
+    transition: transform .3s;
   }
-  .menu-item {
-    height: 100%;
+  .arrow-down {
+    transform: rotate(0deg);
+    transition: transform .3s;
   }
-  .label {
-    height: 100%;
-    font-size: 1rem;
-    line-height: 1rem;
-    cursor: pointer;
-    padding-left: var(--header-ml-padding);
+  .menu-item:hover .title{
+    font-weight: 500;
+    color: theme("colors.gray.03");
   }
-  .text {
-    margin-right: var(--header-ml-padding);
+  .menu-selected {
+    font-weight: 500;
+    color: theme("colors.gray.03");
   }
-  .line {
-    width: 1px;
-    height: 1rem;
-    display: inline-block;
+  .btn:hover {
+    background-color: theme("colors.gray.12") !important;
+  }
+  .shortcut-menu {
+    border-left: solid 1px theme('colors.gray.12');
+  }
+  .shortcut-card {
+    position: relative;
+  }
+  .shortcut-card:hover {
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  .modal-panel {
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    transform: translateZ(0);
+  }
+  .dropdown-panel {
+    z-index: 2;
+    top: var(--header-height);
+  }
+  a {
+    text-decoration: none;
   }
 </style>

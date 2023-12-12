@@ -10,7 +10,7 @@ export interface Props {
 ---
 
 <feedback-form>
-	<button data-open-modal class="btn btn-outline btn-accent btn-sm mt-4">
+	<button data-open-modal class="btn btn-primary btn-sm mt-4 rounded-2xl text-xs">
 		<UIString key="feedback.button" />
 	</button>
 
@@ -156,7 +156,6 @@ export interface Props {
 				event.preventDefault();
 				// Disable submit button while submitting to guard against re-submits.
 				submitBtn.disabled = true;
- 				console.log("form",form.phone.value,form.type.value,form.description.value)
 				try {
 					const type = form.type.value;
 					const description = form.description.value;

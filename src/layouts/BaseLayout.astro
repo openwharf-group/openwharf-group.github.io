@@ -5,7 +5,7 @@ import '@starlight/style/shiki.css';
 import '@starlight/style/util.css';
 import '../style/global.css'
 import { useTranslations } from '@i18n/util';
-import Header from '@components/Header.astro';
+import HomeHeader from '@components/Header.astro';
 const t = useTranslations(Astro);
 
 export type Props = {
@@ -18,50 +18,51 @@ const { title } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
+        <meta name="referrer" content="no-referrer">
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
     <body>
-        <Header theme='dark' />
+        <HomeHeader />
         <slot />
     </body>
     <script>
-        addEventListener('scroll', () => {
-            const scrollTop = (
-                document.documentElement.scrollTop || 
-                window.pageYOffset || 
-                document.body.scrollTop
-            );
+    //     addEventListener('scroll', () => {
+    //         const scrollTop = (
+    //             document.documentElement.scrollTop || 
+    //             window.pageYOffset || 
+    //             document.body.scrollTop
+    //         );
             
-            if (scrollTop > 120) {
-                if (document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
+    //         if (scrollTop > 120) {
+    //             if (document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
 
-                    // 优化 避免一直添加移除
-                    document.querySelector('.header-inner').classList.remove('bg-gray-14');
-                    document.querySelector('.header-inner').classList.add('bg-gray-02', 'shadow');
+    //                 // 优化 避免一直添加移除
+    //                 document.querySelector('.header-inner').classList.remove('bg-gray-14');
+    //                 document.querySelector('.header-inner').classList.add('bg-gray-02', 'shadow');
 
-                    document.querySelector('.nav').classList.remove('text-gray-06');
-                    document.querySelector('.nav').classList.add('text-gray-12');
+    //                 document.querySelector('.nav').classList.remove('text-gray-06');
+    //                 document.querySelector('.nav').classList.add('text-gray-12');
 
-                    document.querySelector('img').src = '../../../public/nacos_colorful.png';
-                }
+    //                 document.querySelector('img').src = '../../../public/nacos_colorful.png';
+    //             }
                 
 
-            } else {
+    //         } else {
 
-                if (!document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
-                    // 优化 避免一直添加移除
-                    document.querySelector('.header-inner').classList.add('bg-gray-14');
-                    document.querySelector('.header-inner').classList.remove('bg-gray-02', 'shadow');
+    //             if (!document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
+    //                 // 优化 避免一直添加移除
+    //                 document.querySelector('.header-inner').classList.add('bg-gray-14');
+    //                 document.querySelector('.header-inner').classList.remove('bg-gray-02', 'shadow');
 
-                    document.querySelector('.nav').classList.add('text-gray-06');
-                    document.querySelector('.nav').classList.remove('text-gray-12');
+    //                 document.querySelector('.nav').classList.add('text-gray-06');
+    //                 document.querySelector('.nav').classList.remove('text-gray-12');
 
-                    document.querySelector('img').src = '../../../public/nacos_white.png';
-                }
+    //                 document.querySelector('img').src = '../../../public/nacos_white.png';
+    //             }
                 
-            }
+    //         }
             
-        });
+    //     });
     </script>
 </html>

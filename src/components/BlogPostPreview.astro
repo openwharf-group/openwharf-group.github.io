@@ -1,0 +1,76 @@
+---
+import { format } from "date-fns";
+// import { resolveCoverImage } from "~/content/blog/_resolveImage.js";
+
+export type Props = {
+    post: {
+        slug: string;
+        body: string;
+        collection: string;
+        data: {
+            title: string;
+            description: string;
+            date: Date;
+            keywords?: any[];
+        };
+    };
+};
+
+const { post } = Astro.props;
+
+
+// const image = await resolveCoverImage(post);
+---
+
+<style>
+  .blog-item a {
+    text-decoration: none;
+    color: #4c505D !important;
+    /* color: theme("color-gray-11") !important; */
+  }
+</style>
+<!-- <article
+  class="border border-astro-gray-500 bg-astro-gray-600 p-5 outline-astro-pink-light transition-transform duration-300 ease-out focus-within:outline hover:scale-[1.03] blog-item"
+>
+  <a href={`/blog/${post.slug}/`} rel="prefetch" class="block outline-none">
+    <header>
+      <time
+        class="code text-astro-gray-200"
+        datetime={post.data.date.toISOString()}
+      >
+        {post.data.date}
+      </time>
+    </header>
+
+    <div class="mt-6 grid gap-x-16 gap-y-4 md:grid-cols-2">
+      <h3 class="heading-4 md:heading-3">{post.data.title}</h3>
+      <p class="text-astro-gray-200">{post.data.description}</p>
+    </div></a
+  >
+</article> -->
+<article class="blog-item">
+  <a href={`/blog/${post.slug}/`} rel="prefetch" class="text-gray-15">
+    <div class="card card-normal shadow-xl">
+      <div class="card-body bg-gray-13">
+        <h2 class="mt-[20px] mb-[20px] leading-[2rem] text-gray-01">{post.data.title}</h2>
+        <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center">
+            <div>
+              <img
+                class="w-10 h-10 rounded-[50%]"
+                src={"https://cdn.nlark.com/lark/0/2018/png/11189/1537795153259-cc2c60c2-d7cb-431a-8858-cbd71b1c89e9.png"}
+              />
+            </div>
+            <div class="m-[10px]">
+              <div class="text-gray-05">{post.data.description}</div>
+              <div class="text-gray-03">{format(post.data.date, "MMMM d, yyyy")}</div>
+            </div>
+          </div>
+          <div>
+            <img class="w-10" src="../../public/nacos_white.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</article>
