@@ -1,0 +1,137 @@
+---
+
+---
+
+<div class="sticky top-0 z-10">
+  <header class="bg-gray-12">
+    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex-1 md:flex md:items-center md:gap-12">
+          <a class="block text-teal-600" href="/blog">
+            <span class="text-gray-01 text-xl">Blog</span>
+          </a>
+        </div>
+
+        <div class="md:flex md:items-center md:gap-12">
+          <nav aria-label="Global" class="hidden md:block">
+            <ul class="flex items-center gap-6 text-sm list-none">
+              <li>
+                <a
+                  class="text-gray-500 transition hover:text-gray-500/75"
+                  href="/blog/article"
+                >
+                  Article
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="text-gray-500 transition hover:text-gray-500/75"
+                  href="/blog/ecosystem"
+                >
+                  Ecosystem
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="text-gray-500 transition hover:text-gray-500/75"
+                  href="/blog/case"
+                >
+                  Case
+                </a>
+              </li>
+
+              <li>
+                <a
+                  class="text-gray-500 transition hover:text-gray-500/75"
+                  href="/blog/all"
+                >
+                  All
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="flex items-center gap-4">
+            <div class="block md:hidden">
+              <button
+                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<style>
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+  .header-inner {
+    --logo-width: 96px;
+    --header-height: 4rem;
+    --header-ml-padding: 1rem;
+    --header-xl-padding: 2rem;
+  }
+  .header-inner {
+    /* height: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding-left: var(--header-xl-padding);
+    padding-right: var(--header-xl-padding);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .shadow {
+    border: 1px solid theme("colors.gray.02");
+    box-shadow: 1px 1px 12px theme("colors.gray.14");
+  }
+  .logo {
+    vertical-align: sub;
+    width: var(--logo-width);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .menu-item {
+    height: 100%;
+  }
+  .label {
+    height: 100%;
+    font-size: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+    padding-left: var(--header-ml-padding);
+  }
+  .text {
+    margin-right: var(--header-ml-padding);
+  }
+  .line {
+    width: 1px;
+    height: 1rem;
+    display: inline-block;
+  }
+</style>
