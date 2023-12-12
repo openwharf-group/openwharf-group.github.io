@@ -8,7 +8,9 @@ import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCo
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 import addPrefixImageLink from "./plugins/addPrefixImageLink"
 import goatConfig from './goat.config';
-
+import { ExpressiveCodeTheme } from 'astro-expressive-code';
+const jsoncString = fs.readFileSync(new URL(`./markdown-theme.jsonc`, import.meta.url), 'utf-8');
+const markdownTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,6 +21,14 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Nacos',
+			expressiveCode: {
+				themes: ['github-dark'],
+				// 完全可以自定义
+				// https://github.com/expressive-code/expressive-code/tree/main/packages/astro-expressive-code
+				// https://github.com/shikijs/shiki/blob/main/docs/themes.md#loading-theme
+				// https://vscodethemes.com/ 主题预览
+				// themes: [markdownTheme],
+			},
 			components: {
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
 				Header: './src/components/starlight/Header.astro',

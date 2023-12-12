@@ -14,7 +14,7 @@ export interface Props {
 		<UIString key="feedback.button" />
 	</button>
 
-	<dialog class="p-0" aria-label={t("feedback.a11yLabel")}>
+	<dialog style="padding:0" aria-label={t("feedback.a11yLabel")}>
 		<div class="dialog-frame">
 			<!-- close button  -->
 			<button data-close-modal>
@@ -229,6 +229,7 @@ export interface Props {
 		flex-direction: column;
 		text-align: center;
 		padding: var(--feedback-form-padding);
+		background-color: theme("colors.blue.01");
 	}
 
 	form {
