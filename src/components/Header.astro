@@ -1,6 +1,10 @@
 ---
+interface Props {
+  // light 白色主题 dark 黑色主题
+  position?: 'static' | 'sticky';
+}
 
-const { theme = 'light' } = Astro.props;
+const { theme = 'light', position= 'sticky' } = Astro.props;
 const isDark = theme === 'dark';
 const docsSubMenu = {
   shortcutMenus: {

@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
+    "build:posters": "node generate-posters.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -14,6 +15,7 @@
     "@astrojs/starlight": "^0.14.0",
     "@astrojs/starlight-tailwind": "^2.0.1",
     "@astrojs/tailwind": "^5.0.2",
+    "@serverless-devs/s3": "^0.1.1",
     "@tailwindcss/nesting": "^0.0.0-insiders.565cd3e",
     "astro": "^3.2.3",
     "date-fns": "^2.30.0",
