@@ -36,7 +36,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 				<Icon name="close" size="2em" />
 			</button>
 			<div class="select-pane" tabindex="-1">
-				<h1><UIString key="feedback.formTitle" /></h1>
+				<h1 class="text-lg"><UIString key="feedback.formTitle" /></h1>
 				<div class="select-buttons">
 					<a
 						class="github-button"
@@ -44,19 +44,23 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						<Icon name="github" size="4" />
-						<h2>
-							<UIString key="feedback.createIssue" />
-						</h2>
+						<div class="flex items-center justify-center mb-2">
+							<Icon name="github" size="4" />
+							<label class="text-sm font-medium text-gray-15 ml-1">
+								<UIString key="feedback.createIssue" />
+							</label>
+						</div>
 						<p>
 							<UIString key="feedback.createIssue.description" />
 						</p>
 					</a>
 					<button data-select-feedback>
-						<Icon name="warning" size="4" />
-						<h2>
-							<UIString key="feedback.sendFeedback" />
-						</h2>
+						<div class="flex items-center justify-center mb-2">
+							<Icon name="warning" size="4" />
+							<label class="text-sm font-medium text-gray-15 ml-1">
+								<UIString key="feedback.sendFeedback" />
+							</label>
+						</div>
 						<p>
 							<UIString key="feedback.sendFeedback.description" />
 						</p>
@@ -68,7 +72,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 					<span class="sr-only"><UIString key="feedback.close" /></span>
 					<Icon name="left-arrow" size="1em" />
 				</button>
-				<h1><UIString key="feedback.sendFeedback" /></h1>
+				<label class="text-sm font-medium text-gray-15"><UIString key="feedback.sendFeedback" /></label>
 				<fieldset class="category-options">
 					<legend class="sr-only"><UIString key={'feedback.categoryGroupLabel'} /></legend>
 					{
@@ -91,7 +95,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 									>
 										<path d={icon} />
 									</svg>
-									<span>
+									<span class="text-sm">
 										<UIString key={`feedback.${category}`} />
 									</span>
 								</label>
@@ -309,7 +313,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 		padding: 0.75rem;
 		gap: 0.25rem;
 		font-size: var(--theme-text-xs);
-		font-weight: 600;
+		/* font-weight: 600; */
 		outline: 2px solid transparent;
 		border: 2px solid transparent;
 		border-radius: 0.5rem;
@@ -321,8 +325,8 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 	}
 
 	.category-option input:checked + label {
-		background-color: var(--sl-color-blue-low);
-		border-color: var(--sl-color-blue-high);
+		background-color: theme("colors.gray.05");
+		/* border-color: var(--sl-color-blue-high); */
 	}
 
 	dialog *:focus,
@@ -377,7 +381,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 
 	.select-buttons > a:hover,
 	.select-buttons > button:hover {
-		background-color: var(--sl-color-gray-5);
+		background-color: theme("colors.gray.05");
 	}
 
 	.select-buttons h2 {
