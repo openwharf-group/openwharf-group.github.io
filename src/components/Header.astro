@@ -182,17 +182,17 @@ const communitySubMenu = {
         </div>
       </div>
 
-      <div data-mobile-menu-list class="w-full pl-2">
-        <ul class="mobileMenuList">
+      <div data-mobile-menu-list class="w-full pl-8">
+        <ul class="list-none pl-0">
           <li>
             <div mobile-menu-expand-docs>
-              <button class="mt-4 bg-gray-01 flex items-center cursor-pointer">
+              <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer">
                 <span class="mr-2 text-gray-14 text-sm">DOCS</span>
                 <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2"></path></svg>
               </button>
             </div>
             <div mobile-menu-expand-content-docs
-              class="px-12 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
+              class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
               <div mobile-menu-fold-docs class="flex items-center pt-8 pb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4" fill="none" viewBox="0 0 9 14" stroke="#2e3038">
                   <path stroke-width="2" d="M1 1L7 7L1 13"></path>
@@ -203,7 +203,7 @@ const communitySubMenu = {
               </div>
               <div>
                 <span class="text-xs text-gray-12">Documentation</span>
-                <ul class="pl-0">
+                <ul class="pl-0 list-none">
                   {
                     docsSubMenu.shortcutMenus.Documentation.map((menu) => {
                       const { label, url } = menu;
@@ -218,18 +218,18 @@ const communitySubMenu = {
               </div>
             </div>
           </li>
-          <li class="mt-4 ml-[.375rem]">
+          <li class="mt-4">
             <a href="/nacosCloud" class="text-gray-14 text-sm">NACOS CLOUD</a>
           </li>
           <li>
             <div mobile-menu-expand-com>
-              <button class="mt-4 bg-gray-01 flex items-center cursor-pointer">
+              <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer">
                 <span  class="mr-2 text-gray-14 text-sm">COMMUNITY</span>
                 <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2"></path></svg>
               </button>
             </div>
             <div mobile-menu-expand-content-com
-              class="px-12 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
+              class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
               <div mobile-menu-fold-com class="flex items-center pt-8 pb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4" fill="none" viewBox="0 0 9 14" stroke="#2e3038">
                   <path stroke-width="2" d="M1 1L7 7L1 13"></path>
@@ -241,7 +241,7 @@ const communitySubMenu = {
               <div class="mobile_menu_community flex justify-between">
                 <div class="mb-6">
                   <span class="text-xs text-gray-7">COMMUNITY</span>
-                  <ul class="pl-0">
+                  <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.COMMUNITY.map((menu) => {
                         const { label } = menu;
@@ -256,7 +256,7 @@ const communitySubMenu = {
                 </div>
                 <div class="mb-6">
                   <span class="text-xs text-gray-7">EVENTS</span>
-                  <ul class="pl-0">
+                  <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.EVENTS.map((menu) => {
                         const { label } = menu;
@@ -271,7 +271,7 @@ const communitySubMenu = {
                 </div>
                 <div class="mb-6">
                   <span class="text-xs text-gray-7">Resources</span>
-                  <ul class="pl-0">
+                  <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.Resources.map((menu) => {
                         const { label } = menu;
@@ -287,7 +287,7 @@ const communitySubMenu = {
               </div>
             </div>
           </li>
-          <li class="mt-4 ml-[.375rem]">
+          <li class="mt-4">
             <a href="/" class="text-gray-14 text-sm">DEMO</a>
           </li>
         </ul>
@@ -574,15 +574,6 @@ const communitySubMenu = {
 
     .menu_hamburger {
       display: block;
-    }
-
-    .mobileMenuList {
-      list-style-type: none;
-      padding-left: 20px;
-    }
-
-    .mobileMenuList ul {
-      list-style-type: none;
     }
   }
 
