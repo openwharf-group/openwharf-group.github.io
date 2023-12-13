@@ -8,6 +8,18 @@ import BlogPostPreview from "@components/BlogPostPreview.astro";
 import BlogHeader from "@components/BlogHeader.astro";
 import BlogPoster from "@components/BlogPoster.astro";
 
+interface Post {
+    slug: string;
+    body: string;
+    collection: string;
+    data: {
+        title: string;
+        description: string;
+        date: Date;
+        keywords?: any[];
+    };
+};
+
 const posts = await getCollection("blog");
 
 const sortedPosts = posts.sort(
@@ -44,19 +56,22 @@ const recentPosts = sortedPosts.splice(0, 4);
                             {recentPosts[0].data.description}
                         </p>
                     </div>
-                    <BlogPoster post={recentPosts[0]} width="400" />
+                    <BlogPoster post={recentPosts[0] as Post} width="400" />
                 </div>
             </a>
         </div>
         <!-- 最近的3篇博客展示 -->
         <div class="flex flex-row items-center gap-2 pr-4 bg-gray-14 pt-10">
             <ul class="flex flex-row mx-auto items-stretch">
+                
                 {
+                    // @ts-ignore
                     recentPosts.slice(1, 4).map((post) => (
                         <>
                             <div class="flex-1 ">
+                                
                                 <BlogPostPreview
-                                    post={post}
+                                    post={post as Post}
                                     posterWidth="400"
                                 />
                             </div>
@@ -100,7 +115,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                     <>
                                         <div class="flex-1 h-auto">
                                             <BlogPostPreview
-                                                post={post}
+                                                post={post as Post}
                                                 posterWidth="400"
                                             />
                                         </div>
@@ -145,7 +160,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                     <>
                                         <div class="flex-1 h-auto">
                                             <BlogPostPreview
-                                                post={post}
+                                                post={post as Post}
                                                 posterWidth="400"
                                             />
                                         </div>
@@ -190,7 +205,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                     <>
                                         <div class="flex-1 h-auto">
                                             <BlogPostPreview
-                                                post={post}
+                                                post={post as Post}
                                                 posterWidth="400"
                                             />
                                         </div>

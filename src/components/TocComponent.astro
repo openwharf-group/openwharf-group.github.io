@@ -2,19 +2,20 @@
 import { remark } from "remark";
 import html from "remark-html";
 import { toc } from "mdast-util-toc";
-import parse from "remark-parse";
 
 // Props
 const { content } = Astro.props;
 
 // 创建目录
 const createTOC = (content) => {
-    const mdast = remark().use(parse).parse(content);
+    // @ts-ignore
+    const mdast = remark().parse(content);
     return toc(mdast);
 };
 
 const tableOfContents = createTOC(content);
 
+// @ts-ignore
 const tocHtml = remark().use(html).stringify(tableOfContents.map);
 ---
 

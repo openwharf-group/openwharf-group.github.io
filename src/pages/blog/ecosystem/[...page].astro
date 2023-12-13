@@ -8,6 +8,19 @@ import Pagination from "@components/Pagination.astro";
 import BlogPostPreview from "@components/BlogPostPreview.astro";
 import BlogHeader from "@components/BlogHeader.astro";
 
+
+interface Post {
+    slug: string;
+    body: string;
+    collection: string;
+    data: {
+        title: string;
+        description: string;
+        date: Date;
+        keywords?: any[];
+    };
+};
+
 // 分页数据在page参数中传递
 const { page } = Astro.props;
 
@@ -40,7 +53,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             {
                 page.data.map((post) => (
                     <div class="flex-1">
-                        <BlogPostPreview post={post} posterWidth="400" />
+                        <BlogPostPreview post={post as Post} posterWidth="400" />
                     </div>
                 ))
             }

@@ -22,8 +22,8 @@ export type Props = {
 };
 
 const { post, width = 400 } = Astro.props;
-const height: number = width / 2;
-const logowidth: number = 0.25 * width;
+const height: number = Number(width) / 2;
+const logowidth: number = 0.25 * Number(width);
 ---
 
 <div
