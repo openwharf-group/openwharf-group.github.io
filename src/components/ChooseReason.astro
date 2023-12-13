@@ -29,7 +29,7 @@ const dataSource = [
     <span class="text-gray-10 text-xs mb-6">ABOUT US</span>
     <span class="text-gray-14 text-4xl font-medium">Why Nacos</span>
   </div>
-  <div class="flex">
+  <div class="flex justify-center flex-wrap">
     {
       dataSource.map(reason => {
         const { title, svgKey, description } = reason;
@@ -64,6 +64,22 @@ const dataSource = [
 
 <style>
 .item {
+  min-width: 16rem;
+  max-width: 24rem;
   border-left: 1px solid theme('colors.gray.03');
+  margin-bottom: 2rem;
 }
+
+@media (max-width: 36rem) {
+  .item {
+    padding-left: 0;
+    padding-right: 0;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-left: none;
+    border-bottom: 1px solid theme('colors.gray.03');
+  }
+}
+
+
 </style>
