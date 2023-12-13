@@ -112,6 +112,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 					cols="34"
 					rows="3"
 					required
+					class="bg-blue-01"
 					placeholder={t('feedback.placeholder')}></textarea>
 				<button type="submit"><UIString key="feedback.submit" /></button>
 				<a
@@ -244,7 +245,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 		border: 1px solid var(--sl-color-gray-5);
 		border-radius: 0.5rem;
 		width: 32rem;
-		background-color: var(--sl-color-gray-6);
+		background-color: theme("colors.blue.01");
 		box-shadow: var(--sl-shadow-lg);
 	}
 
@@ -281,6 +282,7 @@ const instanceId = Math.round(Math.random() * 10e9).toString(36);
 		gap: 0.75rem;
 		text-align: center;
 		padding: var(--feedback-form-padding);
+		background-color: theme("colors.blue.01");
 	}
 
 	form {

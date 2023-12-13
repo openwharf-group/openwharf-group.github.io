@@ -46,7 +46,7 @@ const communitySubMenu = {
 
 ---
 
-<header-layout class="header bg-gray-14" style={`position: ${position};`}>
+<header-layout class="header bg-gray-14 relative" style={`position: ${position};`}>
   <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
   <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between">
     <!-- logo -->
@@ -54,11 +54,15 @@ const communitySubMenu = {
       <img class="logo" src="../../../public/nacos_white.png" />
     </a>
     <!-- 菜单 -->
-    <div class="flex h-full items-center">
+    <div class="nav_menu flex h-full items-center">
       <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
         <div data-docs class="h-full flex items-center p-0.5">
           <span class="title">DOCS</span>
-          <svg data-docs-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square"></path></svg>
+          <svg data-docs-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square">
+            </path>
+          </svg>
         </div>
         <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
           <div class="flex pb-10 pt-14 px-24">
@@ -88,7 +92,11 @@ const communitySubMenu = {
       <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
         <div data-community class="h-full flex items-center p-0.5">
           <span class="title">COMMUNITY</span>
-          <svg data-community-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square"></path></svg>
+          <svg data-community-arrow class="arrow ml-2" width="10" height="7" viewBox="0 0 10 7" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square">
+            </path>
+          </svg>
         </div>
         <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50">
           <div class="flex pb-10 pt-14 px-24 justify-center">
@@ -153,6 +161,138 @@ const communitySubMenu = {
     <div>
       <slot></slot>
     </div>
+    <!-- 小屏适配 -->
+    <div class="menu_hamburger hidden cursor-pointer">
+      <button class="text-gray-01 bg-gray-14 flex items-center">
+        <svg class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path><mask id="mask0" mask="true" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path></mask><g mask="url(#mask0)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" fill="#a3a6b3"></path></g></svg>
+      </button>
+    </div>
+    <!-- 移动端导航菜单 -->
+    <div data-mobile-menu
+      class="overflow-hidden hidden flex flex-col w-screen bg-gray-01 h-screen absolute left-0 right-0 top-0">
+      <!-- 顶部logo -->
+      <div class="bg-gray-14 h-16 px-8 flex items-center justify-between">
+        <a href="/">
+          <img class="logo" src="../../../public/nacos_white.png" />
+        </a>
+        <div class="menu_close flex items-center cursor-pointer">
+          <button class="text-gray-01 bg-gray-14 flex items-center">
+            <svg class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.61328 1.70312L15.6133 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path><path d="M15.6133 1.70312L1.61328 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <div data-mobile-menu-list class="w-full pl-8">
+        <ul class="list-none pl-0">
+          <li>
+            <div mobile-menu-expand-docs>
+              <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer">
+                <span class="mr-2 text-gray-14 text-sm">DOCS</span>
+                <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2"></path></svg>
+              </button>
+            </div>
+            <div mobile-menu-expand-content-docs
+              class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
+              <div mobile-menu-fold-docs class="flex items-center pt-8 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4" fill="none" viewBox="0 0 9 14" stroke="#2e3038">
+                  <path stroke-width="2" d="M1 1L7 7L1 13"></path>
+                </svg>
+                <span class="text-gray-14 text-sm">DOCS</span>
+              </div>
+              <div class="divider divider-vertical bg-gray-01 h-[0.05rem]">
+              </div>
+              <div>
+                <span class="text-xs text-gray-12">Documentation</span>
+                <ul class="pl-0 list-none">
+                  {
+                    docsSubMenu.shortcutMenus.Documentation.map((menu) => {
+                      const { label, url } = menu;
+                      return (
+                        <a href={url} class="flex items-center mt-3 cursor-pointer">
+                          <li class="text-sm text-gray-14">{label}</li>
+                        </a>
+                      );
+                    })
+                  }
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="mt-4">
+            <a href="/nacosCloud" class="text-gray-14 text-sm">NACOS CLOUD</a>
+          </li>
+          <li>
+            <div mobile-menu-expand-com>
+              <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer">
+                <span  class="mr-2 text-gray-14 text-sm">COMMUNITY</span>
+                <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2"></path></svg>
+              </button>
+            </div>
+            <div mobile-menu-expand-content-com
+              class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16">
+              <div mobile-menu-fold-com class="flex items-center pt-8 pb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4" fill="none" viewBox="0 0 9 14" stroke="#2e3038">
+                  <path stroke-width="2" d="M1 1L7 7L1 13"></path>
+                </svg>
+                <span class="text-gray-14 text-sm">COMMUNITY</span>
+              </div>
+              <div class="divider divider-vertical bg-gray-01 h-[0.05rem]">
+              </div>
+              <div class="mobile_menu_community flex justify-between">
+                <div class="mb-6">
+                  <span class="text-xs text-gray-7">COMMUNITY</span>
+                  <ul class="pl-0 list-none">
+                    {
+                      communitySubMenu.shortcutMenus.COMMUNITY.map((menu) => {
+                        const { label } = menu;
+                        return (
+                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                            {label}
+                          </li>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+                <div class="mb-6">
+                  <span class="text-xs text-gray-7">EVENTS</span>
+                  <ul class="pl-0 list-none">
+                    {
+                      communitySubMenu.shortcutMenus.EVENTS.map((menu) => {
+                        const { label } = menu;
+                        return (
+                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                            {label}
+                          </li>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+                <div class="mb-6">
+                  <span class="text-xs text-gray-7">Resources</span>
+                  <ul class="pl-0 list-none">
+                    {
+                      communitySubMenu.shortcutMenus.Resources.map((menu) => {
+                        const { label } = menu;
+                        return (
+                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                            {label}
+                          </li>
+                        );
+                      })
+                    }
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="mt-4">
+            <a href="/" class="text-gray-14 text-sm">DEMO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </header-layout>
 
@@ -166,6 +306,12 @@ const communitySubMenu = {
     private communityMenu: HTMLDivElement;
     private docsMenuStatus: boolean;
     private communityMenuStatus: boolean;
+    private menuHamburger: HTMLDivElement;
+    private menuClose: HTMLDivElement;
+    private mobileMenuExpandDocs: HTMLDivElement;
+    private mobileMenuFoldDocs: HTMLDivElement;
+    private mobileMenuExpandCom: HTMLDivElement;
+    private mobileMenuFoldCom: HTMLDivElement;
 
     constructor() {
 			super();
@@ -174,48 +320,93 @@ const communitySubMenu = {
       this.communityMenuStatus = false;
       this.currentRoute = window.location.pathname;
 
-      this.modalPanel = this.querySelector<HTMLDivElement>(
-				"div[data-modal-panel]",
-			)!;
-      this.docsMenu = this.querySelector<HTMLDivElement>(
-				"div[data-docs]",
-			)!;
-      const docsDropdown = this.querySelector<HTMLDivElement>(
+      this.modalPanel = this.querySelector < HTMLDivElement > (
+        "div[data-modal-panel]",
+      )!;
+      this.docsMenu = this.querySelector < HTMLDivElement > ("div[data-docs]")!;
+      const docsDropdown = this.querySelector < HTMLDivElement > (
         "div[data-docs-dropdown]",
       )!;
-      const docsArrow = this.querySelector<SVGElement>(
-        "svg[data-docs-arrow]",
+      const docsArrow = this.querySelector < SVGElement > ("svg[data-docs-arrow]")!;
+      this.nacosCloudMenu = this.querySelector < HTMLDivElement > (
+        "div[data-nacos-cloud]",
       )!;
-      this.nacosCloudMenu = this.querySelector<HTMLDivElement>(
-				"div[data-nacos-cloud]",
-			)!;
-			this.communityMenu = this.querySelector<HTMLDivElement>(
-				"div[data-community]",
-			)!;
-      const communityDropdown = this.querySelector<HTMLDivElement>(
+      this.communityMenu = this.querySelector < HTMLDivElement > (
+        "div[data-community]",
+      )!;
+      const communityDropdown = this.querySelector < HTMLDivElement > (
         "div[data-community-dropdown]",
       )!;
-      const communityArrow = this.querySelector<SVGElement>(
+      const communityArrow = this.querySelector < SVGElement > (
         "svg[data-community-arrow]",
+      )!;
+      this.menuHamburger = this.querySelector < HTMLDivElement > ("div.menu_hamburger")!;
+      this.menuClose = this.querySelector < HTMLDivElement > ("div.menu_close")!;
+
+      const mobileMenu = this.querySelector < HTMLDivElement > (
+        "div[data-mobile-menu]",
+      )!;
+      this.mobileMenuExpandDocs = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-expand-docs]",
+      )!;
+      this.mobileMenuFoldDocs = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-fold-docs]",
+      )!;
+      const mobileMenuExpandContentDocs = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-expand-content-docs]",
+      )!;
+      this.mobileMenuExpandCom = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-expand-com]",
+      )!;
+      this.mobileMenuFoldCom = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-fold-com]",
+      )!;
+      const mobileMenuExpandContentCom = this.querySelector < HTMLDivElement > (
+        "div[mobile-menu-expand-content-com]",
       )!;
 
       this.menuSelectorEffect();
 
+      // 移动端点击折叠按钮打开/关闭级联菜单
+      this.menuHamburger.addEventListener("click", () => {
+        this.showMobileMenu(mobileMenu)
+      });
+      // 关闭按钮同时关闭二级菜单
+      this.menuClose.addEventListener("click", () => {
+        this.hideMobileMenu(mobileMenu, true);
+        this.hideMobileMenu(mobileMenuExpandContentDocs, true);
+        this.hideMobileMenu(mobileMenuExpandContentCom, true);
+      });
+      // 移动端点击折叠按钮打开/关闭二级菜单
+      this.mobileMenuExpandDocs.addEventListener("click", () => {
+        this.showMobileMenu(mobileMenuExpandContentDocs);
+      });
+      this.mobileMenuFoldDocs.addEventListener("click", () => {
+        this.hideMobileMenu(mobileMenuExpandContentDocs, false);
+      });
+      this.mobileMenuExpandCom.addEventListener("click", () => {
+        this.showMobileMenu(mobileMenuExpandContentCom);
+      });
+      this.mobileMenuFoldCom.addEventListener("click", () => {
+        this.hideMobileMenu(mobileMenuExpandContentCom, false);
+      });
+
       // 点击蒙板关闭下拉菜单
       this.modalPanel.addEventListener("click", () => {
+        this.communityMenuStatus = !this.communityMenuStatus;
         this.hideDropdownPanel(docsDropdown, docsArrow);
         this.hideDropdownPanel(communityDropdown, communityArrow);
       });
 
       // 绑定路由
       this.nacosCloudMenu.addEventListener("click", () => {
-        window.location.pathname = '/nacosCloud';
+        window.location.pathname = "/nacosCloud";
       });
 
       // 绑定下拉 dropdown 事件
       this.docsMenu.addEventListener("click", () => {
         this.docsMenuStatus = !this.docsMenuStatus;
-        
+
         if (this.docsMenuStatus) {
           this.hideDropdownPanel(communityDropdown, communityArrow);
           this.showDropdownPanel(docsDropdown, docsArrow);
@@ -224,9 +415,9 @@ const communitySubMenu = {
           this.hideDropdownPanel(docsDropdown, docsArrow);
         }
       });
-			this.communityMenu.addEventListener("click", () => {
+      this.communityMenu.addEventListener("click", () => {
         this.communityMenuStatus = !this.communityMenuStatus;
-        
+
         if (this.communityMenuStatus) {
           this.hideDropdownPanel(docsDropdown, docsArrow);
           this.showDropdownPanel(communityDropdown, communityArrow);
@@ -235,7 +426,7 @@ const communitySubMenu = {
           this.hideDropdownPanel(communityDropdown, communityArrow);
         }
       });
-		}
+    }
 
     // 选中效果
     menuSelectorEffect = () => {
@@ -276,6 +467,21 @@ const communitySubMenu = {
       htmlElement?.classList.add('hidden', 'invisible', 'opacity-0');
       document.body.classList.remove('overflow-hidden');
       document.body.classList.add('overflow-auto');
+    };
+
+    // 展开移动端二级菜单
+    showMobileMenu = (htmlElement) => {
+      htmlElement?.classList.remove("hidden", "invisible", "opacity-0");
+      htmlElement?.classList.add("block", "visible", "opacity-100");
+      document.body.classList.remove("overflow-auto");
+      document.body.classList.add("overflow-hidden");
+    };
+    // 隐藏移动端二级菜单
+    hideMobileMenu = (htmlElement, value) => {
+      htmlElement?.classList.remove("block", "visible", "opacity-100");
+      htmlElement?.classList.add("hidden", "invisible", "opacity-0");
+      value && document.body.classList.remove("overflow-hidden");
+      value && document.body.classList.add("overflow-auto");
     };
   }
   customElements.define("header-layout", HeaderLayout);
@@ -359,5 +565,21 @@ const communitySubMenu = {
   }
   a {
     text-decoration: none;
+  }
+
+  @media (max-width: 64rem) {
+    .nav_menu {
+      display: none;
+    }
+
+    .menu_hamburger {
+      display: block;
+    }
+  }
+
+  @media (max-width: 36rem) {
+    .mobile_menu_community {
+      display: block;
+    }
   }
 </style>
