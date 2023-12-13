@@ -86,7 +86,17 @@ export default {
 				},
 				white: themeColor['gray']['01'],
 			},
+			typography: (theme) => ({
+				DEFAULT: {
+					css: {
+						a: {
+							textDecoration: 'inherit',
+							color: theme('colors.blue.08')
+						}
+					}
+				}
+			})
 		}
 	},
-	plugins: [starlightPlugin(), require("daisyui")],
+	plugins: [starlightPlugin(), require("daisyui"),require('@tailwindcss/typography')],
 };

@@ -9,12 +9,11 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, date, updatedDate, heroImage } = Astro.props;
 ---
 
-<BaseLayout title="Nacos Blog">
 	<div class="sl-markdown-content bg-gray-14 text-gray-01">
 				<div class="hero-image ">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
-				<div class="nacos-prose">
+				<div class="nacos-prose mx-auto">
 					<div class="title">
 						<div class="date">
 							<FormattedDate date={date} />
@@ -32,7 +31,6 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 					<slot />
 				</div>
 	</div>
-	</BaseLayout>
 
 <style>
 	main {
@@ -51,9 +49,7 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 	}
 
 	.nacos-prose {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
+		width: 90%;
 		padding: 1em;
 		color: rgb(var(--gray-dark));
 	}
