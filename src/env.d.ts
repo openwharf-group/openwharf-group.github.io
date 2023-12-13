@@ -3,4 +3,5 @@
 
 interface ImportMetaEnv {
 	readonly STRAPI_URL: string;
+	readonly YUQUE_TOKEN: string;
 }

@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
-    "build:ebook": "node build-ebook.ts",
+    "build": "node build-ebook.js && astro check &&astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -19,6 +18,7 @@
     "astro": "^3.2.3",
     "astro-expressive-code": "^0.29.4",
     "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
     "lodash": "^4.17.21",
     "mdast-util-toc": "^7.0.0",
     "moment": "^2.29.4",
