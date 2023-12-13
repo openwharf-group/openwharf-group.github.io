@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en" data-theme="light" class="astro-37fxchfa"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="referrer" content="no-referrer"><meta name="generator" content="Astro v3.6.0"><title>Nacos Blog</title><link rel="stylesheet" href="/_astro/index.31fde076.css" />
+<style>.sl-markdown-content :not(h1,h2,h3,h4,h5,h6)+:is(h1,h2,h3,h4,h5,h6):not(:where(.not-content *)){margin-top:2.5rem}.sl-markdown-content li+li:not(:where(.not-content *)),.sl-markdown-content dt+dt:not(:where(.not-content *)),.sl-markdown-content dt+dd:not(:where(.not-content *)),.sl-markdown-content dd+dd:not(:where(.not-content *)){margin-top:.25rem}.sl-markdown-content li>:last-child:not(li,ul,ol):not(a,strong,em,del,span,input,:where(.not-content *)){margin-bottom:1.25rem}.sl-markdown-content dt:not(:where(.not-content *)){font-weight:700}.sl-markdown-content dd:not(:where(.not-content *)){padding-inline-start:1rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6):not(:where(.not-content *)){color:#f4f4f6;line-height:var(--sl-line-height-headings);font-weight:600}.sl-markdown-content :is(img,picture,video,canvas,svg,iframe):not(:where(.not-content *)){display:block;max-width:100%;height:auto}.sl-markdown-content h1:not(:where(.not-content *)){font-size:var(--sl-text-h1)}.sl-markdown-content h2:not(:where(.not-content *)){font-size:var(--sl-text-h2)}.sl-markdown-content h3:not(:where(.not-content *)){font-size:var(--sl-text-h3)}.sl-markdown-content h4:not(:where(.not-content *)){font-size:var(--sl-text-h4)}.sl-markdown-content h5:not(:where(.not-content *)){font-size:var(--sl-text-h5)}.sl-markdown-content h6:not(:where(.not-content *)){font-size:var(--sl-text-h6)}.sl-markdown-content a:not(:where(.not-content *)){color:var(--sl-color-text-accent)}.sl-markdown-content a:hover:not(:where(.not-content *)){color:var(--sl-color-white)}.sl-markdown-content code:not(:where(.not-content *)){background-color:var(--sl-color-bg-inline-code);margin-block:-.125rem;padding:.125rem .375rem;font-size:var(--sl-text-code-sm)}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) code{font-size:inherit}.sl-markdown-content pre:not(:where(.not-content *)){border:1px solid var(--sl-color-gray-5);padding:.75rem 1rem;font-size:var(--sl-text-code);-moz-tab-size:2;-o-tab-size:2;tab-size:2}.sl-markdown-content pre code:not(:where(.not-content *)){all:unset;font-family:var(--__sl-font-mono)}.sl-markdown-content blockquote:not(:where(.not-content *)){border-inline-start:1px solid var(--sl-color-gray-5);padding-inline-start:1rem}.sl-markdown-content table:not(:where(.not-content *)){display:block;overflow:auto;border-collapse:collapse}.sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)){background-color:var(--sl-color-gray-7, var(--sl-color-gray-6))}.sl-markdown-content :is(th,td):not(:where(.not-content *)){border:1px solid var(--sl-color-hairline-light);padding:.375rem .8125rem}.sl-markdown-content hr:not(:where(.not-content *)){border:0;border-bottom:1px solid var(--sl-color-hairline)}.sl-markdown-content h2{line-height:3.5rem}main:where(.astro-bvzihdzo){width:calc(100% - 2em);max-width:100%;margin:0}.hero-image:where(.astro-bvzihdzo){width:100%}.hero-image:where(.astro-bvzihdzo) img:where(.astro-bvzihdzo){display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.nacos-prose:where(.astro-bvzihdzo){width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title:where(.astro-bvzihdzo){margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title:where(.astro-bvzihdzo) h1:where(.astro-bvzihdzo){margin:0 0 .5em}.date:where(.astro-bvzihdzo){margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on:where(.astro-bvzihdzo){font-style:italic}
+@media (max-width: 36rem){html{font-size:12px}}
+</style><script type="module" src="/_astro/hoisted.1dcaf7ef.js"></script></head> <body class="astro-37fxchfa"> <header-layout class="header bg-gray-14 relative astro-3ef6ksr2" style="position: sticky;"> <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0 astro-3ef6ksr2"></div> <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between astro-3ef6ksr2"> <!-- logo --> <a href="/" class="astro-3ef6ksr2"> <img class="logo astro-3ef6ksr2" src="../../../public/nacos_white.png"> </a> <!-- 菜单 --> <div class="nav_menu flex h-full items-center astro-3ef6ksr2"> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-docs class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">DOCS</span> <svg data-docs-arrow class="arrow ml-2 astro-3ef6ksr2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square" class="astro-3ef6ksr2"></path> </svg> </div> <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 astro-3ef6ksr2"> <div class="flex pb-10 pt-14 px-24 astro-3ef6ksr2"> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">Documentation</span> <a href="/docs/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <span class="text-sm text-gray-02 astro-3ef6ksr2">1.x</span> </a><a href="/docs/v2/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <span class="text-sm text-gray-02 astro-3ef6ksr2">2.x</span> </a> </div> </div> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-nacos-cloud class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">NACOS CLOUD</span> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-community class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">COMMUNITY</span> <svg data-community-arrow class="arrow ml-2 astro-3ef6ksr2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square" class="astro-3ef6ksr2"></path> </svg> </div> <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50 astro-3ef6ksr2"> <div class="flex pb-10 pt-14 px-24 justify-center astro-3ef6ksr2"> <div class="flex mr-32 astro-3ef6ksr2"> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">COMMUNITY</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Contact</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Report</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Contribute</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Stars</a> </div> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">EVENTS</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Events</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">News</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Meetup</a> <span class="text-xs text-gray-10 mb-2 mt-10 astro-3ef6ksr2">Resources</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/blog">Blog</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">E-book</a> </div> </div> <div class="flex astro-3ef6ksr2"> <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4 astro-3ef6ksr2"> <img class=" astro-3ef6ksr2" src="../../../public/left-shortcut.png"> <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16 astro-3ef6ksr2">Key to service-centric (for example microservice or cloud-native) architectures.</div> <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl astro-3ef6ksr2">READ ARTICLE</button> </div><div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4 astro-3ef6ksr2"> <img class=" astro-3ef6ksr2" src="../../../public/right-shortcut.png"> <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16 astro-3ef6ksr2">An easy-to-use platform for building cloud native applications</div> <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl astro-3ef6ksr2">READ ARTICLE</button> </div> </div> </div> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-demo class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">DEMO</span> </div> </div> </div> <!-- 右侧菜单 --> <div class="astro-3ef6ksr2">  </div> <!-- 小屏适配 --> <div class="menu_hamburger hidden cursor-pointer astro-3ef6ksr2"> <button class="text-gray-01 bg-gray-14 flex items-center astro-3ef6ksr2"> <svg class="cursor-pointer astro-3ef6ksr2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor" class="astro-3ef6ksr2"></path><mask id="mask0" mask="true" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14" class="astro-3ef6ksr2"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor" class="astro-3ef6ksr2"></path></mask><g mask="url(#mask0)" class="astro-3ef6ksr2"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" fill="#a3a6b3" class="astro-3ef6ksr2"></path></g></svg> </button> </div> <!-- 移动端导航菜单 --> <div data-mobile-menu class="overflow-hidden hidden flex flex-col w-screen bg-gray-01 h-screen absolute left-0 right-0 top-0 astro-3ef6ksr2"> <!-- 顶部logo --> <div class="bg-gray-14 h-16 px-8 flex items-center justify-between astro-3ef6ksr2"> <a href="/" class="astro-3ef6ksr2"> <img class="logo astro-3ef6ksr2" src="../../../public/nacos_white.png"> </a> <div class="menu_close flex items-center cursor-pointer astro-3ef6ksr2"> <button class="text-gray-01 bg-gray-14 flex items-center astro-3ef6ksr2"> <svg class="cursor-pointer astro-3ef6ksr2" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.61328 1.70312L15.6133 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round" class="astro-3ef6ksr2"></path><path d="M15.6133 1.70312L1.61328 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round" class="astro-3ef6ksr2"></path></svg> </button> </div> </div> <div data-mobile-menu-list class="w-full pl-8 astro-3ef6ksr2"> <ul class="list-none pl-0 astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <div mobile-menu-expand-docs class="astro-3ef6ksr2"> <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer astro-3ef6ksr2"> <span class="mr-2 text-gray-14 text-sm astro-3ef6ksr2">DOCS</span> <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-3ef6ksr2"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2" class="astro-3ef6ksr2"></path></svg> </button> </div> <div mobile-menu-expand-content-docs class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16 astro-3ef6ksr2"> <div mobile-menu-fold-docs class="flex items-center pt-8 pb-4 astro-3ef6ksr2"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4 astro-3ef6ksr2" fill="none" viewBox="0 0 9 14" stroke="#2e3038"> <path stroke-width="2" d="M1 1L7 7L1 13" class="astro-3ef6ksr2"></path> </svg> <span class="text-gray-14 text-sm astro-3ef6ksr2">DOCS</span> </div> <div class="divider divider-vertical bg-gray-01 h-[0.05rem] astro-3ef6ksr2"></div> <div class="astro-3ef6ksr2"> <span class="text-xs text-gray-12 astro-3ef6ksr2">Documentation</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <a href="/docs/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <li class="text-sm text-gray-14 astro-3ef6ksr2">1.x</li> </a><a href="/docs/v2/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <li class="text-sm text-gray-14 astro-3ef6ksr2">2.x</li> </a> </ul> </div> </div> </li> <li class="mt-4 astro-3ef6ksr2"> <a href="/nacosCloud" class="text-gray-14 text-sm astro-3ef6ksr2">NACOS CLOUD</a> </li> <li class="astro-3ef6ksr2"> <div mobile-menu-expand-com class="astro-3ef6ksr2"> <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer astro-3ef6ksr2"> <span class="mr-2 text-gray-14 text-sm astro-3ef6ksr2">COMMUNITY</span> <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-3ef6ksr2"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2" class="astro-3ef6ksr2"></path></svg> </button> </div> <div mobile-menu-expand-content-com class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16 astro-3ef6ksr2"> <div mobile-menu-fold-com class="flex items-center pt-8 pb-4 astro-3ef6ksr2"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4 astro-3ef6ksr2" fill="none" viewBox="0 0 9 14" stroke="#2e3038"> <path stroke-width="2" d="M1 1L7 7L1 13" class="astro-3ef6ksr2"></path> </svg> <span class="text-gray-14 text-sm astro-3ef6ksr2">COMMUNITY</span> </div> <div class="divider divider-vertical bg-gray-01 h-[0.05rem] astro-3ef6ksr2"></div> <div class="mobile_menu_community flex justify-between astro-3ef6ksr2"> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">COMMUNITY</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Contact </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Report </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Contribute </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Stars </li> </ul> </div> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">EVENTS</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Events </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> News </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Meetup </li> </ul> </div> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">Resources</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Blog </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> E-book </li> </ul> </div> </div> </div> </li> <li class="mt-4 astro-3ef6ksr2"> <a href="/" class="text-gray-14 text-sm astro-3ef6ksr2">DEMO</a> </li> </ul> </div> </div> </div> </header-layout>    <div class="sl-markdown-content bg-gray-14 text-gray-01 astro-bvzihdzo"> <div class="hero-image  astro-bvzihdzo">  </div> <div class="nacos-prose astro-bvzihdzo"> <div class="title astro-bvzihdzo"> <div class="date astro-bvzihdzo"> <time datetime="2020-09-14T00:00:00.000Z"> Sep 14, 2020 </time>  </div> <h1 class="astro-bvzihdzo">Nacos 的 Distro 一致性协议</h1> <hr class="astro-bvzihdzo"> </div>  <p>转载且编辑自<a href="http://www.passjava.cn/#/13.SpringCloud%E6%9E%B6%E6%9E%84%E5%89%96%E6%9E%90/07.Nacos%E9%85%8D%E7%BD%AE%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83/03.Nacos%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E2%91%A1%EF%BC%9A%E6%8F%AD%E7%A7%98AP%E6%9E%B6%E6%9E%84%E2%80%94%E2%80%94Distro%E4%B8%80%E8%87%B4%E6%80%A7%E5%8D%8F%E8%AE%AE" rel="noopener noreferrer" target="_blank">Nacos 的 Distro 一致性协议</a></p>
+<h2 id="前言">前言</h2>
+<p>这次我们进入 Nacos 的一致性底层原理，还是先来一张架构图，让大家对 Nacos 的架构有个整体的映像，本篇会主要讲解<strong>一致性模块</strong>中的 <code dir="auto">Distro</code> 协议。（本图参考的 Nacos 官方图）</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220504113110811on9pa8-20220530200803828.png" alt="参考 Nacos 官方图"></p>
+<p><strong>上篇留了两个知识点</strong>：</p>
+<ul>
+<li>① 服务实例注册到 Nacos 节点后，通过 UDP 方式推送到所有服务实例。让其他服务实例感知到服务列表的变化。</li>
+<li>② 如何复制数据到其他节点：当前 Nacos 节点开启 1s 的延迟任务，将数据同步给其他 Nacos 节点。（分区一致性）</li>
+</ul>
+<p>第 ② 个知识点就是 Nacos 自研的 <code dir="auto">Distro</code> 一致性协议的核心功能。</p>
+<p>首先这个 Distro 协议是针对集群环境的，比如下面这三个集群节点组成了一个集群。服务 A 和服务 B 会往这个集群进行注册。</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220427211513114ErcXkf-20220530200808311.png" alt="Nacos 集群节点"></p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220427220632378nCoaA5.png" alt="Nacos 集群环境"></p>
+<p>我们知道 Nacos 它是支持两种分布式定理的：<code dir="auto">CP</code>（分区一致性）和 <code dir="auto">AP</code>（分区可用性） 的，而 AP 是通过 Nacos 自研的 <code dir="auto">Distro</code> 协议来保证的，CP 是通过 Nacos 的 <code dir="auto">JRaft</code> 协议来保证的。</p>
+<p>因为注册中心作为系统中很重要的的一个服务，需要尽最大可能对外提供可用的服务，所以选择 AP 来保证服务的高可用，另外 Nacos 还采取了心跳机制来自动完成服务数据补偿的机制，所以说 Distro 协议是弱一致性的。</p>
+<p>如果采用 CP 协议，则需要当前集群可用的节点数过半才能工作。</p>
+<p>关于 CP 和 AP 的理论知识，可以参考这篇：<a href="https://mp.weixin.qq.com/s?__biz=MzAwMjI0ODk0NA==&#x26;mid=2451950422&#x26;idx=1&#x26;sn=7f86457acedbd0853cbcb7dc4377dd54&#x26;chksm=8d1c32c9ba6bbbdfd3d8c698addfb13a02589409bdf6a03a777e9afc95249018293d9a9e0a3f&#x26;token=203503668&#x26;lang=zh_CN#rd" rel="noopener noreferrer" target="_blank">用太极拳讲分布式理论 CAP 和 BASE，真舒服！</a></p>
+<blockquote>
+<p>问题：Nacos 中哪些地方用到了 AP 和 CP？</p>
+</blockquote>
+<ul>
+<li>针对<code dir="auto">临时服务</code>实例，采用 <code dir="auto">AP</code> 来保证注册中心的可用性，<code dir="auto">Distro</code> 协议。</li>
+<li>针对<code dir="auto">持久化服务</code>实例，采用 <code dir="auto">CP</code> 来保证各个节点的强一致性，<code dir="auto">JRaft</code> 协议。（JRaft 是 Nacos 对 Raft 的一种改造）</li>
+<li>针对<code dir="auto">配置中心</code>，无 Database 作为存储的情况下，Nacos 节点之间的内存数据为了保持一致，采用 <code dir="auto">CP</code>。Nacos 提供这种模式只是为了方便用户本机运行，降低对存储依赖，生产环境一般都是通过外置存储组件来保证数据一致性。</li>
+<li>针对<code dir="auto">配置中心</code>，有 Database 作为存储的情况下，Nacos 通过持久化后通知其他节点到数据库拉取数据来保证数据一致性，另外采用读写分离架构来保证高可用，所以这里我认为这里采用的 <code dir="auto">AP</code>，欢迎探讨。</li>
+<li>针对 <code dir="auto">异地多活</code>，采用 <code dir="auto">AP</code> 来保证高可用。</li>
+</ul>
+<p>弦外音：</p>
+<p><strong>临时服务实例</strong>就是我们默认使用的 Nacos 注册中心模式，客户端注册后，客户端需要定时上报心跳进行服务实例续约。这个在注册的时候，可以通过传参设置是否是临时实例。</p>
+<p><strong>持久化服务实例</strong>就是不需要上报心跳的，不会被自动摘除，除非手动移除实例，如果实例宕机了，Nacos 只会将这个客户端标记为不健康。</p>
+<p>本篇会带着大家从源码角度来深入剖析下 Distro 协议。</p>
+<p><strong>知识点预告：</strong></p>
+<ul>
+<li>① Distro 的设计思想和六大机制。</li>
+<li>② Nacos 如何同步数据到其他节点。（异步复制机制，本篇重点讲解）</li>
+<li>③ Nacos 如何保证所有节点的数据一致性。（定期检验；健康检查机制，下一篇重点讲解）</li>
+<li>④ 新加入的 Nacos 节点，如何拉取数据。（新节点同步机制）</li>
+</ul>
+<h2 id="一distro-的设计思想和六大机制">一、Distro 的设计思想和六大机制</h2>
+<p><code dir="auto">Distro</code> 协议是 Nacos 对于<code dir="auto">临时实例数据</code>开发的一致性协议。</p>
+<p>Distro 协议是集 Gossip + Eureka 协议的优点并加以优化后出现的。</p>
+<p>关于 Gossip 协议，可以看这篇：<a href="https://mp.weixin.qq.com/s?__biz=MzAwMjI0ODk0NA==&#x26;mid=2451951238&#x26;idx=1&#x26;sn=a0acccbdfed3d3ac9ee8ef4bb349b12b&#x26;chksm=8d1c3719ba6bbe0fc42876088a0747d7ca68dbbe9d21a21b2c94ecfc62c3f42ae3710f8acb40&#x26;token=203503668&#x26;lang=zh_CN#rd" rel="noopener noreferrer" target="_blank">病毒入侵：全靠分布式 Gossip 协议</a></p>
+<p>**Gossip 协议有什么坑？**由于随机选取发送的节点，不可避免的存在消息重复发送给同一节点的情况，增加了网络的传输的压力，给消息节点带来额外的处理负载。</p>
+<p>**Distro 协议的优化：**每个节点负责一部分数据，然后将数据同步给其他节点，有效的降低了消息冗余的问题。</p>
+<p>关于临时实例数据：临时数据其实是存储在<code dir="auto">内存缓存</code>中的，并且在其他节点在启动时会进行全量数据同步，然后节点也会定期进行数据校验。</p>
+<p>大家不要被这个协议吓到，其实就是阿里自己实现的一套同步逻辑。</p>
+<p>AP 中的 P 代表网络分区，所以 Distro 在分布式集群环境下才能真正发挥其作用。它保证了在多个 Nacos 节点组成的 Nacos 集群环境中，当其中某个 Nacos 宕机后，整个集群还是能正常工作。</p>
+<p><strong>Distro 的设计机制</strong>：</p>
+<ul>
+<li><strong>平等机制</strong>：Nacos 的每个节点是平等的，都可以处理写请求。（上一讲已经重点讲解了✅）</li>
+<li><strong>异步复制机制</strong>：Nacos 把变更的数据异步复制到其他节点。(⭐️<strong>重点讲解</strong>)</li>
+<li><strong>健康检查机制</strong>：每个节点只存了部分数据，定期检查客户端状态保持数据一致性。</li>
+<li><strong>本地读机制</strong>： 每个节点独立处理读请求，及时从本地发出响应。</li>
+<li><strong>新节点同步机制</strong>： Nacos 启动时，从其他节点同步数据。</li>
+<li><strong>路由转发机制</strong>：客户端发送的写请求，如果属于自己则处理，否则路由转发给其他节点。（上一讲已经重点讲解了✅）</li>
+</ul>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220504220127510ZudbpC.png" alt="Distro 的设计机制"></p>
+<h2 id="二异步复制机制写入数据后如何同步给其他节点">二、异步复制机制：写入数据后如何同步给其他节点</h2>
+<h3 id="21-核心入口">2.1 核心入口</h3>
+<p>核心源码路径：</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.t1efu.css"><script type="module" src="/_astro/ec.sgewm.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">naming</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">consistency</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">ephemeral</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distro</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">DistroConsistencyServiceImpl.java</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="/naming/consistency/ephemeral/distro/DistroConsistencyServiceImpl.java"><div></div></button></div></figure></div>
+<p>这个类的名字就说明它是 Distro 一致性协议的接口实现类。</p>
+<p>当注册请求交给 Nacos 节点来处理时，核心入口方法就是 put()，如下图所示：</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220427075804426upuierjz3uG9.png" alt=""></p>
+<p>上一讲我们已经说过，这里面会做几件事：</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220413164932907KHTvVMRZvHBS.png" alt="添加实例信息的流程"></p>
+<ul>
+<li>① 将实例信息存放到内存缓存 concurrentHashMap 里面。</li>
+<li>② 添加一个任务到 BlockingQueue 里面，这个任务就是将最新的实例列表通过 UDP 的方式推送给所有客户端（服务实例），这样客户端就拿到了最新的服务实例列表，缓存到本地。</li>
+<li>③ 开启 1s 的延迟任务，将数据通过给其他 Nacos 节点。</li>
+</ul>
+<p><strong>说明</strong>：第二件事是 Nacos 和 客户端如何保持数据一致性的，第三件事是 Nacos 集群间如何保持数据一致性的，因本篇重点讲解 Nacos 的 AP 原理，所以会针对第三件事来进行阐述。而第二件事，会在后续文章中重点讲解。</p>
+<h3 id="22-sync-方法的参数说明">2.2 sync 方法的参数说明</h3>
+<p>首先我们来看下 distroProtocol.sync()，这个方法传了哪些参数：</p>
+<ul>
+<li>第一个参数 new DistroKey()，它里面传了 key 和一个常量。</li>
+</ul>
+<p>key：就是客户端的服务名，示例值如下：</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#E1E4E8">com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@</span><span style="--0:#F97583">nacos</span><span style="--0:#E1E4E8">.naming.serviceName</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@nacos.naming.serviceName"><div></div></button></div></figure></div>
+<p>INSTANCE_LIST_KEY_PREFIX：就是 com.alibaba.nacos.naming.iplist.</p>
+<p>然后这两个参数组装成一个 DistroKey。</p>
+<ul>
+<li>
+<p>第二个参数是同步数据的类型，这里为 change。</p>
+</li>
+<li>
+<p>第三个参数是同步任务的延迟时间，1s。</p>
+</li>
+</ul>
+<h3 id="23-sync-的核心逻辑添加任务">2.3 sync 的核心逻辑：添加任务</h3>
+<p>先上一张原理图帮助大家理解，流程图如下所示。核心逻辑分为以下几步。</p>
+<ul>
+<li>遍历其他节点，拿到节点信息。</li>
+<li>判断这个任务在 map 中是否存在，如果存在则合并这个 task。</li>
+<li>如果不存在，则加到 map 中。</li>
+<li>后台线程遍历这个 map，拿到任务。</li>
+</ul>
+<p><img src="/img/blog/nacos-distro-mechanism/image-202204282252571448WDN2R.png" alt="添加任务到 map 中"></p>
+<p>代码时序图如下所示：</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220428225403541nvJwU7.png" alt="sync 的核心代码时序图"></p>
+<ul>
+<li>
+<p>第一个类 <code dir="auto">DistroConsistencyServiceImpl</code> 把实例信息加入 map 中，后续通过 <code dir="auto">UDP</code>方式推送给客户端。</p>
+</li>
+<li>
+<p>第二个类 <code dir="auto">DistroProtocol</code> 主要就是<strong>循环遍历</strong>其他节点。</p>
+</li>
+<li>
+<p>第三个类 <code dir="auto">NacosDelayTaskExecuteEngine</code> 是核心类，创建了一个同步的任务到 <code dir="auto">ConcurrentHashMap</code> 中。</p>
+</li>
+</ul>
+<h3 id="24-sync-的核心逻辑后台线程异步复制数据">2.4 sync 的核心逻辑：后台线程异步复制数据</h3>
+<p>先说下哈，这个核心逻辑极其复杂，我们看的时候需要抓主线，知道其中几个关键点就可以了。</p>
+<p>悟空在画代码逻辑图的时候，内心是崩溃的，Nacos 为什么写这么复杂啊！<strong>大家不用细看，看了也会懵😳，理解核心步骤就可以了。</strong>（图中有个小细节，我对不同的类进行了颜色区分）</p>
+<p><strong>核心步骤</strong>：</p>
+<ul>
+<li>
+<p>遍历其他节点，创建一个同步的任务，加到 map 中。</p>
+</li>
+<li>
+<p>后台线程不断从 map 中拿到 task，然后移除这个 task。</p>
+</li>
+<li>
+<p>把这个 task 加到一个队列里面。</p>
+</li>
+<li>
+<p>有个 worker 专门从队列里面拿到 task 来执行。</p>
+</li>
+<li>
+<p>这个 task 就是发送 http 请求给其他节点，请求参数中包含注册的实例信息（序列化后的二进制数据）。拼接的请求 url 地址为：</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#B392F0">http</span><span style="--0:#E1E4E8">:</span><span style="--0:#99A0A6">//192.168.0.101:8858/nacos/v1/ns/distro/datum</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="http://192.168.0.101:8858/nacos/v1/ns/distro/datum"><div></div></button></div></figure></div>
+</li>
+</ul>
+<p>Nacos 异步复制数据到其他节点的流程图如下：</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220428225545543RA3daf.png" alt="Nacos 异步复制数据到其他节点的流程图"></p>
+<h3 id="25-其他节点如何处理同步请求">2.5 其他节点如何处理同步请求</h3>
+<h4 id="251-如何存储注册信息">2.5.1 如何存储注册信息</h4>
+<p>处理同步请求的逻辑还是比较简单的，就是把注册信息存起来，然后同步到其他客户端。</p>
+<p>注册信息会存放到一个 <code dir="auto">datum</code> 中，然后 datum 放到一个 <code dir="auto">dataStore</code> 中。datum 和 dataStore 的数据结构如下图所示：</p>
+<ul>
+<li>
+<p>datum 包含 value、key、timestamp。value 就是注册的客户端信息（是一个 ArrayList）</p>
+</li>
+<li>
+<p>datastore 是一个 ConcurrentHashMap，包含多个 datum。</p>
+</li>
+</ul>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220503170049038UscWkk.png" alt="存储注册信息的数据结构"></p>
+<h4 id="252-源码分析">2.5.2 源码分析</h4>
+<p>根据 2.4 讲到的请求的 URL：<code dir="auto">/nacos/v1/ns/distro/datum</code>，处理这个请求的类为</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#e1e4e8">com/alibaba/nacos/naming/controllers/DistroController.java</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="com/alibaba/nacos/naming/controllers/DistroController.java"><div></div></button></div></figure></div>
+<p>入口方法为 <code dir="auto">onSyncDatum</code>，里面做的主要事情如下：</p>
+<ul>
+<li>
+<p>① 把实例信息放入到一个 datum 内存中，然后又存放到 DataStore 的结构中，而 DataStore 的本质就是一个 <code dir="auto">ConcurrentHashMap</code>。</p>
+</li>
+<li>
+<p>② 将注册信息通过 UDP 的方式推送给客户端。</p>
+</li>
+</ul>
+<p><img src="/img/blog/nacos-distro-mechanism/image-2022050317065873827D1kB.png" alt="服务端处理注册请求的源码"></p>
+<h2 id="三定时同步如何保持数据一致性">三、定时同步：如何保持数据一致性</h2>
+<h3 id="31-为什么需要定时同步">3.1 为什么需要定时同步</h3>
+<p>在 Nacos 集群模式下，它作为一个完整的注册中心，必须具有高可用特性。</p>
+<p>在集群模式下，客户端只需要和其中一个 Nacos 节点通信就可以了，但是每个节点其实是包含所有客户端信息的，这样做的好处是每个 Nacos 节点只需要负责自己的客户端就可以（分摊压力），而当客户端想要拉取全量注册表到本地时，从任意节点都可以读取到（数据一致性）。</p>
+<p>那么 Nacos 集群之间是如何通过 Distro 协议来保持数据一致性的呢？</p>
+<h3 id="32-定期检验元数据">3.2 定期检验元数据</h3>
+<p>在版本 v1 中 ，采用的是定期检验元信息的方式。元信息就是当前节点包含的客户端信息的 md5 值。</p>
+<p>检验的原理如下图所示：</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220504202844197LC6a4x.png" alt=""></p>
+<blockquote>
+<p>Nacos 各个节点会有一个心跳任务，定期向其他机器发送一次数据检验请求，在校验的过程中，当某个节点发现其他机器上的数据的元信息和本地数据的元信息不一致，则会发起一次全量拉取请求，将数据补齐。</p>
+</blockquote>
+<p>请求 URL:</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#E1E4E8">http:</span><span style="--0:#F97583">//</span><span style="--0:#E1E4E8">其他 Nacos 节点的 </span><span style="--0:#79B8FF">IP</span><span style="--0:#E1E4E8">:port</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">nacos</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">v1</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">ns</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distro</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">checksum</span><span style="--0:#FDAEB7;--0fs:italic">?</span><span style="--0:#E1E4E8">source </span><span style="--0:#F97583">=</span><span style="--0:#E1E4E8"> 本机的IP地址:本机的端口号</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="http://其他 Nacos 节点的 IP:port/nacos/v1/ns/distro/checksum?source = 本机的IP地址:本机的端口号"><div></div></button></div></figure></div>
+<p>参数：DistroData，内部包装的是一个Map&#x3C;服务名称，服务下实例的验证字符串 checksum></p>
+<h3 id="33-关于版本迭代的说明">3.3 关于版本迭代的说明</h3>
+<p>在版本  v2 中，定期校验数据已经不用了，采用的是<code dir="auto">健康检查机制</code>，来和其他节点来保持数据的同步，由于涉及的内容还挺多，放到下一讲来专门讲解 Nacos 的健康检查机制：</p>
+<ul>
+<li>客户端与 Nacos 节点的健康检查机制。</li>
+<li>集群模式下的健康检查机制。</li>
+</ul>
+<h2 id="四新节点同步机制如何保持数据一致性">四、新节点同步机制，如何保持数据一致性</h2>
+<h3 id="41-原理">4.1 原理</h3>
+<p>新加入的 Distro 节点会进行全量数据拉取，轮询所有的 Distro 节点，向其他节点发送请求拉取全量数据。</p>
+<p>在全量拉取操作完成之后，每台机器上都维护了当前的所有注册上来的非持久化实例数据。（参考 Nacos 官方图）</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-202205042119409621211OU.png" alt=""></p>
+<h3 id="42-源码分析">4.2 源码分析</h3>
+<p><code dir="auto">DistroProtocol</code> 类的构造方法会启动一个同步任务，从其他 Nacos 节点全量拉取非持久化实例数据。</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">nacos</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">core</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distributed</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distro</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">DistroProtocol.java</span></div><div class="ec-line"><span style="--0:#E1E4E8">  </span><span style="--0:#B392F0">startDistroTask</span><span style="--0:#E1E4E8">();</span></div><div class="ec-line"><span style="--0:#E1E4E8">    </span><span style="--0:#B392F0">startLoadTask</span><span style="--0:#E1E4E8">();</span></div><div class="ec-line"><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">nacos</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">core</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distributed</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">distro</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">task</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">load</span><span style="--0:#F97583">/</span><span style="--0:#E1E4E8">DistroLoadDataTask.java</span></div><div class="ec-line"><span style="--0:#E1E4E8">  </span><span style="--0:#B392F0">run</span><span style="--0:#E1E4E8">();</span></div><div class="ec-line"><span style="--0:#E1E4E8">    </span><span style="--0:#B392F0">load</span><span style="--0:#E1E4E8">();</span></div><div class="ec-line"><span style="--0:#E1E4E8">      </span><span style="--0:#B392F0">loadAllDataSnapshotFromRemote</span><span style="--0:#E1E4E8">();</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="/nacos/core/distributed/distro/DistroProtocol.java  startDistroTask();    startLoadTask();/nacos/core/distributed/distro/task/load/DistroLoadDataTask.java  run();    load();      loadAllDataSnapshotFromRemote();"><div></div></button></div></figure></div>
+<h3 id="五本地读机制">五、本地读机制</h3>
+<h3 id="51-原理">5.1 原理</h3>
+<p>每个 Nacos 节点虽然只负责属于自己的客户端，但是每个节点都是包含有所有的客户端信息的，所以当客户端想要查询注册信息时，可以直接从请求的 Nacos 的节点拿到全量数据。（参考 Nacos 官方图）</p>
+<p><img src="/img/blog/nacos-distro-mechanism/image-20220504214633683iEtFAd.png" alt="读操作的原理"></p>
+<p>这样设计的好处是保证了高可用（AP），分为两个方面：</p>
+<ul>
+<li>① 读操作都能进行及时的响应，不需要到其他节点拿数据。</li>
+<li>② 当脑裂发生时，Nacos 的节点也能正常返回数据，即使数据可能不一致，当网络恢复时，通过健康检查机制或数据检验也能达到数据一致性。</li>
+</ul>
+<h2 id="六总结">六、总结</h2>
+<p>本篇通过原理图 + 源码的方式讲解了 Distro 协议的原理，其中又分为几个机制，而这几个机制共同保证了 Nacos 的 AP。</p>
+<p>不足之处，本篇未针对源码的设计进行深入剖析，只是把主线捋出来了。</p>  </div> </div>   </body> </html> 

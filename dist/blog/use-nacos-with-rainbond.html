@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en" data-theme="light" class="astro-37fxchfa"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="referrer" content="no-referrer"><meta name="generator" content="Astro v3.6.0"><title>Nacos Blog</title><link rel="stylesheet" href="/_astro/index.31fde076.css" />
+<style>.sl-markdown-content :not(h1,h2,h3,h4,h5,h6)+:is(h1,h2,h3,h4,h5,h6):not(:where(.not-content *)){margin-top:2.5rem}.sl-markdown-content li+li:not(:where(.not-content *)),.sl-markdown-content dt+dt:not(:where(.not-content *)),.sl-markdown-content dt+dd:not(:where(.not-content *)),.sl-markdown-content dd+dd:not(:where(.not-content *)){margin-top:.25rem}.sl-markdown-content li>:last-child:not(li,ul,ol):not(a,strong,em,del,span,input,:where(.not-content *)){margin-bottom:1.25rem}.sl-markdown-content dt:not(:where(.not-content *)){font-weight:700}.sl-markdown-content dd:not(:where(.not-content *)){padding-inline-start:1rem}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6):not(:where(.not-content *)){color:#f4f4f6;line-height:var(--sl-line-height-headings);font-weight:600}.sl-markdown-content :is(img,picture,video,canvas,svg,iframe):not(:where(.not-content *)){display:block;max-width:100%;height:auto}.sl-markdown-content h1:not(:where(.not-content *)){font-size:var(--sl-text-h1)}.sl-markdown-content h2:not(:where(.not-content *)){font-size:var(--sl-text-h2)}.sl-markdown-content h3:not(:where(.not-content *)){font-size:var(--sl-text-h3)}.sl-markdown-content h4:not(:where(.not-content *)){font-size:var(--sl-text-h4)}.sl-markdown-content h5:not(:where(.not-content *)){font-size:var(--sl-text-h5)}.sl-markdown-content h6:not(:where(.not-content *)){font-size:var(--sl-text-h6)}.sl-markdown-content a:not(:where(.not-content *)){color:var(--sl-color-text-accent)}.sl-markdown-content a:hover:not(:where(.not-content *)){color:var(--sl-color-white)}.sl-markdown-content code:not(:where(.not-content *)){background-color:var(--sl-color-bg-inline-code);margin-block:-.125rem;padding:.125rem .375rem;font-size:var(--sl-text-code-sm)}.sl-markdown-content :is(h1,h2,h3,h4,h5,h6) code{font-size:inherit}.sl-markdown-content pre:not(:where(.not-content *)){border:1px solid var(--sl-color-gray-5);padding:.75rem 1rem;font-size:var(--sl-text-code);-moz-tab-size:2;-o-tab-size:2;tab-size:2}.sl-markdown-content pre code:not(:where(.not-content *)){all:unset;font-family:var(--__sl-font-mono)}.sl-markdown-content blockquote:not(:where(.not-content *)){border-inline-start:1px solid var(--sl-color-gray-5);padding-inline-start:1rem}.sl-markdown-content table:not(:where(.not-content *)){display:block;overflow:auto;border-collapse:collapse}.sl-markdown-content tr:nth-child(2n):not(:where(.not-content *)){background-color:var(--sl-color-gray-7, var(--sl-color-gray-6))}.sl-markdown-content :is(th,td):not(:where(.not-content *)){border:1px solid var(--sl-color-hairline-light);padding:.375rem .8125rem}.sl-markdown-content hr:not(:where(.not-content *)){border:0;border-bottom:1px solid var(--sl-color-hairline)}.sl-markdown-content h2{line-height:3.5rem}main:where(.astro-bvzihdzo){width:calc(100% - 2em);max-width:100%;margin:0}.hero-image:where(.astro-bvzihdzo){width:100%}.hero-image:where(.astro-bvzihdzo) img:where(.astro-bvzihdzo){display:block;margin:0 auto;border-radius:12px;box-shadow:var(--box-shadow)}.nacos-prose:where(.astro-bvzihdzo){width:720px;max-width:calc(100% - 2em);margin:auto;padding:1em;color:rgb(var(--gray-dark))}.title:where(.astro-bvzihdzo){margin-bottom:1em;padding:1em 0;text-align:center;line-height:1}.title:where(.astro-bvzihdzo) h1:where(.astro-bvzihdzo){margin:0 0 .5em}.date:where(.astro-bvzihdzo){margin-bottom:.5em;color:rgb(var(--gray))}.last-updated-on:where(.astro-bvzihdzo){font-style:italic}
+@media (max-width: 36rem){html{font-size:12px}}
+</style><script type="module" src="/_astro/hoisted.1dcaf7ef.js"></script></head> <body class="astro-37fxchfa"> <header-layout class="header bg-gray-14 relative astro-3ef6ksr2" style="position: sticky;"> <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0 astro-3ef6ksr2"></div> <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between astro-3ef6ksr2"> <!-- logo --> <a href="/" class="astro-3ef6ksr2"> <img class="logo astro-3ef6ksr2" src="../../../public/nacos_white.png"> </a> <!-- 菜单 --> <div class="nav_menu flex h-full items-center astro-3ef6ksr2"> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-docs class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">DOCS</span> <svg data-docs-arrow class="arrow ml-2 astro-3ef6ksr2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square" class="astro-3ef6ksr2"></path> </svg> </div> <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 astro-3ef6ksr2"> <div class="flex pb-10 pt-14 px-24 astro-3ef6ksr2"> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">Documentation</span> <a href="/docs/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <span class="text-sm text-gray-02 astro-3ef6ksr2">1.x</span> </a><a href="/docs/v2/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <span class="text-sm text-gray-02 astro-3ef6ksr2">2.x</span> </a> </div> </div> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-nacos-cloud class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">NACOS CLOUD</span> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-community class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">COMMUNITY</span> <svg data-community-arrow class="arrow ml-2 astro-3ef6ksr2" width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M8.05264 2L5.05264 5.00649L2.05264 2" stroke="#a3a6b3" stroke-width="1.25" stroke-linecap="square" class="astro-3ef6ksr2"></path> </svg> </div> <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50 astro-3ef6ksr2"> <div class="flex pb-10 pt-14 px-24 justify-center astro-3ef6ksr2"> <div class="flex mr-32 astro-3ef6ksr2"> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">COMMUNITY</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Contact</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Report</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Contribute</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Stars</a> </div> <div class="shortcut-menu flex flex-col px-7 mr-14 astro-3ef6ksr2"> <span class="text-xs text-gray-10 mb-2 astro-3ef6ksr2">EVENTS</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Events</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">News</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">Meetup</a> <span class="text-xs text-gray-10 mb-2 mt-10 astro-3ef6ksr2">Resources</span> <a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/blog">Blog</a><a class="text-sm text-gray-02 mt-3  astro-3ef6ksr2" href="/">E-book</a> </div> </div> <div class="flex astro-3ef6ksr2"> <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4 astro-3ef6ksr2"> <img class=" astro-3ef6ksr2" src="../../../public/left-shortcut.png"> <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16 astro-3ef6ksr2">Key to service-centric (for example microservice or cloud-native) architectures.</div> <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl astro-3ef6ksr2">READ ARTICLE</button> </div><div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4 astro-3ef6ksr2"> <img class=" astro-3ef6ksr2" src="../../../public/right-shortcut.png"> <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16 astro-3ef6ksr2">An easy-to-use platform for building cloud native applications</div> <button class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl astro-3ef6ksr2">READ ARTICLE</button> </div> </div> </div> </div> </div> <span class="text-gray-06 text-xs astro-3ef6ksr2">|</span> <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4 astro-3ef6ksr2"> <div data-demo class="h-full flex items-center p-0.5 astro-3ef6ksr2"> <span class="title astro-3ef6ksr2">DEMO</span> </div> </div> </div> <!-- 右侧菜单 --> <div class="astro-3ef6ksr2">  </div> <!-- 小屏适配 --> <div class="menu_hamburger hidden cursor-pointer astro-3ef6ksr2"> <button class="text-gray-01 bg-gray-14 flex items-center astro-3ef6ksr2"> <svg class="cursor-pointer astro-3ef6ksr2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor" class="astro-3ef6ksr2"></path><mask id="mask0" mask="true" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14" class="astro-3ef6ksr2"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor" class="astro-3ef6ksr2"></path></mask><g mask="url(#mask0)" class="astro-3ef6ksr2"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" fill="#a3a6b3" class="astro-3ef6ksr2"></path></g></svg> </button> </div> <!-- 移动端导航菜单 --> <div data-mobile-menu class="overflow-hidden hidden flex flex-col w-screen bg-gray-01 h-screen absolute left-0 right-0 top-0 astro-3ef6ksr2"> <!-- 顶部logo --> <div class="bg-gray-14 h-16 px-8 flex items-center justify-between astro-3ef6ksr2"> <a href="/" class="astro-3ef6ksr2"> <img class="logo astro-3ef6ksr2" src="../../../public/nacos_white.png"> </a> <div class="menu_close flex items-center cursor-pointer astro-3ef6ksr2"> <button class="text-gray-01 bg-gray-14 flex items-center astro-3ef6ksr2"> <svg class="cursor-pointer astro-3ef6ksr2" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.61328 1.70312L15.6133 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round" class="astro-3ef6ksr2"></path><path d="M15.6133 1.70312L1.61328 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round" class="astro-3ef6ksr2"></path></svg> </button> </div> </div> <div data-mobile-menu-list class="w-full pl-8 astro-3ef6ksr2"> <ul class="list-none pl-0 astro-3ef6ksr2"> <li class="astro-3ef6ksr2"> <div mobile-menu-expand-docs class="astro-3ef6ksr2"> <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer astro-3ef6ksr2"> <span class="mr-2 text-gray-14 text-sm astro-3ef6ksr2">DOCS</span> <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-3ef6ksr2"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2" class="astro-3ef6ksr2"></path></svg> </button> </div> <div mobile-menu-expand-content-docs class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16 astro-3ef6ksr2"> <div mobile-menu-fold-docs class="flex items-center pt-8 pb-4 astro-3ef6ksr2"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4 astro-3ef6ksr2" fill="none" viewBox="0 0 9 14" stroke="#2e3038"> <path stroke-width="2" d="M1 1L7 7L1 13" class="astro-3ef6ksr2"></path> </svg> <span class="text-gray-14 text-sm astro-3ef6ksr2">DOCS</span> </div> <div class="divider divider-vertical bg-gray-01 h-[0.05rem] astro-3ef6ksr2"></div> <div class="astro-3ef6ksr2"> <span class="text-xs text-gray-12 astro-3ef6ksr2">Documentation</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <a href="/docs/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <li class="text-sm text-gray-14 astro-3ef6ksr2">1.x</li> </a><a href="/docs/v2/what-is-nacos" class="flex items-center mt-3 cursor-pointer astro-3ef6ksr2"> <li class="text-sm text-gray-14 astro-3ef6ksr2">2.x</li> </a> </ul> </div> </div> </li> <li class="mt-4 astro-3ef6ksr2"> <a href="/nacosCloud" class="text-gray-14 text-sm astro-3ef6ksr2">NACOS CLOUD</a> </li> <li class="astro-3ef6ksr2"> <div mobile-menu-expand-com class="astro-3ef6ksr2"> <button class="pl-0 mt-4 bg-gray-01 flex items-center cursor-pointer astro-3ef6ksr2"> <span class="mr-2 text-gray-14 text-sm astro-3ef6ksr2">COMMUNITY</span> <svg width="12" height="12" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="astro-3ef6ksr2"><path d="M1 1L7 7L1 13" stroke="#2e3038" stroke-width="2" class="astro-3ef6ksr2"></path></svg> </button> </div> <div mobile-menu-expand-content-com class="px-8 hidden invisible opacity-0 w-screen bg-gray-01 absolute left-0 right-0 top-16 astro-3ef6ksr2"> <div mobile-menu-fold-com class="flex items-center pt-8 pb-4 astro-3ef6ksr2"> <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="rotate-180 mr-4 astro-3ef6ksr2" fill="none" viewBox="0 0 9 14" stroke="#2e3038"> <path stroke-width="2" d="M1 1L7 7L1 13" class="astro-3ef6ksr2"></path> </svg> <span class="text-gray-14 text-sm astro-3ef6ksr2">COMMUNITY</span> </div> <div class="divider divider-vertical bg-gray-01 h-[0.05rem] astro-3ef6ksr2"></div> <div class="mobile_menu_community flex justify-between astro-3ef6ksr2"> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">COMMUNITY</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Contact </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Report </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Contribute </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Stars </li> </ul> </div> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">EVENTS</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Events </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> News </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Meetup </li> </ul> </div> <div class="mb-6 astro-3ef6ksr2"> <span class="text-xs text-gray-7 astro-3ef6ksr2">Resources</span> <ul class="pl-0 list-none astro-3ef6ksr2"> <li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> Blog </li><li class="text-sm text-gray-14 mt-2 cursor-pointer astro-3ef6ksr2"> E-book </li> </ul> </div> </div> </div> </li> <li class="mt-4 astro-3ef6ksr2"> <a href="/" class="text-gray-14 text-sm astro-3ef6ksr2">DEMO</a> </li> </ul> </div> </div> </div> </header-layout>    <div class="sl-markdown-content bg-gray-14 text-gray-01 astro-bvzihdzo"> <div class="hero-image  astro-bvzihdzo">  </div> <div class="nacos-prose astro-bvzihdzo"> <div class="title astro-bvzihdzo"> <div class="date astro-bvzihdzo"> <time datetime="2022-03-16T00:00:00.000Z"> Mar 16, 2022 </time>  </div> <h1 class="astro-bvzihdzo">在 Rainbond 中一键安装高可用 Nacos 集群</h1> <hr class="astro-bvzihdzo"> </div>  <h1 id="rainbond-nacos">Rainbond Nacos</h1>
+<p>当前文档描述如何通过云原生应用管理平台 <a href="https://www.rainbond.com/?channel=nacos" rel="noopener noreferrer" target="_blank">Rainbond</a> 一键安装高可用 <a href="https://nacos.io" rel="noopener noreferrer" target="_blank">Nacos</a> 集群。这种方式适合不太了解 Kubernetes、容器化等复杂技术的用户使用，降低了在 Kubernetes 中部署 Nacos 的门槛。</p>
+<h1 id="背景信息">背景信息</h1>
+<h2 id="rainbond-与-nacos-的结合">Rainbond 与 Nacos 的结合</h2>
+<p><a href="https://www.rainbond.com/?channel=nacos" rel="noopener noreferrer" target="_blank">Rainbond</a> 是一款易于使用的开源云原生应用管理平台。借助于它，用户可以在图形化界面中完成微服务的部署与运维。借助 Kubernetes 和容器化技术的能力，将故障自愈、弹性伸缩等自动化运维能力赋能给用户的业务。</p>
+<p>Rainbond 内置原生 Service Mesh 微服务框架，同时与 Spring Cloud、Dubbo 等其他微服务框架也有很好的整合体验。故而大量的 Rainbond 用户也可能是 Nacos 微服务注册中心的用户。这类用户不必再关心如何部署 Nacos 集群，Rainbond 团队将 Nacos 制作成为可以一键部署的应用模版，供开源用户免费下载安装。这种安装方式极大的降低了用户使用 Nacos 集群的部署负担，目前支持 1.4.2 与 2.0.4 版本。</p>
+<h2 id="关于应用模版">关于应用模版</h2>
+<p>应用模版是面向 Rainbond 云原生应用管理平台的安装包，用户可以基于它一键安装业务系统到自己的 Rainbond 中去。无论这个业务系统多么复杂，应用模版都会将其抽象成为一个应用，裹挟着应用内所有组件的镜像、配置信息以及所有组件之间的关联关系一并安装起来。</p>
+<h1 id="前提条件">前提条件</h1>
+<ul>
+<li>
+<p>部署好的 Rainbond 云原生应用管理平台，<a href="https://www.rainbond.com/docs/quick-start/quick-install/?channel=nacos" rel="noopener noreferrer" target="_blank">快速体验版本</a> 可以在个人 PC 环境中以启动一个容器的代价运行。</p>
+</li>
+<li>
+<p>互联网连接。</p>
+</li>
+</ul>
+<h1 id="快速开始">快速开始</h1>
+<ul>
+<li><strong>访问内置的开源应用商店</strong></li>
+</ul>
+<blockquote>
+<p>选择左侧的 <strong>应用市场</strong> 标签页，在页面中切换到 <strong>开源应用商店</strong> 标签页，搜索关键词 <strong>nacos</strong> 即可找到 Nacos-cluster 应用。</p>
+</blockquote>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-1.png" alt="nacos-1"></p>
+<ul>
+<li><strong>一键安装</strong></li>
+</ul>
+<blockquote>
+<p>点击 Nacos-cluster 右侧的 <strong>安装</strong> 可以进入安装页面，填写简单的信息之后，点击 <strong>确定</strong> 即可开始安装，页面自动跳转到拓扑视图。</p>
+</blockquote>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-2.png" alt="nacos-2"></p>
+<p>参数说明：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>选择项</th><th>说明</th></tr></thead><tbody><tr><td>团队名称</td><td>用户自建的工作空间，以命名空间隔离</td></tr><tr><td>集群名称</td><td>选择 Nacos 被部署到哪一个 K8s 集群</td></tr><tr><td>选择应用</td><td>选择 Nacos 被部署到哪一个应用，应用中包含有若干有关联的组件</td></tr><tr><td>应用版本</td><td>选择 Nacos 的版本，目前可选版本为 1.4.2、2.0.4</td></tr></tbody></table>
+<p>等待几分钟后，Nacos 集群就会安装完成，并运行起来。</p>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-3.png" alt="nacos-3"></p>
+<ul>
+<li><strong>测试</strong></li>
+</ul>
+<p>需要执行服务注册的其他微服务组件，可以在建立面向 Nacos 的<a href="https://www.rainbond.com/docs/use-manual/user-manual/component-connection/regist_and_discover" rel="noopener noreferrer" target="_blank">依赖关系</a>后，使用 <code dir="auto">${NACOS_HOST}:${NACOS_PORT}</code> 来连接到 Nacos 集群。</p>
+<ul>
+<li>
+<p><strong>服务注册</strong></p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.t1efu.css"><script type="module" src="/_astro/ec.sgewm.js"></script><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#B392F0">curl</span><span style="--0:#E1E4E8"> </span><span style="--0:#79B8FF">-X</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">PUT</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">"http://${</span><span style="--0:#E1E4E8">NACOS_HOST</span><span style="--0:#9ECBFF">}:${</span><span style="--0:#E1E4E8">NACOS_PORT</span><span style="--0:#9ECBFF">}/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&#x26;ip=20.18.7.10&#x26;port=8080"</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X PUT &#x22;http://${NACOS_HOST}:${NACOS_PORT}/nacos/v1/ns/instance?serviceName=nacos.naming.serviceName&#x26;ip=20.18.7.10&#x26;port=8080&#x22;"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>服务发现</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#B392F0">curl</span><span style="--0:#E1E4E8"> </span><span style="--0:#79B8FF">-X</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">GET</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">"http://${</span><span style="--0:#E1E4E8">NACOS_HOST</span><span style="--0:#9ECBFF">}:${</span><span style="--0:#E1E4E8">NACOS_PORT</span><span style="--0:#9ECBFF">}/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName"</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET &#x22;http://${NACOS_HOST}:${NACOS_PORT}/nacos/v1/ns/instance/list?serviceName=nacos.naming.serviceName&#x22;"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>发布配置</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#B392F0">curl</span><span style="--0:#E1E4E8"> </span><span style="--0:#79B8FF">-X</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">POST</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">"http://${</span><span style="--0:#E1E4E8">NACOS_HOST</span><span style="--0:#9ECBFF">}:${</span><span style="--0:#E1E4E8">NACOS_PORT</span><span style="--0:#9ECBFF">}/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&#x26;group=test&#x26;content=helloWorld"</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X POST &#x22;http://${NACOS_HOST}:${NACOS_PORT}/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&#x26;group=test&#x26;content=helloWorld&#x22;"><div></div></button></div></figure></div>
+</li>
+<li>
+<p><strong>获取配置</strong></p>
+<div class="expressive-code"><figure class="frame is-terminal not-content"><figcaption class="header"><span class="title"></span><span class="sr-only">Terminal window</span></figcaption><pre tabindex="0"><code><div class="ec-line"><span style="--0:#B392F0">curl</span><span style="--0:#E1E4E8"> </span><span style="--0:#79B8FF">-X</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">GET</span><span style="--0:#E1E4E8"> </span><span style="--0:#9ECBFF">"http://${</span><span style="--0:#E1E4E8">NACOS_HOST</span><span style="--0:#9ECBFF">}:${</span><span style="--0:#E1E4E8">NACOS_PORT</span><span style="--0:#9ECBFF">}/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&#x26;group=test"</span></div></code></pre><div class="copy"><button title="Copy to clipboard" data-copied="Copied!" data-code="curl -X GET &#x22;http://${NACOS_HOST}:${NACOS_PORT}/nacos/v1/cs/configs?dataId=nacos.cfg.dataId&#x26;group=test&#x22;"><div></div></button></div></figure></div>
+</li>
+</ul>
+<h1 id="高级特性">高级特性</h1>
+<ul>
+<li>一键安装而来的 Nacos 集群中包含 3 个实例，并且通过初始化插件自动完成自组集群并选举的操作。</li>
+</ul>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-4.png" alt="nacos-4"></p>
+<ul>
+<li>默认集成了 Mysql 作为数据源。在 <strong>Nacos-server-2.0.4</strong> 组件的环境配置中配置如下环境变量，可以切换到其他外部数据源。</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>名称</th><th>必要</th><th>描述</th></tr></thead><tbody><tr><td><code dir="auto">MYSQL_SERVICE_HOST</code></td><td>Y</td><td>数据库地址</td></tr><tr><td><code dir="auto">MYSQL_SERVICE_PORT</code></td><td>Y</td><td>数据库端口</td></tr><tr><td><code dir="auto">MYSQL_SERVICE_USER</code></td><td>Y</td><td>数据库用户名</td></tr><tr><td><code dir="auto">MYSQL_SERVICE_PASSWORD</code></td><td>Y</td><td>数据库密码</td></tr><tr><td><code dir="auto">MYSQL_SERVICE_DB_NAME</code></td><td>Y</td><td>数据库名</td></tr></tbody></table>
+<ul>
+<li>默认生成了 <strong>Nacos-server-2.0.4</strong> 的数据持久化目录。</li>
+</ul>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-5.png" alt="nacos-5"></p>
+<ul>
+<li>默认配置了 <strong>Nacos-server-2.0.4</strong> 的健康检查机制，保障实例故障时自动下线，恢复后自动上线。</li>
+</ul>
+<p><img src="https://static.goodrain.com/wechat/nacos-cluster/nacos-cluster-6.png" alt="nacos-6"></p>  </div> </div>   </body> </html> 
