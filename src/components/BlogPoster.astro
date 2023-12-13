@@ -1,0 +1,97 @@
+---
+import background from "/public/blog-placeholder-2.jpg";
+import { Image } from "astro:assets";
+import Logo from "/public/nacos_colorful.png";
+import { format } from "date-fns";
+
+export type Props = {
+    post: {
+        slug: string;
+        body: string;
+        collection: string;
+        data: {
+            title?: string | (string | number)[];
+            description: string;
+            date?: Date;
+            keywords?: any[];
+            author?: string;
+        };
+    };
+    width?: string | number;
+    // size: "small" | "large";
+};
+
+const { post, width = 400 } = Astro.props;
+const height: number = width / 2;
+const logowidth: number = 0.25 * width;
+---
+
+<div
+    class="card w-96 bg-base-100 shadow-xl poster"
+    style={`--poster-width: ${width}px; --poster-height: ${height}px; --logo-width: ${logowidth}px;}}`}
+>
+    <Image src={background} alt="Background" class="background z-0" />
+    <div class="card-body z-10">
+        <h2
+            class:list={[
+                "card-title",
+                "text-2xl",
+                // size === "large" ? "text-3xl" : "text-2xl",
+                "h-2/3",
+                "text-gray-01",
+            ]}
+        >
+            {post.data.title}
+        </h2>
+        <div class="info h-1/3">
+            <span
+                class:list={[
+                    "text-gray-02",
+                    "text-sm",
+                    // size === "large" ? "text-xl" : "text-sm",
+                ]}
+                >{
+                    post.data.author || format(post.data.date, "MMMM d, yyyy")
+                }</span
+            >
+            <Image src={Logo} alt="" class="logo" />
+        </div>
+    </div>
+</div>
+<style>
+    .poster {
+        position: relative;
+        width: var(--poster-width); /* 你希望的海报宽度 */
+        height: var(--poster-height); /* 你希望的海报高度 */
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .title {
+        font-size: 1.5em; /* 调整为合适的大小 */
+        text-align: center;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        width: var(--logo-width);
+        height: auto;
+    }
+</style>

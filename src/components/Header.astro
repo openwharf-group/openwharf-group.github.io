@@ -1,7 +1,9 @@
 ---
+interface Props {
+  position?: 'static' | 'sticky';
+}
 
-const { theme = 'light' } = Astro.props;
-const isDark = theme === 'dark';
+const { position= 'sticky' } = Astro.props;
 const docsSubMenu = {
   shortcutMenus: {
     Documentation: [
@@ -24,7 +26,7 @@ const communitySubMenu = {
       { label: 'Meetup', url: '/' },
     ],
     Resources: [
-      { label: 'Blog', url: '/' },
+      { label: 'Blog', url: '/blog' },
       { label: 'E-book', url: '/' },
     ],
   },
@@ -44,7 +46,7 @@ const communitySubMenu = {
 
 ---
 
-<header-layout class="header bg-gray-14 relative">
+<header-layout class="header bg-gray-14 relative" style={`position: ${position};`}>
   <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
   <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between">
     <!-- logo -->
@@ -96,16 +98,16 @@ const communitySubMenu = {
             </path>
           </svg>
         </div>
-        <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
+        <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50">
           <div class="flex pb-10 pt-14 px-24 justify-center">
             <div class="flex mr-32">
               <div class="shortcut-menu flex flex-col px-7 mr-14">
                 <span class="text-xs text-gray-10 mb-2">COMMUNITY</span>
                 {
                   communitySubMenu.shortcutMenus.COMMUNITY.map(menu => {
-                    const { label } = menu;
+                    const { label,url } = menu;
                     return (
-                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                      <a class="text-sm text-gray-02 mt-3 " href={url}>{label}</span>
                     );
                   })
                 }
@@ -114,18 +116,18 @@ const communitySubMenu = {
                 <span class="text-xs text-gray-10 mb-2">EVENTS</span>
                 {
                   communitySubMenu.shortcutMenus.EVENTS.map(menu => {
-                    const { label } = menu;
+                    const { label,url } = menu;
                     return (
-                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                    <a class="text-sm text-gray-02 mt-3 " href={url}>{label}</span>
                     );
                   })
                 }
                 <span class="text-xs text-gray-10 mb-2 mt-10">Resources</span>
                 {
                   communitySubMenu.shortcutMenus.Resources.map(menu => {
-                    const { label } = menu;
+                    const { label, url } = menu;
                     return (
-                      <span class="text-sm text-gray-02 mt-3 cursor-pointer">{label}</span>
+                       <a class="text-sm text-gray-02 mt-3 " href={url}>{label}</span>
                     );
                   })
                 }
@@ -507,14 +509,14 @@ const communitySubMenu = {
   }
   .header {
     display: block;
-    position: sticky;
+    position: var(position);
     top: 0;
     /* position: relative; */
-    z-index: 666666667;
+    z-index: 100000;
     height: var(--header-height);
   }
   .nav {
-    z-index: 3;
+    z-index: 100000;
     height: var(--header-height);
     padding-left: var(--header-xl-padding);
     padding-right: var(--header-xl-padding);
@@ -566,12 +568,12 @@ const communitySubMenu = {
     }
   }
   .modal-panel {
-    z-index: 1;
+    z-index: 80;
     backdrop-filter: blur(4px);
     transform: translateZ(0);
   }
   .dropdown-panel {
-    z-index: 2;
+    z-index: 100;
     top: var(--header-height);
   }
   a {
