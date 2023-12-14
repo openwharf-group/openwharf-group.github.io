@@ -1,0 +1,141 @@
+[
+    {
+        "label": "简介",
+		"translations": {
+            "en": "overview"
+        },
+        "items": [
+			{
+                "label": "Nacos 简介",
+				"id": "iez8a4",
+                "link": "docs/ebook/iez8a4",
+                "translations": {
+                    "en": "introduction"
+                }
+            }
+        ]
+    },
+    {
+        "label": "Nacos架构",
+		"translations": {
+            "en": "Nacos架构"
+        },
+        "items": [
+			{
+                "label": "总体设计",
+                "translations": {
+                    "en": "overall design"
+                },
+                "items": [
+                    {
+                        "label": "Nacos 架构",
+                        "id": "un9fgs",
+                        "link": "docs/ebook/un9fgs",
+                        "translations": {
+                            "en": "architecture"
+                        }
+                    },
+                    {
+                        "label": "配置模型",
+                        "id": "szf3gh",
+                        "link": "docs/ebook/szf3gh",
+                        "translations": {
+                            "en": "configuration"
+                        }
+                    }
+                ]
+            },
+			{
+                "label": "内核设计",
+                "translations": {
+                    "en": "core design"
+                },
+                "items": [
+                    {
+                        "label": "一致性协议",
+                        "id": "agxdnq",
+                        "link": "docs/ebook/agxdnq",
+                        "translations": {}
+                    },
+                    {
+                        "label": "Nacos 自研Distro协议",
+                        "id": "agxdnq",
+                        "link": "docs/ebook/ktwggk",
+                        "translations": {}
+                    },
+                    {
+                        "label": "Nacos 通信通道",
+                        "id": "sufa23",
+                        "link": "docs/ebook/sufa23",
+                        "translations": {}
+                    },
+                    {
+                        "label": "Nacos 寻址机制",
+                        "id": "ki4dgp",
+                        "link": "docs/ebook/ki4dgp",
+                        "translations": {}
+                    }
+                ]
+            },
+            {
+                "label": "Nacos 服务发现模块",
+                "translations": {
+                    "en": ""
+                },
+                "items": [
+                    {
+                        "label": "Nacos 注册中心的设计原理",
+                        "id": "ynstox",
+                        "link": "docs/ebook/ynstox",
+                        "translations": {}
+                    },
+                    {
+                        "label": "Nacos 注册中心服务数据模型",
+                        "id": "knk2h0",
+                        "link": "docs/ebook/knk2h0",
+                        "translations": {}
+                    },
+                    {
+                        "label": "Nacos 健康检查机制",
+                        "id": "qrkw0g",
+                        "link": "docs/ebook/qrkw0g",
+                        "translations": {}
+                    }
+                ]
+            },
+            {
+                "label": "Nacos 配置管理模块",
+                "translations": {
+                    "en": ""
+                },
+                "items": [
+                    {
+                        "label": "配置一致性模型",
+                        "id": "dl5k6n",
+                        "link": "docs/ebook/dl5k6n",
+                        "translations": {}
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "label": "lockTest",
+		"translations": {
+            "en": "overview"
+        },
+        "items": [
+			{
+                "label": "lock",
+				"id": "lock",
+                "link": "docs/ebook/lock",
+                "translations": {
+                    "en": "lock"
+                },
+                "attrs": {
+                    "lock":true
+                }
+            }
+        ]
+    }
+]

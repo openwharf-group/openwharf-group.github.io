@@ -20,18 +20,13 @@ const request = async (url) => {
     }
 }; 
 
+const slugList = [
+    'iez8a4','un9fgs','szf3gh','agxdnq','ktwggk','sufa23','ki4dgp','ynstox','knk2h0','qrkw0g','dl5k6n',
+]
 
-// 获取所有电子书
-const bookList = await request('https://www.yuque.com/api/docs?book_id=1645741')
 
-// 以第一章为例
-const item = bookList.data[0];
-
-const { slug } = item;
-
-// 根据id生成md文件
-if (slug) {
-    const bookItem = await request(`https://www.yuque.com/api/v2/repos/nacos/ebook/docs/${slug}`);
+slugList.forEach(async (slugItem) => {
+    const bookItem = await request(`https://www.yuque.com/api/v2/repos/nacos/ebook/docs/${slugItem}`);
     const body = bookItem.data.body;
     const mdContent = `---
 title: ${bookItem.data.title}
@@ -43,6 +38,6 @@ ${body}`
     if (body) {
         const bookDir = path.resolve(curDirname, 'src/content/docs/ebook/zh-cn');
         fs.mkdir(bookDir, { recursive: true })
-        fs.writeFile(path.resolve(bookDir, `${slug}.md`), mdContent, 'utf8')
+        fs.writeFile(path.resolve(bookDir, `${slugItem}.md`), mdContent, 'utf8')
     }
-}
+})

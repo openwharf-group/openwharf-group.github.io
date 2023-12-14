@@ -21,6 +21,15 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Nacos',
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+					  name: 'referrer',
+					  content:'no-referrer'
+					},
+				  }
+			],
 			expressiveCode: {
 				themes: ['github-dark'],
 				// 完全可以自定义

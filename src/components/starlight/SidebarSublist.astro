@@ -1,6 +1,7 @@
 ---
 import Badge from './Badge.astro';
 import { Icon } from "@astrojs/starlight/components";
+import LockIcon from "../LockIcon.astro"
 
 interface Props {
 	sublist: any[];
@@ -24,7 +25,7 @@ const flattenSidebar = (sidebar) => {
 					<a
 						href={entry.href}
 						aria-current={entry.isCurrent && 'page'}
-						class:list={[{ large: !nested }, entry.attrs.class]}
+						class:list={[{ large: !nested }, entry.attrs.class,"flex","items-center"]}
 						{...entry.attrs}
 					>
 						<span>{entry.label}</span>
@@ -35,6 +36,11 @@ const flattenSidebar = (sidebar) => {
 									text={entry.badge.text}
 									variant={entry.isCurrent ? 'outline' : entry.badge.variant}
 								/>
+							</>
+						)}
+						{entry.attrs.lock && (
+							<>
+								<LockIcon />
 							</>
 						)}
 					</a>
