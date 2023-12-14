@@ -37,7 +37,7 @@ const replaceNavigation = async () => {
 		sideBarRegex,
 		`export function getSidebar(pathname: string, locale: string | undefined, categories: any): SidebarEntry[] {
 		const routes = getLocaleRoutes(locale);
-		const versionRegex = /\\/docs\\/(next|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])/;
+		const versionRegex = /\\/docs\\/(next|ebook|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])/;
 		const match = versionRegex.exec(pathname);
 		const version = match ? match[1] : 'latest';
 		if(categories && categories[version]){
@@ -56,7 +56,7 @@ const replaceNavigation = async () => {
 	const sideBarLinkContent = sideBarContent.replace(
 		sideBarLinkRegex,
 		`href = formatPath(href);
-		const regex = /\\/(next|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])\\/(en|zh-cn)/;
+		const regex = /\\/(next|ebook|v[0-9]\\.[0-9]\\.[0-9]|v[0-9]\\.[0-9]|v[0-9]|[0-9]\\.[0-9]\\.[0-9]|[0-9]\\.[0-9]|[0-9])\\/(en|zh-cn)/;
 		href = href.replace(regex, '/docs/$1');
 		}`
 	);

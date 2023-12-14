@@ -5,7 +5,6 @@ import CommunityMenu from './CommunityMenu.astro';
 import type { Props } from '@astrojs/starlight/props';
 import './style.css';
 import FeedbackButton from './FeedbackButton.astro';
-import FeedbackButton2 from './FeedbackButton2.astro';
 const { locale, toc, editUrl } = Astro.props;
 ---
 
@@ -18,7 +17,6 @@ const { locale, toc, editUrl } = Astro.props;
 				<ContributeMenu editHref={editUrl.href}/>
 				<CommunityMenu />
 				<FeedbackButton />
-				<FeedbackButton2 />
 			</nav>
 		</starlight-toc>
 	)
