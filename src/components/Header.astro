@@ -1,9 +1,11 @@
 ---
 interface Props {
+  align?: 'home' | 'docs',
   position?: 'static' | 'sticky';
 }
 
-const { position= 'sticky' } = Astro.props;
+const { align = 'home', position = 'sticky' } = Astro.props;
+const height = align === 'home' ? '4rem' : '3.5rem';
 const docsSubMenu = {
   shortcutMenus: {
     Documentation: [
@@ -33,12 +35,12 @@ const communitySubMenu = {
   shortcutCards: [
     {
       eventName: 'READ ARTICLE',
-      imgUrl: '../../../public/left-shortcut.png',
+      imgUrl: '/left-shortcut.png',
       description: 'Key to service-centric (for example microservice or cloud-native) architectures.',
     },
     {
       eventName: 'READ ARTICLE',
-      imgUrl: '../../../public/right-shortcut.png',
+      imgUrl: '/right-shortcut.png',
       description: 'An easy-to-use platform for building cloud native applications',
     }
   ],
@@ -46,15 +48,15 @@ const communitySubMenu = {
 
 ---
 
-<header-layout class="header bg-gray-14 relative" style={`position: ${position};`}>
+<header-layout class="header bg-gray-14 relative" style={`position: ${position}; height: ${height}`}>
   <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
-  <div class="nav bg-gray-14 relative top-0 right-0 bottom-0 left-0 flex items-center justify-between">
+  <div style={`height: ${height}`} class:list={["nav", "bg-gray-14", "relative", "top-0", "right-0", "bottom-0", "left-0", "flex", "items-center", "justify-between",]}>
     <!-- logo -->
     <a href="/">
-      <img class="logo" src="../../../public/nacos_white.png" />
+      <img class="logo" src="/nacos_white.png" />
     </a>
     <!-- 菜单 -->
-    <div class="nav_menu flex h-full items-center">
+    <div class="pc_nav_menu flex h-full items-center">
       <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
         <div data-docs class="h-full flex items-center p-0.5">
           <span class="title">DOCS</span>
@@ -64,7 +66,11 @@ const communitySubMenu = {
             </path>
           </svg>
         </div>
-        <div data-docs-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0">
+        <div 
+          data-docs-dropdown 
+          style={`top: ${height}`} 
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0"
+        >
           <div class="flex pb-10 pt-14 px-24">
             <div class="shortcut-menu flex flex-col px-7 mr-14">
               <span class="text-xs text-gray-10 mb-2">Documentation</span>
@@ -98,7 +104,11 @@ const communitySubMenu = {
             </path>
           </svg>
         </div>
-        <div data-community-dropdown class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50">
+        <div 
+          data-community-dropdown 
+          style={`top: ${height}`} 
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50"
+        >
           <div class="flex pb-10 pt-14 px-24 justify-center">
             <div class="flex mr-32">
               <div class="shortcut-menu flex flex-col px-7 mr-14">
@@ -162,22 +172,41 @@ const communitySubMenu = {
       <slot></slot>
     </div>
     <!-- 小屏适配 -->
-    <div class="menu_hamburger hidden cursor-pointer">
+    <div class="mobile_nav_menu hidden cursor-pointer">
       <button class="text-gray-01 bg-gray-14 flex items-center">
-        <svg class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path><mask id="mask0" mask="true" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path></mask><g mask="url(#mask0)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" fill="#a3a6b3"></path></g></svg>
+        {
+          align === 'home' ? (
+            // <svg class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path><mask id="mask0" mask="true" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="5" width="20" height="14"><path fill-rule="evenodd" clip-rule="evenodd" d="M21 17H3C2.447 17 2 17.448 2 18C2 18.552 2.447 19 3 19H21C21.553 19 22 18.552 22 18C22 17.448 21.553 17 21 17ZM21 5H3C2.447 5 2 5.448 2 6C2 6.552 2.447 7 3 7H21C21.553 7 22 6.552 22 6C22 5.448 21.553 5 21 5ZM22 12C22 12.552 21.553 13 21 13H3C2.447 13 2 12.552 2 12C2 11.448 2.447 11 3 11H21C21.553 11 22 11.448 22 12Z" fill="currentColor"></path></mask><g mask="url(#mask0)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H24V24H0V0Z" fill="#a3a6b3"></path></g></svg>
+            <svg class="cursor-pointer icon ml-8" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6304" width="24" height="24"><path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 479.169H438.553c-17.673 0-32 14.327-32 32s14.327 32 32 32h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM319.028 351.594l-160 160 160 160z" fill="#f4f4f6" p-id="6305"></path></svg>
+          ) : (
+            <svg class="cursor-pointer icon ml-8" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6304" width="24" height="24"><path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 479.169H438.553c-17.673 0-32 14.327-32 32s14.327 32 32 32h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM319.028 351.594l-160 160 160 160z" fill="#f4f4f6" p-id="6305"></path></svg>
+          )
+        }
       </button>
     </div>
     <!-- 移动端导航菜单 -->
-    <div data-mobile-menu
-      class="overflow-hidden hidden flex flex-col w-screen bg-gray-01 h-screen absolute left-0 right-0 top-0">
+    <div 
+      data-mobile-menu
+      class="overflow-hidden hidden flex flex-col w-screen bg-gray-01 h-screen absolute left-0 right-0 top-0"
+    >
       <!-- 顶部logo -->
-      <div class="bg-gray-14 h-16 px-8 flex items-center justify-between">
+      <div 
+        style={`height: ${height}`} 
+        class:list={["bg-gray-14", "px-8", "flex", "items-center", "justify-start",]}
+      >
         <a href="/">
-          <img class="logo" src="../../../public/nacos_white.png" />
+          <img class="logo" src="/nacos_white.png" />
         </a>
         <div class="menu_close flex items-center cursor-pointer">
           <button class="text-gray-01 bg-gray-14 flex items-center">
-            <svg class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.61328 1.70312L15.6133 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path><path d="M15.6133 1.70312L1.61328 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path></svg>
+            {
+              align === 'home' ? (
+                // <svg class="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.61328 1.70312L15.6133 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path><path d="M15.6133 1.70312L1.61328 15.7031" stroke="#a3a6b3" stroke-width="2" stroke-linecap="round"></path></svg>
+                <svg class="cursor-pointer icon ml-8" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7494" id="mx_n_1702523741163" width="24" height="24"><path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM192.028 543.17h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.028c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM705.162 671.594l160-160-160-160z" fill="#f4f4f6" p-id="7495"></path></svg>
+              ) : (
+                <svg class="cursor-pointer icon ml-8" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7494" id="mx_n_1702523741163" width="24" height="24"><path d="M192.037 287.953h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32zM192.028 543.17h393.608c17.673 0 32-14.327 32-32s-14.327-32-32-32H192.028c-17.673 0-32 14.327-32 32s14.327 32 32 32zM832.161 735.802H192.037c-17.673 0-32 14.327-32 32s14.327 32 32 32h640.124c17.673 0 32-14.327 32-32s-14.327-32-32-32zM705.162 671.594l160-160-160-160z" fill="#f4f4f6" p-id="7495"></path></svg>
+              )
+            }
           </button>
         </div>
       </div>
@@ -320,48 +349,55 @@ const communitySubMenu = {
       this.communityMenuStatus = false;
       this.currentRoute = window.location.pathname;
 
-      this.modalPanel = this.querySelector < HTMLDivElement > (
+      this.modalPanel = this.querySelector<HTMLDivElement>(
         "div[data-modal-panel]",
       )!;
-      this.docsMenu = this.querySelector < HTMLDivElement > ("div[data-docs]")!;
-      const docsDropdown = this.querySelector < HTMLDivElement > (
+      this.docsMenu = this.querySelector<HTMLDivElement>(
+        "div[data-docs]"
+      )!;
+      const docsDropdown = this.querySelector<HTMLDivElement> (
         "div[data-docs-dropdown]",
       )!;
-      const docsArrow = this.querySelector < SVGElement > ("svg[data-docs-arrow]")!;
-      this.nacosCloudMenu = this.querySelector < HTMLDivElement > (
+      const docsArrow = this.querySelector<SVGElement>(
+        "svg[data-docs-arrow]"
+      )!;
+      this.nacosCloudMenu = this.querySelector<HTMLDivElement> (
         "div[data-nacos-cloud]",
       )!;
-      this.communityMenu = this.querySelector < HTMLDivElement > (
+      this.communityMenu = this.querySelector<HTMLDivElement> (
         "div[data-community]",
       )!;
-      const communityDropdown = this.querySelector < HTMLDivElement > (
+      const communityDropdown = this.querySelector<HTMLDivElement> (
         "div[data-community-dropdown]",
       )!;
-      const communityArrow = this.querySelector < SVGElement > (
+      const communityArrow = this.querySelector<SVGElement> (
         "svg[data-community-arrow]",
       )!;
-      this.menuHamburger = this.querySelector < HTMLDivElement > ("div.menu_hamburger")!;
-      this.menuClose = this.querySelector < HTMLDivElement > ("div.menu_close")!;
-
-      const mobileMenu = this.querySelector < HTMLDivElement > (
+      this.menuHamburger = this.querySelector<HTMLDivElement>(
+        "div.mobile_nav_menu"
+      )!;
+      this.menuClose = this.querySelector<HTMLDivElement>(
+        "div.menu_close"
+      )!;
+      const mobileMenu = this.querySelector<HTMLDivElement>(
         "div[data-mobile-menu]",
       )!;
-      this.mobileMenuExpandDocs = this.querySelector < HTMLDivElement > (
+      this.mobileMenuExpandDocs = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-expand-docs]",
       )!;
-      this.mobileMenuFoldDocs = this.querySelector < HTMLDivElement > (
+      this.mobileMenuFoldDocs = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-fold-docs]",
       )!;
-      const mobileMenuExpandContentDocs = this.querySelector < HTMLDivElement > (
+      const mobileMenuExpandContentDocs = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-expand-content-docs]",
       )!;
-      this.mobileMenuExpandCom = this.querySelector < HTMLDivElement > (
+      this.mobileMenuExpandCom = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-expand-com]",
       )!;
-      this.mobileMenuFoldCom = this.querySelector < HTMLDivElement > (
+      this.mobileMenuFoldCom = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-fold-com]",
       )!;
-      const mobileMenuExpandContentCom = this.querySelector < HTMLDivElement > (
+      const mobileMenuExpandContentCom = this.querySelector<HTMLDivElement>(
         "div[mobile-menu-expand-content-com]",
       )!;
 
@@ -488,9 +524,13 @@ const communitySubMenu = {
 </script>
 
 <style>
+  :root {
+    --justify-content: {justifyContent}
+  }
   header-layout {
     --logo-width: 96px;
     --header-height: 4rem;
+    --header-docs-height: 3.5rem;
     --header-ml-padding: 1rem;
     --header-xl-padding: 2rem;
   }
@@ -500,11 +540,11 @@ const communitySubMenu = {
     top: 0;
     /* position: relative; */
     z-index: 100000;
-    height: var(--header-height);
+    /* height: var(--header-height); */
   }
   .nav {
     z-index: 100000;
-    height: var(--header-height);
+    /* height: var(--header-height); */
     padding-left: var(--header-xl-padding);
     padding-right: var(--header-xl-padding);
   }
@@ -561,25 +601,31 @@ const communitySubMenu = {
   }
   .dropdown-panel {
     z-index: 100;
-    top: var(--header-height);
+    /* top: var(--header-height); */
   }
   a {
     text-decoration: none;
   }
 
   @media (max-width: 64rem) {
-    .nav_menu {
-      display: none;
+    .nav {
+      justify-content: flex-start !important;
+    }
+    .pc_nav_menu {
+      display: none !important;
     }
 
-    .menu_hamburger {
-      display: block;
+    .mobile_nav_menu {
+      display: block !important;
     }
   }
 
   @media (max-width: 36rem) {
+    .nav {
+      justify-content: 'flex-start' !important;
+    }
     .mobile_menu_community {
-      display: block;
+      display: block !important;
     }
   }
 </style>
