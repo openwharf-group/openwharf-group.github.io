@@ -24,7 +24,7 @@ const { title, position = 'sticky' } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <HomeHeader position = {position}/>
+        <HomeHeader align="home" position={position} />
         <slot />
     </body>
     <script>
