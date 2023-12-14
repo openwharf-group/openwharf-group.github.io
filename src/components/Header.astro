@@ -273,11 +273,13 @@ const communitySubMenu = {
                   <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.COMMUNITY.map((menu) => {
-                        const { label } = menu;
+                        const { label, url } = menu;
                         return (
-                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
-                            {label}
-                          </li>
+                          <a href={url}>
+                            <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                              {label}
+                            </li>
+                          </a>
                         );
                       })
                     }
@@ -288,11 +290,13 @@ const communitySubMenu = {
                   <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.EVENTS.map((menu) => {
-                        const { label } = menu;
+                        const { label, url } = menu;
                         return (
-                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
-                            {label}
-                          </li>
+                          <a href={url}>
+                            <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                              {label}
+                            </li>
+                          </a>
                         );
                       })
                     }
@@ -303,11 +307,13 @@ const communitySubMenu = {
                   <ul class="pl-0 list-none">
                     {
                       communitySubMenu.shortcutMenus.Resources.map((menu) => {
-                        const { label } = menu;
+                        const { label, url } = menu;
                         return (
-                          <li class="text-sm text-gray-14 mt-2 cursor-pointer">
-                            {label}
-                          </li>
+                          <a href={url}>
+                            <li class="text-sm text-gray-14 mt-2 cursor-pointer">
+                              {label}
+                            </li>
+                          </a>
                         );
                       })
                     }
