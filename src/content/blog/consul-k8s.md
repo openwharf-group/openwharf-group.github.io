@@ -1,8 +1,8 @@
 ---
 title: Consul与kubernetes整合公告[翻译]
-keywords: [Consul,kubernetes]
+keywords: [Consul, kubernetes]
 description: Consul与kubernetes整合公告[翻译]
-date: 2018-09-02
+date: "2018-09-02"
 ---
 
 # Consul与kubernetes整合公告[翻译]

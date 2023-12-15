@@ -1,9 +1,9 @@
 ---
 title: Higress + Nacos 微服务网关最佳实践
-keywords: [higress,higress nacos]
+keywords: [higress, higress nacos]
 description: Higress：Nacos的最佳拍档
 author: 澄潭
-date: 2023-01-10
+date: "2023-01-10"
 ---
 
 # 前言
