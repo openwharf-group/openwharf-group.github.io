@@ -86,12 +86,24 @@ export default {
 				},
 				white: themeColor['gray']['01'],
 			},
+			// https://tailwindcss.com/docs/typography-plugin
 			typography: (theme) => ({
 				DEFAULT: {
 					css: {
 						a: {
 							textDecoration: 'inherit',
 							color: theme('colors.blue.08')
+						},
+						tbody: {
+							tr: {
+								borderTop: '1px solid #eee',
+								'&:nth-child(odd)': {
+									backgroundColor: theme('colors.gray.01')
+								},
+								'&:nth-child(even)': {
+									backgroundColor: '#fff',
+								},
+							}
 						}
 					}
 				}

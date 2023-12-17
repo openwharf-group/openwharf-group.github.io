@@ -15,6 +15,13 @@ const blog = defineCollection({
 	}),
 });
 
+const download = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		order: z.number(),
+	}),
+});
+
 
 export const collections = {
 	docs: defineCollection({
@@ -27,4 +34,5 @@ export const collections = {
 	}),
 	i18n: defineCollection({ type: 'data', schema: i18nSchema() }),
 	blog,
+	download,
 };
