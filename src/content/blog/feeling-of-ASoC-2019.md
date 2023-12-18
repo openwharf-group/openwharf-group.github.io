@@ -1,8 +1,8 @@
 ---
 title: 参与开源，Offer拿到手软 -- 来自一名2019阿里巴巴编程之夏同学的亲述
-keywords: [开源,ASoC]
+keywords: [开源, ASoC]
 description: 来自一名2019阿里巴巴编程之夏同学的亲述
-date: 2020-07-14
+date: "2020-07-14"
 ---
 
 # 参与开源，Offer拿到手软 

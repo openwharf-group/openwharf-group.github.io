@@ -12,7 +12,7 @@ export type Props = {
         data: {
             title?: string | (string | number)[];
             description: string;
-            date?: Date;
+            date?: string;
             keywords?: any[];
             author?: string;
         };
@@ -51,7 +51,7 @@ const logowidth: number = 0.25 * Number(width);
                     // size === "large" ? "text-xl" : "text-sm",
                 ]}
                 >{
-                    post.data.author || format(post.data.date, "MMMM d, yyyy")
+                    post.data.author || format(new Date(post.data.date), "MMMM d, yyyy")
                 }</span
             >
             <Image src={Logo} alt="" class="logo" />

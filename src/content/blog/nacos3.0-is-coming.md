@@ -1,8 +1,8 @@
 ---
 title: 我们总结了3大使用建议，并首次公开 Nacos3.0 规划图 | Nacos 开源4周年
-keywords: [nacos3.0,nacos最佳实践]
+keywords: [nacos3.0, nacos最佳实践]
 description: 我们总结了3大使用建议，并首次公开 Nacos3.0 规划图 | Nacos 开源4周年
-date: 2022-08-10
+date: "2022-08-10"
 ---
 
 # 我们总结了3大使用建议，并首次公开 Nacos3.0 规划图 | Nacos 开源4周年

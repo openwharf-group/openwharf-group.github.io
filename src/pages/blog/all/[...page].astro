@@ -15,7 +15,7 @@ interface Post {
     data: {
         title: string;
         description: string;
-        date: Date;
+        date: string;
         keywords?: any[];
     };
 };
@@ -31,7 +31,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const posts = await getCollection("blog");
 
     const sortedPosts = posts.sort(
-        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+        (a,b)=> new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
     );
     return paginate(sortedPosts, { pageSize: 9 });
 }
