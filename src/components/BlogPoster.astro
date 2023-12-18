@@ -51,7 +51,7 @@ const logowidth: number = 0.25 * Number(width);
                     // size === "large" ? "text-xl" : "text-sm",
                 ]}
                 >{
-                    post.data.author || format(new Date(post.data.date), "MMMM d, yyyy")
+                    post.data.author || post.data.date
                 }</span
             >
             <Image src={Logo} alt="" class="logo" />
