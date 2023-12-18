@@ -4,11 +4,11 @@
 
 
 <home-introduce class="introduce hero min-h-screen bg-gray-14">
-  <div class="hero-content flex-col lg:flex-row-reverse">
-    <img src="/introduce1.png" class="flex-1 w-2/4 rounded-lg shadow-2xl" />
-    <div class="flex-1">
+  <div class=" hero-content flex-col lg:flex-row-reverse">
+    <img src="/introduce1.png" class="introduce_img flex-1 w-2/4 rounded-lg shadow-2xl" />
+    <div class="flex-1 introduce_word">
       <p class="py-6 text-gray-08 text-xs">About Nacos</p>
-      <h1 class="text-5xl font-bold text-gray-03 mb-4 ">An easy-to-use platform for building cloud native applications</h1>
+      <h1 class="text-5xl font-bold text-gray-03 mb-4">An easy-to-use platform for building cloud native applications</h1>
       <div class="flex py-6">
         <button data-repositories class="btn btn-secondary rounded-3xl mr-4 text-xs">
           <img class="w-5 h-5" src="/github.png" /> 
@@ -70,5 +70,14 @@
     width: 1px;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
+  }
+  @media (max-width:32rem) {
+    .introduce_img{
+      width: 100%;
+    }
+    .introduce_word  h1{
+      font-size: 2.3rem;
+    }
+
   }
 </style>
