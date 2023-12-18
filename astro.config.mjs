@@ -8,9 +8,7 @@ import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCo
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 import addPrefixImageLink from "./plugins/addPrefixImageLink"
 import goatConfig from './goat.config';
-import { ExpressiveCodeTheme } from 'astro-expressive-code';
 const jsoncString = fs.readFileSync(new URL(`./markdown-theme.jsonc`, import.meta.url), 'utf-8');
-const markdownTheme = ExpressiveCodeTheme.fromJSONString(jsoncString);
 
 // https://astro.build/config
 export default defineConfig({
