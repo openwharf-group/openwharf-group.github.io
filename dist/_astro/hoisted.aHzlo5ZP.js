@@ -1,1 +1,0 @@
-import"./hoisted.OxAi4q7n.js";class n extends HTMLElement{constructor(){super();const t=this.querySelector("button[data-repositories]"),e=this.querySelector("button[data-manual]");t.addEventListener("click",()=>{window.open("https://github.com/alibaba/nacos","_blank")}),e.addEventListener("click",()=>{window.open("/docs/architecture")})}}customElements.define("home-introduce",n);
