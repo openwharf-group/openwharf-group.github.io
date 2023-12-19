@@ -43,7 +43,7 @@ const recentPosts = sortedPosts.splice(0, 4);
 
 <BaseLayout title="Nacos Blog" position="static">
     <BlogHeader />
-    <div class="bg-gray-14 w-screen">
+    <div class="bg-gray-14">
         <!-- 最新1篇博客展示 -->
         <div class="hero max-h-[30%] bg-gray-13">
             <a href={`/blog/${recentPosts[0].slug}`} rel="prefetch">
@@ -62,7 +62,7 @@ const recentPosts = sortedPosts.splice(0, 4);
         </div>
         <!-- 最近的3篇博客展示 -->
         <div class="flex flex-row items-center gap-2 pr-4 bg-gray-14 pt-10">
-            <ul class="flex flex-row mx-auto items-stretch justify-center">
+            <ul class="flex flex-row mx-auto items-stretch justify-center gap-4">
                 {
                     // @ts-ignore
                     recentPosts.slice(1, 4).map((post) => (
@@ -106,9 +106,9 @@ const recentPosts = sortedPosts.splice(0, 4);
                         </div>
                     </div>
 
-                    <div class="lg:col-span-3 lg:py-8">
+                    <div class="lg:col-span-3 lg:py-8 ">
                         <ul
-                            class="flex flex-1 flex-row mx-auto items-stretch justify-center"
+                            class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
                                 articlePosts.slice(0, 2).map((post) => (
@@ -155,7 +155,7 @@ const recentPosts = sortedPosts.splice(0, 4);
 
                     <div class="lg:col-span-3 lg:py-8">
                         <ul
-                            class="flex flex-1 flex-row mx-auto items-stretch justify-center"
+                            class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
                                 ecosystemPosts.slice(0, 2).map((post) => (
@@ -202,7 +202,7 @@ const recentPosts = sortedPosts.splice(0, 4);
 
                     <div class="lg:col-span-3 lg:py-8">
                         <ul
-                            class="flex flex-1 flex-row mx-auto items-stretch justify-center"
+                            class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
                                 casePosts.slice(0, 2).map((post) => (

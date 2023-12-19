@@ -31,15 +31,18 @@ const logowidth: number = 0.25 * Number(width);
     style={`--poster-width: ${width}px; --poster-height: ${height}px; --logo-width: ${logowidth}px;}}`}
 >
     <Image src={background} alt="Background" class="background z-0" />
-    <div class="card-body z-10">
+    <div class="card-body z-10 ">
         <h2
             class:list={[
                 "card-title",
-                "text-2xl",
+                "text-xl",
                 // size === "large" ? "text-3xl" : "text-2xl",
-                "h-2/3",
+                // "h-2/3",
+                "min-h-[3rem]",
                 "text-gray-01",
+                "line-clamp-2"
             ]}
+            
         >
             {post.data.title}
         </h2>

@@ -1,34 +1,33 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '@layouts/BlogPost.astro';
-import TocComponent from '@components/TocComponent.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
-
+import { type CollectionEntry, getCollection } from "astro:content";
+import BlogPost from "@layouts/BlogPost.astro";
+import TocComponent from "@components/TocComponent.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BlogHeader from "@components/BlogHeader.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getCollection("blog");
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
 ---
-<BaseLayout title="Nacos Blog">
 
-<div class="bg-gray-14 ">
-		<div class="w-[70%] inline-block" >
-		<BlogPost {...post.data}>
+<BaseLayout title="Nacos Blog" position="static">
+	<BlogHeader align="detail" post={post}/>
+	<div class="bg-gray-14">
+		<div class="w-full 2xl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] inline-block">
+			<BlogPost {...post.data}>
 				<Content />
-		</BlogPost>
+			</BlogPost>
+		</div>
+		<div class=" w-[30%] fixed bg-gray-14 h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
+			<TocComponent content={post.body} />
+		</div>
 	</div>
-		<div class="inline-block w-[30%] fixed bg-gray-14 h-full">
-		<TocComponent content = {post.body} />
-	</div>
-</div>
 </BaseLayout>
-
-
