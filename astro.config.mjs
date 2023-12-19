@@ -49,7 +49,7 @@ export default defineConfig({
 				github: 'https://github.com/withastro/starlight',
 			},
 			locales,
-			customCss: ['./src/style/global.css'],
+			customCss: ['./src/style/global.css','./src/style/fonts.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
 		{

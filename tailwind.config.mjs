@@ -62,8 +62,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Roboto", "sans-serif"],
-				mono: ["Roboto", "sans-serif"],
+				sans: ["Roboto","SourceHanSans"],
+				mono: ["Roboto","SourceHanSans"],
 			},
 			// 设置starlight文档颜色
 			colors: {
