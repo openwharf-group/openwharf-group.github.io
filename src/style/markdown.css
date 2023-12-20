@@ -33,8 +33,7 @@
 }
 
 .sl-markdown-content :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
-	/* color: var(--sl-color-white); */
-	color: theme("colors.gray.01");
+	color: var(--sl-color-white);
 	line-height: var(--sl-line-height-headings);
 	font-weight: 600;
 }

@@ -19,16 +19,14 @@ const { Content } = await post.render();
 ---
 <BaseLayout title="Nacos Blog">
 
-<div class="bg-gray-14 ">
-		<div class="w-[70%] inline-block" >
+<div>
+		<div class="w-[75%] inline-block" >
 		<BlogPost {...post.data}>
 				<Content />
 		</BlogPost>
 	</div>
-		<div class="inline-block w-[30%] fixed bg-gray-14 h-full">
+		<div class="inline-block w-[25%] fixed  h-full">
 		<TocComponent content = {post.body} />
 	</div>
 </div>
 </BaseLayout>
-
-

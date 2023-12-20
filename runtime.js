@@ -12,7 +12,7 @@ const runtimePath = path.join(curDirname, 'node_modules/astro/dist/content/runti
 const originContent = await fs.readFile(runtimePath);
 const replacedContent = originContent.toString().replace(
     'if (!import.meta.env?.DEV && cacheEntriesByCollection.has(collection)) {',
-    'if (import.meta.env?.DEV && cacheEntriesByCollection.has(collection)) {'
+    'if (cacheEntriesByCollection.has(collection)) {'
 );
 
 await fs.writeFile(runtimePath, replacedContent);

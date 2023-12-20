@@ -31,7 +31,7 @@ const logowidth: number = 0.25 * Number(width);
     style={`--poster-width: ${width}px; --poster-height: ${height}px; --logo-width: ${logowidth}px;}}`}
 >
     <Image src={background} alt="Background" class="background z-0" />
-    <div class="card-body z-10">
+    <div class="card-body">
         <h2
             class:list={[
                 "card-title",
@@ -93,5 +93,9 @@ const logowidth: number = 0.25 * Number(width);
     .logo {
         width: var(--logo-width);
         height: auto;
+    }
+
+    .card-body {
+        z-index: 5;
     }
 </style>
