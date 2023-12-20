@@ -43,7 +43,7 @@ const { src, description, classes = [] } = Astro.props;
 
 <script>
 
-class VimeoCard extends HTMLElement {
+class VedioCard extends HTMLElement {
     private layerWrap: HTMLDivElement;
     private videoWrap: HTMLDivElement;
     private playVideo: HTMLButtonElement;
@@ -85,7 +85,7 @@ class VimeoCard extends HTMLElement {
       this.mediaVideo?.play();
     }
 }
-customElements.define("vimeo-card", VimeoCard);
+customElements.define("vimeo-card", VedioCard);
 
 </script>
 
