@@ -2,7 +2,9 @@
 import TocComponent from "@components/TocComponent.astro";
 const { align = "home", post } = Astro.props;
 const justifyContent = align === "detail" ? "flex-start" : "space-between";
-const isblock = align === "detail" ? "block" : "none";
+const isBlock = align === "detail" ? "block" : "none";
+const isFlexNone = align === "detail" ? "none" : 1;
+const isFlex = align === "detail" ? 1 : "none";
 ---
 
 <blog-header class="blog_header bg-gray-12 sticky top-0 z-11">
@@ -11,7 +13,7 @@ const isblock = align === "detail" ? "block" : "none";
       class="blog_header_content flex h-16 items-center justify-between w-full"
     >
       <!-- 顶部logo -->
-      <div class="flex-1 md:flex md:items-center md:gap-12 ">
+      <div class="blog_logo flex-1 md:flex md:items-center md:gap-12">
         <a class="block text-teal-600" href="/blog">
           <span class="text-gray-01 text-xl font-black">Blog</span>
         </a>
@@ -59,7 +61,7 @@ const isblock = align === "detail" ? "block" : "none";
         </nav>
       </div>
       <!-- 小屏菜单 -->
-      <div class="flex items-center gap-4 relative ">
+      <div class="blog_menu_mobile flex items-center gap-4 relative">
         <div class="block md:hidden">
           <button
             data-blog-menu-button
@@ -126,9 +128,9 @@ const isblock = align === "detail" ? "block" : "none";
 
       <!-- 博客详情锚点 -->
       <div
-        class="blog_menu_tocComponent cursor-pointer rounded-md border border-solid border-gray-01 "
+        class="blog_menu_tocComponent cursor-pointer rounded-md border border-solid border-gray-01 hidden relative"
       >
-        <div class="text-gray-01 pl-2">
+        <div data-blog-tocComponent-button class="text-gray-01 pl-2">
           本页
           <svg
             aria-hidden="true"
@@ -137,14 +139,16 @@ const isblock = align === "detail" ? "block" : "none";
             height="20"
             viewBox="0 0 24 18"
             fill="currentColor"
-            >
-              <path
-                d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
-              ></path>
+          >
+            <path
+              d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
+            ></path>
           </svg>
         </div>
-        <div class="hidden">
-          {post && <TocComponent content={post.body} />}
+        <div
+          class="blog-tocComponent-content hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 text-sm"
+        >
+          {post && <TocComponent content={post} />}
         </div>
       </div>
     </div>
@@ -161,6 +165,12 @@ const isblock = align === "detail" ? "block" : "none";
       const blogMenuContent = this.querySelector<HTMLDivElement>(
         "div[data-blog-menu-content]",
       )!;
+      const blogTocComponentButton = this.querySelector<HTMLDivElement>(
+        "div[data-blog-tocComponent-button]",
+      )!;
+      const blogTocComponentContent = this.querySelector<HTMLDivElement>(
+        "div.blog-tocComponent-content",
+      )!;
       // 移动端点击折叠按钮打开/关闭级联菜单
       blogMenu.addEventListener("click", () => {
         blogMenuStatus = !blogMenuStatus;
@@ -170,12 +180,20 @@ const isblock = align === "detail" ? "block" : "none";
           blogMenuContent?.classList.add("hidden");
         }
       });
+      blogTocComponentButton.addEventListener("click", () => {
+        blogMenuStatus = !blogMenuStatus;
+        if (blogMenuStatus) {
+          blogTocComponentContent?.classList.remove("hidden");
+        } else {
+          blogTocComponentContent?.classList.add("hidden");
+        }
+      });
     }
   }
   customElements.define("blog-header", BlogHeaderLayout);
 </script>
 
-<style define:vars={{ justifyContent, isblock }}>
+<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone }}>
   a {
     text-decoration: inherit;
     color: inherit;
@@ -229,12 +247,22 @@ const isblock = align === "detail" ? "block" : "none";
     height: 1rem;
     display: inline-block;
   }
-  .blog_menu_tocComponent {
-    display: var(--isblock);
+  .blog-tocComponent-content ul {
+    list-style-type: none !important;
   }
   @media (max-width: 48rem) {
     .blog_header_content {
       justify-content: var(--justifyContent) !important;
+    }
+    .blog_menu_tocComponent {
+      display: var(--isBlock);
+    }
+    .blog_menu_mobile {
+      flex: var(--isFlex);
+    }
+    .blog_logo {
+      flex: var(--isFlexNone) !important;
+      margin-right: 1.5rem;
     }
   }
 </style>
