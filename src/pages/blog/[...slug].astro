@@ -1,9 +1,10 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "@layouts/BlogPost.astro";
-import TocComponent from "@components/common/TocComponent.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import { type CollectionEntry, getCollection } from 'astro:content';
+import BlogPost from '@layouts/BlogPost.astro';
+import TocComponent from '@components/common/TocComponent.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogHeader from "@components/blog/BlogHeader.astro";
+
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 	return posts.map((post) => ({
@@ -19,6 +20,7 @@ const { Content } = await post.render();
 
 <BaseLayout title="Nacos Blog" position="static">
 	<BlogHeader align="detail" post={post.body} />
+  <span class="top-header" id=top">返回顶部</span>
 	<div>
 		<div class="w-full 2xl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] inline-block">
 			<BlogPost {...post.data}>
@@ -30,3 +32,11 @@ const { Content } = await post.render();
 		</div>
 	</div>
 </BaseLayout>
+
+<style>
+	.top-header{
+		clip:rect(0,0,0,0);
+		position: fixed;
+		top:0;
+	}
+</style>
