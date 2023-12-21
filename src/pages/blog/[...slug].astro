@@ -6,29 +6,29 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogHeader from "@components/blog/BlogHeader.astro";
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = await getCollection("blog");
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await post.render();
 ---
-<BaseLayout title="Nacos Blog" position="static">
 
-	<BlogHeader />
-	<span class="top-header" id=top">返回顶部</span>
+<BaseLayout title="Nacos Blog" position="static">
+	<BlogHeader align="detail" post={post.body} />
+  <span class="top-header" id=top">返回顶部</span>
 	<div>
-			<div class="w-[75%] inline-block" >
+		<div class="w-full 2xl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] inline-block">
 			<BlogPost {...post.data}>
-					<Content />
+				<Content />
 			</BlogPost>
 		</div>
-			<div class="inline-block w-[25%] fixed  h-full">
-			<TocComponent content = {post.body} />
+		<div class="w-[25%] fixed h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
+			<TocComponent content={post.body} />
 		</div>
 	</div>
 </BaseLayout>
