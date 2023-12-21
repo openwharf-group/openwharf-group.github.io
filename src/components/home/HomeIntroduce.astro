@@ -210,7 +210,12 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } = data ||
 
   /* 大于50rem 小于 72rem  800px < width < 1152 */
   @media (min-width: 50rem) and (max-width: 72rem) { 
-    
+    .bottom-section .desc div {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+    }
    }
 
 </style>
