@@ -612,7 +612,7 @@ const communitySubMenu = {
     text-decoration: none;
   }
 
-  @media (max-width: 68rem) {
+  @media (min-width: 50rem) and (max-width: 72rem) {
     .nav {
       justify-content: var(--justifyContent) !important;
     }
@@ -628,7 +628,14 @@ const communitySubMenu = {
     }
   }
 
-  @media (max-width: 36rem) {
+  @media (max-width: 50rem) {
+    .pc_nav_menu {
+      display: none !important;
+    }
+
+    .mobile_nav_menu {
+      display: block !important;
+    }
     .nav {
       justify-content: var(--justifyContent) !important;
     }
