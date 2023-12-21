@@ -3,7 +3,7 @@ import { languages } from "../i18n/languages";
 import BaseLayout from "@layouts/BaseLayout.astro"
 import { useTranslations } from '../i18n/util';
 import HomeIntroduce from "@components/home/HomeIntroduce.astro";
-import ChooseReason from "@components/ChooseReason.astro";
+import ChooseReason from "@components/home/ChooseReason.astro";
 import EBookNacos from "@components/EBookNacos.astro";
 import HomeFooter from "@components/home/HomeFooter.astro";
 import ExploreFeatures from "@components/ExploreFeatures.astro";
@@ -17,14 +17,12 @@ const t = useTranslations(Astro);
 <BaseLayout title="Nacos">
     <HomeIntroduce />
     
-    <home-body 
-        class="bg-gary-02 px-8 py-28"
-    >
+    <home-body>
         <ChooseReason />
-        <EBookNacos />
+        <!-- <EBookNacos /> -->
         <ExploreFeatures />
-        <HomeVedioSlider />
-        <CompaniesSlider />
+        <!-- <HomeVedioSlider />
+        <CompaniesSlider /> -->
     </home-body>
 
     <HomeFooter />
