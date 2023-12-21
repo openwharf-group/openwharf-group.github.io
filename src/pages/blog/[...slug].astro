@@ -20,12 +20,12 @@ const { Content } = await post.render();
 <BaseLayout title="Nacos Blog" position="static">
 	<BlogHeader align="detail" post={post.body} />
 	<div>
-		<div class="w-[75%] inline-block">
+		<div class="w-full 2xl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] inline-block">
 			<BlogPost {...post.data}>
 				<Content />
 			</BlogPost>
 		</div>
-		<div class="inline-block w-[25%] fixed h-full">
+		<div class="w-[25%] fixed h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
 			<TocComponent content={post.body} />
 		</div>
 	</div>

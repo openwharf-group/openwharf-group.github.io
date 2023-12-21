@@ -111,6 +111,29 @@ export default {
 						},
 					}
 				},
+				blogTocfold:{
+					css: {
+						a: {
+							textDecoration: 'inherit',
+							color: theme('colors.gray.09'),
+							fontSize: '0.8275rem',
+							'&:hover': {
+								color: theme('colors.gray.13'),
+							}
+						},
+						ul: {
+							listStyleType: 'none', /* 去除默认的列表样式 */
+							paddingLeft: 0,
+							li: {
+								paddingLeft: '0.5rem',
+								paddingBottom:'0.5rem'
+							}
+						},
+						li: {
+							paddingLeft: 0,
+						},
+					}
+				},
 				DEFAULT: {
 					css: {
 						tbody: {

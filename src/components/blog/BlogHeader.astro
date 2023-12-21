@@ -146,9 +146,10 @@ const isFlex = align === "detail" ? 1 : "none";
           </svg>
         </div>
         <div
-          class="blog-tocComponent-content hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 text-sm"
+          data-blog-tocComponent-content
+          class="hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 pl-8 pb-8"
         >
-          {post && <TocComponent content={post} />}
+          {post && <TocComponent content={post} isFold={true}/>}
         </div>
       </div>
     </div>
@@ -169,7 +170,7 @@ const isFlex = align === "detail" ? 1 : "none";
         "div[data-blog-tocComponent-button]",
       )!;
       const blogTocComponentContent = this.querySelector<HTMLDivElement>(
-        "div.blog-tocComponent-content",
+        "div[data-blog-tocComponent-content]",
       )!;
       // 移动端点击折叠按钮打开/关闭级联菜单
       blogMenu.addEventListener("click", () => {
@@ -246,9 +247,6 @@ const isFlex = align === "detail" ? 1 : "none";
     width: 1px;
     height: 1rem;
     display: inline-block;
-  }
-  .blog-tocComponent-content ul {
-    list-style-type: none !important;
   }
   @media (max-width: 48rem) {
     .blog_header_content {
