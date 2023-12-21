@@ -16,18 +16,29 @@ const t = useTranslations(Astro);
 ---
 <BaseLayout title="Nacos">
     <HomeIntroduce />
-
-    <div class="bg-gary-02 px-8 py-28">
+    
+    <home-body 
+        class="bg-gary-02 px-8 py-28"
+    >
         <ChooseReason />
         <EBookNacos />
         <ExploreFeatures />
         <HomeVedioSlider />
         <CompaniesSlider />
-    </div>
+    </home-body>
 
     <HomeFooter />
 
 </BaseLayout>
+
+<script>
+    class HomeBody extends HTMLElement {
+    constructor() {
+        super();
+    }
+  }
+  customElements.define("home-body", HomeBody);
+</script>
 
 
 

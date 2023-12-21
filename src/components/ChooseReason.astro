@@ -24,7 +24,7 @@ const dataSource = [
 ];
 ---
 
-<div>
+<choose-reason>
   <div class="flex flex-col items-center mb-20">
     <span class="text-gray-10 text-xs mb-6">ABOUT US</span>
     <span class="text-gray-14 text-4xl font-medium">Why Nacos</span>
@@ -59,7 +59,17 @@ const dataSource = [
       })
     }
   </div>
-</div>
+</choose-reason>
+
+<script>
+class ChooseReason extends HTMLElement {
+    constructor() {
+			super();
+
+		}
+  }
+  customElements.define("choose-reason", ChooseReason);
+</script>
 
 
 <style>
