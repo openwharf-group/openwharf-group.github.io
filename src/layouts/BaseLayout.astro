@@ -6,6 +6,7 @@ import "@starlight/style/util.css";
 import "../style/global.css";
 import "../style/fonts.css";
 import { useTranslations } from "@i18n/util";
+import Head from "@components/starlight/Head.astro";
 import HomeHeader from "@components/common/Header.astro";
 const t = useTranslations(Astro);
 
@@ -14,13 +15,21 @@ export type Props = {
   position?: "static" | "sticky";
 };
 const { title, position = "sticky" } = Astro.props;
+const headEntry = {
+  data: {
+    description: "",
+    keywords: "Nacos",
+    title: "Nacos 官网",
+    head: []
+  }
+}
 ---
 
 <html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
     <meta name="referrer" content="no-referrer" />
+    <Head lang="en" entry={headEntry}  />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
