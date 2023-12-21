@@ -1,20 +1,91 @@
 ---
-
+import TocComponent from "@components/common/TocComponent.astro";
+const { align = "home", post } = Astro.props;
+const justifyContent = align === "detail" ? "flex-start" : "space-between";
+const isBlock = align === "detail" ? "block" : "none";
+const isFlexNone = align === "detail" ? "none" : 1;
+const isFlex = align === "detail" ? 1 : "none";
+const isRight = align === "detail" ? "auto" : "0px";
 ---
 
-<div class="sticky top-0 z-10">
-  <header class="bg-gray-12">
-    <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
-        <div class="flex-1 md:flex md:items-center md:gap-12">
-          <a class="block text-teal-600" href="/blog">
-            <span class="text-gray-01 text-xl">Blog</span>
-          </a>
-        </div>
+<blog-header class="blog_header bg-gray-12 sticky top-0 z-11">
+  <div class="mx-auto max-w-screen-xl w-full sm:px-6 lg:px-8">
+    <div
+      class="blog_header_content flex h-16 items-center justify-between w-full"
+    >
+      <!-- 顶部logo -->
+      <div class="blog_logo flex-1 md:flex md:items-center md:gap-12">
+        <a class="block text-teal-600" href="/blog">
+          <span class="text-gray-01 text-xl font-black">Blog</span>
+        </a>
+      </div>
+      <!-- 大屏菜单 -->
+      <div class="md:flex md:items-center md:gap-12">
+        <nav aria-label="Global" class="hidden md:block">
+          <ul class="flex items-center gap-6 text-sm list-none">
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/blog/article"
+              >
+                Article
+              </a>
+            </li>
 
-        <div class="md:flex md:items-center md:gap-12">
-          <nav aria-label="Global" class="hidden md:block">
-            <ul class="flex items-center gap-6 text-sm list-none">
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/blog/ecosystem"
+              >
+                Ecosystem
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/blog/case"
+              >
+                Case
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="text-gray-500 transition hover:text-gray-500/75"
+                href="/blog/all"
+              >
+                All
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- 小屏菜单 -->
+      <div class="blog_menu_mobile flex items-center gap-4 relative">
+        <div class="block md:hidden">
+          <button
+            data-blog-menu-button
+            class="cursor-pointer rounded-full bg-gray-01 p-2 w-8 h-8 text-gray-14 transition hover:text-gray-14/75"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 28 28"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+          <div
+            class="data-blog-menu-content bg-gray-01 p-4 absolute top-full hidden"
+          >
+            <ul class="flex flex-col items-left gap-2 text-sm list-none p-0">
               <li>
                 <a
                   class="text-gray-500 transition hover:text-gray-500/75"
@@ -51,47 +122,90 @@
                 </a>
               </li>
             </ul>
-          </nav>
-
-          <div class="flex items-center gap-4">
-            <div class="block md:hidden">
-              <button
-                class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-              </button>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
-</div>
 
-<style>
+      <!-- 博客详情锚点 -->
+      <div
+        class="blog_menu_tocComponent cursor-pointer rounded-md border border-solid border-gray-01 hidden relative"
+      >
+        <div data-blog-tocComponent-button class="text-gray-01 pl-2">
+          本页
+          <svg
+            aria-hidden="true"
+            class="cursor-pointer"
+            width="20"
+            height="20"
+            viewBox="0 0 24 18"
+            fill="currentColor"
+          >
+            <path
+              d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"
+            ></path>
+          </svg>
+        </div>
+        <div
+          data-blog-tocComponent-content
+          class="hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 pl-8 pb-8"
+        >
+          {post && <TocComponent content={post} isFold={true}/>}
+        </div>
+      </div>
+    </div>
+  </div>
+</blog-header>
+<script>
+  class BlogHeaderLayout extends HTMLElement {
+    constructor() {
+      super();
+      let blogMenuStatus = false;
+      const blogMenu = this.querySelector<HTMLButtonElement>(
+        "button[data-blog-menu-button]",
+      )!;
+      const blogMenuContent = this.querySelector<HTMLDivElement>(
+        "div.data-blog-menu-content",
+      )!;
+      const blogTocComponentButton = this.querySelector<HTMLDivElement>(
+        "div[data-blog-tocComponent-button]",
+      )!;
+      const blogTocComponentContent = this.querySelector<HTMLDivElement>(
+        "div[data-blog-tocComponent-content]",
+      )!;
+      // 移动端点击折叠按钮打开/关闭级联菜单
+      blogMenu.addEventListener("click", () => {
+        blogMenuStatus = !blogMenuStatus;
+        if (blogMenuStatus) {
+          blogMenuContent?.classList.remove("hidden");
+        } else {
+          blogMenuContent?.classList.add("hidden");
+        }
+      });
+      blogTocComponentButton.addEventListener("click", () => {
+        blogMenuStatus = !blogMenuStatus;
+        if (blogMenuStatus) {
+          blogTocComponentContent?.classList.remove("hidden");
+        } else {
+          blogTocComponentContent?.classList.add("hidden");
+        }
+      });
+    }
+  }
+  customElements.define("blog-header", BlogHeaderLayout);
+</script>
+
+<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone,isRight }}>
   a {
     text-decoration: inherit;
     color: inherit;
   }
-  .header-inner {
+  .blog_header {
     --logo-width: 96px;
     --header-height: 4rem;
     --header-ml-padding: 1rem;
     --header-xl-padding: 2rem;
   }
-  .header-inner {
+  .blog_header {
     /* height: 100%; */
     display: flex;
     align-items: center;
@@ -133,5 +247,23 @@
     width: 1px;
     height: 1rem;
     display: inline-block;
+  }
+  .data-blog-menu-content{
+    right:var(--isRight);
+  }
+  @media (max-width: 48rem) {
+    .blog_header_content {
+      justify-content: var(--justifyContent) !important;
+    }
+    .blog_menu_tocComponent {
+      display: var(--isBlock);
+    }
+    .blog_menu_mobile {
+      flex: var(--isFlex);
+    }
+    .blog_logo {
+      flex: var(--isFlexNone) !important;
+      margin-right: 1.5rem;
+    }
   }
 </style>
