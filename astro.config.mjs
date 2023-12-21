@@ -38,7 +38,7 @@ export default defineConfig({
 			},
 			components: {
 				TableOfContents: './src/components/starlight/TableOfContents.astro',
-				Header: './src/components/starlight/Header.astro',
+				Header: './src/components/common/Header.astro',
 				Head: './src/components/starlight/Head.astro',
 				Sidebar: './src/components/starlight/Sidebar.astro',
 			},
