@@ -5,6 +5,7 @@ const justifyContent = align === "detail" ? "flex-start" : "space-between";
 const isBlock = align === "detail" ? "block" : "none";
 const isFlexNone = align === "detail" ? "none" : 1;
 const isFlex = align === "detail" ? 1 : "none";
+const isRight = align === "detail" ? "auto" : "0px";
 ---
 
 <blog-header class="blog_header bg-gray-12 sticky top-0 z-11">
@@ -82,8 +83,7 @@ const isFlex = align === "detail" ? 1 : "none";
             </svg>
           </button>
           <div
-            data-blog-menu-content
-            class="bg-gray-01 p-4 absolute right-0 top-full hidden"
+            class="data-blog-menu-content bg-gray-01 p-4 absolute top-full hidden"
           >
             <ul class="flex flex-col items-left gap-2 text-sm list-none p-0">
               <li>
@@ -164,7 +164,7 @@ const isFlex = align === "detail" ? 1 : "none";
         "button[data-blog-menu-button]",
       )!;
       const blogMenuContent = this.querySelector<HTMLDivElement>(
-        "div[data-blog-menu-content]",
+        "div.data-blog-menu-content",
       )!;
       const blogTocComponentButton = this.querySelector<HTMLDivElement>(
         "div[data-blog-tocComponent-button]",
@@ -194,7 +194,7 @@ const isFlex = align === "detail" ? 1 : "none";
   customElements.define("blog-header", BlogHeaderLayout);
 </script>
 
-<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone }}>
+<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone,isRight }}>
   a {
     text-decoration: inherit;
     color: inherit;
@@ -247,6 +247,9 @@ const isFlex = align === "detail" ? 1 : "none";
     width: 1px;
     height: 1rem;
     display: inline-block;
+  }
+  .data-blog-menu-content{
+    right:var(--isRight);
   }
   @media (max-width: 48rem) {
     .blog_header_content {
