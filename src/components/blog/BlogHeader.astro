@@ -1,5 +1,5 @@
 ---
-import TocComponent from "@components/TocComponent.astro";
+import TocComponent from "@components/common/TocComponent.astro";
 const { align = "home", post } = Astro.props;
 const justifyContent = align === "detail" ? "flex-start" : "space-between";
 const isBlock = align === "detail" ? "block" : "none";

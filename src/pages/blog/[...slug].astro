@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import BlogPost from "@layouts/BlogPost.astro";
-import TocComponent from "@components/TocComponent.astro";
+import TocComponent from "@components/common/TocComponent.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import BlogHeader from "@components/BlogHeader.astro";
+import BlogHeader from "@components/blog/BlogHeader.astro";
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 	return posts.map((post) => ({
