@@ -22,7 +22,7 @@ declare module 'virtual:starlight/components' {
 
 	export const Footer: typeof import('@astrojs/starlight/components/Footer.astro').default;
 	export const LastUpdated: typeof import('@astrojs/starlight/components/LastUpdated.astro').default;
-	export const Pagination: typeof import('@astrojs/starlight/components/Pagination.astro').default;
+	export const Pagination: typeof import('@astrojs/starlight/components/common/Pagination.astro').default;
 	export const EditLink: typeof import('@astrojs/starlight/components/EditLink.astro').default;
 
 	export const Header: typeof import('@astrojs/starlight/components/Header.astro').default;
