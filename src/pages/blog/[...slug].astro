@@ -4,7 +4,6 @@ import BlogPost from "@layouts/BlogPost.astro";
 import TocComponent from "@components/TocComponent.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BlogHeader from "@components/BlogHeader.astro";
-
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 	return posts.map((post) => ({
@@ -19,14 +18,14 @@ const { Content } = await post.render();
 ---
 
 <BaseLayout title="Nacos Blog" position="static">
-	<BlogHeader align="detail" post={post.body}/>
-	<div class="bg-gray-14">
-		<div class="w-full 2xl:w-[70%] xl:w-[70%] lg:w-[70%] md:w-[70%] inline-block">
+	<BlogHeader align="detail" post={post.body} />
+	<div>
+		<div class="w-[75%] inline-block">
 			<BlogPost {...post.data}>
 				<Content />
 			</BlogPost>
 		</div>
-		<div class=" w-[30%] fixed bg-gray-14 h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
+		<div class="inline-block w-[25%] fixed h-full">
 			<TocComponent content={post.body} />
 		</div>
 	</div>

@@ -4,9 +4,9 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import { Icon } from "@astrojs/starlight/components";
-import BlogPostPreview from "@components/BlogPostPreview.astro";
-import BlogHeader from "@components/BlogHeader.astro";
-import BlogPoster from "@components/BlogPoster.astro";
+import BlogPostPreview from "@components/blog/BlogPostPreview.astro";
+import BlogHeader from "@components/blog/BlogHeader.astro";
+import BlogPoster from "@components/blog/BlogPoster.astro";
 
 interface Post {
     slug: string;

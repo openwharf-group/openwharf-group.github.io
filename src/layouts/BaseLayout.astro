@@ -1,77 +1,57 @@
 ---
-import '@starlight/style/props.css';
-import '@starlight/style/reset.css';
-import '@starlight/style/shiki.css';
-import '@starlight/style/util.css';
-import '../style/global.css'
-import { useTranslations } from '@i18n/util';
-import HomeHeader from '@components/Header.astro';
+import "@starlight/style/props.css";
+import "@starlight/style/reset.css";
+import "@starlight/style/shiki.css";
+import "@starlight/style/util.css";
+import "../style/global.css";
+import "../style/fonts.css";
+import { useTranslations } from "@i18n/util";
+import HomeHeader from "@components/common/Header.astro";
 const t = useTranslations(Astro);
 
 export type Props = {
-    title: string;
-    position?: 'static' | 'sticky'
+  title: string;
+  position?: "static" | "sticky";
 };
-const { title, position = 'sticky' } = Astro.props;
+const { title, position = "sticky" } = Astro.props;
 ---
 
 <html lang="en" data-theme="light">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="referrer" content="no-referrer">
-        <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-    </head>
-    <body>
-        <HomeHeader align="home" position={position} />
-        <slot />
-    </body>
-    <script>
-    //     addEventListener('scroll', () => {
-    //         const scrollTop = (
-    //             document.documentElement.scrollTop || 
-    //             window.pageYOffset || 
-    //             document.body.scrollTop
-    //         );
-            
-    //         if (scrollTop > 120) {
-    //             if (document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
-
-    //                 // 优化 避免一直添加移除
-    //                 document.querySelector('.header-inner').classList.remove('bg-gray-14');
-    //                 document.querySelector('.header-inner').classList.add('bg-gray-02', 'shadow');
-
-    //                 document.querySelector('.nav').classList.remove('text-gray-06');
-    //                 document.querySelector('.nav').classList.add('text-gray-12');
-
-    //                 document.querySelector('img').src = '/nacos_colorful.png';
-    //             }
-                
-
-    //         } else {
-
-    //             if (!document.querySelector('.header-inner').classList.contains('bg-gray-14')) {
-    //                 // 优化 避免一直添加移除
-    //                 document.querySelector('.header-inner').classList.add('bg-gray-14');
-    //                 document.querySelector('.header-inner').classList.remove('bg-gray-02', 'shadow');
-
-    //                 document.querySelector('.nav').classList.add('text-gray-06');
-    //                 document.querySelector('.nav').classList.remove('text-gray-12');
-
-    //                 document.querySelector('img').src = '/nacos_white.png';
-    //             }
-                
-    //         }
-            
-    //     });
-    </script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <HomeHeader align="home" position={position} />
+    <slot />
+  </body>
 </html>
 
+<script>
+  const iframe = document.createElement("iframe");
+  // 设置iframe的src属性，这将触发加载过程
+  iframe.src = "https://sca.aliyun.com/auth.html";
+  // 隐藏iframe，直到加载完成
+  iframe.style.display = "none";
+  document.body.appendChild(iframe);
+
+  // document.getElementById("auth").onclick = function () {
+  //   window.location.href =
+  //     `https://sca.aliyun.com/auth.html?callback=${window.location.href}`
+  // };
+
+  window.addEventListener("message", function (event) {
+    window.gUid = event.data;
+  });
+</script>
+
 <style>
-@media (max-width: 36rem) {
-  html {
-    font-size: 12px;
+  @media (max-width: 36rem) {
+    html {
+      font-size: 12px;
+    }
   }
-}
 </style>

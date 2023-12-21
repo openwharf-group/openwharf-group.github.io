@@ -1,0 +1,48 @@
+---
+import VedioCard from '../VedioCard.astro';
+const autoplay = true;
+
+---
+
+<div class="mt-24 flex flex-col justify-center">
+  <div class="flex flex-col items-center mb-20">
+    <span class="text-gray-10 text-xs mb-6">COMMUNITY VOICE</span>
+    <span class="text-gray-14 text-4xl font-medium">Tutorials from Community</span>
+  </div>
+
+  <!-- poster 指定一张图片，在当前视频数据无效时显示（预览图）。视频数据无效可能是视频正在加载，可能是视频地址错误
+  autoplay 是否自动播放 -->
+  <div class="carousel w-full flex flex-wrap justify-center overflow-hidden">
+    <VedioCard
+      classes={["w-1/4"]}
+      description='2 Hours to learn Nacos steps by steps.'
+      src="https://cloud.video.taobao.com/play/u/3897629815/p/1/e/6/t/1/237687627217.mp4" 
+    />
+
+    <VedioCard 
+      classes={["w-1/4"]}
+      description='3 minutes to learn how to migrate to the cloud.'
+      src="https://cloud.video.taobao.com/play/u/3897629815/p/1/e/6/t/1/308859040210.mp4" 
+    />
+
+    <VedioCard
+      classes={["w-1/4"]}
+      description='Introduction to the sixth generation instance specifications.'
+      src="https://cloud.video.taobao.com/play/u/3897629815/p/1/e/6/t/1/258260782833.mp4" 
+    />
+    
+  </div>
+
+</div>
+
+<script>
+
+</script>
+
+
+<style>
+.carousel {
+  /* background-color: bisque; */
+}
+
+</style>

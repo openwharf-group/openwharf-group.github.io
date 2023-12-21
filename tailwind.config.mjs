@@ -62,8 +62,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["Roboto", "sans-serif"],
-				mono: ["Roboto", "sans-serif"],
+				sans: ["Roboto","SourceHanSans","sans-serif"],
+				mono: ["Roboto","SourceHanSans","sans-serif"],
 			},
 			// 设置starlight文档颜色
 			colors: {
@@ -88,12 +88,31 @@ export default {
 			},
 			// https://tailwindcss.com/docs/typography-plugin
 			typography: (theme) => ({
-				DEFAULT: {
+				blogToc: {
 					css: {
 						a: {
 							textDecoration: 'inherit',
-							color: theme('colors.blue.08')
+							color: theme('colors.gray.09'),
+							fontSize: '0.8275rem',
+							'&:hover': {
+								color: theme('colors.gray.13'),
+							}
 						},
+						ul: {
+							listStyleType: 'none', /* 去除默认的列表样式 */
+							paddingLeft: 0,
+							li: {
+								borderInlineStart: `1px solid ${themeColor['gray']['03']}`,
+								paddingLeft: '0.5rem'
+							}
+						},
+						li: {
+							paddingLeft: 0,
+						},
+					}
+				},
+				DEFAULT: {
+					css: {
 						tbody: {
 							tr: {
 								borderTop: '1px solid #eee',

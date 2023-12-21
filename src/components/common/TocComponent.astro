@@ -8,7 +8,6 @@ const { content } = Astro.props;
 
 // 创建目录
 const createTOC = (content) => {
-    // @ts-ignore
     const mdast = remark().parse(content);
     return toc(mdast);
 };
@@ -18,7 +17,7 @@ const tableOfContents = createTOC(content);
 // @ts-ignore
 const tocHtml = remark().use(html).stringify(tableOfContents.map);
 ---
-
-<aside>
-    <div class="nav myroot prose" set:html={tocHtml} />
-</aside>
+<nav class="mt-10">
+    <h2 class="text-xl">本页内容</h2>
+    <div class="nav prose prose-blogToc pr-10" set:html={tocHtml} />
+</nav>

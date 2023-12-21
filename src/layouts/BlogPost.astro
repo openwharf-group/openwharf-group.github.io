@@ -9,14 +9,14 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, date, updatedDate, heroImage } = Astro.props;
 ---
 
-	<div class="sl-markdown-content bg-gray-14 text-gray-01">
+	<div class="sl-markdown-content ">
 				<div class="hero-image ">
 					{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="nacos-prose mx-auto">
 					<div class="title">
 						<div class="date">
-							{format(new Date(date), "MMMM d, yyyy")}
+							{date}
 							{
 								updatedDate && (
 									<div class="last-updated-on">
