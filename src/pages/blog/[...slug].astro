@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '@layouts/BlogPost.astro';
-import TocComponent from '@components/common/TocComponent.astro';
+import TocComponent from '@components/blog/TocComponents/TocComponent.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import BlogHeader from "@components/blog/BlogHeader.astro";
 
@@ -15,28 +15,47 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+
 ---
 
 <BaseLayout title="Nacos Blog" position="static">
 	<BlogHeader align="detail" post={post.body} />
-  <span class="top-header" id=top">返回顶部</span>
 	<div>
 		<div class="w-full 2xl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] inline-block">
 			<BlogPost {...post.data}>
-				<Content />
+					<Content />
 			</BlogPost>
 		</div>
-		<div class="w-[25%] fixed h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
-			<TocComponent content={post.body} />
+		<div class="right-sidebar-panel w-[25%] fixed h-full hidden 2xl:inline-block xl:inline-block lg:inline-block md:inline-block">
+			<TocComponent headings={headings} />
 		</div>
 	</div>
+
 </BaseLayout>
 
 <style>
-	.top-header{
-		clip:rect(0,0,0,0);
-		position: fixed;
-		top:0;
+	.right-sidebar-panel {
+		flex-direction: column;
+		justify-content: space-between;
+		height: 100%;
+		padding: 1rem var(--sl-sidebar-pad-x);
+	}
+	.right-sidebar-panel :global(h2) {
+		color: var(--sl-color-white);
+		font-size: var(--sl-text-h5);
+		font-weight: 600;
+		line-height: var(--sl-line-height-headings);
+		margin-bottom: 0.5rem;
+	}
+	.right-sidebar-panel :global(a) {
+		display: block;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		color: var(--sl-color-gray-3);
+		overflow-wrap: anywhere;
+	}
+	.right-sidebar-panel :global(a:hover) {
+		color: var(--sl-color-white);
 	}
 </style>

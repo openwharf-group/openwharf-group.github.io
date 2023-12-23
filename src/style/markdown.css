@@ -12,6 +12,13 @@
 	scroll-margin-top: 4rem; /* 头部高度，根据实际情况调整 */
 }
 
+/* 紧接在标题元素后的标题元素，也需要一定的margin-top */
+.sl-markdown-content
+	:is(h1, h2, h3, h4, h5, h6)
+	+ :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
+	scroll-margin-top: 4rem; /* 头部高度，根据实际情况调整 */
+}
+
 .sl-markdown-content li + li:not(:where(.not-content *)),
 .sl-markdown-content dt + dt:not(:where(.not-content *)),
 .sl-markdown-content dt + dd:not(:where(.not-content *)),
