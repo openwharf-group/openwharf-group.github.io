@@ -19,6 +19,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Nacos',
+			favicon: '/favicon.ico',
 			head: [
 				{
 					tag: 'meta',
