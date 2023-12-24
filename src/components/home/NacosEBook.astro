@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import ebookLog from "/public/ebook.png";
+---
+
+<nacos-ebook class="nacos-ebook block bg-gary-02 p-10">
+  <div class="ebook-container block flex items-center justify-between bg-gray-13 rounded-2xl p-9 mt-16">
+    <div class="left-container h-full flex flex-col justify-around">
+      <div class="flex flex-col">
+        <div class="text-blue-02 text-xs tracking-widest">RESOURCES</div>
+        <div class="text-blue-01 font-medium text-[2.75rem] mt-6">
+          E-Book Nacos
+        </div>
+      </div>
+      <div>
+        <button data-download class="btn btn-secondary rounded-3xl">DOWNLOAD</button>
+      </div>
+    </div>
+    <div class="right-container h-full relative rounded-2xl overflow-hidden">
+      <Image src={ebookLog} alt="nacos ebook" class="ebook-log absolute left-[30%] cursor-pointer" />
+    </div>
+  </div>
+  <div class="mobile-ebook-container hidden bg-gray-14 flex-col items-center rounded-3xl p-6 mt-10">
+    <div class="top-title w-full flex flex-col items-center">
+      <span class="text-gray-04 text-xs mb-6">RESOURCES</span>
+      <span class="title text-gray-01 text-lg font-medium">E-Book Nacos</span>
+    </div>
+    <button data-download class="btn btn-secondary rounded-3xl mt-16">DOWNLOAD</button>
+  </div>
+</nacos-ebook>
+
+<script>
+  class NacosEBook extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+  customElements.define("nacos-ebook", NacosEBook);
+</script>
+
+<style>
+
+.ebook-container {
+  height: 30rem;
+}
+.left-container {
+  width: 50%;
+  padding-left: 8.5rem;
+}
+.right-container {
+  width: 50%;
+  background: url("/ebook-placeholder.png") no-repeat;
+  background-size: 100% 100%;
+  background-position: center 0;
+  background-attachment: fixed;
+}
+.right-container .ebook-log {
+  width: 40%;
+  height: 28rem;
+  bottom: -8rem;
+  transition: transform 0.8s;
+}
+.right-container .ebook-log:hover {
+  transform: scale(1.15);
+}
+
+  /* 小于50rem  小于 800px */
+@media (max-width: 50rem) { 
+  .nacos-ebook {
+    padding: 1.5rem;
+  }
+  .ebook-container {
+    display: none;
+  }
+  .mobile-ebook-container {
+    display: flex;
+  }
+  .mobile-ebook-container button {
+      height: 2rem;
+      min-height: 2rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  .top-title .title {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+}
+
+
+/* 大于50rem 小于 72rem  800px < width < 1152 */
+@media (min-width: 50rem) and (max-width: 72rem) { 
+  .ebook-container {
+    height: 26rem;
+  }
+  .left-container {
+    padding-left: 1.5rem;
+  }
+  .right-container .ebook-log {
+    width: 40%;
+    height: 24rem;
+    transition: transform 0.8s;
+    bottom: -7rem;
+  }
+}
+
+
+</style>

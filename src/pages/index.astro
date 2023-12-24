@@ -4,10 +4,10 @@ import BaseLayout from "@layouts/BaseLayout.astro"
 import { useTranslations } from '../i18n/util';
 import HomeIntroduce from "@components/home/HomeIntroduce.astro";
 import ChooseReason from "@components/home/ChooseReason.astro";
-import EBookNacos from "@components/EBookNacos.astro";
+import NacosEBook from "@components/home/NacosEBook.astro";
 import HomeFooter from "@components/home/HomeFooter.astro";
 import ExploreFeatures from "@components/home/ExploreFeatures.astro";
-import HomeVedioSlider from "@components/home/HomeVedioSlider.astro";
+import HomeCardPlayer from "@components/home/HomeCardPlayer.astro";
 import UseCompanies from "@components/home/UseCompanies.astro";
 
 
@@ -19,9 +19,9 @@ const t = useTranslations(Astro);
     
     <home-body>
         <ChooseReason />
-        <!-- <EBookNacos /> -->
+        <NacosEBook />
         <ExploreFeatures />
-        <!-- <HomeVedioSlider /> -->
+        <HomeCardPlayer />
         <UseCompanies />
     </home-body>
 
@@ -31,11 +31,11 @@ const t = useTranslations(Astro);
 
 <script>
     class HomeBody extends HTMLElement {
-    constructor() {
-        super();
+        constructor() {
+            super();
+        }
     }
-  }
-  customElements.define("home-body", HomeBody);
+    customElements.define("home-body", HomeBody);
 </script>
 
 
