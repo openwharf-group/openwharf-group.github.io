@@ -39,23 +39,7 @@ const headEntry = {
   </body>
 </html>
 
-<script>
-  const iframe = document.createElement("iframe");
-  // 设置iframe的src属性，这将触发加载过程
-  iframe.src = "https://sca.aliyun.com/auth.html";
-  // 隐藏iframe，直到加载完成
-  iframe.style.display = "none";
-  document.body.appendChild(iframe);
 
-  // document.getElementById("auth").onclick = function () {
-  //   window.location.href =
-  //     `https://sca.aliyun.com/auth.html?callback=${window.location.href}`
-  // };
-
-  window.addEventListener("message", function (event) {
-    window.gUid = event.data;
-  });
-</script>
 
 <style>
 
