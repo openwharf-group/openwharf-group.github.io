@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro"
+import CloudPackage from "@components/cloud/CloudPackage.astro";
+import CompaniesFeedback from "@components/cloud/CompaniesFeedback.astro";
+import CloudFooter from "@components/common/Footer.astro";
+
+---
+
+<BaseLayout title="Nacos Cloud">
+  <CloudPackage />
+
+  <cloud-body>
+    <CompaniesFeedback />
+  </cloud-body>
+  
+  <CloudFooter />
+</BaseLayout>
+
+<script>
+  class CloudBody extends HTMLElement {
+      constructor() {
+          super();
+      }
+  }
+  customElements.define("cloud-body", CloudBody);
+</script>

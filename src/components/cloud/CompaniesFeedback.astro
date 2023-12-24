@@ -73,14 +73,14 @@
   // bg: bg-gray-03; text: text-gray-14 logo: text-gray-14
 ---
 
-<div>
-  <div class="flex flex-col items-center mb-20">
+<companies-feedback class="companies-feedback block bg-gary-02 p-10">
+  <div class="top-title w-full flex flex-col items-center mb-20 mt-16">
     <span class="text-gray-10 text-xs mb-6">OUR CUSTOMERS</span>
-    <span class="text-gray-14 text-4xl font-medium">Join the customers who've already used</span>
-    <span class="text-gray-14 text-4xl font-medium mt-1">Nacos Cloud to improve efficiency</span>
+    <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">Join the customers who've already used Nacos Cloud to improve efficiency</div>
   </div>
-  <div class="slider-container">
-    <ul class="slider">
+
+  <div class="bottom-feedback w-full relative flex overflow-hidden">
+    <ul class="slider p-0 list-none inline-block uppercase cursor-pointer flex flex-nowrap">
       {
         companyCustomers.map((company) => {
           const { name, logo, description, theme, href } = company;
@@ -89,7 +89,7 @@
           const isGray = theme === 'gray';
           return (
             <a href={href} target="_blank">
-              <li class="slider-item w-80">
+              <li class="slider-item w-80 inline-block">
                 <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                   <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                   <div class="flex justify-between mt-12 items-center">
@@ -103,7 +103,7 @@
         })
       }
     </ul>
-    <ul class="slider">
+    <ul class="slider p-0 list-none inline-block uppercase cursor-pointer flex flex-nowrap">
       {
         companyCustomers.map((company) => {
           const { name, logo, description, theme } = company;
@@ -111,7 +111,7 @@
           const isBlack = theme === 'black';
           const isGray = theme === 'gray';
           return (
-            <li class="slider-item w-80">
+            <li class="slider-item w-80 inline-block">
               <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                 <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="flex justify-between mt-12 items-center">
@@ -125,72 +125,128 @@
       }
     </ul>
   </div>
-</div>
+
+  <div class="mobile-bottom-feedback hidden w-full flex-col">
+    {
+      companyCustomers.map((company) => {
+        const { name, logo, description, theme, href } = company;
+        const isBule = theme === 'blue';
+        const isBlack = theme === 'black';
+        const isGray = theme === 'gray';
+        return (
+          <a href={href} target="_blank">
+            <div class="w-full mb-4">
+              <div class:list={['content', 'flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+                <div class:list={['description', 'line-clamp-2', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                <div class="company flex justify-between mt-12 items-center">
+                  <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
+                  <img src={logo} class="w-20" />
+                </div>
+              </div>
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+</companies-feedback>
+
+<script>
+class CompaniesFeedback extends HTMLElement {
+  constructor() {
+    super();
+
+  }
+}
+customElements.define("companies-feedback", CompaniesFeedback);
+</script>
+
 <style>
-  .slider-container {
-    --time: 100s
+companies-feedback {
+  --time: 100s
+}
+.companies-feedback {
+  /* 最后一个元素 距离底部footer 52px */
+  padding-bottom: 3.25rem;
+}
+.bottom-feedback {
+  /* mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent); */
+}
+.slider {
+  transition: background-color 0.5s;
+  animation: slide var(--time) linear infinite;
+}
+.slider-item {
+  padding: 0 .65rem;
+}
+img {
+  cursor: pointer;
+  transition: filter 0.5s;
+}
+/* .slider {
+  animation: slide var(--time) linear infinite;
+} */
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
   }
 
-  .slider-container {
-    position: relative;
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.bottom-feedback:hover > .slider {
+  animation-play-state: paused;
+}
+.slider-item:first-child {
+  animation: reset var(--time) step-end infinite;
+  animation-delay: calc(var(--time) / -2);
+}
+@keyframes reset {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 50rem) {
+  .companies-feedback {
+    padding: 1.5rem;
+  }
+  .top-title {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .top-title .title {
+    max-width: 100%;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+  }
+  .bottom-feedback {
+    display: none;
+  }
+  .mobile-bottom-feedback {
     display: flex;
-    width: auto;
-    overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
+  }
+  .mobile-bottom-feedback .content {
+    padding: 1.5rem;
+    padding-bottom: 0;
+  }
+  .mobile-bottom-feedback .company {
+    height: 4rem;
+    margin-top: 1.5rem;
+  }
+  a {
+    text-decoration: none; /* 清除下划线等默认样式 */
+    color: inherit; /* 继承父元素的颜色 */
   }
 
-  .slider {
-    padding: 0rem;
-    list-style-type: none;
-    display: inline-block;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.5s;
-  }
+}
 
-  .slider-item {
-    display: inline-block;
-    padding: 1.25rem .65rem;
-  }
+@media (min-width: 50rem) and (max-width: 72rem) {
 
-  img {
-    cursor: pointer;
-    transition: filter 0.5s;
-  }
-
-  .slider {
-    /* white-space: nowrap; */
-    display: flex;
-    flex-wrap: nowrap;
-    animation: slide var(--time) linear infinite;
-  }
-
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-  .slider-container:hover>.slider {
-    animation-play-state: paused;
-  }
-
-  .slider-item:first-child {
-    animation: reset var(--time) step-end infinite;
-    animation-delay: calc(var(--time) / -2);
-  }
-
-  @keyframes reset {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(100%);
-    }
-  }
+}
 </style>

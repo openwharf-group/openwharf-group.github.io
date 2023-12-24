@@ -250,7 +250,7 @@ const communitySubMenu = {
             </div>
           </li>
           <li class="mt-4">
-            <a href="/nacosCloud" class="text-gray-14 text-sm">NACOS CLOUD</a>
+            <a href="/cloud" class="text-gray-14 text-sm">NACOS CLOUD</a>
           </li>
           <li>
             <div mobile-menu-expand-com>
@@ -444,7 +444,7 @@ const communitySubMenu = {
 
       // 绑定路由
       this.nacosCloudMenu.addEventListener("click", () => {
-        window.location.pathname = "/nacosCloud";
+        window.location.pathname = "/cloud";
       });
 
       // 绑定下拉 dropdown 事件
@@ -481,7 +481,7 @@ const communitySubMenu = {
         this.docsMenu?.classList.remove('menu-selected');
       }
 
-      if (this.currentRoute.indexOf('/nacosCloud') !== -1) {
+      if (this.currentRoute.indexOf('/cloud') !== -1) {
         this.nacosCloudMenu?.classList.add('menu-selected');
 
       }else {
