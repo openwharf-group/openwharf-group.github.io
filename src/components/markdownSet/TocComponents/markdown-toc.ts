@@ -104,4 +104,4 @@ export class StarlightTOC extends HTMLElement {
 	}
 }
 
-customElements.define('blog-toc', StarlightTOC);
+customElements.define('markdown-toc', StarlightTOC);

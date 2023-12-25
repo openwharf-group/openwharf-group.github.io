@@ -1,6 +1,7 @@
 ---
-import TocComponent from "@components/blog/TocComponents/TocComponent.astro";
-const { align = "home", headings } = Astro.props;
+import TocComponent from "@components/markdownSet/TocComponents/TocComponent.astro";
+
+const { align = "home", headings, categories, title, href } = Astro.props;
 const justifyContent = align === "detail" ? "flex-start" : "space-between";
 const isBlock = align === "detail" ? "block" : "none";
 const isFlexNone = align === "detail" ? "none" : 1;
@@ -15,49 +16,29 @@ const isRight = align === "detail" ? "auto" : "0px";
     >
       <!-- 顶部logo -->
       <div class="blog_logo flex-1 md:flex md:items-center md:gap-12">
-        <a class="block text-teal-600" href="/blog">
-          <span class="text-gray-01 text-xl font-black">Blog</span>
+        <a class="block text-teal-600" href={href}>
+          <span class="text-gray-01 text-xl font-black">{title}</span>
         </a>
       </div>
       <!-- 大屏菜单 -->
       <div class="md:flex md:items-center md:gap-12">
         <nav aria-label="Global" class="hidden md:block">
           <ul class="flex items-center gap-6 text-sm list-none">
-            <li>
-              <a
-                class="text-gray-500 transition hover:text-gray-500/75"
-                href="/blog/article"
-              >
-                Article
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-500 transition hover:text-gray-500/75"
-                href="/blog/ecosystem"
-              >
-                Ecosystem
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-500 transition hover:text-gray-500/75"
-                href="/blog/case"
-              >
-                Case
-              </a>
-            </li>
-
-            <li>
-              <a
-                class="text-gray-500 transition hover:text-gray-500/75"
-                href="/blog/all"
-              >
-                All
-              </a>
-            </li>
+            {
+              categories &&
+                categories.map((category) => {
+                  return (
+                    <li>
+                      <a
+                        class="text-gray-500 transition hover:text-gray-500/75"
+                        href={category.href}
+                      >
+                        {category.text}
+                      </a>
+                    </li>
+                  );
+                })
+            }
           </ul>
         </nav>
       </div>
@@ -148,7 +129,7 @@ const isRight = align === "detail" ? "auto" : "0px";
         <div
           class="blog-tocComponent-content hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 pl-8 pb-8 pt-4"
         >
-          <TocComponent headings={headings}/>
+          <TocComponent headings={headings} />
         </div>
       </div>
     </div>
@@ -193,7 +174,7 @@ const isRight = align === "detail" ? "auto" : "0px";
   customElements.define("blog-header", BlogHeaderLayout);
 </script>
 
-<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone,isRight }}>
+<style define:vars={{ justifyContent, isBlock, isFlex, isFlexNone, isRight }}>
   a {
     text-decoration: inherit;
     color: inherit;
@@ -247,18 +228,18 @@ const isRight = align === "detail" ? "auto" : "0px";
     height: 1rem;
     display: inline-block;
   }
-  .data-blog-menu-content{
-    right:var(--isRight);
+  .data-blog-menu-content {
+    right: var(--isRight);
   }
   .blog-tocComponent-content :global(h2) {
-		font-size: 1rem;
-	}
-  .blog-tocComponent-content :global(a){
-		display: block;
-		font-size: var(--sl-text-xs);
-		text-decoration: none;
-		color: var(--sl-color-gray-5);
-		overflow-wrap: anywhere;
+    font-size: 1rem;
+  }
+  .blog-tocComponent-content :global(a) {
+    display: block;
+    font-size: var(--sl-text-xs);
+    text-decoration: none;
+    color: var(--sl-color-gray-5);
+    overflow-wrap: anywhere;
   }
   @media (max-width: 48rem) {
     .blog_header_content {

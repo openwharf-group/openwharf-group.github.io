@@ -3,11 +3,10 @@ import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
-import FormattedDate from "@components/FormattedDate.astro";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
-import BlogHeader from "@components/markdownSet/SubHeading.astro";
-import { BLOG_CATEGORY } from 'src/consts';
+import SubHeading from "@components/markdownSet/SubHeading.astro";
+import { ACTIVITY_CATEGORY } from "src/consts";
 
 interface Post {
     slug: string;
@@ -19,7 +18,7 @@ interface Post {
         date: string;
         keywords?: any[];
     };
-};
+}
 
 // 分页数据在page参数中传递
 const { page } = Astro.props;
@@ -27,25 +26,26 @@ const { page } = Astro.props;
 const posts = await getCollection("blog");
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/case${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/activity/notice${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     const posts = await getCollection("blog");
 
     const sortedPosts = posts.sort(
-        (a,b)=> new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+        (a, b) =>
+            new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
     );
 
-    const casePosts = sortedPosts.filter((post) => {
-        return post.data.category === "case";
+    const ecosystemPosts = sortedPosts.filter((post) => {
+        return post.data.category === "notice";
     });
-    return paginate(casePosts, { pageSize: 9 });
+    return paginate(ecosystemPosts, { pageSize: 9 });
 }
 ---
 
 <BaseLayout title="Nacos Blog" position="static">
-    <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/>
+    <SubHeading categories={ACTIVITY_CATEGORY} title="活动" href="/activity" />
     <div
         class="flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
     >

@@ -1,0 +1,48 @@
+---
+// 卡片海报图
+import CardPoster from "@components/markdownSet/CardPoster.astro";
+import moment from "moment";
+export type Props = {
+  post: {
+    slug: string;
+    body: string;
+    collection: string;
+    data: {
+      title: string;
+      description: string;
+      date: string;
+      keywords?: any[];
+    };
+  };
+  posterWidth?: string;
+};
+
+const { post, posterWidth } = Astro.props;
+---
+
+<div class="card glass h-full bg-gray-03" style={`width: ${posterWidth}px`}>
+  <CardPoster post={post} width={posterWidth} />
+  <div class="card-body w-full h-auto p-6">
+    <p class="text-gray-14 text-xs font-medium mb-3 h-auto">
+      {moment(post.data.date).format("MMMM D, YYYY")}
+    </p>
+    <h2 class="card-title text-gray-14 text-base line-clamp-2 mb-3 font-normal">
+      {post.data.title}
+    </h2>
+    <button class="bg-gray-01 text-xs py-3 mb-4 rounded-full w-[136px] h-10">
+      <a href={`/blog/${post.slug}`} rel="prefetch" class="text-gray-15">
+        READ ARTICLE
+      </a>
+    </button>
+  </div>
+</div>
+
+<style>
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  h2 {
+    min-height: 3rem;
+  }
+</style>

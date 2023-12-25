@@ -1,9 +1,7 @@
 ---
-// 博客海报图
-import background from "/public/blog-placeholder-2.jpg";
+// 卡片海报图
 import { Image } from "astro:assets";
 import Logo from "/public//nacos_white.png";
-import { format } from "date-fns";
 
 export type Props = {
     post: {
@@ -19,7 +17,6 @@ export type Props = {
         };
     };
     width?: string | number;
-    // size: "small" | "large";
 };
 
 const { post, width = 400 } = Astro.props;
@@ -37,6 +34,9 @@ const logowidth: number = 0.25 * Number(width);
         class="background z-0 rounded-t-2xl w-auto"
     />
 
+    <div class="title absolute top-0 mt-4">
+        {post.data.title}
+    </div>
     <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
         <div class="flex">
             <img
@@ -44,12 +44,7 @@ const logowidth: number = 0.25 * Number(width);
                 class="w-10 rounded-full"
             />
             <div class="flex flex-col ml-4 pt-2">
-                <p
-                    class:list={[
-                        "text-gray-02",
-                        "text-xs",
-                    ]}
-                >
+                <p class:list={["text-gray-02", "text-xs"]}>
                     by &nbsp;&nbsp; {post.data.author || post.data.date}
                 </p>
                 <p class="text-[.5rem]">阿里云高级工程师</p>
@@ -80,8 +75,10 @@ const logowidth: number = 0.25 * Number(width);
     }
 
     .title {
-        font-size: 1.5em; /* 调整为合适的大小 */
+        font-size: 1.25em; /* 调整为合适的大小 */
         text-align: center;
+        z-index: 5;
+        color: theme("colors.gray.01");
     }
 
     .info {

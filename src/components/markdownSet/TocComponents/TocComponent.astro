@@ -2,7 +2,7 @@
 import TableOfContentsList from "@components/starlight/TableOfContentsList.astro";
 import "./style.css";
 
-// // Props
+// Props
 const { headings = [] } = Astro.props;
 
 const toc = [{ depth: 2, slug: "_top", text: "概述", children: [] }];
@@ -23,7 +23,7 @@ const depth = 0;
 
 {
     toc && (
-        <blog-toc data-min-h="1" data-max-h="3" class={"isMobile"}>
+        <markdown-toc data-min-h="1" data-max-h="3" class={"isMobile"}>
             <nav
                 aria-labelledby="starlight__on-this-page"
                 class="starlight__on-this-page"
@@ -33,7 +33,7 @@ const depth = 0;
                 </h2>
                 <TableOfContentsList toc={toc} />
             </nav>
-        </blog-toc>
+        </markdown-toc>
     )
 }
 
@@ -65,4 +65,4 @@ const depth = 0;
     }
 </style>
 
-<script src="./blog-toc.ts"></script>
+<script src="./markdown-toc.ts"></script>

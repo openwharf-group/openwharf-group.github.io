@@ -33,7 +33,7 @@ const collapsedPages = collapseRange(page, pages);
     <ul class="flex items-center gap-4 text-lg">
         {
             page.url.prev && (
-                <li class="prev rounded-full border border-white">
+                <li class="prev rounded-full border border-gray-07">
                     <a
                         href={page.url.prev}
                         rel="prefetch"
@@ -55,7 +55,7 @@ const collapsedPages = collapseRange(page, pages);
                             class:list={[
                                 "relative rounded-md w-10 h-10 flex items-center justify-center border border-transparent transition-colors duration-150",
                                 link.pageNum !== page.currentPage &&
-                                    "hover:border-white focus:border-white",
+                                    "hover:border-gray-07 focus:border-gray-07",
                             ]}
                             aria-current={
                                 link.pageNum === page.currentPage
@@ -76,7 +76,7 @@ const collapsedPages = collapseRange(page, pages);
         </li>
         {
             page.url.next && (
-                <li class="next ease rounded-full border border-white transition-colors duration-150">
+                <li class="next ease rounded-full border border-gray-07 transition-colors duration-150">
                     <a
                         href={page.url.next}
                         rel="prefetch"
@@ -93,24 +93,24 @@ const collapsedPages = collapseRange(page, pages);
     a {
         z-index: 1;
         text-decoration: none;
-        color: theme('colors.gray.01')
+        color: theme('colors.gray.15')
     }
     ul {
         list-style-type: none;
     }
     li :active {
-        color: theme('colors.gray.03')
+        color: theme('colors.gray.15')
     }
     .next:hover,
     .prev:hover {
-        background-color: theme('colors.blue.03');
+        background-color: theme('colors.gray.07');
        a {
         color: theme('colors.gray.14')
        } 
     }
 
     .text {
-        color: theme('colors.gray.03')
+        color: theme('colors.gray.15')
     }
 
     @media screen(sm) {
