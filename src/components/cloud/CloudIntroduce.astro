@@ -1,0 +1,228 @@
+---
+const introduceData = 
+  [
+    {
+      title: "Freetier",
+      desc: "",
+      price: "Free",
+      unit: "",
+      priceDesc: "for Free Tests and Experiences",
+      linkName: "START TRAIL",
+      link: "https://free.aliyun.com/?searchKey=nacos&spm=nacos.cloud.topbar.0.0.0",
+      feature: [
+        "* Free trial for those who have not purchased the commercial version",
+        "* Development version 1C2G, 1 month",
+      ],
+    },
+    {
+      title: "For developer",
+      price: "¥47.2",
+      priceDesc: "For development environments",
+      unit: "/MONTH",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: [
+        "60% off monthly packages, 40% off yearly packages, no price increase on renewals",
+        "1C2G, 1 month",
+      ],
+    },
+    {
+      title: "Production",
+      desc: "Serverless Instance",
+      priceDesc:
+        "For Scenarios such as fluctuating traffic, small and medium-sized traffic, etc.",
+      price: "¥0.16",
+      unit: "/HOUR",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: ["per-connection charging", "<= 10 connections"],
+    },
+    {
+      title: "Production ",
+      desc: "Regular Instance",
+      priceDesc: "3-node configuration with high availability",
+      price: "¥348.6",
+      unit: "/MONTH",
+      linkName: "SUBSCRIBE",
+      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
+      feature: [
+        "Charge according to actual example specifications",
+        "<= 10 connections",
+      ],
+    },
+  ];
+---
+
+
+<cloud-introduce class="cloud-introduce block p-10">
+  <div class="top-introduce w-full flex">
+    <div class="left-section flex-1 flex flex-col">
+      <div class="py-6 text-gray-08 text-xs">About Nacos</div>
+      <div class="title text-7xl text-gray-03 mb-4">Nacos Cloud</div>
+      <span class="start-cloud text-gray-09 text-2xl">One click to start your Nacos Cloud journey！</span>
+    </div>
+    <div class="right-section flex-1 self-center">
+      <img
+        class="w-full h-fit"
+        src="/cloud-bg.png"
+      />
+    </div>
+  </div>
+
+  <div class="bottom-package w-full flex justify-center mt-10">
+    {
+      introduceData.map((item, index) => {
+        return (
+          <div class="card-package cursor-pointer bg-gray-14 border border-text-gray-03 rounded-2xl flex-1 text-center p-8">
+            <div class="package h-16">
+              <div class="title text-gray-03 text-base font-sans font-medium">
+                {item?.title}
+              </div>
+              <div class="description">{item?.desc}</div>
+            </div>
+            <div class="price-content pt-4 border-b border-t border-gray-03 h-28">
+              <div class="price text-5xl font-bold text-gray-03 sm:text-4xl">
+                {item?.price}
+              </div>
+              <div class="description font-sans  pt-4 text-xs text-gray-08 line-clamp-2">
+                {item?.priceDesc}
+              </div>
+            </div>
+            <div class="pl-2 h-16">
+              {item?.feature?.map((el, i) => {
+                return (
+                  <div class="text-left text-xs text-gray-08 mt-4 line-clamp-2">{el}</div>
+                );
+              })}
+            </div>
+            <div class="subscribe text-center mt-6 mb-6">
+              <a href={item?.link} target="_blank">
+                <button class="btn button-transform rounded-full w-full bg-gray-14 text-gray-03 hover:bg-gray-12">
+                  {item?.linkName}
+                </button>
+              </a>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</cloud-introduce>
+
+<script>
+  class CloudIntroduce extends HTMLElement {
+    constructor() {
+			super();
+		}
+  }
+  customElements.define("cloud-introduce", CloudIntroduce);
+</script>
+
+<style>
+  .cloud-introduce {
+    background-color: theme("colors.gray.14");
+  }
+  .card-package { 
+    flex: 1;
+    margin: 0 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card-package:hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .bottom-package .card-package:first-child {
+    margin-left: 0;
+    background-color: theme("colors.blue.01");
+  }
+  .bottom-package .card-package:first-child .package .title {
+    color: theme("colors.gray.14");
+  }
+  .bottom-package .card-package:first-child .price-content .price {
+    color: theme("colors.gray.14");
+  }
+  .bottom-package .card-package:first-child .subscribe .button-transform {
+    background: linear-gradient(226deg, #2C46C9 -2%, rgba(0,0,0,0.00) 43%), #121316;
+  }
+  .bottom-package .card-package:last-child {
+    margin-right: 0;
+  }
+  .button-transform {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+  }
+
+  .button-transform:hover {
+    background-color: theme("colors.gray.14");
+  }
+  /* 小于50rem  小于 800px */
+  @media (max-width: 50rem) { 
+    .cloud-introduce {
+      padding: 1.5rem;
+    }
+    .top-introduce .left-section .title {
+      font-size: 1.875rem; 
+      line-height: 2.25rem;
+    }
+    .top-introduce .left-section .start-cloud {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.75rem; /* 28px */
+    }
+    .top-introduce .right-section {
+      display: none;
+    }
+
+    .bottom-package {
+      flex-wrap: wrap;
+    }
+    .bottom-package .card-package {
+      padding: 1.5rem;
+      flex: 0 0 100%;
+      margin: 0 0 1rem 0;
+    }
+    .bottom-package .card-package:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 手机端卡片样式单独设置 */
+    .price-content .price {
+      font-size: 1.875rem; /* 30px */
+      line-height: 2.25rem; /* 36px */
+    }
+    .subscribe {
+      margin-bottom: 0;
+    }
+    .subscribe .button-transform {
+      height: 2rem;
+      min-height: 2rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+
+
+  /* 大于50rem 小于 72rem  800px < width < 1152 */
+  @media (min-width: 50rem) and (max-width: 72rem) { 
+    .bottom-package {
+      flex-wrap: wrap;
+    }
+    .bottom-package .card-package { 
+      flex: 0 0 40%;
+      margin: 0 0.5rem 1rem 0.5rem;
+    }
+    .bottom-package .card-package:first-child {
+      margin-left: 0.5rem;
+    }
+    .bottom-package .card-package:last-child {
+      margin-right: 0.5rem;
+    }
+  }
+</style>
