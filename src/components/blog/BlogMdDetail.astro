@@ -1,8 +1,9 @@
 ---
+// 博客详情页布局设置
 import type { CollectionEntry } from "astro:content";
-import FormattedDate from "../components/FormattedDate.astro";
+import FormattedDate from "../FormattedDate.astro";
 import { format } from "date-fns";
-import "../style/markdown.css";
+import "@style/markdown.css";
 
 type Props = CollectionEntry<"blog">["data"];
 
@@ -14,24 +15,25 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 		{heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
 	</div>
 	<main>
-	<div class="nacos-prose mx-auto">
-		<div class="title">
-			<div class="date">
-				{date}
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
+		<div class="nacos-prose mx-auto">
+			<div class="title">
+				<div class="date">
+					{date}
+					{
+						updatedDate && (
+							<div class="last-updated-on">
+								Last updated on{" "}
+								<FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
+				</div>
+				<h1 id="_top">{title}</h1>
+				<hr />
 			</div>
-			<h1 id="_top">{title}</h1>
-			<hr />
+			<slot />
 		</div>
-		<slot />
-	</div>
-</main>
+	</main>
 </div>
 
 <style>

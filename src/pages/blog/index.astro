@@ -4,7 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import { Icon } from "@astrojs/starlight/components";
-import BlogPostPreview from "@components/blog/BlogPostPreview.astro";
+import BlogCard from "@components/blog/BlogCard.astro";
 import BlogHeader from "@components/blog/BlogHeader.astro";
 import BlogPoster from "@components/blog/BlogPoster.astro";
 
@@ -68,7 +68,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                     recentPosts.slice(1, 4).map((post) => (
                         <>
                             <div class="Blog-Post-Preview 2xl:flex-1 xl:flex-1 lg:flex-1">
-                                <BlogPostPreview
+                                <BlogCard
                                     post={post as any}
                                     posterWidth='350'
                                 />
@@ -114,7 +114,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                 articlePosts.slice(0, 2).map((post) => (
                                     <>
                                         <div class="h-auto 2xl:flex-1 xl:flex-1 lg:flex-1">
-                                            <BlogPostPreview
+                                            <BlogCard
                                                 post={post as any}
                                                 posterWidth="350"
                                             />
@@ -161,7 +161,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                 ecosystemPosts.slice(0, 2).map((post) => (
                                     <>
                                         <div class="2xl:flex-1 xl:flex-1 lg:flex-1 h-auto">
-                                            <BlogPostPreview
+                                            <BlogCard
                                                 post={post as any}
                                                 posterWidth="350"
                                             />
@@ -208,7 +208,7 @@ const recentPosts = sortedPosts.splice(0, 4);
                                 casePosts.slice(0, 2).map((post) => (
                                     <>
                                         <div class="2xl:flex-1 xl:flex-1 lg:flex-1 h-auto">
-                                            <BlogPostPreview
+                                            <BlogCard
                                                 post={post as any}
                                                 posterWidth="350"
                                             />

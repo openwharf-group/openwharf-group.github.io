@@ -7,7 +7,8 @@
 		"@layouts/*": ["src/layouts/*"],
 		"@i18n/*": ["src/i18n/*"],
 		"@helpers/*": ["src/helpers/*"],
-		"@starlight/*": ["node_modules/@astrojs/starlight/*"]
+		"@starlight/*": ["node_modules/@astrojs/starlight/*"],
+		"@style/*": ["src/style/*"],
 	}
   }
 }
