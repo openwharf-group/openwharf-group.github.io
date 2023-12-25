@@ -638,7 +638,10 @@ const communitySubMenu = {
     position: relative;
   }
   .shortcut-card:hover {
-    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+    /* animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both; */
+    transition: transform 0.2s, box-shadow 0.2s;
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(0, 0, 0, 0.1);
   }
   @keyframes shake {
     10%, 90% {
