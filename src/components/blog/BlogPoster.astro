@@ -2,7 +2,7 @@
 // 博客海报图
 import background from "/public/blog-placeholder-2.jpg";
 import { Image } from "astro:assets";
-import Logo from "/public/nacos_colorful.png";
+import Logo from "/public//nacos_white.png";
 import { format } from "date-fns";
 
 export type Props = {
@@ -28,38 +28,35 @@ const logowidth: number = 0.25 * Number(width);
 ---
 
 <div
-    class="card w-96 bg-base-100 shadow-xl poster"
+    class="card w-96 bg-base-100 shadow-xl poster relative"
     style={`--poster-width: ${width}px; --poster-height: ${height}px; --logo-width: ${logowidth}px;}}`}
 >
-    <Image src={background} alt="Background" class="background z-0" />
-    <div class="card-body">
-        <h2
-            class:list={[
-                "card-title",
-                "text-xl",
-                // size === "large" ? "text-3xl" : "text-2xl",
-                // "h-2/3",
-                "min-h-[3rem]",
-                "text-gray-01",
-                "line-clamp-2"
-            ]}
-            
-        >
-            {post.data.title}
-        </h2>
-        <div class="info h-1/3">
-            <span
-                class:list={[
-                    "text-gray-02",
-                    "text-sm",
-                    // size === "large" ? "text-xl" : "text-sm",
-                ]}
-                >{
-                    post.data.author || post.data.date
-                }</span
-            >
-            <Image src={Logo} alt="" class="logo" />
+    <img
+        src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
+        alt="Background"
+        class="background z-0 rounded-t-2xl w-auto"
+    />
+
+    <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
+        <div class="flex">
+            <img
+                src="https://img.alicdn.com/imgextra/i3/O1CN01GFGkcR1y0NfyEKR0V_!!6000000006516-0-tps-1024-1024.jpg"
+                class="w-10 rounded-full"
+            />
+            <div class="flex flex-col ml-4 pt-2">
+                <p
+                    class:list={[
+                        "text-gray-02",
+                        "text-xs",
+                    ]}
+                >
+                    by &nbsp;&nbsp; {post.data.author || post.data.date}
+                </p>
+                <p class="text-[.5rem]">阿里云高级工程师</p>
+            </div>
         </div>
+
+        <Image src={Logo} alt="" class="logo" />
     </div>
 </div>
 <style>
@@ -97,9 +94,5 @@ const logowidth: number = 0.25 * Number(width);
     .logo {
         width: var(--logo-width);
         height: auto;
-    }
-
-    .card-body {
-        z-index: 5;
     }
 </style>

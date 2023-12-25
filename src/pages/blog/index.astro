@@ -7,6 +7,7 @@ import { Icon } from "@astrojs/starlight/components";
 import BlogCard from "@components/blog/BlogCard.astro";
 import BlogHeader from "@components/blog/BlogHeader.astro";
 import BlogPoster from "@components/blog/BlogPoster.astro";
+import Footer from "@components/common/Footer.astro";
 
 interface Post {
     slug: string;
@@ -61,7 +62,7 @@ const recentPosts = sortedPosts.splice(0, 4);
             </a>
         </div>
         <!-- 最近的3篇博客展示 -->
-        <div class="flex flex-row items-center gap-2 pr-4 bg-gray-14 pt-10">
+        <!-- <div class="flex flex-row items-center gap-2 pr-4 bg-gray-14 pt-10">
             <ul class="flex flex-row mx-auto items-stretch justify-center gap-4">
                 {
                     // @ts-ignore
@@ -77,13 +78,13 @@ const recentPosts = sortedPosts.splice(0, 4);
                     ))
                 }
             </ul>
-        </div>
+        </div> -->
 
         <!-- 按照分类展示 -->
 
-        <div class="bg-gray-14">
+        <div class="bg-gray-01">
             <div
-                class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+                class="mx-auto max-w-screen-xl py-8 sm:py-12"
             >
                 <div
                     class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch"
@@ -92,15 +93,15 @@ const recentPosts = sortedPosts.splice(0, 4);
                         <div class="mx-auto max-w-md text-center lg:text-left">
                             <header>
                                 <h2
-                                    class="text-xl font-bold text-gray-01 sm:text-3xl"
+                                    class="text-xl font-bold text-gray-14 sm:text-3xl"
                                 >
                                     Article
                                 </h2>
-                                <div class="text-xl text-blue-08 pt-4">
-                                    <a href={`/blog/article`}
-                                        >查看所有article文章</a
-                                    >
-                                    <Icon name="right-arrow" />
+                                <div class="text-base text-blue-08 pt-4">
+                                    <a href={`/blog/article`}>
+                                        View All Article Posts
+                                        <svg class="icon" viewBox="0 0 1220 800" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7491" width="16" height="16"><path d="M717.034962 1023.997037a47.40727 47.40727 0 0 1-33.185089-80.592359l427.850614-427.850614a15.407363 15.407363 0 0 0 4.740727-10.666636 11.851818 11.851818 0 0 0-3.555545-8.296272L699.257236 81.777541a47.768751 47.768751 0 0 1 67.55536-67.55536l413.628433 413.628433a105.481176 105.481176 0 0 1 30.814725 77.036814 110.221903 110.221903 0 0 1-33.185089 77.036814L750.220051 1010.960038a47.40727 47.40727 0 0 1-33.185089 13.036999z" fill="#3D57DA" p-id="7492"></path><path d="M1142.515213 559.405789H47.40727a47.40727 47.40727 0 1 1 0-94.814541h1095.107943a47.40727 47.40727 0 1 1 0 94.814541z" fill="#3D57DA" p-id="7493"></path></svg>
+                                    </a>
                                 </div>
                             </header>
                         </div>
@@ -111,12 +112,12 @@ const recentPosts = sortedPosts.splice(0, 4);
                             class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
-                                articlePosts.slice(0, 2).map((post) => (
+                                articlePosts.slice(0, 3).map((post) => (
                                     <>
-                                        <div class="h-auto 2xl:flex-1 xl:flex-1 lg:flex-1">
+                                        <div class="h-auto ">
                                             <BlogCard
                                                 post={post as any}
-                                                posterWidth="350"
+                                                posterWidth="300"
                                             />
                                         </div>
                                     </>
@@ -128,9 +129,9 @@ const recentPosts = sortedPosts.splice(0, 4);
             </div>
         </div>
 
-        <div class="bg-gray-14">
+        <div class="bg-gray-01">
             <div
-                class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+                class="mx-auto max-w-screen-xl py-8 sm:py-12 "
             >
                 <div
                     class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch"
@@ -139,15 +140,15 @@ const recentPosts = sortedPosts.splice(0, 4);
                         <div class="mx-auto max-w-md text-center lg:text-left">
                             <header>
                                 <h2
-                                    class="text-xl font-bold text-gray-01 sm:text-3xl"
+                                    class="text-xl font-bold text-gray-14 sm:text-3xl"
                                 >
                                     Ecosystem
                                 </h2>
-                                <div class="text-xl text-blue-08 pt-4">
+                                <div class="text-base text-blue-08 pt-4">
                                     <a href={`/blog/ecosystem`}
-                                        >查看所有生态文章</a
-                                    >
-                                    <Icon name="right-arrow" />
+                                        >View All Ecosystem Posts
+                                        <svg class="icon" viewBox="0 0 1220 800" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7491" width="16" height="16"><path d="M717.034962 1023.997037a47.40727 47.40727 0 0 1-33.185089-80.592359l427.850614-427.850614a15.407363 15.407363 0 0 0 4.740727-10.666636 11.851818 11.851818 0 0 0-3.555545-8.296272L699.257236 81.777541a47.768751 47.768751 0 0 1 67.55536-67.55536l413.628433 413.628433a105.481176 105.481176 0 0 1 30.814725 77.036814 110.221903 110.221903 0 0 1-33.185089 77.036814L750.220051 1010.960038a47.40727 47.40727 0 0 1-33.185089 13.036999z" fill="#3D57DA" p-id="7492"></path><path d="M1142.515213 559.405789H47.40727a47.40727 47.40727 0 1 1 0-94.814541h1095.107943a47.40727 47.40727 0 1 1 0 94.814541z" fill="#3D57DA" p-id="7493"></path></svg>
+                                    </a>
                                 </div>
                             </header>
                         </div>
@@ -158,12 +159,12 @@ const recentPosts = sortedPosts.splice(0, 4);
                             class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
-                                ecosystemPosts.slice(0, 2).map((post) => (
+                                ecosystemPosts.slice(0, 3).map((post) => (
                                     <>
-                                        <div class="2xl:flex-1 xl:flex-1 lg:flex-1 h-auto">
+                                        <div class="h-auto">
                                             <BlogCard
                                                 post={post as any}
-                                                posterWidth="350"
+                                                posterWidth="300"
                                             />
                                         </div>
                                     </>
@@ -175,9 +176,9 @@ const recentPosts = sortedPosts.splice(0, 4);
             </div>
         </div>
 
-        <div class="bg-gray-14">
+        <div class="bg-gray-01">
             <div
-                class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8"
+                class="mx-auto max-w-screen-xl py-8 sm:py-12"
             >
                 <div
                     class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch"
@@ -186,15 +187,15 @@ const recentPosts = sortedPosts.splice(0, 4);
                         <div class="mx-auto max-w-md text-center lg:text-left">
                             <header>
                                 <h2
-                                    class="text-xl font-bold text-gray-01 sm:text-3xl"
+                                    class="text-xl font-bold text-gray-14 sm:text-3xl"
                                 >
                                     Case
                                 </h2>
-                                <div class="text-xl text-blue-08 pt-4">
-                                    <a href={`/blog/case`}
-                                        >查看所有最佳实践文章</a
-                                    >
-                                    <Icon name="right-arrow" />
+                                <div class="text-base text-blue-08 pt-4">
+                                    <a href={`/blog/case`}>
+                                        View All Case Posts
+                                        <svg class="icon" viewBox="0 0 1220 800" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7491" width="16" height="16"><path d="M717.034962 1023.997037a47.40727 47.40727 0 0 1-33.185089-80.592359l427.850614-427.850614a15.407363 15.407363 0 0 0 4.740727-10.666636 11.851818 11.851818 0 0 0-3.555545-8.296272L699.257236 81.777541a47.768751 47.768751 0 0 1 67.55536-67.55536l413.628433 413.628433a105.481176 105.481176 0 0 1 30.814725 77.036814 110.221903 110.221903 0 0 1-33.185089 77.036814L750.220051 1010.960038a47.40727 47.40727 0 0 1-33.185089 13.036999z" fill="#3D57DA" p-id="7492"></path><path d="M1142.515213 559.405789H47.40727a47.40727 47.40727 0 1 1 0-94.814541h1095.107943a47.40727 47.40727 0 1 1 0 94.814541z" fill="#3D57DA" p-id="7493"></path></svg>
+                                    </a>
                                 </div>
                             </header>
                         </div>
@@ -205,12 +206,12 @@ const recentPosts = sortedPosts.splice(0, 4);
                             class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4"
                         >
                             {
-                                casePosts.slice(0, 2).map((post) => (
+                                casePosts.slice(0, 3).map((post) => (
                                     <>
-                                        <div class="2xl:flex-1 xl:flex-1 lg:flex-1 h-auto">
+                                        <div class="h-auto">
                                             <BlogCard
                                                 post={post as any}
-                                                posterWidth="350"
+                                                posterWidth="300"
                                             />
                                         </div>
                                     </>
@@ -222,10 +223,11 @@ const recentPosts = sortedPosts.splice(0, 4);
             </div>
         </div>
 
-        <div class="text-center text-xl text-blue-08 py-4">
+        <!-- <div class="text-center text-xl text-blue-08 py-4">
             <a href={`/blog/all`}>查看所有文章</a>
             <Icon name="right-arrow" />
-        </div>
+        </div> -->
+        <Footer/>
     </div>
 </BaseLayout>
 <style>
