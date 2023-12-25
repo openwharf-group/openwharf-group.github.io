@@ -1,6 +1,6 @@
 ---
 import TocComponent from "@components/blog/TocComponents/TocComponent.astro";
-const { align = "home", post } = Astro.props;
+const { align = "home", headings } = Astro.props;
 const justifyContent = align === "detail" ? "flex-start" : "space-between";
 const isBlock = align === "detail" ? "block" : "none";
 const isFlexNone = align === "detail" ? "none" : 1;
@@ -146,10 +146,9 @@ const isRight = align === "detail" ? "auto" : "0px";
           </svg>
         </div>
         <div
-          data-blog-tocComponent-content
-          class="hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 pl-8 pb-8"
+          class="blog-tocComponent-content hidden absolute right-0 top-full w-96 bg-gray-12 text-gray-01 pl-8 pb-8 pt-4"
         >
-          {post && <TocComponent content={post} isFold={true}/>}
+          <TocComponent headings={headings}/>
         </div>
       </div>
     </div>
@@ -170,7 +169,7 @@ const isRight = align === "detail" ? "auto" : "0px";
         "div[data-blog-tocComponent-button]",
       )!;
       const blogTocComponentContent = this.querySelector<HTMLDivElement>(
-        "div[data-blog-tocComponent-content]",
+        "div.blog-tocComponent-content",
       )!;
       // 移动端点击折叠按钮打开/关闭级联菜单
       blogMenu.addEventListener("click", () => {
@@ -250,6 +249,16 @@ const isRight = align === "detail" ? "auto" : "0px";
   }
   .data-blog-menu-content{
     right:var(--isRight);
+  }
+  .blog-tocComponent-content :global(h2) {
+		font-size: 1rem;
+	}
+  .blog-tocComponent-content :global(a){
+		display: block;
+		font-size: var(--sl-text-xs);
+		text-decoration: none;
+		color: var(--sl-color-gray-5);
+		overflow-wrap: anywhere;
   }
   @media (max-width: 48rem) {
     .blog_header_content {
