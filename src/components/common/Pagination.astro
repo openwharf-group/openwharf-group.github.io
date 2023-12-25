@@ -30,7 +30,7 @@ const collapsedPages = collapseRange(page, pages);
 ---
 
 <nav aria-label={ariaLabel} {...attrs}>
-    <ul class="flex items-center gap-4">
+    <ul class="flex items-center gap-4 text-lg">
         {
             page.url.prev && (
                 <li class="prev rounded-full border border-white">
@@ -48,7 +48,7 @@ const collapsedPages = collapseRange(page, pages);
             collapsedPages.map((link) => (
                 <li class="hidden sm:inline-block">
                     {!link.href ? (
-                        <p>{link.text}</p>
+                        <p class="text">{link.text}</p>
                     ) : (
                         <a
                             href={link.href}
@@ -70,7 +70,7 @@ const collapsedPages = collapseRange(page, pages);
             ))
         }
         <li class="sm:hidden">
-            <p aria-current="page">
+            <p aria-current="page" class="text">
                 Page {page.currentPage} of {page.lastPage}
             </p>
         </li>
@@ -92,15 +92,25 @@ const collapsedPages = collapseRange(page, pages);
 <style>
     a {
         z-index: 1;
-        text-decoration: inherit;
+        text-decoration: none;
+        color: theme('colors.gray.01')
+    }
+    ul {
+        list-style-type: none;
+    }
+    li :active {
+        color: theme('colors.gray.03')
     }
     .next:hover,
     .prev:hover {
-        background: linear-gradient(
-            247.23deg,
-            rgba(74, 242, 200, 0.2) 0%,
-            rgba(47, 76, 179, 0.2) 100%
-        );
+        background-color: theme('colors.blue.03');
+       a {
+        color: theme('colors.gray.14')
+       } 
+    }
+
+    .text {
+        color: theme('colors.gray.03')
     }
 
     @media screen(sm) {
@@ -112,8 +122,8 @@ const collapsedPages = collapseRange(page, pages);
             border-radius: inherit;
             background: linear-gradient(
                 247.23deg,
-                rgba(74, 242, 200, 1) 0%,
-                rgba(47, 76, 179, 1) 100%
+                theme('colors.blue.07'),
+                theme('colors.gray.04')
             );
             z-index: -1;
         }
@@ -124,8 +134,8 @@ const collapsedPages = collapseRange(page, pages);
             background: rgb(35 38 45)
                 linear-gradient(
                     247.23deg,
-                    rgba(74, 242, 200, 0.2) 0%,
-                    rgba(47, 76, 179, 0.2) 100%
+                    theme('colors.gray.07'),
+                    theme('colors.blue.04')
                 );
         }
     }

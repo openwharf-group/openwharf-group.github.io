@@ -26,7 +26,7 @@ const { page } = Astro.props;
 const posts = await getCollection("blog");
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/article${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/blog/ecosystem${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {

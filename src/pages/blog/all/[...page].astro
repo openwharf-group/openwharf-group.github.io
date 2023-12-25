@@ -23,7 +23,7 @@ interface Post {
 const { page } = Astro.props;
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/article${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/blog/all${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
