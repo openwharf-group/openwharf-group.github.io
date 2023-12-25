@@ -1,26 +1,27 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro"
-import CloudIntroduce from "@components/cloud/CloudIntroduce.astro";
-import CompaniesFeedback from "@components/cloud/CompaniesFeedback.astro";
-import CloudFooter from "@components/common/Footer.astro";
-
+import BaseLayout from '@layouts/BaseLayout.astro';
+import CloudIntroduce from '@components/cloud/CloudIntroduce.astro';
+import CompaniesFeedback from '@components/cloud/CompaniesFeedback.astro';
+import CloudFooter from '@components/common/Footer.astro';
 ---
 
-<BaseLayout title="Nacos Cloud">
+<BaseLayout title="Nacos Cloud"
+  description="Nacos Cloud 专为云原生应用设计，提供强大的服务发现、动态配置管理和服务管理功能，支持高效的应用开发和运维。"
+>
   <CloudIntroduce />
 
   <cloud-body>
     <CompaniesFeedback />
   </cloud-body>
-  
+
   <CloudFooter />
 </BaseLayout>
 
 <script>
   class CloudBody extends HTMLElement {
-      constructor() {
-          super();
-      }
+    constructor() {
+      super();
+    }
   }
-  customElements.define("cloud-body", CloudBody);
+  customElements.define('cloud-body', CloudBody);
 </script>

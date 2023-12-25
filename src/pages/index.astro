@@ -1,42 +1,40 @@
 ---
-import { languages } from "../i18n/languages";
-import BaseLayout from "@layouts/BaseLayout.astro"
+import { languages } from '../i18n/languages';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import { useTranslations } from '../i18n/util';
-import HomeIntroduce from "@components/home/HomeIntroduce.astro";
-import ChooseReason from "@components/home/ChooseReason.astro";
-import NacosEBook from "@components/home/NacosEBook.astro";
-import ExploreFeatures from "@components/home/ExploreFeatures.astro";
-import HomeCardPlayer from "@components/home/HomeCardPlayer.astro";
-import UseCompanies from "@components/home/UseCompanies.astro";
-import HomeFooter from "@components/common/Footer.astro";
-
+import HomeIntroduce from '@components/home/HomeIntroduce.astro';
+import ChooseReason from '@components/home/ChooseReason.astro';
+import NacosEBook from '@components/home/NacosEBook.astro';
+import ExploreFeatures from '@components/home/ExploreFeatures.astro';
+import HomeCardPlayer from '@components/home/HomeCardPlayer.astro';
+import UseCompanies from '@components/home/UseCompanies.astro';
+import HomeFooter from '@components/common/Footer.astro';
 
 const t = useTranslations(Astro);
-
 ---
-<BaseLayout title="Nacos">
-    <HomeIntroduce />
-    
-    <home-body>
-        <ChooseReason />
-        <NacosEBook />
-        <ExploreFeatures />
-        <HomeCardPlayer />
-        <UseCompanies />
-    </home-body>
 
-    <HomeFooter />
+<BaseLayout
+  title="首页"
+  description="Nacos是动态服务发现、配置管理和服务管理的解决方案，旨在帮助开发者构建和维护云原生应用。"
+>
+  <HomeIntroduce />
 
+  <home-body>
+    <ChooseReason />
+    <NacosEBook />
+    <ExploreFeatures />
+    <HomeCardPlayer />
+    <UseCompanies />
+  </home-body>
+
+  <HomeFooter />
 </BaseLayout>
 
 <script>
-    class HomeBody extends HTMLElement {
-        constructor() {
-            super();
-        }
+  class HomeBody extends HTMLElement {
+    constructor() {
+      super();
     }
-    customElements.define("home-body", HomeBody);
+  }
+  customElements.define('home-body', HomeBody);
 </script>
-
-
-

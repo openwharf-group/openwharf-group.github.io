@@ -36,12 +36,6 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
     content: `${data.title} ${config.titleDelimiter} ${config.title}`,
   },
   { tag: 'link', attrs: { rel: 'canonical', href: canonical?.href } },
-  // { tag: 'meta', attrs: { name: 'generator', content: Astro.generator } },
-  // {
-  // 	tag: 'meta',
-  // 	attrs: { name: 'generator', content: `Starlight v${version}` },
-  // },
-  // Favicon
   {
     tag: 'link',
     attrs: {
@@ -55,32 +49,36 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
   { tag: 'meta', attrs: { property: 'og:type', content: 'article' } },
   { tag: 'meta', attrs: { property: 'og:url', content: canonical?.href } },
   { tag: 'meta', attrs: { property: 'og:locale', content: lang } },
-  {
-    tag: 'meta',
-    attrs: { property: 'og:description', content: description },
-  },
+
   { tag: 'meta', attrs: { property: 'og:site_name', content: config.title } },
   // Keywords
-  { tag: 'meta', attrs: { property: 'keywords', content: keywords } },
+
   // Twitter Tags
-  // {
-  // 	tag: 'meta',
-  // 	attrs: { name: 'twitter:card', content: 'summary_large_image' },
-  // },
-  // { tag: 'meta', attrs: { name: 'twitter:title', content: data.title } },
-  // { tag: 'meta', attrs: { name: 'twitter:description', content: description } },
+  {
+    tag: 'meta',
+    attrs: { name: 'twitter:card', content: 'summary_large_image' },
+  },
+  { tag: 'meta', attrs: { name: 'twitter:title', content: data.title } },
+  { tag: 'meta', attrs: { name: 'twitter:description', content: description } },
 ];
 
-if (description)
+if (description) {
   headDefaults.push({
     tag: 'meta',
     attrs: { name: 'description', content: description },
   });
-if (description)
   headDefaults.push({
     tag: 'meta',
-    attrs: { name: 'description', content: description },
+    attrs: { property: 'og:description', content: description },
   });
+}
+
+if (keywords) {
+  headDefaults.push({
+    tag: 'meta',
+    attrs: { property: 'keywords', content: keywords },
+  });
+}
 
 // Link to language alternates.
 if (canonical && config.isMultilingual) {

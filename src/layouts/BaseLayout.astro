@@ -12,14 +12,16 @@ const t = useTranslations(Astro);
 
 export type Props = {
   title: string;
+  description: string;
+  keywords?: string[] | string;
   position?: "static" | "sticky";
 };
-const { title, position = "sticky" } = Astro.props;
+const { title, description, keywords,  position = "sticky" } = Astro.props;
 const headEntry = {
   data: {
-    description: "",
-    keywords: "Nacos",
-    title: "Nacos 官网",
+    description: description,
+    keywords: keywords || "动态服务发现,配置管理,服务管理",
+    title: title,
     head: []
   }
 }

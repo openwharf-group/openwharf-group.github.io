@@ -15,13 +15,13 @@ const { src, description, classes = [] } = Astro.props;
 
   <div data-layer-wrap class="layer-wrap w-full h-full p-4 rounded-3xl flex flex-col justify-between">
     <div class="flex items-center">
-      <button data-play-video class="btn btn-secondary btn-sm rounded-3xl mr-4 text-xs">
+      <a data-play-video class="btn btn-secondary btn-sm rounded-3xl mr-4 text-xs">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" version="1.1" width="8" height="8.918435096740723" viewBox="0 0 8 8.918435096740723"><g><path d="M0,8.91844L0,0L8,4.45922L0,8.91844Z" fill="#121316" fill-opacity="1"/></g></svg>
         <span>PLAY VIDEO</span>
-      </button>
-      <button data-bilibili class="btn btn-secondary btn-sm rounded-3xl mr-4 text-xs">
+      </a>
+      <a data-bilibili class="btn btn-secondary btn-sm rounded-3xl mr-4 text-xs">
         <img class="w-12 h-5" src="/bilibili.png" /> 
-      </button>
+      </a>
     </div>
     <div class="text-gray-02 text-sm">{description}</div>
   </div>
