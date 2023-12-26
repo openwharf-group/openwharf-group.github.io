@@ -15,13 +15,15 @@ export type Props = {
     };
   };
   posterWidth?: string;
+  type?: string;
 };
 
-const { post, posterWidth } = Astro.props;
+const { post, posterWidth, type = "blog" } = Astro.props;
+
 ---
 
 <div class="card glass h-full bg-gray-03" style={`width: ${posterWidth}px`}>
-  <CardPoster post={post} width={posterWidth} />
+  <CardPoster post={post} width={posterWidth} type={type}/>
   <div class="card-body w-full h-auto p-6">
     <p class="text-gray-14 text-xs font-medium mb-3 h-auto">
       {moment(post.data.date).format("MMMM D, YYYY")}

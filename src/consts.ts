@@ -6,57 +6,70 @@ export const SITE_DESCRIPTION = 'Welcome to my website!';
 
 export const BLOG_CATEGORY = [
     {
-        text: 'article',
+        type: 'article',
+        title: '技术',
         href: '/blog/article'
     },
+    
     {
-        text: 'case',
-        href: '/blog/case'
-    },
-    {
-        text: 'ecosystem',
+        type: 'ecosystem',
+        title: '生态',
         href: '/blog/ecosystem'
     },
     {
-        text: 'all',
+        type: 'case',
+        title: '最佳实践',
+        href: '/blog/case'
+    },
+    {
+        type: 'all',
+        title:'全部文章',
         href: '/blog/all'
     },
 ]
 
 export const NEWS_CATEGORY = [
     {
-        text: 'annoucement',
+        type: 'annoucement',
+        title:'社区公告',
         href: '/news/annoucement'
     },
     {
-        text: 'release',
+        type: 'release',
+        title:'发布声明',
         href: '/news/release'
     },
     {
-        text: 'collaborate',
-        href: '/news/collaborate'
+        type: 'committer',
+        title:'人员晋升',
+        href: '/news/committer'
     },
     {
-        text: 'committor',
-        href: '/news/committor'
-    }
+        type: 'cooperate',
+        title:'社区合作',
+        href: '/news/cooperate'
+    },
 ]
 
 export const ACTIVITY_CATEGORY = [
     {
-        text: 'annoucement',
-        href: '/activity/annoucement'
+        type: 'annoucement',
+        title:'社区公告',
+        href: '/news/annoucement'
     },
     {
-        text: 'notice',
-        href: '/activity/notice'
+        type: 'activity-preview',
+        title:'活动预告',
+        href: '/activity/activity-preview'
     },
     {
-        text: 'activity-detail',
+        type: 'activity-detail',
+        title:'活动详情',
         href: '/activity/activity-detail'
     },
     {
-        text: 'advertisement',
+        type: 'advertisement',
+        title:'其他活动',
         href: '/activity/advertisement'
     }
 ]

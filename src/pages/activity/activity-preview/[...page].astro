@@ -26,7 +26,7 @@ const { page } = Astro.props;
 const posts = await getCollection("blog");
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/activity/notice${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/activity/activity-preview${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -38,7 +38,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     );
 
     const ecosystemPosts = sortedPosts.filter((post) => {
-        return post.data.category === "notice";
+        return post.data.category === "activity-preview";
     });
     return paginate(ecosystemPosts, { pageSize: 9 });
 }

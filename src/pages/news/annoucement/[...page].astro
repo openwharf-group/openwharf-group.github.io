@@ -42,7 +42,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 ---
 
-<BaseLayout title="Nacos Blog" position="static">
+<BaseLayout title="Nacos Blog" position="static" >
     <SubHeading categories={NEWS_CATEGORY} title="事件" href="/news" />
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
@@ -51,7 +51,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             {
                 page.data.map((post) => (
                     <div class="2xl:flex-1 xl:flex-1 lg:flex-1 md:flex-1">
-                        <BlogCard post={post as Post} posterWidth="350" />
+                        <BlogCard post={post as Post} posterWidth="350" type="annoucement"/>
                     </div>
                 ))
             }

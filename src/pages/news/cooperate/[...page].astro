@@ -3,7 +3,6 @@ import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
-import FormattedDate from "@components/FormattedDate.astro";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
 import SubHeading from "@components/markdownSet/SubHeading.astro";
@@ -27,7 +26,7 @@ const { page } = Astro.props;
 const posts = await getCollection("blog");
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/news/committor${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/news/cooperate${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
@@ -38,10 +37,10 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
     );
 
-    const casePosts = sortedPosts.filter((post) => {
-        return post.data.category === "committor";
+    const ecosystemPosts = sortedPosts.filter((post) => {
+        return post.data.category === "cooperate";
     });
-    return paginate(casePosts, { pageSize: 9 });
+    return paginate(ecosystemPosts, { pageSize: 9 });
 }
 ---
 

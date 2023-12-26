@@ -22,7 +22,7 @@ interface Post {
 const posts = await getCollection("blog", (item) => {
     const blogCategories = [];
     ACTIVITY_CATEGORY.forEach((item) => {
-        blogCategories.push(item.text);
+        blogCategories.push(item.type);
     });
     return blogCategories.includes(item.data.category);
 });
@@ -35,11 +35,11 @@ const sortedPosts = posts.sort(
 const categoryPosts = [];
 for (const item of ACTIVITY_CATEGORY) {
     let posts = [];
-    if (item.text === "all") {
+    if (item.type === "all") {
         posts = [...sortedPosts];
     } else {
         posts = sortedPosts.filter((post) => {
-            return post.data.category === item.text;
+            return post.data.category === item.type;
         });
     }
 
@@ -67,8 +67,7 @@ for (const item of ACTIVITY_CATEGORY) {
                                         </h2>
                                         <div class="text-base text-blue-08 pt-4">
                                             <a href={categoryPost.href}>
-                                                View All {categoryPost.text}
-                                                Posts
+                                                查看所有 {categoryPost.title}
                                                 <svg
                                                     class="icon"
                                                     viewBox="0 0 1220 800"

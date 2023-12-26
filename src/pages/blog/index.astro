@@ -22,7 +22,7 @@ interface Post {
 const posts = await getCollection("blog", (item) => {
   const blogCategories = [];
     BLOG_CATEGORY.forEach((item) => {
-        blogCategories.push(item.text);
+        blogCategories.push(item.type);
     });
     return blogCategories.includes(item.data.category);
 });
@@ -35,11 +35,11 @@ const sortedPosts = posts.sort(
 const categoryPosts = [];
 for (const item of BLOG_CATEGORY) {
     let posts = [];
-    if (item.text === "all") {
+    if (item.type === "all") {
         posts = [...sortedPosts];
     } else {
         posts = sortedPosts.filter((post) => {
-            return post.data.category === item.text;
+            return post.data.category === item.type;
         });
     }
 
@@ -95,23 +95,22 @@ const recentPosts = sortedPosts.splice(0, 4);
                 }
             </ul>
         </div> -->
-
     <!-- 按照分类展示 -->
     {
-      categoryPosts.map((categoryPost) => (
-          <div class="bg-gray-01">
+      categoryPosts.map((categoryPost) => {
+        if(categoryPost.type === 'all') return ;
+        else return <div class="bg-gray-01">
               <div class="mx-auto max-w-screen-xl py-8 sm:py-12">
                   <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch">
                       <div class="grid place-content-center rounded p-6 sm:p-8">
                           <div class="mx-auto max-w-md text-center lg:text-left">
                               <header>
                                   <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
-                                      {categoryPost.text}
+                                      {categoryPost.title}
                                   </h2>
                                   <div class="text-base text-blue-08 pt-4">
                                       <a href={categoryPost.href}>
-                                          View All {categoryPost.text}
-                                          Posts
+                                          查看所有 {categoryPost.title} 文章
                                           <svg
                                               class="icon"
                                               viewBox="0 0 1220 800"
@@ -159,7 +158,9 @@ const recentPosts = sortedPosts.splice(0, 4);
                   </div>
               </div>
           </div>
-      ))
+      }
+          
+      )
   }
 
     <!-- <div class="text-center text-xl text-blue-08 py-4">

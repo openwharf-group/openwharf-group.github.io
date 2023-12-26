@@ -17,9 +17,10 @@ export type Props = {
         };
     };
     width?: string | number;
+    type?: string;
 };
 
-const { post, width = 400 } = Astro.props;
+const { post, width = 400, type = "blog" } = Astro.props;
 const height: number = Number(width) / 2;
 const logowidth: number = 0.25 * Number(width);
 ---
@@ -34,22 +35,28 @@ const logowidth: number = 0.25 * Number(width);
         class="background z-0 rounded-t-2xl w-auto"
     />
 
-    <div class="title absolute top-0 mt-4">
+    <div class="title absolute top-0 mt-6 text-gray-01">
         {post.data.title}
     </div>
+
     <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
-        <div class="flex">
-            <img
-                src="https://img.alicdn.com/imgextra/i3/O1CN01GFGkcR1y0NfyEKR0V_!!6000000006516-0-tps-1024-1024.jpg"
-                class="w-10 rounded-full"
-            />
-            <div class="flex flex-col ml-4 pt-2">
-                <p class:list={["text-gray-02", "text-xs"]}>
-                    by &nbsp;&nbsp; {post.data.author || post.data.date}
-                </p>
-                <p class="text-[.5rem]">阿里云高级工程师</p>
-            </div>
-        </div>
+        <!-- 博客的海报增加作者信息 -->
+        {
+            type === "blog" && (
+                <div class="flex">
+                    <img
+                        src="https://img.alicdn.com/imgextra/i3/O1CN01GFGkcR1y0NfyEKR0V_!!6000000006516-0-tps-1024-1024.jpg"
+                        class="w-10 rounded-full"
+                    />
+                    <div class="flex flex-col ml-4 pt-2">
+                        <p class:list={["text-gray-02", "text-xs"]}>
+                            by &nbsp;&nbsp; {post.data.author || "nacos"}
+                        </p>
+                        <p class="text-[.5rem]">阿里云高级工程师</p>
+                    </div>
+                </div>
+            )
+        }
 
         <Image src={Logo} alt="" class="logo" />
     </div>
@@ -78,7 +85,7 @@ const logowidth: number = 0.25 * Number(width);
         font-size: 1.25em; /* 调整为合适的大小 */
         text-align: center;
         z-index: 5;
-        color: theme("colors.gray.01");
+        line-height: 1.5em;
     }
 
     .info {
