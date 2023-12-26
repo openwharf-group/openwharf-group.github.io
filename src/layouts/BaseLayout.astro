@@ -1,48 +1,56 @@
 ---
-import "@starlight/style/props.css";
-import "@starlight/style/reset.css";
-import "@starlight/style/shiki.css";
-import "@starlight/style/util.css";
-import "../style/global.css";
-import "../style/fonts.css";
-import { useTranslations } from "@i18n/util";
-import Head from "@components/starlight/Head.astro";
-import HomeHeader from "@components/common/Header.astro";
+import '@starlight/style/props.css';
+import '@starlight/style/reset.css';
+import '@starlight/style/shiki.css';
+import '@starlight/style/util.css';
+import '../style/global.css';
+import '../style/fonts.css';
+import locales from '@i18n/languages';
+import { useTranslations } from '@i18n/util';
+import Head from '@components/starlight/Head.astro';
+import HomeHeader from '@components/common/Header.astro';
+import _ from 'lodash';
 const t = useTranslations(Astro);
 
 export type Props = {
   title: string;
   description: string;
+  lang?: string;
   keywords?: string[] | string;
-  position?: "static" | "sticky";
+  position?: 'static' | 'sticky';
 };
-const { title, description, keywords,  position = "sticky" } = Astro.props;
+const { title, description, keywords, position = 'sticky' } = Astro.props;
 const headEntry = {
   data: {
     description: description,
-    keywords: keywords || "动态服务发现,配置管理,服务管理",
+    keywords: keywords || '动态服务发现,配置管理,服务管理',
     title: title,
-    head: []
-  }
+    head: [],
+  },
+};
+
+const url = new URL(Astro.url);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const hasBase = url.pathname.startsWith(base);
+if (hasBase) url.pathname = url.pathname.replace(base, '');
+const [_leadingSlash, baseSegment] = url.pathname.split('/');
+let lang = locales.root.lang;
+if (baseSegment && baseSegment in locales) {
+  lang = baseSegment;
 }
+Astro.props.lang = lang;
 ---
 
-<html lang="en" data-theme="light">
+<html data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="referrer" content="no-referrer" />
-    <Head lang="en" entry={headEntry}  />
+    <Head entry={headEntry} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <HomeHeader align="home" position={position} />
     <slot />
-  </body>
+  </body><style></style>
 </html>
-
-
-
-<style>
-
-</style>
