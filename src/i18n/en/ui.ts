@@ -37,6 +37,8 @@ export default {
 	'commmon.footer.actions.mse': 'Cloud Service MSE',
 	'commmon.footer.actions.edas': 'Cloud Service EDAS',
 
+	'home.title': 'Home',
+	'home.description': 'Nacos is a solution for dynamic service discovery, configuration management, and service management, aimed at helping developers build and maintain cloud-native applications.',
 	'home.introduce.about': 'About Nacos',
 	'home.introduce.title': 'An easy-to-use platform for building cloud native applications',
 	'home.introduce.nacos.code': 'VIEW ON GITHUB',
@@ -70,6 +72,8 @@ export default {
 	'home.features.3.explain': 'Nacos supports both DNS-based and RPC-based (Dubbo, gRPC) service discovery, and provides real-time service health checks to prevent routing requests from being sent to unhealthy hosts or service instances. With Nacos, you can also implement circuit breakers for your services with ease.',
 	'home.use.companies.about': 'SELECTION OF SOME COMPANIES',
 
+	'cloud.title': 'Nacos Cloud',
+	'cloud.description': 'Nacos Cloud is specifically designed for cloud-native applications, providing powerful features for service discovery, dynamic configuration management, and service management. It supports efficient application development and operations.',
 	'cloud.introduce.about': 'About Nacos',
 	'cloud.introduce.title': 'Nacos Cloud',
 	'cloud.introduce.invite': 'One click to start your Nacos Cloud journey！',

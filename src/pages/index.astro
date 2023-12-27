@@ -7,11 +7,13 @@ import ExploreFeatures from '@components/home/ExploreFeatures.astro';
 import UseCompanies from '@components/home/UseCompanies.astro';
 import HomeSolutionsCard from '@components/home/HomeSolutionsCard.astro';
 import HomeFooter from '@components/common/Footer.astro';
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 ---
 
 <BaseLayout
-  title="首页"
-  description="Nacos是动态服务发现、配置管理和服务管理的解决方案，旨在帮助开发者构建和维护云原生应用。"
+  title={t('home.title')}
+  description={t('home.description')}
 >
   <HomeIntroduce />
 

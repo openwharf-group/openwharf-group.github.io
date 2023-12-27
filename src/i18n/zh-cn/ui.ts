@@ -37,6 +37,8 @@ export default {
 	'commmon.footer.actions.mse': '云服务 MSE',
 	'commmon.footer.actions.edas': '云服务 EDAS',
 
+	'home.title': '首页',
+	'home.description': 'Nacos 是动态服务发现、配置管理和服务管理的解决方案，旨在帮助开发者构建和维护云原生应用。',
 	'home.introduce.about': '关于 Nacos',
 	'home.introduce.title': '一个易于使用的用于构建云原生应用的平台',
 	'home.introduce.nacos.code': '前往 Github',
@@ -70,6 +72,8 @@ export default {
 	'home.features.3.explain': 'Nacos 支持基于 DNS 和基于 RPC（Dubbo、gRPC）的服务发现，并提供实时的服务健康检查，以防止将请求路由发送到不健康的主机或服务实例。借助Nacos，您还可以轻松实现服务的熔断器功能。',
 	'home.use.companies.about': '谁在使用 Nacos',
 
+	'cloud.title': 'Nacos Cloud',
+	'cloud.description': 'Nacos Cloud 专为云原生应用设计，提供强大的服务发现、动态配置管理和服务管理功能，支持高效的应用开发和运维。',
 	'cloud.introduce.about': '关于 Nacos',
 	'cloud.introduce.title': 'Nacos Cloud',
 	'cloud.introduce.invite': '一键开始您的 Nacos Cloud 之旅！',
