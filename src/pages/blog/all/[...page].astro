@@ -7,6 +7,7 @@ import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
 import BlogHeader from "@components/markdownSet/SubHeading.astro";
 import { BLOG_CATEGORY } from 'src/consts';
+import BlogTop from "@components/markdownSet/BlogTop.astro";
 
 interface Post {
     slug: string;
@@ -38,7 +39,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 ---
 
 <BaseLayout title="Nacos Blog" position="static">
-    <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/>
+    <!-- <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/> -->
+    <BlogTop title="所有文章"  type="all" />
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
     >

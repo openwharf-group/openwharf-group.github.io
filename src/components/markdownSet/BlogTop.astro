@@ -1,0 +1,59 @@
+---
+import { BLOG_CATEGORY } from 'src/consts';
+
+const { title = "", type="blog-home" } = Astro.props;
+---
+
+<div class="bg-gray-14 text-gray-01 blog_header">
+    <div class="blog_header_title leading-normal">{title}</div>
+    <div class="blog_category_menu">
+      {type==="blog-home"&&BLOG_CATEGORY && BLOG_CATEGORY.map((category)=>{
+         return (
+                <a
+                  class="blog_menu_item" 
+                  href={category.href}
+                  aria-current = {}
+                >
+                  {category.title}
+                </a>
+          );
+      })}
+      {
+        type!=="blog-home" && <a
+                  class="blog_menu_item" 
+                  href="/blog"
+                  aria-current = {}
+                >
+                BACK
+                </a>
+      }
+    </div>
+  </div>
+
+  <style>
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    .blog_header {
+        padding: 3rem;
+    }
+    .blog_header_title{
+        font-size: 3.5rem;
+    }
+    .blog_category_menu{
+        margin-top: 2rem;
+     }
+    .blog_menu_item{
+        padding: 8px 16px;
+        border-radius: 24px;
+        margin-right: 16px ;
+        font-size: 14px;
+        background-color: theme("colors.gray.12");
+        color: theme("colors.gray.05");
+    }
+    .blog_menu_item:hover{
+        background-color: theme("colors.blue.08");
+        color: theme("colors.gray.01");
+    }
+  </style>
