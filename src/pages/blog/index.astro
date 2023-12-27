@@ -80,7 +80,7 @@ const recentPosts = sortedPosts.splice(0, 4);
             </header>
             </div>
           </div>
-          <div class="lg:col-span-3 lg:py-8">
+          <div class="lg:col-span-2 lg:py-8">
             <div class="flex flex-row bg-gray-15 text-gray-01 h-auto rounded-lg p-4">
               <div class="basis-2/5">
                 <img
@@ -195,10 +195,10 @@ const recentPosts = sortedPosts.splice(0, 4);
                           </div>
                       </div>
 
-                      <div class="lg:col-span-3 lg:py-8">
-                          <ul class="flex flex-1 flex-row mx-auto items-stretch justify-center gap-4">
+                      <div class="lg:col-span-2 lg:py-8">
+                          <ul class="flex flex-1 flex-row mx-auto justify-between">
                               {categoryPost.posts
-                                  .slice(0, 3)
+                                  .slice(0, 2)
                                   .map((post) => (
                                       <>
                                           <div class="h-auto">
