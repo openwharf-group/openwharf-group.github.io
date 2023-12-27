@@ -2,7 +2,6 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import BlogCard from "@components/markdownSet/Card.astro";
-import BlogPoster from "@components/markdownSet/CardPoster.astro";
 import SubHeading from "@components/markdownSet/SubHeading.astro";
 import Footer from "@components/common/Footer.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
@@ -63,7 +62,7 @@ for (const item of ACTIVITY_CATEGORY) {
                                 <div class="mx-auto max-w-md text-center lg:text-left">
                                     <header>
                                         <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
-                                            {categoryPost.text}
+                                            {categoryPost.title}
                                         </h2>
                                         <div class="text-base text-blue-08 pt-4">
                                             <a href={categoryPost.href}>
@@ -106,6 +105,7 @@ for (const item of ACTIVITY_CATEGORY) {
                                                     <BlogCard
                                                         post={post as any}
                                                         posterWidth="300"
+                                                        type="activity"
                                                     />
                                                 </div>
                                             </>
