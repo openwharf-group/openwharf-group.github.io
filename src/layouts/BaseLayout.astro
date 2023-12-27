@@ -41,7 +41,7 @@ if (baseSegment && baseSegment in locales) {
 Astro.props.lang = lang;
 ---
 
-<html data-theme="light">
+<html lang={Astro.props.lang} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="referrer" content="no-referrer" />
@@ -50,7 +50,7 @@ Astro.props.lang = lang;
     <title>{title}</title>
   </head>
   <body>
-    <HomeHeader align="home" position={position} />
+    <HomeHeader align="home" position={position} lang={Astro.props.lang} {...Astro.props} />
     <slot />
   </body><style></style>
 </html>

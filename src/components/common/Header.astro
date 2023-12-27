@@ -2,10 +2,11 @@
 import LanguageToggle from "@components/common/LanguageToggle.astro";
 interface Props {
   align?: 'home' | 'docs',
-  position?: 'static' | 'sticky';
+  position?: 'static' | 'sticky',
+  lang: 'zh-cn' | 'en' | string,
 }
 
-const { align = 'home', position = 'sticky' } = Astro.props;
+const { align = 'home', position = 'sticky', lang } = Astro.props;
 const height = align === 'home' ? '4rem' : '3.5rem';
 const justifyContent = align === 'home' ? 'space-between' : 'flex-start';
 const docsSubMenu = {
@@ -52,7 +53,6 @@ const communitySubMenu = {
     }
   ],
 };
-
 ---
 
 <header-layout class="header bg-gray-14 relative" style={`position: ${position}; height: ${height}`}>
@@ -199,7 +199,7 @@ const communitySubMenu = {
     </div>
     <!-- 右侧菜单 -->
     <div>
-      <LanguageToggle size="small" />
+      <LanguageToggle size="small" lang={Astro.props.lang}  />
     </div>
 
 
