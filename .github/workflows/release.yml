@@ -33,12 +33,19 @@ jobs:
         run: npm install
       - name: Build Website
         run: npm run build
-      # 部署到 github Page
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      # https://github.com/yizhoumo/setup-ossutil
+      - uses: manyuanrong/setup-ossutil@v2.0
         with:
-          # Upload entire repository
-          path: './dist'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+          endpoint: "oss-cn-hangzhou.aliyuncs.com"
+          access-key-id: ${{secrets.ACCESS_KEY_ID}}
+          access-key-secret: ${{secrets.ACCESS_KEY_SECRET}}
+      - run: ossutil cp -rf dist oss://higress-website-cn-hangzhou/
+      # 部署到 github Page
+      # - name: Upload artifact
+      #   uses: actions/upload-pages-artifact@v2
+      #   with:
+      #     # Upload entire repository
+      #     path: './dist'
+      # - name: Deploy to GitHub Pages
+      #   id: deployment
+      #   uses: actions/deploy-pages@v2

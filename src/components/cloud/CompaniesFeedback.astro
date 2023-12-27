@@ -1,67 +1,69 @@
 ---
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
   const companyCustomers = [
     {
-      name: "Soul",
+      name: t('cloud.feedback.soul.name'),
       theme: 'blue',
       logo: "/soul-logo.png",
       href: "https://code.alibaba-inc.com/goat/astro-nacos",
-      description: "我们通过 MSE 云原生网关，将流量、安全、微服务网关三合一，大幅降低请求链路条数、降低架构复杂度、运维和故障排查成本，例如降低整个链路 RT 峰值从500ms下降至峰值50ms，服务发布期间502降为0，499平均降低10%等。"
+      description: t('cloud.feedback.soul.description'),
     },
     {
-      name: "来电科技",
+      name: t('cloud.feedback.laidian.name'),
       theme: 'black',
       logo: "/laidian-logo.png",
       href: "https://developer.aliyun.com/article/855894",
-      description: "MSE 微服务治理以无侵入的方式提供了全链路灰度、离群实例摘除、微服务治理流量可观测等核心能力，以更经济的方式、更高效的路径帮助来电科技在云上快速构建起完整微服务治理体系，有效提升线上稳定性，保证服务 99.95% 的可用性。"
+      description: t('cloud.feedback.laidian.description'),
     },
     {
-      name: "极氪汽车",
+      name: t('cloud.feedback.zeekr.name'),
       theme: 'gray',
       logo: "/zeekr-logo.png",
       href: "https://developer.aliyun.com/article/1173573",
-      description: "MSE 云原生网关帮我们降低 50%资源成本，同时缩短了请求时间，降低运维复杂度；微服务治理中的全链路灰度方案实现“流量泳道”，做到快速拉起隔离的开发环境，在提升研发效率的同时节省了一笔不菲的成本开销。"
+      description: t('cloud.feedback.zeekr.description'),
     }, 
     {
-      name: "云快充",
+      name: t('cloud.feedback.ykc.name'),
       theme: 'blue',
       logo: "/ykc-logo.png",
       href: "https://developer.aliyun.com/article/1172572?groupCode=mse",
-      description: "于 MSE 全链路灰度，我们得到的收益是很明显的，因应用变更导致的生产事故降低了70%以上，云快充接入的电桩数量完成了20万到30万的增长过程中，平均需求迭代周期从7人日降低到4人日，极大地促进了业务的快速迭代。"
+      description: t('cloud.feedback.ykc.description'),
     },
     {
-      name: "波司登",
+      name: t('cloud.feedback.bosideng.name'),
       theme: 'gray',
       logo: "/bosiden-logo.png",
       href: "https://developer.aliyun.com/article/1147221?groupCode=mse",
-      description: "我们基于 ACK + MSE + ARMS + Prometheus 支撑了在线业务百万级并发大流量，并帮助业务迭代效率提升2倍，因应用变更导致的生产事故也降低了70%。"
+      description: t('cloud.feedback.bosideng.description'),
     },
     {
-      name: "斯凯奇",
+      name: t('cloud.feedback.skechers.name'),
       theme: 'gray',
       logo: "/skechers-logo.png",
       href: "https://developer.aliyun.com/article/844814",
-      description: "相比自建 API 网关，MSE 云原生网关为我们提供了统一的微服务路由、流控、安全管理等能力，方便内外部多系统间的集成，在开发运维效率、性能、安全性上表现更加优异。"
+      description: t('cloud.feedback.skechers.description'),
     },
     {
-      name: "费芮互动",
+      name: t('cloud.feedback.very.name'),
       theme: 'blue',
       logo: "/very-logo.png",
       href: "https://developer.aliyun.com/article/992090",
-      description: "我们通过 MSE 云原生网关构建了零信任架构，无需重配 Nginx Ingress 规则即可平滑迁移，性能提升 90%，响应时间下降 50% ，并大幅提升业务入口的稳定及安全性，高效支撑每日 1 亿+粉丝交互， 4 万+线下门店、每月 3000 万+笔的移动支付需求。"
+      description: t('cloud.feedback.very.description'),
     },
     {
-      name: "致景科技",
+      name: t('cloud.feedback.zhijin.name'),
       theme: 'gray',
       logo: "/zhijin-logo.png",
       href: "https://developer.aliyun.com/article/1064881",
-      description: "我们未修改任何代码就接入了 MSE 的微服务治理所有能力。基于开发环境隔离能力，测试环境的构建时间由天计算降低到分钟级别，微服务的实施周期缩短了 30%，加速构建纺织服装纵向一体化的数智化综合服务平台。"
+      description: t('cloud.feedback.zhijin.description'),
     },
     {
-      name: "禾连健康",
+      name: t('cloud.feedback.helian.name'),
       theme: 'black',
       logo: "/helian-logo.png",
       href: "https://developer.aliyun.com/article/1095573",
-      description: "相比于自建， MSE 注册配置中心帮助我们实现了性能提升达 50%，解决了业务高速发展中的扩展性问题，保障全国 200 多个城市、2000 多家医院体验业务的稳定性超 99.99%。"
+      description: t('cloud.feedback.helian.description'),
     }
   ];
 
@@ -75,8 +77,8 @@
 
 <companies-feedback class="companies-feedback block bg-gary-02 p-10">
   <div class="top-title w-full flex flex-col items-center mb-20 mt-16">
-    <span class="text-gray-10 text-xs mb-6">OUR CUSTOMERS</span>
-    <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">Join the customers who've already used Nacos Cloud to improve efficiency</div>
+    <span class="text-gray-10 text-xs mb-6">{t('cloud.feedback.about')}</span>
+    <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">{t('cloud.feedback.title')}</div>
   </div>
 
   <div class="bottom-feedback w-full relative flex overflow-hidden">
@@ -89,9 +91,9 @@
           const isGray = theme === 'gray';
           return (
             <a href={href} target="_blank">
-              <li class="slider-item w-80 inline-block">
+              <li class="slider-item w-96 inline-block">
                 <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
-                  <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                  <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                   <div class="flex justify-between mt-12 items-center">
                     <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
                     <img src={logo} class="w-20" />
@@ -111,9 +113,9 @@
           const isBlack = theme === 'black';
           const isGray = theme === 'gray';
           return (
-            <li class="slider-item w-80 inline-block">
+            <li class="slider-item w-96 inline-block">
               <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
-                <div class:list={[{ 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
                   <img src={logo} class="w-20" />
@@ -137,7 +139,7 @@
           <a href={href} target="_blank">
             <div class="w-full mb-4">
               <div class:list={['content', 'flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
-                <div class:list={['description', 'line-clamp-2', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
+                <div class:list={['normal-case', 'description', 'line-clamp-2', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="company flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
                   <img src={logo} class="w-20" />
@@ -174,7 +176,7 @@ companies-feedback {
 }
 .slider {
   transition: background-color 0.5s;
-  animation: slide var(--time) linear infinite;
+  /* animation: slide var(--time) linear infinite; */
 }
 .slider-item {
   padding: 0 .65rem;
@@ -183,9 +185,9 @@ img {
   cursor: pointer;
   transition: filter 0.5s;
 }
-/* .slider {
+.slider {
   animation: slide var(--time) linear infinite;
-} */
+}
 @keyframes slide {
   0% {
     transform: translateX(0%);
@@ -202,6 +204,10 @@ img {
   animation: reset var(--time) step-end infinite;
   animation-delay: calc(var(--time) / -2);
 }
+a {
+    text-decoration: none; /* 清除下划线等默认样式 */
+    color: inherit; /* 继承父元素的颜色 */
+  }
 @keyframes reset {
   0% {
     transform: translateX(0%);
@@ -238,10 +244,6 @@ img {
   .mobile-bottom-feedback .company {
     height: 4rem;
     margin-top: 1.5rem;
-  }
-  a {
-    text-decoration: none; /* 清除下划线等默认样式 */
-    color: inherit; /* 继承父元素的颜色 */
   }
 
 }
