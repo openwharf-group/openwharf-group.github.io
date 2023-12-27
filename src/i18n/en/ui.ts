@@ -1,5 +1,42 @@
 export default {
 	// website
+	'commmon.header.menu.docs': 'DOCS',
+	'commmon.header.menu.cloud': 'NACOS CLOUD',
+	'commmon.header.menu.comm': 'COMMUNITY',
+	'commmon.header.menu.demo': 'DEMO',
+	'commmon.header.docs.docs': 'Documentation',
+	'commmon.header.comm.comm': 'COMMUNITY',
+	'commmon.header.comm.report': 'Report',
+	'commmon.header.comm.contribute': 'Contribute',
+	'commmon.header.comm.contributors': 'Contributors',
+	'commmon.header.comm.event': 'EVENTS',
+	'commmon.header.comm.news': 'News',
+	'commmon.header.comm.active': 'Activity',
+	'commmon.header.comm.resource': 'Resources',
+	'commmon.header.comm.blog': 'Blog',
+	'commmon.header.comm.ebook': 'E-book',
+	'commmon.header.comm.download': 'Download',
+	'commmon.header.comm.shortcut': 'READ ARTICLE',
+	'commmon.header.comm.leftcut': 'Key to service-centric (for example microservice or cloud-native) architectures.',
+	'commmon.header.comm.rightcut': 'An easy-to-use platform for building cloud native applications',
+	'commmon.header.comm.contact': 'CONTACT US',
+	'commmon.header.contact.git': 'Github',
+	'commmon.header.contact.ding': 'DingDing',
+	'commmon.header.contact.mail': 'E-mail',
+
+	'commmon.footer.title': 'Subscribe for more',
+	'commmon.footer.subscribe': 'By providing an easy-to-use service infrastructure such as dynamic service discovery,service configuration, service sharing and management and etc.',
+	'commmon.footer.email.placeholder': 'Enter email address…',
+	'commmon.footer.actions.subscribe': 'SUBSCRIBE',
+	'commmon.footer.docs': 'DOCUMENTATION',
+	'commmon.footer.actions.overview': 'Overview',
+	'commmon.footer.actions.start': 'Quick Start',
+	'commmon.footer.actions.guide': 'Developer Guide',
+	'commmon.footer.resource': 'RESOURCES',
+	'commmon.footer.actions.comm': 'Community',
+	'commmon.footer.actions.mse': 'Cloud Service MSE',
+	'commmon.footer.actions.edas': 'Cloud Service EDAS',
+
 	'home.introduce.about': 'About Nacos',
 	'home.introduce.title': 'An easy-to-use platform for building cloud native applications',
 	'home.introduce.nacos.code': 'VIEW ON GITHUB',
@@ -32,7 +69,6 @@ export default {
 	'home.features.3.summary': 'You can implement stateless services and achieve on-demand scaling effortlessly.',
 	'home.features.3.explain': 'Nacos supports both DNS-based and RPC-based (Dubbo, gRPC) service discovery, and provides real-time service health checks to prevent routing requests from being sent to unhealthy hosts or service instances. With Nacos, you can also implement circuit breakers for your services with ease.',
 	'home.use.companies.about': 'SELECTION OF SOME COMPANIES',
-
 
 
 	// Right Sidebar

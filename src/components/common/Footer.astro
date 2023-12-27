@@ -1,3 +1,7 @@
+---
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
+---
 <footer class="bg-gray-14 p-10">
   <div
     class="footer_top_functional flex bg-gray-13 rounded-2xl text-center lg:flex-row"
@@ -8,23 +12,23 @@
       <p
         class="footer_left_title text-gray-02 text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
       >
-        Subscribe for more
+        {t('commmon.footer.title')}
       </p>
       <p
-        class="footer_left_des text-gray-09 text-[1.125rem] leading-5 w-[42rem] h-[3.5625rem] mt-4 mb-[1.875rem]"
+        class="footer_left_des text-gray-09 text-[1.125rem] w-[42rem] h-[3.5625rem] mt-4 mb-[1.875rem]"
       >
-        By providing an easy-to-use service infrastructure such as dynamic
-        service discovery,service configuration, service sharing and management
-        and etc.
+        {t('commmon.footer.subscribe')}
       </p>
       <input
         type="text"
-        placeholder="Enter email address…"
+        placeholder={t('commmon.footer.email.placeholder')}
         class="footer_left_email max-w-[37.5rem] input input-ghost bg-gray-12 block rounded-2xl lg:w-[31.25rem] lg:h-[4.375rem]"
       />
       <button
         class="footer_left_button max-w-[9.6875rem] btn bg-gray-02 text-gray-14 rounded-full text-[0.75rem] font-medium block lg:w-[9.6875rem] lg:h-[3.375rem] lg:mt-6 lg:mb-[11.1875rem] lg:py-[1.1875rem] lg:px-[2.875rem]"
-        >SUBSCRIBE</button
+        >
+        {t('commmon.footer.actions.subscribe')}
+      </button
       >
     </div>
     <div
@@ -34,7 +38,7 @@
         <p
           class="text-gray-10 text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem]"
         >
-          DOCUMENTATION
+          {t('commmon.footer.docs')}
         </p>
         <ul class="list-none w-[13.3125rem] h-4 ps-0">
           <li>
@@ -42,7 +46,7 @@
               href="#"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Overview
+              {t('commmon.footer.actions.overview')}
             </a>
           </li>
           <li>
@@ -50,7 +54,7 @@
               href="/docs/v2/quickstart/quick-start"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Quick Start
+              {t('commmon.footer.actions.start')}
             </a>
           </li>
           <li>
@@ -58,7 +62,7 @@
               href="/docs/v2/quickstart/contributing"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Developer guide
+              {t('commmon.footer.actions.guide')}
             </a>
           </li>
         </ul>
@@ -67,7 +71,7 @@
         <p
           class="text-gray-10 text-[0.75rem] leading-4 tracking-[.15em] lg:mb-[3.0625rem]"
         >
-          RESOURCES
+          {t('commmon.footer.resource')}
         </p>
         <ul class="list-none w-[13.3125rem] h-4 ps-0">
           <li>
@@ -75,7 +79,7 @@
               href="#"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Community
+              {t('commmon.footer.actions.comm')}
             </a>
           </li>
           <li>
@@ -84,7 +88,7 @@
               target="_blank"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Cloud Service MSE
+              {t('commmon.footer.actions.mse')}
             </a>
           </li>
           <li>
@@ -93,7 +97,7 @@
               target="_blank"
               class="text-[.875rem] font-medium leading-5 tracking-normal mb-4 text-gray-04 no-underline"
             >
-              Cloud Service EDAS
+              {t('commmon.footer.actions.edas')}
             </a>
           </li>
         </ul>
