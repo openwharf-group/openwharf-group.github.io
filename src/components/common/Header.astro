@@ -2,11 +2,18 @@
 import LanguageToggle from "@components/common/LanguageToggle.astro";
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
+import { getEntries } from "astro:content";
+import { HEADER_ACTIVITY_CARD } from "../../consts"
 interface Props {
   align?: 'home' | 'docs',
   position?: 'static' | 'sticky',
   lang: 'zh-cn' | 'en' | string,
 }
+
+interface CardList {
+    collection?: string;
+    id?: string;
+}[]
 
 const { align = 'home', position = 'sticky', lang } = Astro.props;
 const height = align === 'home' ? '4rem' : '3.5rem';
@@ -23,9 +30,9 @@ const communitySubMenu = {
   shortcutMenus: {
     COMMUNITY: [
       // 提交问题
-      { label: t('commmon.header.comm.report'), url: 'https://github.com/alibaba/nacos/pulls',target:"_blank" }, 
+      { label: t('commmon.header.comm.report'), url: 'https://github.com/alibaba/nacos/issues',target:"_blank" }, 
       // 贡献社区
-      { label: t('commmon.header.comm.contribute'), url: 'https://github.com/alibaba/nacos/issues',target:"_blank" },
+      { label: t('commmon.header.comm.contribute'), url: 'https://github.com/alibaba/nacos/pulls',target:"_blank" },
       // 贡献者
       { label: t('commmon.header.comm.contributors'), url: 'https://github.com/alibaba/nacos/graphs/contributors',target:"_blank" },
     ],
@@ -57,6 +64,9 @@ const communitySubMenu = {
     }
   ],
 };
+
+const posts = await getEntries(HEADER_ACTIVITY_CARD);
+console.log("000000",posts)
 ---
 
 <header-layout class="header bg-gray-14 relative" style={`position: ${position}; height: ${height}`}>
@@ -197,7 +207,7 @@ const communitySubMenu = {
       <span class="text-gray-06 text-xs">|</span>
       <div class="menu-item h-full flex items-center cursor-pointer text-gray-06 text-sm px-4">
         <div data-demo class="h-full flex items-center p-0.5">
-          <span class="title">{t('commmon.header.menu.demo')}</span>
+          <a class="title" href="http://console.nacos.io/nacos/index.html" target="_blank">{t('commmon.header.menu.demo')}</a>
         </div>
       </div>
     </div>
@@ -378,7 +388,7 @@ const communitySubMenu = {
             </div>
           </li>
           <li class="mt-4">
-            <a href="/" class="text-gray-14 text-sm">{t('commmon.header.menu.demo')}</a>
+            <a href="http://console.nacos.io/nacos/index.html" class="text-gray-14 text-sm">{t('commmon.header.menu.demo')}</a>
           </li>
         </ul>
       </div>
@@ -612,6 +622,10 @@ const communitySubMenu = {
     /* position: relative; */
     z-index: 100000;
     /* height: var(--header-height); */
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
   .nav {
     z-index: 100000;
