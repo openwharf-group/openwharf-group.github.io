@@ -1,0 +1,200 @@
+---
+const solutionList = [
+  {
+    checked: true,
+    src: "https://help.aliyun.com/zh/mse/use-cases/implement-high-availability-capabilities-of-mse-microservices-registry/?spm=a2c4g.11186623.0.0.102a27e0juv8vG",
+    title: "MSE注册配置中心高可用最佳实践",
+  },
+  {
+    checked: false,
+    src: "https://help.aliyun.com/zh/mse/use-cases/migration-solution-based-on-mse-sync/?spm=a2c4g.11186623.0.0.13f12318fSap49",
+    title: "MSE Sync迁移方案",
+  },
+  {
+    checked: false,
+    src: "https://developer.aliyun.com/article/1265016?spm=5176.21213303.J_qCOwPWspKEuWcmp8qiZNQ.10.c89e2f3dQa2WtF&scm=20140722.S_community@@%E6%96%87%E7%AB%A0@@1265016._.ID_community@@%E6%96%87%E7%AB%A0@@1265016-RL_%E4%BA%91%E5%8E%9F%E7%94%9F%E7%BD%91%E5%85%B3%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E8%83%BD%E5%8A%9B-LOC_llm-OR_ser-V_3-RK_rerank-P0_2",
+    title: "云原生网关如何实现安全防护能力",
+  },
+  {
+    checked: false,
+    src: "https://help.aliyun.com/zh/mse/use-cases/implement-graceful-start-and-shutdown-of-microservice-applications-by-using-mse/?spm=a2c4g.11186623.0.0.385116bftBJhAY",
+    title: "服务治理优雅上下线",
+  },
+];
+---
+
+<card-solution class="card-solution block bg-gray-14 p-10">
+  <div
+    class="bottom-solutions-card block w-full flex items-center justify-center h-fit"
+  >
+    <div
+      class="solution-container h-[23rem] w-fit flex flex-nowrap justify-start"
+    >
+      {
+        solutionList.map((item, index) => {
+          const { src, checked } = item;
+          return (
+            <>
+              <input
+                type="radio"
+                name="silder"
+                id={`c${index}`}
+                checked={checked}
+              />
+              <label
+                for={`c${index}`}
+                class="card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
+              >
+                <div class="main-title text-sm text-gray-07 text-center opacity-0">
+                  SOLUTIONS
+                </div>
+
+                <div class="item-title text-gray-03 text-3xl mx-4 opacity-0">
+                  {item.title}
+                </div>
+                <div class="button opacity-0 mx-auto">
+                  <a href={src} target="_blank" class="btn btn-secondary w-24">
+                    查看详情
+                  </a>
+                </div>
+              </label>
+            </>
+          );
+        })
+      }
+    </div>
+  </div>
+
+  <div class="mobile-bottom-solutions-card hidden w-full flex flex-col">
+    {
+      solutionList.map((item, index) => {
+        const { src, title } = item;
+        return (
+          <div class="mobile-card mx-auto h-[10rem] w-[80%] overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl">
+            <div class="flex align-center flex-nowrap w-full">
+              <div class=" mx-auto text-xs font-normal">SOLUTIONS</div>
+            </div>
+            <div class="w-full text-gray-02 text-xl">{title}</div>
+            <div class="button mx-auto">
+              <a
+                href={src}
+                target="_blank"
+                class="btn btn-secondary w-24 btn-sm"
+              >
+                查看详情
+              </a>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</card-solution>
+
+<script>
+  class HomeCardPlayer extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+  customElements.define("card-solution", HomeCardPlayer);
+</script>
+
+<style>
+  .card {
+    /* 默认宽度 */
+    width: 9.75rem;
+    background-size: cover;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8); */
+  }
+  .solution-container > .card:first-of-type {
+    margin-left: 0;
+  }
+  .solution-container > .card:last-of-type {
+    margin-right: 0;
+  }
+  @keyframes showcontent {
+    from {
+      opacity: 0;
+      /* transform: translate(0, 100px); */
+      /* filter: blur(1rem); */
+    }
+    to {
+      opacity: 1;
+      /* transform: translate(0, 0); */
+      /* filter: blur(0); */
+    }
+  }
+  input {
+    display: none;
+  }
+  input:checked + label {
+    width: 42rem;
+  }
+  input:checked + label .main-title {
+    animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
+  }
+  input:checked + label .item-title {
+    animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
+  }
+  input:checked + label .button {
+    animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
+  }
+  .card[for="c0"] {
+    background-image: url("/ebook-placeholder.png");
+  }
+  .card[for="c1"] {
+    background-image: url("/ebook-placeholder.png");
+  }
+  .card[for="c2"] {
+    background-image: url("/ebook-placeholder.png");
+  }
+  .card[for="c3"] {
+    background-image: url("/ebook-placeholder.png");
+  }
+
+  /* 小于50rem  小于 800px */
+  @media (max-width: 50rem) {
+    .card-solution {
+      padding: 1.5rem;
+    }
+    .top-title {
+      margin-top: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .top-title .title {
+      font-size: 1.125rem; /* 18px */
+      line-height: 1.75rem; /* 28px */
+    }
+    .bottom-solutions-card {
+      display: none;
+    }
+    .mobile-bottom-solutions-card {
+      display: block;
+    }
+    .mobile-card {
+      background-size: cover;
+      background-image: url("/ebook-placeholder.png");
+    }
+    .mobile-bottom-solutions-card > .mobile-card:first-of-type {
+      margin-bottom: 1rem;
+    }
+    .mobile-bottom-solutions-card > .mobile-card:nth-child(2) {
+      margin-bottom: 1rem;
+    }
+    .mobile-bottom-solutions-card > .mobile-card:nth-child(3) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  /* 大于50rem 小于 72rem  800px < width < 1152 */
+  @media (min-width: 50rem) and (max-width: 72rem) {
+    .solution-container {
+      width: 100%;
+    }
+    input:checked + label {
+      flex: 1;
+    }
+  }
+</style>
