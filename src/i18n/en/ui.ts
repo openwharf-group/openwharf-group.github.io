@@ -31,6 +31,7 @@ export default {
 	'home.features.3.title': 'Dynamic DNS Service',
 	'home.features.3.summary': 'You can implement stateless services and achieve on-demand scaling effortlessly.',
 	'home.features.3.explain': 'Nacos supports both DNS-based and RPC-based (Dubbo, gRPC) service discovery, and provides real-time service health checks to prevent routing requests from being sent to unhealthy hosts or service instances. With Nacos, you can also implement circuit breakers for your services with ease.',
+	'home.use.companies.about': 'SELECTION OF SOME COMPANIES',
 
 
 

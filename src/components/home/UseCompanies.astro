@@ -1,50 +1,71 @@
 ---
 import { Image } from "astro:assets";
+import alibaba from "/public/alibaba-logo.png";
+import autohome from "/public/autohome-logo.png";
+import beike from "/public/beike-logo.png";
+import bestexpress from "/public/bestexpress-logo.png";
+import zhangmen from "/public/1v1-logo.png";
+import chinamobile from "/public/chinamobile-logo.png";
+import decathlon from "/public/decathlon-logo.png";
+import haoweilai from "/public/haoweilai-logo.png";
+import hivebox from "/public/hivebox-logo.png";
+import huya from "/public/huya-logo.png";
+import iqiyi from "/public/iqiyi-logo.png";
+import mafengwo from "/public/mafengwo-logo.png";
+import pingan from "/public/pingan-logo.png";
+import sanyi from "/public/sanyi-logo.png";
+import sinocare from "/public/sinocare-logo.png";
+import xiaomi from "/public/xiaomi-logo.png";
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 const companiesLogos = [
-  "https://img.alicdn.com/imgextra/i4/O1CN013n3Ld1276dcY4hOWU_!!6000000007748-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i1/O1CN01GqMYP21Xjj7xttIj0_!!6000000002960-0-tps-700-383.jpg",
-  "https://img.alicdn.com/imgextra/i2/O1CN019Wc4cj1wAnRlUGyOa_!!6000000006268-0-tps-665-500.jpg",
-  "https://img.alicdn.com/imgextra/i3/O1CN01FDriPl1JMSW5AX3XM_!!6000000001014-0-tps-960-640.jpg",
-  "https://img.alicdn.com/tfs/TB1aB62OBr0gK0jSZFnXXbRRXXa-280-160.jpg",
-  "https://img.alicdn.com/imgextra/i2/O1CN01uYzIoc1Wc73kN9kI1_!!6000000002808-2-tps-212-89.png",
-  "https://img.alicdn.com/imgextra/i4/O1CN01dDYN9z1kDIDOTP6RW_!!6000000004649-2-tps-212-48.png",
-  "https://img.alicdn.com/imgextra/i2/O1CN01Cno0oZ1qDe5LBjIhP_!!6000000005462-0-tps-349-217.jpg",
-  "https://img.alicdn.com/imgextra/i1/O1CN01qsYkJI1YAkczD7mrm_!!6000000003019-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i2/O1CN01ERbLAR1Xmw24SaaZ7_!!6000000002967-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i3/O1CN01TY3d7q22TvgcZB03w_!!6000000007122-2-tps-280-160.png",
-  "https://img.alicdn.com/tfs/TB1ghT_atTfau8jSZFwXXX1mVXa-280-160.jpg",
-  "https://img.alicdn.com/imgextra/i1/O1CN01LsIvdr1NI7DsoYnJM_!!6000000001546-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i4/O1CN01kEfNZt1byACsUfEnJ_!!6000000003533-0-tps-554-318.jpg",
-  "https://img.alicdn.com/tfs/TB1Xd4IOUY1gK0jSZFMXXaWcVXa-280-160.png",
-  "https://img.alicdn.com/tfs/TB1qhDSOrr1gK0jSZFDXXb9yVXa-280-160.png",
-  "https://img.alicdn.com/imgextra/i3/O1CN01mAZYdV1fW0JfeDwby_!!6000000004013-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i1/O1CN012IR3te1DscdWJ2g84_!!6000000000272-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i4/O1CN01r5ZZsu1yxSlIJsNzV_!!6000000006645-2-tps-280-160.png",
-  "https://img.alicdn.com/imgextra/i4/O1CN01VmkWcc1E8C6J5GkYj_!!6000000000306-2-tps-735-406.png",
-  "https://img.alicdn.com/imgextra/i1/O1CN01CTgp0F1WFfW6nv8aV_!!6000000002759-2-tps-1660-712.png",
+  alibaba, autohome, beike, bestexpress, zhangmen, chinamobile, decathlon, haoweilai, hivebox, huya, iqiyi, mafengwo, pingan, sanyi, sinocare, xiaomi
 ];
+// const companiesLogos = [
+//   "https://img.alicdn.com/imgextra/i4/O1CN013n3Ld1276dcY4hOWU_!!6000000007748-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i1/O1CN01GqMYP21Xjj7xttIj0_!!6000000002960-0-tps-700-383.jpg",
+//   "https://img.alicdn.com/imgextra/i2/O1CN019Wc4cj1wAnRlUGyOa_!!6000000006268-0-tps-665-500.jpg",
+//   "https://img.alicdn.com/imgextra/i3/O1CN01FDriPl1JMSW5AX3XM_!!6000000001014-0-tps-960-640.jpg",
+//   "https://img.alicdn.com/tfs/TB1aB62OBr0gK0jSZFnXXbRRXXa-280-160.jpg",
+//   "https://img.alicdn.com/imgextra/i2/O1CN01uYzIoc1Wc73kN9kI1_!!6000000002808-2-tps-212-89.png",
+//   "https://img.alicdn.com/imgextra/i4/O1CN01dDYN9z1kDIDOTP6RW_!!6000000004649-2-tps-212-48.png",
+//   "https://img.alicdn.com/imgextra/i2/O1CN01Cno0oZ1qDe5LBjIhP_!!6000000005462-0-tps-349-217.jpg",
+//   "https://img.alicdn.com/imgextra/i1/O1CN01qsYkJI1YAkczD7mrm_!!6000000003019-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i2/O1CN01ERbLAR1Xmw24SaaZ7_!!6000000002967-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i3/O1CN01TY3d7q22TvgcZB03w_!!6000000007122-2-tps-280-160.png",
+//   "https://img.alicdn.com/tfs/TB1ghT_atTfau8jSZFwXXX1mVXa-280-160.jpg",
+//   "https://img.alicdn.com/imgextra/i1/O1CN01LsIvdr1NI7DsoYnJM_!!6000000001546-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i4/O1CN01kEfNZt1byACsUfEnJ_!!6000000003533-0-tps-554-318.jpg",
+//   "https://img.alicdn.com/tfs/TB1Xd4IOUY1gK0jSZFMXXaWcVXa-280-160.png",
+//   "https://img.alicdn.com/tfs/TB1qhDSOrr1gK0jSZFDXXb9yVXa-280-160.png",
+//   "https://img.alicdn.com/imgextra/i3/O1CN01mAZYdV1fW0JfeDwby_!!6000000004013-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i1/O1CN012IR3te1DscdWJ2g84_!!6000000000272-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i4/O1CN01r5ZZsu1yxSlIJsNzV_!!6000000006645-2-tps-280-160.png",
+//   "https://img.alicdn.com/imgextra/i4/O1CN01VmkWcc1E8C6J5GkYj_!!6000000000306-2-tps-735-406.png",
+//   "https://img.alicdn.com/imgextra/i1/O1CN01CTgp0F1WFfW6nv8aV_!!6000000002759-2-tps-1660-712.png",
+// ];
 ---
 
 <use-companies class="use-companies block bg-gary-02 p-10">
   <div class="top-title w-full flex flex-col items-center mb-4 mt-16">
-    <span class="text-gray-10 text-xs">SELECTION OF SOME COMPANIES</span>
+    <span class="text-gray-10 text-xs w-full max-w-[63.5rem]">{t('home.use.companies.about')}</span>
   </div>
 
   <div class="bottom-silder block w-full">
     <ul class="slider">
       {
-        companiesLogos.map((imgItem,index) => (
+        companiesLogos.map((logo,index) => (
           <li class="slider-item">
-            <img src={imgItem} alt={`Image${index}`}>
+            <Image src={logo} alt="log" height="96" class="object-contain" />
           </li>
         ))
       }
     </ul>
     <ul class="slider">
       {
-        companiesLogos.map((imgItem,index) => (
+        companiesLogos.map((logo,index) => (
           <li class="slider-item">
-            <img src={imgItem} alt={`Image${index}`}>
+            <Image src={logo} alt="log" height="96" class="object-contain" />
           </li>
         ))
       }
@@ -56,7 +77,7 @@ const companiesLogos = [
       companiesLogos.map((logo) => (
         <div class="card-item">
           
-          <Image src={logo} alt="log" width="139" height="50" class="object-contain" />
+          <Image src={logo} alt="log" width="139" height="76" class="object-contain" />
         </div>
       ))
     }
@@ -82,7 +103,7 @@ customElements.define("use-companies", UseCompanies);
     display: flex;
     width: auto;
     overflow: hidden;
-    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
+    /* mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent); */
   }
   .slider {
     padding: 0rem;
@@ -94,10 +115,10 @@ customElements.define("use-companies", UseCompanies);
   }
   .slider-item {
     display: inline-block;
-    padding: 1.25rem .65rem;
+    padding: 0 1.25rem;
   }
-  img {
-    max-height: 3.125rem;
+  Image {
+    /* max-height: 3.125rem; */
     cursor: pointer;
     transition: filter 0.5s;
   }

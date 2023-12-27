@@ -31,6 +31,7 @@ export default {
 	'home.features.3.title': '动态 DNS 服务',
 	'home.features.3.summary': '您可以轻松实现无状态服务，并实现按需扩展。',
 	'home.features.3.explain': 'Nacos 支持基于 DNS 和基于 RPC（Dubbo、gRPC）的服务发现，并提供实时的服务健康检查，以防止将请求路由发送到不健康的主机或服务实例。借助Nacos，您还可以轻松实现服务的熔断器功能。',
+	'home.use.companies.about': '谁在使用 Nacos',
 
 	// Right Sidebar
 	'rightSidebar.a11yTitle': '目录',
