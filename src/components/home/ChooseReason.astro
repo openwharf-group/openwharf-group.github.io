@@ -1,33 +1,35 @@
 ---
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 
 const dataSource = [
   {
-    title: 'Easy',
+    title: t('home.nacos.edge.1.title'),
     svgKey: 'easy',
-    description: 'One-stop solution for dynamic service discovery. Configuration management and dynamic DNS service 20+ out-of-the-box features for service-centric architectures Light-weight production-ready console',
+    description: t('home.nacos.edge.1.description'),
   },
   {
-    title: 'ADAPTIVE',
+    title: t('home.nacos.edge.2.title'),
     svgKey: 'adaptive',
-    description: 'Seamlessly support kubernetes and spring cloud Easier to deploy and run on popular public cloud (for example AliCloud and AWS) Support multi-tenants and multi-environments',
+    description: t('home.nacos.edge.2.description'),
   },
   {
-    title: 'TIME_TESTED',
+    title: t('home.nacos.edge.3.title'),
     svgKey: 'timeTested',
-    description: 'Originated from time-tested internal products from Alibaba Group. Supports large-scale scenarios with millions of services Open-source product with enterprise-level SLA',
+    description: t('home.nacos.edge.3.description'),
   },
   {
-    title: 'VARIETY',
+    title: t('home.nacos.edge.4.title'),
     svgKey: 'variety',
-    description: 'Supports rate throttling, big promotion plans, and multi-region active-active architectures Supports a variety of relevant internet-based use cases directly or with slight extension Traffic scheduling & service governance',
+    description: t('home.nacos.edge.4.description'),
   }
 ];
 ---
 
 <choose-reason class="choose-reason block bg-gary-02 p-10">
   <div class="top-title w-full flex flex-col items-center mb-20 mt-16">
-    <span class="text-gray-10 text-xs mb-6">ABOUT US</span>
-    <span class="title text-gray-14 text-4xl font-medium">Why Nacos</span>
+    <span class="text-gray-10 text-xs mb-6">{t('home.nacos.edge.about')}</span>
+    <span class="title text-gray-14 text-4xl font-medium">{t('home.nacos.edge.title')}</span>
   </div>
 
   <div class="bottom-card w-full flex flex-wrap">

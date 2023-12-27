@@ -1,12 +1,14 @@
 ---
 interface Props {
   size?: 'large' | 'small',
+  lang: 'zh-cn' | 'en',
 }
-const { size = "small" } = Astro.props;
+const { size = "small", lang } = Astro.props;
+const initialState = lang === 'zh-cn' ? false : true;
 ---
 
 <toggle-content class="switch float-left relative m-0 rounded-[2rem]">
-  <input data-switch class="switch-checkbox hidden" id="switch" type="checkbox" />
+  <input data-switch class="switch-checkbox hidden" id="switch" type="checkbox" checked={initialState} />
   <label class="switch-label block overflow-hidden cursor-pointer rounded-[2rem]" for="switch">
       <span class="switch-inner block" data-on="ZH" data-off="EN"></span>
       <span class="switch-switch absolute float-right mx-1"></span>
@@ -28,18 +30,17 @@ const { size = "small" } = Astro.props;
       }
 
       toggleLanguage = () => {
-        console.log(this.switchElement.checked)
         if (this.switchElement.checked) {
-          console.log('en');
+          window.location.pathname = window.location.pathname.replace('/', '/en/');
         } else {
-          console.log('zh');
+          window.location.pathname = window.location.pathname.replace('/en/', '/');
         }
       };
   }
   customElements.define("toggle-content", Toggle);
 </script>
 
-<style define:vars={{ size }}>
+<style define:vars={{ size, initialState }}>
 toggle-content {
   --toggle-ml-width: 7rem;
   --toggle-xl-width: 7.5rem;
