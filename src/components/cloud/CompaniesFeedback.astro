@@ -1,67 +1,68 @@
 ---
+import { Image } from "astro:assets";
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
   const companyCustomers = [
     {
       name: t('cloud.feedback.soul.name'),
       theme: 'blue',
-      logo: "/soul-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i2/O1CN01GZhEqR1bY3dY5SOuY_!!6000000003476-2-tps-160-130.png",
       href: "https://code.alibaba-inc.com/goat/astro-nacos",
       description: t('cloud.feedback.soul.description'),
     },
     {
       name: t('cloud.feedback.laidian.name'),
       theme: 'black',
-      logo: "/laidian-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i1/O1CN01FmXgsj1k3fuBDvIZ9_!!6000000004628-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/855894",
       description: t('cloud.feedback.laidian.description'),
     },
     {
       name: t('cloud.feedback.zeekr.name'),
       theme: 'gray',
-      logo: "/zeekr-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i2/O1CN01zluUCK29BKvOCojPr_!!6000000008029-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/1173573",
       description: t('cloud.feedback.zeekr.description'),
     }, 
     {
       name: t('cloud.feedback.ykc.name'),
       theme: 'blue',
-      logo: "/ykc-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i4/O1CN011Q5cx81NlQZvJvgdy_!!6000000001610-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/1172572?groupCode=mse",
       description: t('cloud.feedback.ykc.description'),
     },
     {
       name: t('cloud.feedback.bosideng.name'),
       theme: 'gray',
-      logo: "/bosiden-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i2/O1CN01ITEmn01cPdybsUmSJ_!!6000000003593-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/1147221?groupCode=mse",
       description: t('cloud.feedback.bosideng.description'),
     },
     {
       name: t('cloud.feedback.skechers.name'),
       theme: 'gray',
-      logo: "/skechers-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i1/O1CN01P1k9gA1YpVsxPYzAw_!!6000000003108-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/844814",
       description: t('cloud.feedback.skechers.description'),
     },
     {
       name: t('cloud.feedback.very.name'),
       theme: 'blue',
-      logo: "/very-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i2/O1CN01wOeiBB1lf3qo0UYUl_!!6000000004845-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/992090",
       description: t('cloud.feedback.very.description'),
     },
     {
       name: t('cloud.feedback.zhijin.name'),
       theme: 'gray',
-      logo: "/zhijin-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i3/O1CN015GIqM31qsPTObt2CV_!!6000000005551-2-tps-544-180.png",
       href: "https://developer.aliyun.com/article/1064881",
       description: t('cloud.feedback.zhijin.description'),
     },
     {
       name: t('cloud.feedback.helian.name'),
       theme: 'black',
-      logo: "/helian-logo.png",
+      logo: "https://img.alicdn.com/imgextra/i2/O1CN01LStcNM248WPaWDfoW_!!6000000007346-2-tps-544-180.png",
       href: "https://developer.aliyun.com/article/1095573",
       description: t('cloud.feedback.helian.description'),
     }
@@ -96,7 +97,7 @@ const t = useTranslations(Astro);
                   <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                   <div class="flex justify-between mt-12 items-center">
                     <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
-                    <img src={logo} class="w-20" />
+                    <Image src={logo} width="80" height="65" alt={name} class="object-contain" />
                   </div>
                 </div>
               </li>
@@ -118,7 +119,7 @@ const t = useTranslations(Astro);
                 <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
-                  <img src={logo} class="w-20" />
+                  <Image src={logo} width="80" height="65" alt={name} class="object-contain" />
                 </div>
               </div>
             </li>
@@ -142,7 +143,7 @@ const t = useTranslations(Astro);
                 <div class:list={['normal-case', 'description', 'line-clamp-2', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="company flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
-                  <img src={logo} class="w-20" />
+                  <Image src={logo} width="80" height="65" alt={name} class="object-contain" />
                 </div>
               </div>
             </div>
