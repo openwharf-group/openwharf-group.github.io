@@ -73,3 +73,8 @@ export const ACTIVITY_CATEGORY = [
         href: '/activity/advertisement'
     }
 ]
+
+export const HEADER_ACTIVITY_CARD = [
+    { collection: 'blog', id: 'iscas2023' },
+    { collection: 'blog', id: 'iscas2021' },
+]
