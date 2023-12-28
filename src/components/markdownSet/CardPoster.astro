@@ -19,25 +19,21 @@ export type Props = {
     width?: string | number;
     type?: string;
     height?: string | number;
-    customWidth?:boolean;
 };
 
-const { post, width = 400, type = "blog",customWidth=false } = Astro.props;
+const { post, width = 400, type = "blog" } = Astro.props;
 const height =  Astro.props.height || Number(width) / 2;
 const logowidth: number = 0.25 * Number(width);
-const widthStr = !customWidth?`${width}px`:'100%';
-const heightStr = !customWidth?`${height}px`:'100%';
-const imgClassList=customWidth?["background","z-0","rounded-lg"]:["background","z-0","rounded-t-2xl"]
 ---
 
 <div
-    class="card bg-base-100 shadow-xl poster relative"
-    style={`--poster-width: ${widthStr}; --poster-height: ${heightStr}; --logo-width: ${logowidth}px;}}`}
+    class="card w-96 bg-base-100 shadow-xl poster relative"
+    style={`--poster-width: ${width}px; --poster-height: ${height}px; --logo-width: ${logowidth}px;}}`}
 >
     <img
         src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
         alt="Background"
-        class:list={[...imgClassList]}
+        class:list={["background","z-0","rounded-t-2xl","w-auto"]}
     />
 
     <div class="title absolute top-0 mt-6 text-gray-01 px-3">

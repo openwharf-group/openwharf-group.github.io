@@ -1,26 +1,111 @@
 ---
-import CardPoster from "@components/markdownSet/CardPoster.astro";
+import { Image } from "astro:assets";
+import Logo from "/public//nacos_white.png";
 
 const {
   type = "blog",
   post,
-  posterWidth,
   classList = [],
 } = Astro.props;
 ---
 
 <div class:list={[...classList]}>
-  <div class="flex flex-row bg-gray-15 text-gray-01 h-auto rounded-lg p-4">
-    <div class="basis-2/5">
+  <div class="new_card_container flex flex-row bg-gray-15 text-gray-01 h-auto rounded-lg p-4">
+    <div class="new_card_container_left basis-2/5">
       {
         type === "blog" && (
-          <CardPoster post={post} width={posterWidth} type={type} customWidth={true} />
+          <div
+    class="shadow-xl poster rounded-lg w-full h-full"
+>
+    <img
+        src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
+        alt="Background"
+        class:list={["background","z-0","rounded-lg","w-auto"]}
+    />
+
+    <div class="title absolute top-0 mt-6 text-gray-01 px-3">
+        {post.data.title}
+    </div>
+
+    <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
+        <!-- 博客的海报增加作者信息 -->
+        {
+            type === "blog" && (
+                <div class="flex">
+                    <img
+                        src="https://img.alicdn.com/imgextra/i3/O1CN01GFGkcR1y0NfyEKR0V_!!6000000006516-0-tps-1024-1024.jpg"
+                        class="w-10 rounded-full"
+                    />
+                    <div class="flex flex-col ml-4 pt-2">
+                        <p class:list={["text-gray-02", "text-xs"]}>
+                            by &nbsp;&nbsp; {post.data.author || "nacos"}
+                        </p>
+                        <p class="text-[.5rem]">阿里云高级工程师</p>
+                    </div>
+                </div>
+            )
+        }
+
+        <Image src={Logo} alt="" class="logo" />
+    </div>
+</div>
         )
       }
       {type !== "blog" && <slot name="left-content" />}
     </div>
-    <div class="basis-3/5 p-4">
+    <div class="new_card_container_right basis-3/5 p-4">
       <slot name="right-content" />
     </div>
   </div>
 </div>
+
+<style>
+      .poster {
+        position: relative;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .title {
+        font-size: 1.25em; /* 调整为合适的大小 */
+        text-align: center;
+        z-index: 5;
+        line-height: 1.5em;
+    }
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .logo {
+        width: 40px;
+        height: auto;
+    }
+    /* 小于50rem  小于 800px */
+    @media (max-width: 50rem) {
+      .poster{
+        height:200px;
+      }
+      .new_card_container{
+        flex-direction: column;
+        height:auto;
+      }
+    }
+      /* 大于50rem 小于 72rem  800px < width < 1152 */
+    @media (min-width: 50rem) and (max-width: 72rem) {
+      
+    }
+</style>
