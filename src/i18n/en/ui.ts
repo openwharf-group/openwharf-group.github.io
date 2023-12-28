@@ -24,8 +24,9 @@ export default {
 	'commmon.header.contact.ding': 'DingDing',
 	'commmon.header.contact.mail': 'E-mail',
 
-	'commmon.footer.title': 'Subscribe for more',
+	'commmon.footer.title': 'Vision',
 	'commmon.footer.subscribe': 'By providing an easy-to-use service infrastructure such as dynamic service discovery,service configuration, service sharing and management and etc.',
+	'commmon.footer.description':'By providing an easy-to-use service infrastructure such as dynamic service discovery, service configuration, service sharing and management and etc., Nacos help users better construct, deliver and manage their own service platform, reuse and composite business service faster and deliver value of business innovation more quickly so as to win market for users in the era of cloud native and in all cloud environments, such as private, mixed, or public clouds.',
 	'commmon.footer.email.placeholder': 'Enter email address…',
 	'commmon.footer.actions.subscribe': 'SUBSCRIBE',
 	'commmon.footer.docs': 'DOCUMENTATION',

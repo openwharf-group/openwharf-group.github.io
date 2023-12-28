@@ -24,8 +24,9 @@ export default {
 	'commmon.header.contact.ding': '钉钉',
 	'commmon.header.contact.mail': '电子邮箱',
 	
-	'commmon.footer.title': '订阅获取更多内容',
-	'commmon.footer.subscribe': '通过提供易于使用的服务基础设施，如动态服务发现、服务配置、服务共享和管理等等。',
+	'commmon.footer.title': '愿景',
+	'commmon.footer.description':'Nacos 通过提供简单易用的动态服务发现、服务配置、服务共享与管理等服务基础设施，帮助用户在云原生时代，在私有云、混合云或者公有云等所有云环境中，更好的构建、交付、管理自己的微服务平台，更快的复用和组合业务服务，更快的交付商业创新的价值，从而为用户赢得市场。',
+	'commmon.footer.subscribe': '提供易于使用的服务基础设施，如动态服务发现、服务配置、服务共享和管理等等。',
 	'commmon.footer.email.placeholder': '请输入电子邮件地址...',
 	'commmon.footer.actions.subscribe': '订阅',
 	'commmon.footer.docs': '文档',
