@@ -29,9 +29,9 @@ export const BLOG_CATEGORY = [
 
 export const NEWS_CATEGORY = [
     {
-        type: 'annoucement',
+        type: 'announcement',
         title:'社区公告',
-        href: '/news/annoucement'
+        href: '/news/announcement'
     },
     {
         type: 'release',
@@ -52,9 +52,9 @@ export const NEWS_CATEGORY = [
 
 export const ACTIVITY_CATEGORY = [
     {
-        type: 'annoucement',
+        type: 'announcement',
         title:'社区公告',
-        href: '/news/annoucement'
+        href: '/news/announcement'
     },
     {
         type: 'activity-preview',
