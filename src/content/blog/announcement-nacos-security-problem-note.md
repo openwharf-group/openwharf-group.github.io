@@ -3,7 +3,7 @@ title: 关于Nacos身份验证漏洞修复建议
 keywords: [身份验证, 漏洞]
 description: 关于Nacos身份验证漏洞修复建议及部署说明
 date: "2021-01-15"
-category: annoucement
+category: announcement
 ---
 
 # 关于Nacos身份验证漏洞修复建议

@@ -3,7 +3,7 @@ title: Nacos社区2022年荣获多个媒体奖项
 keywords: [获奖, 开源成熟度, CSDN年度开发者影响力项目, InfoQ 十大开源新锐项目]
 description: Nacos 社区荣获开源成熟度评估`优秀贰级`、`CSDN年度开发者影响力项目`和`InfoQ 十大开源新锐项目`殊荣
 date: "2023-03-20"
-category: annoucement
+category: announcement
 ---
 # Nacos社区2022年荣获多个媒体奖项
 
