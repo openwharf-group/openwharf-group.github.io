@@ -1,15 +1,18 @@
-/* .sl-markdown-content
-	:not(a, strong, em, del, span, input, code)
-	+ :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
-	margin-top: 1.5rem;
-} */
-
 /* Headings after non-headings have more spacing. */
 .sl-markdown-content
 	:not(h1, h2, h3, h4, h5, h6)
 	+ :is(h1, h2, h3, h4, h5, h6):not(:where(.not-content *)) {
 	margin-top: 2.5rem;
 	scroll-margin-top: 4rem; /* 头部高度，根据实际情况调整 */
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6) {
+	margin-bottom: 1rem;
+}
+
+/* 征文每段之间有一点间距 */
+.sl-markdown-content p {
+	margin-bottom: 0.5rem;
 }
 
 /* 紧接在标题元素后的标题元素，也需要一定的margin-top */
@@ -29,7 +32,7 @@
 .sl-markdown-content
 	li
 	> :last-child:not(li, ul, ol):not(a, strong, em, del, span, input, :where(.not-content *)) {
-	margin-bottom: 1.25rem;
+	margin-bottom: 1rem;
 }
 
 .sl-markdown-content dt:not(:where(.not-content *)) {
