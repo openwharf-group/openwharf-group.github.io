@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "/public//nacos_white.png";
+import moment from "moment";
 
 const {
   type = "blog",
@@ -14,20 +15,17 @@ const {
     <div class="new_card_container_left basis-2/5">
       {
         type === "blog" && (
-          <div
-    class="shadow-xl poster rounded-lg w-full h-full"
->
-    <img
-        src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
-        alt="Background"
-        class:list={["background","z-0","rounded-lg","w-auto"]}
-    />
+          <div class="shadow-xl poster rounded-lg w-full h-full">
+            <img
+              src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
+              alt="Background"
+              class:list={["background","z-0","rounded-lg","w-auto"]}
+            />
 
-    <div class="title absolute top-0 mt-6 text-gray-01 px-3">
-        {post.data.title}
-    </div>
-
-    <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
+            <div class="title absolute top-0 mt-6 text-gray-01 px-3">
+              {post.data.title}
+            </div>
+      <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
         <!-- 博客的海报增加作者信息 -->
         {
             type === "blog" && (
@@ -45,7 +43,6 @@ const {
                 </div>
             )
         }
-
         <Image src={Logo} alt="" class="logo" />
     </div>
 </div>
@@ -54,12 +51,53 @@ const {
       {type !== "blog" && <slot name="left-content" />}
     </div>
     <div class="new_card_container_right basis-3/5 p-4">
-      <slot name="right-content" />
+      {type === "blog"&& (<div>
+        <div class="text-xl">
+                      {post.data.title}
+                    </div>
+                    <div class:list={["text-gray-06", "text-xs", "mt-4"]}>
+                      <span>
+                        by &nbsp;&nbsp;{" "}
+                        {post.data.author || "nacos"}
+                      </span>
+                      <span class="text-[.5rem] ml-2">阿里云高级工程师</span>
+                    </div>
+                    <div class="mt-8 text-sm leading-6">
+                      {post.data.description}
+                    </div>
+                    <div class="mt-8">
+                      <button class="bg-gray-01 text-xs py-3 mb-4 rounded-full w-[136px] h-10">
+                        <a
+                          href={`/blog/${post.slug}`}
+                          rel="prefetch"
+                          class="text-gray-15"
+                        >
+                          READ MORE
+                        </a>
+                      </button>
+                    </div>
+                    <div class="flex flex-row justify-between blog_latest_bottom pt-2">
+                      <div class="text-gray-06 text-sm">
+                        {moment(post.data.date).format(
+                          "MMMM D, YYYY"
+                        )}
+                      </div>
+                      <div class="h-2">
+                        <Image src={Logo} alt="" class="h-2.5 w-12" />
+                      </div>
+                    </div>
+        </div>)}
+      {type !== "blog" && <slot name="right-content" />}
     </div>
   </div>
 </div>
 
+
 <style>
+     a{
+        text-decoration: none;
+        color: inherit;
+      }
       .poster {
         position: relative;
         background-size: cover;
