@@ -3,6 +3,7 @@ title: 支持Dubbo生态发展，阿里巴巴启动新的开源项目 Nacos
 keywords: [nacos, alibaba, dubbo]
 description: 支持Dubbo生态发展，阿里巴巴启动新的开源项目 Nacos
 date: "2018-06-01"
+category: activity-detail
 ---
 
 # 支持Dubbo生态发展，阿里巴巴启动新的开源项目 Nacos

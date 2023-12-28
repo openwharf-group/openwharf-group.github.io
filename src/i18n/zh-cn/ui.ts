@@ -9,7 +9,7 @@ export default {
 	'commmon.header.comm.report': '报告',
 	'commmon.header.comm.contribute': '贡献',
 	'commmon.header.comm.contributors': '贡献者',
-	'commmon.header.comm.event': '事件',
+	'commmon.header.comm.event': '社区',
 	'commmon.header.comm.news': '新闻',
 	'commmon.header.comm.active': '活动',
 	'commmon.header.comm.resource': '资源',

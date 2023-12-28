@@ -9,7 +9,7 @@ export default {
 	'commmon.header.comm.report': 'Report',
 	'commmon.header.comm.contribute': 'Contribute',
 	'commmon.header.comm.contributors': 'Contributors',
-	'commmon.header.comm.event': 'EVENTS',
+	'commmon.header.comm.event': 'Community',
 	'commmon.header.comm.news': 'News',
 	'commmon.header.comm.active': 'Activity',
 	'commmon.header.comm.resource': 'Resources',

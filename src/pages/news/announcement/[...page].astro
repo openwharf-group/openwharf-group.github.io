@@ -36,7 +36,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     );
 
     const annoucePosts = sortedPosts.filter((post) => {
-        return post.data.category === "annoucement";
+        return post.data.category === "announcement";
     });
     return paginate(annoucePosts, { pageSize: 9 });
 }
@@ -51,7 +51,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
             {
                 page.data.map((post) => (
                     <div class="2xl:flex-1 xl:flex-1 lg:flex-1 md:flex-1">
-                        <BlogCard post={post as Post} posterWidth="350" type="annoucement"/>
+                        <BlogCard post={post as Post} posterWidth="350" type="announcement"/>
                     </div>
                 ))
             }

@@ -3,6 +3,7 @@ title: Nacos服务发现控制台预览
 keywords: [nacos]
 description: Nacos服务发现控制台预览
 date: "2018-10-02"
+category: activity-preview
 ---
 
 # Nacos服务发现控制台预览

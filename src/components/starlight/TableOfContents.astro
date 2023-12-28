@@ -5,6 +5,8 @@ import CommunityMenu from './CommunityMenu.astro';
 import type { Props } from '@astrojs/starlight/props';
 import './style.css';
 import FeedbackButton from './FeedbackButton.astro';
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 const { locale, toc, editUrl } = Astro.props;
 ---
 
@@ -12,7 +14,7 @@ const { locale, toc, editUrl } = Astro.props;
 	toc && (
 		<starlight-toc data-min-h={toc.minHeadingLevel} data-max-h={toc.maxHeadingLevel}>
 			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
-				<h2 id="starlight__on-this-page" class="heading">本页内容</h2>
+				<h2 id="starlight__on-this-page" class="heading">{t('rightSidebar.onThisPage')}</h2>
 				<TableOfContentsList toc={toc.items} />
 				<ContributeMenu editHref={editUrl.href}/>
 				<CommunityMenu />
