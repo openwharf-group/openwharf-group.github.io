@@ -23,13 +23,9 @@ const solutionList = [
 ];
 ---
 
-<card-solution class="card-solution block bg-gray-14 p-10">
-  <div
-    class="bottom-solutions-card block w-full flex items-center justify-center h-fit"
-  >
-    <div
-      class="solution-container h-[23rem] w-full flex flex-nowrap justify-start"
-    >
+<card-solution class="card-solution block bg-gray-14 pb-4">
+  <div class="bottom-solutions-card block w-full flex items-center justify-center h-fit">
+    <div class="solution-container h-[23rem] w-full flex flex-nowrap justify-start">
       {
         solutionList.map((item, index) => {
           const { src, checked } = item;
@@ -43,7 +39,7 @@ const solutionList = [
               />
               <label
                 for={`c${index}`}
-                class="card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
+                class="solutions-card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
               >
                 <div class="main-title text-sm text-gray-07 text-center opacity-0">
                   SOLUTIONS
@@ -70,11 +66,11 @@ const solutionList = [
       solutionList.map((item, index) => {
         const { src, title } = item;
         return (
-          <div class="mobile-card mx-auto h-[10rem] overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl">
+          <div class="solutions-mobile-card mx-auto h-[14rem] overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl">
             <div class="flex align-center flex-nowrap w-full">
               <div class=" mx-auto text-xs font-normal">SOLUTIONS</div>
             </div>
-            <div class="w-full text-gray-02 text-xl">{title}</div>
+            <div class="w-full text-gray-02 text-base">{title}</div>
             <div class="button mx-auto">
               <a
                 href={src}
@@ -92,26 +88,26 @@ const solutionList = [
 </card-solution>
 
 <script>
-  class HomeCardPlayer extends HTMLElement {
+  class HomeSolutionCard extends HTMLElement {
     constructor() {
       super();
     }
   }
-  customElements.define("card-solution", HomeCardPlayer);
+  customElements.define("card-solution", HomeSolutionCard);
 </script>
 
 <style>
-  .card {
+  .solutions-card {
     /* 默认宽度 */
-    width: 10.5rem;
+    width: 9.75rem;
     background-size: cover;
     transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
     /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8); */
   }
-  .solution-container > .card:first-of-type {
+  .solution-container > .solutions-card:first-of-type {
     margin-left: 0;
   }
-  .solution-container > .card:last-of-type {
+  .solution-container > .solutions-card:last-of-type {
     margin-right: 0;
   }
   @keyframes showcontent {
@@ -130,7 +126,7 @@ const solutionList = [
     display: none;
   }
   input:checked + label {
-    width: 60%;
+    flex: 1;
   }
   input:checked + label .main-title {
     animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
@@ -141,16 +137,16 @@ const solutionList = [
   input:checked + label .button {
     animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
   }
-  .card[for="c0"] {
+  .solutions-card[for="c0"] {
     background-image: url("/ebook-placeholder.png");
   }
-  .card[for="c1"] {
+  .solutions-card[for="c1"] {
     background-image: url("/ebook-placeholder.png");
   }
-  .card[for="c2"] {
+  .solutions-card[for="c2"] {
     background-image: url("/ebook-placeholder.png");
   }
-  .card[for="c3"] {
+  .solutions-card[for="c3"] {
     background-image: url("/ebook-placeholder.png");
   }
 
@@ -173,17 +169,17 @@ const solutionList = [
     .mobile-bottom-solutions-card {
       display: block;
     }
-    .mobile-card {
+    .solutions-mobile-card {
       background-size: cover;
       background-image: url("/ebook-placeholder.png");
     }
-    .mobile-bottom-solutions-card > .mobile-card:first-of-type {
+    .mobile-bottom-solutions-card > .solutions-mobile-card:first-of-type {
       margin-bottom: 1rem;
     }
-    .mobile-bottom-solutions-card > .mobile-card:nth-child(2) {
+    .mobile-bottom-solutions-card > .solutions-mobile-card:nth-child(2) {
       margin-bottom: 1rem;
     }
-    .mobile-bottom-solutions-card > .mobile-card:nth-child(3) {
+    .mobile-bottom-solutions-card > .solutions-mobile-card:nth-child(3) {
       margin-bottom: 1rem;
     }
   }

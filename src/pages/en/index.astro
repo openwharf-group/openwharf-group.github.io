@@ -6,6 +6,7 @@ import NacosEBook from '@components/home/NacosEBook.astro';
 import ExploreFeatures from '@components/home/ExploreFeatures.astro';
 import HomeCardPlayer from '@components/home/HomeCardPlayer.astro';
 import UseCompanies from '@components/home/UseCompanies.astro';
+import HomeSolutionsCard from '@components/home/HomeSolutionsCard.astro';
 import HomeFooter from '@components/common/Footer.astro';
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
@@ -24,7 +25,9 @@ const t = useTranslations(Astro);
     <UseCompanies />
   </home-body>
 
-  <HomeFooter />
+  <HomeFooter>
+    <HomeSolutionsCard slot="after-footer" />
+  </HomeFooter>
 </BaseLayout>
 
 <script>

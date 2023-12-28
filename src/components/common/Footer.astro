@@ -3,6 +3,7 @@ import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
 ---
 <footer class="bg-gray-14 p-10">
+  <slot name="after-footer" />
   <div
     class="footer_top_functional flex bg-gray-13 rounded-2xl text-center lg:flex-row"
   >

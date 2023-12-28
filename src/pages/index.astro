@@ -22,10 +22,11 @@ const t = useTranslations(Astro);
     <NacosEBook />
     <ExploreFeatures />
     <UseCompanies />
-    <HomeSolutionsCard />
   </home-body>
 
-  <HomeFooter />
+  <HomeFooter>
+    <HomeSolutionsCard slot="after-footer" />
+  </HomeFooter>
 </BaseLayout>
 
 <script>
