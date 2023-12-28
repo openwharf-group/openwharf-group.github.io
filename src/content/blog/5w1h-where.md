@@ -3,6 +3,7 @@ title: Nacos 有哪些典型的应用场景？—— 配置管理篇
 keywords: [nacos]
 description: Nacos 配置管理有哪些典型的应用场景？
 date: "2018-12-06"
+cateogory: annoucement
 ---
 
 # Nacos 有哪些典型的应用场景？—— 配置管理篇

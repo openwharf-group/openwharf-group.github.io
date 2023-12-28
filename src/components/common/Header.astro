@@ -3,17 +3,14 @@ import LanguageToggle from "@components/common/LanguageToggle.astro";
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
 import { getEntries } from "astro:content";
-import { HEADER_ACTIVITY_CARD } from "../../consts"
+import { HEADER_ACTIVITY_CARD  } from "../../consts"
+import CardPoster from "@components/markdownSet/CardPoster.astro";
 interface Props {
   align?: 'home' | 'docs',
   position?: 'static' | 'sticky',
   lang: 'zh-cn' | 'en' | string,
 }
 
-interface CardList {
-    collection?: string;
-    id?: string;
-}[]
 
 const { align = 'home', position = 'sticky', lang } = Astro.props;
 const height = align === 'home' ? '4rem' : '3.5rem';
@@ -65,8 +62,8 @@ const communitySubMenu = {
   ],
 };
 
-const posts = await getEntries(HEADER_ACTIVITY_CARD);
-console.log("000000",posts)
+const posts = await getEntries(HEADER_ACTIVITY_CARD as any);
+
 ---
 
 <header-layout class="header bg-gray-14 relative" style={`position: ${position}; height: ${height}`}>
@@ -167,13 +164,14 @@ console.log("000000",posts)
               </div>
               <div class="flex">
                 {
-                  communitySubMenu.shortcutCards.map((item, index) => {
-                    const { eventName, description, imgUrl } = item;
+                  posts.map((item, index) => {
+                    // @ts-ignore
+                    const description = item?.data?.description || ""
                     return (
                       <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4">
-                        <img class="" src={imgUrl} />
-                        <div class="text-blue-01 text-sm mt-3 line-clamp-3 h-16">{description}</div>
-                        <a class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl">{eventName}</a>
+                        <CardPoster post={item as any} width="240" height="170" type="card"/>
+                        <p class="descip">{description}</p>
+                        <a class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl" href={`/${item.collection}/${item.slug}`}>阅读文章</a>
                       </div>
                     );
                   })
@@ -626,6 +624,16 @@ console.log("000000",posts)
   a {
     text-decoration: none;
     color: inherit;
+  }
+  .descip {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.25rem;
+    margin-top: 1rem;
   }
   .nav {
     z-index: 100000;

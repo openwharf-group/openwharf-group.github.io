@@ -3,6 +3,7 @@ title: Nacos打通CMDB实现就近访问
 keywords: [nacos, CMDB]
 description: 在服务进行多机房或者多地域部署时，跨地域的服务访问往往延迟较高，一个城市内的机房间的典型网络延迟在1ms左右，而跨城市的网络延迟，例如上海到北京大概为30ms。
 date: "2019-06-06"
+category: activity-preview
 ---
 
 # Nacos打通CMDB实现就近访问

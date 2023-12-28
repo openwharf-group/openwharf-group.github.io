@@ -3,11 +3,12 @@ import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
 ---
 <footer class="bg-gray-14 p-10">
+  <slot name="after-footer" />
   <div
     class="footer_top_functional flex bg-gray-13 rounded-2xl text-center lg:flex-row"
   >
     <div
-      class="footer_left grid grid-cols-1 gap-0 text-left mt-9 ml-10 max-w-2xl"
+      class="footer_left flex flex-col gap-0 text-left my-9 ml-10 max-w-2xl"
     >
       <p
         class="footer_left_title text-gray-02 text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
@@ -15,21 +16,13 @@ const t = useTranslations(Astro);
         {t('commmon.footer.title')}
       </p>
       <p
-        class="footer_left_des text-gray-09 text-[1.125rem] w-[42rem] h-[3.5625rem] mt-4 mb-[1.875rem]"
+        class="footer_left_des flex-1 text-gray-09 text-[1.125rem] w-[42rem] h-[4.5rem] mt-4 mb-[1.875rem]"
       >
-        {t('commmon.footer.subscribe')}
+        {t('commmon.footer.description')}
       </p>
-      <input
-        type="text"
-        placeholder={t('commmon.footer.email.placeholder')}
-        class="footer_left_email max-w-[37.5rem] input input-ghost bg-gray-12 block rounded-2xl lg:w-[31.25rem] lg:h-[4.375rem]"
-      />
-      <button
-        class="footer_left_button max-w-[9.6875rem] btn bg-gray-02 text-gray-14 rounded-full text-[0.75rem] font-medium block lg:w-[9.6875rem] lg:h-[3.375rem] lg:mt-6 lg:mb-[11.1875rem] lg:py-[1.1875rem] lg:px-[2.875rem]"
-        >
-        {t('commmon.footer.actions.subscribe')}
-      </button
-      >
+      <a class="btn btn-secondary max-w-[9.6875rem]" href="https://github.com/alibaba/nacos" target="_blank">
+          GitHub
+      </a>
     </div>
     <div
       class="footer_right grid grid-cols-2 gap-2 flex text-left mt-9 ml-[9.625rem]"

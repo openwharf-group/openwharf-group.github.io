@@ -1,6 +1,5 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
-
 export const SITE_TITLE = 'Astro Blog';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
 
@@ -72,4 +71,9 @@ export const ACTIVITY_CATEGORY = [
         title:'其他活动',
         href: '/activity/advertisement'
     }
+]
+
+export const HEADER_ACTIVITY_CARD = [
+    { collection: 'blog', slug: 'iscas2023' },
+    { collection: 'blog' , slug: 'iscas2021' },
 ]
