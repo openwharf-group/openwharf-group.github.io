@@ -27,11 +27,11 @@ const height =  Astro.props.height || Number(width) / 2;
 const logowidth: number = 0.25 * Number(width);
 const widthStr = !customWidth?`${width}px`:'100%';
 const heightStr = !customWidth?`${height}px`:'100%';
-const imgClassList=customWidth?["background","z-0","rounded-lg","w-auto"]:["background","z-0","rounded-t-2xl","w-auto"]
+const imgClassList=customWidth?["background","z-0","rounded-lg"]:["background","z-0","rounded-t-2xl"]
 ---
 
 <div
-    class="card w-96 bg-base-100 shadow-xl poster relative"
+    class="card bg-base-100 shadow-xl poster relative"
     style={`--poster-width: ${widthStr}; --poster-height: ${heightStr}; --logo-width: ${logowidth}px;}}`}
 >
     <img
