@@ -2,8 +2,8 @@
 import LanguageToggle from "@components/common/LanguageToggle.astro";
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
-import { getEntries } from "astro:content";
-import { HEADER_ACTIVITY_CARD  } from "../../consts"
+import { getCollection, getEntries } from "astro:content";
+// import { HEADER_ACTIVITY_CARD  } from "../../consts"
 import CardPoster from "@components/markdownSet/CardPoster.astro";
 interface Props {
   align?: 'home' | 'docs',
@@ -62,7 +62,10 @@ const communitySubMenu = {
   ],
 };
 
-const posts = await getEntries(HEADER_ACTIVITY_CARD as any);
+const blogPosts = await getCollection("blog");
+
+
+const posts = blogPosts.slice(0,2);
 
 ---
 
