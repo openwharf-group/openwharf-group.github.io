@@ -71,6 +71,13 @@ export default {
 	'home.features.3.summary': '您可以轻松实现无状态服务，并实现按需扩展。',
 	'home.features.3.explain': 'Nacos 支持基于 DNS 和基于 RPC（Dubbo、gRPC）的服务发现，并提供实时的服务健康检查，以防止将请求路由发送到不健康的主机或服务实例。借助Nacos，您还可以轻松实现服务的熔断器功能。',
 	'home.use.companies.about': '谁在使用 Nacos',
+	'home.solutions.about': '解决方案',
+	'home.solutions.card.1': 'MSE 注册配置中心高可用最佳实践',
+	'home.solutions.card.2': 'MSE Sync 迁移方案',
+	'home.solutions.card.3': '云原生网关如何实现安全防护能力',
+	'home.solutions.card.4': '服务治理优雅上下线',
+	'home.solutions.action': '查看详情',
+
 
 	'cloud.title': 'Nacos Cloud',
 	'cloud.description': 'Nacos Cloud 专为云原生应用设计，提供强大的服务发现、动态配置管理和服务管理功能，支持高效的应用开发和运维。',

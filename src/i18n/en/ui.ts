@@ -71,6 +71,12 @@ export default {
 	'home.features.3.summary': 'You can implement stateless services and achieve on-demand scaling effortlessly.',
 	'home.features.3.explain': 'Nacos supports both DNS-based and RPC-based (Dubbo, gRPC) service discovery, and provides real-time service health checks to prevent routing requests from being sent to unhealthy hosts or service instances. With Nacos, you can also implement circuit breakers for your services with ease.',
 	'home.use.companies.about': 'SELECTION OF SOME COMPANIES',
+	'home.solutions.about': 'SOLUTIONS',
+	'home.solutions.card.1': 'Best Practices for High Availability in MSE Registration Configuration Center',
+	'home.solutions.card.2': 'MSE Sync Migration Plan',
+	'home.solutions.card.3': 'How cloud-native gateways achieve security protection capabilities',
+	'home.solutions.card.4': 'Graceful Service Governance Onboarding and Offboarding',
+	'home.solutions.action': 'Details',
 
 	'cloud.title': 'Nacos Cloud',
 	'cloud.description': 'Nacos Cloud is specifically designed for cloud-native applications, providing powerful features for service discovery, dynamic configuration management, and service management. It supports efficient application development and operations.',

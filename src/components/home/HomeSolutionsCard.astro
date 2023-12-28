@@ -1,24 +1,26 @@
 ---
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 const solutionList = [
   {
     checked: true,
     src: "https://help.aliyun.com/zh/mse/use-cases/implement-high-availability-capabilities-of-mse-microservices-registry/?spm=a2c4g.11186623.0.0.102a27e0juv8vG",
-    title: "MSE注册配置中心高可用最佳实践",
+    title: t('home.solutions.card.1'),
   },
   {
     checked: false,
     src: "https://help.aliyun.com/zh/mse/use-cases/migration-solution-based-on-mse-sync/?spm=a2c4g.11186623.0.0.13f12318fSap49",
-    title: "MSE Sync迁移方案",
+    title: t('home.solutions.card.2'),
   },
   {
     checked: false,
     src: "https://developer.aliyun.com/article/1265016?spm=5176.21213303.J_qCOwPWspKEuWcmp8qiZNQ.10.c89e2f3dQa2WtF&scm=20140722.S_community@@%E6%96%87%E7%AB%A0@@1265016._.ID_community@@%E6%96%87%E7%AB%A0@@1265016-RL_%E4%BA%91%E5%8E%9F%E7%94%9F%E7%BD%91%E5%85%B3%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E8%83%BD%E5%8A%9B-LOC_llm-OR_ser-V_3-RK_rerank-P0_2",
-    title: "云原生网关如何实现安全防护能力",
+    title: t('home.solutions.card.3'),
   },
   {
     checked: false,
     src: "https://help.aliyun.com/zh/mse/use-cases/implement-graceful-start-and-shutdown-of-microservice-applications-by-using-mse/?spm=a2c4g.11186623.0.0.385116bftBJhAY",
-    title: "服务治理优雅上下线",
+    title: t('home.solutions.card.4'),
   },
 ];
 ---
@@ -42,7 +44,7 @@ const solutionList = [
                 class="solutions-card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
               >
                 <div class="main-title text-sm text-gray-07 text-center opacity-0">
-                  SOLUTIONS
+                  {t('home.solutions.about')}
                 </div>
 
                 <div class="item-title text-gray-03 text-3xl mx-4 opacity-0">
@@ -50,7 +52,7 @@ const solutionList = [
                 </div>
                 <div class="button opacity-0 mx-auto">
                   <a href={src} target="_blank" class="btn btn-secondary w-24">
-                    查看详情
+                    {t('home.solutions.action')}
                   </a>
                 </div>
               </label>
@@ -68,7 +70,7 @@ const solutionList = [
         return (
           <div class="solutions-mobile-card mx-auto h-[14rem] overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl">
             <div class="flex align-center flex-nowrap w-full">
-              <div class=" mx-auto text-xs font-normal">SOLUTIONS</div>
+              <div class=" mx-auto text-xs font-normal">{t('home.solutions.about')}</div>
             </div>
             <div class="w-full text-gray-02 text-base">{title}</div>
             <div class="button mx-auto">
@@ -77,7 +79,7 @@ const solutionList = [
                 target="_blank"
                 class="btn btn-secondary w-24 btn-sm"
               >
-                查看详情
+                {t('home.solutions.action')}
               </a>
             </div>
           </div>
@@ -138,16 +140,16 @@ const solutionList = [
     animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
   }
   .solutions-card[for="c0"] {
-    background-image: url("/ebook-placeholder.png");
+    background-image: url("/solutions-placeholder1.png");
   }
   .solutions-card[for="c1"] {
-    background-image: url("/ebook-placeholder.png");
+    background-image: url("/solutions-placeholder2.png");
   }
   .solutions-card[for="c2"] {
-    background-image: url("/ebook-placeholder.png");
+    background-image: url("/solutions-placeholder3.png");
   }
   .solutions-card[for="c3"] {
-    background-image: url("/ebook-placeholder.png");
+    background-image: url("/solutions-placeholder4.png");
   }
 
   /* 小于50rem  小于 800px */
