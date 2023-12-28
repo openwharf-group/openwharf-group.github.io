@@ -18,10 +18,11 @@ export type Props = {
     };
     width?: string | number;
     type?: string;
+    height?: string | number;
 };
 
 const { post, width = 400, type = "blog" } = Astro.props;
-const height: number = Number(width) / 2;
+const height =  Astro.props.height || Number(width) / 2;
 const logowidth: number = 0.25 * Number(width);
 ---
 
@@ -35,7 +36,7 @@ const logowidth: number = 0.25 * Number(width);
         class="background z-0 rounded-t-2xl w-auto"
     />
 
-    <div class="title absolute top-0 mt-6 text-gray-01">
+    <div class="title absolute top-0 mt-6 text-gray-01 px-3">
         {post.data.title}
     </div>
 
