@@ -80,33 +80,7 @@ const recentPosts = sortedPosts.splice(0, 4);
             </header>
             </div>
           </div>
-          <NewCard type="blog" post={recentPosts[0]} classList={["lg:col-span-3","lg:py-8"]}>
-          <div slot="right-content">
-            <div class="text-xl">{recentPosts[0].data.title}</div>
-            <div class:list={["text-gray-06", "text-xs","mt-4"]}>
-              <span>
-                  by &nbsp;&nbsp; {recentPosts[0].data.author || "nacos"}
-              </span>
-              <span class="text-[.5rem] ml-2">阿里云高级工程师</span>
-          </div>
-          <div class="mt-8 text-sm leading-6">
-            {recentPosts[0].data.description}
-          </div>
-          <div class="mt-8">
-            <button class="bg-gray-01 text-xs py-3 mb-4 rounded-full w-[136px] h-10">
-              <a href={`/blog/${recentPosts[0].slug}`} rel="prefetch" class="text-gray-15">
-                READ MORE
-              </a>
-            </button>
-          </div>
-            <div class="flex flex-row justify-between blog_latest_bottom pt-2">
-              <div class="text-gray-06 text-sm">{moment(recentPosts[0].data.date).format("MMMM D, YYYY")}</div>
-              <div class="h-2">
-                <Image src={Logo} alt="" class="h-2.5 w-12" />
-              </div>
-            </div>
-          </div>
-        </NewCard>
+          <NewCard type="blog" post={recentPosts[0]} classList={["lg:col-span-3","lg:py-8"]} />
         </div>
       </div>
     </div>

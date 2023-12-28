@@ -6,7 +6,7 @@ const { title = "", type="blog-home" } = Astro.props;
 ---
 
 <div class="bg-gray-14 text-gray-01 blog_header">
-    <div class="blog_header_title leading-normal">{title}</div>
+    <div class="blog_header_title">{title}</div>
     <div class="blog_category_menu">
       {type==="blog-home"&&BLOG_CATEGORY && BLOG_CATEGORY.map((category)=>{
          return (
@@ -38,10 +38,11 @@ const { title = "", type="blog-home" } = Astro.props;
         color: inherit;
     }
     .blog_header {
-        padding: 3rem;
+        padding: 2.5rem;
     }
     .blog_header_title{
-        font-size: 2.5rem;
+        font-size: 4.5rem;
+        line-height: 1;
     }
     .blog_category_menu{
         margin-top: 2rem;
@@ -59,9 +60,17 @@ const { title = "", type="blog-home" } = Astro.props;
         color: theme("colors.gray.01");
     }
     @media (max-width: 50rem) {
+      .blog_header {
+        padding: 1.5rem;
+    }
       .blog_header_title{
         font-size: 1.875rem;
         line-height: 2.25rem;
+      }
+      .blog_menu_item{
+        padding: 4px 8px;
+        font-size: 12px;
+        margin-right: 8px;
       }
     }
   </style>
