@@ -41,7 +41,7 @@ const { title = "", type="blog-home" } = Astro.props;
         padding: 3rem;
     }
     .blog_header_title{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
     .blog_category_menu{
         margin-top: 2rem;
@@ -57,5 +57,11 @@ const { title = "", type="blog-home" } = Astro.props;
     .blog_menu_item:hover{
         background-color: theme("colors.blue.08");
         color: theme("colors.gray.01");
+    }
+    @media (max-width: 50rem) {
+      .blog_header_title{
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
     }
   </style>
