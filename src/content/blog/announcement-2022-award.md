@@ -5,7 +5,7 @@ description: Nacos 社区荣获开源成熟度评估`优秀贰级`、`CSDN年度
 date: "2023-03-20"
 category: announcement
 ---
-# Nacos 社区又迎来3位Committer
+# Nacos社区2022年荣获多个媒体奖项
 
 感谢社区小伙伴的积极参与和厚爱，Nacos社区在2022年收获了电子标准院2022年度开源成熟度评估`优秀贰级`、`CSDN年度开发者影响力项目`和`InfoQ 十大开源新锐项目`等殊荣，在2023年也希望有更多的小伙伴参与到Nacos社区中，让Nacos越变越好。
 
