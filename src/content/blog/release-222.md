@@ -7,7 +7,7 @@ category: release
 ---
 # Nacos 2.2.2发布，优化启动体验和鉴权提示
 
-Nacos社区近期发布了2.2.0.1和2.2.1版本，对默认鉴权插件做出了较大的改动，详情查看[风险说明](announcement-token-secret-key.md)及[2.2.1发布](release-221.md)。
+Nacos社区近期发布了2.2.0.1和2.2.1版本，对默认鉴权插件做出了较大的改动，详情查看[风险说明](src/content/blog/annoucement-token-secret-key.md)及[2.2.1发布](release-221.md)。
 由于Nacos默认控制台ui中默认依赖了`token.secret.key`，所以在移除了`token.secret.key`的默认值后，许多新部署或默认使用latest版本镜像的用户出现大量启动失败的情况，对用户的易用性造成了较大影响。
 因此2.2.2版本主要针对该问题进行了优化。
 
