@@ -6,9 +6,6 @@ import SubHeading from "@components/markdownSet/SubHeading.astro";
 import Footer from "@components/common/Footer.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
 import NewCard from "@components/markdownSet/NewCard.astro";
-import { Image } from "astro:assets";
-import Logo from "/public//nacos_white.png";
-import moment from "moment";
 
 interface Post {
   slug: string;
@@ -103,7 +100,7 @@ for (const item of ACTIVITY_CATEGORY) {
                 </div>
               </div>
 
-              {categoryPost.type === "annoucement" ? (
+              {categoryPost.type === "announcement" ? (
                 <NewCard
                   type="blog"
                   post={categoryPost.posts[0]}
