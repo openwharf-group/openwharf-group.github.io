@@ -1,5 +1,6 @@
 ---
 import { BLOG_CATEGORY } from 'src/consts';
+import { Icon } from "@astrojs/starlight/components";
 
 const { title = "", type="blog-home" } = Astro.props;
 ---
@@ -24,6 +25,7 @@ const { title = "", type="blog-home" } = Astro.props;
                   href="/blog"
                   aria-current = {}
                 >
+                <Icon name="left-arrow" class="text-lg align-middle" />
                 BACK
                 </a>
       }

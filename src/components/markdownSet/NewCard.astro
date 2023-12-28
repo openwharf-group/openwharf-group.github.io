@@ -1,0 +1,26 @@
+---
+import CardPoster from "@components/markdownSet/CardPoster.astro";
+
+const {
+  type = "blog",
+  post,
+  posterWidth,
+  classList = [],
+} = Astro.props;
+---
+
+<div class:list={[...classList]}>
+  <div class="flex flex-row bg-gray-15 text-gray-01 h-auto rounded-lg p-4">
+    <div class="basis-2/5">
+      {
+        type === "blog" && (
+          <CardPoster post={post} width={posterWidth} type={type} customWidth={true} />
+        )
+      }
+      {type !== "blog" && <slot name="left-content" />}
+    </div>
+    <div class="basis-3/5 p-4">
+      <slot name="right-content" />
+    </div>
+  </div>
+</div>
