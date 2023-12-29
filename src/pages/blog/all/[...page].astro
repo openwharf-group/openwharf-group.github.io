@@ -44,10 +44,10 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
     >
-        <ul class="flex flex-row items-stretch justify-center">
+        <ul class="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-6 place-items-stretch">
             {
                 page.data.map((post) => (
-                    <div class="2xl:flex-1 xl:flex-1 lg:flex-1 md:flex-1">
+                    <div>
                         <BlogCard post={post as Post} posterWidth="350" />
                     </div>
                 ))

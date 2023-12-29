@@ -65,11 +65,6 @@ export const ACTIVITY_CATEGORY = [
         type: 'activity-detail',
         title:'活动详情',
         href: '/activity/activity-detail'
-    },
-    {
-        type: 'advertisement',
-        title:'其他活动',
-        href: '/activity/advertisement'
     }
 ]
 
