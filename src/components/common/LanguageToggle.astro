@@ -1,14 +1,15 @@
 ---
 interface Props {
+  id: string,
   size?: 'large' | 'small',
   lang: 'zh-cn' | 'en',
 }
-const { size = "small", lang } = Astro.props;
+const { id, size = "small", lang } = Astro.props;
 const initialState = lang === 'zh-cn' ? false : true;
 ---
 
 <toggle-content class="switch float-left relative m-0 rounded-[2rem]">
-  <input data-switch class="switch-checkbox hidden" id="switch" type="checkbox" checked={initialState} />
+  <input data-switch class="switch-checkbox hidden" id={`${id}-switch`} type="checkbox" checked={initialState} />
   <label class="switch-label block overflow-hidden cursor-pointer rounded-[2rem]" for="switch">
       <span class="switch-inner block" data-on="ZH" data-off="EN"></span>
       <span class="switch-switch absolute float-right mx-1"></span>
