@@ -60,6 +60,10 @@ const headDefaults: z.input<ReturnType<typeof HeadConfigSchema>> = [
   },
   { tag: 'meta', attrs: { name: 'twitter:title', content: data.title } },
   { tag: 'meta', attrs: { name: 'twitter:description', content: description } },
+  {
+    tag: 'meta',
+    attrs: { name: 'baidu-site-verification', content: 'code-wzq5sw7io3' },
+  },
 ];
 
 if (description) {
@@ -177,4 +181,27 @@ const head = createHead(headDefaults, config.head, data.head);
       d.getElementsByTagName('body')[0].appendChild(t);
     }, 800);
   })(document);
+</script>
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement('script');
+    hm.src = 'https://hm.baidu.com/hm.js?e3a5cec56ef8619cf9d7c2abebd509e3';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0YDFJ7LX7F"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-0YDFJ7LX7F');
 </script>
