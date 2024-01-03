@@ -94,7 +94,7 @@ try {
         <div 
           data-docs-dropdown 
           style={`top: ${height}`} 
-          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0"
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-[-2.5rem] right-[-2.5rem]"
         >
           <div class="flex pb-10 pt-8 px-24">
             <div class="shortcut-menu flex flex-col px-7 mr-14">
@@ -132,7 +132,7 @@ try {
         <div 
           data-community-dropdown 
           style={`top: ${height}`} 
-          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50 px-24"
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-[-2.5rem] right-[-2.5rem] z-50 px-24"
         >
           <div class="flex pt-8 justify-center flex-col  xl:px-20 2xl:px-20">
             <div class="flex justify-between mb-9">
@@ -688,8 +688,9 @@ try {
   }
   .modal-panel {
     z-index: 80;
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     transform: translateZ(0);
+    background: linear-gradient(to bottom,theme('colors.gray.14'),theme('colors.gray.13'));
   }
   .dropdown-panel {
     z-index: 100;
