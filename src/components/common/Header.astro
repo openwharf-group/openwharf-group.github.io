@@ -2,8 +2,8 @@
 import LanguageToggle from "@components/common/LanguageToggle.astro";
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
-import { getCollection, getEntries } from "astro:content";
-// import { HEADER_ACTIVITY_CARD  } from "../../consts"
+import { getEntries } from "astro:content";
+import { HEADER_ACTIVITY_CARD  } from "../../consts"
 import CardPoster from "@components/markdownSet/CardPoster.astro";
 interface Props {
   align?: 'home' | 'docs',
@@ -62,10 +62,14 @@ const communitySubMenu = {
   ],
 };
 
-const blogPosts = await getCollection("blog");
+let posts = []
 
+try {
+  posts = await getEntries(HEADER_ACTIVITY_CARD as any);
+} catch (e) {
+  console.error(e);
+}
 
-const posts = blogPosts.slice(0,2);
 
 ---
 
@@ -167,16 +171,16 @@ const posts = blogPosts.slice(0,2);
               </div>
               <div class="flex">
                 {
-                  posts.map((item, index) => {
+                  posts.map((item)=>{
                     // @ts-ignore
                     const description = item?.data?.description || ""
                     return (
                       <div class="shortcut-card bg-gray-13 rounded-2xl p-2 flex flex-col w-64 ml-4">
                         <CardPoster post={item as any} width="240" height="170" type="card"/>
                         <p class="descip">{description}</p>
-                        <a class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl" href={`/${item.collection}/${item.slug}`}>阅读文章</a>
+                        <a class="btn mt-8 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl" href={`/${item.collection}/${item.slug}`}>{t('commmon.header.comm.shortcut')}</a>
                       </div>
-                    );
+                      );
                   })
                 }
               </div>

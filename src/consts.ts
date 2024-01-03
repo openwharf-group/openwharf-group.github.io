@@ -69,6 +69,6 @@ export const ACTIVITY_CATEGORY = [
 ]
 
 export const HEADER_ACTIVITY_CARD = [
-    { collection: 'blog', slug: 'iscas2023' },
-    { collection: 'blog' , slug: 'iscas2021' },
+    { collection: 'blog', slug: 'ecosystem-higress' },
+    { collection: 'blog' , slug: 'announcement-2022-award' },
 ]
