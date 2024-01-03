@@ -40,7 +40,7 @@ export default {
 
 	'home.title': '首页',
 	'home.description': 'Nacos 是动态服务发现、配置管理和服务管理的解决方案，旨在帮助开发者构建和维护云原生应用。',
-	'home.introduce.about': '关于 Nacos',
+	'home.introduce.about': '关于 NACOS',
 	'home.introduce.title': '一个易于使用的用于构建云原生应用的平台',
 	'home.introduce.nacos.code': '前往 Github',
 	'home.introduce.nacos.manual': '手册',

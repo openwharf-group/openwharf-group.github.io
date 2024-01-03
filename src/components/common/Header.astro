@@ -73,9 +73,9 @@ try {
 
 ---
 
-<header-layout class="header bg-gray-14 relative" style={`position: ${position}; height: ${height}`}>
+<header-layout class="header bg-gray-14 relative flex justify-center" style={`position: ${position}; height: ${height}`}>
   <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
-  <div style={`height: ${height}`} class:list={["nav", "bg-gray-14", "relative", "top-0", "right-0", "bottom-0", "left-0", "flex", "items-center", "justify-between",]}>
+  <div style={`height: ${height}`} class:list={["nav", "w-[85.125rem]", "bg-gray-14", "relative", "top-0", "right-0", "bottom-0", "left-0", "flex", "items-center", "justify-between",]}>
     <!-- logo -->
     <a class="left-logo" href="/">
       <img class="logo" src="https://img.alicdn.com/imgextra/i4/O1CN01rW3vAB1FDWKSOiFf0_!!6000000000453-2-tps-204-40.png" alt="nacos-log" />
@@ -610,7 +610,7 @@ try {
     --header-xl-padding: 2.5rem;
   }
   .header {
-    display: block;
+    /* display: block; */
     position: var(position);
     top: 0;
     /* position: relative; */
@@ -634,8 +634,8 @@ try {
   .nav {
     z-index: 100000;
     /* height: var(--header-height); */
-    padding-left: var(--header-xl-padding);
-    padding-right: var(--header-xl-padding);
+    /* padding-left: var(--header-xl-padding);
+    padding-right: var(--header-xl-padding); */
   }
   .logo {
     vertical-align: sub;
@@ -699,9 +699,11 @@ try {
     text-decoration: none;
   }
 
-  @media (min-width: 50rem) and (max-width: 72rem) {
+  @media (min-width: 50rem) and (max-width: 86rem) {
     .nav {
       justify-content: var(--justifyContent) !important;
+      padding-left: var(--header-xl-padding);
+      padding-right: var(--header-xl-padding);
     }
     .mobile_nav {
       padding-left: var(--header-xl-padding);

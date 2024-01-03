@@ -40,7 +40,7 @@ export default {
 
 	'home.title': 'Home',
 	'home.description': 'Nacos is a solution for dynamic service discovery, configuration management, and service management, aimed at helping developers build and maintain cloud-native applications.',
-	'home.introduce.about': 'About Nacos',
+	'home.introduce.about': 'ABOUT NACOS',
 	'home.introduce.title': 'An easy-to-use platform for building cloud native applications',
 	'home.introduce.nacos.code': 'VIEW ON GITHUB',
 	'home.introduce.nacos.manual': 'MANUAL',
