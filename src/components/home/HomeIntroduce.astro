@@ -42,14 +42,12 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } = data ||
 
     <div class="log relative rounded-2xl">
       <video
-        src="/public/introduce-log.webm"
-        height="400px"
-        width="100%"
         loop
         autoplay
         preload="true"
-        playsinline
-        raw-controls="false"
+        height="400px"
+        width="100%"
+        src="/public/introduce-log.webm"
         class="nacos-log object-cover rounded-2xl cursor-pointer"
       />
       <div class="absolute bottom-[1.875rem] left-[1.75rem]">
@@ -155,6 +153,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } = data ||
     border-radius: 0.5rem !important;
   }
   .fork {
+    border-radius: 0.5rem !important;
     background: rgba(244, 244, 246, 0.2);
     backdrop-filter: blur(36px);
   }

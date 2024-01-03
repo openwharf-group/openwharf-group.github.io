@@ -26,18 +26,18 @@ const dataSource = [
 ];
 ---
 
-<choose-reason class="choose-reason block bg-gary-02 p-10">
-  <div class="top-title w-full flex flex-col items-center mb-20 mt-16">
+<choose-reason class="choose-reason block bg-gary-01 p-10 flex flex-col justify-center items-center">
+  <div class="top-title w-[85.125rem] flex flex-col items-center mb-20 mt-16">
     <span class="text-gray-10 text-xs mb-6">{t('home.nacos.edge.about')}</span>
     <span class="title text-gray-14 text-4xl font-medium">{t('home.nacos.edge.title')}</span>
   </div>
 
-  <div class="bottom-card w-full flex flex-wrap">
+  <div class="bottom-card w-[85.125rem] flex flex-wrap">
     {
       dataSource.map(reason => {
         const { title, svgKey, description } = reason;
         return (
-          <div class="item p-5">
+          <div class="item px-5">
             <div class="transfrom-header block">
               <div class="w-12 h-12 bg-blue-02 rounded-md flex justify-center items-center mb-6">
                 {
@@ -89,6 +89,9 @@ class ChooseReason extends HTMLElement {
   .choose-reason {
     padding: 1.5rem;
   }
+  .top-title, .bottom-card {
+    width: 100%;
+  }
   .top-title {
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
@@ -113,10 +116,17 @@ class ChooseReason extends HTMLElement {
 
 
 /* 大于50rem 小于 72rem  800px < width < 1152 */
-@media (min-width: 50rem) and (max-width: 72rem) { 
+@media (min-width: 50rem) and (max-width: 86rem) { 
+  .choose-reason {
+    padding: 2.5rem;
+  }
+  .top-title, .bottom-card {
+    width: 100%;
+  }
   .bottom-card .item {
     flex: 0 0 50%;
     border-left: none;
+    padding-bottom: 1.25rem;
   }
   .bottom-card .item:first-child {
     border-right: 1px solid theme('colors.gray.03');
@@ -127,6 +137,10 @@ class ChooseReason extends HTMLElement {
   }
   .bottom-card .item:nth-child(3) {
     border-right: 1px solid theme('colors.gray.03');
+    padding-top: 1.25rem;
+  }
+  .bottom-card .item:last-child{
+    padding-top: 1.25rem;
   }
 }
 
