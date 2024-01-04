@@ -3,21 +3,21 @@ import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
 import LinkButton from '../common/LinkButton.astro';
 ---
-<footer class="bg-gray-14 p-10">
+<footer class="home-footer bg-gray-14 flex flex-col items-center py-10">
   <slot name="after-footer" />
   <div
-    class="footer_top_functional flex bg-gray-13 rounded-2xl text-center lg:flex-row"
+    class="footer-top flex-col w-[85.125rem] flex bg-gray-13 rounded-2xl text-center lg:flex-row"
   >
     <div
-      class="footer_left flex flex-col gap-0 text-left my-9 ml-10 max-w-2xl"
+      class="footer-left flex flex-col gap-0 text-left my-9 ml-10 max-w-2xl"
     >
       <p
-        class="footer_left_title text-gray-02 text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
+        class="footer-left-title text-gray-02 text-[1.75rem] leading-9 lg:w-[25.9375rem] lg:h-10"
       >
         {t('commmon.footer.title')}
       </p>
       <p
-        class="footer_left_des flex-1 text-gray-09 text-[1.125rem] w-[42rem] h-[4.5rem] mt-4 mb-[1.875rem]"
+        class="footer-left-des flex-1 text-gray-09 text-[1.125rem] w-[42rem] h-[4.5rem] mt-4 mb-[1.875rem]"
       >
         {t('commmon.footer.description')}
       </p>
@@ -27,7 +27,7 @@ import LinkButton from '../common/LinkButton.astro';
       </a> -->
     </div>
     <div
-      class="footer_right grid grid-cols-2 gap-2 flex text-left mt-9 ml-[9.625rem]"
+      class="footer-right grid grid-cols-2 gap-2 flex text-left mt-9 ml-[9.625rem]"
     >
       <div>
         <p
@@ -99,7 +99,8 @@ import LinkButton from '../common/LinkButton.astro';
       </div>
     </div>
   </div>
-  <div class="divider divider-vertical bg-gray-13 mt-10 mb-0 h-[0.05rem]"></div>
+
+  <div class="w-[85.125rem] self-center divider divider-vertical bg-gray-13 mt-10 mb-0 h-[0.05rem]"></div>
   <div
     class="bottom_watermark text-[.875rem] text-gray-09 leading-6 text-center tracking-normal lg:pb-1 lg:pt-8"
   >
@@ -108,67 +109,67 @@ import LinkButton from '../common/LinkButton.astro';
 </footer>
 
 <style>
-  @media (min-width: 50rem) and (max-width: 72rem) {
-    .footer_top_functional {
-      flex-direction: column;
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .home-footer {
+      padding: 2.5rem;
+    }
+    .footer-top {
       height: auto;
+      width: 100%;
       min-height: 28rem;
     }
-    .footer_right {
+    .footer-right {
       margin-left: 2.5rem ;
       margin-bottom: 2rem;
     }
-    .footer_left_button {
+    .footer-left-button {
       margin: 1rem 0rem;
     }
-    .footer_right > div {
+    .footer-right > div {
       height: auto;
     }
-    .footer_right p {
+    .footer-right p {
       margin-bottom: 2rem;
     }
-    .footer_right ul {
+    .footer-right ul {
       height: 100%;
+    }
+    .divider-vertical {
+      width: 100%;
     }
   }
   @media (max-width: 50rem) {
     footer {
       padding: 1.5rem !important;
     }
-    .footer_top_functional {
-      flex-direction: column;
+    .footer-top {
       /* align-items: center; */
       min-height: 28rem;
       padding: 1.5rem;
       height: auto;
+      width: 100%;
     }
 
-    .footer_left {
+    .footer-left {
       width: 100%;
       margin-left: 0;
       margin-bottom: 1rem;
       margin-top: 0;
     }
 
-    .footer_left p {
+    .footer-left p {
       margin: 0rem 0rem 1rem 0rem;
       width: auto;
       height: auto;
     }
-    .footer_left_title{
+    .footer-left-title{
       font-size: 1.125rem;
     }
-    .footer_left_des{
+    .footer-left-des{
       font-size: .875rem;
     }
 
-    .footer_left_email {
-      width: auto;
-      height: 3rem;
-      font-size: .75rem;
-    }
-
-    .footer_left_button {
+    .footer-left-button {
       margin: 1rem 0rem;
       width:6rem;
       height: 2rem;
@@ -177,35 +178,37 @@ import LinkButton from '../common/LinkButton.astro';
       padding-right: 0.75rem;
     }
 
-    .footer_right {
+    .footer-right {
       width: 100%;
       margin: 0rem !important;
       padding-top: 0rem;
       overflow: hidden;
     }
 
-    .footer_right > div {
+    .footer-right > div {
       margin-right: 1rem;
       margin-bottom: 1rem;
       width: 8.25rem;
       height: auto;
     }
 
-    .footer_right p {
+    .footer-right p {
       width: 8.25rem;
       margin-right: 1rem;
       margin-bottom: 1rem;
     }
-    .footer_right ul {
+    .footer-right ul {
       height: 100%;
     }
-    .footer_right a{
+    .footer-right a{
       font-size: .75rem !important;
     }
-
     .bottom_watermark {
       margin: 0rem 0.5rem;
       padding: 0.5rem 0rem;
+    }
+    .divider-vertical {
+      width: 100%;
     }
   }
 </style>

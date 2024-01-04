@@ -38,12 +38,12 @@ const companiesLogos = [
 ];
 ---
 
-<use-companies class="use-companies block bg-gary-02 p-10">
-  <div class="top-title w-full flex flex-col items-center mb-4 mt-16">
+<use-companies class="use-companies flex flex-col items-center bg-gary-02 py-10">
+  <div class="top-title w-[85.125rem] flex flex-col items-center mb-4 mt-16">
     <span class="text-gray-10 text-xs w-full max-w-[63.5rem]">{t('home.use.companies.about')}</span>
   </div>
 
-  <div class="bottom-silder block w-full">
+  <div class="bottom-silder w-[85.125rem]">
     <ul class="slider">
       {
         companiesLogos.map((logo,index) => (
@@ -92,9 +92,9 @@ customElements.define("use-companies", UseCompanies);
   .bottom-silder {
     position: relative;
     display: flex;
-    width: auto;
+    /* width: auto; */
     overflow: hidden;
-    /* mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent); */
+    mask-image: linear-gradient(90deg, transparent, theme('colors.gray.01') 20%, theme('colors.gray.01') 80%, transparent);
   }
   .slider {
     padding: 0rem;
@@ -170,7 +170,15 @@ customElements.define("use-companies", UseCompanies);
   }
 }
 
-@media (min-width: 50rem) and (max-width: 72rem) {
-
+@media (min-width: 50rem) and (max-width: 86rem) {
+  .use-companies {
+    padding: 2.5rem;
+  }
+  .top-title {
+    width: 100%;
+  }
+  .bottom-silder {
+    width: 100%;
+  }
 }
 </style>

@@ -27,12 +27,8 @@ const solutionList = [
 ---
 
 <card-solution class="card-solution block bg-gray-14 pb-4">
-  <div
-    class="bottom-solutions-card w-full flex items-center justify-center h-fit"
-  >
-    <div
-      class="solution-container h-[23rem] w-full flex flex-nowrap justify-start"
-    >
+  <div class="bottom-solutions-card  w-[85.125rem] flex items-center justify-center h-fit">
+    <div class="solution-container h-[23rem] w-full flex flex-nowrap justify-start">
       {
         solutionList.map((item, index) => {
           const { src, checked } = item;
@@ -48,11 +44,11 @@ const solutionList = [
                 for={`c${index}`}
                 class="solutions-card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
               >
-                <div class="main-title text-sm text-gray-05 text-center opacity-0 tracking-wider">
+                <div class="main-title text-sm text-blue-03 text-center opacity-0 tracking-wider">
                   {t('home.solutions.about')}
                 </div>
 
-                <div class="item-title text-gray-03 text-3xl mx-4 opacity-0">
+                <div class="item-title text-blue-01 text-3xl mx-4 opacity-0">
                   {item.title}
                 </div>
                 <div class="button opacity-0 mx-auto">
@@ -158,7 +154,7 @@ const solutionList = [
   /* 小于50rem  小于 800px */
   @media (max-width: 50rem) {
     .card-solution {
-      /* padding: 1.5rem; */
+      width: 100%;
     }
     .top-title {
       margin-top: 2.5rem;
@@ -190,7 +186,13 @@ const solutionList = [
   }
 
   /* 大于50rem 小于 72rem  800px < width < 1152 */
-  @media (min-width: 50rem) and (max-width: 72rem) {
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .card-solution {
+      width: 100%;
+    }
+    .bottom-solutions-card {
+      width: 100%;
+    }
     .solution-container {
       width: 100%;
     }
