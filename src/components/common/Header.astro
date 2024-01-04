@@ -75,7 +75,7 @@ try {
 
 <header-layout class="header bg-gray-14 relative flex justify-center" style={`position: ${position}; height: ${height}`}>
   <div data-modal-panel class="modal-panel hidden h-screen absolute left-0 right-0 top-0"></div>
-  <div style={`height: ${height}`} class:list={["nav", "w-[85.125rem]", "bg-gray-14", "relative", "top-0", "right-0", "bottom-0", "left-0", "flex", "items-center", "justify-between",]}>
+  <div data-modal-nav style={`height: ${height}`} class:list={["nav", "w-[85.125rem]", "bg-gray-14", "relative", "top-0", "right-0", "bottom-0", "left-0", "flex", "items-center", "justify-between",]}>
     <!-- logo -->
     <a class="left-logo" href="/">
       <img class="logo" src="https://img.alicdn.com/imgextra/i4/O1CN01rW3vAB1FDWKSOiFf0_!!6000000000453-2-tps-204-40.png" alt="nacos-log" />
@@ -400,6 +400,7 @@ try {
     private communityMenu: HTMLDivElement;
     private docsMenuStatus: boolean;
     private communityMenuStatus: boolean;
+    private isScrolled: boolean;
     private menuHamburger: HTMLDivElement;
     private menuClose: SVGElement;
     private mobileMenuExpandDocs: HTMLDivElement;
@@ -407,6 +408,7 @@ try {
     private mobileMenuExpandCom: HTMLDivElement;
     private mobileMenuFoldCom: HTMLDivElement;
     private hoverable: HTMLDivElement;
+    private nav: HTMLDivElement;
 
     constructor() {
 			super();
@@ -414,6 +416,7 @@ try {
       this.docsMenuStatus = false;
       this.communityMenuStatus = false;
       this.currentRoute = window.location.pathname;
+      this.isScrolled = false;
 
       this.modalPanel = this.querySelector<HTMLDivElement>(
         "div[data-modal-panel]",
@@ -472,7 +475,9 @@ try {
       const tooltip = this.querySelector(
         "img.tooltip",
       )!;
-
+      const nav = this.querySelector<HTMLDivElement>(
+        "div[data-modal-nav]",
+      )!;
       this.menuSelectorEffect();
 
       // 移动端点击折叠按钮打开/关闭级联菜单
@@ -540,7 +545,24 @@ try {
           this.hideDropdownPanel(communityDropdown, communityArrow);
         }
       });
+      window.addEventListener("scroll", ()=>{this.handleScroll(this,nav)});
     }
+
+    handleScroll=(header,nav) => {
+      // 处理滚动事件的逻辑
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 0 && !this.isScrolled) {
+      this.isScrolled = true;
+      header.classList.add('bg-gray-15/[0.8]');
+      nav.classList.add('bg-gray-14/[0.8]','w-full','px-9')
+      // header.classList.remove('bg-gray-14');
+    }else if (scrollTop === 0 && this.isScrolled) {
+      this.isScrolled = false;
+      header.classList.remove('bg-gray-15/[0.8]');
+      nav.classList.remove('bg-gray-14/[0.8]','w-full','px-9');
+      header.classList.add('bg-gray-14');
+    }
+    };
 
     // 选中效果
     menuSelectorEffect = () => {
