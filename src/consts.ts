@@ -69,6 +69,6 @@ export const ACTIVITY_CATEGORY = [
 ]
 
 export const HEADER_ACTIVITY_CARD = [
-    { collection: 'blog', slug: 'ecosystem-higress' },
+    { collection: 'blog', slug: 'ecosystem-nacos-controller-opensource' },
     { collection: 'blog' , slug: 'announcement-2022-award' },
 ]
