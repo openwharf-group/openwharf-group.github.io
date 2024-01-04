@@ -1,11 +1,11 @@
 ---
-title: Nacos 荣获GLCC优秀社区，同时2.3.0-BETA发布，欢迎试用
+title: 2.3.0-BETA发布，欢迎试用
 keywords: [2.3.0]
-description: Nacos 荣获GLCC优秀社区，同时2.3.0-BETA发布，欢迎试用
+description: 2.3.0-BETA发布，欢迎试用
 date: "2023-10-24"
 category: release
 ---
-# Nacos 荣获GLCC优秀社区，同时2.3.0-BETA发布，欢迎试用
+# 2.3.0-BETA发布，欢迎试用
 
 ## 新版本发布
 
