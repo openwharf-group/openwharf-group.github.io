@@ -1,7 +1,10 @@
 ---
 // 卡片海报图
-import CardPoster from "@components/markdownSet/CardPoster.astro";
+import { Image } from "astro:assets";
 import moment from "moment";
+import { useTranslations } from "@i18n/util";
+
+const t = useTranslations(Astro);
 export type Props = {
   post: {
     slug: string;
@@ -19,23 +22,28 @@ export type Props = {
 };
 
 const { post, posterWidth, type = "blog" } = Astro.props;
-
 ---
 
-<div class="card glass h-full bg-gray-03" style={`width: ${posterWidth}px`}>
-  <CardPoster post={post} width={posterWidth} type={type}/>
-  <div class="card-body w-full h-auto p-6">
-    <p class="text-gray-14 text-xs font-medium mb-3 h-auto">
+<div class="card glass h-[420px] bg-gray-02 shadow-none w-full">
+  <div class="mx-auto mt-3">
+    <Image
+      src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
+      alt="Background"
+      width="280"
+      height="180"
+      class="rounded-2xl"
+    />
+  </div>
+  <div class=" w-full h-auto pt-2 px-6">
+    <p class="text-gray-07 text-xs font-normal ">
       {moment(post.data.date).format("MMMM D, YYYY")}
     </p>
-    <h2 class="card-title text-gray-14 text-base line-clamp-2 mb-3 font-normal">
+    <h2 class="card-title text-gray-14 leading-8 line-clamp-2 mb-3 font-normal text-xl mt-3">
       {post.data.title}
     </h2>
-    <button class="bg-gray-01 text-xs py-3 mb-4 rounded-full w-[136px] h-10">
-      <a href={`/blog/${post.slug}`} rel="prefetch" class="text-gray-15">
-        READ ARTICLE
+      <a href={`/blog/${post.slug}`} rel="prefetch" class="text-gray-13 btn btn-secondary w-32 bg-gray-01 text-xs absolute bottom-3">
+        {t('blog.card.read.artile')}
       </a>
-    </button>
   </div>
 </div>
 

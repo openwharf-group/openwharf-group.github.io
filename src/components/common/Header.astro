@@ -106,6 +106,7 @@ const titleBgImg = [
   >
   </div>
   <div
+    data-modal-nav
     style={`height: ${height}`}
     class:list={[
       "nav",
@@ -154,10 +155,10 @@ const titleBgImg = [
             </path>
           </svg>
         </div>
-        <div
-          data-docs-dropdown
-          style={`top: ${height}`}
-          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0"
+        <div 
+          data-docs-dropdown 
+          style={`top: ${height}`} 
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-[-2.5rem] right-[-2.5rem]"
         >
           <div class="flex pb-10 pt-8 px-24">
             <div class="shortcut-menu flex flex-col px-7 mr-14">
@@ -210,10 +211,10 @@ const titleBgImg = [
             </path>
           </svg>
         </div>
-        <div
-          data-community-dropdown
-          style={`top: ${height}`}
-          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-0 right-0 z-50 px-24"
+        <div 
+          data-community-dropdown 
+          style={`top: ${height}`} 
+          class="dropdown-panel bg-gray-14 hidden invisible opacity-0 absolute left-[-2.5rem] right-[-2.5rem] z-50 px-24"
         >
           <div class="flex pt-8 justify-center flex-col xl:px-20 2xl:px-20">
             <div class="flex justify-between mb-9">
@@ -685,6 +686,7 @@ const titleBgImg = [
     private communityMenu: HTMLDivElement;
     private docsMenuStatus: boolean;
     private communityMenuStatus: boolean;
+    private isScrolled: boolean;
     private menuHamburger: HTMLDivElement;
     private menuClose: SVGElement;
     private mobileMenuExpandDocs: HTMLDivElement;
@@ -692,6 +694,7 @@ const titleBgImg = [
     private mobileMenuExpandCom: HTMLDivElement;
     private mobileMenuFoldCom: HTMLDivElement;
     private hoverable: HTMLDivElement;
+    private nav: HTMLDivElement;
 
     constructor() {
       super();
@@ -699,6 +702,7 @@ const titleBgImg = [
       this.docsMenuStatus = false;
       this.communityMenuStatus = false;
       this.currentRoute = window.location.pathname;
+      this.isScrolled = false;
 
       this.modalPanel = this.querySelector<HTMLDivElement>(
         "div[data-modal-panel]",
@@ -747,7 +751,9 @@ const titleBgImg = [
       )!;
       this.hoverable = this.querySelector<HTMLDivElement>("div.hoverable")!;
       const tooltip = this.querySelector("img.tooltip")!;
-
+      const nav = this.querySelector<HTMLDivElement>(
+        "div[data-modal-nav]",
+      )!;
       this.menuSelectorEffect();
 
       // 移动端点击折叠按钮打开/关闭级联菜单
@@ -813,7 +819,24 @@ const titleBgImg = [
           this.hideDropdownPanel(communityDropdown, communityArrow);
         }
       });
+      window.addEventListener("scroll", ()=>{this.handleScroll(this,nav)});
     }
+
+    handleScroll=(header,nav) => {
+      // 处理滚动事件的逻辑
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > 0 && !this.isScrolled) {
+      this.isScrolled = true;
+      header.classList.add('bg-gray-15/[0.8]');
+      nav.classList.add('bg-gray-14/[0.8]','w-full','px-9')
+      // header.classList.remove('bg-gray-14');
+    }else if (scrollTop === 0 && this.isScrolled) {
+      this.isScrolled = false;
+      header.classList.remove('bg-gray-15/[0.8]');
+      nav.classList.remove('bg-gray-14/[0.8]','w-full','px-9');
+      header.classList.add('bg-gray-14');
+    }
+    };
 
     // 选中效果
     menuSelectorEffect = () => {
@@ -973,8 +996,9 @@ const titleBgImg = [
   }
   .modal-panel {
     z-index: 80;
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     transform: translateZ(0);
+    background: linear-gradient(to bottom,theme('colors.gray.14'),theme('colors.gray.13'));
   }
   .dropdown-panel {
     z-index: 100;

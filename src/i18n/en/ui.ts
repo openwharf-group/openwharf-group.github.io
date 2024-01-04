@@ -169,4 +169,7 @@ export default {
 
 	'checklist.or': 'or',
 	'footer.privacyPolicy': 'Privacy Policy',
+
+	'blog.card.btn.read': 'Read Now',
+	'blog.card.read.artile': 'Read Article',
 };

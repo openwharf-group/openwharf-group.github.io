@@ -11,7 +11,7 @@ const t = useTranslations(Astro);
 
   <div class="bottom-features w-full">
     <div class="w-full flex flex-wrap justify-center">
-      <div class="dynamic item flex flex-col items-center cursor-pointer bg-gray-03 rounded-3xl p-6">
+      <div class="dynamic relative item flex flex-col items-center cursor-pointer bg-gray-03 rounded-3xl p-6">
         <div class="w-full text-gray-09 text-xs">{t('home.features.1.title')}</div>
         <div class="w-full title text-gray-15 text-2xl mt-4">
           {t('home.features.1.summary')}
@@ -23,7 +23,7 @@ const t = useTranslations(Astro);
       </div>
 
       <div class="transfrom-split w-4"></div>
-      <div class="discovery item flex flex-col items-center cursor-pointer bg-blue-08 rounded-3xl p-6">
+      <div class="discovery relative item flex flex-col items-center cursor-pointer bg-blue-08 rounded-3xl p-6">
         <span class="w-full text-blue-03 text-xs">{t('home.features.2.title')}</span>
         <div class="w-full title text-blue-01 text-2xl mt-4">
           {t('home.features.2.summary')}
@@ -76,8 +76,11 @@ customElements.define("explore-features", ExploreFeatures);
     height: 14rem;
   }
   .item .hover-title {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
     opacity: 0;
-    height: 0;
     transition: opacity 0.8s ease-in-out; /* 动画效果 */
   }
   .item svg {
@@ -90,7 +93,6 @@ customElements.define("explore-features", ExploreFeatures);
   }
   .item:hover .hover-title {
     opacity: 1;
-    height: auto;
   }
   .black-item .hover-title {
     opacity: 0;
@@ -133,7 +135,7 @@ customElements.define("explore-features", ExploreFeatures);
   }
   .bottom-features .item {
     width: 100%;
-    height: auto;
+    height: 20rem;
   }
   .bottom-features .black-item {
     width: 100%;
@@ -144,30 +146,25 @@ customElements.define("explore-features", ExploreFeatures);
     line-height: 1.25rem;
   }
   .bottom-features .item .hover-title {
-    display: block;
-    width: 100%;
+    opacity: 1;
     font-size: 0.75rem; /* 12px */
     line-height: 1rem; /* 16px */
     margin-top: 1.5rem;
   }
   .bottom-features .item svg {
     margin-top: 1rem;
-    /* transform: scale(0.8, 0.8); */
+    transform: scale(0.8, 0.8);
     width: 7.5rem;
     height: 7.5rem;
   }
   .bottom-features .black-item .title {
-    display: block;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    margin-top: 1.5rem;
+    opacity: 0;
   }
   .bottom-features .black-item .hover-title {
-    display: block;
+    opacity: 1;
     width: 100%;
     margin-top: 1.5rem;
   }
-  
   
 }
 

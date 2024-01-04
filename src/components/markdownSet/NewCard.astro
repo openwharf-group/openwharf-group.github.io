@@ -1,149 +1,132 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "/public//nacos_white.png";
+import { useTranslations } from "@i18n/util";
 import moment from "moment";
 
-const {
-  type = "blog",
-  post,
-  classList = [],
-} = Astro.props;
+const t = useTranslations(Astro);
+
+
+const { type = "blog", post, classList = [] } = Astro.props;
 ---
 
 <div class:list={[...classList]}>
-  <div class="new_card_container flex flex-row bg-gray-15 text-gray-01 h-auto rounded-lg p-4">
-    <div class="new_card_container_left basis-2/5">
-      {
-        type === "blog" && (
-          <div class="shadow-xl poster rounded-lg w-full h-full">
-            <img
-              src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
-              alt="Background"
-              class:list={["background","z-0","rounded-lg","w-auto"]}
-            />
-
-            <div class="title absolute top-0 mt-6 text-gray-01 px-3">
-              {post.data.title}
-            </div>
-      <div class="info h-2/5 absolute bottom-0 p-6 text-gray-02">
-        <!-- 博客的海报增加作者信息 -->
-        {
-            type === "blog" && (
-                <div class="flex">
-                    <img
-                        src="https://img.alicdn.com/imgextra/i3/O1CN01GFGkcR1y0NfyEKR0V_!!6000000006516-0-tps-1024-1024.jpg"
-                        class="w-10 rounded-full"
-                    />
-                    <div class="flex flex-col ml-4 pt-2">
-                        <p class:list={["text-gray-02", "text-xs"]}>
-                            by &nbsp;&nbsp; {post.data.author || "nacos"}
-                        </p>
-                        <p class="text-[.5rem]">阿里云高级工程师</p>
-                    </div>
-                </div>
-            )
-        }
-        <Image src={Logo} alt="" class="logo" />
-    </div>
-</div>
-        )
-      }
+  <div
+    class="new_card_container flex flex-row bg-gray-15 text-gray-01 rounded-3xl "
+  >
+    <div class="new_card_container_left basis-2/5 p-2">
+      <div class="shadow-xl poster rounded-3xl w-full h-full">
+        <Image
+          src="https://img.alicdn.com/imgextra/i4/O1CN01RCVHvA1Jor5A5fnIx_!!6000000001076-2-tps-800-800.png"
+          alt="Background"
+          class:list={["background", "z-0", "rounded-3xl", "w-auto"]}
+          width="400"
+          height="400"
+        />
+      </div>
       {type !== "blog" && <slot name="left-content" />}
     </div>
-    <div class="new_card_container_right basis-3/5 p-4">
-      {type === "blog"&& (<div>
-        <div class="text-xl">
-                      {post.data.title}
-                    </div>
-                    <div class:list={["text-gray-06", "text-xs", "mt-4"]}>
-                      <span>
-                        by &nbsp;&nbsp;{" "}
-                        {post.data.author || "nacos"}
-                      </span>
-                      <span class="text-[.5rem] ml-2">阿里云高级工程师</span>
-                    </div>
-                    <div class="mt-8 text-sm leading-6">
-                      {post.data.description}
-                    </div>
-                    <div class="mt-8">
-                      <button class="bg-gray-01 text-xs py-3 mb-4 rounded-full w-[136px] h-10">
-                        <a
-                          href={`/blog/${post.slug}`}
-                          rel="prefetch"
-                          class="text-gray-15"
-                        >
-                          READ MORE
-                        </a>
-                      </button>
-                    </div>
-                    <div class="flex flex-row justify-between blog_latest_bottom pt-2">
-                      <div class="text-gray-06 text-sm">
-                        {moment(post.data.date).format(
-                          "MMMM D, YYYY"
-                        )}
-                      </div>
-                      <div class="h-2">
-                        <Image src={Logo} alt="" class="h-2.5 w-12" />
-                      </div>
-                    </div>
-        </div>)}
+    <div class="new_card_container_right basis-3/5 py-6 px-9">
+      {
+        type === "blog" && (
+          <div class="flex flex-col h-96">
+            <div class="flex-[0_0_auto] mb-auto">
+              <div class="text-2xl text-gray-02 leading-8">
+                {post.data.title}
+              </div>
+              <div class="text-gray-04 text-xs mt-6 leading-5">
+                by
+                <span class="ml-1.5"> {post.data.author || "nacos"}</span>
+                <span class=" ml-1.5">阿里云高级工程师</span>
+              </div>
+              <div class="mt-8 text-sm leading-6">{post.data.description}</div>
+            </div>
+
+            <div class="flex-[0_0_auto] mt-auto">
+                <a
+                  href={`/blog/${post.slug}`}
+                  rel="prefetch"
+                  class="text-gray-15 btn btn-secondary mb-5 w-[112px] font-medium "
+                >
+                  {t('blog.card.btn.read')}
+                </a>
+              <div class="card-bottom flex flex-row justify-between blog_latest_bottom pt-2.5 ">
+                <div class="text-gray-07 text-sm font-medium leading-5">
+                  {moment(post.data.date).format("MMMM D, YYYY")}
+                </div>
+                <div class="h-2">
+                  <Image src={Logo} alt="" class="h-3 w-14" />
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
       {type !== "blog" && <slot name="right-content" />}
     </div>
   </div>
 </div>
 
-
 <style>
-     a{
-        text-decoration: none;
-        color: inherit;
-      }
-      .poster {
-        position: relative;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .poster {
+    position: relative;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .background {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
+  .new_card_container {
+    min-height: 420px;
+  }
 
-    .title {
-        font-size: 1.25em; /* 调整为合适的大小 */
-        text-align: center;
-        z-index: 5;
-        line-height: 1.5em;
-    }
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
 
-    .info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+  .title {
+    font-size: 1.25em; /* 调整为合适的大小 */
+    text-align: center;
+    z-index: 5;
+    line-height: 1.5em;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+
+  .card-bottom {
+    border-top: 1px solid theme('colors.gray.11')
+  }
+
+  /* 小于50rem  小于 800px */
+  @media (max-width: 50rem) {
+    .poster {
+      height: 200px;
     }
-    .logo {
-        width: 40px;
-        height: auto;
+    .new_card_container {
+      flex-direction: column;
+      height: auto;
+      margin: 0 1rem;
     }
-    /* 小于50rem  小于 800px */
-    @media (max-width: 50rem) {
-      .poster{
-        height:200px;
-      }
-      .new_card_container{
-        flex-direction: column;
-        height:auto;
-      }
-    }
-      /* 大于50rem 小于 72rem  800px < width < 1152 */
-    @media (min-width: 50rem) and (max-width: 72rem) {
-      
-    }
+  }
+  /* 大于50rem 小于 72rem  800px < width < 1152 */
+  @media (min-width: 50rem) and (max-width: 72rem) {
+  }
 </style>
