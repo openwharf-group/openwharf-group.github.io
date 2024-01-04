@@ -54,7 +54,7 @@ export const ACTIVITY_CATEGORY = [
     {
         type: 'announcement',
         title:'社区公告',
-        href: '/news/announcement'
+        href: '/activity/announcement'
     },
     {
         type: 'activity-preview',

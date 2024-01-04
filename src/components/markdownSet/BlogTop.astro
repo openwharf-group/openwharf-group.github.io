@@ -2,14 +2,20 @@
 import { BLOG_CATEGORY } from 'src/consts';
 import { Icon } from "@astrojs/starlight/components";
 
-const { title = "", type="blog-home" } = Astro.props;
+const { title = "", type="home",category } = Astro.props;
+
+const backIconMap = {
+  "blog-sub": "/blog",
+  "news-sub": "/news",
+  "activity-sub":"/activity"
+}
 ---
 
 <div class="bg-gray-14 text-gray-01 blog_header flex justify-center items-center">
   <div class="blog_header_content w-[85.125rem] mt-9">
     <div class="blog_header_title">{title}</div>
     <div class="blog_category_menu">
-      {type==="blog-home"&&BLOG_CATEGORY && BLOG_CATEGORY.map((category)=>{
+      {type==="home"&& category && category.map((category)=>{
          return (
                 <a
                   class="blog_menu_item" 
@@ -21,9 +27,9 @@ const { title = "", type="blog-home" } = Astro.props;
           );
       })}
       {
-        type!=="blog-home" && <a
+        type!=="home" && <a
                   class="blog_menu_item" 
-                  href="/blog"
+                  href={backIconMap[type]}
                   aria-current = {}
                 >
                 <Icon name="left-arrow" class="text-lg align-middle" />

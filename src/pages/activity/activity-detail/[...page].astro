@@ -5,8 +5,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
-import SubHeading from "@components/markdownSet/SubHeading.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
+import BlogTop from "@components/markdownSet/BlogTop.astro";
 
 interface Post {
     slug: string;
@@ -42,8 +42,8 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 }
 ---
 
-<BaseLayout title="Nacos Blog" position="static">
-    <SubHeading categories={ACTIVITY_CATEGORY} title="活动" href="/activity" />
+<BaseLayout title="Nacos Blog">
+    <BlogTop title="活动详情"  type="activity-sub" category={ACTIVITY_CATEGORY} />
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
     >

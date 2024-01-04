@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import BlogCard from "@components/markdownSet/Card.astro";
-import SubHeading from "@components/markdownSet/SubHeading.astro";
+import BlogTop from "@components/markdownSet/BlogTop.astro";
 import Footer from "@components/common/Footer.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
 import NewCard from "@components/markdownSet/NewCard.astro";
@@ -55,7 +55,7 @@ for (const item of ACTIVITY_CATEGORY) {
   position="static"
   description="探索Nacos 博客，了解服务发现和配置管理的最新资讯、教程和技术分析。"
 >
-  <SubHeading categories={ACTIVITY_CATEGORY} title="活动" href="/activity" />
+<BlogTop title="活动中心：捕捉Nacos动态，链接开源脉搏。"  type="home" category={ACTIVITY_CATEGORY} />
   <div class="bg-gray-14">
     <!-- 按照分类展示 -->
     {
