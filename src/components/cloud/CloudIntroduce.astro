@@ -58,8 +58,8 @@ const introduceData =
 ---
 
 
-<cloud-introduce class="cloud-introduce block p-10">
-  <div class="top-introduce w-full flex">
+<cloud-introduce class="cloud-introduce flex flex-col justify-center items-center py-10">
+  <div class="top-introduce w-[85.125rem] flex">
     <div class="left-section flex-1 flex flex-col">
       <div class="py-6 text-gray-08 text-xs">{t('cloud.introduce.about')}</div>
       <div class="title text-7xl text-gray-03 mb-8">{t('cloud.introduce.title')}</div>
@@ -73,19 +73,19 @@ const introduceData =
     </div>
   </div>
 
-  <div class="bottom-package w-full flex justify-center mt-10">
+  <div class="bottom-package w-[85.125rem] flex justify-center mt-10">
     {
       introduceData.map((item, index) => {
         return (
           <div class="card-package cursor-pointer bg-gray-14 border border-text-gray-03 rounded-2xl flex-1 text-center p-8">
             <div class="package h-16">
-              <div class="title text-gray-03 text-base font-sans font-medium">
+              <div class="title text-gray-03 text-2xl font-sans font-medium">
                 {item?.title}
               </div>
-              <div class="description">{item?.desc}</div>
+              <div class="text-sm text-gray-07">{item?.desc}</div>
             </div>
             <div class="price-content pt-4 border-b border-t border-gray-03 h-28">
-              <div class="price text-5xl font-bold text-gray-03 sm:text-4xl">
+              <div class="price text-[2.75rem] leading-[3rem] font-bold text-gray-03">
                 {item?.price}
               </div>
               <div class="description font-sans  pt-4 text-xs text-gray-08 line-clamp-2">
@@ -95,7 +95,7 @@ const introduceData =
             <div class="pl-2 h-16">
               {item?.feature?.map((el, i) => {
                 return (
-                  <div class="text-left text-xs text-gray-08 mt-4 line-clamp-2">{el}</div>
+                  <div class="text-left text-xs text-gray-07 mt-4 line-clamp-2">{el}</div>
                 );
               })}
             </div>
@@ -172,6 +172,9 @@ const introduceData =
     .cloud-introduce {
       padding: 1.5rem;
     }
+    .top-introduce {
+      width: 100%;
+    }
     .top-introduce .left-section .title {
       font-size: 1.875rem; 
       line-height: 2.25rem;
@@ -183,8 +186,8 @@ const introduceData =
     .top-introduce .right-section {
       display: none;
     }
-
     .bottom-package {
+      width: 100%;
       flex-wrap: wrap;
     }
     .bottom-package .card-package {
@@ -214,8 +217,15 @@ const introduceData =
 
 
   /* 大于50rem 小于 72rem  800px < width < 1152 */
-  @media (min-width: 50rem) and (max-width: 72rem) { 
+  @media (min-width: 50rem) and (max-width: 86rem) { 
+    .cloud-introduce {
+      padding: 2.5rem;
+    }
+    .top-introduce {
+      width: 100%;
+    }
     .bottom-package {
+      width: 100%;
       flex-wrap: wrap;
     }
     .bottom-package .card-package { 
