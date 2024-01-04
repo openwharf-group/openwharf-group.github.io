@@ -23,7 +23,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
     </div>
     <div class="shortcut flex pt-6">
       <LinkButton
-        classList={['rounded-3xl']}
+        class='rounded-3xl'
         title={t('home.introduce.nacos.code')}
         href="https://github.com/alibaba/nacos"
       >
@@ -31,7 +31,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       </LinkButton>
 
       <LinkButton
-        classList={['btn-primary', 'rounded-3xl']}
+        class='btn-primary rounded-3xl'
         title={t('home.introduce.nacos.manual')}
         arrowTheme="light"
         href="/docs/what-is-nacos"
@@ -72,13 +72,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         <LinkButton
           href="https://github.com/alibaba/nacos"
           title=""
-          classList={[
-            'rounded-lg',
-            'bg-blue-08',
-            'text-gray-02',
-            'hover:bg-blue-09',
-            'border-none',
-          ]}
+          class='rounded-lg bg-blue-08 text-gray-02 hover:bg-blue-09 border-none'
           arrowTheme="light"
         >
           <Star />
@@ -89,7 +83,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         <LinkButton
           href="https://github.com/alibaba/nacos/fork"
           title=""
-          classList={['rounded-lg', 'text-gray-10']}
+          class='rounded-lg text-gray-10'
         >
           <Fork />
           <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
@@ -103,7 +97,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
     <LinkButton
       href="https://github.com/alibaba/nacos"
       title=""
-      classList={['btn-primary']}
+      class='btn-primary'
       arrowTheme="light"
     >
       <Star />
@@ -114,7 +108,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       href="https://github.com/alibaba/nacos/fork"
       title=""
       arrowTheme="light"
-      classList={['btn-primary']}
+      class='btn-primary'
     >
       <Fork  theme="light"/>
       <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>

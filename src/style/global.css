@@ -215,8 +215,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-	border-radius: 1.5rem;
+/* .btn {
 	min-width: 7rem;
 	font-size: 0.8rem;
 	font-weight: 400;
@@ -247,7 +246,7 @@
 .btn-secondary.btn-disabled {
 	background-color: theme('colors.gray.04');
 	color: theme('colors.gray.01')
-}
+} */
 
 
 .header {
