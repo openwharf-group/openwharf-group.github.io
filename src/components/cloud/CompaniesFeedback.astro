@@ -76,13 +76,13 @@ const t = useTranslations(Astro);
   // bg: bg-gray-03; text: text-gray-14 logo: text-gray-14
 ---
 
-<companies-feedback class="companies-feedback block bg-gary-02 p-10">
-  <div class="top-title w-full flex flex-col items-center mb-20 mt-16">
+<companies-feedback class="companies-feedback flex flex-col justify-center items-center bg-gary-02 py-10">
+  <div class="top-title w-[85.125rem] flex flex-col items-center mb-20 mt-16">
     <span class="text-gray-10 text-xs mb-6">{t('cloud.feedback.about')}</span>
     <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">{t('cloud.feedback.title')}</div>
   </div>
 
-  <div class="bottom-feedback w-full relative flex overflow-hidden">
+  <div class="bottom-feedback w-[85.125rem] relative flex overflow-hidden rounded-2xl">
     <ul class="slider p-0 list-none inline-block uppercase cursor-pointer flex flex-nowrap">
       {
         companyCustomers.map((company) => {
@@ -249,7 +249,16 @@ a {
 
 }
 
-@media (min-width: 50rem) and (max-width: 72rem) {
+@media (min-width: 50rem) and (max-width: 86rem) {
+  .companies-feedback {
+    padding: 2.5rem;
+  }
+  .top-title {
+    width: 100%;
+  }
+  .bottom-feedback {
+    width: 100%;
+  }
 
 }
 </style>
