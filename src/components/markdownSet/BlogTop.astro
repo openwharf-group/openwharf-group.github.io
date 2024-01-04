@@ -5,7 +5,8 @@ import { Icon } from "@astrojs/starlight/components";
 const { title = "", type="blog-home" } = Astro.props;
 ---
 
-<div class="bg-gray-14 text-gray-01 blog_header">
+<div class="bg-gray-14 text-gray-01 blog_header flex justify-center items-center">
+  <div class="blog_header_content w-[85.125rem] mt-9">
     <div class="blog_header_title">{title}</div>
     <div class="blog_category_menu">
       {type==="blog-home"&&BLOG_CATEGORY && BLOG_CATEGORY.map((category)=>{
@@ -31,21 +32,24 @@ const { title = "", type="blog-home" } = Astro.props;
       }
     </div>
   </div>
+</div>
+
 
   <style>
     a {
         text-decoration: none;
         color: inherit;
     }
-    .blog_header {
+    /* .blog_header {
         padding: 2.5rem;
-    }
+    } */
     .blog_header_title{
         font-size: 4.5rem;
         line-height: 1;
     }
     .blog_category_menu{
         margin-top: 2rem;
+        margin-bottom: 2.5rem;
      }
     .blog_menu_item{
         padding: 8px 16px;
@@ -77,4 +81,18 @@ const { title = "", type="blog-home" } = Astro.props;
         margin-right: 8px;
       }
     }
+
+    @media (min-width: 50rem) and (max-width: 86rem) { 
+    .blog_header {
+      padding: 2.5rem;
+      width: 100%;
+    }
+    .blog_header_content{
+      width: 100%;
+      margin-top: 0;
+    }
+    .blog_category_menu{
+        margin-bottom: 0;
+     }
+  }
   </style>
