@@ -1,69 +1,74 @@
 ---
-import { useTranslations } from "@i18n/util";
+import { useTranslations } from '@i18n/util';
 const t = useTranslations(Astro);
-const introduceData = 
-  [
-    {
-      title: t('cloud.introduce.free.pkg'),
-      desc: t('cloud.introduce.free.desc'),
-      price: t('cloud.introduce.free.price'),
-      unit: "",
-      priceDesc: t('cloud.introduce.free.feature'),
-      linkName: t('cloud.introduce.free.link'),
-      link: "https://free.aliyun.com/?searchKey=nacos&spm=nacos.cloud.topbar.0.0.0",
-      feature: [
-        t('cloud.introduce.free.discount.1'),
-        t('cloud.introduce.free.discount.2')
-      ],
-    },
-    {
-      title: t('cloud.introduce.develop.pkg'),
-      price: t('cloud.introduce.develop.price'),
-      priceDesc: t('cloud.introduce.develop.feature'),
-      unit: "/MONTH",
-      linkName: t('cloud.introduce.develop.link'),
-      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
-      feature: [
-        t('cloud.introduce.develop.discount.1'),
-        t('cloud.introduce.develop.discount.2')
-      ],
-    },
-    {
-      title: t('cloud.introduce.serverless.pkg'),
-      desc: t('cloud.introduce.serverless.desc'),
-      priceDesc: t('cloud.introduce.serverless.feature'),
-      price: t('cloud.introduce.serverless.price'),
-      unit: "/HOUR",
-      linkName: t('cloud.introduce.serverless.link'),
-      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
-      feature: [
-        t('cloud.introduce.serverless.discount.1'),
-        t('cloud.introduce.serverless.discount.2')
-      ],
-    },
-    {
-      title: t('cloud.introduce.regular.pkg'),
-      desc: t('cloud.introduce.regular.desc'),
-      priceDesc: t('cloud.introduce.regular.feature'),
-      price: t('cloud.introduce.regular.price'),
-      unit: "/MONTH",
-      linkName: t('cloud.introduce.regular.link'),
-      link: "https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0",
-      feature: [
-        t('cloud.introduce.regular.discount.1'),
-        t('cloud.introduce.regular.discount.2')
-      ],
-    },
-  ];
+import BaseContainer from '@components/common/BaseContainer.astro';
+const introduceData = [
+  {
+    title: t('cloud.introduce.free.pkg'),
+    desc: t('cloud.introduce.free.desc'),
+    price: t('cloud.introduce.free.price'),
+    unit: '',
+    priceDesc: t('cloud.introduce.free.feature'),
+    linkName: t('cloud.introduce.free.link'),
+    link: 'https://free.aliyun.com/?searchKey=nacos&spm=nacos.cloud.topbar.0.0.0',
+    feature: [
+      t('cloud.introduce.free.discount.1'),
+      t('cloud.introduce.free.discount.2'),
+    ],
+  },
+  {
+    title: t('cloud.introduce.develop.pkg'),
+    price: t('cloud.introduce.develop.price'),
+    priceDesc: t('cloud.introduce.develop.feature'),
+    unit: '/MONTH',
+    linkName: t('cloud.introduce.develop.link'),
+    link: 'https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0',
+    feature: [
+      t('cloud.introduce.develop.discount.1'),
+      t('cloud.introduce.develop.discount.2'),
+    ],
+  },
+  {
+    title: t('cloud.introduce.serverless.pkg'),
+    desc: t('cloud.introduce.serverless.desc'),
+    priceDesc: t('cloud.introduce.serverless.feature'),
+    price: t('cloud.introduce.serverless.price'),
+    unit: '/HOUR',
+    linkName: t('cloud.introduce.serverless.link'),
+    link: 'https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0',
+    feature: [
+      t('cloud.introduce.serverless.discount.1'),
+      t('cloud.introduce.serverless.discount.2'),
+    ],
+  },
+  {
+    title: t('cloud.introduce.regular.pkg'),
+    desc: t('cloud.introduce.regular.desc'),
+    priceDesc: t('cloud.introduce.regular.feature'),
+    price: t('cloud.introduce.regular.price'),
+    unit: '/MONTH',
+    linkName: t('cloud.introduce.regular.link'),
+    link: 'https://www.aliyun.com/product/aliware/mse?spm=nacos.cloud.topbar.0.0.0',
+    feature: [
+      t('cloud.introduce.regular.discount.1'),
+      t('cloud.introduce.regular.discount.2'),
+    ],
+  },
+];
 ---
 
-
-<cloud-introduce class="cloud-introduce flex flex-col justify-center items-center py-10">
-  <div class="top-introduce w-[85.125rem] flex">
+<cloud-introduce
+  class="cloud-introduce flex flex-col justify-center items-center py-10"
+>
+  <BaseContainer classList={['top-introduce']}>
     <div class="left-section flex-1 flex flex-col">
       <div class="py-6 text-gray-08 text-xs">{t('cloud.introduce.about')}</div>
-      <div class="title text-7xl text-gray-03 mb-8">{t('cloud.introduce.title')}</div>
-      <span class="start-cloud text-gray-09 text-2xl">{t('cloud.introduce.invite')}</span>
+      <div class="title text-7xl text-gray-03 mb-8">
+        {t('cloud.introduce.title')}
+      </div>
+      <span class="start-cloud text-gray-09 text-2xl"
+        >{t('cloud.introduce.invite')}</span
+      >
     </div>
     <div class="right-section flex-1 self-center">
       <img
@@ -71,9 +76,9 @@ const introduceData =
         src="https://img.alicdn.com/imgextra/i2/O1CN01xCdBka1ZUH8O6ODOp_!!6000000003197-2-tps-1934-888.png"
       />
     </div>
-  </div>
+  </BaseContainer>
 
-  <div class="bottom-package w-[85.125rem] flex justify-center mt-10">
+  <BaseContainer classList={['bottom-package', 'justify-center', 'mt-10']}>
     {
       introduceData.map((item, index) => {
         return (
@@ -95,7 +100,9 @@ const introduceData =
             <div class="pl-2 h-16">
               {item?.feature?.map((el, i) => {
                 return (
-                  <div class="text-left text-xs text-gray-07 mt-4 line-clamp-2">{el}</div>
+                  <div class="text-left text-xs text-gray-07 mt-4 line-clamp-2">
+                    {el}
+                  </div>
                 );
               })}
             </div>
@@ -110,44 +117,51 @@ const introduceData =
         );
       })
     }
-  </div>
+  </BaseContainer>
 </cloud-introduce>
 
 <script>
   class CloudIntroduce extends HTMLElement {
     constructor() {
-			super();
-		}
+      super();
+    }
   }
-  customElements.define("cloud-introduce", CloudIntroduce);
+  customElements.define('cloud-introduce', CloudIntroduce);
 </script>
 
 <style>
   .cloud-introduce {
-    background-color: theme("colors.gray.14");
+    background-color: theme('colors.gray.14');
   }
-  .card-package { 
+  .card-package {
     flex: 1;
     margin: 0 0.5rem;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
   }
   .card-package:hover {
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
     transform: translateY(-4px);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(0, 0, 0, 0.1);
   }
   .bottom-package .card-package:first-child {
     margin-left: 0;
-    background-color: theme("colors.blue.01");
+    background-color: theme('colors.blue.01');
   }
   .bottom-package .card-package:first-child .package .title {
-    color: theme("colors.gray.14");
+    color: theme('colors.gray.14');
   }
   .bottom-package .card-package:first-child .price-content .price {
-    color: theme("colors.gray.14");
+    color: theme('colors.gray.14');
   }
   .bottom-package .card-package:first-child .subscribe .button-transform {
-    background: linear-gradient(226deg, #2C46C9 -2%, rgba(0,0,0,0.00) 43%), #121316;
+    background: linear-gradient(226deg, #2c46c9 -2%, rgba(0, 0, 0, 0) 43%),
+      #121316;
   }
   .bottom-package .card-package:last-child {
     margin-right: 0;
@@ -165,10 +179,10 @@ const introduceData =
   }
 
   .button-transform:hover {
-    background-color: theme("colors.gray.14");
+    background-color: theme('colors.gray.14');
   }
   /* 小于50rem  小于 800px */
-  @media (max-width: 50rem) { 
+  @media (max-width: 50rem) {
     .cloud-introduce {
       padding: 1.5rem;
     }
@@ -176,7 +190,7 @@ const introduceData =
       width: 100%;
     }
     .top-introduce .left-section .title {
-      font-size: 1.875rem; 
+      font-size: 1.875rem;
       line-height: 2.25rem;
     }
     .top-introduce .left-section .start-cloud {
@@ -215,9 +229,8 @@ const introduceData =
     }
   }
 
-
   /* 大于50rem 小于 72rem  800px < width < 1152 */
-  @media (min-width: 50rem) and (max-width: 86rem) { 
+  @media (min-width: 50rem) and (max-width: 86rem) {
     .cloud-introduce {
       padding: 2.5rem;
     }
@@ -228,7 +241,7 @@ const introduceData =
       width: 100%;
       flex-wrap: wrap;
     }
-    .bottom-package .card-package { 
+    .bottom-package .card-package {
       flex: 0 0 40%;
       margin: 0 0.5rem 1rem 0.5rem;
     }
