@@ -83,6 +83,18 @@ const { type = "blog", post, classList = [] } = Astro.props;
 
   .new_card_container {
     min-height: 420px;
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+  }
+  .new_card_container:hover {
+    transition:
+      transform 0.2s,
+      box-shadow 0.2s;
+    transform: translateY(-4px);
+    box-shadow:
+      4px 4px 8px rgba(0, 0, 0, 0.1),
+      -4px -4px 8px rgba(0, 0, 0, 0.1);
   }
 
   .background {
