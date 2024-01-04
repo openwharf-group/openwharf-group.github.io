@@ -83,7 +83,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         <LinkButton
           href="https://github.com/alibaba/nacos/fork"
           title=""
-          class='rounded-lg text-gray-10'
+          class='fork border-none rounded-lg text-gray-10'
         >
           <Fork />
           <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
@@ -183,6 +183,14 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
   }
   a {
     text-decoration: none;
+  }
+  .fork {
+    background: rgba(244, 244, 246, 0.2);
+    backdrop-filter: blur(36px);
+  }
+  .fork:hover {
+    background: rgba(244, 244, 246, 0.2) !important;
+    backdrop-filter: blur(36px);
   }
 
   /* 小于50rem  小于 800px */

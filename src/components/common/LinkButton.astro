@@ -20,7 +20,7 @@ const { href, title, arrowTheme = 'dark', class: className = '' } = Astro.props;
 
 <style>
   .btn {
-    min-width: 9.7rem;
+    min-width: 9.75rem;
     font-size: 0.8rem;
     transition: box-shadow 0.3s ease-in-out;
     /* 覆盖starlight中的a链接颜色 */
@@ -36,13 +36,16 @@ const { href, title, arrowTheme = 'dark', class: className = '' } = Astro.props;
   } */
   .btn .up-right-arrow {
     opacity: 0;
+    width: 0;
     transition:
       transform 0.5s ease,
+      width 0.3s ease,
       opacity 0.3s ease;
   }
   .btn:hover .up-right-arrow {
     transform: translate(3px, 0px);
     opacity: 1;
+    width: 8px;
   }
 
   .btn-primary {
