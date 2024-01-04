@@ -2,7 +2,8 @@
 title: 配置加密
 keywords: [AES,encryption,配置加密]
 description: 配置加密
-order: 3
+sidebar:
+    order: 3
 ---
 
 > 为保证用户敏感配置数据的安全，Nacos 提供了配置加密的新特性。降低了用户使用的风险，也不需要再对配置进行单独的加密处理。
