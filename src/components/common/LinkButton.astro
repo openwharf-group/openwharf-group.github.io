@@ -3,8 +3,6 @@ import UpRight from '../icon/UpRight.astro';
 
 interface Props {
   title: string;
-  class?: string;
-  // classList?: string[];
   href?: string;
   arrowTheme?: string;
 }
@@ -22,7 +20,7 @@ const { href, title, arrowTheme = 'dark', class: className = '' } = Astro.props;
 
 <style>
   .btn {
-    min-width: 7rem;
+    min-width: 9.7rem;
     font-size: 0.8rem;
     transition: box-shadow 0.3s ease-in-out;
     /* 覆盖starlight中的a链接颜色 */
@@ -64,14 +62,14 @@ const { href, title, arrowTheme = 'dark', class: className = '' } = Astro.props;
     color: theme('colors.gray.01');
   }
 
-  .btn-secondary {
+  /* .btn-secondary {
     color: theme('colors.gray.14') !important;
   }
 
   .btn-secondary.btn-disabled {
     background-color: theme('colors.gray.04');
     color: theme('colors.gray.01');
-  }
+  } */
 
   @media (max-width: 50rem) {
     .btn {
