@@ -46,7 +46,7 @@ function generateSlugSidebar(tocItem, lock) {
         items: []
     }
     if (tocItem.slug !== '#') {
-        itemToc.link = `docs/ebook/${tocItem.slug}`;
+        itemToc.link = `docs/ebook/${tocItem.slug}.mdx`;
         if (lock) {
             itemToc = {
                 ...itemToc,
@@ -98,7 +98,7 @@ ${body}`
             const bookItem = await request(`https://www.yuque.com/api/v2/repos/nacos/ebook/docs/${tocItem.slug}`);
             const body = bookItem.data.body;
             if (body) {
-                fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.md`), getMdContent(body, bookItem.data), 'utf8')
+                fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.mdx`), getMdContent(body, bookItem.data), 'utf8')
             }
         } else if(tocItem.slug !== '#') {
             fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.mdx`), getMdContent(`
