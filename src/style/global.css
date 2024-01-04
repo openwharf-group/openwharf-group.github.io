@@ -224,6 +224,7 @@
 
 
 .btn-primary {
+	color: theme('colors.gray.01');
 	:hover {
 		background-color: theme('colors.gray.10');
 		color: theme('colors.gray.01');

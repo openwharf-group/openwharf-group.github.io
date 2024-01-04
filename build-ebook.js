@@ -46,7 +46,7 @@ function generateSlugSidebar(tocItem, lock) {
         items: []
     }
     if (tocItem.slug !== '#') {
-        itemToc.link = `docs/ebook/${tocItem.slug}`;
+        itemToc.link = `docs/ebook/${tocItem.slug}.mdx`;
         if (lock) {
             itemToc = {
                 ...itemToc,
@@ -98,10 +98,13 @@ ${body}`
             const bookItem = await request(`https://www.yuque.com/api/v2/repos/nacos/ebook/docs/${tocItem.slug}`);
             const body = bookItem.data.body;
             if (body) {
-                fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.md`), getMdContent(body, bookItem.data), 'utf8')
+                fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.mdx`), getMdContent(body, bookItem.data), 'utf8')
             }
         } else if(tocItem.slug !== '#') {
-            fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.md`), getMdContent("请跳转至 [电子书免费下载地址](https://developer.aliyun.com/ebook/36?spm=a2c6h.20345107.ebook-index.18.152c2984fsi5ST) 进行下载"), 'utf8')
+            fs.writeFile(path.resolve(bookDir, `${tocItem.slug}.mdx`), getMdContent(`
+import Lock from "@components/common/EbookLock.astro";
+
+<Lock />`), 'utf8')
         }
     }
 }

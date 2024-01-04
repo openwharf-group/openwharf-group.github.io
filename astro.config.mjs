@@ -57,7 +57,7 @@ export default defineConfig({
 			name: '@goat:config',
 			hooks: {
 				"astro:server:setup": async (options) => {
-					// await goatConfig();
+					await goatConfig();
 				}
 			}
 		},

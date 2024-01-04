@@ -28,6 +28,8 @@ const { href, title, classList = [], arrowTheme="dark" } = Astro.props;
     min-width: 7rem;
     font-size: 0.8rem;
     transition: box-shadow 0.3s ease-in-out;
+    /* 覆盖starlight中的a链接颜色 */
+    color: theme("colors.gray.14") !important;
     /* box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); */
   }
   /* .btn:hover{
@@ -50,13 +52,14 @@ const { href, title, classList = [], arrowTheme="dark" } = Astro.props;
   }
 
   .btn-primary {
+    color: theme('colors.gray.01') !important;
     :hover {
       background-color: theme('colors.gray.10');
-      color: theme('colors.gray.01');
+      color: theme('colors.gray.01') !important;
     }
     :active {
       background-color: theme('colors.gray.10');
-      color: theme('colors.gray.01');
+      color: theme('colors.gray.01') !important;
     }
   }
 
@@ -66,7 +69,7 @@ const { href, title, classList = [], arrowTheme="dark" } = Astro.props;
   }
 
   .btn-secondary {
-    color: theme('colors.gray.14');
+    color: theme('colors.gray.14') !important;
   }
 
   .btn-secondary.btn-disabled {
