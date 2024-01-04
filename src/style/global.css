@@ -216,9 +216,10 @@
 @tailwind utilities;
 
 .btn {
-	/* border-radius: 3rem; */
+	border-radius: 1.5rem;
 	min-width: 7rem;
 	font-size: 0.8rem;
+	font-weight: 400;
 }
 
 

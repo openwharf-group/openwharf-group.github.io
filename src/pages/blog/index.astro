@@ -2,12 +2,10 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import BlogCard from "@components/markdownSet/Card.astro";
-// import BlogPoster from "@components/markdownSet/CardPoster.astro";
-// import BlogHeader from "@components/markdownSet/SubHeading.astro";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import Footer from "@components/common/Footer.astro";
 import NewCard from "@components/markdownSet/NewCard.astro";
-import { BLOG_CATEGORY } from 'src/consts';
+import { BLOG_CATEGORY } from "src/consts";
 
 interface Post {
   slug: string;
@@ -23,10 +21,10 @@ interface Post {
 
 const posts = await getCollection("blog", (item) => {
   const blogCategories = [];
-    BLOG_CATEGORY.forEach((item) => {
-        blogCategories.push(item.type);
-    });
-    return blogCategories.includes(item.data.category);
+  BLOG_CATEGORY.forEach((item) => {
+    blogCategories.push(item.type);
+  });
+  return blogCategories.includes(item.data.category);
 });
 
 const sortedPosts = posts.sort(
@@ -36,19 +34,19 @@ const sortedPosts = posts.sort(
 // 将所有分类筛选出来
 const categoryPosts = [];
 for (const item of BLOG_CATEGORY) {
-    let posts = [];
-    if (item.type === "all") {
-        posts = [...sortedPosts];
-    } else {
-        posts = sortedPosts.filter((post) => {
-            return post.data.category === item.type;
-        });
-    }
-
-    categoryPosts.push({
-        posts,
-        ...item,
+  let posts = [];
+  if (item.type === "all") {
+    posts = [...sortedPosts];
+  } else {
+    posts = sortedPosts.filter((post) => {
+      return post.data.category === item.type;
     });
+  }
+
+  categoryPosts.push({
+    posts,
+    ...item,
+  });
 }
 
 const recentPosts = sortedPosts.splice(0, 4);
@@ -60,7 +58,11 @@ const recentPosts = sortedPosts.splice(0, 4);
 >
   <!-- <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/> -->
   <div>
-    <BlogTop title="Blog Insights:Navigating Microservices in the Cloud-Native Era."  type="blog-home" />
+    
+    <BlogTop
+      title="Blog Insights:Navigating Microservices in the Cloud-Native Era."
+      type="blog-home"
+    />
     <!-- 最新1篇博客展示 -->
     <div class="bg-gray-01">
       <div class="mx-auto max-w-screen-xl py-8 sm:py-12">
@@ -68,126 +70,78 @@ const recentPosts = sortedPosts.splice(0, 4);
           <div class="grid place-content-center rounded p-6 sm:p-8">
             <div class="mx-auto max-w-md text-center lg:text-left">
               <header>
-                <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
-                    New
-                </h2>
-                <div class="text-xl text-gray-08 pt-4">
-                  This Week
-                </div>
-            </header>
+                <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">New</h2>
+                <div class="text-xl text-gray-08 pt-4">This Week</div>
+              </header>
             </div>
           </div>
-          <NewCard type="blog" post={recentPosts[0]} classList={["lg:col-span-3","lg:py-8"]} />
+          <NewCard
+            type="blog"
+            post={recentPosts[0]}
+            classList={["lg:col-span-3", "lg:py-8"]}
+          />
         </div>
       </div>
     </div>
-    <!-- <div class="hero max-h-[30%] bg-gray-13">
-      <a href={`/blog/${recentPosts[0].slug}`} rel="prefetch">
-        <div class="hero-content flex-col lg:flex-row mx-auto my-10">
-          <div class="flex-1">
-            <h1
-              class="text-4xl font-bold text-gray-01 2xl:text-5xl xl:text-5xl lg:text-5xl"
-            >
-              {recentPosts[0].data.title}
-            </h1>
-            <p class="py-6 text-gray-01">
-              {recentPosts[0].data.description}
-            </p>
-          </div>
-          <BlogPoster post={recentPosts[0] as any} width="350" />
-        </div>
-      </a>
-    </div> -->
-    <!-- 最近的3篇博客展示 -->
-    <!-- <div class="flex flex-row items-center gap-2 pr-4 bg-gray-14 pt-10">
-            <ul class="flex flex-row mx-auto items-stretch justify-center gap-4">
-                {
-                    // @ts-ignore
-                    recentPosts.slice(1, 4).map((post) => (
-                        <>
-                            <div class="Blog-Post-Preview 2xl:flex-1 xl:flex-1 lg:flex-1">
-                                <BlogCard
-                                    post={post as any}
-                                    posterWidth='350'
-                                />
-                            </div>
-                        </>
-                    ))
-                }
-            </ul>
-        </div> -->
     <!-- 按照分类展示 -->
     {
       categoryPosts.map((categoryPost) => {
-        if(categoryPost.type === 'all') return ;
-        else return <div class="bg-gray-01">
+        if (categoryPost.type === "all") return;
+        else
+          return (
+            <div class="bg-gray-01">
               <div class="mx-auto max-w-screen-xl py-8 sm:py-12">
-                  <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch">
-                      <div class="grid place-content-center rounded p-6 sm:p-8">
-                          <div class="mx-auto max-w-md text-center lg:text-left">
-                              <header>
-                                  <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
-                                      {categoryPost.title}
-                                  </h2>
-                                  <div class="text-base text-blue-08 pt-4">
-                                      <a href={categoryPost.href}>
-                                          查看所有 {categoryPost.title} 文章
-                                          <svg
-                                              class="icon"
-                                              viewBox="0 0 1220 800"
-                                              version="1.1"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                              p-id="7491"
-                                              width="16"
-                                              height="16"
-                                          >
-                                              <>
-                                                  <path
-                                                      d="M717.034962 1023.997037a47.40727 47.40727 0 0 1-33.185089-80.592359l427.850614-427.850614a15.407363 15.407363 0 0 0 4.740727-10.666636 11.851818 11.851818 0 0 0-3.555545-8.296272L699.257236 81.777541a47.768751 47.768751 0 0 1 67.55536-67.55536l413.628433 413.628433a105.481176 105.481176 0 0 1 30.814725 77.036814 110.221903 110.221903 0 0 1-33.185089 77.036814L750.220051 1010.960038a47.40727 47.40727 0 0 1-33.185089 13.036999z"
-                                                      fill="#3D57DA"
-                                                      p-id="7492"
-                                                  />
-                                                  <path
-                                                      d="M1142.515213 559.405789H47.40727a47.40727 47.40727 0 1 1 0-94.814541h1095.107943a47.40727 47.40727 0 1 1 0 94.814541z"
-                                                      fill="#3D57DA"
-                                                      p-id="7493"
-                                                  />
-                                              </>
-                                          </svg>
-                                      </a>
-                                  </div>
-                              </header>
-                          </div>
-                      </div>
-
-                      <div class="lg:col-span-3 lg:py-8 flex flex-col items-center">
-                          <ul class="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6 place-items-stretch">
-                              {categoryPost.posts
-                                  .slice(0, 3)
-                                  .map((post) => (
-                                      <>
-                                          <div class="h-auto">
-                                              <BlogCard
-                                                  post={post as any}
-                                                  posterWidth="300"
-                                              />
-                                          </div>
-                                      </>
-                                  ))}
-                          </ul>
-                      </div>
+                <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch">
+                  <div class="grid place-content-center rounded p-6 sm:p-8">
+                    <div class="mx-auto max-w-md text-center lg:text-left">
+                      <header>
+                        <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
+                          {categoryPost.title}
+                        </h2>
+                        <div class="text-base text-blue-08 pt-4">
+                          <a href={categoryPost.href}>
+                            查看所有 {categoryPost.title} 文章
+                            <svg
+                              class="icon"
+                              viewBox="0 0 1220 800"
+                              version="1.1"
+                              xmlns="http://www.w3.org/2000/svg"
+                              p-id="7491"
+                              width="16"
+                              height="16"
+                            >
+                              <>
+                                <path
+           2                       d="M717.034962 1023.997037a47.40727 47.40727 0 0 1-33.185089-80.592359l427.850614-427.850614a15.407363 15.407363 0 0 0 4.740727-10.666636 11.851818 11.851818 0 0 0-3.555545-8.296272L699.257236 81.777541a47.768751 47.768751 0 0 1 67.55536-67.55536l413.628433 413.628433a105.481176 105.481176 0 0 1 30.814725 77.036814 110.221903 110.221903 0 0 1-33.185089 77.036814L750.220051 1010.960038a47.40727 47.40727 0 0 1-33.185089 13.036999z"
+                                  fill="#3D57DA"
+                                  p-id="7492"
+                                />
+                                <path
+                                  d="M1142.515213 559.405789H47.40727a47.40727 47.40727 0 1 1 0-94.814541h1095.107943a47.40727 47.40727 0 1 1 0 94.814541z"
+                                  fill="#3D57DA"
+                                  p-id="7493"
+                                />
+                              </>
+                            </svg>
+                          </a>
+                        </div>
+                      </header>
+                    </div>
                   </div>
-              </div>
-          </div>
-      }
-          
-      )
-  }
 
-    <!-- <div class="text-center text-xl text-blue-08 py-4">
-            <a href={`/blog/all`}>查看所有文章</a>
-            <Icon name="right-arrow" />
-        </div> -->
+                  <div class="lg:col-span-3 lg:py-8 flex flex-col items-center">
+                    <ul class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 gap-6 place-items-stretch">
+                      {categoryPost.posts.slice(0, 3).map((post) => (
+                            <BlogCard post={post as any} posterWidth="320" />
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+      })
+    }
     <Footer />
   </div>
 </BaseLayout>
@@ -248,6 +202,17 @@ const recentPosts = sortedPosts.splice(0, 4);
   ul a:hover img {
     box-shadow: var(--box-shadow);
   }
+  .category-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .blog-card {
+    /* box-sizing: border-box; */
+    flex: 0 0 calc(33.333% - 20px); /* 默认3个BlogCard一行，减去间距 */
+    max-width: calc(33.333% - 20px); /* 限制最大宽度 */
+  }
+
   @media (max-width: 720px) {
     ul {
       gap: 0.5em;
@@ -263,7 +228,15 @@ const recentPosts = sortedPosts.splice(0, 4);
       font-size: 1.563em;
     }
   }
-  .blog_latest_bottom{
+
+  /* 小屏幕（例如480px宽）显示1个 */
+@media (max-width: 480px) {
+  .blog-card {
+    flex-basis: calc(100% - 20px); /* 1个卡片一行，减去间距 */
+    max-width: calc(100% - 20px); 
+  }
+}
+  .blog_latest_bottom {
     border-top: 2px solid theme("colors.gray.12");
   }
 </style>

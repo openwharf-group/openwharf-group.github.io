@@ -176,4 +176,7 @@ export default {
 
 	'checklist.or': '或',
 	'footer.privacyPolicy': '隐私协议',
+
+	'blog.card.btn.read': '立即阅读',
+	'blog.card.read.artile': '阅读文章',
 };
