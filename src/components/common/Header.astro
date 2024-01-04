@@ -610,12 +610,16 @@ try {
     --header-xl-padding: 2.5rem;
   }
   .header {
-    /* display: block; */
+    cursor: pointer;
     position: var(position);
     top: 0;
-    /* position: relative; */
     z-index: 100000;
-    /* height: var(--header-height); */
+    box-shadow: 0 4px 10px theme('colors.gray.15'); /* 轻微的底部阴影 */
+    transition: all 0.3s ease-in-out;
+  }
+  .header :hover {
+    box-shadow: 0 4px 10px theme('colors.gray.15'), /* 内部阴影 */
+               0 4px 10px theme('colors.gray.13'); /* 底部发光效果 */
   }
   a {
     text-decoration: none;
@@ -633,10 +637,9 @@ try {
   }
   .nav {
     z-index: 100000;
-    /* height: var(--header-height); */
-    /* padding-left: var(--header-xl-padding);
-    padding-right: var(--header-xl-padding); */
+   
   }
+  
   .logo {
     vertical-align: sub;
     width: var(--logo-width);
