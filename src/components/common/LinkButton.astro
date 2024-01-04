@@ -1,0 +1,86 @@
+---
+import UpRight from '../icon/UpRight.astro';
+
+interface Props {
+  title: string;
+  classList?: string[];
+  href?: string;
+  arrowTheme?: string;
+}
+
+const { href, title, classList = [], arrowTheme="dark" } = Astro.props;
+---
+
+<a
+  class:list={['btn', 'mr-4', 'text-xs', ...classList]}
+  href={href}
+  target="_blank"
+>
+  <slot />
+  {title}
+  <span class="up-right-arrow">
+    <UpRight theme={arrowTheme} />
+  </span>
+</a>
+
+<style>
+  .btn {
+    min-width: 7rem;
+    font-size: 0.8rem;
+    transition: box-shadow 0.3s ease-in-out;
+    /* box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); */
+  }
+  /* .btn:hover{
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.7);
+
+  }
+  .btn:active {
+    box-shadow: 0 0 30px rgba(52, 152, 219, 1);
+  } */
+  .btn .up-right-arrow {
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+  }
+  .btn:hover .up-right-arrow {
+    transform: translate(
+      3px,
+      0px
+    );
+    opacity: 1;
+  }
+
+  .btn-primary {
+    :hover {
+      background-color: theme('colors.gray.10');
+      color: theme('colors.gray.01');
+    }
+    :active {
+      background-color: theme('colors.gray.10');
+      color: theme('colors.gray.01');
+    }
+  }
+
+  .btn-primary.btn-disabled {
+    background-color: theme('colors.gray.10');
+    color: theme('colors.gray.01');
+  }
+
+  .btn-secondary {
+    color: theme('colors.gray.14');
+  }
+
+  .btn-secondary.btn-disabled {
+    background-color: theme('colors.gray.04');
+    color: theme('colors.gray.01');
+  }
+
+  @media (max-width: 50rem) {
+    .btn {
+      min-width: 7rem;
+      height: 2.8rem;
+      min-height: 2.8rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+  }
+</style>

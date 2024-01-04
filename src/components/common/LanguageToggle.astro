@@ -10,8 +10,8 @@ const initialState = lang === 'zh-cn' ? false : true;
 
 <toggle-content class="switch float-left relative m-0 rounded-[2rem]">
   <input data-switch class="switch-checkbox hidden" id={`${id}-switch`} type="checkbox" checked={initialState} />
-  <label class="switch-label block overflow-hidden cursor-pointer rounded-[2rem]" for="switch">
-      <span class="switch-inner block" data-on="ZH" data-off="EN"></span>
+  <label class="switch-label block overflow-hidden cursor-pointer rounded-[2rem]" for={`${id}-switch`}>
+      <span class="switch-inner block" data-on="中文" data-off="EN"></span>
       <span class="switch-switch absolute float-right mx-1"></span>
   </label>
 </toggle-content>
@@ -97,7 +97,7 @@ toggle-content {
 }
 .switch-switch::before {
   display: flex;
-  content: 'ZH';
+  content: '中文';
   height: 100%;
   font-size: var(--toggle-ml-font);
   color: theme("colors.gray.01");
