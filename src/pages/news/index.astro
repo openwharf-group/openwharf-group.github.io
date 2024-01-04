@@ -59,11 +59,11 @@ for (const item of NEWS_CATEGORY) {
     <!-- 按照分类展示 -->
     {
       categoryPosts.map((categoryPost) => (
-        <div class="bg-gray-01">
-          <div class="mx-auto max-w-screen-xl py-8 sm:py-12">
+        <div class="bg-gray-01 w-full flex flex-col items-center">
+          <div class="w-[85.125rem] py-8 sm:py-12">
             <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-stretch">
-              <div class="grid place-content-center rounded p-6 sm:p-8">
-                <div class="mx-auto max-w-md text-center lg:text-left">
+              <div class="grid place-content-start rounded py-6 pr-6">
+                <div class="mx-auto mt-3 max-w-md text-center lg:text-left">
                   <header>
                     <h2 class="text-xl font-bold text-gray-14 sm:text-3xl">
                       {categoryPost.title}
