@@ -5,6 +5,7 @@ import Star from '../icon/Star.astro';
 import Fork from '../icon/Fork.astro';
 import UpRight from '../icon/UpRight.astro';
 import LinkButton from '../common/LinkButton.astro';
+import HomeBackground from '../home/HomeBackground.astro';
 
 const t = useTranslations(Astro);
 
@@ -17,25 +18,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
 
 <home-introduce class="introduce flex flex-col justify-center items-center">
   <div class="top-section w-[85.125rem] flex flex-col relative container">
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="stars"></div>
-    <div class="meteor"></div>
-    <div class="meteor"></div>
-    <div class="meteor"></div>
-    <div class="meteor"></div>
-    <div class="meteor"></div>
-    <div class="meteor"></div>
-
+    <HomeBackground />
     <div class="py-6 text-gray-08 text-xs">{t('home.introduce.about')}</div>
     <div class="title text-[5rem] leading-[6rem] text-gray-03 mb-4">
       {t('home.introduce.title')}
@@ -267,143 +250,5 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
   position: relative;
   overflow: hidden;
 }
-
-.stars {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background-color: #FFF;
-  border-radius: 50%;
-  animation: twinkle 1s infinite;
-}
-
-.meteor {
-  position: absolute;
-  width: 2px;
-  height: 10px;
-  background-color: #FFF;
-  animation: meteor1 2s infinite;
-}
-
-.meteor:nth-child(2) {
-  animation: meteor2 3s infinite;
-}
-
-@keyframes twinkle {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@keyframes meteor1 {
-  0% { opacity: 1; left: -10%; top: -10%; }
-  100% { opacity: 0; left: 110%; top: 110%; }
-}
-
-@keyframes meteor2 {
-  0% { opacity: 1; left: -10%; top: -10%; }
-  100% { opacity: 0; left: 110%; top: 110%; }
-}
-
-/* 随机生成星星的位置 */
-.stars:nth-child(1) {
-  left: 10%; top: 20%;
-}
-
-.stars:nth-child(2) {
-  left: 20%; top: 40%;
-}
-
-.stars:nth-child(3) {
-  left: 30%; top: 60%;
-}
-
-.stars:nth-child(4) {
-  left: 40%; top: 80%;
-}
-
-.stars:nth-child(5) {
-  left: 50%; top: 10%;
-}
-
-.stars:nth-child(6) {
-  left: 60%; top: 30%;
-}
-
-.stars:nth-child(7) {
-  left: 73%; top: 80%;
-}
-
-.stars:nth-child(8) {
-  left: 82%; top: 70%;
-}
-
-.stars:nth-child(9) {
-  left: 10%; top: 90%;
-}
-
-.stars:nth-child(10) {
-  left: 25%; top: 15%;
-}
-
-.stars:nth-child(11) {
-  left: 55%; top: 65%;
-}
-
-.stars:nth-child(12) {
-  left: 75%; top: 35%;
-}
-
-/* 随机生成星星的颜色 */
-.stars:nth-child(1)::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #0000FF;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.stars:nth-child(2)::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.stars:nth-child(3)::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #0000FF;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.stars:nth-child(4)::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
-.stars:nth-child(5)::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #FFFFFF;
-  border-radius: 50%;
-  opacity: 0.5;
-}
-
 
 </style>
