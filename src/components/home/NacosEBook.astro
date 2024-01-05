@@ -7,7 +7,7 @@ const t = useTranslations(Astro);
 ---
 
 <nacos-ebook class="nacos-ebook flex flex-col justify-center items-center bg-gary-02 py-10">
-  <div class="ebook-container w-[85.125rem] block flex items-center justify-between bg-gray-13 rounded-2xl p-9 mt-16">
+  <div class="ebook-container block flex items-center justify-between bg-gray-13 rounded-2xl p-9 mt-16">
     <div class="left-container h-full flex flex-col justify-around">
       <div class="flex flex-col">
         <div class="text-blue-02 text-xs tracking-widest">{t('home.ebook.resource')}</div>
@@ -51,6 +51,7 @@ const t = useTranslations(Astro);
 
 .ebook-container {
   height: 30rem;
+  width: 85.125rem;
 }
 .left-container {
   width: 50%;

@@ -27,7 +27,7 @@ const solutionList = [
 ---
 
 <card-solution class="card-solution block bg-gray-14 pb-4">
-  <div class="bottom-solutions-card  w-[85.125rem] flex items-center justify-center h-fit">
+  <div class="bottom-solutions-card flex items-center justify-center h-fit">
     <div class="solution-container h-[23rem] w-full flex flex-nowrap justify-start">
       {
         solutionList.map((item, index) => {
@@ -102,6 +102,9 @@ const solutionList = [
 </script>
 
 <style>
+  .bottom-solutions-card {
+    width: 85.125rem;
+  }
   .solutions-card {
     /* 默认宽度 */
     width: 9.75rem;
@@ -165,6 +168,7 @@ const solutionList = [
       line-height: 1.75rem; /* 28px */
     }
     .bottom-solutions-card {
+      width: 100%;
       display: none;
     }
     .mobile-bottom-solutions-card {

@@ -17,7 +17,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
 ---
 
 <home-introduce class="introduce flex flex-col justify-center items-center">
-  <div class="top-section w-[85.125rem] flex flex-col relative container">
+  <div class="top-section flex flex-col relative container">
     <HomeBackground />
     <div class="py-6 text-gray-08 text-xs">{t('home.introduce.about')}</div>
     <div class="title text-[5rem] leading-[6rem] text-gray-03 mb-4">
@@ -44,7 +44,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
     >
   </div>
 
-  <div class="bottom-section w-[85.125rem] flex mb-10 mt-[3.625rem]">
+  <div class="bottom-section flex mb-10 mt-[3.625rem]">
     <div
       class="desc overflow-hidden relative mr-4 rounded-2xl p-6 text-blue-02 text-sm cursor-pointer"
     >
@@ -134,6 +134,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
     background-color: theme('colors.gray.14');
   }
   .top-section {
+    width: 85.125rem;
     border-bottom: 1px solid theme('colors.gray.12');
   }
   .top-section .shortcut button {
@@ -141,6 +142,9 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
     min-height: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  .bottom-section {
+    width: 85.125rem;
   }
   .bottom-section .nacos-log {
     object-fit: cover;

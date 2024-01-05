@@ -27,12 +27,12 @@ const dataSource = [
 ---
 
 <choose-reason class="choose-reason block bg-gary-01 py-10 flex flex-col justify-center items-center">
-  <div class="top-title w-[85.125rem] flex flex-col items-center mb-20 mt-16">
+  <div class="top-title flex flex-col items-center mb-20 mt-16">
     <span class="text-gray-10 text-xs mb-6">{t('home.nacos.edge.about')}</span>
     <span class="title text-gray-14 text-4xl font-medium">{t('home.nacos.edge.title')}</span>
   </div>
 
-  <div class="bottom-card w-[85.125rem] flex flex-wrap">
+  <div class="bottom-card flex flex-wrap">
     {
       dataSource.map(reason => {
         const { title, svgKey, description } = reason;
@@ -79,6 +79,9 @@ class ChooseReason extends HTMLElement {
 
 
 <style>
+.top-title, .bottom-card {
+  width: 85.125rem;
+}
 .bottom-card .item {
   flex: 0 0 25%;
   border-left: 1px solid theme('colors.gray.03');

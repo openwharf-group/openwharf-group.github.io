@@ -23,11 +23,11 @@ const companiesLogos = [
 ---
 
 <use-companies class="use-companies flex flex-col items-center bg-gary-02 py-10">
-  <div class="top-title w-[85.125rem] flex flex-col items-center mb-4 mt-16">
+  <div class="top-title flex flex-col items-center mb-4 mt-16">
     <span class="text-gray-10 text-xs w-full max-w-[63.5rem]">{t('home.use.companies.about')}</span>
   </div>
 
-  <div class="bottom-silder w-[85.125rem]">
+  <div class="bottom-silder">
     <ul class="slider">
       {
         companiesLogos.map((logo,index) => (
@@ -72,6 +72,9 @@ customElements.define("use-companies", UseCompanies);
 <style>
   use-companies {
     --time: 40s
+  }
+  .top-title, .bottom-silder {
+    width: 85.125rem;
   }
   .bottom-silder {
     position: relative;
@@ -132,9 +135,11 @@ customElements.define("use-companies", UseCompanies);
     padding: 1.5rem;
   }
   .top-title {
+    width: 100%;
     margin-top: 2.5rem;
   }
   .bottom-silder {
+    width: 100%;
     display: none;
   }
   .mobile-bottom-card {
@@ -158,10 +163,7 @@ customElements.define("use-companies", UseCompanies);
   .use-companies {
     padding: 2.5rem;
   }
-  .top-title {
-    width: 100%;
-  }
-  .bottom-silder {
+  .top-title, .bottom-silder {
     width: 100%;
   }
 }
