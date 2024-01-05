@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from '@i18n/util';
+import { useTranslations, isChinese } from '@i18n/util';
 import Github from '../icon/Github.astro';
 import Star from '../icon/Star.astro';
 import Fork from '../icon/Fork.astro';
@@ -8,6 +8,7 @@ import LinkButton from '../common/LinkButton.astro';
 import HomeBackground from '../home/HomeBackground.astro';
 
 const t = useTranslations(Astro);
+const ifzh = isChinese(Astro);
 
 const data = await fetch('https://api.github.com/repos/alibaba/nacos').then(
   (r) => r.json(),
@@ -20,7 +21,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
   <div class="top-section flex flex-col relative">
     <HomeBackground />
     <div class="py-6 text-gray-08 text-xs">{t('home.introduce.about')}</div>
-    <div class="title text-[5rem] leading-[6rem] text-gray-03 mb-4">
+    <div class=`title leading-[6rem] text-gray-03 mb-4 ${ifzh ? 'text-[4rem]' : 'text-[5rem]'}`>
       {t('home.introduce.title')}
     </div>
     <div class="shortcut flex pt-6">

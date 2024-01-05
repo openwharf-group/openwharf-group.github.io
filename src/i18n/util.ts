@@ -60,3 +60,9 @@ export function normalizeLangTag(tag: string) {
 	const [lang, region] = tag.split('-');
 	return lang.toLowerCase() + '-' + region.toUpperCase();
 }
+
+
+export function isChinese(Astro: Readonly<AstroGlobal>): boolean {
+	const lang = getLanguageFromURL(Astro.url.pathname) || 'zh-cn';
+	return lang === 'zh-cn';
+}
