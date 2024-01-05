@@ -56,6 +56,9 @@ export default defineConfig({
 			hooks: {
 				"astro:server:setup": async (options) => {
 					await goatConfig();
+				},
+				"astro:build:setup": async (options) => {
+					await goatConfig();
 				}
 			}
 		},
