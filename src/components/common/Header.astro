@@ -51,10 +51,11 @@ const communitySubMenu = {
     Resources: [
       { label: t("commmon.header.comm.blog"), url: "/blog" },
       { label: t("commmon.header.comm.ebook"), url: "/docs/ebook/kbyo6n.mdx" },
-      {
-        label: t("commmon.header.comm.download"),
-        url: "/download/nacos-service",
-      },
+      // 版本下载功能暂且隐藏
+      // {
+      //   label: t("commmon.header.comm.download"),
+      //   url: "/download/nacos-service",
+      // },
     ],
     CONTACT_US: [
       {
@@ -218,7 +219,7 @@ const titleBgImg = [
         >
           <div class="flex pt-8 justify-center flex-col xl:px-20 2xl:px-20">
             <div class="flex justify-between mb-9">
-              <div class="flex mr-32">
+              <div class="flex mr-16">
                 <div class="shortcut-menu flex flex-col px-7 mr-10">
                   <span class="text-xs text-gray-10 mb-2"
                     >{t("commmon.header.comm.comm")}</span
