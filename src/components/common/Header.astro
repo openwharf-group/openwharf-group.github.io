@@ -826,16 +826,14 @@ const titleBgImg = [
     handleScroll=(header,nav) => {
       // 处理滚动事件的逻辑
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > 0 && !this.isScrolled) {
+    if (scrollTop >= 64 && !this.isScrolled) {
       this.isScrolled = true;
       header.classList.add('bg-gray-14/[0.84]');
       nav.classList.add('bg-gray-14/[0]')
-      // header.classList.remove('bg-gray-14');
     }else if (scrollTop === 0 && this.isScrolled) {
       this.isScrolled = false;
       header.classList.remove('bg-gray-14/[0.84]');
       nav.classList.remove('bg-gray-14/[0]');
-      header.classList.add('bg-gray-14');
     }
     };
 
@@ -909,7 +907,7 @@ const titleBgImg = [
     position: var(position);
     top: 0;
     z-index: 100000;
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
     backdrop-filter: blur(10px);
   }
   a {
