@@ -77,12 +77,12 @@ const t = useTranslations(Astro);
 ---
 
 <companies-feedback class="companies-feedback flex flex-col justify-center items-center bg-gary-02 py-10">
-  <div class="top-title w-[85.125rem] flex flex-col items-center mb-20 mt-16">
+  <div class="top-title flex flex-col items-center mb-20 mt-16">
     <span class="text-gray-10 text-xs mb-6">{t('cloud.feedback.about')}</span>
     <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">{t('cloud.feedback.title')}</div>
   </div>
 
-  <div class="bottom-feedback w-[85.125rem] relative flex overflow-hidden rounded-2xl">
+  <div class="bottom-feedback relative flex overflow-hidden rounded-2xl">
     <ul class="slider p-0 list-none inline-block uppercase cursor-pointer flex flex-nowrap">
       {
         companyCustomers.map((company) => {
@@ -168,6 +168,9 @@ customElements.define("companies-feedback", CompaniesFeedback);
 companies-feedback {
   --time: 100s
 }
+.top-title, .bottom-feedback {
+  width: 85.125rem;
+}
 .companies-feedback {
   /* 最后一个元素 距离底部footer 52px */
   padding-bottom: 3.25rem;
@@ -224,6 +227,7 @@ a {
     padding: 1.5rem;
   }
   .top-title {
+    width: 100%;
     margin-top: 2.5rem;
     margin-bottom: 2.5rem;
   }
@@ -233,6 +237,7 @@ a {
     line-height: 1.75rem; /* 28px */
   }
   .bottom-feedback {
+    width: 100%;
     display: none;
   }
   .mobile-bottom-feedback {
@@ -253,12 +258,8 @@ a {
   .companies-feedback {
     padding: 2.5rem;
   }
-  .top-title {
+  .top-title, .bottom-feedback {
     width: 100%;
   }
-  .bottom-feedback {
-    width: 100%;
-  }
-
 }
 </style>

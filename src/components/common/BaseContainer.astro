@@ -6,6 +6,26 @@ interface Props {
 const { class:className } = Astro.props;
 ---
 
-<div class={'w-[85.125rem] flex ' + className}>
+<div class={'base-layout flex ' + className}>
     <slot/>
 </div>
+
+<style>
+  .base-layout {
+    width: 85.125rem;
+  }
+
+  /* 小于50rem  小于 800px */
+  @media (max-width: 50rem) {
+    .base-layout {
+      width: 100%;
+    }
+  }
+
+  /* 大于50rem 小于 72rem  800px < width < 1440 */
+  @media (min-width: 50rem) and (max-width: 86rem) {
+    .base-layout {
+      width: 100%;
+    }
+  }
+</style>
