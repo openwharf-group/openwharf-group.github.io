@@ -5,6 +5,7 @@ interface Props {
   title: string;
   href?: string;
   arrowTheme?: string;
+  class?: string;
 }
 
 const { href, title, arrowTheme = 'dark', class: className = '' } = Astro.props;
