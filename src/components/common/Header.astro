@@ -17,8 +17,8 @@ const justifyContent = align === "home" ? "space-between" : "flex-start";
 const docsSubMenu = {
   shortcutMenus: {
     Documentation: [
-      { label: "1.x", url: "/docs/what-is-nacos.html" },
-      { label: "2.x", url: "/docs/v2/what-is-nacos.html" },
+      { label: "1.x", url: "/docs/what-is-nacos" },
+      { label: "2.x", url: "/docs/v2/what-is-nacos" },
     ],
   },
 };
@@ -45,11 +45,11 @@ const communitySubMenu = {
       },
     ],
     EVENTS: [
-      { label: t("commmon.header.comm.news"), url: "/news.html" },
-      { label: t("commmon.header.comm.active"), url: "/activity.html" },
+      { label: t("commmon.header.comm.news"), url: "/news" },
+      { label: t("commmon.header.comm.active"), url: "/activity" },
     ],
     Resources: [
-      { label: t("commmon.header.comm.blog"), url: "/blog.html" },
+      { label: t("commmon.header.comm.blog"), url: "/blog" },
       { label: t("commmon.header.comm.ebook"), url: "/docs/ebook/kbyo6n.mdx" },
       // 版本下载功能暂且隐藏
       // {
@@ -285,7 +285,7 @@ const titleBgImg = [
                         </p>
                         <a
                           class="btn absolute bottom-2 w-fit text-xs bg-gray-12 text-gray-01 border-0 rounded-3xl"
-                          href={`/${item.collection}/${item.slug}.html`}
+                          href={`/${item.collection}/${item.slug}`}
                         >
                           {t("commmon.header.comm.shortcut")}
                         </a>
@@ -388,7 +388,7 @@ const titleBgImg = [
         <div data-demo class="h-full flex items-center p-0.5">
           <a
             class="title"
-            href="http://console.nacos.io/nacos/index.html"
+            href="http://console.nacos.io/nacos/index"
             target="_blank">{t("commmon.header.menu.demo")}</a
           >
         </div>
@@ -541,7 +541,7 @@ const titleBgImg = [
             </div>
           </li>
           <li class="mt-4">
-            <a href="/cloud.html" class="text-gray-14 text-sm"
+            <a href="/cloud" class="text-gray-14 text-sm"
               >{t("commmon.header.menu.cloud")}</a
             >
           </li>
@@ -668,7 +668,7 @@ const titleBgImg = [
           </li>
           <li class="mt-4">
             <a
-              href="http://console.nacos.io/nacos/index.html"
+              href="http://console.nacos.io/nacos/index"
               class="text-gray-14 text-sm">{t("commmon.header.menu.demo")}</a
             >
           </li>
@@ -796,7 +796,7 @@ const titleBgImg = [
 
       // 绑定路由
       this.nacosCloudMenu.addEventListener("click", () => {
-        window.location.pathname = "/cloud.html";
+        window.location.pathname = "/cloud";
       });
 
       // 绑定下拉 dropdown 事件
