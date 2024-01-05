@@ -2,6 +2,8 @@
 title: Pull request template
 keywords: [pull request,template]
 description: Pull request template
+sidebar:
+    order: 3
 ---
 
 # Pull request template

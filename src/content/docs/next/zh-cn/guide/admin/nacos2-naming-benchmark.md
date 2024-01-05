@@ -2,6 +2,8 @@
 title: Nacos2.0服务发现性能测试报告
 keywords: [Nacos,服务,发现,性能]
 description: Nacos2.0服务发现性能测试报告
+sidebar:
+    order: 8
 ---
 
 # Nacos2.0.0-ALPHA2 服务发现性能测试报告

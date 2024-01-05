@@ -2,6 +2,8 @@
 title: Other languages SDK
 keywords: [Other languages,SDK]
 description: Other languages SDK
+sidebar:
+    order: 2
 ---
 
 # Other languages SDK

@@ -2,6 +2,8 @@
 title: How to report bugs
 keywords: [nacos,submit,reporting bugs]
 description: How to report bugs
+sidebar:
+    order: 4
 ---
 
 # Reporting bugs

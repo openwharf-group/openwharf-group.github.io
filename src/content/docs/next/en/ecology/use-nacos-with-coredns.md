@@ -2,6 +2,8 @@
 title: Nacos push domain with CoreDNS
 keywords: [CoreDNS, DNS-F]
 description: Nacos push domain with CoreDNS
+sidebar:
+    order: 6
 ---
 
 # Nacos DNS user guide

@@ -2,6 +2,8 @@
 title: Java Client Failover
 keywords: [Failover]
 description: Java client failover user guide
+sidebar:
+    order: 7
 ---
 
 # Java Client Failover

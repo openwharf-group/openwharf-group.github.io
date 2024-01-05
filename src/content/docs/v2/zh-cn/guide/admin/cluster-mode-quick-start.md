@@ -2,6 +2,8 @@
 title: 集群部署说明
 keywords: [集群,部署]
 description: 集群部署说明
+sidebar:
+    order: 2
 ---
 
 <!-- # 集群部署说明 -->

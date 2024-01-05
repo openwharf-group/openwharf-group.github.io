@@ -2,6 +2,8 @@
 title: Developers
 keywords: [nacos,developers,committer,pmc,nacos team]
 description: Nacos developers page
+sidebar:
+    order: 2
 ---
 
 # Developers

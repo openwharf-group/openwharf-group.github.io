@@ -2,6 +2,8 @@
 title: 提交需求模板
 keywords: [pull request,模板]
 description: 提交需求模板
+sidebar:
+    order: 3
 ---
 
 # 提交需求模板

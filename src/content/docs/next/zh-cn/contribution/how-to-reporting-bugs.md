@@ -2,6 +2,8 @@
 title: 如何提交问题报告
 keywords: [提交,问题报告]
 description: 如何提交问题报告
+sidebar:
+    order: 4
 ---
 
 # 如何提交问题报告

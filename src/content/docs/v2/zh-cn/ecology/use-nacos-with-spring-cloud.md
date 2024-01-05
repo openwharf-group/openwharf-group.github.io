@@ -2,6 +2,8 @@
 title: Nacos 融合 Spring Cloud，成为注册配置中心
 keywords: [Nacos,Spring Cloud]
 description: 本文主要面向 Spring Cloud 的使用者，通过示例来介绍如何使用 Nacos 来实现分布式环境下的配置管理和服务发现
+sidebar:
+    order: 4
 ---
 
 # Nacos 融合 Spring Cloud，成为注册配置中心

@@ -2,6 +2,8 @@
 title: Nacos supports three types of deployment modes
 keywords: [Nacos,deployment modes]
 description: Nacos supports three types of deployment modes
+sidebar:
+    order: 1
 ---
 
 > Document optimizing...

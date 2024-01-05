@@ -2,6 +2,8 @@
 title: 如何贡献
 keywords: [贡献,源码]
 description: 我们非常欢迎您的贡献和加入，无论是微不足道的清理或大的新功能。
+sidebar:
+    order: 1
 ---
 
 # 如何贡献

@@ -2,6 +2,8 @@
 title: Authorization
 keywords: [Authorization]
 description: Authorization
+sidebar:
+    order: 5
 ---
 
 > 注意

@@ -2,6 +2,8 @@
 title: Nacos 2.0.0 兼容性文档
 keywords: [Nacos,2.0.0]
 description: Nacos 2.0.0 兼容性文档
+sidebar:
+    order: 1
 ---
 
 > 文档优化中......

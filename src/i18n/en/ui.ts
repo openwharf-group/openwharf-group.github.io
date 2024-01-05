@@ -60,7 +60,7 @@ export default {
 	'home.ebook.resource': 'RESOURCES',
 	'home.ebook.nacos': 'E-Book Nacos',
 	'home.ebook.download': 'DOWNLOAD',
-	'home.features.about': 'VIEW ON GITHUB',
+	'home.features.about': 'ADVANTAGE',
 	'home.features.title': 'Explore Our Features',
 	'home.features.1.title': 'Dynamic Configuration Service',
 	'home.features.1.summary': 'Manage configurations in all environments in a centralized, externalized, and dynamic approach.',

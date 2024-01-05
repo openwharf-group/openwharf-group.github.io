@@ -27,12 +27,12 @@ const dataSource = [
 ---
 
 <choose-reason class="choose-reason block bg-gary-01 py-10 flex flex-col justify-center items-center">
-  <div class="top-title w-[85.125rem] flex flex-col items-center mb-20 mt-16">
-    <span class="text-gray-10 text-xs mb-6">{t('home.nacos.edge.about')}</span>
+  <div class="top-title flex flex-col items-center mb-20 mt-16">
+    <span class="text-gray-10 text-xs mb-6 tracking-[0.15em]">{t('home.nacos.edge.about')}</span>
     <span class="title text-gray-14 text-4xl font-medium">{t('home.nacos.edge.title')}</span>
   </div>
 
-  <div class="bottom-card w-[85.125rem] flex flex-wrap">
+  <div class="bottom-card flex flex-wrap">
     {
       dataSource.map(reason => {
         const { title, svgKey, description } = reason;
@@ -56,7 +56,7 @@ const dataSource = [
                   )
                 }
               </div>
-              <div class="py-4 text-gray-10 text-xs">{title}</div>
+              <div class="py-4 text-gray-10 text-xs tracking-[0.15em]">{title}</div>
             </div>
             
             <div class="text-gray-14 text-sm">{description}</div>
@@ -79,9 +79,15 @@ class ChooseReason extends HTMLElement {
 
 
 <style>
+.top-title, .bottom-card {
+  width: 85.125rem;
+}
 .bottom-card .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex: 0 0 25%;
-  border-left: 1px solid theme('colors.gray.03');
+  border-left: 1px solid rgba(221, 222, 228, 0.85);
 }
 
 /* 小于50rem  小于 800px */

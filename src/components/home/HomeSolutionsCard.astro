@@ -27,8 +27,8 @@ const solutionList = [
 ---
 
 <card-solution class="card-solution block bg-gray-14 pb-4">
-  <div class="bottom-solutions-card  w-[85.125rem] flex items-center justify-center h-fit">
-    <div class="solution-container h-[23rem] w-full flex flex-nowrap justify-start">
+  <div class="bottom-solutions-card flex items-center justify-center h-fit">
+    <div class="solution-container h-[25rem] w-full flex flex-nowrap justify-start">
       {
         solutionList.map((item, index) => {
           const { src, checked } = item;
@@ -44,16 +44,17 @@ const solutionList = [
                 for={`c${index}`}
                 class="solutions-card overflow-hidden flex flex-col justify-between cursor-pointer p-4 rounded-3xl mx-2"
               >
-                <div class="main-title text-sm text-blue-03 text-center opacity-0 tracking-wider">
-                  {t('home.solutions.about')}
+                <div>
+                  <div class="main-title text-sm text-blue-03 mt-[1.25rem] tracking-[0.15em] text-center opacity-0 tracking-wider">
+                    {t('home.solutions.about')}
+                  </div>
+                  <div class="item-title text-blue-01 text-3xl mx-12 mt-[3.125rem] opacity-0">
+                    {item.title}
+                  </div>
                 </div>
-
-                <div class="item-title text-blue-01 text-3xl mx-4 opacity-0">
-                  {item.title}
-                </div>
-                <div class="button opacity-0 mx-auto">
+                <div class="button opacity-0 mx-auto mb-[2.75rem]">
                   <LinkButton
-                    classList={['rounded-3xl', 'btn-secondary']}
+                    class='rounded-3xl btn-secondary'
                     href={src}
                     title={t('home.solutions.action')}
                   />
@@ -102,12 +103,18 @@ const solutionList = [
 </script>
 
 <style>
+  .bottom-solutions-card {
+    width: 85.125rem;
+  }
   .solutions-card {
     /* 默认宽度 */
     width: 9.75rem;
     background-size: cover;
     transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
     /* box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8); */
+    background-size: cover;
+    background-position: center;
+
   }
   .solution-container > .solutions-card:first-of-type {
     margin-left: 0;
@@ -128,6 +135,7 @@ const solutionList = [
   }
   input:checked + label {
     flex: 1;
+    animation: zoom-animation 5s infinite;
   }
   input:checked + label .main-title {
     animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
@@ -138,18 +146,29 @@ const solutionList = [
   input:checked + label .button {
     animation: showcontent 0.3s ease-in-out 0.3s 1 forwards;
   }
+
   .solutions-card[for='c0'] {
     background-image: url('https://img.alicdn.com/imgextra/i1/O1CN017UPiCy1xJmqGNV93n_!!6000000006423-2-tps-1688-1016.png');
   }
   .solutions-card[for='c1'] {
-    background-image: url('https://img.alicdn.com/imgextra/i2/O1CN01ypbjHd1VVs3EbVhR8_!!6000000002659-0-tps-1024-512.jpg');
+    background-image: url('https://img.alicdn.com/imgextra/i1/O1CN01DXhkjl1ScnC0wYxRw_!!6000000002268-0-tps-1344-896.jpg');
   }
   .solutions-card[for='c2'] {
-    background-image: url('https://img.alicdn.com/imgextra/i4/O1CN01AB9bK01l5nLzL2egG_!!6000000004768-0-tps-1024-512.jpg');
+    background-image: url('https://img.alicdn.com/imgextra/i4/O1CN01ufR2md1L6XzxK8NH2_!!6000000001250-0-tps-1344-896.jpg');
   }
   .solutions-card[for='c3'] {
-    background-image: url('https://img.alicdn.com/imgextra/i4/O1CN01GsiGzV1wZWqAKDrW7_!!6000000006322-0-tps-1024-512.jpg');
+    background-image: url('https://img.alicdn.com/imgextra/i2/O1CN01nfn6fa1FD3w7JaA0w_!!6000000000452-0-tps-1024-1024.jpg');
   }
+
+
+@keyframes zoom-animation {
+  0% { background-size: 100% cover; }
+  5% { background-size: 100% auto; }
+  50% { background-size: 140% auto; }
+  100% { background-size: 100% auto; }
+}
+
+
 
   /* 小于50rem  小于 800px */
   @media (max-width: 50rem) {
@@ -165,10 +184,11 @@ const solutionList = [
       line-height: 1.75rem; /* 28px */
     }
     .bottom-solutions-card {
-      display: none;
+      width: 100%;
+      display: none !important;
     }
     .mobile-bottom-solutions-card {
-      display: block;
+      display: block !important;
     }
     .solutions-mobile-card {
       background-size: cover;

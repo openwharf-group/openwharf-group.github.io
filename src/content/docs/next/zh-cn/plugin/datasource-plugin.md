@@ -2,6 +2,8 @@
 title: 多数据源
 keywords: [MySQL,Derby,多数据源]
 description: 多数据源
+sidebar:
+    order: 4
 ---
 
 # 多数据源插件

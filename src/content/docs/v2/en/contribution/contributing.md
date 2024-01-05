@@ -2,6 +2,8 @@
 title: How to Contribute
 keywords: [contribute,code]
 description: We are always very happy to have contributions, whether for trivial cleanups or big new features.
+sidebar:
+    order: 1
 ---
 
 # How to Contribute

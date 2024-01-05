@@ -2,6 +2,8 @@
 title: Nacos with Dubbo fusion become registry
 keywords: [Dubbo,Nacos,registration center]
 description: Nacos with Dubbo fusion become registry
+sidebar:
+    order: 1
 ---
 
 # Nacos with Dubbo fusion become registry

@@ -6,7 +6,7 @@ import LinkButton from '../common/LinkButton.astro';
 <footer-layout class="home-footer w-full bg-gray-14 flex flex-col items-center py-10">
   <slot name="after-footer" />
   <div
-    class="footer-top flex-col w-[85.125rem] flex bg-gray-13 rounded-2xl text-center lg:flex-row"
+    class="footer-top flex-col flex bg-gray-13 rounded-2xl text-center lg:flex-row"
   >
     <div
       class="footer-left flex flex-col gap-0 text-left my-9 ml-10 max-w-2xl"
@@ -116,6 +116,9 @@ import LinkButton from '../common/LinkButton.astro';
   </script>
 
 <style>
+  .footer-top {
+    width: 85.125rem;
+  }
   @media (min-width: 50rem) and (max-width: 86rem) {
     .home-footer {
       padding: 2.5rem;
