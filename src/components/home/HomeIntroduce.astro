@@ -205,8 +205,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       min-height: 0;
       padding: 1.5rem;
     }
-    .top-section,
-    .bottom-section {
+    .top-section {
       width: 100%;
     }
     .top-section .title {
@@ -223,10 +222,11 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       display: block;
     }
     .bottom-section {
-      display: none;
+      width: 100%;
+      display: none !important;
     }
     .mobile-bottom-section {
-      display: block;
+      display: block !important;
     }
     .mobile-bottom-section .btn:hover {
       background-color: theme(colors.gray.13) !important;
