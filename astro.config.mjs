@@ -74,10 +74,8 @@ export default defineConfig({
 			addPrefixImageLink,
 		]
 	},
-	build: {
-		format: 'file'
-	},
 	redirects: {
-		'/zh-cn/[...slug]': '/[...slug]'
+		'/[...slug].html': '/[...slug]',
+		'/zh-cn/[...slug]': '/[...slug]',
 	}
 });
