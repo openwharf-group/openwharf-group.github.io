@@ -45,10 +45,7 @@ export default defineConfig({
 				Sidebar: './src/components/starlight/Sidebar.astro',
 			},
 			editLink: {
-				baseUrl: 'https://github.com/withastro/starlight/edit/main/docs/',
-			},
-			social: {
-				github: 'https://github.com/withastro/starlight',
+				baseUrl: 'https://github.com/nacos-group/nacos-group.github.io',
 			},
 			locales,
 			customCss: ['./src/style/global.css','./src/style/fonts.css'],

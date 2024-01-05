@@ -85,7 +85,7 @@ const recentPosts = sortedPosts.splice(0, 4);
     </div>
     <!-- 按照分类展示 -->
     {
-      categoryPosts.map((categoryPost) => {
+      categoryPosts.map((categoryPost,categoryIndex) => {
         if (categoryPost.type === "all") return;
         else
           return (
@@ -131,8 +131,8 @@ const recentPosts = sortedPosts.splice(0, 4);
 
                   <div class="lg:col-span-3 lg:py-8 flex flex-col items-center">
                     <ul class="grid w-2/5 grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 2xl:grid-cols-3 xl:w-full 2xl:w-full gap-6 place-items-stretch">
-                      {categoryPost.posts.slice(0, 3).map((post) => (
-                            <BlogCard post={post as any} />
+                      {categoryPost.posts.slice(0, 3).map((post,postIndex) => (
+                            <BlogCard post={post as any} index={postIndex+categoryIndex+1}/>
                       ))}
                     </ul>
                   </div>

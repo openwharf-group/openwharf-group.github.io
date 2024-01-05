@@ -34,7 +34,7 @@ export default {
 	'commmon.footer.actions.start': '快速开始',
 	'commmon.footer.actions.guide': '开发者指南',
 	'commmon.footer.resource': '资源',
-	'commmon.footer.actions.comm': '社区',
+	'commmon.footer.actions.comm': '电子书',
 	'commmon.footer.actions.mse': '云服务 MSE',
 	'commmon.footer.actions.edas': '云服务 EDAS',
 
@@ -44,7 +44,7 @@ export default {
 	'home.introduce.title': '一个更易于构建云原生应用的动态服务发现、配置管理和服务管理平台',
 	'home.introduce.nacos.code': '前往 Github',
 	'home.introduce.nacos.manual': '手册',
-	'home.introduce.nacos.notes': '发布于2023年10月19日',
+	'home.introduce.nacos.notes': '发布于2023年11月30日',
 	'home.introduce.nacos.define': 'Nacos 是 Dynamic Naming and Configuration Service（动态命名和配置服务）的首字母缩写，是一个平台，通过动态服务发现、配置管理和服务治理，促进构建云原生应用。',
 	'home.introduce.nacos.aim': '我们相信一切都是服务，每个服务节点被构想为一个星球，每个服务都是一个星系。Nacos 致力于帮助建立这些服务之间的连接，并方便地聚合和管理整个星空，旨在达到浩瀚星辰的广袤海洋。',
 	'home.nacos.edge.about': '关于我们',

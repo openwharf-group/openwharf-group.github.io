@@ -34,7 +34,7 @@ export default {
 	'commmon.footer.actions.start': 'Quick Start',
 	'commmon.footer.actions.guide': 'Developer Guide',
 	'commmon.footer.resource': 'RESOURCES',
-	'commmon.footer.actions.comm': 'Community',
+	'commmon.footer.actions.comm': 'Ebook',
 	'commmon.footer.actions.mse': 'Cloud Service MSE',
 	'commmon.footer.actions.edas': 'Cloud Service EDAS',
 
@@ -44,7 +44,7 @@ export default {
 	'home.introduce.title': 'An easy-to-use dynamic service discovery, configuration and service management platform for building cloud native applications',
 	'home.introduce.nacos.code': 'VIEW ON GITHUB',
 	'home.introduce.nacos.manual': 'MANUAL',
-	'home.introduce.nacos.notes': 'Released on Oct 19, 2023',
+	'home.introduce.nacos.notes': 'Released on Nov 30, 2023',
 	'home.introduce.nacos.define': 'Nacos is an acronym for Dynamic Naming and Configuration Service, a platform that facilitates the building of cloud-native applications through dynamic service discovery, configuration management, and service governance.',
 	'home.introduce.nacos.aim': 'We believe that everything is a service, with each service node envisioned as a planet and each service as a galaxy. Nacos is dedicated to helping establish connections among these services, and to conveniently aggregate and manage the entire expanse of this celestial space, aiming towards the vast ocean of stars.',
 	'home.nacos.edge.about': 'ABOUT US',

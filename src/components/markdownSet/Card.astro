@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import moment from "moment";
 import { useTranslations } from "@i18n/util";
+import {BLOG_IMAGE_SOURCE} from '../../consts'
 
 const t = useTranslations(Astro);
 export type Props = {
@@ -19,15 +20,16 @@ export type Props = {
   };
   posterWidth?: string;
   type?: string;
+  index?: number;
 };
 
-const { post, posterWidth, type = "blog" } = Astro.props;
+const { post, posterWidth, type = "blog",index = 0 } = Astro.props;
 ---
 
 <div class="card glass h-[420px] bg-gray-02 shadow-none w-full">
   <div class="mt-3 px-2 h-2/5 w-full">
     <img
-      src="https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"
+      src={index ? BLOG_IMAGE_SOURCE[index-1] :"https://img.alicdn.com/imgextra/i2/O1CN01rP8H2S20AZit0ETbK_!!6000000006809-0-tps-1024-512.jpg"}
       alt="Background"
       class="rounded-2xl w-full h-full"
     />
