@@ -2,6 +2,8 @@
 title: Contributing Flow
 keywords: [Contributing,Source Code]
 description: This contribution flow is applicable to all Nacos community content, including but not limited to Nacos, Nacos wiki/doc, Nacos SDK.
+sidebar:
+    order: 2
 ---
 
 # Nacos Contributing Flow

@@ -2,6 +2,8 @@
 title: Nacos 监控手册
 keywords: [Nacos,监控手册]
 description: Nacos 监控手册
+sidebar:
+    order: 6
 ---
 
 # Nacos 监控手册

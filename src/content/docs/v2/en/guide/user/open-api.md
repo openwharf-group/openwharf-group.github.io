@@ -2,6 +2,8 @@
 title: Open API Guide
 keywords: [Open API,Guide]
 description: Open API Guide
+sidebar:
+    order: 3
 ---
 
 # Open API Guide

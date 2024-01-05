@@ -2,6 +2,8 @@
 title: NacosSync user guide
 keywords: [NacosSync,migration,user guide]
 description: NacosSync migration user manual
+sidebar:
+    order: 5
 ---
 
 # NacosSync migration user guide

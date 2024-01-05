@@ -2,6 +2,8 @@
 title: Nacos 融合CoreDNS 下发DNS域名
 keywords: [CoreDNS, DNS-F]
 description: Nacos 融合CoreDNS 下发DNS域名
+sidebar:
+    order: 6
 ---
 
 # Nacos DNS 使用手册

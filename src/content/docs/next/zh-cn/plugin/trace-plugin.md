@@ -2,6 +2,8 @@
 title: 轨迹追踪
 keywords: [轨迹追踪,推送轨迹,变更轨迹]
 description: Nacos 支持轨迹追踪插件，可自定义扩展制作推送轨迹等功能，帮助运维人员快速定位问题。
+sidebar:
+    order: 5
 ---
 
 # 轨迹追踪插件

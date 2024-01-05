@@ -2,6 +2,8 @@
 title: Nacos with Spring Projects
 keywords: [Nacos,Spring,quick start]
 description: This quick start introduces how to enable Nacos configuration management and service discovery features for your Spring project.
+sidebar:
+    order: 2
 ---
 
 # Nacos with Spring Projects

@@ -2,6 +2,8 @@
 title: 开发者
 keywords: [nacos,开发者,committer]
 description: Nacos 开发者页
+sidebar:
+    order: 2
 ---
 
 # 开发者

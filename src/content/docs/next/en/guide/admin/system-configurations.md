@@ -2,6 +2,8 @@
 title: Nacos system parameters introduce
 keywords: [Nacos,System parameters]
 description: Nacos system parameters introduce
+sidebar:
+    order: 3
 ---
 
 # Nacos system parameters introduce

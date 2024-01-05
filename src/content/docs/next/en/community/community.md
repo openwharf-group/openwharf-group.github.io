@@ -2,6 +2,8 @@
 title: Community
 keywords: [community,contact]
 description: Community
+sidebar:
+    order: 1
 ---
 
 # Community

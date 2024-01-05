@@ -2,6 +2,8 @@
 title: 鉴权插件
 keywords: [鉴权, 插件]
 description: 本文描述如何开发及使用Nacos的鉴权插件
+sidebar:
+    order: 1
 ---
 
 # 鉴权插件

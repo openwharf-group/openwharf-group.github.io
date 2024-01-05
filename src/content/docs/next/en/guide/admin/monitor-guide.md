@@ -2,6 +2,8 @@
 title: Nacos monitor guide
 keywords: [Nacos,monitor guide]
 description: Nacos monitor guide
+sidebar:
+    order: 6
 ---
 
 # Nacos monitor guide

@@ -2,6 +2,8 @@
 title: Cluster deployment instructions
 keywords: [Cluster,deployment]
 description: Cluster deployment instructions
+sidebar:
+    order: 2
 ---
 
 <!-- # Cluster deployment instructions -->

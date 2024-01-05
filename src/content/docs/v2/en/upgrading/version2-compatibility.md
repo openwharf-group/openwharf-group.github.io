@@ -2,6 +2,8 @@
 title: Nacos 2.0.0 compatibility
 keywords: [Nacos,2.0.0]
 description: Nacos 2.0.0 compatibility
+sidebar:
+    order: 1
 ---
 
 > Document optimizing...

@@ -2,6 +2,8 @@
 title: Nacos2.0服务配置性能测试报告
 keywords: [Nacos,服务,配置,性能]
 description: Nacos2.0服务配置性能测试报告
+sidebar:
+    order: 7
 ---
 
 # Nacos 2.0.0-ALPHA2 配置性能测试报告

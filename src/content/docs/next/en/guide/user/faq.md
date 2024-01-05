@@ -2,6 +2,8 @@
 title: FAQ
 keywords: [Nacos,FAQ]
 description: Nacos FAQ
+sidebar:
+    order: 6
 ---
 
 # FAQ

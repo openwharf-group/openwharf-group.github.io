@@ -2,6 +2,8 @@
 title: Open API 指南
 keywords: [Open API,指南]
 description: Open API 指南
+sidebar:
+    order: 3
 ---
 
 # Open API 指南

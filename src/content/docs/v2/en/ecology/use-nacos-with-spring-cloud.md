@@ -2,6 +2,8 @@
 title: Nacos with Spring Cloud Projects
 keywords: [Nacos,Spring Cloud]
 description: Quick Start for Nacos Spring Cloud Projects
+sidebar:
+    order: 4
 ---
 
 # Nacos with Spring Cloud Projects

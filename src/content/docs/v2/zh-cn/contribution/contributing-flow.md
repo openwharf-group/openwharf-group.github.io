@@ -2,6 +2,8 @@
 title: 贡献流程
 keywords: [贡献,源码]
 description: 此贡献流程适用于所有的Nacos社区内容，包括但不限于`Nacos`、`Nacos wiki/doc`、`Nacos SDK`。
+sidebar:
+    order: 2
 ---
 
 # Nacos 贡献流程

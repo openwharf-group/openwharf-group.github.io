@@ -1,7 +1,9 @@
 ---
-title: Nacos系统参数介绍
+title: 系统参数说明
 keywords: [Nacos,系统参数]
 description: Nacos系统参数介绍
+sidebar:
+    order: 3
 ---
 
 # Nacos 系统参数介绍

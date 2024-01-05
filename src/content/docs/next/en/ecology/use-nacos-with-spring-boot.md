@@ -2,6 +2,8 @@
 title: Nacos with Spring Boot Projects
 keywords: [Nacos,Spring Boot]
 description: Quick Start for Nacos Spring Boot Projects
+sidebar:
+    order: 3
 ---
 
 # Nacos with Spring Boot Projects

@@ -2,6 +2,8 @@
 title: NacosSync 用户手册
 keywords: [NacosSync,迁移,用户手册]
 description: NacosSync 迁移用户手册
+sidebar:
+    order: 5
 ---
 
 # NacosSync 用户手册

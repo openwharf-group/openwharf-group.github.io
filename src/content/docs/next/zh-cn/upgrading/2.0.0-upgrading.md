@@ -2,6 +2,8 @@
 title: Nacos 2.0 升级文档
 keywords: [Nacos,2.0,升级]
 description: Nacos 2.0 升级文档
+sidebar:
+    order: 2
 ---
 
 > 文档优化中......

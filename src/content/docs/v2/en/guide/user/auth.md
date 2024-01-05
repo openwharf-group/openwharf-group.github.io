@@ -2,6 +2,8 @@
 title: Authentication
 keywords: [Authentication]
 description: Authentication
+sidebar:
+    order: 5
 ---
 
 > Attention

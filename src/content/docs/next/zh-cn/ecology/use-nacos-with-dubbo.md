@@ -2,6 +2,8 @@
 title: Dubbo 融合 Nacos 成为注册中心
 keywords: [Dubbo,Nacos,注册中心]
 description: Dubbo 融合 Nacos 成为注册中心
+sidebar:
+    order: 1
 ---
 
 # Dubbo 融合 Nacos 成为注册中心

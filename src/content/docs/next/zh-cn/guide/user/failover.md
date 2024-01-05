@@ -2,6 +2,8 @@
 title: Java客户端容灾
 keywords: [容灾]
 description: Java客户端容灾用户指南
+sidebar:
+    order: 7
 ---
 
 # Java客户端容灾

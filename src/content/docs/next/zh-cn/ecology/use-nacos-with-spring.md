@@ -2,6 +2,8 @@
 title: Nacos 融合 Spring，成为注册配置中心
 keywords: [Nacos,Spring,快速开始]
 description: 本文主要面向 Spring 的使用者，通过两个示例来介绍如何使用 Nacos 来实现分布式环境下的配置管理和服务发现。
+sidebar:
+    order: 2
 ---
 
 # Nacos 融合 Spring，成为注册配置中心

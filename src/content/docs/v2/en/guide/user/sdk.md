@@ -2,6 +2,8 @@
 title: Java SDK
 keywords: [Java,SDK]
 description: Java SDK
+sidebar:
+    order: 1
 ---
 
 # Java SDK
