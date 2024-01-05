@@ -60,7 +60,7 @@ export default {
 	'home.ebook.resource': '资源',
 	'home.ebook.nacos': 'Nacos 电子书',
 	'home.ebook.download': '前往下载',
-	'home.features.about': '前往 Github',
+	'home.features.about': '产品优势',
 	'home.features.title': '探索特性',
 	'home.features.1.title': '动态配置服务',
 	'home.features.1.summary': '以集中、外部化和动态的方式管理所有环境中的配置。',

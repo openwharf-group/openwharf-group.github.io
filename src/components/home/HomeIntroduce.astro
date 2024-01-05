@@ -17,7 +17,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
 ---
 
 <home-introduce class="introduce flex flex-col justify-center items-center">
-  <div class="top-section flex flex-col relative container">
+  <div class="top-section flex flex-col relative">
     <HomeBackground />
     <div class="py-6 text-gray-08 text-xs">{t('home.introduce.about')}</div>
     <div class="title text-[5rem] leading-[6rem] text-gray-03 mb-4">
@@ -46,7 +46,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
 
   <div class="bottom-section flex mb-10 mt-[3.625rem]">
     <div
-      class="desc overflow-hidden relative mr-4 rounded-2xl p-6 text-blue-02 text-sm cursor-pointer"
+      class="desc overflow-hidden relative mr-4 rounded-2xl p-6 text-blue-03 text-sm cursor-pointer"
     >
     
       <UpRight classList={["arrow", "absolute", "top-6", "right-6"]} theme="light"/>
@@ -55,7 +55,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         <div>{t('home.introduce.nacos.define')}</div>
         <div class="mt-4">{t('home.introduce.nacos.aim')}</div>
       </div>
-      <div class="text-gray-02 text-xs absolute bottom-6 left-6">
+      <div class="text-gray-02 text-xs tracking-[0.15em] absolute bottom-6 left-6">
         {t('home.introduce.about')}
       </div>
     </div>
@@ -74,22 +74,22 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         <LinkButton
           href="https://github.com/alibaba/nacos"
           title=""
-          class='rounded-lg bg-blue-08 text-gray-02 hover:bg-blue-09 border-none'
+          class='rounded-lg bg-blue-08 hover:bg-blue-09 border-none'
           arrowTheme="light"
         >
           <Star />
           <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
-          <span>{startCount}</span>
+          <span class="text-gray-03">{startCount}</span>
         </LinkButton>
 
         <LinkButton
           href="https://github.com/alibaba/nacos/fork"
           title=""
-          class='fork border-none rounded-lg text-gray-10'
+          class='fork border-none rounded-lg'
         >
           <Fork />
           <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
-          <span>{forkCount}</span>
+          <span class="text-gray-11">{forkCount}</span>
         </LinkButton>
       </div>
     </div>
@@ -135,6 +135,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
   }
   .top-section {
     width: 85.125rem;
+    overflow: hidden;
     border-bottom: 1px solid theme('colors.gray.12');
   }
   .top-section .shortcut button {
@@ -249,10 +250,5 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       -webkit-line-clamp: 4;
     }
   }
-
-.container {
-  position: relative;
-  overflow: hidden;
-}
 
 </style>
