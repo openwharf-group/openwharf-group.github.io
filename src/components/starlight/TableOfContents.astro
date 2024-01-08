@@ -7,7 +7,7 @@ import './style.css';
 import FeedbackButton from './FeedbackButton.astro';
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
-const { locale, toc, editUrl } = Astro.props;
+const { locale, toc, editUrl,entry } = Astro.props;
 ---
 
 {
@@ -16,7 +16,7 @@ const { locale, toc, editUrl } = Astro.props;
 			<nav aria-labelledby="starlight__on-this-page" class="starlight__on-this-page">
 				<h2 id="starlight__on-this-page" class="heading">{t('rightSidebar.onThisPage')}</h2>
 				<TableOfContentsList toc={toc.items} />
-				<ContributeMenu editHref={editUrl.href}/>
+				<ContributeMenu editHref={editUrl.href} title={entry?.data?.title}/>
 				<CommunityMenu />
 				<FeedbackButton />
 			</nav>

@@ -1,3 +1,9 @@
+.sl-markdown-content
+	:not(a, strong, em, del, span, input, code)
+	+ :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
+	margin-top: 1.5rem;
+}
+
 /* Headings after non-headings have more spacing. */
 .sl-markdown-content
 	:not(h1, h2, h3, h4, h5, h6)
@@ -32,7 +38,7 @@
 .sl-markdown-content
 	li
 	> :last-child:not(li, ul, ol):not(a, strong, em, del, span, input, :where(.not-content *)) {
-	margin-bottom: 1rem;
+	margin-bottom: 1.25rem;
 }
 
 .sl-markdown-content dt:not(:where(.not-content *)) {
@@ -103,8 +109,9 @@
 }
 
 .sl-markdown-content blockquote:not(:where(.not-content *)) {
-	border-inline-start: 1px solid var(--sl-color-gray-5);
+	border-inline-start: 1.5px solid var(--sl-color-gray-5);
 	padding-inline-start: 1rem;
+	background-color: theme('colors.gray.01');
 }
 
 .sl-markdown-content table:not(:where(.not-content *)) {
