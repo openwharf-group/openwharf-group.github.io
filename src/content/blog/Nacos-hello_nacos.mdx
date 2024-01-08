@@ -1,9 +1,77 @@
 ---
-title: Hello Nacos
-description: Hello Nacoso
+title: 云原生网关可观测性综合实践
+description: 云原生网关可观测性综合实践
+
 date: 2024-01-07
 category: 
 keywords: ["Nacos"]
 authors: [heimanba|https://img.alicdn.com/imgextra/i2/O1CN016ap9vR1XXoyLhfYOh_!!6000000002934-2-tps-130-130.png]
 ---
-## 测试一下
+<a name="XCNGp"></a>
+# 可观测性
+可观测性（Observability）是指系统、应用程序或服务的运行状态、性能和行为能够被有效地监测、理解和调试的能力。<br />随着系统架构从单体架构到集群架构再到微服务架构的演进，业务越来越庞大，也越来越复杂。云原生时代背景下，随着微服务、Service Mesh、 Serverless 等新技术的出现，业务的复杂度很快就超过了个人的极限，可观测性在现代分布式系统的设计和运维中变得越来越重要。传统的监控和告警方法往往只关注系统的一些基本指标，而忽略了更细粒度的信息和上下文。可观测性的目标是通过全面的数据收集和分析，提供更深入和全面的洞察力，使运维和开发人员能够更好地理解系统的行为、排查问题、预测性能瓶颈和应对故障。<br />日志、指标和分布式追踪被称为可观测性的三大支柱：
+
+1. 日志（Logging）：日志是记录系统运行过程中产生的事件和信息的记录。通过记录应用程序的日志，可以了解系统的运行状态、错误和异常信息，方便故障排查和系统分析。常见的日志系统包括ELK（Elasticsearch、Logstash、Kibana）和Splunk等。
+2. 指标（Metrics）：指标是用于衡量系统各个方面性能的度量标准。通过采集和记录指标数据，可以实时监控系统的运行情况，包括CPU使用率、内存占用、请求响应时间等。常用的指标系统有Prometheus和InfluxDB等。
+3. 分布式追踪（Distributed Tracing）：分布式追踪是用于跟踪和监控分布式系统中请求的路径和性能的技术。通过将请求在系统中的不同组件之间传递一个唯一标识符，可以追踪请求的流程和耗时，帮助分析和优化系统性能。常见的分布式追踪系统有Zipkin和Apache Skywalking等。
+
+通过提供全面且精确的可观测性，系统的开发和运维人员可以更快速地发现问题、理解系统行为，并做出相应的优化和决策，从而提高系统的性能、稳定性和可靠性。
+<a name="rxb0m"></a>
+# 云原生网关可观测体系
+MSE云原生网关依托阿里云现有的云产品（日志服务SLS、应用实时监控服务 ARMS）以及对开源软件的良好支持构建了丰富的可观测体系，为用户提供了强大的日志、监控、链路追踪以及告警功能，功能大图如下所示：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694057145436-8fcc46b7-798a-40be-a47d-a7b51d372865.png#clientId=ub0dc13a4-c99f-4&from=paste&height=762&id=ufac9c106&originHeight=1524&originWidth=2482&originalType=binary&ratio=2&rotation=0&showTitle=false&size=302251&status=done&style=none&taskId=u7befec6f-f0f2-41c2-9567-d79c03cac97&title=&width=1241)<br />**网关的可观测性能力致力于帮助客户构建产品的可靠性体验，为客户提供故障发现与故障定位的能力，减少故障的发生以及降低故障的影响面。**基于网关的监控与告警管理功能，实现故障的及时发现与通知到客户；基于监控与日志，实现故障的快速定位；基于链路追踪，实现请求调用的全链路故障根因排查。
+<a name="hQo0L"></a>
+# 云原生网关可观测实践
+<a name="fNHpp"></a>
+## 过程概览
+本文将依据下图中标注的功能模块出发，帮助读者体验网关可观测性在故障发现与故障定位中的能力。<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694136900275-764442f1-f418-4826-9556-aaac71305f00.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=762&id=u833e2402&originHeight=1524&originWidth=2482&originalType=binary&ratio=2&rotation=0&showTitle=false&size=477466&status=done&style=none&taskId=u6aea345a-7a19-422b-9d55-d470164b599&title=&width=1241)<br />整体流程如下图所示：
+
+1. 用户收到网关发出的告警
+2. 用户查看prometheus监控找到出问题的路由、服务
+3. 用户查看SLS日志获取更详细的报错信息
+4. 用户通过链路追踪排故障的根因
+
+![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694065269572-51915f03-44ff-4d92-b863-c4f745f76e61.png#clientId=ub0dc13a4-c99f-4&from=paste&height=552&id=u7b2f8c52&originHeight=1104&originWidth=1776&originalType=binary&ratio=2&rotation=0&showTitle=false&size=162892&status=done&style=none&taskId=ueeeb4646-cbee-47b9-a356-e1620ead806&title=&width=888)
+<a name="tKqz3"></a>
+## 测试环境架构概览
+![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694144806881-40ada907-14ef-4072-af45-1143abd82654.png#clientId=u68e38241-5cf8-4&from=paste&height=647&id=ub64b7055&originHeight=1294&originWidth=2226&originalType=binary&ratio=2&rotation=0&showTitle=false&size=842523&status=done&style=none&taskId=uabaa4188-87cd-4a72-b06d-ff95e38194a&title=&width=1113)<br />本文在ACK集群中部署了一系列Springboot的服务，调用关系如上图所示，其中Spring SVC 4-2 发生了crash。通过网关接入ACK集群，创建路由如下：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694137049470-bb648a49-a8e5-4cf6-acfc-48f3d75f1f91.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=168&id=udae7f6ae&originHeight=336&originWidth=3398&originalType=binary&ratio=2&rotation=0&showTitle=false&size=963609&status=done&style=none&taskId=uef31035f-ae6c-4246-8af1-5fc66bd97e8&title=&width=1699)<br />测试过程中会通过以下三种请求去访问网关：
+
+1. 正常的请求，网关路由到httpbin
+2. 在网关处就返回错误的请求，本文使用无法命中路由的请求
+3. 在上游服务返回错误的请求，网关路由到Spring SVC 1
+
+此时网关的错误率会出现明显上升。
+<a name="d9TOJ"></a>
+## 故障发现与定位过程
+<a name="sPHP7"></a>
+### 通过告警策略及时发现故障
+首先配置网关的告警策略，从网关实例粒度设置告警规则与通知策略，本文中采用了邮件通知的方式，除此之外还有电话、短信等方式。配置告警策略的示例如下图所示：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1693967368305-42624bc1-c6c8-4f14-a445-84cb50d7288a.png#clientId=u49f225d3-11d2-4&from=paste&height=1396&id=u49a048d3&originHeight=2792&originWidth=2920&originalType=binary&ratio=2&rotation=0&showTitle=false&size=6100254&status=done&style=none&taskId=u2112921e-c5da-4fd7-9e15-ed6ea88a4c6&title=&width=1460)<br />通过以下邮件信息可以得知网关出现了故障：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1693967357983-72564a87-d8f1-4522-875f-582b58babe84.png#clientId=u49f225d3-11d2-4&from=paste&height=542&id=u34df7e7b&originHeight=1038&originWidth=1422&originalType=binary&ratio=2&rotation=0&showTitle=false&size=1315123&status=done&style=none&taskId=u05986a1e-e59d-44bc-bf65-d7e2c8caf4d&title=&width=742)
+<a name="ZU7sF"></a>
+### 通过 Arms Prometheus 监控初步定位问题
+接下来，查看网关观测分析->业务监控->全局看板的错误信息概览板块，当前监控信息如下：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694137879856-d1328b14-c0f4-4c08-9554-8de18d297691.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=796&id=uec0cbb53&originHeight=1592&originWidth=3724&originalType=binary&ratio=2&rotation=0&showTitle=false&size=4855723&status=done&style=none&taskId=uf06cacce-30ea-4ea5-a569-f8bfc8f72f2&title=&width=1862)<br />根据图中内容，可以得到以下信息：
+
+1. “网关粒度失败率”看板中，网关整体失败率是大于上游服务失败率的，这意味着一部分请求在网关处返回了错误码，一部分请求在上游服务处返回了错误码
+2. “路由粒度失败率”看板中，能够看到只有路由名称为“spring”的路由失败率不是0
+3. “上游服务粒度失败率”看板中，能够看到只有服务名称为“springboot-svc-1.app-system.svc.cluster.local”的服务失败率不是0
+
+点击图中“路由失败请求数排行”或者“上游服务失败请求数排行”中的路由名或者服务名可以查看路由或者服务的详细信息。<br />路由名为“spring”的路由监控信息如下图所示：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694070466703-f4a6c58b-d5a7-4b40-b242-327d75483a61.png#clientId=ub0dc13a4-c99f-4&from=paste&height=685&id=h7O2W&originHeight=1370&originWidth=3308&originalType=binary&ratio=2&rotation=0&showTitle=false&size=3921631&status=done&style=none&taskId=u3fb38177-8d7e-4445-b3e5-4bfddb6ecff&title=&width=1654)<br />服务名为“springboot-svc-1.app-system.svc.cluster.local”的服务监控信息如下图所示：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694070561363-99994e2d-6988-482c-aaad-4ea7b1a83a95.png#clientId=ub0dc13a4-c99f-4&from=paste&height=893&id=uc13ae4df&originHeight=1786&originWidth=3816&originalType=binary&ratio=2&rotation=0&showTitle=false&size=5962387&status=done&style=none&taskId=u5bf73689-9d7f-497c-9800-ff77d649622&title=&width=1908)<br />上图中显示出现错误的路由和服务返回的错误码为5xx，至此，已经初步定位到问题所在：
+
+1. 路由“spring”指向的上游服务“springboot-svc-1.app-system.svc.cluster.local”出现了问题
+
+但是，目前还有两个问题需要解决：
+
+1. 在网关处返回错误的请求是什么原因？
+2. 服务“springboot-svc-1.app-system.svc.cluster.local”的错误是什么原因造成的？
+<a name="aSvsa"></a>
+### 通过 SLS 网关日志获取详细信息
+接下来通过网关日志中心的SLS日志获取更详细的信息。<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694070939428-bf3a919c-ca5e-4e43-979c-7b58b90eafcc.png#clientId=ub0dc13a4-c99f-4&from=paste&height=786&id=uf697d1aa&originHeight=1572&originWidth=3756&originalType=binary&ratio=2&rotation=0&showTitle=false&size=4980530&status=done&style=none&taskId=u12b1b1cb-dfb8-42f3-911c-c48ff7e4310&title=&width=1878)<br />首先点击response_code，此时会自动生成查询请求，可以看到这段时间内网关的响应码只有三种：200，404，500。<br />在网关问题排查页面，输入响应码，可以查看错误码可能的原因：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694144628679-7788102e-118e-4c9d-a984-2efa59a27237.png#clientId=uc89b23ba-4ba4-4&from=paste&height=834&id=u9bb2d461&originHeight=1668&originWidth=3048&originalType=binary&ratio=2&rotation=0&showTitle=false&size=4171202&status=done&style=none&taskId=u785104ca-df60-4693-ab18-eb8f091068a&title=&width=1524)<br />可以看到返回404响应码的原因是没有命中路由导致。<br />类似的，当选择响应码为500时，可以看到相应的路由名以及服务名，如下图所示：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694071291103-65dff882-f23c-4378-a056-ac32024bb7b3.png#clientId=ub0dc13a4-c99f-4&from=paste&height=802&id=uea46ff15&originHeight=1604&originWidth=3754&originalType=binary&ratio=2&rotation=0&showTitle=false&size=5112095&status=done&style=none&taskId=uf40d7bc1-eed2-449a-b76d-b5ebd7716f2&title=&width=1877)<br />通过问题排查工具可以看到，错误是后端服务造成的：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694144720708-165e4224-991a-416f-a77a-fd720c45fd7d.png#clientId=uc89b23ba-4ba4-4&from=paste&height=752&id=ud76fe758&originHeight=1504&originWidth=3064&originalType=binary&ratio=2&rotation=0&showTitle=false&size=3892646&status=done&style=none&taskId=ub0b35452-3cc6-4380-b7b9-d75aeaa54ac&title=&width=1532)<br />到现在为止，只剩下一个问题：
+
+1. 服务“springboot-svc-1.app-system.svc.cluster.local”的错误根因是什么？
+<a name="UKPI3"></a>
+### 通过 Arms xtrace 链路追踪分析调用链
+借助于链路追踪技术，可以获取更细粒度的错误信息。只需要简单的配置，网关即可接入Arms xtrace：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694137204699-ada354bb-bb4a-4aeb-9fce-618d0a79292d.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=286&id=u72d30b88&originHeight=572&originWidth=1086&originalType=binary&ratio=2&rotation=0&showTitle=false&size=629122&status=done&style=none&taskId=uefa027ac-06a0-41e0-b21c-102e06afc36&title=&width=543)<br />ACK集群上的Java应用按照以下文档进行配置：[为容器服务Kubernetes版Java应用安装探针](https://help.aliyun.com/zh/arms/application-monitoring/getting-started/install-arms-agent-for-java-applications-deployed-in-ack?spm=a2c4g.11186623.0.i6#arms-cs-k8s-java)<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694139494562-241710dd-e0dc-4a91-9ae1-b90b97e583fe.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=765&id=u777fc8ad&originHeight=1530&originWidth=3706&originalType=binary&ratio=2&rotation=0&showTitle=false&size=4877365&status=done&style=none&taskId=u852cab32-add5-4d3b-b21b-31939cc5132&title=&width=1853)<br />在SLS日志中找到一条错误请求的traceid，根据traceid在链路追踪页面搜索相应的调用链路，分析调用链路错误的根因：<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1694142453627-007e12d8-329b-4e10-81c0-d68fb8237d6d.png#clientId=u1d4ce4fe-b1e1-4&from=paste&height=552&id=u271ef15c&originHeight=1104&originWidth=2312&originalType=binary&ratio=2&rotation=0&showTitle=false&size=2250832&status=done&style=none&taskId=u58ff6294-6fec-4aa1-a22d-96f17f6f2bd&title=&width=1156)<br />从链路追踪结果看，故障根因是springboot-svc-4-2服务错误，至此，一次完整的故障发现与故障定位已经完成。
+<a name="StLOj"></a>
+## 总结
+本次通过云原生网关可观测性进行故障发现和故障定位的实践过程中，首先通过网关的告警策略将故障通知到用户，然后通过arms提供的prometheus监控服务初步定位到出现故障的路由以及服务，之后通过SLS日志服务提供的网关的结构化日志进行查询分析，排查出部分错误是客户端请求路径错误导致，最后通过链路追踪对服务调用链路进行分析，最终成功对故障根因进行定位。
+<a name="FCy2v"></a>
+# **加入Higress社区**
+![](https://intranetproxy.alipay.com/skylark/lark/0/2023/png/90456445/1693825956755-7aa53dce-2f52-4c20-8a3c-f6d28249e5d9.png?x-oss-process=image%2Fresize%2Cw_1500%2Climit_0#from=url&id=kl7qb&originHeight=909&originWidth=1500&originalType=binary&ratio=2&rotation=0&showTitle=false&status=done&style=none&title=)
