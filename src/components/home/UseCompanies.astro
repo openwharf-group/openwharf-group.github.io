@@ -251,8 +251,9 @@ const companiesLogos = companiesLogosTop.concat(companiesLogosBottom);
     .mobile-bottom-card {
       display: flex !important;
       flex-wrap: wrap;
-      justify-content: space-between;
+      /* justify-content: space-between; */
     }
+
     .card-item {
       padding: 0.375rem;
       display: flex;
@@ -262,6 +263,8 @@ const companiesLogos = companiesLogosTop.concat(companiesLogosBottom);
       max-width: 100%;
       margin-bottom: 1rem;
       background-color: #fff;
+      filter: grayscale(100%);
+      margin-right: 10px;
     }
   }
 
