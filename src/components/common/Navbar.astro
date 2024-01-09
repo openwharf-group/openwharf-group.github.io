@@ -1,5 +1,8 @@
 ---
 import Toggle from '@components/common/Toggle.astro';
+import { isChinese } from '@i18n/util';
+import { tr } from 'date-fns/locale';
+import _ from 'lodash';
 
 interface Props {
   dataSource: {
@@ -18,9 +21,41 @@ interface Props {
 }
 const { dataSource = [] } = Astro.props;
 const lastIdx = dataSource.length - 1;
+let _dataSource = _.cloneDeep(dataSource);
+(() => {
+  // 修改 文档 菜单显示逻辑
+  const pathname = Astro.url.pathname;
+  if (!pathname.startsWith('/docs/')) return;
+  if (pathname.startsWith('/docs/ebook')) return;
 
-console.log('dataSource==', dataSource)
-// console.log('nav dataSource====', dataSource, Astro.url.pathname);
+  const regex = /(?<=\/docs\/)(?!what-is-nacos)[^\/]+/;
+  
+  const [docs, ] = _dataSource;
+  const matchVersion = {};
+  const versions = docs.items.map(item => {
+    const match = item.link.match(regex);
+    const version = match?.[0] || 'latest';
+    Reflect.set(matchVersion, version, {
+      zh: item.label,
+      en: item.translations?.en,
+    })
+    return version;
+  });
+
+  const match = pathname.match(/\/docs\/([^\/]*)/);
+  // next v1 v2
+  const result = match?.[1] || '';
+  // 文档的当前版本
+  const version = versions.includes(result) ? result : 'latest';
+
+  const ifzh = isChinese(Astro);
+
+  // const docsLabel = matchVersion[version][ifzh ? 'zh' : 'en'];
+  const docsLabel = matchVersion[version]['zh'];
+
+  _dataSource[0].label = docsLabel;
+
+})();
 
 const ifactive = (route: string, items: {label: string; link?: string; children?: any[]}[]) => {
   let active = false;
@@ -38,13 +73,19 @@ const ifactive = (route: string, items: {label: string; link?: string; children?
     }
   }
 
-  
   active = _items.some(sub => {
   // 以下是特殊处理 不适用其他toggle 高亮的情况，因为文档比较特殊
     let pathname = sub.link;
-    if (sub.link.startsWith('/docs/ebook/')) {
-      pathname = '/docs/ebook/'
-    };
+
+    if (sub.link.startsWith('/docs/')) {
+      const pattern = /^\/docs\/ebook\//;
+      if (pattern.test(Astro.url.pathname)) {
+        return true;
+      } else {
+        pathname = '/docs/'
+        // return Astro.url.pathname.startsWith(pathname);
+      }
+    }
 
     return Astro.url.pathname.startsWith(pathname);
   });
@@ -57,7 +98,7 @@ const ifactive = (route: string, items: {label: string; link?: string; children?
 <navbar-component class="navbar-component h-full">
   <div class=`${Astro.props?.class || ''}`>
     {
-      dataSource.map(async (toggle, index) => {
+      _dataSource.map(async (toggle, index) => {
         const { label, trigger, route, target, slot, position = 'absolute', items = [] } = toggle;
         // const component = slot && await import(slot);
         const active = ifactive(route, items);
