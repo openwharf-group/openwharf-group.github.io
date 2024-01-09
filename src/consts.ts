@@ -6,13 +6,13 @@ export const SITE_DESCRIPTION = 'Welcome to my website!';
 export const BLOG_CATEGORY = [
     {
         type: 'article',
-        title: '技术',
+        title: '技术文章',
         href: '/blog/article'
     },
     
     {
         type: 'ecosystem',
-        title: '生态',
+        title: '生态文章',
         href: '/blog/ecosystem'
     },
     {
@@ -48,6 +48,11 @@ export const NEWS_CATEGORY = [
         title:'社区合作',
         href: '/news/cooperate'
     },
+    {
+        type: 'all',
+        title:'全部新闻',
+        href: '/news/all'
+    }
 ]
 
 export const ACTIVITY_CATEGORY = [
@@ -65,6 +70,11 @@ export const ACTIVITY_CATEGORY = [
         type: 'activity-detail',
         title:'活动详情',
         href: '/activity/activity-detail'
+    },
+    {
+        type: 'all',
+        title:'全部活动',
+        href: '/activity/all'
     }
 ]
 
