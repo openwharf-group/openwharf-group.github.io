@@ -1,12 +1,10 @@
 ---
 import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
-import BlogHeader from "@components/markdownSet/SubHeading.astro";
-import { BLOG_CATEGORY } from 'src/consts';
+import { ACTIVITY_CATEGORY } from "src/consts";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 
 interface Post {
@@ -19,35 +17,39 @@ interface Post {
         date: string;
         keywords?: any[];
     };
-};
+}
 
 // 分页数据在page参数中传递
 const { page } = Astro.props;
 
 const allPages = [...Array(page.lastPage).keys()].map((num) => {
-    return `/blog/all${num === 0 ? "" : `/${String(num + 1)}`}`;
+    return `/news/all${num === 0 ? "" : `/${String(num + 1)}`}`;
 });
 
 export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
-    const blogCategories = new Set(BLOG_CATEGORY.map((item) => item.type));
+    const blogCategories = new Set(ACTIVITY_CATEGORY.map((item) => item.type));
     const posts = await getCollection("blog", (item) =>
         blogCategories.has(item.data.category),
     );
 
     const sortedPosts = posts.sort(
-        (a,b)=> new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+        (a, b) =>
+            new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
     );
     return paginate(sortedPosts, { pageSize: 9 });
 }
 ---
 
-<BaseLayout title="Nacos Blog" >
-    <!-- <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/> -->
-    <BlogTop title="所有文章"  type="blog-sub" />
-    <div
-        class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
-    >
-        <ul class="w-[85.125rem] grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-6 place-items-stretch">
+<BaseLayout title="Nacos Blog">
+    <BlogTop
+        title="所有活动"
+        type="activity-sub"
+        category={ACTIVITY_CATEGORY}
+    />
+    <div class="flex flex-col items-center gap-20 py-8">
+        <ul
+            class="w-[85.125rem] grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-6 place-items-stretch"
+        >
             {
                 page.data.map((post) => (
                     <div>
