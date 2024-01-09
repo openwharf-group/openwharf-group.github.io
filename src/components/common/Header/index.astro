@@ -1,0 +1,85 @@
+---
+import Navbar from '@components/common/Navbar.astro';
+import _ from 'lodash';
+import LanguageToggle from "@components/common/LanguageToggle.astro";
+import Navbars from './navbar';
+
+interface Props {
+  align?: "home" | "docs";
+  position?: "static" | "sticky";
+  lang: "zh-cn" | "en" | string;
+}
+
+// const navbars = (await import.meta.glob("./_navbar.json", { eager: true }));
+// let dataSource = [];
+// _.each(navbars,(item, key) => { dataSource = item.default; });
+const dataSource = Navbars;
+
+
+const { align = "home", position = "sticky", lang } = Astro.props;
+const height = align === "home" ? "4rem" : "3.5rem";
+const width = align === "home" ? "85.125rem" : "100%";
+const xpadding = align === "home" ? "0" : "1.5rem";
+
+---
+
+<header-layout2
+  style={`position: ${position}; height: ${height}`}
+  class="w-screen top-0 z-[10000] bg-gray-14 flex justify-center"
+>
+  <!-- 方便控制header宽度 -->
+  <div class="header-content flex items-center justify-between">
+
+    <a class="no-underline" href="/">
+      <img
+        class="logo"
+        src="https://img.alicdn.com/imgextra/i4/O1CN01rW3vAB1FDWKSOiFf0_!!6000000000453-2-tps-204-40.png"
+        alt="nacos-log"
+      />
+    </a>
+
+    <Navbar dataSource={dataSource} class='h-full'/>
+
+    <div>
+      <LanguageToggle id="pc-toggle" size="small" lang={Astro.props.lang} />
+    </div>
+
+  </div>
+  
+</header-layout2>
+
+
+
+<script>
+  class HeaderLayout2 extends HTMLElement {
+
+    constructor() {
+        super();
+    }
+
+  }
+  customElements.define("header-layout2", HeaderLayout2);
+
+</script>
+
+<style define:vars={{ width, height, xpadding }}>
+  header-layout2 {
+    --header-content-width: var(--width);
+    --logo-width: 96px;
+    --header-height: var(--height);
+    --header-xl-padding: var(--xpadding);
+  }
+
+  .header-content {
+    width: var(--header-content-width);
+    padding-left: var(--header-xl-padding);
+    padding-right: var(--header-xl-padding);
+  }
+
+  .logo {
+    vertical-align: sub;
+    width: var(--logo-width);
+  }
+
+</style>
+

@@ -1,0 +1,121 @@
+---
+import Toggle from '@components/common/Toggle.astro';
+
+interface Props {
+  dataSource: {
+    label: string;
+    trigger?: 'hover' | 'click';
+    route?: string;
+    target?: '_blank' | '_self';
+    slot?: string;
+    position?: 'absolute' | 'fixed';
+    items?: {
+      label: string;
+      link?: string;
+    }[];
+  }[];
+  class?: string;
+}
+const { dataSource = [] } = Astro.props;
+const lastIdx = dataSource.length - 1;
+
+console.log('dataSource==', dataSource)
+// console.log('nav dataSource====', dataSource, Astro.url.pathname);
+
+const ifactive = (route: string, items: {label: string; link?: string; children?: any[]}[]) => {
+  let active = false;
+  if (route) {
+    return Astro.url.pathname.startsWith(route);
+  }
+  // 需要根据当前path找到激活目标
+  const _items = [];
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    if (item.children && item.children.length) {
+      _items.push(...item.children);
+    } else {
+      _items.push(item);
+    }
+  }
+
+  
+  active = _items.some(sub => {
+  // 以下是特殊处理 不适用其他toggle 高亮的情况，因为文档比较特殊
+    let pathname = sub.link;
+    if (sub.link.startsWith('/docs/ebook/')) {
+      pathname = '/docs/ebook/'
+    };
+
+    return Astro.url.pathname.startsWith(pathname);
+  });
+  return active;
+}
+
+---
+
+
+<navbar-component class="navbar-component h-full">
+  <div class=`${Astro.props?.class || ''}`>
+    {
+      dataSource.map(async (toggle, index) => {
+        const { label, trigger, route, target, slot, position = 'absolute', items = [] } = toggle;
+        // const component = slot && await import(slot);
+        const active = ifactive(route, items);
+        return (
+          <Toggle 
+            title={label}
+            route={route}
+            target={target}
+            trigger={trigger}
+            active={active}
+            items={items}
+            slot={slot}
+            position={position}
+            class={`item ${index === lastIdx ? 'item-last-child h-full' : 'h-full'}`}
+          >
+          </Toggle>
+        );
+      })
+    }
+  </div>
+</navbar-component>
+
+<script>
+  class Navbar extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+  }
+  customElements.define("navbar-component", Navbar);
+</script>
+
+<style>
+  navbar-component {
+    --navbar-line-bgd: theme('colors.gray.12');
+  }
+  
+  .navbar-component {
+    display: inline-block;
+    position: relative;
+    /* 防止换行和空白间隙 2px 默认值 外部不用修改*/
+    font-size: 0.125rem; 
+  }
+
+  .navbar-component .item::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    width: 1px;
+    height: 16px;
+    /* height: calc(100% - 20px); */
+    background-color: var(--navbar-line-bgd);
+  }
+
+  .navbar-component .item-last-child::after {
+    display: none;
+  }
+
+</style>
