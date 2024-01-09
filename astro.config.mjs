@@ -43,7 +43,6 @@ export default defineConfig({
 				Header: './src/components/starlight/Header.astro',
 				Head: './src/components/starlight/Head.astro',
 				Sidebar: './src/components/starlight/Sidebar.astro',
-				MarkdownContent: './src/components/starlight/MarkdownContent.astro'
 			},
 			editLink: {
 				baseUrl: 'https://github.com/nacos-group/nacos-group.github.io',
