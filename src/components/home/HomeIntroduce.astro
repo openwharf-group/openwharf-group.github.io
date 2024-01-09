@@ -1,16 +1,16 @@
 ---
-import { useTranslations, isChinese } from '@i18n/util';
-import Github from '../icon/Github.astro';
-import Star from '../icon/Star.astro';
-import Fork from '../icon/Fork.astro';
-import UpRight from '../icon/UpRight.astro';
-import LinkButton from '../common/LinkButton.astro';
-import HomeBackground from '../home/HomeBackground.astro';
+import { useTranslations, isChinese } from "@i18n/util";
+import Github from "../icon/Github.astro";
+import Star from "../icon/Star.astro";
+import Fork from "../icon/Fork.astro";
+import UpRight from "../icon/UpRight.astro";
+import LinkButton from "../common/LinkButton.astro";
+import HomeBackground from "../home/HomeBackground.astro";
 
 const t = useTranslations(Astro);
 const ifzh = isChinese(Astro);
 
-const data = await fetch('https://api.github.com/repos/alibaba/nacos').then(
+const data = await fetch("https://api.github.com/repos/alibaba/nacos").then(
   (r) => r.json(),
 );
 const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
@@ -20,12 +20,16 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
 <home-introduce class="introduce flex flex-col justify-center items-center">
   <div class="top-section flex flex-col relative">
     <HomeBackground />
-    <div class="py-6 text-gray-08 text-xs">{t('home.introduce.about')}</div>
-    <div class=`title leading-[6rem] text-gray-03 mb-4 ${ifzh ? 'text-[4rem]' : 'text-[5rem]'}`>
-      {t('home.introduce.title')}
+    <div class="introduce_about pt-6 pb-4 text-gray-08 text-xs mt-[2.375rem]">
+      {t("home.introduce.about")}
     </div>
-    <div class="shortcut flex pt-6">
-      <LinkButton
+    <div
+      class=`title leading-[5rem] text-gray-03 mb-8 ${ifzh ? 'text-[3.75rem]' : 'text-[5rem]'}`
+    >
+      {t("home.introduce.title")}
+    </div>
+    <div class="shortcut flex">
+      <!-- <LinkButton
         class='rounded-3xl'
         title={t('home.introduce.nacos.code')}
         href="https://github.com/alibaba/nacos"
@@ -38,26 +42,50 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         title={t('home.introduce.nacos.manual')}
         arrowTheme="light"
         href="/docs/what-is-nacos"
-      />
+      /> -->
+      <LinkButton
+        href="https://github.com/alibaba/nacos"
+        title=""
+        class="rounded-3xl text-gray-14"
+      >
+        <Star />
+        <span class="text-[0.875rem] leading-4">{startCount}</span>
+      </LinkButton>
+
+      <LinkButton
+        href="https://github.com/alibaba/nacos/fork"
+        title=""
+        class="btn-primary rounded-3xl"
+        arrowTheme="light"
+      >
+        <Fork theme="light" />
+        <span class="text-gray-04">{forkCount}</span>
+      </LinkButton>
     </div>
-    <span class="notes text-gray-10 text-xs mt-[3.25rem] mb-4"
-      >{t('home.introduce.nacos.notes')}</span
-    >
+    <div class="notes mt-[4.8125rem] text-gray-07 text-xs flex justify-between">
+      <div>
+        <span class="mr-2.5">{t("home.introduce.nacos.release.note")}</span>
+        |
+        <span class="ml-2.5">V1.4.6</span>
+      </div>
+      <span>{t("home.introduce.nacos.notes")}</span>
+    </div>
   </div>
 
-  <div class="bottom-section flex mb-10 mt-[3.625rem]">
+  <div class="bottom-section flex mb-[2.6875rem] mt-[0.875rem]">
     <div
       class="desc overflow-hidden relative mr-4 rounded-2xl p-6 text-blue-03 text-sm cursor-pointer"
     >
-    
-      <UpRight class="arrow absolute top-6 right-6" theme="light"/>
+      <UpRight class="arrow absolute top-6 right-6" theme="light" />
 
       <div class="text opacity-0">
-        <div>{t('home.introduce.nacos.define')}</div>
-        <div class="mt-4">{t('home.introduce.nacos.aim')}</div>
+        <div>{t("home.introduce.nacos.define")}</div>
+        <div class="mt-4">{t("home.introduce.nacos.aim")}</div>
       </div>
-      <div class="text-gray-02 text-xs tracking-[0.15em] absolute bottom-6 left-6">
-        {t('home.introduce.about')}
+      <div
+        class="text-gray-02 text-xs tracking-[0.15em] absolute bottom-6 left-6"
+      >
+        {t("home.introduce.about")}
       </div>
     </div>
 
@@ -66,12 +94,12 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         loop
         muted
         preload="true"
-        height="400px"
+        height="360px"
         width="100%"
         autoplay="autoplay"
         src="/introduce-log.webm"
         class="nacos-log object-cover rounded-2xl cursor-pointer"></video>
-      <div class="absolute bottom-[1.875rem] left-[1.75rem]">
+      <!-- <div class="absolute bottom-[1.875rem] left-[1.75rem]">
         <LinkButton
           href="https://github.com/alibaba/nacos"
           title=""
@@ -92,11 +120,11 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
           <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
           <span class="text-gray-11">{forkCount}</span>
         </LinkButton>
-      </div>
+      </div> -->
     </div>
   </div>
 
-  <div class="mobile-bottom-section hidden w-full flex py-6">
+  <!-- <div class="mobile-bottom-section hidden w-full flex py-6">
     <LinkButton
       href="https://github.com/alibaba/nacos"
       title=""
@@ -117,7 +145,7 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
       <span>{forkCount}</span>
     </LinkButton>
-  </div>
+  </div> -->
 </home-introduce>
 
 <script>
@@ -126,18 +154,18 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       super();
     }
   }
-  customElements.define('home-introduce', Introduce);
+  customElements.define("home-introduce", Introduce);
 </script>
 
 <style>
   .introduce {
     min-height: calc(100vh - 4rem);
-    background-color: theme('colors.gray.14');
+    background-color: theme("colors.gray.14");
   }
   .top-section {
     width: 85.125rem;
     overflow: hidden;
-    border-bottom: 1px solid theme('colors.gray.12');
+    /* border-bottom: 1px solid theme('colors.gray.12'); */
   }
   .top-section .shortcut button {
     height: 3rem;
@@ -157,10 +185,11 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
   }
   .bottom-section .desc {
     width: 9.75rem;
-    height: 25rem;
-    background-color: theme('colors.blue.08');
+    height: 22.5rem;
+    background-color: theme("colors.blue.08");
     transition: width 0.8s;
   }
+
   .bottom-section .desc .text {
     opacity: 0;
     transition: opacity 0.8s;
@@ -220,8 +249,11 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       padding-left: 0.75rem;
       padding-right: 0.75rem;
     }
+    .introduce_about{
+      margin-top: 0rem;
+    }
     .top-section .notes {
-      display: block;
+      margin-top: 1.25rem;
     }
     .bottom-section {
       width: 100%;

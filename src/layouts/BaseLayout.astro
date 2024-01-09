@@ -8,8 +8,9 @@ import '../style/fonts.css';
 import locales from '@i18n/languages';
 import { useTranslations } from '@i18n/util';
 import Head from '@components/starlight/Head.astro';
-import HomeHeader from '@components/common/Header.astro';
+// import HomeHeader from '@components/common/Header.astro';
 import _ from 'lodash';
+import HomeHeader from '@components/common/Header/index.astro';
 const t = useTranslations(Astro);
 
 export type Props = {
@@ -49,9 +50,13 @@ Astro.props.lang = lang;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link data-rh="true" rel="icon" href="https://img.alicdn.com/tfs/TB1hgJpHAPoK1RjSZKbXXX1IXXa-64-64.png">
+    
   </head>
   <body>
-    <HomeHeader align="home" position={position} lang={Astro.props.lang} {...Astro.props} />
+    <!-- <HomeHeader align="home" position={position} lang={Astro.props.lang} {...Astro.props} /> -->
+    <HomeHeader align="home" lang={Astro.props.lang} {...Astro.props} />
     <slot />
-  </body><style></style>
+    
+    
+  </body>
 </html>
