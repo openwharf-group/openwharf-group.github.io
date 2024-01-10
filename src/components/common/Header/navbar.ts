@@ -31,7 +31,7 @@ export default [
       trigger: "click",
       slot: CommunityMenu,
       position: "fixed",
-      activePath: ['/news', '/activity', '/blog', '/docs/ebook/'],
+      activePath: ['/news', '/activity', '/blog', '/docs/ebook/', '/download'],
   },
   {
       label: "控制台样例",
