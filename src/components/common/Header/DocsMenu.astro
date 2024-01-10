@@ -6,7 +6,41 @@ interface Props {
   }[];
 }
 
-const { items } = Astro.props;
+export const docsItems = [
+    {
+        label: "最新版",
+        target: "_self",
+        link: "/docs/what-is-nacos",
+        translations: {
+            en: "Latest"
+        }
+    },
+    {
+        label: "预览版",
+        target: "_self",
+        link: "/docs/next/what-is-nacos",
+        translations: {
+            en: "Next"
+        }
+    },
+    {
+        label: "1.x",
+        target: "_self",
+        link: "/docs/v1/what-is-nacos",
+        translations: {
+            en: "1.x"
+        }
+    },
+    {
+      label: "2.x",
+      target: "_self",
+      link: "/docs/v2/what-is-nacos",
+      translations: {
+          en: "2.x"
+      }
+    }
+];
+
 const getVersion = (pathname) => {
   if (!pathname.startsWith('/docs/')) return '';
   if (pathname.startsWith('/docs/ebook')) return '';
@@ -17,19 +51,22 @@ const getVersion = (pathname) => {
   return ['next', 'v1', 'v2'].includes(result) ? result : 'latest';
 }
 
-const currentVersion = getVersion(Astro.url.pathname);
+const ifactive = (link) => {
+  const version = getVersion(link);
+  const currentVersion = getVersion(Astro.url.pathname);
+  return version === currentVersion;
+}
 
 ---
 
 <dropdown-docs class="dropdown-docs block">
   <ul class="w-[9.25rem] list-none m-0 bg-gray-13 p-2 rounded-lg">
     {
-      items.map((item) => {
+      docsItems.map((item) => {
         const { label, link } = item;
-        const version = getVersion(link);
-        const isCurrent = version === currentVersion;
+        const active = ifactive(link);
         return (
-          <li class={`no-underline cursor-pointer my-1 rounded-lg ${isCurrent ? 'bg-gray-12' : ''} hover:bg-gray-12`}>
+          <li class={`no-underline cursor-pointer my-1 rounded-lg ${active ? 'bg-gray-12' : ''} hover:bg-gray-12`}>
             <a 
               href={link}
               class="inline-block w-full p-2 no-underline text-inherit text-gray-02" 

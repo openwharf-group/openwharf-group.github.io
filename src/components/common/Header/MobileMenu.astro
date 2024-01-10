@@ -1,0 +1,17 @@
+---
+interface Props {
+  items: {
+    label: string;
+    link?: string;
+  }[];
+}
+
+const { items } = Astro.props;
+console.log('items===', items);
+
+---
+
+
+<div>
+  移动端菜单
+</div>

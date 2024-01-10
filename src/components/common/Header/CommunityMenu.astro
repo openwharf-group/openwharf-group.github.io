@@ -4,22 +4,91 @@ import { getEntries } from "astro:content";
 import { Image } from "astro:assets";
 import { HEADER_ACTIVITY_CARD } from "../../../consts";
 import LinkText from '@components/common/LinkText.astro';
-interface Props {
-  items: {
-    label: string;
-    section?: string;
-    link?: string;
-    children?: {
-      label: string;
-      link?: string;
-      target: '_blank' | '_self';
-    }[];
-  }[];
-}
 const t = useTranslations(Astro);
 
-const { items } = Astro.props;
-const [comt, events, resources] = items;
+export const comtItems = [
+  {
+    section: "社区",
+    translations: {
+        en: "COMMUNITY"
+    },
+    children: [
+      {
+        label: "报告文档问题",
+        target: "_blank",
+        link: "https://github.com/alibaba/nacos/issues",
+        translations: {
+            en: "Report a doc issue"
+        }
+      },
+      {
+        label: "贡献社区",
+        target: "_blank",
+        link: "https://github.com/alibaba/nacos/pulls",
+        translations: {
+            en: "Contribute community"
+        }
+      },
+      {
+        label: "贡献者",
+        target: "_blank",
+        link: "https://github.com/alibaba/nacos/graphs/contributors",
+        translations: {
+            en: "Contributors"
+        }
+      }
+    ]
+  },
+  {
+    section: "事件",
+    translations: {
+        en: "Events"
+    },
+    children: [
+      {
+        label: "新闻",
+        target: "_self",
+        link: "/news",
+        translations: {
+            en: "News"
+        }
+      },
+      {
+        label: "活动",
+        target: "_self",
+        link: "/activity",
+        translations: {
+            en: "Activity"
+        }
+      }
+    ]
+  },
+  {
+    section: "资源",
+    translations: {
+        en: "Resources"
+    },
+    children: [
+      {
+        label: "博客",
+        target: "_self",
+        link: "/blog",
+        translations: {
+            en: "Blog"
+        }
+      },
+      {
+        label: "电子书",
+        target: "_self",
+        link: "/docs/ebook/kbyo6n.mdx",
+        translations: {
+            en: "E-book"
+        }
+      }
+    ]
+  }
+];
+const [comt, events, resources] = comtItems;
 const posts = await getEntries(HEADER_ACTIVITY_CARD as any);
 const blogImgs = [
   "https://img.alicdn.com/imgextra/i4/O1CN01bGnAVW1pFeLFnlaQL_!!6000000005331-2-tps-508-370.png",

@@ -3,22 +3,18 @@ import UpDown from '@components/icon/UpDown.astro';
 interface Props {
   route?: string;
   title?: string;
-  target?: '_blank' | '_self';
   trigger?: "hover" | "click";
   class?: string;
   active?: boolean;
+  target?: '_blank' | '_self';
   slot?: HTMLElement;
-  items?: {
-    label: string;
-    link?: string;
-    target?: '_blank' | '_self';
-  }[];
   // 如果下拉窗口内容比较多，可以相对视图定位，自定义下拉内容
   position?: 'absolute' | 'fixed';
+  showArrow?: boolean;
 }
 
-const { title, trigger = "hover", route = '', target = '_self', slot, items, position = 'absolute', active = false } = Astro.props;
-const ifdropdown = !route && items && items.length && slot;
+const { title, trigger = "hover", route = '', slot, position = 'absolute', active = false, showArrow = true, target = '_self' } = Astro.props;
+const ifdropdown = slot && !route;
 const Component = slot;
 
 // let components = [];
@@ -38,16 +34,16 @@ const Component = slot;
   data-trigger={trigger}
   class="toggle-component h-full" 
 >
-  <div class=`toggle-trigger cursor-pointer flex items-center ${Astro.props?.class || ''}`>
+  <div class=`toggle-trigger cursor-pointer flex items-center h-full ${Astro.props?.class || ''}`>
     <slot name="trigger">
       {
         ifdropdown ? (
-          <div class={`toggle-text inline-block ${active ? 'toggle-text-active' : ''}`}>{title}</div>
+          <div class={`toggle-text flex items-center justify-center h-full ${active ? 'toggle-text-active' : ''}`}>{title}</div>
         ) : (
           <a 
             href={route}
             target={target}
-            class={`toggle-text block no-underline ${active ? 'toggle-text-active' : ''}`}
+            class={`toggle-text flex items-center justify-center no-underline h-full ${active ? 'toggle-text-active' : ''}`}
           >
             {title}
           </a>
@@ -55,7 +51,7 @@ const Component = slot;
       }
     </slot>
     {
-      ifdropdown ? (
+      ifdropdown && showArrow ? (
         <UpDown data-updown class="ml-2" />
       ) : null
     }
@@ -65,7 +61,7 @@ const Component = slot;
     ifdropdown ? (
       <div class="toggle-dropdown w-fit inset-x-0">
         <slot name="dropdown">
-          <Component items={items} />
+          <Component />
         </slot>
       </div>
     ) : null

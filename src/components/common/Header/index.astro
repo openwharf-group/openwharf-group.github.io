@@ -1,8 +1,8 @@
 ---
-import Navbar from '@components/common/Navbar.astro';
 import _ from 'lodash';
+import navbarData from './navbar';
+import Navbar from '@components/common/Navbar.astro';
 import LanguageToggle from "@components/common/LanguageToggle.astro";
-import Navbars from './navbar';
 
 interface Props {
   align?: "home" | "docs";
@@ -13,7 +13,7 @@ interface Props {
 // const navbars = (await import.meta.glob("./_navbar.json", { eager: true }));
 // let dataSource = [];
 // _.each(navbars,(item, key) => { dataSource = item.default; });
-const dataSource = Navbars;
+const dataSource = navbarData;
 
 
 const { align = "home", position = "sticky", lang } = Astro.props;
