@@ -2,6 +2,7 @@
 import { useTranslations } from "@i18n/util";
 const t = useTranslations(Astro);
 import LinkButton from '../common/LinkButton.astro';
+import Button from '@components/common/Button.astro';
 ---
 <footer-layout class="home-footer w-full bg-gray-14 flex flex-col items-center py-10">
   <slot name="after-footer" />
@@ -21,7 +22,13 @@ import LinkButton from '../common/LinkButton.astro';
       >
         {t('commmon.footer.description')}
       </p>
-      <LinkButton class='rounded-3xl max-w-[9.6875rem]' href="https://github.com/alibaba/nacos" title="Github"/>
+      <Button
+        size="large"
+        class="rounded-3xl font-semibold"
+        href="https://github.com/alibaba/nacos"
+      >
+        Github
+      </Button>
     </div>
     <div
       class="footer-right grid grid-cols-2 gap-2 flex text-left mt-9 ml-[9.625rem]"

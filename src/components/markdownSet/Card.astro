@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import moment from "moment";
 import { useTranslations } from "@i18n/util";
 import {BLOG_IMAGE_SOURCE} from '../../consts'
+import Button from '@components/common/Button.astro';
 
 const t = useTranslations(Astro);
 export type Props = {
@@ -41,9 +42,13 @@ const { post, posterWidth, type = "blog",index = 0 } = Astro.props;
     <h2 class="card-title text-gray-14 leading-8 line-clamp-2 mb-3 font-normal text-xl mt-3">
       {post.data.title}
     </h2>
-      <a href={`/blog/${post.slug}`} rel="prefetch" class="text-gray-13 btn btn-secondary w-32 bg-gray-01 text-xs absolute bottom-3">
-        {t('blog.card.read.artile')}
-      </a>
+    <Button 
+      size="large" 
+      href={`/blog/${post.slug}`}
+      class="rounded-3xl text-xs absolute bottom-3"
+    >
+      {t('blog.card.read.artile')}
+    </Button>
   </div>
 </div>
 

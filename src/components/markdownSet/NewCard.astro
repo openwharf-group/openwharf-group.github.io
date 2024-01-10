@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Logo from "/public//nacos_white.png";
 import { useTranslations } from "@i18n/util";
 import moment from "moment";
+import Button from '@components/common/Button.astro';
 
 const t = useTranslations(Astro);
 
@@ -43,13 +44,13 @@ const { type = "blog", post, classList = [] } = Astro.props;
             </div>
 
             <div class="flex-[0_0_auto] mt-auto">
-                <a
+                <Button
+                  size="large" 
+                  class="text-gray-15 font-medium mb-5 rounded-lg"
                   href={`/blog/${post.slug}`}
-                  rel="prefetch"
-                  class="text-gray-15 btn btn-secondary mb-5 w-[112px] font-medium "
                 >
                   {t('blog.card.btn.read')}
-                </a>
+                </Button>
               <div class="card-bottom flex flex-row justify-between blog_latest_bottom pt-2.5 ">
                 <div class="text-gray-07 text-sm font-medium leading-5">
                   {moment(post.data.date).format("MMMM D, YYYY")}
@@ -135,7 +136,7 @@ const { type = "blog", post, classList = [] } = Astro.props;
     .new_card_container {
       flex-direction: column;
       height: auto;
-      margin: 0 1rem;
+      /* margin: 0 1rem; */
     }
   }
   /* 大于50rem 小于 72rem  800px < width < 1152 */

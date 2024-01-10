@@ -7,6 +7,7 @@ import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import { NEWS_CATEGORY } from "src/consts";
+import BaseContainer from '@components/common/BaseContainer.astro';
 
 interface Post {
     slug: string;
@@ -49,15 +50,17 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     <div
         class="flex flex-col items-center gap-20 py-8"
     >
-        <ul class="w-[85.125rem] grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-6 place-items-stretch">
-            {
-                page.data.map((post) => (
-                    <div>
-                        <BlogCard post={post as Post} posterWidth="350" />
-                    </div>
-                ))
-            }
-        </ul>
+        <BaseContainer>
+            <ul class="news-cooperate grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 gap-6 place-items-stretch">
+                {
+                    page.data.map((post) => (
+                        <div>
+                            <BlogCard post={post as Post} posterWidth="350" />
+                        </div>
+                    ))
+                }
+            </ul>
+        </BaseContainer>
 
         <Pagination restRoute allPages={allPages} page={page} class="mx-auto" />
     </div>
@@ -115,7 +118,10 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     ul a:hover img {
         box-shadow: var(--box-shadow);
     }
-    @media (max-width: 720px) {
+    @media (max-width: 50rem) {
+        .news-cooperate {
+            padding: 0 1.5rem;
+        }
         ul {
             gap: 0.5em;
         }
