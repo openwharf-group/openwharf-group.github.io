@@ -14,7 +14,25 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 const regex =  /(\S*).io/g;
 const originGit = editHref.match(regex)[0];
 
-const feedbackUrl = originGit + `/issues/new?title=关于文档【${title}】的反馈&body=文档链接：${editHref}`
+const feedbackBody = `
+[在此处输入反馈]
+
+
+---
+#### 文档详细信息
+
+⚠ *请勿编辑此部分。nacos.io ➟ GitHub 问题链接必须具有此部分。*
+
+* Version  ID: 2bac3769-2613-f739-4796-0737c7cd8919
+* Content: [${title}](${Astro.url.href})
+* Content Source: ${editHref}
+* Service: **用户指南/开发指南/运维指南**
+`
+
+const encodedBody = encodeURIComponent(feedbackBody)
+
+const feedbackUrl = originGit + `/issues/new?title=关于文档【${title}】的反馈&body=${encodedBody}`
+
 
 const linkItems = [
 	{
