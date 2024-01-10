@@ -37,6 +37,7 @@ export default {
 	'commmon.footer.actions.comm': 'Ebook',
 	'commmon.footer.actions.mse': 'Cloud Service MSE',
 	'commmon.footer.actions.edas': 'Cloud Service EDAS',
+	'commmon.footer.actions.download': 'Download',
 
 	'home.title': 'Home',
 	'home.description': 'Nacos is a solution for dynamic service discovery, configuration management, and service management, aimed at helping developers build and maintain cloud-native applications.',

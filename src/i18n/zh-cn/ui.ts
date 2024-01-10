@@ -37,6 +37,7 @@ export default {
 	'commmon.footer.actions.comm': '电子书',
 	'commmon.footer.actions.mse': '云服务 MSE',
 	'commmon.footer.actions.edas': '云服务 EDAS',
+	'commmon.footer.actions.download': '前往下载',
 
 	'home.title': '首页',
 	'home.description': 'Nacos 是动态服务发现、配置管理和服务管理的解决方案，旨在帮助开发者构建和维护云原生应用。',
