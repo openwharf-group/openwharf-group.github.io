@@ -2,27 +2,15 @@
 import Toggle from '@components/common/Toggle.astro';
 import { isChinese } from '@i18n/util';
 import _ from 'lodash';
+import dataSource from '@components/common/Header/navbar.ts';
 import { docsItems } from '@components/common/Header/DocsMenu.astro';
-import MobileMenu from "@components/common/Header/MobileMenu.astro";
+// import MobileMenu from "@components/common/Header/MobileMenu.astro";
 
 interface Props {
-  dataSource: {
-    label: string;
-    trigger?: 'hover' | 'click';
-    route?: string;
-    target?: '_blank' | '_self';
-    slot?: string;
-    position?: 'absolute' | 'fixed';
-    items?: {
-      label: string;
-      link?: string;
-    }[];
-  }[];
   class?: string;
 }
 
 // 修改 文档 菜单显示逻辑
-const { dataSource = [] } = Astro.props;
 const lastIdx = dataSource.length - 1;
 let _dataSource = _.cloneDeep(dataSource);
 
@@ -99,13 +87,12 @@ const ifactive = (toggle) => {
     }
   </div>
 
-  <!-- <div class=`mobile-navbar ${Astro.props?.class || ''}`>
-    <Toggle 
+  <div class=`mobile-navbar ${Astro.props?.class || ''} hidden`>
+    <!-- <Toggle 
       position="fixed"
       trigger="click"
       slot={MobileMenu}
       showArrow={false}
-      items={dataSource}
     >
       <svg
         slot="trigger"
@@ -122,8 +109,8 @@ const ifactive = (toggle) => {
             p-id="6305">
           </path>
       </svg>
-    </Toggle>
-  </div> -->
+    </Toggle> -->
+  </div>
 
 </navbar-component>
 

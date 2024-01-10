@@ -1,17 +1,70 @@
 ---
-interface Props {
-  items: {
-    label: string;
-    link?: string;
-  }[];
-}
-
-const { items } = Astro.props;
-console.log('items===', items);
+import LinkText from '@components/common/LinkText.astro';
+import dataSource from '@components/common/Header/navbar.ts';
 
 ---
 
 
-<div>
-  移动端菜单
-</div>
+<mobile-menu class="w-screen h-screen flex justify-center">
+  <ul class="list-none pl-0">
+    {
+      dataSource.map(toggle => {
+        const { label, route, slot } = toggle;        
+        const visibility = (slot && !route) ? 'fixed' : 'none';
+        if (slot) {
+          return (
+            <li 
+              data-parentmenu 
+              class="text-gray-06 text-sm mt-4"
+            >
+              <LinkText
+                icon='triangle' 
+                visibility="fixed"
+              >
+                {label}
+              </LinkText>
+            </li>
+          )
+        }
+
+        return (
+          <LinkText 
+            href={route}
+            visibility="none"
+            class='text-gray-06 text-sm mt-4'
+          >
+            {label}
+          </LinkText>
+        )
+      })
+    }
+  </ul>
+</mobile-menu>
+
+<script>
+  class MobileMenu extends HTMLElement {
+    constructor() {
+      super();
+    }
+
+  }
+  customElements.define("mobile-menu", MobileMenu);
+</script>
+
+
+<!-- const { toc, isMobile = false, depth = 0 } = Astro.props;
+
+<ul class:list={{ isMobile }}>
+	{
+		toc.map((heading) => (
+			<li>
+				<a href={'#' + heading.slug}>
+					<span>{heading.text}</span>
+				</a>
+				{heading.children.length > 0 && (
+					<Astro.self toc={heading.children} depth={depth + 1} isMobile={isMobile} />
+				)}
+			</li>
+		))
+	}
+</ul> -->

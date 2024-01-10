@@ -59,7 +59,7 @@ const ifactive = (link) => {
 
 ---
 
-<dropdown-docs class="dropdown-docs block">
+<docs-menu class="dropdown-docs block">
   <ul class="w-[9.25rem] list-none m-0 bg-gray-13 p-2 rounded-lg">
     {
       docsItems.map((item) => {
@@ -78,14 +78,14 @@ const ifactive = (link) => {
       })
     }
   </ul>
-</dropdown-docs>
+</docs-menu>
 
 <script>
-  class DocsDrop extends HTMLElement {
+  class DocsMenu extends HTMLElement {
     constructor() {
       super();
     }
 
   }
-  customElements.define("dropdown-docs", DocsDrop);
+  customElements.define("docs-menu", DocsMenu);
 </script>

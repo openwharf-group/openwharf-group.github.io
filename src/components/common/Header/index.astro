@@ -1,6 +1,5 @@
 ---
 import _ from 'lodash';
-import navbarData from './navbar';
 import Navbar from '@components/common/Navbar.astro';
 import LanguageToggle from "@components/common/LanguageToggle.astro";
 
@@ -9,11 +8,6 @@ interface Props {
   position?: "static" | "sticky";
   lang: "zh-cn" | "en" | string;
 }
-
-// const navbars = (await import.meta.glob("./_navbar.json", { eager: true }));
-// let dataSource = [];
-// _.each(navbars,(item, key) => { dataSource = item.default; });
-const dataSource = navbarData;
 
 
 const { align = "home", position = "sticky", lang } = Astro.props;
@@ -38,7 +32,7 @@ const xpadding = align === "home" ? "0" : "1.5rem";
       />
     </a>
 
-    <Navbar dataSource={dataSource} class='h-full'/>
+    <Navbar class='h-full'/>
 
     <div>
       <LanguageToggle id="pc-toggle" size="small" lang={Astro.props.lang} />

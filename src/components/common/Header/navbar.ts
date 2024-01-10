@@ -20,8 +20,8 @@ export default [
       },
       trigger: "click", 
       route: "/cloud",
+      target: "_self",
       activePath: ['/cloud'],
-      target: "_self"
   },
   {
       label: "社区",

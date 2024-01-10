@@ -8,7 +8,7 @@ const t = useTranslations(Astro);
 
 export const comtItems = [
   {
-    section: "社区",
+    label: "社区",
     translations: {
         en: "COMMUNITY"
     },
@@ -40,7 +40,7 @@ export const comtItems = [
     ]
   },
   {
-    section: "事件",
+    label: "事件",
     translations: {
         en: "Events"
     },
@@ -64,7 +64,7 @@ export const comtItems = [
     ]
   },
   {
-    section: "资源",
+    label: "资源",
     translations: {
         en: "Resources"
     },
@@ -105,13 +105,13 @@ const blogImgs = [
 
 ---
 
-<dropdown-comt class="dropdown-docs w-screen h-screen flex justify-center">
+<community-menu class="dropdown-docs w-screen h-screen flex justify-center">
   <div class="bg-gray-14 w-fit p-10">
     <div class="flex justify-between mb-[3.5rem]">
       <div class="flex">
-        <!-- 社区section -->
+        <!-- 社区label -->
         <div class="border-l border-gray-12 flex flex-col px-7 min-w-[12rem]">
-          <span class="text-xs text-gray-10 mb-2">{comt.section}</span>
+          <span class="text-xs text-gray-10 mb-2">{comt.label}</span>
           {
             comt.children.map((menu) => {
               const { label, link, target = "_self" } = menu;
@@ -128,16 +128,16 @@ const blogImgs = [
           }
         </div>
 
-        <!-- 事件、资源section -->
+        <!-- 事件、资源label -->
         <div class:list={['border-l', 'border-gray-12', 'flex', 'flex-col', 'px-7', 'mr-10']}>
-          <span class="text-xs text-gray-10 mb-2">{events.section}</span>
+          <span class="text-xs text-gray-10 mb-2">{events.label}</span>
           {
             events.children.map((menu) => {
               const { label, link, target = "_self" } = menu;
               return (
                 <LinkText 
                   href={link} 
-                  target={target} 
+                  target={target}
                   class="text-sm text-gray-02 mt-3"
                 >
                   {label}
@@ -145,7 +145,7 @@ const blogImgs = [
               );
             })
           }
-          <span class="text-xs text-gray-10 mb-2 mt-10">{resources.section}</span>
+          <span class="text-xs text-gray-10 mb-2 mt-10">{resources.label}</span>
           {
             resources.children.map((menu) => {
               const { label, link, target = "_self" } = menu;
@@ -277,15 +277,15 @@ const blogImgs = [
       </div>
     </div>
   </div>
-</dropdown-comt>
+</community-menu>
 
 <script>
-  class ComtDrop extends HTMLElement {
+  class CommunitytMenu extends HTMLElement {
     constructor() {
       super();
     }
 
   }
-  customElements.define("dropdown-comt", ComtDrop);
+  customElements.define("community-menu", CommunitytMenu);
 </script>
 
