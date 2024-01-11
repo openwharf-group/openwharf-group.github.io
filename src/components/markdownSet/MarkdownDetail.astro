@@ -15,9 +15,10 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 	</div>
 	<main>
 		<div class="nacos-prose mx-auto">
-			<div class="title">
+			<div class="title">	
+				<h1 id="_top">{title}</h1>
 				<div class="date">
-					{date}
+					<FormattedDate date={new Date(date)} />
 					{
 						updatedDate && (
 							<div class="last-updated-on">
@@ -27,7 +28,6 @@ const { title, description, date, updatedDate, heroImage } = Astro.props;
 						)
 					}
 				</div>
-				<h1 id="_top">{title}</h1>
 				<hr />
 			</div>
 			<slot />
