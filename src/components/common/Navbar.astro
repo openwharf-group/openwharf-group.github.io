@@ -14,17 +14,19 @@ interface Props {
 const lastIdx = dataSource.length - 1;
 let _dataSource = _.cloneDeep(dataSource);
 
+
 (() => {
+  console.log("888888")
   const pathname = Astro.url.pathname;
   if (!pathname.startsWith('/docs/')) return;
   if (pathname.startsWith('/docs/ebook')) return;
 
-  const regex = /(?<=\/docs\/)(?!what-is-nacos)[^\/]+/;
+  const regex = /\/docs\/(?!what-is-nacos)([^\/]+)/;
 
   const matchVersion = {};
   const versions = docsItems.map(item => {
     const match = item.link.match(regex);
-    const version = match?.[0] || 'latest';
+    const version = match?.[1] || 'latest';
     Reflect.set(matchVersion, version, {
       zh: item.label,
       en: item.translations?.en,
