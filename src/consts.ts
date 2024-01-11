@@ -80,7 +80,7 @@ export const ACTIVITY_CATEGORY = [
 
 export const HEADER_ACTIVITY_CARD = [
     { collection: 'blog', slug: 'ecosystem-nacos-controller-opensource' },
-    { collection: 'blog' , slug: 'announcement-2022-award' },
+    { collection: 'blog' , slug: 'announcement-2023-award' },
 ]
 
 export const BLOG_IMAGE_SOURCE = [
