@@ -13,7 +13,7 @@ const t = useTranslations(Astro);
     {
       name: t('cloud.feedback.laidian.name'),
       theme: 'black',
-      logo: "https://img.alicdn.com/imgextra/i1/O1CN01FmXgsj1k3fuBDvIZ9_!!6000000004628-2-tps-160-130.png",
+      logo: "https://img.alicdn.com/imgextra/i3/O1CN010ulPrT1M45UNBCAXe_!!6000000001380-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/855894",
       description: t('cloud.feedback.laidian.description'),
     },
@@ -27,7 +27,7 @@ const t = useTranslations(Astro);
     {
       name: t('cloud.feedback.ykc.name'),
       theme: 'blue',
-      logo: "https://img.alicdn.com/imgextra/i4/O1CN011Q5cx81NlQZvJvgdy_!!6000000001610-2-tps-160-130.png",
+      logo: "https://img.alicdn.com/imgextra/i1/O1CN01LWMfwx1Ggf9VGmXBF_!!6000000000652-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/1172572?groupCode=mse",
       description: t('cloud.feedback.ykc.description'),
     },
@@ -48,7 +48,7 @@ const t = useTranslations(Astro);
     {
       name: t('cloud.feedback.very.name'),
       theme: 'blue',
-      logo: "https://img.alicdn.com/imgextra/i2/O1CN01wOeiBB1lf3qo0UYUl_!!6000000004845-2-tps-160-130.png",
+      logo: "https://img.alicdn.com/imgextra/i1/O1CN01DevTFA28W7HY1JFC6_!!6000000007939-2-tps-160-130.png",
       href: "https://developer.aliyun.com/article/992090",
       description: t('cloud.feedback.very.description'),
     },
@@ -62,7 +62,7 @@ const t = useTranslations(Astro);
     {
       name: t('cloud.feedback.helian.name'),
       theme: 'black',
-      logo: "https://img.alicdn.com/imgextra/i2/O1CN01LStcNM248WPaWDfoW_!!6000000007346-2-tps-544-180.png",
+      logo: "https://img.alicdn.com/imgextra/i3/O1CN01YmUBmh1snwqr4kRot_!!6000000005812-2-tps-544-180.png",
       href: "https://developer.aliyun.com/article/1095573",
       description: t('cloud.feedback.helian.description'),
     }
@@ -77,9 +77,9 @@ const t = useTranslations(Astro);
 ---
 
 <companies-feedback class="companies-feedback flex flex-col justify-center items-center bg-gary-02 py-10">
-  <div class="top-title flex flex-col items-center mb-20 mt-16">
+  <div class="top-title flex flex-col items-center mb-20 mt-[3.625rem]">
     <span class="text-gray-10 text-xs mb-6">{t('cloud.feedback.about')}</span>
-    <div class="title text-gray-14 text-4xl font-medium text-center whitespace-normal max-w-[60%]">{t('cloud.feedback.title')}</div>
+    <div class="title text-gray-14 text-[2.75rem] leading-[3.5rem] font-medium text-center whitespace-normal max-w-[60%]">{t('cloud.feedback.title')}</div>
   </div>
 
   <div class="bottom-feedback relative flex overflow-hidden rounded-2xl">
@@ -93,7 +93,7 @@ const t = useTranslations(Astro);
           return (
             <a href={href} target="_blank">
               <li class="slider-item w-96 inline-block">
-                <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+                <div class:list={['flex', 'flex-col', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                   <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                   <div class="flex justify-between mt-12 items-center">
                     <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
@@ -115,7 +115,7 @@ const t = useTranslations(Astro);
           const isGray = theme === 'gray';
           return (
             <li class="slider-item w-96 inline-block">
-              <div class:list={['flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+              <div class:list={['flex', 'flex-col', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                 <div class:list={['normal-case', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
@@ -139,7 +139,7 @@ const t = useTranslations(Astro);
         return (
           <a href={href} target="_blank">
             <div class="w-full mb-4">
-              <div class:list={['content', 'flex', 'flex-col', 'shadow-xl', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
+              <div class:list={['content', 'flex', 'flex-col', 'p-8', 'rounded-2xl', { 'bg-blue-08': isBule, 'bg-gray-14': isBlack, 'bg-gray-03': isGray }]}>
                 <div class:list={['normal-case', 'description', 'line-clamp-2', { 'text-blue-01': isBule, 'text-gray-03': isBlack, 'text-gray-14': isGray }]}>{description}</div>
                 <div class="company flex justify-between mt-12 items-center">
                   <div class:list={['text-xs', { 'text-gray-03': !isGray, 'text-gray-14': isGray }]}>{name}</div>
@@ -183,7 +183,7 @@ companies-feedback {
   /* animation: slide var(--time) linear infinite; */
 }
 .slider-item {
-  padding: 0 .65rem;
+  padding: 0.5rem;
 }
 img {
   cursor: pointer;
