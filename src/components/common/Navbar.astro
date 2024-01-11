@@ -16,7 +16,6 @@ let _dataSource = _.cloneDeep(dataSource);
 
 
 (() => {
-  console.log("888888")
   const pathname = Astro.url.pathname;
   if (!pathname.startsWith('/docs/')) return;
   if (pathname.startsWith('/docs/ebook')) return;
