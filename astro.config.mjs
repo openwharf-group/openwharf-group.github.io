@@ -8,6 +8,7 @@ import remarkRemoveMdLinks from "./plugins/remarkRemoveMdLinks"
 import remarkRemovePlainLanguageCode from "./plugins/remarkRemovePlainLanguageCode"
 import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 import addPrefixImageLink from "./plugins/addPrefixImageLink"
+import { starlightAsides } from './node_modules/@astrojs/starlight/integrations/asides'
 import goatConfig from './goat.config';
 const jsoncString = fs.readFileSync(new URL(`./markdown-theme.jsonc`, import.meta.url), 'utf-8');
 
@@ -75,6 +76,7 @@ export default defineConfig({
 			remarkRemovePlainLanguageCode, 
 			remarkRemoveRepeatHeader, 
 			addPrefixImageLink,
+			starlightAsides
 		]
 	},
 	redirects: {
