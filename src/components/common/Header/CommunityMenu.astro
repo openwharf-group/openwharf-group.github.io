@@ -6,7 +6,7 @@ import { HEADER_ACTIVITY_CARD } from "../../../consts";
 import LinkText from '@components/common/LinkText.astro';
 const t = useTranslations(Astro);
 
-export const comtItems = [
+export const communityItems = [
   {
     label: "社区",
     translations: {
@@ -96,7 +96,7 @@ export const comtItems = [
     ]
   }
 ];
-const [comt, events, resources] = comtItems;
+const [comt, events, resources] = communityItems;
 const posts = await getEntries(HEADER_ACTIVITY_CARD as any);
 const blogImgs = [
   "https://img.alicdn.com/imgextra/i4/O1CN01bGnAVW1pFeLFnlaQL_!!6000000005331-2-tps-508-370.png",

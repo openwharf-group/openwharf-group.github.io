@@ -2,6 +2,7 @@
 import _ from 'lodash';
 import Navbar from '@components/common/Navbar.astro';
 import LanguageToggle from "@components/common/LanguageToggle.astro";
+import MobileNavbar from '@components/common/MobileNavbar.astro';
 
 interface Props {
   align?: "home" | "docs";
@@ -24,17 +25,22 @@ const xpadding = align === "home" ? "0" : "1.5rem";
   <!-- 方便控制header宽度 -->
   <div class="header-content flex items-center justify-between">
 
-    <a class="no-underline" href="/">
-      <img
-        class="logo"
-        src="https://img.alicdn.com/imgextra/i4/O1CN01rW3vAB1FDWKSOiFf0_!!6000000000453-2-tps-204-40.png"
-        alt="nacos-log"
-      />
-    </a>
+    <div class="left-content flex">
+      <a class="no-underline" href="/">
+        <img
+          class="logo"
+          src="https://img.alicdn.com/imgextra/i4/O1CN01rW3vAB1FDWKSOiFf0_!!6000000000453-2-tps-204-40.png"
+          alt="nacos-log"
+        />
+      </a>
+      <MobileNavbar class="mobile-navbar ml-4" />
+    </div>
 
-    <Navbar class='h-full'/>
+    <div class="center-content h-full">
+      <Navbar class='h-full'/>
+    </div>
 
-    <div>
+    <div class="right-content">
       <LanguageToggle id="pc-toggle" size="small" lang={Astro.props.lang} />
     </div>
 
@@ -70,9 +76,27 @@ const xpadding = align === "home" ? "0" : "1.5rem";
     padding-right: var(--header-xl-padding);
   }
 
-  .logo {
+  .left-content .logo {
     vertical-align: sub;
     width: var(--logo-width);
+  }
+
+  .left-content .mobile-navbar {
+    display: none;
+  }
+
+  @media (max-width: 40rem) { 
+    .header-content {
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .left-content .mobile-navbar {
+      display: block;
+    }
+    .center-content {
+      display: none;
+    }
   }
 
 </style>

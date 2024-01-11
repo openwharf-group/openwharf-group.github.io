@@ -18,6 +18,19 @@ export default defineConfig({
 	image: {
 		domain: ["img.alicdn"]
 	},
+	vite: {
+		optimizeDeps: {
+			esbuildOptions: {
+				target:'es2020' // 指定ES版本以更好地进行代码转换
+			}
+		},
+		esbuild: {
+			// 确保Babel能够处理JSX和其他特性
+			jsxInject: `import React from 'react'`,
+			jsxFactory: 'React.createElement',
+			jsxFragment: 'React.Fragment',
+		},
+	},
 	integrations: [
 		starlight({
 			title: 'Nacos',
