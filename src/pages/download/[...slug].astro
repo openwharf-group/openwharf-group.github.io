@@ -14,16 +14,24 @@ const { Content } = await entry.render();
 const frontmatter = entry?.data;
  
 const entries = await getCollection('download');
-const menus = entries.map(entry => ({
-  slug: entry.slug,
-  label: entry.data.title,
-  order: entry.data.order,
-  href: `/download/${entry.slug}`,
-})).sort((a, b) => a.order - b.order);
+const menus = entries.map(entry => {
+  const pathname = `/download/${entry.slug}`;
+  const _active = pathname === Astro.url.pathname;
+  return {
+    slug: entry.slug,
+    label: entry.data.title,
+    order: entry.data.order,
+    href: pathname,
+    active: _active,
+  }
+}).sort((a, b) => a.order - b.order);
  
 ---
  
-<BaseLayout title={frontmatter.title}>
+<BaseLayout 
+  align='docs' 
+  title={frontmatter.title}
+>
   <div class="bg-gray-01 h-2"></div>
   <download-layout>
     <div class="download-container flex">
@@ -34,8 +42,7 @@ const menus = entries.map(entry => ({
               <li class="cursor-pointer">
                 <a
                   href={entry.href}
-                  data-current-slug={entry.slug}
-                  class:list={["large", "flex", "items-center"]}
+                  class:list={["large", "flex", "items-center", { 'menu-active': entry.active }]}
                 >
                   <span>{entry.label}</span>
                 </a>
@@ -60,28 +67,8 @@ const menus = entries.map(entry => ({
  
     constructor() {
 			super();
-      this.currentRoute = window.location.pathname;
-      this.menus = Array.from(this.querySelectorAll<HTMLElement>(
-        "a[data-current-slug]"
-      )!);
- 
-      this.menuSelectorEffect();
- 
     }
  
-    // 选中效果
-    menuSelectorEffect = () => {
-      for (let i = 0; i < this.menus.length; i++) {
-        const menu = this.menus[i];
-        const ariaValue = menu.getAttribute('data-current-slug') as string;
-        if (this.currentRoute.indexOf(ariaValue) !== -1) {
-          menu.classList.add('menu-selected');
-        } else {
-          menu.classList.remove('menu-selected');
-        }
-      }
- 
-    };
   }
   customElements.define("download-layout", DownloadLayout);
 </script>
@@ -120,7 +107,7 @@ const menus = entries.map(entry => ({
 		color: var(--sl-color-white);
 	}
  
-  .menu-selected {
+  .menu-active {
     color: theme("colors.gray.14");
     background-color: theme("colors.gray.02");
     border-left-style: solid;
