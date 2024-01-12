@@ -35,7 +35,7 @@ let height, width, xpadding = "";
 
 <header-layout2
   style={`position: ${position}; height: ${height}`}
-  class="w-screen top-0 z-[10000] bg-gray-14 flex justify-center"
+  class="w-screen backdrop-blur-md top-0 z-[10000] bg-gray-14 flex justify-center"
 >
   <!-- 方便控制header宽度 -->
   <div class="header-content flex items-center justify-between">
@@ -52,7 +52,7 @@ let height, width, xpadding = "";
     </div>
 
     <div class="center-content h-full">
-      <Navbar class='h-full'/>
+      <Navbar class='pc-navbar h-full'/>
     </div>
 
     <div class="right-content flex items-center">
@@ -76,9 +76,22 @@ let height, width, xpadding = "";
 
 <script>
   class HeaderLayout2 extends HTMLElement {
-
+    private ifscroll: boolean;
     constructor() {
         super();
+        this.ifscroll = false;
+        window.addEventListener("scroll", this.handleScroll)
+    }
+
+    handleScroll = () => {
+      if (window.scrollY >= 100 && !this.ifscroll) {
+        this.ifscroll = true;
+        this.classList.add('bg-gray-14/[0.84]');
+      }
+      if (window.scrollY <= 100 && this.ifscroll) { 
+        this.ifscroll = false;
+        this.classList.remove('bg-gray-14/[0.84]');
+      }
     }
 
   }

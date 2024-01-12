@@ -15,7 +15,7 @@ const { href, type = 'normal', size = 'medium', visibility = true } = Astro.prop
 <button class=`button w-fit p-0 bg-transparent`>
   <a 
     href={href}
-    class=`${type === 'normal' ? 'button-normal' : 'button-primary'} flex items-center no-underline ${size === 'small' ? 'xp-small h-small' : ''} ${size === 'medium' ? 'xp-medium h-medium' : ''} ${size === 'large' ? 'xp-large h-large' : ''} ${Astro.props?.class || ''}`
+    class=`${type === 'normal' ? 'button-normal' : 'button-primary'} flex items-center justify-center no-underline ${size === 'small' ? 'xp-small h-small' : ''} ${size === 'medium' ? 'xp-medium h-medium' : ''} ${size === 'large' ? 'xp-large h-large' : ''} ${Astro.props?.class || ''}`
   >
     <slot />
     {

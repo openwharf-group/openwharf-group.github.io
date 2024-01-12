@@ -1,7 +1,7 @@
 ---
 import { useTranslations } from '@i18n/util';
 const t = useTranslations(Astro);
-import LinkButton from '../common/LinkButton.astro';
+import Button from '@components/common/Button.astro';
 const solutionList = [
   {
     checked: true,
@@ -61,11 +61,13 @@ const solutionList = [
                   )})}
                 </div>
                 <div class="button opacity-0 mx-auto mb-[3.75rem]">
-                  <LinkButton
-                    class='rounded-3xl btn-secondary'
+                  <Button 
+                    size="large"
+                    class="rounded-3xl"
                     href={src}
-                    title={t('home.solutions.action')}
-                  />
+                  >
+                    {t('home.solutions.action')}
+                  </Button>
                 </div>
               </label>
             </>
@@ -88,11 +90,12 @@ const solutionList = [
             </div>
             <div class="w-full text-gray-02 text-base">{title}</div>
             <div class="button mx-auto">
-              <LinkButton
-                classList={['rounded-3xl', 'btn-secondary']}
+              <Button 
+                class="rounded-3xl"
                 href={src}
-                title={t('home.solutions.action')}
-              />
+              >
+                {t('home.solutions.action')}
+              </Button>
             </div>
           </div>
         );
