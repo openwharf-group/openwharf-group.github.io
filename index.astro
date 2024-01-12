@@ -16,15 +16,15 @@ export async function getStaticPaths() {
 		 * 所以使用中文生成的路由，同时把相关的信息刷成英文格式
 		 */
 		if(lang === 'en' || lang === 'zh-cn') {
-			const versionSlug = `${version}/`;
+			// const versionSlug = version === 'latest' ? '' : `${version}/`;
 			if(lang === 'en') {
 				item.props.lang='en';
 				item.props.locale='en';
 				item.props.entryMeta.lang='en';
 				item.props.entryMeta.locale='en';
-				item.params.slug = `${lang}/docs/${versionSlug}${rest.join('/')}`;
+				item.params.slug = `${lang}/docs/${version}${rest.join('/')}`;
 			} else {
-				item.params.slug = `docs/${versionSlug}${rest.join('/')}`;
+				item.params.slug = `docs/${version}${rest.join('/')}`;
 			}
 			return true;
 		} else {
@@ -65,7 +65,7 @@ function makeTranslate(list: any[], version: string) {
 				item['autogenerate']['directory'] = `${version}/zh-cn/${item['autogenerate']['directory']}`
 			}
 		}
-		if(item['link']) {
+		if(item['link'] && version !== 'latest') {
 			const [_docs, ...rest] = _.split(item['link'], '/');
 			const match = regex.exec(rest[0]);
 			if(!match) {
