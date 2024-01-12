@@ -19,7 +19,10 @@ const post = Astro.props;
 const { Content, headings } = await post.render();
 ---
 
-<BaseLayout title="Nacos Blog" position="static">
+<BaseLayout 
+	align="docs" 
+	title="Nacos Blog"
+>
 	<SubHeading
 		align="detail"
 		headings={headings}

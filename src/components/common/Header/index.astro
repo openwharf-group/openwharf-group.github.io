@@ -14,9 +14,22 @@ interface Props {
 
 const t = useTranslations(Astro);
 const { align = "home", position = "sticky", lang } = Astro.props;
-const height = align === "home" ? "4rem" : "3.5rem";
-const width = align === "home" ? "85.125rem" : "100%";
-const xpadding = align === "home" ? "0" : "1.5rem";
+
+let height, width, xpadding = "";
+(() => {
+  switch (align) {
+    case "home":
+      height = "4rem";
+      width = "85.125rem";
+      xpadding = "0";
+      return;
+    case "docs":
+      height = "3.5rem";
+      width = "100%";
+      xpadding = "1.5rem";
+      return;
+  }
+})()
 
 ---
 

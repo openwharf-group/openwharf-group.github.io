@@ -16,12 +16,12 @@ const t = useTranslations(Astro);
 
 export type Props = {
   title: string;
-  description: string;
+  description?: string;
   lang?: string;
   keywords?: string[] | string;
-  position?: 'static' | 'sticky';
+  align?: 'home' | 'docs';
 };
-const { title, description, keywords, position = 'sticky' } = Astro.props;
+const { title, description, keywords, align = 'home' } = Astro.props;
 const headEntry = {
   data: {
     description: description,
@@ -55,7 +55,7 @@ Astro.props.lang = lang;
   </head>
   <body>
     <!-- <HomeHeader align="home" position={position} lang={Astro.props.lang} {...Astro.props} /> -->
-    <HomeHeader align="home" lang={Astro.props.lang} {...Astro.props} />
+    <HomeHeader align={align} lang={Astro.props.lang} {...Astro.props} />
     <slot />
     
     
