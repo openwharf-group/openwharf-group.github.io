@@ -63,6 +63,7 @@ export function normalizeLangTag(tag: string) {
 
 
 export function isChinese(Astro: Readonly<AstroGlobal>): boolean {
-	const lang = getLanguageFromURL(Astro.url.pathname) || 'zh-cn';
-	return lang === 'zh-cn';
+	const pathname = Astro.url.pathname;
+	if (pathname.startsWith('/en')) return false;
+	return true;
 }
