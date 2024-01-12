@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import ebookLog from "/public/ebook.png";
 import { useTranslations } from "@i18n/util";
-import LinkButton from '../common/LinkButton.astro';
+import Button from '@components/common/Button.astro';
 const t = useTranslations(Astro);
 ---
 
@@ -15,12 +15,13 @@ const t = useTranslations(Astro);
           {t('home.ebook.nacos')}
         </div>
       </div>
-      <LinkButton 
-        class='rounded-3xl w-[10.75rem]'
-        title={t('home.ebook.download')}
+      <Button 
+        size="large"
+        class="rounded-3xl"
         href="/docs/ebook/kbyo6n.mdx"
       >
-      </LinkButton>
+        {t('home.ebook.download')}
+      </Button>
     </div>
     <div class="right-container h-full relative rounded-2xl overflow-hidden">
       <Image src={ebookLog} alt="nacos ebook" class="ebook-log absolute left-[30%] cursor-pointer" />

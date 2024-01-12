@@ -1,10 +1,9 @@
 ---
 import { useTranslations, isChinese } from "@i18n/util";
-import Github from "../icon/Github.astro";
 import Star from "../icon/Star.astro";
 import Fork from "../icon/Fork.astro";
 import UpRight from "../icon/UpRight.astro";
-import LinkButton from "../common/LinkButton.astro";
+import Button from '@components/common/Button.astro';
 import HomeBackground from "../home/HomeBackground.astro";
 
 const t = useTranslations(Astro);
@@ -29,38 +28,24 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
       {t("home.introduce.title")}
     </div>
     <div class="shortcut flex">
-      <!-- <LinkButton
-        class='rounded-3xl'
-        title={t('home.introduce.nacos.code')}
+      <Button 
+        size="large"
+        class="rounded-3xl mr-4"
         href="https://github.com/alibaba/nacos"
-      >
-        <Github />
-      </LinkButton>
-
-      <LinkButton
-        class='btn-primary rounded-3xl'
-        title={t('home.introduce.nacos.manual')}
-        arrowTheme="light"
-        href="/docs/what-is-nacos"
-      /> -->
-      <LinkButton
-        href="https://github.com/alibaba/nacos"
-        title=""
-        class="rounded-3xl text-gray-14"
       >
         <Star />
-        <span class="text-[0.875rem] leading-4">{startCount}</span>
-      </LinkButton>
+        <span class="text-[0.875rem] leading-4 ml-2">{startCount}</span>
+      </Button>
 
-      <LinkButton
+      <Button 
+        size="large"
+        type="primary"
+        class="rounded-3xl"
         href="https://github.com/alibaba/nacos/fork"
-        title=""
-        class="btn-primary rounded-3xl"
-        arrowTheme="light"
       >
         <Fork theme="light" />
-        <span class="text-gray-04">{forkCount}</span>
-      </LinkButton>
+        <span class="ml-2">{forkCount}</span>
+      </Button>
     </div>
     <div class="notes mt-16 text-gray-07 text-xs flex justify-between">
       <div>
@@ -100,29 +85,8 @@ const { stargazers_count: startCount = 0, forks_count: forkCount = 0 } =
         width="100%"
         autoplay="autoplay"
         src="/introduce-log.webm"
-        class="nacos-log object-cover rounded-2xl cursor-pointer"></video>
-      <!-- <div class="absolute bottom-[1.875rem] left-[1.75rem]">
-        <LinkButton
-          href="https://github.com/alibaba/nacos"
-          title=""
-          class='rounded-lg bg-blue-08 hover:bg-blue-09 border-none'
-          arrowTheme="light"
-        >
-          <Star />
-          <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
-          <span class="text-gray-03">{startCount}</span>
-        </LinkButton>
-
-        <LinkButton
-          href="https://github.com/alibaba/nacos/fork"
-          title=""
-          class='fork border-none rounded-lg'
-        >
-          <Fork />
-          <div class="w-px h-full bg-blue-07 opacity-20 mx-2"></div>
-          <span class="text-gray-11">{forkCount}</span>
-        </LinkButton>
-      </div> -->
+        class="nacos-log object-cover rounded-2xl cursor-pointer"
+      ></video>
     </div>
   </div>
 
