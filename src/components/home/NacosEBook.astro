@@ -2,25 +2,26 @@
 import { Image } from "astro:assets";
 import ebookLog from "/public/ebook.png";
 import { useTranslations } from "@i18n/util";
-import LinkButton from '../common/LinkButton.astro';
+import Button from '@components/common/Button.astro';
 const t = useTranslations(Astro);
 ---
 
 <nacos-ebook class="nacos-ebook flex flex-col justify-center items-center bg-gary-02 py-10">
-  <div class="ebook-container block flex items-center justify-between bg-gray-13 rounded-2xl p-9 mt-16">
+  <div class="ebook-container block flex items-center justify-between bg-gray-13 rounded-2xl p-9 mt-10">
     <div class="left-container h-full flex flex-col justify-around">
       <div class="flex flex-col">
         <div class="text-blue-02 text-xs tracking-[0.15em]">{t('home.ebook.resource')}</div>
-        <div class="text-blue-01 font-medium text-[2.75rem] mt-6">
+        <div class="text-blue-01 font-medium text-[2.75rem] leading-[3.5rem] mt-6">
           {t('home.ebook.nacos')}
         </div>
       </div>
-      <LinkButton 
-        class='rounded-3xl w-[10.75rem]'
-        title={t('home.ebook.download')}
+      <Button 
+        size="large"
+        class="rounded-3xl"
         href="/docs/ebook/kbyo6n.mdx"
       >
-      </LinkButton>
+        {t('home.ebook.download')}
+      </Button>
     </div>
     <div class="right-container h-full relative rounded-2xl overflow-hidden">
       <Image src={ebookLog} alt="nacos ebook" class="ebook-log absolute left-[30%] cursor-pointer" />
