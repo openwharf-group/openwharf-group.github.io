@@ -4,6 +4,12 @@ import dataSource from '@components/common/Header/navbar.ts';
 import { docsItems } from '@components/common/Header/DocsMenu.astro';
 import { communityItems } from '@components/common/Header/CommunityMenu.astro';
 
+interface Props {
+  top?: "4rem" | "3.5rem";
+  class?: string;
+}
+const { top = '4rem' } = Astro.props;
+
 const sublist = [];
 for (let i = 0; i < dataSource.length; i++) {
   const item = dataSource[i];
@@ -70,7 +76,7 @@ for (let i = 0; i < dataSource.length; i++) {
     </button>
   </mobile-menu-button>
 
-  <div class="navbar-pane bg-gray-14">
+  <div class="navbar-panel bg-gray-14">
     <div class="navbar-content flex">
       <MobileNavbarSublist sublist={sublist} />
     </div>
@@ -114,7 +120,7 @@ for (let i = 0; i < dataSource.length; i++) {
 </script>
 
 
-<style>
+<style define:vars={{ top }}>
 	.mobile-navbar button {
 		border: 0;
     display: flex;
@@ -124,19 +130,19 @@ for (let i = 0; i < dataSource.length; i++) {
 		cursor: pointer;
 	}
 
-  .mobile-navbar .navbar-pane {
+  .mobile-navbar .navbar-panel {
 		visibility: var(--sl-sidebar-visibility, hidden);
 		position: fixed;
 		z-index: 5;
 		inset-block: 0;
 		inset-inline-start: 0;
 		/* padding-top: 4rem; */
-    margin-top: 4rem;
+    margin-top: var(--top);
 		width: 100%;
 		overflow-y: auto;
 	}
 
-	:global([aria-expanded='true']) ~ .navbar-pane {
+	:global([aria-expanded='true']) ~ .navbar-panel {
 		--sl-sidebar-visibility: visible;
 	}
 
