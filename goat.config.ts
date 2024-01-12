@@ -72,7 +72,16 @@ const replaceNavigation = async () => {
  */
 const replaceIndexAstro = async () => {
 	const originFile = path.join(starlightPath, "index.astro");
-	const replacedContent = await fs.readFile('./index.startlight.template');
+	const replacedContent = await fs.readFile('./template/index.startlight.tpl');
+	await fs.writeFile(originFile, replacedContent.toString());
+}
+
+/**
+ * @description: 替换 404.astro
+ */
+const replace404Astro = async () => {
+	const originFile = path.join(starlightPath, "404.astro");
+	const replacedContent = await fs.readFile('./template/404.startlight.tpl');
 	await fs.writeFile(originFile, replacedContent.toString());
 }
 
@@ -80,4 +89,5 @@ export default async () => {
 	await replaceRouteData();
 	await replaceNavigation();
 	await replaceIndexAstro();
+	await replace404Astro();
 }

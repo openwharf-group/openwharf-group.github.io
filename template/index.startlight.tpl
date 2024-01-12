@@ -16,15 +16,15 @@ export async function getStaticPaths() {
 		 * 所以使用中文生成的路由，同时把相关的信息刷成英文格式
 		 */
 		if(lang === 'en' || lang === 'zh-cn') {
-			// const versionSlug = version === 'latest' ? '' : `${version}/`;
+			const versionSlug = `${version}/`;
 			if(lang === 'en') {
 				item.props.lang='en';
 				item.props.locale='en';
 				item.props.entryMeta.lang='en';
 				item.props.entryMeta.locale='en';
-				item.params.slug = `${lang}/docs/${version}${rest.join('/')}`;
+				item.params.slug = `${lang}/docs/${versionSlug}${rest.join('/')}`;
 			} else {
-				item.params.slug = `docs/${version}${rest.join('/')}`;
+				item.params.slug = `docs/${versionSlug}${rest.join('/')}`;
 			}
 			return true;
 		} else {
@@ -65,7 +65,7 @@ function makeTranslate(list: any[], version: string) {
 				item['autogenerate']['directory'] = `${version}/zh-cn/${item['autogenerate']['directory']}`
 			}
 		}
-		if(item['link'] && version !== 'latest') {
+		if(item['link']) {
 			const [_docs, ...rest] = _.split(item['link'], '/');
 			const match = regex.exec(rest[0]);
 			if(!match) {
@@ -84,5 +84,12 @@ const { Content, headings } = await Astro.props.entry.render();
 
 const route = generateRouteData({ props: { ...Astro.props, headings, categories: categories }, url: Astro.url });
 
+
+const regexs = /\/docs\/(latest|ebook|next|v[0-9]\.[0-9]\.[0-9]|v[0-9]\.[0-9]|v[0-9]|[0-9]\.[0-9]\.[0-9]|[0-9]\.[0-9]|[0-9])\/.+/;
+
+const match = regexs.exec(Astro.url.pathname)
+if(!match) {
+	return Astro.redirect('/docs'+ '/latest' + Astro.url.pathname.split('/docs').join(''));
+}
 ---
 <Page {...route}><Content /></Page>

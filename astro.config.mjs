@@ -10,7 +10,6 @@ import remarkRemoveRepeatHeader from "./plugins/remarkRemoveRepeatHeader"
 import addPrefixImageLink from "./plugins/addPrefixImageLink"
 import { starlightAsides } from './node_modules/@astrojs/starlight/integrations/asides'
 import goatConfig from './goat.config';
-const jsoncString = fs.readFileSync(new URL(`./markdown-theme.jsonc`, import.meta.url), 'utf-8');
 
 // https://astro.build/config
 export default defineConfig({
