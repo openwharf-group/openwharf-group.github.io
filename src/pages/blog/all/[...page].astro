@@ -1,11 +1,9 @@
 ---
 import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
-import BlogHeader from "@components/markdownSet/SubHeading.astro";
 import { BLOG_CATEGORY } from 'src/consts';
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import BaseContainer from '@components/common/BaseContainer.astro';
@@ -43,7 +41,6 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 ---
 
 <BaseLayout title="Nacos Blog" >
-    <!-- <BlogHeader categories={BLOG_CATEGORY} title="博客" href="/blog"/> -->
     <BlogTop title="全部文章"  type="blog-sub" />
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"

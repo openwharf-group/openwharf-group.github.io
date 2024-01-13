@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import BlogCard from "@components/markdownSet/Card.astro";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import Footer from "@components/common/Footer.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
 import BlogContent from "@components/markdownSet/BlogContent.astro"
-import NewCard from "@components/markdownSet/NewCard.astro";
 
 const blogCategories = new Set(ACTIVITY_CATEGORY.map(item => item.type));
 

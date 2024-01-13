@@ -1,11 +1,9 @@
 ---
 import type { GetStaticPathsOptions } from "astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
-import SubHeading from "@components/markdownSet/SubHeading.astro";
 import { NEWS_CATEGORY } from "src/consts";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import BaseContainer from '@components/common/BaseContainer.astro';

@@ -3,8 +3,6 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '@components/markdownSet/MarkdownDetail.astro';
 import TocComponent from '@components/markdownSet/TocComponents/TocComponent.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import BlogHeader from "@components/markdownSet/SubHeading.astro";
-import { BLOG_CATEGORY } from 'src/consts';
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -24,7 +22,6 @@ const { Content, headings } = await post.render();
 	align='docs' 
 	title="Nacos Blog"
 >
-	<!-- <BlogHeader align="detail" headings={headings} categories = {BLOG_CATEGORY} title="博客" href="/blog"/> -->
 	<div>
 		<div class="w-full 2xl:w-[75%] xl:w-[75%] lg:w-[75%] md:w-[75%] inline-block">
 			<BlogPost {...post.data}>
