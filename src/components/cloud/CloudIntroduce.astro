@@ -172,10 +172,6 @@ const introduceData = [
   .bottom-package .card-package:first-child .feature {
     color: theme("colors.gray.08");
   }
-  .bottom-package .card-package:first-child .subscribe .button-transform {
-    background: linear-gradient(226deg, #2c46c9 -2%, rgba(0, 0, 0, 0) 43%),
-      #121316;
-  }
   .bottom-package .card-package:last-child {
     margin-right: 0;
   }
@@ -189,10 +185,18 @@ const introduceData = [
     transition-duration: 0.3s;
     -webkit-transition-property: box-shadow, transform;
     transition-property: box-shadow, transform;
+    transition: background-color 0.5s ease;
+  }
+
+  .bottom-package .card-package:first-child .subscribe .button-transform:hover {
+    color: theme('colors.gray.03');
+    background: linear-gradient(226deg, #2c46c9 -2%, rgba(0, 0, 0, 0) 43%),
+      #121316;
   }
 
   .button-transform:hover {
-    background-color: theme("colors.gray.14");
+    color: theme('colors.gray.13');
+    background-color: theme('colors.gray.01');
   }
   /* 小于50rem  小于 800px */
   @media (max-width: 50rem) {
