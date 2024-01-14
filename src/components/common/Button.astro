@@ -12,7 +12,7 @@ const { href, type = 'normal', size = 'medium', visibility = true } = Astro.prop
 ---
 
 <!-- <button> 可以设置默认样式 -->
-<button class=`button w-fit p-0 bg-transparent`>
+<my-button class=`button w-fit p-0 bg-transparent`>
   <a 
     href={href}
     class=`${type === 'normal' ? 'button-normal' : 'button-primary'} flex items-center justify-center no-underline ${size === 'small' ? 'xp-small h-small' : ''} ${size === 'medium' ? 'xp-medium h-medium' : ''} ${size === 'large' ? 'xp-large h-large' : ''} ${Astro.props?.class || ''}`
@@ -38,7 +38,7 @@ const { href, type = 'normal', size = 'medium', visibility = true } = Astro.prop
       )
     }
   </a>
-</button>
+</my-button>
 
 <script>
   class Button extends HTMLElement {
