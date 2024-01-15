@@ -1,6 +1,8 @@
 ---
 import TableOfContentsList from "@components/starlight/TableOfContentsList.astro";
 import "./style.css";
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 
 // Props
 const { headings = [] } = Astro.props;
@@ -29,7 +31,7 @@ const depth = 0;
                 class="starlight__on-this-page"
             >
                 <h2 id="starlight__on-this-page" class="heading">
-                    本页内容
+                    {t('rightSidebar.onThisPage')}
                 </h2>
                 <TableOfContentsList toc={toc} />
             </nav>

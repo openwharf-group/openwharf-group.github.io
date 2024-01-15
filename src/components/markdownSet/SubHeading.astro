@@ -1,12 +1,13 @@
 ---
 import TocComponent from "@components/markdownSet/TocComponents/TocComponent.astro";
-
+import { useTranslations } from "@i18n/util";
 const { align = "home", headings, categories, title, href } = Astro.props;
 const justifyContent = align === "detail" ? "flex-start" : "space-between";
 const isBlock = align === "detail" ? "block" : "none";
 const isFlexNone = align === "detail" ? "none" : 1;
 const isFlex = align === "detail" ? 1 : "none";
 const isRight = align === "detail" ? "auto" : "0px";
+const t = useTranslations(Astro);
 ---
 
 <blog-header class="blog_header bg-gray-14 sticky top-0 z-11">
@@ -93,7 +94,7 @@ const isRight = align === "detail" ? "auto" : "0px";
         class="blog_menu_tocComponent cursor-pointer rounded-md border border-solid border-gray-01 hidden relative"
       >
         <div data-blog-tocComponent-button class="text-gray-01 pl-2">
-          本页
+          {t('commmon.markdown.subheading.page')}
           <svg
             aria-hidden="true"
             class="cursor-pointer"

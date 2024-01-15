@@ -7,7 +7,8 @@ import BlogCard from "@components/markdownSet/Card.astro";
 import { NEWS_CATEGORY } from "src/consts";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import BaseContainer from '@components/common/BaseContainer.astro';
-
+import { useTranslations } from '@i18n/util';
+const t = useTranslations(Astro);
 interface Post {
     slug: string;
     body: string;
@@ -43,7 +44,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 ---
 
 <BaseLayout title="Nacos Blog"  >
-    <BlogTop title="社区公告"  type="news-sub" category={NEWS_CATEGORY} />
+    <BlogTop title={t("blog.activity.community.announcement")}  type="news-sub" category={NEWS_CATEGORY} />
     <div
         class="mx-auto flex flex-col items-center gap-20 py-8"
     >
