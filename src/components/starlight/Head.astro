@@ -169,6 +169,7 @@ const head = createHead(headDefaults, config.head, data.head);
           window.AESPluginPVConfig || { enableHistory: true },
         ),
         aes.use(AESPluginEvent, window.AESPluginEventConfig || {}),
+        aes.use(AESPluginSurvey, window.AESPluginEventConfig || {}),
         // aes.use(AESPluginAutolog, window.AESPluginAutologConfig || {}),
       ];
     };
