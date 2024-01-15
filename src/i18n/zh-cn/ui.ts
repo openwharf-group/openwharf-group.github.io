@@ -6,7 +6,7 @@ export default {
 	'commmon.header.menu.demo': '控制台样例',
 	'commmon.header.docs.docs': '文档',
 	'commmon.header.comm.comm': '社区',
-	'commmon.header.comm.report': '报告问题',
+	'commmon.header.comm.report': '报告文档问题',
 	'commmon.header.comm.contribute': '贡献社区',
 	'commmon.header.comm.contributors': '贡献者',
 	'commmon.header.comm.event': '事件',

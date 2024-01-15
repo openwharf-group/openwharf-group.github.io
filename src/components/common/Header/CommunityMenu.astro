@@ -4,7 +4,9 @@ import { getEntries } from "astro:content";
 import { Image } from "astro:assets";
 import { HEADER_ACTIVITY_CARD } from "../../../consts";
 import LinkText from '@components/common/LinkText.astro';
+import { isChinese } from '@i18n/util';
 const t = useTranslations(Astro);
+const ifzh = isChinese(Astro);
 
 export const communityItems = [
   {
@@ -112,17 +114,17 @@ const blogImgs = [
         <div class="flex">
           <!-- 社区label -->
           <div class="border-l border-gray-12 flex flex-col px-7 min-w-[12rem]">
-            <span class="text-xs text-gray-10 mb-2">{comt.label}</span>
+            <span class="text-xs text-gray-10 mb-2">{ ifzh ? comt.label : comt.translations?.en}</span>
             {
               comt.children.map((menu) => {
-                const { label, link, target = "_self" } = menu;
+                const { label, translations, link, target = "_self" } = menu;
                 return (
                   <LinkText 
                     href={link} 
                     target={target} 
                     class="text-sm text-gray-02 mt-3"
                   >
-                    {label}
+                    {ifzh ? label : translations?.en}
                   </LinkText>
                 );
               })
@@ -131,32 +133,32 @@ const blogImgs = [
 
           <!-- 事件、资源label -->
           <div class:list={['border-l', 'border-gray-12', 'flex', 'flex-col', 'px-7', 'mr-10']}>
-            <span class="text-xs text-gray-10 mb-2">{events.label}</span>
+            <span class="text-xs text-gray-10 mb-2">{ifzh ? events.label : events.translations?.en}</span>
             {
               events.children.map((menu) => {
-                const { label, link, target = "_self" } = menu;
+                const { label, translations, link, target = "_self" } = menu;
                 return (
                   <LinkText 
                     href={link} 
                     target={target}
                     class="text-sm text-gray-02 mt-3"
                   >
-                    {label}
+                    {ifzh ? label : translations?.en}
                   </LinkText>
                 );
               })
             }
-            <span class="text-xs text-gray-10 mb-2 mt-10">{resources.label}</span>
+            <span class="text-xs text-gray-10 mb-2 mt-10">{ifzh ? resources.label : resources.translations?.en}</span>
             {
               resources.children.map((menu) => {
-                const { label, link, target = "_self" } = menu;
+                const { label, translations, link, target = "_self" } = menu;
                 return (
                   <LinkText 
                     href={link} 
                     target={target} 
                     class="text-sm text-gray-02 mt-3"
                   >
-                    {label}
+                    {ifzh ? label : translations?.en}
                   </LinkText>
                 );
               })

@@ -4,7 +4,7 @@ import { isChinese } from '@i18n/util';
 import _ from 'lodash';
 import dataSource from '@components/common/Header/navbar.ts';
 import { docsItems } from '@components/common/Header/DocsMenu.astro';
-// import MobileMenu from "@components/common/Header/MobileMenu.astro";
+const ifzh = isChinese(Astro);
 
 interface Props {
   class?: string;
@@ -68,12 +68,12 @@ const ifactive = (toggle) => {
   <div class=`pc-navbar ${Astro.props?.class || ''}`>
     {
       _dataSource.map(async (toggle, index) => {
-        const { label, trigger, route, slot, position = 'absolute', target = "_self", } = toggle;
+        const { label, translations, trigger, route, slot, position = 'absolute', target = "_self", } = toggle;
         // const component = slot && await import(slot);
         const active = ifactive(toggle);
         return (
           <Toggle 
-            title={label}
+            title={ifzh ? label : translations?.en}
             route={route}
             trigger={trigger}
             active={active}
