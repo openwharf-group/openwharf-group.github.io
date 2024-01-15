@@ -2,7 +2,7 @@
 interface Props {
   id: string,
   size?: 'large' | 'small',
-  lang: 'zh-cn' | 'en',
+  lang: 'zh-cn' | 'en' | string,
 }
 const { id, size = "small", lang } = Astro.props;
 const initialState = lang === 'zh-cn' ? false : true;

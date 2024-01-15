@@ -17,14 +17,17 @@ let _dataSource = _.cloneDeep(dataSource);
 
 (() => {
   const pathname = Astro.url.pathname;
-  if (!pathname.startsWith('/docs/')) return;
-  if (pathname.startsWith('/docs/ebook')) return;
+  if (ifzh && !pathname.startsWith('/docs/')) return;
+  if (ifzh && pathname.startsWith('/docs/ebook')) return;
+  if (!ifzh && !pathname.startsWith('/en/docs/')) return;
+  if (!ifzh && pathname.startsWith('/en/docs/ebook')) return;
 
-  const regex = /\/docs\/(?!what-is-nacos)([^\/]+)/;
+  const regex = ifzh ? /\/docs\/(?!what-is-nacos)([^\/]+)/ : /\/en\/docs\/(?!what-is-nacos)([^\/]+)/;
 
   const matchVersion = {};
   const versions = docsItems.map(item => {
-    const match = item.link.match(regex);
+    const _link = ifzh ? item.link : item.translations?.link;
+    const match = _link.match(regex);
     const version = match?.[1] || 'latest';
     Reflect.set(matchVersion, version, {
       zh: item.label,
@@ -33,18 +36,21 @@ let _dataSource = _.cloneDeep(dataSource);
     return version;
   });
 
-  const match = pathname.match(/\/docs\/([^\/]*)/);
+  const match = pathname.match(
+    ifzh ? /\/docs\/([^\/]*)/ : /\/en\/docs\/([^\/]*)/
+  );
   // next v1 v2
   const result = match?.[1] || '';
   // 文档的当前版本
   const version = versions.includes(result) ? result : 'latest';
 
-  const ifzh = isChinese(Astro);
 
-  // const docsLabel = matchVersion[version][ifzh ? 'zh' : 'en'];
   const docsLabel = matchVersion[version]['zh'];
 
   _dataSource[0].label = docsLabel;
+  _dataSource[0].translations = {
+    en: matchVersion[version]['en']
+  };
 
 })();
 
@@ -52,11 +58,17 @@ const ifactive = (toggle) => {
   let active = false;
   const { route, activePath = [] } = toggle;
   if (route) {
-    return Astro.url.pathname.startsWith(route);
+    if (ifzh) {
+      return Astro.url.pathname.startsWith(route);
+    }
+    return Astro.url.pathname.startsWith(`/en${route}`);
   }
 
   active = activePath.some(path => {
-    return Astro.url.pathname.startsWith(path);
+    if (ifzh) {
+      return Astro.url.pathname.startsWith(path);
+    }
+    return Astro.url.pathname.startsWith(`/en${path}`);
   });
   return active;
 }
