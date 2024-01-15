@@ -5,6 +5,8 @@ import BlogTop from "@components/markdownSet/BlogTop.astro";
 import Footer from "@components/common/Footer.astro";
 import { ACTIVITY_CATEGORY } from "src/consts";
 import BlogContent from "@components/markdownSet/BlogContent.astro"
+import { useTranslations } from '@i18n/util';
+const t = useTranslations(Astro);
 
 const blogCategories = new Set(ACTIVITY_CATEGORY.map(item => item.type));
 
@@ -22,10 +24,10 @@ const categoryPosts = ACTIVITY_CATEGORY.map(item => ({
 
 <BaseLayout
   title="Nacos Blog"
-  description="探索Nacos 博客，了解服务发现和配置管理的最新资讯、教程和技术分析。"
+  description={t("blog.activity.explore")}
 >
 <!-- 活动：捕捉Nacos动态，链接开源脉搏。 -->
-<BlogTop title="活动"  type="home" category={ACTIVITY_CATEGORY} />
+<BlogTop title={t('commmon.header.comm.active')}  type="home" category={ACTIVITY_CATEGORY} />
   <div class="bg-gray-14">
     <BlogContent source="activity" categoryPosts={categoryPosts} />
     <Footer />

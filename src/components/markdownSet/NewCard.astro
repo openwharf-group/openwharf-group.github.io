@@ -38,7 +38,7 @@ const { type = "blog", post, classList = [] } = Astro.props;
               <div class="text-gray-04 text-xs mt-6 leading-5">
                 by
                 <span class="ml-1.5"> {post.data.author || "nacos"}</span>
-                <span class=" ml-1.5">阿里云高级工程师</span>
+                <span class=" ml-1.5">{t('blog.card.author.alibaba.Cloud.engineer')}</span>
               </div>
               <div class="mt-8 text-sm leading-6">{post.data.description}</div>
             </div>

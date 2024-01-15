@@ -5,6 +5,8 @@ import BlogCard from "@components/markdownSet/Card.astro";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import NewCard from "@components/markdownSet/NewCard.astro";
 import BaseContainer from '@components/common/BaseContainer.astro';
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 ---
 
 <!-- 最新1篇博客展示 -->{
@@ -52,7 +54,7 @@ import BaseContainer from '@components/common/BaseContainer.astro';
                                         </h2>
                                         <div class="text-base text-blue-08 pt-4">
                                             <a href={categoryPost.href}>
-                                                查看所有 {categoryPost.title}
+                                                {t('blog.card.view.all')} {categoryPost.title}
                                                 <svg
                                                     class="icon"
                                                     viewBox="0 0 1220 800"

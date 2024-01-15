@@ -25,7 +25,7 @@ const { title, description, keywords, align = 'home' } = Astro.props;
 const headEntry = {
   data: {
     description: description,
-    keywords: keywords || '动态服务发现,配置管理,服务管理',
+    keywords: keywords || t('commmon.base.layout.keywords'),
     title: title,
     head: [],
   },

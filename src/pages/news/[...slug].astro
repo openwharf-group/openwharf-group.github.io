@@ -5,6 +5,8 @@ import TocComponent from "@components/markdownSet/TocComponents/TocComponent.ast
 import BaseLayout from "@layouts/BaseLayout.astro";
 import SubHeading from "@components/markdownSet/SubHeading.astro";
 import { NEWS_CATEGORY } from "src/consts";
+import { useTranslations } from '@i18n/util';
+const t = useTranslations(Astro);
 
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
@@ -24,7 +26,7 @@ const { Content, headings } = await post.render();
 		align="detail"
 		headings={headings}
 		categories={NEWS_CATEGORY}
-		title="事件"
+		title={t("commmon.header.comm.event")}
 		href="/news"
 	/>
 	<div>

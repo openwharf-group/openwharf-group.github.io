@@ -6,7 +6,8 @@ import Pagination from "@components/common/Pagination.astro";
 import BlogCard from "@components/markdownSet/Card.astro";
 import BlogTop from "@components/markdownSet/BlogTop.astro";
 import BaseContainer from '@components/common/BaseContainer.astro';
-
+import { useTranslations } from '@i18n/util';
+const t = useTranslations(Astro);
 interface Post {
     slug: string;
     body: string;
@@ -43,7 +44,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
 ---
 
 <BaseLayout title="Nacos Blog" >
-    <BlogTop title="最佳实践"  type="blog-sub" />
+    <BlogTop title={t("blog.article.case.best.practices")}  type="blog-sub" />
     <div
         class="flex flex-col items-center gap-20 py-8 lg:p-12 xl:p-20 bg-gray-01"
     >

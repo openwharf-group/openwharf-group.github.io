@@ -2,6 +2,8 @@
 import "@style/global.css";
 import "@style/fonts.css";
 import Button from "./LinkButton.astro";
+import { useTranslations } from "@i18n/util";
+const t = useTranslations(Astro);
 ---
 
 <html lang={Astro.props.lang} data-theme="light">
@@ -20,9 +22,9 @@ import Button from "./LinkButton.astro";
         <div class="container w-full">
             <div class="content">
                 <p class="text-gray-01 text-3xl">
-                    点击下载<br /> 获取完整版电子书<br /> 尽享阅读体验
+                    {t('commmon.ebook.click.download')}<br /> {t('commmon.ebook.complete.get')}<br /> {t('commmon.ebook.enjoy.read')}
                 </p>
-                <Button title="点击下载" href="https://developer.aliyun.com/ebook/36?spm=a2c6h.20345107.ebook-index.18.152c2984fsi5ST" />
+                <Button title={t('commmon.ebook.click.download')} href="https://developer.aliyun.com/ebook/36?spm=a2c6h.20345107.ebook-index.18.152c2984fsi5ST" />
             </div>
         </div>
     </body>
