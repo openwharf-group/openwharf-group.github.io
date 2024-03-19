@@ -35,4 +35,23 @@ const t = useTranslations(Astro);
     }
   }
   customElements.define('home-body', HomeBody);
+
+  const copilotJSScript = document.createElement('script');
+    copilotJSScript.type = 'text/javascript';
+    copilotJSScript.src = '//dev.g.alicdn.com/cm-design/copilot-booter/0.0.21/copilot-booter.js';
+    copilotJSScript.addEventListener('load', function (){
+        if(window.CNPilot){ 
+            window.CNPilot.mounted({
+              CNPilot_NODE_ENV: 'development', 
+              showFloatICON: true,
+              globalStyle:{
+                top:'64px'
+              },
+              headerProps:{
+                closeIcon: { show: true }, // 关闭按钮
+              }
+            }); 
+        };
+    });
+  document.body.append(copilotJSScript);
 </script>
