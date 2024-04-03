@@ -38,18 +38,26 @@ const t = useTranslations(Astro);
 
   const copilotJSScript = document.createElement('script');
     copilotJSScript.type = 'text/javascript';
-    copilotJSScript.src = '//dev.g.alicdn.com/cm-design/copilot-booter/0.0.21/copilot-booter.js';
+    copilotJSScript.src = '//dev.g.alicdn.com/cm-design/copilot-booter/0.0.22/copilot-booter.js';
     copilotJSScript.addEventListener('load', function (){
         if(window.CNPilot){ 
             window.CNPilot.mounted({
-              CNPilot_NODE_ENV: 'development', 
               CNPilot_OPEN_SOURCE: ['openwharf-group.github.io'],
-              // CNPilot_OPEN_SOURCE_API: 'https://ai.nacos.io',
+              CNPilot_OPEN_SOURCE_API: 'https://ai.nacos.io',
               showFloatICON: true,
               globalStyle:{
-                top:'64px'
+                top:'64px',
+                // height:'100vh',
+                // zIndex:'999999'
+              },
+              entryIconProps:{
+                'position-type':'updown',
+                'icon-hover-text':'AI专家',
+                // 'icon-url':'https://pic.rmb.bdstatic.com/bjh/914b8c0f9814b14c5fedeec7ec6615df5813.jpeg',
               },
               headerProps:{
+                // titleIcon: 'https://pic.rmb.bdstatic.com/bjh/914b8c0f9814b14c5fedeec7ec6615df5813.jpeg',
+                titleText: "nacos文档答疑助手",
                 closeIcon: { show: true }, // 关闭按钮
               }
             }); 
