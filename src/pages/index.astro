@@ -46,9 +46,9 @@ const t = useTranslations(Astro);
               CNPilot_OPEN_SOURCE_API: 'https://ai.nacos.io',
               showFloatICON: true,
               globalStyle:{
-                top:'64px',
-                // height:'100vh',
-                // zIndex:'999999'
+                top:'0',
+                height:'100vh',
+                zIndex:'10000'
               },
               entryIconProps:{
                 'position-type':'updown',
@@ -58,7 +58,8 @@ const t = useTranslations(Astro);
               headerProps:{
                 // titleIcon: 'https://pic.rmb.bdstatic.com/bjh/914b8c0f9814b14c5fedeec7ec6615df5813.jpeg',
                 titleText: "nacos文档答疑助手",
-                closeIcon: { show: true }, // 关闭按钮
+                closeIcon: { show: true },
+                wideIcon: { show:true }
               }
             }); 
         };
